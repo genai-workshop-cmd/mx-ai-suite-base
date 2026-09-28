@@ -245,6 +245,7 @@ class Pipeline:
             result.duplicate.action = duplicate_action  # type: ignore[assignment]
 
         self._write_to_brain(state, phase, result)
+        self._record_feedback(state, phase, result, gate_action="approved")
 
         nxt = self.next_phase(state)
         state.current_phase = nxt or Phase.DONE
@@ -255,11 +256,14 @@ class Pipeline:
     def revise(self, run_id: str, phase: Phase, *, by: str = "", comment: str = "") -> RunState:
         """Send a phase back. It will re-run on the next advance()."""
         state = self.store.load(run_id)
+        result = state.result(phase)
         gate = state.gate(phase)
         gate.status = GateStatus.REVISION_REQUESTED
         gate.decided_by = by or "unnamed reviewer"
         gate.decided_at = _now()
         gate.comment = comment
+        if result:
+            self._record_feedback(state, phase, result, gate_action="revision_requested")
         state.current_phase = phase
         self.store.save(state)
         log.info("revision requested on %s: %s", PHASE_LABEL[phase], comment or "(no comment)")
@@ -415,3 +419,29 @@ class Pipeline:
                     companion = Path(artifact.path)
                     if companion.exists():
                         self.brain.store.copy_companion(doc, companion)
+
+    def _record_feedback(
+        self, state: "RunState", phase: "Phase", result: "PhaseResult", *, gate_action: str
+    ) -> None:
+        """Capture gate decision + reviewer comment as a correction for auto-learning."""
+        gate = state.gate(phase)
+        if not gate.comment:
+            return
+        doc_type = {
+            Phase.FDD: "fdd",
+            Phase.TDD: "tdd",
+            Phase.BUILD_CONFIG: "build_config",
+            Phase.BUILD_INTEGRATION: "build_integration",
+            Phase.TEST: "testcases",
+            Phase.DEPLOY: "deployment",
+        }.get(phase, "unknown")
+        flags = [f.model_dump() for f in result.flags] if result.flags else []
+        self.brain.feedback.record(
+            doc_type=doc_type,
+            business_process=state.business_process,
+            run_id=state.run_id,
+            reviewer=gate.decided_by or "unnamed",
+            comment=gate.comment,
+            flags=flags,
+            gate_action=gate_action,
+        )

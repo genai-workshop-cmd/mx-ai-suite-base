@@ -106,6 +106,7 @@ class BrainConfig:
     store_dir: Path = field(default_factory=lambda: ROOT / "brain" / "store")
     vector_dir: Path = field(default_factory=lambda: ROOT / "brain" / "vectors")
     audit_log: Path = field(default_factory=lambda: ROOT / "brain" / "audit.jsonl")
+    feedback_log: Path = field(default_factory=lambda: ROOT / "brain" / "feedback.jsonl")
     collection: str = "mx_ai_suite"
     embed_model: str = "BAAI/bge-small-en-v1.5"
     duplicate_threshold: float = 0.85

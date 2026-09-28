@@ -190,11 +190,9 @@ class BaseAgent(ABC):
         return "\n".join(blocks)
 
     def load_skills(self) -> str:
-        """Concatenate the skill files this agent declares."""
-        if not self.skill_files:
-            return ""
+        """Concatenate the skill files this agent declares, plus auto-learned corrections."""
         parts = []
-        for filename in self.skill_files:
+        for filename in (self.skill_files or []):
             path = self.ctx.cfg.skills_dir / filename
             if not path.exists():
                 self.log.debug("skill file missing: %s", filename)
@@ -202,6 +200,15 @@ class BaseAgent(ABC):
             text = path.read_text(encoding="utf-8", errors="ignore")
             # Keep prompts affordable; the head of each skill carries the rules.
             parts.append(f"--- {filename} ---\n{text[:6000]}")
+
+        # Auto-learned corrections: past reviewer feedback for this doc_type
+        corrections = self.ctx.brain.feedback.corrections_skill(self.doc_type)
+        if corrections:
+            # Include the 10 most recent corrections (tail of file, ~3000 chars)
+            parts.append(
+                f"--- corrections_{self.doc_type}.md (auto-learned from reviewer feedback) ---\n"
+                f"{corrections[-3000:]}"
+            )
         return "\n\n".join(parts)
 
     def system_prompt(self) -> str:

@@ -1,339 +1,303 @@
-# InMap Agent Skill — Integration Mapping Agent
-*Skill ID: InMap | EPIC-03 | MX AI Suite*
+# MX_Integration — Maximo Integration Framework (MIF) & OSLC REST Skill (MAS 8 / MAS 9)
+*Version: 2.0 | Platform: MAS 8.x / MAS 9.x / Maximo 7.6 | Last updated: 2026-09-28*
 
 ---
 
 ## Purpose
 
-This skill governs the InMap Agent's execution of all 7 stories in EPIC-03. It defines
-field-level mapping rules, MIF configuration patterns, XSD schema conventions, test data
-requirements, and error handling standards for all four CU module integration points.
-
-**Always read before** starting any US-03-xxx story execution.
+Load before any integration design, Build Integration document, or interface mapping task.
+Covers MIF architecture, Object Structures, Publish Channels, Enterprise Services, OSLC REST,
+and IBM best practices. Supplements mx_core_SKILL.md — load both together.
 
 ---
 
-## Inputs — What InMap Receives from TeDCoS (Agent 2)
-
-Before producing any output, read these source documents:
-
-| Source Document | AI-Brain Path | Key Content |
-|---|---|---|
-| Interface Specifications | `AI-Brain\agent-02-TeDCoS\Interface_Specs.md` | High-level interface design for RICE-I-001 to RICE-I-004 |
-| Technical Design Document | `AI-Brain\agent-02-TeDCoS\TDD_CU_Module_Content.md` | Section 9 (Integration Summary), Section 5 (Object Structure) |
-| RICEFW Register | `AI-Brain\agent-02-TeDCoS\RICEFW_Register.md` | Interface complexity, direction, trigger, source FDD reference |
-| Field Config Specs | `AI-Brain\agent-02-TeDCoS\Field_Config_Specs.md` | Maximo field names, data types, lengths for mapping |
-
-**Never pre-fill field names or FDD section references.** Derive all values by reading the
-source documents above. Cross-document references must include the specific FR ID
-(e.g., `FDD §5 (FR-006)` not just `FDD §5`).
-
----
-
-## Interface Inventory
-
-| ID | Name | Direction | Trigger | Complexity | US |
-|---|---|---|---|---|---|
-| RICE-I-001 | GIS ↔ Maximo CU Sync | Bidirectional | Batch nightly + event (APPROVED status) | High | US-03-001 |
-| RICE-I-002 | ERP Cost Posting Interface | Maximo → ERP | WO Close event (Status → COMP) | High | US-03-002 |
-| RICE-I-003 | OMS Work Request Interface | OMS → Maximo | Event (OMS DISPATCHED) | High | US-03-003 |
-| RICE-I-004 | Contractor Portal Integration | Maximo → Portal | Batch daily | Medium | US-03-004 |
-
-**GIS system:** PLS-CADD (confirmed from Interface_Specs.md)
-**ERP system:** TBD — OQ-010 outstanding (assume SAP for structural purposes; flag as assumption)
-**OMS system:** TBD — OQ-011 outstanding (document as ASSUMPTION-003)
-**Contractor Portal:** TBD — OQ-012 outstanding (document as ASSUMPTION-004)
-
----
-
-## US-03-001: GIS Integration Mapping Rules
-
-### Story Purpose
-Produce the detailed GIS Integration Design Document (IDD) with field-level mapping,
-transformation rules, key matching strategy, MBO publish channel spec, and enterprise
-service spec. Input: PLS-CADD GIS feature class attribute list.
-
-### Field Mapping Conventions
-
-**GIS → Maximo (inbound):**
-- GIS Feature Class → Maximo Object: read from `TDD_CU_Module_Content.md §5`
-- Key matching: CU Number — GIS uses underscore format (e.g. `CU_UGC_004`); Maximo uses
-  hyphen format (`CU-UGC-004`). Transformation rule: replace `_` with `-` on ingest.
-- Geometry centroid: GIS latitude/longitude → Maximo PLUSDCU latitude/longitude custom fields
-  (confirm column names from `Field_Config_Specs.md`)
-- CU Type code: GIS attribute `CU_TYPE` → Maximo `PLUSDCU.PLUSDCUTYPE` domain value (OH/UG/SS/DS/GS)
-- New GIS CU records → create PLUSDCU in DRAFT status; trigger CU Approval Workflow (RICE-W-001)
-
-**Maximo → GIS (outbound, event-driven):**
-- Trigger: PLUSDCU STATUS change to APPROVED
-- MBO Publish Channel: `PLUSDCU_PUB_CHANNEL` on PLUSDCU object SAVE
-- Processing Rule: filter on `STATUS = 'APPROVED'`
-- Outbound payload: PLUSDCUNUM, PLUSDCUTYPE, STATUS, CHANGEDATE, DESCRIPTION
-- GIS receiver updates feature class attribute `MAXIMO_STATUS` and `MAXIMO_APPROVED_DATE`
-
-### XSD Requirement
-Produce `MX_CU_GIS_MESSAGE.xsd` for the integration message payload covering both
-inbound (GIS → Maximo) and outbound (Maximo → GIS) directions.
-
-### Output Files
-- AI-Brain: `AI-Brain\agent-03-InMap\GIS_Field_Mapping.md`
-- Client (.xlsx): `Outputs\Agent3\Interface-Specs\MX_CU_GIS_FIELD_MAPPING-v1.0.xlsx`
-  - Worksheets: GIS→Maximo Inbound, Maximo→GIS Outbound, Transformation Rules, Key Matching
-- Client (.xsd): `Outputs\Agent3\Interface-Specs\MX_CU_GIS_MESSAGE.xsd`
-
----
-
-## US-03-002: ERP Cost Posting Interface Rules
-
-### Story Purpose
-Produce the ERP Cost Posting IDD: GL account derivation logic, WBS mapping, Capital vs O&M
-split, message format (IDoc/BAPI or REST — confirm OQ-010), and transformation rules.
-
-### Field Mapping Conventions
-
-**Maximo → ERP (outbound):**
-- Source object: WOCOSTDETAIL (join to WORKORDER)
-- Trigger: WORKORDER.STATUS changes to COMP
-- Key cost fields from WOCOSTDETAIL:
-  - WONUM, SITEID, ORGID, ITEMNUM, LINECOST, LINETYPE
-- CU-specific fields (confirm from `Field_Config_Specs.md`):
-  - PLUSDCUNUM — the CU code applied on this WO
-  - Capital/O&M flag — derive from output of RICE-E-003 (CU_CAPITAL_OAM_CLASS-v1.0.py)
-- GL account derivation logic:
-  - Capital WO + Capital CU → Capital GL account (WBS element)
-  - O&M WO + O&M CU → O&M GL account (cost centre)
-  - If classification is mixed, split proportionally by cost component
-
-**Cost Component → GL Mapping:**
-
-| LINETYPE | ERP Account Type | GL Account | Notes |
-|---|---|---|---|
-| MATERIAL | Direct Material | Cost centre debit | Item class determines account |
-| LABOUR | Direct Labour | Labour clearing account | Craft rate × hours |
-| TOOL | Tool/Plant | Tool account | Internal rate recovery |
-| EQUIPMENT | Equipment | Equipment clearing | Plant account |
-| CONTRACTOR | Contractor Labour | Sub-contract account | PO-linked |
-| OVERHEAD | Overhead/Burden | Overhead pool | RICE-E-002 output — FDD §5 (FR-011) |
-
-### Integration Assumption (OQ-010 pending)
-Document as ASSUMPTION-002 in IDD: ERP assumed to be SAP. Middleware assumed to be REST API
-(IBM API Connect or MuleSoft). IDoc format documented as fallback. Update when OQ-010 resolved.
-
-### XSD Requirement
-Produce `MX_CU_ERP_POSTING.xsd` for the ERP posting message payload.
-
-### Output Files
-- AI-Brain: `AI-Brain\agent-03-InMap\ERP_Field_Mapping.md`
-- Client (.xlsx): `Outputs\Agent3\Interface-Specs\MX_CU_ERP_FIELD_MAPPING-v1.0.xlsx`
-  - Worksheets: Maximo→ERP Field Mapping, GL Account Derivation, Cost Component Matrix, Assumptions
-- Client (.xsd): `Outputs\Agent3\Interface-Specs\MX_CU_ERP_POSTING.xsd`
-
----
-
-## US-03-003: OMS Work Request Interface Rules
-
-### Story Purpose
-Produce OMS → Maximo work request IDD: message flow, XSD schema, field mappings,
-OMS work code → CU type mapping table, error handling, outbound completion update spec.
-
-### Field Mapping Conventions
-
-**OMS → Maximo (inbound):**
-- Trigger: OMS work request status reaches DISPATCHED
-- OMS work request → create WORKORDER with WONUM prefix `OMS-` (e.g. OMS-000001)
-- OMS work code → CU type mapping table (defined in IDD Appendix)
-- WORKORDER fields to populate:
-  - WONUM: generated (OMS-prefix + sequence)
-  - DESCRIPTION: OMS work request description
-  - WORKTYPE: derived from OMS work type (corrective, preventive, etc.)
-  - SITEID: mapped from OMS location/depot code
-  - LOCATION: mapped from OMS asset location reference
-  - ASSETNUM: mapped from OMS asset number (1:1 if formats align)
-  - CU type hint: added to WO long description if OMS work code maps to a CU type
-
-**Maximo → OMS (outbound, completion update):**
-- Trigger: WORKORDER STATUS changes to COMP
-- Payload: WONUM, WOCOSTDETAIL summary (total cost, CU codes applied), ACTFINISH
-- OMS updates its work request to COMPLETED with Maximo cost reference
-
-### Integration Assumption (OQ-011 pending)
-Document as ASSUMPTION-003: OMS system assumed to expose REST API at a documented endpoint.
-Authentication assumed OAuth 2.0. Update when OQ-011 resolved.
-
-### XSD Requirement
-Produce `MX_CU_OMS_WORK_REQUEST.xsd` for the inbound OMS work request message.
-
-### Output Files
-- AI-Brain: contribution to `AI-Brain\agent-03-InMap\IDD_CU_Module_Integration.md` §6
-- Client (.xsd): `Outputs\Agent3\Interface-Specs\MX_CU_OMS_WORK_REQUEST.xsd`
-
----
-
-## US-03-004: Contractor Portal API Specification Rules
-
-### Story Purpose
-Generate REST API specification (OpenAPI 3.0) for the Maximo → Contractor Portal integration.
-Four endpoints: CU rate schedule, rate approval trigger, material/labour requirements query,
-CU specifications retrieval.
-
-### API Endpoint Conventions
-
-| Method | Path | Purpose | Maximo Source |
-|---|---|---|---|
-| GET | `/cu-rates` | Retrieve approved CU rate schedule | PLUSDCU (APPROVED) + PLUSDCUITEM |
-| POST | `/rate-approvals` | Trigger rate approval workflow | PLUSDCU STATUS → PENDING |
-| GET | `/work-orders/{wonum}/requirements` | Get material and labour requirements | WOMATL + WOTOOL + WOLABOR |
-| GET | `/cu-specs/{cunum}` | Get full CU specification | PLUSDCU + cost components |
-
-### MIF Service Configuration
-- Maximo Enterprise Service: `CONTRACTOR_PORTAL_ES` — processes inbound rate submissions
-- Maximo Publish Channel: `CONTRACTOR_PORTAL_PC` — pushes approved CU packages to portal nightly
-
-### Integration Assumption (OQ-012 pending)
-Document as ASSUMPTION-004: Contractor portal vendor assumed to consume OpenAPI 3.0 REST API.
-Authentication assumed API key (portal side) + Maximo integration user (read-only). Update when OQ-012 resolved.
-
-### Output Files
-- AI-Brain: `AI-Brain\agent-03-InMap\Contractor_Portal_API_Spec.md` (OpenAPI 3.0 in YAML format)
-- Client (.docx): included in IDD rendered document §7
-
----
-
-## US-03-005: MIF Channel & Service Configuration Rules
-
-### MIF Configuration Standards
-
-**Object Structures:**
-- Follow existing Maximo MIF naming conventions
-- Prefix all custom object structures with `PLUSDCU`
-- Document in TDD Appendix D (Integration Config)
-
-**Publish Channels:**
-
-| Channel Name | Object Structure | Trigger | Processing Rule |
-|---|---|---|---|
-| `PLUSDCU_GIS_PUB` | `PLUSDCUSYNC` | PLUSDCU SAVE | STATUS = 'APPROVED' |
-| `CONTRACTOR_PORTAL_PC` | `PLUSDCUPKG` | Scheduled nightly | STATUS = 'APPROVED' |
-
-**Enterprise Services:**
-
-| Service Name | Object Structure | Protocol | Inbound Handler |
-|---|---|---|---|
-| `GIS_INBOUND_ES` | `PLUSDCUINB` | HTTP/REST | `plusdcu.integration.GISInboundHandler` |
-| `OMS_WORKORDER_ES` | `OMSWKREQUEST` | HTTP/REST | `integration.oms.OMSWorkRequestHandler` |
-| `ERP_POSTING_ES` | `ERPPOSTING` | HTTP/REST (or IDoc) | `integration.erp.ERPCostPostHandler` |
-
-**Processing Rules:**
-- Filter on STATUS for publish channels (only push APPROVED records)
-- Dead-letter queue: all failed records go to MAXEXPORTLOG with retry count
-- Retry: 3 attempts, exponential back-off (30s → 2min → 10min), then dead-letter
-
-**Load File Format:** XML (Maximo Integration Framework DBC import format)
-**Location:** `Outputs\Agent3\Scripts\MIF-Config\`
-
-### Output Files
-- `MX_CU_MIF_GIS_PUB_CHANNEL.xml`
-- `MX_CU_MIF_GIS_ENT_SERVICE.xml`
-- `MX_CU_MIF_ERP_ENT_SERVICE.xml`
-- `MX_CU_MIF_OMS_ENT_SERVICE.xml`
-- `MX_CU_MIF_PORTAL_PUB_CHANNEL.xml`
-
----
-
-## US-03-006: Integration Test Data Rules
-
-### Test Data Standards
-- Produce one worksheet per interface in `MX_CU_INTEGRATION_TEST_DATA-v1.0.xlsx`
-- Cover: happy path, boundary conditions (max field lengths, zero costs), error scenarios
-- All test data must be traceable to a test case ID (TC-03-xxx) for EPIC-06 linkage
-- Field values must be valid against Maximo domain values defined in `Field_Config_Specs.md`
-
-### Test Scenario Coverage
-
-| Interface | Happy Path Scenarios | Boundary Scenarios | Error Scenarios |
-|---|---|---|---|
-| GIS → Maximo | New CU ingest (OH/UG/SS/DS) | Max CU description (200 chars) | Duplicate PLUSDCUNUM |
-| Maximo → GIS | APPROVED status push | Null geometry centroid | GIS API timeout |
-| ERP Cost Posting | Capital WO close | Zero-cost line | Invalid GL account |
-| OMS Work Request | Dispatched WR creates WO | Invalid location code | OMS auth failure |
-| Contractor Portal | Nightly CU rate publish | No approved CUs | Portal API unavailable |
-
-### Worksheet Structure (each interface sheet)
-Columns: TC-ID | Scenario | Test Data (all fields) | Expected Result | Pass/Fail
-
-### Output File
-- `Outputs\Test-Data\MX_CU_INTEGRATION_TEST_DATA-v1.0.xlsx`
-- Worksheets: GIS-Inbound, GIS-Outbound, ERP-Posting, OMS-Inbound, OMS-Outbound, Portal-Outbound, Summary
-
----
-
-## US-03-007: Error Handling Matrix Rules
-
-### Error Matrix Structure (per interface)
-Columns: Interface | Error Code | Description | Cause | Retry Attempts | Back-off | Dead-Letter Action | Alert Recipient | BMXAA Code (if applicable)
-
-### BMXAA Error Code Mapping
-
-| BMXAA Code | Meaning | Applicable Interfaces |
-|---|---|---|
-| BMXAA4210E | Object not found | GIS → Maximo (unknown PLUSDCUNUM) |
-| BMXAA6830E | Duplicate record | GIS → Maximo (CU already exists) |
-| BMXAA7702E | Validation error | ERP posting (invalid cost amount) |
-| BMXAA0022E | Required field missing | OMS → Maximo (no SITEID) |
-
-### Retry Policy
-- Max retries: 3
-- Back-off: 30s → 2min → 10min (exponential)
-- After 3 failures: insert record into MAXEXPORTLOG; send email alert
-
-### Dead-Letter Queue
-- All dead-lettered records stored in MAXEXPORTLOG with EXCEPTIONID
-- Daily exception report generated by RICE-R-001 (CU Cost Summary) sub-query
-- Manual re-trigger available via MIF Re-Submit function in Maximo admin console
-
-### Output File
-- `Outputs\Agent3\Interface-Specs\MX_CU_ERROR_HANDLING_MATRIX-v1.0.xlsx`
-- Worksheets: GIS, ERP, OMS, Contractor Portal, Summary, BMXAA Reference
-
----
-
-## Artefact Naming Convention
-
-| Artefact | Naming Pattern | Location |
-|---|---|---|
-| IDD (main doc) | `MX_CU_IDD-v{n}.docx` | `Outputs\Agent3\Interface-Specs\` |
-| Field mapping xlsx | `MX_CU_{SYS}_FIELD_MAPPING-v{n}.xlsx` | `Outputs\Agent3\Interface-Specs\` |
-| Error handling matrix | `MX_CU_ERROR_HANDLING_MATRIX-v{n}.xlsx` | `Outputs\Agent3\Interface-Specs\` |
-| Test data | `MX_CU_INTEGRATION_TEST_DATA-v{n}.xlsx` | `Outputs\Agent3\Test-Data\` |
-| MIF load files | `MX_CU_MIF_{name}.xml` | `Outputs\Agent3\Scripts\MIF-Config\` |
-| XSD schemas | `MX_CU_{name}.xsd` | `Outputs\Agent3\Interface-Specs\` |
-
----
-
-## Source Traceability Rule
-
-Every interface field mapping must cite the specific FR ID from the FDD and TDD:
-
-| Wrong | Right |
+## 1. MIF Architecture Overview
+
+Maximo Integration Framework (MIF) enables bi-directional data exchange between Maximo and
+external systems via XML, flat files, interface tables, Web Services, JMS queues, and REST.
+
+### Integration Building Blocks
+```
+Object Structure
+      ↓
+Enterprise Service (inbound) ←── External System ──→ Publish Channel (outbound)
+      ↓                                                       ↓
+  Inbound Queue                                         Outbound Queue
+      ↓                                                       ↓
+  MBO / Maximo DB                                      End Point (HTTP / JMS / File)
+```
+
+| Component | Purpose |
 |---|---|
-| `FDD §6` | `FDD §6 (FR-008) — Interface Requirements` |
-| `TDD §9` | `TDD §9 — Integration Summary, RICE-I-001` |
-| `Interface Specs §3` | `Interface Specs §3 — RICE-I-001, GIS ↔ Maximo CU Sync` |
+| **Object Structure** | Defines the data shape — one or more MBOs hierarchically. Source for all integration |
+| **Enterprise Service** | Inbound pipeline — receives data from external system into Maximo |
+| **Publish Channel** | Outbound pipeline — sends data from Maximo to external system asynchronously |
+| **External System** | Represents the external application — owns services and channels |
+| **End Point** | Where outbound messages are delivered (HTTP, JMS, File, Email, etc.) |
+| **Processing Rules** | Conditional logic applied during message processing |
+| **Message Tracking** | Stores integration message payloads for audit and reprocessing |
 
 ---
 
-## Handoff to Agent 4 (RICEFW)
+## 2. Object Structures
 
-Upon completion of all US-03-xxx stories, produce `agents\agent-03-InMap\handoff-schema.json`
-with status and file size for every produced artefact. Mark EPIC-03 as complete.
+`Integration → Object Structures`
 
-EPIC-04 (RICEFW Build Acceleration Agent) consumes:
-- IDD for all 4 interface build specifications
-- XSD schemas for interface build
-- MIF configuration load files (EPIC-04 executes the load)
-- Integration test data sets (EPIC-06 also consumes)
-- Error handling matrix (for build and test coverage)
+### Key Concepts
+- An Object Structure defines the message schema for one integration
+- Hierarchical: one root object + child objects (e.g., WORKORDER + WOACTIVITY + WOMATL)
+- Source for both inbound (Enterprise Service) and outbound (Publish Channel)
+- OOTB Object Structures: MXWO, MXASSET, MXPO, MXPERSON, MXINVENTORY, MXLOCATION, etc.
+- Custom Object Structures: prefix with client code (e.g., `PLUSDCU`, `CUSTMO`)
+
+### Creating a Custom Object Structure
+1. Integration → Object Structures → New
+2. Name (e.g., `CUSTWOEXT`), Object Type: MXOBJECT
+3. Source Objects tab: Add root object (e.g., WORKORDER), add child objects with relationship
+4. Fields tab: select which attributes to include (default: all — trim for performance)
+5. Save and test with a sample export
+
+### Object Structure Best Practices (IBM)
+- Only include fields the integration actually needs — fewer fields = faster processing
+- Define a dedicated OS per integration — avoid reusing one OS for multiple systems
+- Always set a primary key field (usually the OOTB key: WONUM, ASSETNUM, etc.)
+- Non-persistent (virtual) attributes can be added but require custom processing
+- Test with Message Tracking before connecting to external system
+
+### Key OOTB Object Structures
+| Object Structure | Root Object | Common Use |
+|---|---|---|
+| MXWO | WORKORDER | Work Order integration |
+| MXASSET | ASSET | Asset master sync |
+| MXPO | PO | PO to/from ERP |
+| MXPERSON | PERSON | User/person directory sync |
+| MXINVENTORY | INVENTORY | Inventory sync |
+| MXLOCATION | LOCATIONS | Location master sync |
+| MXSR | SR | Service Request integration |
+| MXJOBPLAN | JOBPLAN | Job Plan sync |
 
 ---
 
-*MX AI Suite | InMap Agent Skill | EPIC-03*
+## 3. Enterprise Services (Inbound)
+
+### Processing Flow
+```
+External System → HTTP POST / JMS / File → Inbound Queue → Router → Enterprise Service → MBOs → DB
+```
+
+### Creating an Enterprise Service
+1. Integration → Enterprise Services → New
+2. Name, Object Structure, Use With: External System or Direct
+3. Set Processing Class (default: `psdi.iface.mic.MaximoObjectStructureService`)
+4. Activate the service on the External System
+
+### Inbound Message Format
+- Default: XML matching the Object Structure schema
+- Maximo parses the XML and applies it to the MBOs
+- Action attribute in XML: `<WORKORDER action="Add">` / `"Change"` / `"Delete"` / `"AddChange"` / `"Sync"`
+
+### Inbound Processing Rules
+- Filter records before they reach the MBO layer
+- Example: only process records where `SITEID = 'BEDFORD'`
+- Applied as conditions on the Enterprise Service
+
+### Error Handling
+- Failed messages stored in `MAXINTMSGTRK` with error detail
+- Reprocess via: Integration → Message Tracking → select failed message → Re-submit
+- Dead-letter: messages that fail after retries marked with `TRANSACTIONID` for manual review
+
+---
+
+## 4. Publish Channels (Outbound)
+
+### Processing Flow
+```
+MBO Save/Status Change → Event Listener → Outbound Queue → Router → Publish Channel → End Point → External System
+```
+
+### Creating a Publish Channel
+1. Integration → Publish Channels → New
+2. Name, Object Structure, Publish JSON or XML
+3. Set End Point (HTTP / JMS / File / Email)
+4. Add Processing Rules (optional — filter which records to publish)
+5. Enable the channel on the External System
+
+### Trigger Types
+| Trigger | Description |
+|---|---|
+| Event-driven (SAVE) | Fires when MBO is saved — most common |
+| Event-driven (STATUS CHANGE) | Fires on specific status transition |
+| Invocation Channel | Manually invoked (not automatic) |
+| Cron-driven export | Scheduled batch export (use MAXEXPORTJOB cron) |
+
+### Processing Rules (Outbound Filter)
+```xml
+<!-- Only publish APPROVED CU records -->
+<condition field="STATUS" operator="=" value="APPROVED" />
+```
+
+### End Point Types
+| Type | Protocol | Use |
+|---|---|---|
+| HTTP | REST / SOAP | API-based external systems |
+| JMS | JMS Queue / Topic | Middleware (IBM MQ, ActiveMQ) |
+| FILE | File system | File-based batch exchange |
+| EMAIL | SMTP | Email notifications with data payload |
+| WEBSERVICE | SOAP/WSDL | Legacy SOAP services |
+
+### Outbound Best Practices (IBM)
+- Use Processing Rules to filter at the MIF layer — don't rely on the external system to ignore records
+- Set retry count and interval on the End Point (retry 3 times, 30s / 2min / 10min)
+- Monitor outbound queue depth — large backlogs indicate endpoint availability issues
+- Use Invocation Channel for synchronous request-reply patterns
+- Always test End Point connectivity before go-live
+
+---
+
+## 5. OSLC REST API (MAS 8 / MAS 9 Primary Integration Pattern)
+
+### Base URL
+```
+https://<host>/maximo/oslc/os/<ObjectStructure>
+```
+
+### Authentication
+| Method | Header | When to use |
+|---|---|---|
+| API Key | `apikey: <key>` | MAS 8/9 preferred |
+| MAXAUTH | `MAXAUTH: base64(user:pass)` | Maximo 7.6 (NO "Basic " prefix) |
+| OAuth 2.0 | `Authorization: Bearer <token>` | MAS SSO environments |
+
+### Key Operations
+| Operation | HTTP Method | URL pattern |
+|---|---|---|
+| Query (list) | GET | `/oslc/os/MXWO?oslc.where=STATUS="WAPPR"` |
+| Get by ID | GET | `/oslc/os/MXWO/12345` |
+| Create | POST | `/oslc/os/MXWO` with JSON body |
+| Update | PATCH | `/oslc/os/MXWO/12345` with JSON body |
+| Delete | DELETE | `/oslc/os/MXWO/12345` |
+
+### Query Parameters
+| Parameter | Purpose | Example |
+|---|---|---|
+| `oslc.where` | Filter (SQL-like) | `STATUS="APPR" and SITEID="BEDFORD"` |
+| `oslc.select` | Field projection | `WONUM,DESCRIPTION,STATUS` |
+| `oslc.pageSize` | Page size (default 50, max ~1000) | `oslc.pageSize=200` |
+| `oslc.orderBy` | Sort | `+WONUM` (asc) / `-CHANGEDATE` (desc) |
+| `oslc.searchTerms` | Full-text search | `"pump failure"` |
+
+### Pagination Pattern
+```python
+import requests, json
+
+url = "https://host/maximo/oslc/os/MXWO"
+params = {"oslc.where": "STATUS=\"WAPPR\"", "oslc.pageSize": 100}
+headers = {"apikey": "YOUR_KEY", "Accept": "application/json"}
+
+all_records = []
+while url:
+    resp = requests.get(url, params=params, headers=headers, verify=False)
+    data = resp.json()
+    all_records.extend(data.get("member", []))
+    next_page = data.get("responseInfo", {}).get("nextPage", {})
+    url = next_page.get("href") if next_page else None
+    params = {}  # params are in the next page href
+```
+
+### OSLC Best Practices (IBM)
+- Always use `oslc.select` to limit returned fields — reduces payload size significantly
+- Always paginate — never assume all records fit in one page
+- Use `oslc.where` with indexed fields for performance
+- `MAXAUTH` header: do NOT add "Basic " prefix — it will fail
+- For bulk creates/updates, use Interface Tables or MIF Enterprise Services — OSLC is not designed for bulk
+- Rate limiting: MAS applies throttling — implement retry with exponential backoff
+
+---
+
+## 6. Integration Message Tracking
+
+`Integration → Message Tracking`
+
+### Key Fields in MAXINTMSGTRK
+| Field | Description |
+|---|---|
+| TRANSACTIONID | Unique message identifier |
+| IFACENAME | Enterprise Service or Publish Channel name |
+| EXTSYSNAME | External System |
+| DIRECTION | INBOUND / OUTBOUND |
+| STATUS | QUEUED / PROCESSING / COMPLETED / ERROR |
+| ERRORDESC | Error description on failure |
+| IFACETBNAME | Interface table name (if used) |
+
+### Reprocessing Failed Messages
+1. Message Tracking → search for failed messages (STATUS = ERROR)
+2. Select message → View payload to diagnose
+3. If fixable without data change: Re-submit
+4. If data needs correction: fix in source system, resubmit corrected payload
+5. For systematic failures: check End Point connectivity, MBO validation rules
+
+---
+
+## 7. Integration Design Document (Build Integration) Structure
+
+Every integration design must include these sections:
+
+| Section | Content |
+|---|---|
+| 1. Overview | Interface name, direction, trigger, frequency, systems involved |
+| 2. Object Structure | Fields included, hierarchy, custom fields added |
+| 3. Field Mapping Table | Source field → Target field, transformation rule, mandatory flag |
+| 4. Processing Rules | Filter conditions applied at MIF layer |
+| 5. End Point / Channel Config | Protocol, URL/queue, auth, retry policy |
+| 6. Error Handling | Error codes, retry count, dead-letter action, alert recipients |
+| 7. Test Scenarios | Happy path, boundary, error scenarios |
+| 8. Assumptions | Unresolved items flagged as assumptions |
+
+### Field Mapping Table Standard Columns
+| Source System | Source Field | Transformation | Target Object | Target Field | Mandatory | Notes |
+|---|---|---|---|---|---|---|
+| SAP | BUKRS | Direct | WORKORDER | ORGID | Yes | Company code → Org ID |
+
+---
+
+## 8. Common Integration Patterns
+
+### Pattern 1: Event-Driven Outbound (Status Change)
+Use case: Notify external system when Maximo record reaches a specific status.
+```
+WO STATUS → COMP
+  → MXWO Publish Channel (filter: STATUS = "COMP")
+  → HTTP End Point → External System
+```
+
+### Pattern 2: Scheduled Batch Inbound
+Use case: Nightly load of master data from external system.
+```
+External System → Generate XML/JSON file at 02:00
+  → MAILROUTER or FILE End Point picks up
+  → Enterprise Service processes
+  → Maximo MBOs updated
+```
+
+### Pattern 3: Request-Reply (Synchronous)
+Use case: Real-time lookup from Maximo UI to external system.
+```
+User action in Maximo UI
+  → Automation Script (Action launch point)
+    → Python adapter calls external REST API
+      → Response returned to script
+        → Script updates Maximo field
+```
+
+### Pattern 4: Interface Tables (Bulk Load)
+Use case: Large data migration or initial load.
+```
+External system populates MAXIFACEIN table
+  → MXIFACEIN cron task processes rows
+  → Enterprise Service applied per row
+  → MBOs created/updated in batch
+```
+
+---
+
+*MX AI Suite | Integration Skill v2.0 | IBM Maximo MAS 8/9 | Last updated: 2026-09-28*

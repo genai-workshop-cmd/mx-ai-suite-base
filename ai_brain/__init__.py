@@ -5,26 +5,30 @@ from dataclasses import dataclass
 
 from core.config import SuiteConfig
 
+from .feedback import FeedbackStore
 from .index import VectorIndex
 from .search import BrainSearch, SearchQuery
 from .store import BrainStore, WriteProposal
 
-__all__ = ["Brain", "BrainStore", "BrainSearch", "SearchQuery", "VectorIndex", "WriteProposal", "brain"]
+__all__ = ["Brain", "BrainStore", "BrainSearch", "FeedbackStore", "SearchQuery", "VectorIndex", "WriteProposal", "brain"]
 
 
 @dataclass
 class Brain:
-    """Store + index + search, wired together."""
+    """Store + index + search + feedback, wired together."""
 
     store: BrainStore
     index: VectorIndex
     search: BrainSearch
+    feedback: FeedbackStore
 
     @classmethod
     def build(cls, cfg: SuiteConfig) -> "Brain":
         store = BrainStore(cfg.brain)
         index = VectorIndex(cfg.brain)
-        return cls(store=store, index=index, search=BrainSearch(cfg.brain, store, index))
+        skills_dir = cfg.skills_dir
+        feedback = FeedbackStore(skills_dir=skills_dir, audit_log=cfg.brain.feedback_log)
+        return cls(store=store, index=index, search=BrainSearch(cfg.brain, store, index), feedback=feedback)
 
     def status(self) -> dict:
         stats = self.store.stats()
