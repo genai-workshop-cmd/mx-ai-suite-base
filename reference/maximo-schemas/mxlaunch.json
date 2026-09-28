@@ -1,0 +1,140 @@
+{
+  "resource": "MXLAUNCH",
+  "description": "MAXLAUNCHENTRY",
+  "pk": [
+    "launchentryname"
+  ],
+  "title": "MAXLAUNCHENTRY",
+  "type": "object",
+  "$ref": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxlaunch",
+  "uniqueid": "maxlaunchentryid",
+  "properties": {
+    "localref": {
+      "type": "string"
+    },
+    "maxlaunchentryid": {
+      "searchType": "EXACT",
+      "maximum": 2147483647.0,
+      "subType": "BIGINT",
+      "title": "Unique Id",
+      "persistent": true,
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "uniqueid": true,
+      "remarks": "Unique Id",
+      "maxLength": 11
+    },
+    "changeby": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Change By",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Change By",
+      "maxLength": 100
+    },
+    "ompproductname": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "OMP Product Name",
+      "persistent": true,
+      "type": "string",
+      "remarks": "OMP Productname",
+      "maxLength": 50
+    },
+    "changedate": {
+      "searchType": "EXACT",
+      "subType": "DATETIME",
+      "title": "Change Date",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Change Date"
+    },
+    "_rowstamp": {
+      "type": "string"
+    },
+    "ompversion": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "OMP Version",
+      "persistent": true,
+      "type": "string",
+      "remarks": "OMP Version",
+      "maxLength": 20
+    },
+    "consoleurl": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Console URL",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Console URL",
+      "maxLength": 2083
+    },
+    "portnumber": {
+      "searchType": "EXACT",
+      "maximum": 2147483647.0,
+      "subType": "INTEGER",
+      "title": "Port Number",
+      "persistent": true,
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "remarks": "Port Number",
+      "maxLength": 11
+    },
+    "_imagelibref": {
+      "type": "string"
+    },
+    "maxlecontext": {
+      "objectName": "MAXLECONTEXT",
+      "type": "array",
+      "items": {
+        "definition": {
+          "subSchema": {
+            "$ref": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxlaunch/maxlecontext"
+          }
+        },
+        "type": "object"
+      },
+      "cardinality": "UNDEFINED",
+      "relation": "MAXLECONTEXT"
+    },
+    "displayname": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Display Name",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Launch Entry Display Name",
+      "maxLength": 100
+    },
+    "targetwindow": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Target Browser Window",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Target Browser Window",
+      "maxLength": 25
+    },
+    "href": {
+      "type": "string"
+    },
+    "_id": {
+      "type": "string"
+    },
+    "launchentryname": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Launch Entry Name",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Launch Entry",
+      "maxLength": 32
+    }
+  },
+  "required": [
+    "consoleurl",
+    "launchentryname"
+  ]
+}

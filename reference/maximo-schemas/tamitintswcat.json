@@ -1,0 +1,128 @@
+{
+  "resource": "TAMITINTSWCAT",
+  "description": "TLOAMSWCATALOG",
+  "pk": [
+    "tloamswcatalogid"
+  ],
+  "title": "TLOAMSWCATALOG",
+  "type": "object",
+  "$ref": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/tamitintswcat",
+  "uniqueid": "tloamswcatalogid",
+  "properties": {
+    "localref": {
+      "type": "string"
+    },
+    "createddate": {
+      "searchType": "EXACT",
+      "subType": "DATETIME",
+      "title": "Created Date",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Created Date"
+    },
+    "description": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Description",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Description",
+      "maxLength": 100
+    },
+    "tloamswcatalogid": {
+      "searchType": "EXACT",
+      "maximum": 2147483647.0,
+      "subType": "BIGINT",
+      "title": "Unique Id",
+      "persistent": true,
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "uniqueid": true,
+      "remarks": "Unique Id",
+      "maxLength": 11
+    },
+    "schemaversion": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Schema Version",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Schema Version",
+      "maxLength": 32
+    },
+    "lastmodification": {
+      "searchType": "EXACT",
+      "subType": "DATETIME",
+      "title": "Last Modification",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Last Modification timestamp"
+    },
+    "version": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Version",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Version",
+      "maxLength": 32
+    },
+    "contactname": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Contact Name",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Contact Name",
+      "maxLength": 256
+    },
+    "_rowstamp": {
+      "type": "string"
+    },
+    "readonly": {
+      "default": false,
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "Read Only Catalog",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "Read Only Catalog"
+    },
+    "_imagelibref": {
+      "type": "string"
+    },
+    "name": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Catalog Name",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Software catalog name",
+      "maxLength": 256
+    },
+    "href": {
+      "type": "string"
+    },
+    "_id": {
+      "type": "string"
+    },
+    "dataversion": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Data Version",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Data Version from SwKBT",
+      "maxLength": 64
+    },
+    "uniqueid": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "ID",
+      "persistent": true,
+      "type": "string",
+      "remarks": "ID",
+      "maxLength": 64
+    }
+  }
+}

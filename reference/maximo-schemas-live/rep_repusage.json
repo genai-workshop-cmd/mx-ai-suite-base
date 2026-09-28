@@ -1,0 +1,432 @@
+{
+ "resource": "REP_REPUSAGE",
+ "description": "Report Usage",
+ "pk": [
+  "appname",
+  "reportname"
+ ],
+ "title": "REPORT",
+ "type": "object",
+ "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/rep_repusage",
+ "uniqueid": "reportid",
+ "properties": {
+  "dploc": {
+   "default": "!NONE!",
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Print Location",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Print Location",
+   "maxLength": 10
+  },
+  "localref": {
+   "type": "string"
+  },
+  "packageloc": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Package Location",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Location of Cognos Package",
+   "maxLength": 250
+  },
+  "usewherewithparam": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Use Both Parameter Options",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Runs reports with both the application query and user-specified parameters."
+  },
+  "destinationfolder": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Destination Folder",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Where the reports/queries should generate files",
+   "maxLength": 50
+  },
+  "dp": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Print",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Print"
+  },
+  "userid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Created By",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The User ID of the user who created this report. Only populated for Business Reports.",
+   "maxLength": 100
+  },
+  "qlloc_description": {
+   "type": "string"
+  },
+  "_rowstamp": {
+   "type": "string"
+  },
+  "pad": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Print with Attachments",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Print with Attachments"
+  },
+  "scheduleonly": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Schedule Only",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Indicates that the report may only run during appointed times"
+  },
+  "appname": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Application",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Name of the application for the report",
+   "maxLength": 40
+  },
+  "cognosalias": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Cognos base table name alias",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Cognos base table name alias.",
+   "maxLength": 100
+  },
+  "reportname": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Report File Name",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Report File Name",
+   "maxLength": 50
+  },
+  "attacheddoc": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Print with Attached Docs",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Print this report with attached documents?"
+  },
+  "toolbarlocation_description": {
+   "type": "string"
+  },
+  "href": {
+   "type": "string",
+   "title": "REPORT object reference"
+  },
+  "basetablename": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Base Table",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Base table reference for lookups",
+   "maxLength": 30
+  },
+  "ql": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Browser View",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Browser View"
+  },
+  "lastrundate": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Last Run Date",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Date report was last run"
+  },
+  "toolbarsequence": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "INTEGER",
+   "title": "Toolbar Sequence",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "Order of toolbar quicklink buttons",
+   "maxLength": 11
+  },
+  "reportnum": {
+   "default": "&AUTOKEY&",
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "INTEGER",
+   "title": "Report Number",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "Report Number",
+   "maxLength": 11
+  },
+  "package": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Package Name",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Cognos Package Name",
+   "maxLength": 50
+  },
+  "record_descriptor": {
+   "type": "string",
+   "title": "Record/Object Descriptor"
+  },
+  "priority": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "INTEGER",
+   "title": "Priority",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "Handles Printing Priority",
+   "maxLength": 11
+  },
+  "qlloc": {
+   "default": "!NONE!",
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Browser View Location",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Browser View Location",
+   "maxLength": 10
+  },
+  "runtype_description": {
+   "type": "string"
+  },
+  "toolbaricon": {
+   "default": "!NONE!",
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Toolbar Image",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Which toolbar image to use",
+   "maxLength": 50
+  },
+  "toolbarlocation": {
+   "default": "!NONE!",
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Toolbar Location",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Display this in toolbar?  If so, when?",
+   "maxLength": 10
+  },
+  "recordlimit": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "INTEGER",
+   "title": "Max Record Limit",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "The maximum number of application records that can be selected for reports.",
+   "maxLength": 11
+  },
+  "runtype": {
+   "default": "!BIRT!",
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Report Type",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Type of report to run",
+   "maxLength": 15
+  },
+  "padloc_description": {
+   "type": "string"
+  },
+  "_id": {
+   "type": "string"
+  },
+  "detail": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Limit Records",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Limits the number of application records that can be selected for the report."
+  },
+  "reportfolder": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Report Folder",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Report Folder Name",
+   "maxLength": 250
+  },
+  "lastrunby": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Last Run By",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Report was last run by this user",
+   "maxLength": 100
+  },
+  "lastrunduration": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Last Run Duration",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The last run duration",
+   "maxLength": 12
+  },
+  "usecogprompt": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Use Cognos Prompt Page",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Flag used for setting run.prompt=true"
+  },
+  "reportid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Unique Id",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "uniqueid": true,
+   "remarks": "Unique Id",
+   "maxLength": 11
+  },
+  "dploc_description": {
+   "type": "string"
+  },
+  "description": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Description",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Report Description",
+   "maxLength": 254
+  },
+  "toolbaricon_description": {
+   "type": "string"
+  },
+  "paramcolumns": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "INTEGER",
+   "title": "Number of Request Page Columns",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "The number of columns used to display parameters on the report request page.",
+   "maxLength": 11
+  },
+  "norequestpage": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "No Request Page",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Don't display this report in report list dialog"
+  },
+  "_imagelibref": {
+   "type": "string"
+  },
+  "editenabled": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Edit Enabled",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Is the ad hoc report enabled for editing?"
+  },
+  "iscogdashboard": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Is Dashboard",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Flag used for setting cognos perspetive dashboard"
+  },
+  "padloc": {
+   "default": "!NONE!",
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Print with Attachments Location",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Print with Attachments Location",
+   "maxLength": 10
+  },
+  "displayorder": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "INTEGER",
+   "title": "Display Order",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "The sequence number by which reports are sorted if the value exists for the report",
+   "maxLength": 11
+  },
+  "reportusagelog": {
+   "objectName": "REPORTUSAGELOG",
+   "type": "array",
+   "items": {
+    "definition": {
+     "subSchema": {
+      "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/rep_repusage/reportusagelog"
+     }
+    },
+    "type": "object"
+   },
+   "cardinality": "MULTIPLE",
+   "relation": "REPORTUSAGELOG"
+  }
+ },
+ "required": [
+  "appname",
+  "reportname"
+ ]
+}

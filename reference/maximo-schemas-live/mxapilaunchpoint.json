@@ -1,0 +1,189 @@
+{
+ "resource": "MXAPILAUNCHPOINT",
+ "description": "Maximo API for Script Launch Point",
+ "pk": [
+  "launchpointname",
+  "autoscript"
+ ],
+ "title": "SCRIPTLAUNCHPOINT",
+ "type": "object",
+ "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/mxapilaunchpoint",
+ "uniqueid": "scriptlaunchpointid",
+ "properties": {
+  "add": {
+   "default": false,
+   "searchType": "NONE",
+   "subType": "YORN",
+   "title": "Add",
+   "type": "boolean",
+   "remarks": "If selected, the script is activated by the add event. The launch point must have at least one activation event, and you can select multiple events."
+  },
+  "launchpointvars": {
+   "objectName": "LAUNCHPOINTVARS",
+   "type": "array",
+   "items": {
+    "definition": {
+     "subSchema": {
+      "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/mxapilaunchpoint/launchpointvars"
+     }
+    },
+    "type": "object"
+   },
+   "cardinality": "",
+   "relation": "LAUNCHPOINTVARS"
+  },
+  "launchpointtype_description": {
+   "type": "string"
+  },
+  "localref": {
+   "type": "string"
+  },
+  "autoscript": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Script",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Name of the script",
+   "maxLength": 100
+  },
+  "objectname": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Object",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The object that launches the script.",
+   "maxLength": 30
+  },
+  "active": {
+   "default": true,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Active",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Launchpoint is active"
+  },
+  "description": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Description",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Description of the launch point.",
+   "maxLength": 100
+  },
+  "update": {
+   "default": false,
+   "searchType": "NONE",
+   "subType": "YORN",
+   "title": "Update",
+   "type": "boolean",
+   "remarks": "If selected, the script is activated by the update event. The launch point must have at least one activation event, and you can select multiple events."
+  },
+  "record_descriptor": {
+   "type": "string",
+   "title": "Record/Object Descriptor"
+  },
+  "attributename": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Attribute",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Specify the attribute associated with the launch point.",
+   "maxLength": 50
+  },
+  "scriptlaunchpointid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Unique Identifier",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "uniqueid": true,
+   "remarks": "Unique Identifier for SCRIPTLAUNCHPOINT",
+   "maxLength": 11
+  },
+  "launchpointname": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Launch Point",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Name of the launch point.",
+   "maxLength": 30
+  },
+  "actionname": {
+   "searchType": "NONE",
+   "subType": "UPPER",
+   "title": "Action",
+   "type": "string",
+   "remarks": "The action takes its name from the launch point, or you can modify the action name with the name of an existing action. When you create the script, a new action is saved in the database, and you can configure the action in the Actions application.",
+   "maxLength": 30
+  },
+  "delete": {
+   "default": false,
+   "searchType": "NONE",
+   "subType": "YORN",
+   "title": "Delete",
+   "type": "boolean",
+   "remarks": "If selected, the script is activated by the delete event. The launch point must have at least one activation event, and you can select multiple events."
+  },
+  "objectevent": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "INTEGER",
+   "title": "Event",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "Specify the event associated with the launch point",
+   "maxLength": 11
+  },
+  "launchpointtype": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Launch Point Type",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Specifies the type of launch point",
+   "maxLength": 30
+  },
+  "_rowstamp": {
+   "type": "string"
+  },
+  "condition": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Object Event Condition",
+   "persistent": true,
+   "type": "string",
+   "remarks": "A filter that identifies the set of records for the business object that is targeted by this script. The filter is expressed in the form of an SQL WHERE clause. You can enter this condition manually, or click the Detail Menu button to use the SQL Expression Builder.",
+   "maxLength": 2000
+  },
+  "_imagelibref": {
+   "type": "string"
+  },
+  "href": {
+   "type": "string",
+   "title": "SCRIPTLAUNCHPOINT object reference"
+  },
+  "_id": {
+   "type": "string"
+  }
+ },
+ "required": [
+  "add",
+  "autoscript",
+  "delete",
+  "launchpointname",
+  "launchpointtype",
+  "update"
+ ]
+}

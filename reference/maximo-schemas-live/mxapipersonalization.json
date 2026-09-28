@@ -1,0 +1,59 @@
+{
+ "resource": "MXAPIPERSONALIZATION",
+ "description": "Maximo table for user specific personalization",
+ "pk": [
+  "userid"
+ ],
+ "title": "MAXUSER",
+ "type": "object",
+ "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/mxapipersonalization",
+ "uniqueid": "maxuserid",
+ "properties": {
+  "_rowstamp": {
+   "type": "string"
+  },
+  "localref": {
+   "type": "string"
+  },
+  "focusednav": {
+   "objectName": "FOCUSEDNAV",
+   "type": "array",
+   "items": {
+    "definition": {
+     "subSchema": {
+      "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/mxapipersonalization/focusednav"
+     }
+    },
+    "type": "object"
+   },
+   "cardinality": "",
+   "relation": "FOCUSEDNAV"
+  },
+  "_imagelibref": {
+   "type": "string"
+  },
+  "href": {
+   "type": "string",
+   "title": "MAXUSER object reference"
+  },
+  "record_descriptor": {
+   "type": "string",
+   "title": "Record/Object Descriptor"
+  },
+  "_id": {
+   "type": "string"
+  },
+  "userid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "User ID",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Identifies the user. The name or value must be unique for all User records. A Maximo user must be associated with a person record in the People application. If you enter a user name for which no person record exists, Maximo lets you create a person record with the same name when you create the user record. If you choose not to create a person record with the same name as the user name, you make the association with a person in the Person field.",
+   "maxLength": 100
+  }
+ },
+ "required": [
+  "userid"
+ ]
+}

@@ -1,0 +1,102 @@
+{
+  "resource": "MXAPIMEASUREUNIT",
+  "description": "MEASUREUNIT",
+  "pk": [
+    "measureunitid",
+    "siteid",
+    "orgid"
+  ],
+  "title": "MEASUREUNIT",
+  "type": "object",
+  "$ref": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapimeasureunit",
+  "uniqueid": "measureunituid",
+  "properties": {
+    "_rowstamp": {
+      "type": "string"
+    },
+    "contentuid": {
+      "searchType": "EXACT",
+      "subType": "ALN",
+      "title": "CONTENTUID",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Content Unique Id",
+      "maxLength": 50
+    },
+    "measureunitid": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Unit of Measure",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Unit of measure name",
+      "maxLength": 16
+    },
+    "localref": {
+      "type": "string"
+    },
+    "_imagelibref": {
+      "type": "string"
+    },
+    "measureunituid": {
+      "searchType": "EXACT",
+      "maximum": 2147483647.0,
+      "subType": "BIGINT",
+      "title": "MEASUREUNITUID",
+      "persistent": true,
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "uniqueid": true,
+      "remarks": "Unique Identifier",
+      "maxLength": 11
+    },
+    "description": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Description",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Description of unit of measure",
+      "maxLength": 100
+    },
+    "siteid": {
+      "searchType": "EXACT",
+      "subType": "UPPER",
+      "title": "Site",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Site Identifier",
+      "maxLength": 8
+    },
+    "href": {
+      "type": "string"
+    },
+    "_id": {
+      "type": "string"
+    },
+    "abbreviation": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Abbreviation",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Measure unit abbreviation. Used as suffix in generated description.",
+      "maxLength": 8
+    },
+    "orgid": {
+      "searchType": "EXACT",
+      "subType": "UPPER",
+      "title": "Organization",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Organization Identifier",
+      "maxLength": 8
+    }
+  },
+  "required": [
+    "contentuid",
+    "measureunitid"
+  ]
+}

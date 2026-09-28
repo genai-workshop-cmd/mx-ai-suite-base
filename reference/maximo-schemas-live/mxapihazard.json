@@ -1,0 +1,608 @@
+{
+ "resource": "MXAPIHAZARD",
+ "description": "Maximo API for for hazards and precautions",
+ "pk": [
+  "orgid",
+  "hazardid"
+ ],
+ "title": "HAZARD",
+ "type": "object",
+ "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/mxapihazard",
+ "uniqueid": "hazarduid",
+ "properties": {
+  "haz06": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Extra 6",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Extra Field 06",
+   "maxLength": 10
+  },
+  "haz05": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Extra 5",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Extra Field 05",
+   "maxLength": 10
+  },
+  "haz04": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Extra 4",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Extra Field 04",
+   "maxLength": 10
+  },
+  "haz03": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Extra 3",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Extra Field 03",
+   "maxLength": 10
+  },
+  "localref": {
+   "type": "string"
+  },
+  "haz02": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Extra 2",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Extra Field 02",
+   "maxLength": 10
+  },
+  "haz01": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Extra 1",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Extra Field 01",
+   "maxLength": 10
+  },
+  "diraspect": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Direct Environmental Aspect",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Indicates whether the hazard is identified as an environmental hazard, over which the company has direct control, such as a gas emission. If the box is checked, the hazard is one in which the organization has direct control. If the box is not checked, the organization cannot directly control the hazard."
+  },
+  "haz09": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Extra 9",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Extra Field 09",
+   "maxLength": 10
+  },
+  "haz08": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Extra 8",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Extra Field 08",
+   "maxLength": 10
+  },
+  "haz07": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Extra 7",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Extra Field 07",
+   "maxLength": 10
+  },
+  "hazmatenabled": {
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Can Have Hazardous Materials",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "When selected, allows the association of hazardous materials information for the selected hazard. When this field is selected, details are displayed in the Hazardous Materials Information group box, where they can be modified. Before you can deselect this field, all the Hazards Material Information must be deleted. If a tag out procedure has been enabled for a hazard, you cannot associate hazardous materials information with the hazard."
+  },
+  "reference": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Product Name",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The product name that is associated with this hazard.",
+   "maxLength": 100
+  },
+  "_rowstamp": {
+   "type": "string"
+  },
+  "plusgownergroup": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Owner Group",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Group that owns the hazard record. To change this value, use the Select Owner action. You can change this value at any time.",
+   "maxLength": 8
+  },
+  "plusgvenderinfo": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Vendor Contact Information",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The contact details for the vendor that is associated with the safety data sheet.",
+   "maxLength": 50
+  },
+  "contactrating": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "INTEGER",
+   "title": "Contact",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "NFPA Contact Rating",
+   "maxLength": 11
+  },
+  "href": {
+   "type": "string",
+   "title": "HAZARD object reference"
+  },
+  "plusgregulationid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Regulation Unique Identifier",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "Regulation Unique Identifier.",
+   "maxLength": 11
+  },
+  "plusgpertypeid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Certificate Type ID",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "Ceritificate Type Unique Identifier.",
+   "maxLength": 11
+  },
+  "plusgsafetydsref": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Safety Data Sheet Reference",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Identifier for the safety data sheet that contains detailed information about the hazard.",
+   "maxLength": 50
+  },
+  "tagoutenabled": {
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Can Have Tag Outs",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Is this hazard Tagout enabled"
+  },
+  "plusgsafetydsdet": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Safety Data Sheet Summary",
+   "persistent": true,
+   "type": "string",
+   "remarks": "A summary of the information that the safety data sheet contains.",
+   "maxLength": 100
+  },
+  "record_descriptor": {
+   "type": "string",
+   "title": "Record/Object Descriptor"
+  },
+  "plusgowner": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Owner",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Owner of the hazard record. To change this value, use the Select Owner action or the Take Ownership action. You can change this value at any time.",
+   "maxLength": 100
+  },
+  "hazarduid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "HAZARDUID",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "uniqueid": true,
+   "remarks": "Unique Identifier",
+   "maxLength": 11
+  },
+  "orgid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Organization",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Organization Identifier",
+   "maxLength": 8
+  },
+  "plusghazsummary": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Hazard Summary",
+   "persistent": true,
+   "type": "string",
+   "remarks": "A summary of the hazard that is documented in the safety data sheet.",
+   "maxLength": 100
+  },
+  "plusgciid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "CI Unique ID",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "Configuration Item Unique ID",
+   "maxLength": 11
+  },
+  "plusgcategory_description": {
+   "type": "string"
+  },
+  "plusgprocedureid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Procedure Unique ID",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "Procedure Unique ID",
+   "maxLength": 11
+  },
+  "flammabilityrating": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "INTEGER",
+   "title": "Flammability",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "MFPA Flammability Rating",
+   "maxLength": 11
+  },
+  "_id": {
+   "type": "string"
+  },
+  "plusgriskassessnum": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Risk Assessment",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The risk assessment that is associated with this hazard.",
+   "maxLength": 10
+  },
+  "plusgriskassesscom": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Comments",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Comments about the risk assessment.",
+   "maxLength": 200
+  },
+  "reactivityrating": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "INTEGER",
+   "title": "Reactivity",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "MFPA Reactivity Rating",
+   "maxLength": 11
+  },
+  "plusghazsource": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Hazard Source",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Source of the hazard. Valid values are in the PLUSGHAZARDSOURCE domain. You can change this value at any time.",
+   "maxLength": 24
+  },
+  "plusgcertid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Certification",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "The certification that is associated with the hazard.",
+   "maxLength": 11
+  },
+  "healthrating": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "INTEGER",
+   "title": "Health",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "National Fire Protection (NFPA) Flammability rating of the hazardous material.",
+   "maxLength": 11
+  },
+  "description": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Description",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Description of the selected hazardous material.",
+   "maxLength": 100
+  },
+  "msdsnum": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "MSDS",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Identifies the MSDS Sheet",
+   "maxLength": 10
+  },
+  "precaution": {
+   "objectName": "PRECAUTION",
+   "type": "array",
+   "items": {
+    "definition": {
+     "subSchema": {
+      "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/mxapihazard/precaution"
+     }
+    },
+    "type": "object"
+   },
+   "cardinality": "UNDEFINED",
+   "relation": "PRECAUTION"
+  },
+  "_imagelibref": {
+   "type": "string"
+  },
+  "plusgmethodofid": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Method of Identification",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Method of identification that a hazard exists. Valid values are in the PLUSGMETHODOFID domain. You can change this value at any time.",
+   "maxLength": 30
+  },
+  "plusgcategory": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Category",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Category of the hazard. Valid values are in the PLUSGHAZARDCAT domain. You can change this value at any time.",
+   "maxLength": 30
+  },
+  "plusgmethodofid_description": {
+   "type": "string"
+  },
+  "plusgriskasscat_description": {
+   "type": "string"
+  },
+  "hazardtype": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Type",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Identifies the hazard type",
+   "maxLength": 16
+  },
+  "plusghazsource_description": {
+   "type": "string"
+  },
+  "hazardid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Hazard",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Identifies the hazard",
+   "maxLength": 8
+  },
+  "haz17": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Extra 17",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Extra Field 17",
+   "maxLength": 10
+  },
+  "haz16": {
+   "searchType": "EXACT",
+   "scale": 2,
+   "subType": "DECIMAL",
+   "title": "Extra 16",
+   "persistent": true,
+   "type": "number",
+   "remarks": "Extra Field 16",
+   "maxLength": 16
+  },
+  "haz15": {
+   "searchType": "EXACT",
+   "scale": 2,
+   "subType": "DECIMAL",
+   "title": "Extra 15",
+   "persistent": true,
+   "type": "number",
+   "remarks": "Extra Field 15",
+   "maxLength": 16
+  },
+  "haz14": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Extra 14",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Extra Field 14"
+  },
+  "haz13": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Extra 13",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Extra Field 13"
+  },
+  "classstructureid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Classification",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "A classification of the hazard",
+   "maxLength": 25
+  },
+  "haz12": {
+   "searchType": "EXACT",
+   "scale": 2,
+   "subType": "AMOUNT",
+   "title": "Extra 12",
+   "persistent": true,
+   "type": "number",
+   "remarks": "Extra Field 12",
+   "maxLength": 11
+  },
+  "haz11": {
+   "searchType": "EXACT",
+   "scale": 2,
+   "subType": "AMOUNT",
+   "title": "Extra 11",
+   "persistent": true,
+   "type": "number",
+   "remarks": "Extra Field 11",
+   "maxLength": 11
+  },
+  "plusgriskassessid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Risk Assessment Unique Identifier",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "The unique identifier of the risk assessment.",
+   "maxLength": 11
+  },
+  "haz10": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Extra 10",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Extra Field 10",
+   "maxLength": 10
+  },
+  "envaspect": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Environmental Aspect",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Indicates whether the hazard is identified as having the potential to impact the environment, such as polluting water."
+  },
+  "plusgriskasscat": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Risk Assessment Category",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The category of risk that is associated with this hazard. Valid values are in the PLUSGRISKASSESSCAT domain.",
+   "maxLength": 30
+  },
+  "haz19": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "INTEGER",
+   "title": "Extra 19",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "Extra Field 19",
+   "maxLength": 11
+  },
+  "haz18": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Extra 18",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Extra Field 18",
+   "maxLength": 10
+  },
+  "precautionenabled": {
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Can Have Precautions",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Is this hazard precaution enabled"
+  },
+  "haz20": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Extra 20",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Extra Field 20"
+  },
+  "hazardtype_description": {
+   "type": "string"
+  },
+  "plusgreference": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Reference",
+   "persistent": true,
+   "type": "string",
+   "remarks": "A reference for the source of the hazard. For example, if the method of identification is a HAZOP, this might be the HAZOP reference. You can change this value at any time.",
+   "maxLength": 24
+  }
+ },
+ "required": [
+  "hazardid",
+  "hazmatenabled",
+  "orgid",
+  "precautionenabled",
+  "tagoutenabled"
+ ]
+}

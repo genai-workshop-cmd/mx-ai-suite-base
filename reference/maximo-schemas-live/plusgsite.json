@@ -1,0 +1,135 @@
+{
+ "resource": "PLUSGSITE",
+ "description": "Oil and Gas' Site Object Structure",
+ "pk": [
+  "siteid"
+ ],
+ "title": "SITE",
+ "type": "object",
+ "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/plusgsite",
+ "uniqueid": "siteuid",
+ "properties": {
+  "siccode": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Standard Industrial Classification",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Describe the Standard Industrial Classification (SIC) of the industry, such as manufacuring or transportation.",
+   "maxLength": 4
+  },
+  "localref": {
+   "type": "string"
+  },
+  "naicscode": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "North American Industrial Classification",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Describe the North American Industry Classification (NAICS), such as utilities or oil and gas extraction.",
+   "maxLength": 6
+  },
+  "active": {
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Active",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Specifies whether the site is active. If this check box is selected, the site is active and can be used wherever a site is specified in Maximo. It the check box is cleared, the site is inactive and will not appear when you use the select value function."
+  },
+  "description": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Description",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Describes the site, for example, Toronto IT Operations Center. To enter of view additional information, click the Long Description button.",
+   "maxLength": 100
+  },
+  "indstrydesc": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Industry Description",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Describe the industry (such as the construction industry).",
+   "maxLength": 10
+  },
+  "plusgopenomuid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "INTEGER",
+   "title": "Open Unique Idenfitier",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "The open unique identifier provided to an external system by Maximo.",
+   "maxLength": 11
+  },
+  "record_descriptor": {
+   "type": "string",
+   "title": "Record/Object Descriptor"
+  },
+  "orgid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Organization",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The organization identifier for this site",
+   "maxLength": 8
+  },
+  "_rowstamp": {
+   "type": "string"
+  },
+  "avenumofempl": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "INTEGER",
+   "title": "Annual average number of employees",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "The annual average number of employees.",
+   "maxLength": 11
+  },
+  "_imagelibref": {
+   "type": "string"
+  },
+  "siteid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Site",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Identifies the site with a short code, for example, TORONTO, for a company's Toronto, Canada site. This value must be unique for all sites.",
+   "maxLength": 8
+  },
+  "href": {
+   "type": "string",
+   "title": "SITE object reference"
+  },
+  "_id": {
+   "type": "string"
+  },
+  "tothrswrkd": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "INTEGER",
+   "title": "Total hours worked by all employees last year",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "The total hours worked by all employees last year.",
+   "maxLength": 11
+  }
+ },
+ "required": [
+  "active",
+  "orgid",
+  "siteid"
+ ]
+}

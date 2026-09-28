@@ -1,0 +1,355 @@
+{
+  "resource": "MXLABOR",
+  "description": "LABOR",
+  "pk": [
+    "orgid",
+    "laborcode"
+  ],
+  "title": "LABOR",
+  "type": "object",
+  "$ref": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxlabor",
+  "uniqueid": "laborid",
+  "properties": {
+    "ownersysid": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Owner System ID",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Owner System ID",
+      "maxLength": 10
+    },
+    "labinventorysite": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Labor Inventory Site",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "The site of this labor code's inventory location.",
+      "maxLength": 8
+    },
+    "localref": {
+      "type": "string"
+    },
+    "endlocation": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "End Location",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "The last location in a street-level route.",
+      "maxLength": 25
+    },
+    "externalrefid": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "External Reference ID",
+      "persistent": true,
+      "type": "string",
+      "remarks": "External Reference ID",
+      "maxLength": 10
+    },
+    "labinventoryloc": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Labor Inventory Location",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "The inventory location associated with this labor code. The labor inventory location is used when inventory is issued to or transferred to a labor.",
+      "maxLength": 25
+    },
+    "laborid": {
+      "searchType": "EXACT",
+      "maximum": 2147483647.0,
+      "subType": "BIGINT",
+      "title": "LABORID",
+      "persistent": true,
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "uniqueid": true,
+      "remarks": "Unique Identifier",
+      "maxLength": 11
+    },
+    "type": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Work Type",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "The type of work that this labor code can perform or is typically assigned.",
+      "maxLength": 16
+    },
+    "_rowstamp": {
+      "type": "string"
+    },
+    "lbsinterval": {
+      "searchType": "EXACT",
+      "maximum": 2147483647.0,
+      "subType": "INTEGER",
+      "title": "Location Refresh (in seconds)",
+      "persistent": true,
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "remarks": "The interval to refresh the location of a labor or a crew. For example, if you enter 5, the GPS location is refreshed every five seconds.",
+      "maxLength": 11
+    },
+    "lbslocation": {
+      "objectName": "LBSLOCATION",
+      "type": "array",
+      "items": {
+        "definition": {
+          "subSchema": {
+            "$ref": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxlabor/lbslocation"
+          }
+        },
+        "type": "object"
+      },
+      "cardinality": "",
+      "relation": "LBSLOCATION"
+    },
+    "_imagelibref": {
+      "type": "string"
+    },
+    "crewworkgroup": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Crew Work Group",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "The identifier of the person group that is used in the Crews applications. You define crew work groups in the Person Groups application.",
+      "maxLength": 8
+    },
+    "crewid": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Crew",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "ID for a given crew within a craft",
+      "maxLength": 12
+    },
+    "lbsdatafromwo": {
+      "default": false,
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "Save Location with Work Order",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "If the audit history is enabled, and you select the Use Labor Location checkbox, the labor location is stored with the work order data in the LBSLOCATION table. To enable the audit history, configure the Database Configuration application."
+    },
+    "personid": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Person",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Identifier of the person's record that is associated with this labor code.",
+      "maxLength": 100
+    },
+    "href": {
+      "type": "string"
+    },
+    "crewid_description": {
+      "type": "string"
+    },
+    "worklocation": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Work Location",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "The location where this labor code works. The work location maybe used to select a labor code for work order assignments. This location's internal labor account is used to set the GL Control Account on all crafts for this labor that are not associated with a vendor. The GL Control Account, in turn, is used as the credit GL account for the labor transaction.",
+      "maxLength": 25
+    },
+    "ytdhrsrefused": {
+      "default": 0.0,
+      "searchType": "EXACT",
+      "scale": 0,
+      "subType": "DURATION",
+      "title": "Overtime Refused",
+      "persistent": true,
+      "type": "number",
+      "hasList": true,
+      "remarks": "Number of overtime hours in the year that this labor code refused. This default value is 0. You can reset this value with the Zero Year to Date Hours action.",
+      "maxLength": 8
+    },
+    "type_description": {
+      "type": "string"
+    },
+    "startlocation": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Start Location",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "The first location in a street-level route.",
+      "maxLength": 25
+    },
+    "status_description": {
+      "type": "string"
+    },
+    "ytdothrs": {
+      "default": 0.0,
+      "searchType": "EXACT",
+      "scale": 0,
+      "subType": "DURATION",
+      "title": "Premium Hours",
+      "persistent": true,
+      "type": "number",
+      "remarks": "Year-to-date premium hours reported for this labor code. This field is updated each time premium labor hours are reported either on the Labor Reporting tab in the Labor Reporting application, on the Actual Labor table in the Work Order Tracking application, or Quick Reporting application in the Work Orders module. You can reset this value with the Zero Year to Date Hours action.",
+      "maxLength": 8
+    },
+    "laborcraftrate": {
+      "objectName": "LABORCRAFTRATE",
+      "type": "array",
+      "items": {
+        "definition": {
+          "subSchema": {
+            "$ref": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxlabor/laborcraftrate"
+          }
+        },
+        "type": "object"
+      },
+      "cardinality": "MULTIPLE",
+      "relation": "LABORCRAFTRATE"
+    },
+    "reportedhrs": {
+      "default": 0.0,
+      "searchType": "EXACT",
+      "scale": 0,
+      "subType": "DURATION",
+      "title": "Regular Hours",
+      "persistent": true,
+      "type": "number",
+      "remarks": "Year-to-date labor hours reported for this labor code. This field is updated each time labor hours are reported either on the Labor Reporting tab in the Labor Reporting application, on the Actual Labor tab in the Work Order application, or in the Quick Reporting application. You can reset this value with the Zero Year to Date Hours action.",
+      "maxLength": 8
+    },
+    "sendersysid": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Sender System ID",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Column used by ERP-Integration (APIs)",
+      "maxLength": 50
+    },
+    "orgid": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Organization",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "The name of the organization that is associated with this labor code.",
+      "maxLength": 8
+    },
+    "laborcode": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Labor",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Identifier of the labor record.  This field must be unique within an organization. When you save a labor record, this field becomes read-only.",
+      "maxLength": 100
+    },
+    "startlocsiteid": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Start location site id",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Start Location SiteId",
+      "maxLength": 8
+    },
+    "person": {
+      "objectName": "PERSON",
+      "type": "array",
+      "items": {
+        "definition": {
+          "subSchema": {
+            "$ref": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxlabor/person"
+          }
+        },
+        "type": "object"
+      },
+      "cardinality": "MULTIPLE",
+      "relation": "PERSON"
+    },
+    "endlocsiteid": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "End location site id",
+      "persistent": true,
+      "type": "string",
+      "remarks": "End Location SiteId",
+      "maxLength": 8
+    },
+    "worksite": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Work Site",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "The site where this labor code works.",
+      "maxLength": 8
+    },
+    "_id": {
+      "type": "string"
+    },
+    "savelbsdatahistory": {
+      "default": false,
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "Save LBS Data History",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "Defines if the LBS Data History for this mbo is going to be saved."
+    },
+    "sourcesysid": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Source System ID",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Source System ID",
+      "maxLength": 10
+    },
+    "availfactor": {
+      "default": 1.0,
+      "searchType": "EXACT",
+      "scale": 2,
+      "subType": "DECIMAL",
+      "title": "Availability Factor",
+      "persistent": true,
+      "type": "number",
+      "remarks": "% to use during resource scheduling",
+      "maxLength": 16
+    },
+    "status": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Status",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "The current status of this labor code. On inserting a new record, this field defaults to the active status.",
+      "maxLength": 12
+    }
+  },
+  "required": [
+    "laborcode",
+    "orgid",
+    "personid"
+  ]
+}

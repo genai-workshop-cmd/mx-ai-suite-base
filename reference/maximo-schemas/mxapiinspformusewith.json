@@ -1,0 +1,109 @@
+{
+  "resource": "MXAPIINSPFORMUSEWITH",
+  "description": "INSPFORMUSEWITH",
+  "pk": [
+    "objectname",
+    "objectid",
+    "inspformnum",
+    "orgid",
+    "siteid"
+  ],
+  "title": "INSPFORMUSEWITH",
+  "type": "object",
+  "$ref": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapiinspformusewith",
+  "uniqueid": "inspformusewithid",
+  "properties": {
+    "_rowstamp": {
+      "type": "string"
+    },
+    "localref": {
+      "type": "string"
+    },
+    "_imagelibref": {
+      "type": "string"
+    },
+    "inspectionform": {
+      "objectName": "INSPECTIONFORM",
+      "type": "array",
+      "items": {
+        "definition": {
+          "subSchema": {
+            "$ref": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapiinspformusewith/inspectionform"
+          }
+        },
+        "type": "object"
+      },
+      "cardinality": "",
+      "relation": "INSPECTIONFORM"
+    },
+    "objectname": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Object Name",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Object Name",
+      "maxLength": 30
+    },
+    "siteid": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Site",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Site",
+      "maxLength": 8
+    },
+    "href": {
+      "type": "string"
+    },
+    "_id": {
+      "type": "string"
+    },
+    "inspformnum": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Inspection Form",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Inspection form",
+      "maxLength": 12
+    },
+    "inspformusewithid": {
+      "searchType": "EXACT",
+      "maximum": 2147483647.0,
+      "subType": "BIGINT",
+      "title": "Unique Id",
+      "persistent": true,
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "uniqueid": true,
+      "remarks": "Unique Id",
+      "maxLength": 11
+    },
+    "objectid": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Object ID",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Reference object",
+      "maxLength": 100
+    },
+    "orgid": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Organization",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Organization",
+      "maxLength": 8
+    }
+  },
+  "required": [
+    "inspformnum",
+    "objectid",
+    "objectname"
+  ]
+}

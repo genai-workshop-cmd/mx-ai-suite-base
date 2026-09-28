@@ -1,0 +1,99 @@
+{
+  "resource": "MXAPICRONTASKDEF",
+  "description": "CRONTASKDEF",
+  "pk": [
+    "crontaskname"
+  ],
+  "title": "CRONTASKDEF",
+  "type": "object",
+  "$ref": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapicrontaskdef",
+  "uniqueid": "crontaskdefid",
+  "properties": {
+    "_rowstamp": {
+      "type": "string"
+    },
+    "crontaskinstance": {
+      "objectName": "CRONTASKINSTANCE",
+      "type": "array",
+      "items": {
+        "definition": {
+          "subSchema": {
+            "$ref": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapicrontaskdef/crontaskinstance"
+          }
+        },
+        "type": "object"
+      },
+      "cardinality": "UNDEFINED",
+      "relation": "CRONTASKINSTANCE"
+    },
+    "localref": {
+      "type": "string"
+    },
+    "classname": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Class",
+      "persistent": true,
+      "type": "string",
+      "remarks": "The java classname for the crontask",
+      "maxLength": 256
+    },
+    "_imagelibref": {
+      "type": "string"
+    },
+    "accesslevel": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Access Level",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Access level of the crontask instance of this crontask. Valid values are from synonym domain CRONACCESSLEVEL",
+      "maxLength": 15
+    },
+    "description": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Description",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Description of the crontask",
+      "maxLength": 256
+    },
+    "accesslevel_description": {
+      "type": "string"
+    },
+    "crontaskdefid": {
+      "searchType": "EXACT",
+      "maximum": 2147483647.0,
+      "subType": "BIGINT",
+      "title": "CRONTASKDEFID",
+      "persistent": true,
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "uniqueid": true,
+      "remarks": "Unique Identifier",
+      "maxLength": 11
+    },
+    "href": {
+      "type": "string"
+    },
+    "_id": {
+      "type": "string"
+    },
+    "crontaskname": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Cron Task",
+      "persistent": true,
+      "type": "string",
+      "remarks": "The name of the crontask",
+      "maxLength": 50
+    }
+  },
+  "required": [
+    "accesslevel",
+    "classname",
+    "crontaskname"
+  ]
+}

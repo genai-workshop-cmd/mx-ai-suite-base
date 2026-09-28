@@ -1,0 +1,212 @@
+{
+  "resource": "MXAPISOLUTION",
+  "description": "SOLUTION",
+  "pk": [
+    "solution"
+  ],
+  "title": "SOLUTION",
+  "type": "object",
+  "$ref": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapisolution",
+  "uniqueid": "solutionid",
+  "properties": {
+    "localref": {
+      "type": "string"
+    },
+    "problemcode": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Symptom",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Defines the Symptom someone may encounter",
+      "maxLength": 8
+    },
+    "description": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Description",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Describes the solution. To enter or view additional information, click the Long Description button.",
+      "maxLength": 100
+    },
+    "type": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Type",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Type",
+      "maxLength": 10
+    },
+    "_rowstamp": {
+      "type": "string"
+    },
+    "solution": {
+      "default": "&AUTOKEY&",
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Solution",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Identifies the solution record.",
+      "maxLength": 8
+    },
+    "_imagelibref": {
+      "type": "string"
+    },
+    "href": {
+      "type": "string"
+    },
+    "solutionid": {
+      "searchType": "EXACT",
+      "maximum": 2147483647.0,
+      "subType": "BIGINT",
+      "title": "Unique Id",
+      "persistent": true,
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "uniqueid": true,
+      "remarks": "Unique Id",
+      "maxLength": 11
+    },
+    "fr2code": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Resolution",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Defines the Resolution of the Symptom/Cause",
+      "maxLength": 8
+    },
+    "status_description": {
+      "type": "string"
+    },
+    "description_longdescription": {
+      "searchType": "WILDCARD",
+      "subType": "LONGALN",
+      "title": "Details",
+      "type": "string",
+      "remarks": "Long Description",
+      "maxLength": 32000
+    },
+    "classstructureid": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Classification",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Defines the classification of the Solution",
+      "maxLength": 25
+    },
+    "changeby": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Changed By",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "This is the user who last modified the Solution",
+      "maxLength": 100
+    },
+    "selfservaccess": {
+      "default": false,
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "Self-Service Access",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "Specifies whether the solution record is accessible to a self-service user. If the check box is selected, self-service users can search for and view this record. If the check box is cleared (the default), the solution record is unavailable to self-service users. In the More Search Fields dialog box, you must specify a Y or N in this field."
+    },
+    "changedate": {
+      "searchType": "EXACT",
+      "subType": "DATETIME",
+      "title": "Changed Date",
+      "persistent": true,
+      "type": "string",
+      "remarks": "This is when the solution was last modified"
+    },
+    "problemcode_longdescription": {
+      "searchType": "WILDCARD",
+      "subType": "LONGALN",
+      "title": "Symptom",
+      "type": "string",
+      "remarks": "Detailed description of the symptom that an internal or external customer is having, typically in the form of a problem or question.",
+      "maxLength": 32000
+    },
+    "fr2code_longdescription": {
+      "searchType": "WILDCARD",
+      "subType": "LONGALN",
+      "title": "Resolution",
+      "type": "string",
+      "remarks": "Detailed description of how to resolve the symptoms that an internal or external customer is experiencing, such as an answer to a question or information on how to solve a problem.",
+      "maxLength": 32000
+    },
+    "orgid": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Organization",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Org Id",
+      "maxLength": 8
+    },
+    "statusdate": {
+      "searchType": "EXACT",
+      "subType": "DATETIME",
+      "title": "Status Date",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Status Date"
+    },
+    "failurecode": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Failure Code",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Indicates Top level of a Failure Hierarchy",
+      "maxLength": 8
+    },
+    "fr1code_longdescription": {
+      "searchType": "WILDCARD",
+      "subType": "LONGALN",
+      "title": "Cause",
+      "type": "string",
+      "remarks": "Detailed description of what is causing the symptoms being described by the internal or external customer.",
+      "maxLength": 32000
+    },
+    "fr1code": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Cause",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Cause of the Symptom",
+      "maxLength": 8
+    },
+    "_id": {
+      "type": "string"
+    },
+    "status": {
+      "default": "!DRAFT!",
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Status",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Status, or state, of the solution record. Predefined statuses include DRAFT, ACTIVE, and INACTIVE. Only solution records that are set to ACTIVE can be viewed or found in a search outside of this administrative Solutions application. Solutions records in DRAFT or INACTIVE statuses are managed within this Solutions application.",
+      "maxLength": 12
+    }
+  },
+  "required": [
+    "changeby",
+    "changedate"
+  ]
+}

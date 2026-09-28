@@ -1,0 +1,245 @@
+{
+  "resource": "REP_LICTRACK",
+  "description": "MAXLICENSE",
+  "pk": [
+    "licensenum"
+  ],
+  "title": "MAXLICENSE",
+  "type": "object",
+  "$ref": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/rep_lictrack",
+  "uniqueid": "maxlicenseid",
+  "properties": {
+    "localref": {
+      "type": "string"
+    },
+    "maxlicusgvar": {
+      "objectName": "MAXLICUSGVAR",
+      "type": "array",
+      "items": {
+        "definition": {
+          "subSchema": {
+            "$ref": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/rep_lictrack/maxlicusgvar"
+          }
+        },
+        "type": "object"
+      },
+      "cardinality": "MULTIPLE",
+      "relation": "MAXLICUSGVAR"
+    },
+    "licstartdate": {
+      "searchType": "EXACT",
+      "subType": "DATE",
+      "title": "License Start Date",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Date the license starts."
+    },
+    "createdate": {
+      "searchType": "EXACT",
+      "subType": "DATETIME",
+      "title": "Record Creation Date",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Record creation date"
+    },
+    "mainrenewaldate": {
+      "searchType": "EXACT",
+      "subType": "DATE",
+      "title": "Maintenance Renewal Date",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Date of renewal"
+    },
+    "licmetrictype_description": {
+      "type": "string"
+    },
+    "licmetrictype": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "License Type",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "The license type.",
+      "maxLength": 20
+    },
+    "langcode": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Language Code",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Language Code",
+      "maxLength": 4
+    },
+    "_rowstamp": {
+      "type": "string"
+    },
+    "updatedate": {
+      "searchType": "EXACT",
+      "subType": "DATETIME",
+      "title": "Record Update Date",
+      "persistent": true,
+      "type": "string",
+      "remarks": "The date that the license information was updated."
+    },
+    "licensenum": {
+      "default": "&AUTOKEY&",
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "License Num",
+      "persistent": true,
+      "type": "string",
+      "remarks": "The license number.",
+      "maxLength": 20
+    },
+    "_imagelibref": {
+      "type": "string"
+    },
+    "vendor": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Vendor",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Vendor from which this license was purchased",
+      "maxLength": 200
+    },
+    "prdname": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Product Name Depricated",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Name of Maximo Product Depricated",
+      "maxLength": 100
+    },
+    "href": {
+      "type": "string"
+    },
+    "licenddate": {
+      "searchType": "EXACT",
+      "subType": "DATE",
+      "title": "License End Date",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Date the license ends."
+    },
+    "status_description": {
+      "type": "string"
+    },
+    "maxlicprodapps": {
+      "objectName": "MAXLICPRODAPPS",
+      "type": "array",
+      "items": {
+        "definition": {
+          "subSchema": {
+            "$ref": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/rep_lictrack/maxlicprodapps"
+          }
+        },
+        "type": "object"
+      },
+      "cardinality": "MULTIPLE",
+      "relation": "MAXLICPRODAPPS"
+    },
+    "purchaseddate": {
+      "searchType": "EXACT",
+      "subType": "DATE",
+      "title": "Purchased Date",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Date when the license is purchased"
+    },
+    "maxprodid": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Product Identifier",
+      "persistent": true,
+      "type": "string",
+      "remarks": "The product that the license is for.",
+      "maxLength": 30
+    },
+    "statusdate": {
+      "searchType": "EXACT",
+      "subType": "DATETIME",
+      "title": "Status Date",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Date the License status was last changed."
+    },
+    "licqty": {
+      "searchType": "EXACT",
+      "maximum": 2147483647.0,
+      "subType": "INTEGER",
+      "title": "License Entitled Quantity",
+      "persistent": true,
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "remarks": "Licensed Entitled Quantity",
+      "maxLength": 11
+    },
+    "maxlicusage": {
+      "objectName": "MAXLICUSAGE",
+      "type": "array",
+      "items": {
+        "definition": {
+          "subSchema": {
+            "$ref": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/rep_lictrack/maxlicusage"
+          }
+        },
+        "type": "object"
+      },
+      "cardinality": "MULTIPLE",
+      "relation": "MAXLICUSAGE"
+    },
+    "hasld": {
+      "default": false,
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "Has Long Description",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "Boolean flag to indicate if there is any long description for this record"
+    },
+    "licdesc": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "License Description",
+      "persistent": true,
+      "type": "string",
+      "remarks": "License Description",
+      "maxLength": 200
+    },
+    "_id": {
+      "type": "string"
+    },
+    "responsibleperson": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Person Responsible",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Person Responsible for this license.",
+      "maxLength": 100
+    },
+    "status": {
+      "default": "!DRAFT!",
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "License Status",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "License Status",
+      "maxLength": 20
+    }
+  },
+  "required": [
+    "langcode",
+    "licmetrictype",
+    "licqty",
+    "maxprodid"
+  ]
+}

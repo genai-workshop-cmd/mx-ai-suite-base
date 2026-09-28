@@ -1,0 +1,77 @@
+{
+ "resource": "REP_PLUSGTRAMOD",
+ "description": "Training Modules (Oil) Details",
+ "pk": [
+  "modulenum"
+ ],
+ "title": "PLUSGTRAINMODULE",
+ "type": "object",
+ "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/rep_plusgtramod",
+ "uniqueid": "plusgtrainmoduleid",
+ "properties": {
+  "_rowstamp": {
+   "type": "string"
+  },
+  "localref": {
+   "type": "string"
+  },
+  "_imagelibref": {
+   "type": "string"
+  },
+  "modulenum": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Module",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The unique identifier of the module",
+   "maxLength": 15
+  },
+  "moduleduration": {
+   "searchType": "EXACT",
+   "scale": 0,
+   "subType": "DURATION",
+   "title": "Module Duration",
+   "persistent": true,
+   "type": "number",
+   "remarks": "The length of time that it takes to complete the module, measured in hours and minutes",
+   "maxLength": 8
+  },
+  "description": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Description",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The description of the module.",
+   "maxLength": 100
+  },
+  "href": {
+   "type": "string",
+   "title": "PLUSGTRAINMODULE object reference"
+  },
+  "record_descriptor": {
+   "type": "string",
+   "title": "Record/Object Descriptor"
+  },
+  "_id": {
+   "type": "string"
+  },
+  "plusgtrainmoduleid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Unique Id",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "uniqueid": true,
+   "remarks": "Unique Id",
+   "maxLength": 11
+  }
+ },
+ "required": [
+  "moduleduration",
+  "modulenum"
+ ]
+}

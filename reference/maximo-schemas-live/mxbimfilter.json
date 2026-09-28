@@ -1,0 +1,136 @@
+{
+ "resource": "MXBIMFILTER",
+ "description": "Filters for COBie import projects",
+ "pk": [
+  "filtername",
+  "orgid",
+  "siteid"
+ ],
+ "title": "BIMFILTER",
+ "type": "object",
+ "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/mxbimfilter",
+ "uniqueid": "bimfilterid",
+ "properties": {
+  "localref": {
+   "type": "string"
+  },
+  "description": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Description",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Describes the filter.  To enter or view additional information, click the Long Description button",
+   "maxLength": 100
+  },
+  "record_descriptor": {
+   "type": "string",
+   "title": "Record/Object Descriptor"
+  },
+  "bimfilterid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Unique Id",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "uniqueid": true,
+   "remarks": "Unique Id",
+   "maxLength": 11
+  },
+  "filtertype": {
+   "default": "!EXCLUDE!",
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Filter Type",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The type of filter to apply to each row of a COBie table. Select Exclude to exclude matching filter values from the session. Select Include to only include matching filter values in the session.",
+   "maxLength": 16
+  },
+  "orgid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Organization",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The organization that the filter applies to.",
+   "maxLength": 8
+  },
+  "langcode": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Language Code",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Language Code",
+   "maxLength": 4
+  },
+  "_rowstamp": {
+   "type": "string"
+  },
+  "filtertype_description": {
+   "type": "string"
+  },
+  "hasld": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Has Long Description",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Boolean flag to indicate if there is any long description for this record"
+  },
+  "_imagelibref": {
+   "type": "string"
+  },
+  "siteid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Site",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The site that the filter applies to.",
+   "maxLength": 8
+  },
+  "filtername": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Filter Name",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Name of filter",
+   "maxLength": 24
+  },
+  "bimfilterentry": {
+   "objectName": "BIMFILTERENTRY",
+   "type": "array",
+   "items": {
+    "definition": {
+     "subSchema": {
+      "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/mxbimfilter/bimfilterentry"
+     }
+    },
+    "type": "object"
+   },
+   "cardinality": "",
+   "relation": "ENTRYLIST"
+  },
+  "href": {
+   "type": "string",
+   "title": "BIMFILTER object reference"
+  },
+  "_id": {
+   "type": "string"
+  }
+ },
+ "required": [
+  "filtername",
+  "langcode"
+ ]
+}

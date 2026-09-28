@@ -1,0 +1,170 @@
+{
+ "resource": "MXAPILABORCRAFTRATE",
+ "description": "Maximo API for Labor Craft Rate",
+ "pk": [
+  "orgid",
+  "laborcode",
+  "craft",
+  "skilllevel",
+  "vendor",
+  "contractnum"
+ ],
+ "title": "LABORCRAFTRATE",
+ "type": "object",
+ "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/mxapilaborcraftrate",
+ "uniqueid": "laborcraftrateid",
+ "properties": {
+  "localref": {
+   "type": "string"
+  },
+  "craft": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Craft",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Identifier of this labor code's default craft. A list of all crafts associated with this labor code is displayed in the Crafts tab.",
+   "maxLength": 8
+  },
+  "defaultcraft": {
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Default Craft for Labor",
+   "persistent": true,
+   "type": "boolean",
+   "hasList": true,
+   "remarks": "Indicates that this is the default craft for this labor code."
+  },
+  "record_descriptor": {
+   "type": "string",
+   "title": "Record/Object Descriptor"
+  },
+  "controlaccount": {
+   "searchType": "WILDCARD",
+   "subType": "GL",
+   "title": "Control Account",
+   "persistent": true,
+   "type": "string",
+   "remarks": "ControlAccount",
+   "maxLength": 23
+  },
+  "orgid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Organization",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Organization",
+   "maxLength": 8
+  },
+  "defaultticketglacc": {
+   "searchType": "WILDCARD",
+   "subType": "GL",
+   "title": "Default Ticket GL Account",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Default Ticket GL Account for a LaborCraftRate",
+   "maxLength": 23
+  },
+  "laborcode": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Labor",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Identifier of the labor's craft. Entering a craft code in this field associates the labor record with that craft.",
+   "maxLength": 8
+  },
+  "_rowstamp": {
+   "type": "string"
+  },
+  "skilllevel": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Skill Level",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The skill level of the craft for this labor code.",
+   "maxLength": 15
+  },
+  "glaccount": {
+   "searchType": "WILDCARD",
+   "subType": "GL",
+   "title": "GL Account",
+   "persistent": true,
+   "type": "string",
+   "remarks": "GL Account",
+   "maxLength": 23
+  },
+  "rate": {
+   "searchType": "EXACT",
+   "scale": 2,
+   "subType": "AMOUNT",
+   "title": "Rate",
+   "persistent": true,
+   "type": "number",
+   "remarks": "Rate",
+   "maxLength": 11
+  },
+  "_imagelibref": {
+   "type": "string"
+  },
+  "vendor": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Vendor",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Identifier of this labor code's default vendor.",
+   "maxLength": 12
+  },
+  "inherit": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Inherit Rate from Craft",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Indicates that the standard rate established for this craft, skill level, vendor and contract is being used."
+  },
+  "laborcraftrateid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "LABORCRAFTRATEID",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "uniqueid": true,
+   "remarks": "Unique Identifier",
+   "maxLength": 11
+  },
+  "href": {
+   "type": "string",
+   "title": "LABORCRAFTRATE object reference"
+  },
+  "_id": {
+   "type": "string"
+  },
+  "contractnum": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Contract",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The contract number of the specified craft.",
+   "maxLength": 8
+  }
+ },
+ "required": [
+  "craft",
+  "defaultcraft",
+  "laborcode",
+  "orgid"
+ ]
+}

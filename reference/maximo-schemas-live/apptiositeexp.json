@@ -1,0 +1,247 @@
+{
+ "resource": "APPTIOSITEEXP",
+ "description": "Site Object Structure for Apptio export.",
+ "pk": [
+  "siteid"
+ ],
+ "title": "SITE",
+ "type": "object",
+ "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/apptiositeexp",
+ "uniqueid": "siteuid",
+ "properties": {
+  "siccode": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Standard Industrial Classification",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Describe the Standard Industrial Classification (SIC) of the industry, such as manufacuring or transportation.",
+   "maxLength": 4
+  },
+  "siteuid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "SITEUID",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "uniqueid": true,
+   "remarks": "Unique Identifier",
+   "maxLength": 11
+  },
+  "systemid": {
+   "searchType": "NONE",
+   "subType": "UPPER",
+   "title": "System ID",
+   "type": "string",
+   "remarks": "System ID",
+   "maxLength": 12
+  },
+  "localref": {
+   "type": "string"
+  },
+  "contactgroup": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Site Contact Group",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Default person group at the site for approving work to be done.",
+   "maxLength": 8
+  },
+  "description": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Description",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Describes the site, for example, Toronto IT Operations Center. To enter of view additional information, click the Long Description button.",
+   "maxLength": 100
+  },
+  "langcode": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Language Code",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Language Column",
+   "maxLength": 4
+  },
+  "_rowstamp": {
+   "type": "string"
+  },
+  "_imagelibref": {
+   "type": "string"
+  },
+  "contact": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Site Contact",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Default person at the site for approving work to be done.",
+   "maxLength": 100
+  },
+  "systemdesc": {
+   "searchType": "NONE",
+   "subType": "ALN",
+   "title": "System Description",
+   "type": "string",
+   "remarks": "System Description",
+   "maxLength": 100
+  },
+  "siteid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Site",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Identifies the site with a short code, for example, TORONTO, for a company's Toronto, Canada site. This value must be unique for all sites.",
+   "maxLength": 8
+  },
+  "href": {
+   "type": "string",
+   "title": "SITE object reference"
+  },
+  "enterdate": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Entered Date",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Date record was entered."
+  },
+  "changeby": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Changed By",
+   "persistent": true,
+   "type": "string",
+   "remarks": "User name who last changed record.",
+   "maxLength": 100
+  },
+  "naicscode": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "North American Industrial Classification",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Describe the North American Industry Classification (NAICS), such as utilities or oil and gas extraction.",
+   "maxLength": 6
+  },
+  "active": {
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Active",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Specifies whether the site is active. If this check box is selected, the site is active and can be used wherever a site is specified in Maximo. It the check box is cleared, the site is inactive and will not appear when you use the select value function."
+  },
+  "indstrydesc": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Industry Description",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Describe the industry (such as the construction industry).",
+   "maxLength": 10
+  },
+  "plusgopenomuid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "INTEGER",
+   "title": "Open Unique Idenfitier",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "The open unique identifier provided to an external system by Maximo.",
+   "maxLength": 11
+  },
+  "changedate": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Changed Date",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Date/Time Record was last modified."
+  },
+  "record_descriptor": {
+   "type": "string",
+   "title": "Record/Object Descriptor"
+  },
+  "orgid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Organization",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The organization identifier for this site",
+   "maxLength": 8
+  },
+  "avenumofempl": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "INTEGER",
+   "title": "Annual average number of employees",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "The annual average number of employees.",
+   "maxLength": 11
+  },
+  "enterby": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Entered By",
+   "persistent": true,
+   "type": "string",
+   "remarks": "User name who entered record.",
+   "maxLength": 100
+  },
+  "hasld": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Has Long Description",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Boolean flag to indicate if there is any long description for this record"
+  },
+  "location": {
+   "searchType": "NONE",
+   "subType": "UPPER",
+   "title": "Location",
+   "type": "string",
+   "remarks": "Location",
+   "maxLength": 25
+  },
+  "_id": {
+   "type": "string"
+  },
+  "tothrswrkd": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "INTEGER",
+   "title": "Total hours worked by all employees last year",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "The total hours worked by all employees last year.",
+   "maxLength": 11
+  }
+ },
+ "required": [
+  "active",
+  "changeby",
+  "changedate",
+  "langcode",
+  "orgid",
+  "siteid"
+ ]
+}

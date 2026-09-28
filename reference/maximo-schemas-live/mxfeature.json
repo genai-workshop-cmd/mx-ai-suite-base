@@ -1,0 +1,142 @@
+{
+ "resource": "MXFEATURE",
+ "description": "Features",
+ "pk": [
+  "feature"
+ ],
+ "title": "FEATURES",
+ "type": "object",
+ "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/mxfeature",
+ "uniqueid": "featuresid",
+ "properties": {
+  "shared": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Shared",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Specifies whether the feature will be shared by related linear assets. If the check box is selected, and you apply the feature to one linear asset, the feature will be visible to other linear assets that you specify as related to it. For example, if two linear assets share a segment, and you apply the feature to one of the assets, it will be visible to the other, as well.  "
+  },
+  "status_description": {
+   "type": "string"
+  },
+  "localref": {
+   "type": "string"
+  },
+  "classstructureid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Classification",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Unique ID of the classification structure that holds a list of attributes, for example, Size, Length and Color.",
+   "maxLength": 25
+  },
+  "featuretype": {
+   "default": "!LINEAR!",
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Type",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "There are two types of features. A POINT feature has no length, or its length is not related to its use with the linear asset. For example, a mile post and a power line crossing are both point features. A LINEAR feature has length and its length is related to the linear asset. For example, a guard rail has length and its length is described by start and end measures along the roadway.",
+   "maxLength": 12
+  },
+  "description": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Description",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Describes the feature. To enter or view additional information, click the Long Description button.",
+   "maxLength": 100
+  },
+  "relationid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Relation Unique Id",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "Unique identifier for thie relationship (Relation Table) that generated this relational feature.",
+   "maxLength": 11
+  },
+  "record_descriptor": {
+   "type": "string",
+   "title": "Record/Object Descriptor"
+  },
+  "_rowstamp": {
+   "type": "string"
+  },
+  "feature": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Feature",
+   "persistent": true,
+   "type": "string",
+   "remarks": "An object that exists on or alongside a linear asset that is not a point asset (for example, milepost, guardrail)",
+   "maxLength": 30
+  },
+  "_imagelibref": {
+   "type": "string"
+  },
+  "continuous": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Continuous",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Specifies whether the feature is continuous. If the check box is selected, it is continuous. A continuous feature exists for the entire span of the linear asset with which it is associated. To satisfy this condition you can create a single Features record whose start and end measures equal the start and end measures of the linear asset. You can also create multiple Features records that together cover the entire linear asset without overlapping.  To validate this property, run the Gap and Overlap report. If the check box is cleared (the default), you can apply the feature to a segment of the linear asset."
+  },
+  "href": {
+   "type": "string",
+   "title": "FEATURES object reference"
+  },
+  "_id": {
+   "type": "string"
+  },
+  "featuresid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Unique Id",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "uniqueid": true,
+   "remarks": "Identifies the Features record. This value must be unique for all Features records.",
+   "maxLength": 11
+  },
+  "islinearref": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Is Reference Point",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Specifies whether you can use the feature as a start or end point for a linear segment. If the check box is selected (the default), Maximo will create an feature instance that you can use as a start or end reference point. If the check box is cleared, you cannot."
+  },
+  "featuretype_description": {
+   "type": "string"
+  },
+  "status": {
+   "default": "!NOT READY!",
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Status",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Similar to asset status, this allows us to manage features, and the access to them, without having to delete them from the database.",
+   "maxLength": 20
+  }
+ },
+ "required": [
+  "feature"
+ ]
+}

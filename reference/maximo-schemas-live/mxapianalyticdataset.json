@@ -1,0 +1,225 @@
+{
+ "resource": "MXAPIANALYTICDATASET",
+ "description": "Maximo API for Analytics Dataset",
+ "pk": [
+  "analyticdatasetnum",
+  "intobjectname"
+ ],
+ "title": "ANALYTICDATASET",
+ "type": "object",
+ "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/mxapianalyticdataset",
+ "uniqueid": "analyticdatasetid",
+ "properties": {
+  "owner": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Owner ID",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Identifies the owner of the content",
+   "maxLength": 100
+  },
+  "localref": {
+   "type": "string"
+  },
+  "createddate": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Created Date",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Created Date"
+  },
+  "lastupdatedate": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Last Updated Date",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Last Updated Date"
+  },
+  "query": {
+   "objectName": "QUERY",
+   "type": "array",
+   "items": {
+    "definition": {
+     "subSchema": {
+      "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/mxapianalyticdataset/query"
+     }
+    },
+    "type": "object"
+   },
+   "cardinality": "",
+   "relation": "QUERY"
+  },
+  "description": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Description",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Data Set Description",
+   "maxLength": 255
+  },
+  "clausename": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Query Clause Name",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Query Clause Name",
+   "maxLength": 50
+  },
+  "querytemplate": {
+   "objectName": "QUERYTEMPLATE",
+   "type": "array",
+   "items": {
+    "definition": {
+     "subSchema": {
+      "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/mxapianalyticdataset/querytemplate"
+     }
+    },
+    "type": "object"
+   },
+   "cardinality": "",
+   "relation": "QUERYTEMPLATE"
+  },
+  "record_descriptor": {
+   "type": "string",
+   "title": "Record/Object Descriptor"
+  },
+  "fileexportreqqueue": {
+   "objectName": "FILEEXPORTREQQUEUE",
+   "type": "array",
+   "items": {
+    "definition": {
+     "subSchema": {
+      "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/mxapianalyticdataset/fileexportreqqueue"
+     }
+    },
+    "type": "object"
+   },
+   "cardinality": "",
+   "relation": "WOSEXPORT"
+  },
+  "analyticdatasetid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Unique Id",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "uniqueid": true,
+   "remarks": "Unique Id",
+   "maxLength": 11
+  },
+  "oslcqueryid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Oslcquery Id",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "Oslcquery Id",
+   "maxLength": 11
+  },
+  "intobjectname": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Object Structure Name",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Object Structure Name",
+   "maxLength": 20
+  },
+  "queryid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Query Id",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "Query Id",
+   "maxLength": 11
+  },
+  "_rowstamp": {
+   "type": "string"
+  },
+  "maxintobject": {
+   "objectName": "MAXINTOBJECT",
+   "type": "array",
+   "items": {
+    "definition": {
+     "subSchema": {
+      "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/mxapianalyticdataset/maxintobject"
+     }
+    },
+    "type": "object"
+   },
+   "cardinality": "",
+   "relation": "MAXINTOBJECT"
+  },
+  "_imagelibref": {
+   "type": "string"
+  },
+  "ispublic": {
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Is Public Data Set?",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Is Public Data Set?"
+  },
+  "analyticdatasetnum": {
+   "default": "&AUTOKEY&",
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Data Set Name",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Data Set Name",
+   "maxLength": 25
+  },
+  "templatename": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Template Name",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Query Template Name",
+   "maxLength": 50
+  },
+  "href": {
+   "type": "string",
+   "title": "ANALYTICDATASET object reference"
+  },
+  "_id": {
+   "type": "string"
+  },
+  "oslcquery": {
+   "objectName": "OSLCQUERY",
+   "type": "array",
+   "items": {
+    "definition": {
+     "subSchema": {
+      "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/mxapianalyticdataset/oslcquery"
+     }
+    },
+    "type": "object"
+   },
+   "cardinality": "",
+   "relation": "OSLCQUERY"
+  }
+ },
+ "required": [
+  "createddate",
+  "intobjectname",
+  "ispublic",
+  "lastupdatedate",
+  "owner",
+  "templatename"
+ ]
+}

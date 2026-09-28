@@ -1,0 +1,206 @@
+{
+ "resource": "MXAPIWOASSETTYPE",
+ "description": "Maximo API's WOASSETTYPEs",
+ "pk": [
+  "siteid",
+  "wonum"
+ ],
+ "title": "WOASSETTYPE",
+ "type": "object",
+ "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/mxapiwoassettype",
+ "properties": {
+  "status_description": {
+   "type": "string"
+  },
+  "localref": {
+   "type": "string"
+  },
+  "assettype_description": {
+   "type": "string"
+  },
+  "worktype": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Work Type",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Identifies the work order's type. Some example types are: preventive maintenance, corrective maintenance, emergency maintenace, capital project, and event report.",
+   "maxLength": 5
+  },
+  "jpnum": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Job Plan",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Identifies the work order's job plan. When you assign a job plan to a work order, Maximo copies the job plan operations, material, labor, and tool information to the work order's work plan. Maximo also copies job plan data into these fields: Interruptible?, Crew, Supervisor, and WO Priority. If there is an existing association between the job plan and a safety plan when the job plan is used on the asset or location, Maximo also copies the safety plan to the work order. In addition, Maximo automatically copies a single measurement point if there is an existing association between the asset on the work order and the point name on the job plan.",
+   "maxLength": 12
+  },
+  "record_descriptor": {
+   "type": "string",
+   "title": "Record/Object Descriptor"
+  },
+  "actlabhrs": {
+   "searchType": "EXACT",
+   "scale": 0,
+   "subType": "DURATION",
+   "title": "Actual Labor Hours",
+   "persistent": true,
+   "type": "number",
+   "remarks": "Actual Labor Hours",
+   "maxLength": 8
+  },
+  "orgid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Organization",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Organization Identifier",
+   "maxLength": 8
+  },
+  "origrecordid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Originating Record",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Identifies the source record that was used to create this record.",
+   "maxLength": 25
+  },
+  "statusdate": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Status Date",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Date the work order status was last changed."
+  },
+  "wonum": {
+   "default": "&AUTOKEY&",
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Work Order",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Identifies the work order.",
+   "maxLength": 25
+  },
+  "_rowstamp": {
+   "type": "string"
+  },
+  "workorderid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "WORKORDERID",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "Unique Identifier",
+   "maxLength": 11
+  },
+  "failurecode": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Failure Class",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Failure class of the defined work asset. The failure class is the top level of the failure hierarchy.",
+   "maxLength": 8
+  },
+  "pmnum": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "PM",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Identifies the preventive maintenance record from which the work order was generated.",
+   "maxLength": 8
+  },
+  "_imagelibref": {
+   "type": "string"
+  },
+  "assetnum": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Asset",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Identifies the asset.",
+   "maxLength": 25
+  },
+  "siteid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Site",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Identifies the site.",
+   "maxLength": 8
+  },
+  "location": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Location",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Identifies the work order's location. This is not necessarily the asset's location, however, if an asset is entered, its location will default here",
+   "maxLength": 25
+  },
+  "href": {
+   "type": "string",
+   "title": "WOASSETTYPE object reference"
+  },
+  "_id": {
+   "type": "string"
+  },
+  "assettype": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Type",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The predefined type of this asset.",
+   "maxLength": 50
+  },
+  "origrecordclass": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Originating Record Class",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Originating record's class, for example: change, release, incident, problem, or work order.",
+   "maxLength": 16
+  },
+  "status": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Status",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Status of the work order, for example, in progress, waiting on material, waiting for approval, completed, or closed.",
+   "maxLength": 16
+  }
+ },
+ "required": [
+  "actlabhrs",
+  "orgid",
+  "siteid",
+  "status",
+  "statusdate",
+  "workorderid"
+ ]
+}

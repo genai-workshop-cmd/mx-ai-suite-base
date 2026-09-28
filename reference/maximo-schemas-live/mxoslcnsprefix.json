@@ -1,0 +1,75 @@
+{
+ "resource": "MXOSLCNSPREFIX",
+ "description": "OSLC Namespace Prefix",
+ "pk": [
+  "nsuri"
+ ],
+ "title": "OSLCNSPREFIX",
+ "type": "object",
+ "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/mxoslcnsprefix",
+ "uniqueid": "oslcnsprefixid",
+ "properties": {
+  "_rowstamp": {
+   "type": "string"
+  },
+  "nsuri": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Namespace URI",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The namespace for the URI.",
+   "maxLength": 200
+  },
+  "localref": {
+   "type": "string"
+  },
+  "nsprefix": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Namespace Prefix",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The prefix for the namespace.",
+   "maxLength": 20
+  },
+  "oslcnsprefixid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Unique Id",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "uniqueid": true,
+   "remarks": "Unique Id",
+   "maxLength": 11
+  },
+  "_imagelibref": {
+   "type": "string"
+  },
+  "href": {
+   "type": "string",
+   "title": "OSLCNSPREFIX object reference"
+  },
+  "record_descriptor": {
+   "type": "string",
+   "title": "Record/Object Descriptor"
+  },
+  "_id": {
+   "type": "string"
+  },
+  "userdefined": {
+   "default": true,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "User Defined",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "If the check box is selected, the namespace binding was created by a user."
+  }
+ },
+ "required": [
+  "nsuri"
+ ]
+}

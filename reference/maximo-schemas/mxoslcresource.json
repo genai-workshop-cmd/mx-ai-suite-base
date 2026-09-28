@@ -1,0 +1,202 @@
+{
+  "resource": "MXOSLCRESOURCE",
+  "description": "OSLCRESOURCE",
+  "pk": [
+    "intobjectname"
+  ],
+  "title": "OSLCRESOURCE",
+  "type": "object",
+  "$ref": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxoslcresource",
+  "uniqueid": "oslcresourceid",
+  "properties": {
+    "idasuri": {
+      "default": false,
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "Use Unique ID For URI",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "If the check box is selected, the unique ID value is used as the resource URI."
+    },
+    "cache": {
+      "default": false,
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "Enable Caching",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "Enable Caching"
+    },
+    "description_longdescription": {
+      "searchType": "WILDCARD",
+      "subType": "LONGALN",
+      "title": "Description Long description",
+      "type": "string",
+      "remarks": "Long Description for Description",
+      "maxLength": 32000
+    },
+    "localref": {
+      "type": "string"
+    },
+    "oslcnsuri": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Namespace URI",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "When populated, this value is the namespace for the resource. The namespaces are used for common resources that are not associated with any OSLC domain.",
+      "maxLength": 200
+    },
+    "oslcname": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "OSLC Resource Name",
+      "persistent": true,
+      "type": "string",
+      "remarks": "The name of the OSLC resource.",
+      "maxLength": 50
+    },
+    "oslcresourcedetail": {
+      "objectName": "OSLCRESOURCEDETAIL",
+      "type": "array",
+      "items": {
+        "definition": {
+          "subSchema": {
+            "$ref": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxoslcresource/oslcresourcedetail"
+          }
+        },
+        "type": "object"
+      },
+      "cardinality": "",
+      "relation": "OSLCRESOURCEDETAIL"
+    },
+    "domainname": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Domain Name",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "The OSLC domain to which the resource belongs.",
+      "maxLength": 50
+    },
+    "description": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Description",
+      "persistent": true,
+      "type": "string",
+      "remarks": "The description of the resource.",
+      "maxLength": 200
+    },
+    "oslcsearchattrs": {
+      "searchType": "WILDCARD",
+      "subType": "CLOB",
+      "title": "Searchable Attributes",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "A comma-separated list of columns from the primary object of the resource that are defined as text searchable. This list of columns are available for OSLC text search.",
+      "maxLength": 999999
+    },
+    "oslcusageuri": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "OSLC Usage URI",
+      "persistent": true,
+      "type": "string",
+      "remarks": "An identifier URI for the domain that specified the usage of the resource.",
+      "maxLength": 200
+    },
+    "intobjectname": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Object Structure",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Identifies the object structure to which the OSLC resource belongs. This value must be unique and the object structure can be tied only to one resource.",
+      "maxLength": 20
+    },
+    "dfltpagesize": {
+      "default": 20,
+      "searchType": "EXACT",
+      "maximum": 2147483647.0,
+      "subType": "INTEGER",
+      "title": "Default Page Size",
+      "persistent": true,
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "remarks": "When you query a resource collection, the page size determines the number of member resources that are returned on each page.",
+      "maxLength": 11
+    },
+    "oslcresourceid": {
+      "searchType": "EXACT",
+      "maximum": 2147483647.0,
+      "subType": "BIGINT",
+      "title": "Unique Id",
+      "persistent": true,
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "uniqueid": true,
+      "remarks": "Unique Id",
+      "maxLength": 11
+    },
+    "_rowstamp": {
+      "type": "string"
+    },
+    "defaultusage": {
+      "default": false,
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "Is Default Usage",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "Identifies the object structure as the default object structure for this resource."
+    },
+    "etagupdatecol": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "ETag Update Attribute",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "The column of the primary object for the resource that is updated when a child object modification does not update the primary object. The child object is defined as a local resource.",
+      "maxLength": 20
+    },
+    "_imagelibref": {
+      "type": "string"
+    },
+    "dfltnsuri": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Default Namespace URI",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Any property that is not explicitly mapped to a namespace belongs to the default namespace.",
+      "maxLength": 200
+    },
+    "oslcspattr": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Service Provider Attribute",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Service Provider Attribute.",
+      "maxLength": 50
+    },
+    "href": {
+      "type": "string"
+    },
+    "_id": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "dfltnsuri",
+    "intobjectname",
+    "oslcname"
+  ]
+}

@@ -1,0 +1,347 @@
+{
+  "resource": "MXAPIINSPFORM",
+  "description": "INSPECTIONFORM",
+  "pk": [
+    "inspformnum",
+    "revision",
+    "orgid"
+  ],
+  "title": "INSPECTIONFORM",
+  "type": "object",
+  "$ref": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapiinspform",
+  "uniqueid": "inspectionformid",
+  "properties": {
+    "inspectionformstatus": {
+      "objectName": "INSPECTIONFORMSTATUS",
+      "type": "array",
+      "items": {
+        "definition": {
+          "subSchema": {
+            "$ref": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapiinspform/inspectionformstatus"
+          }
+        },
+        "type": "object"
+      },
+      "cardinality": "",
+      "relation": "INSPECTIONFORMSTATUS"
+    },
+    "reason": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Revised reason",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Reason of the status change to revised",
+      "maxLength": 100
+    },
+    "localref": {
+      "type": "string"
+    },
+    "createdate": {
+      "searchType": "EXACT",
+      "subType": "DATETIME",
+      "title": "Date when the form was created",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Date when the form was created"
+    },
+    "description": {
+      "searchType": "NONE",
+      "subType": "ALN",
+      "title": "Description",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Description",
+      "maxLength": 1000
+    },
+    "type": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Inspection Form Type",
+      "persistent": true,
+      "type": "string",
+      "remarks": "The type of the inspection form.",
+      "maxLength": 50
+    },
+    "audiocacheform": {
+      "searchType": "NONE",
+      "subType": "BLOB",
+      "title": "Audio Cache",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Audio Cache from Watson TTS",
+      "maxLength": 999999
+    },
+    "langcode": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Language Code",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Language Code",
+      "maxLength": 4
+    },
+    "_rowstamp": {
+      "type": "string"
+    },
+    "inspformscript": {
+      "objectName": "INSPFORMSCRIPT",
+      "type": "array",
+      "items": {
+        "definition": {
+          "subSchema": {
+            "$ref": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapiinspform/inspformscript"
+          }
+        },
+        "type": "object"
+      },
+      "cardinality": "",
+      "relation": "INSPFORMSCRIPT"
+    },
+    "isrevision": {
+      "searchType": "NONE",
+      "subType": "YORN",
+      "title": "Revision indicator",
+      "type": "boolean",
+      "remarks": "Indicator for processing revision"
+    },
+    "createdby": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "User who have created the form",
+      "persistent": true,
+      "type": "string",
+      "remarks": "User who have created the form",
+      "maxLength": 100
+    },
+    "_imagelibref": {
+      "type": "string"
+    },
+    "originalformnum": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Record Identification of the original form",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Record Identification of the original form",
+      "maxLength": 12
+    },
+    "readconfirmation": {
+      "default": false,
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "Require read confirmation",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "Require read confirmation on inspector feedback"
+    },
+    "siteid": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Site",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Site",
+      "maxLength": 8
+    },
+    "hasrevision": {
+      "default": false,
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "Has Revision",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "A revision exists for this record."
+    },
+    "href": {
+      "type": "string"
+    },
+    "inspectionresult": {
+      "objectName": "INSPECTIONRESULT",
+      "type": "array",
+      "items": {
+        "definition": {
+          "subSchema": {
+            "$ref": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapiinspform/inspectionresult"
+          }
+        },
+        "type": "object"
+      },
+      "cardinality": "",
+      "relation": "INSPECTIONRESULT"
+    },
+    "doclinks": {
+      "objectName": "DOCLINKS",
+      "type": "array",
+      "items": {
+        "definition": {
+          "subSchema": {
+            "$ref": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapiinspform/doclinks"
+          }
+        },
+        "type": "object"
+      },
+      "cardinality": "",
+      "relation": "DOCLINKS"
+    },
+    "enablereview": {
+      "default": false,
+      "searchType": "EXACT",
+      "isUserDefined": true,
+      "subType": "YORN",
+      "title": "Enable Review option",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "Enable Review option for the Form"
+    },
+    "status_description": {
+      "type": "string"
+    },
+    "description_longdescription": {
+      "searchType": "WILDCARD",
+      "subType": "LONGALN",
+      "title": "Description Long description",
+      "type": "string",
+      "remarks": "Long Description for Description",
+      "maxLength": 32000
+    },
+    "changeby": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "User who is changing the form",
+      "persistent": true,
+      "type": "string",
+      "remarks": "User who is changing the form",
+      "maxLength": 100
+    },
+    "changedate": {
+      "searchType": "EXACT",
+      "subType": "DATETIME",
+      "title": "Date when the form was changed",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Date when the form was changed"
+    },
+    "orgid": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Organization",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Organization",
+      "maxLength": 8
+    },
+    "revision": {
+      "default": 1,
+      "searchType": "EXACT",
+      "maximum": 2147483647.0,
+      "subType": "INTEGER",
+      "title": "Revision",
+      "persistent": true,
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "remarks": "Current Form Revision",
+      "maxLength": 11
+    },
+    "inspectionformid": {
+      "searchType": "EXACT",
+      "maximum": 2147483647.0,
+      "subType": "BIGINT",
+      "title": "INSPECTIONFORMID",
+      "persistent": true,
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "uniqueid": true,
+      "remarks": "Unique Identifier",
+      "maxLength": 11
+    },
+    "inspcascadeoption": {
+      "objectName": "INSPCASCADEOPTION",
+      "type": "array",
+      "items": {
+        "definition": {
+          "subSchema": {
+            "$ref": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapiinspform/inspcascadeoption"
+          }
+        },
+        "type": "object"
+      },
+      "cardinality": "",
+      "relation": "INSPCASCADEOPTION"
+    },
+    "hasld": {
+      "default": false,
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "Has Long Description",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "Boolean flag to indicate if there is any long description for this record"
+    },
+    "audioguided": {
+      "default": false,
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "Audio Guided Inspection",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "Audio Guided Inspection"
+    },
+    "name": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Name",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Form Name",
+      "maxLength": 200
+    },
+    "inspquestion": {
+      "objectName": "INSPQUESTION",
+      "type": "array",
+      "items": {
+        "definition": {
+          "subSchema": {
+            "$ref": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapiinspform/inspquestion"
+          }
+        },
+        "type": "object"
+      },
+      "cardinality": "",
+      "relation": "INSPQUESTION"
+    },
+    "_id": {
+      "type": "string"
+    },
+    "inspformnum": {
+      "default": "&AUTOKEY&",
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Inspection Form",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Composed Identifier For Inspection Form",
+      "maxLength": 12
+    },
+    "status": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Status",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Inspection form status",
+      "maxLength": 20
+    }
+  },
+  "required": [
+    "changeby",
+    "changedate",
+    "createdate",
+    "createdby",
+    "langcode",
+    "name",
+    "status"
+  ]
+}

@@ -1,0 +1,110 @@
+{
+ "resource": "MXAPIFAILURELIST",
+ "description": "Maximo API for Failure Lists",
+ "pk": [
+  "orgid",
+  "failurelist"
+ ],
+ "title": "FAILURELIST",
+ "type": "object",
+ "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/mxapifailurelist",
+ "uniqueid": "failurelist",
+ "properties": {
+  "parent": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Parent",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "Parent Failure List Number",
+   "maxLength": 11
+  },
+  "localref": {
+   "type": "string"
+  },
+  "parentcode": {
+   "searchType": "NONE",
+   "subType": "UPPER",
+   "title": "Parent Failure Code",
+   "type": "string",
+   "remarks": "Parent Failure Code.",
+   "maxLength": 8
+  },
+  "record_descriptor": {
+   "type": "string",
+   "title": "Record/Object Descriptor"
+  },
+  "type": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Type",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "What type or level of failure code is this?",
+   "maxLength": 12
+  },
+  "orgid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Organization",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Organization Identifier",
+   "maxLength": 8
+  },
+  "failurelist": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Failure List",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "uniqueid": true,
+   "remarks": "Failure List Number",
+   "maxLength": 11
+  },
+  "_rowstamp": {
+   "type": "string"
+  },
+  "flcdescription": {
+   "searchType": "NONE",
+   "subType": "ALN",
+   "title": "Description",
+   "type": "string",
+   "remarks": "FLCDESCRIPTION",
+   "maxLength": 100
+  },
+  "failurecode": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Failure Code",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Failure Code",
+   "maxLength": 8
+  },
+  "_imagelibref": {
+   "type": "string"
+  },
+  "href": {
+   "type": "string",
+   "title": "FAILURELIST object reference"
+  },
+  "_id": {
+   "type": "string"
+  },
+  "type_description": {
+   "type": "string"
+  }
+ },
+ "required": [
+  "failurecode",
+  "orgid"
+ ]
+}

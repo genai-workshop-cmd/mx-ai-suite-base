@@ -1,0 +1,145 @@
+{
+ "resource": "MXAPIAHASSETAPMVAL",
+ "description": "AHASSETLOCANAPMVAL",
+ "pk": [
+  "siteid",
+  "assetnum"
+ ],
+ "title": "AHASSETLOCANAPMVAL",
+ "type": "object",
+ "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/mxapiahassetapmval",
+ "properties": {
+  "assetuid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "ASSETUID",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "Unique Identifier",
+   "maxLength": 11
+  },
+  "effectiveage": {
+   "searchType": "EXACT",
+   "scale": 2,
+   "subType": "DECIMAL",
+   "title": "Value",
+   "persistent": true,
+   "type": "number",
+   "remarks": "Captured score value or manually overridden value.",
+   "maxLength": 13
+  },
+  "status_description": {
+   "type": "string"
+  },
+  "eol": {
+   "searchType": "EXACT",
+   "scale": 2,
+   "subType": "DECIMAL",
+   "title": "Value",
+   "persistent": true,
+   "type": "number",
+   "remarks": "Captured score value or manually overridden value.",
+   "maxLength": 13
+  },
+  "localref": {
+   "type": "string"
+  },
+  "criticality": {
+   "searchType": "EXACT",
+   "scale": 2,
+   "subType": "DECIMAL",
+   "title": "Value",
+   "persistent": true,
+   "type": "number",
+   "remarks": "Captured score value or manually overridden value.",
+   "maxLength": 13
+  },
+  "record_descriptor": {
+   "type": "string",
+   "title": "Record/Object Descriptor"
+  },
+  "assethealth": {
+   "searchType": "EXACT",
+   "scale": 2,
+   "subType": "DECIMAL",
+   "title": "Value",
+   "persistent": true,
+   "type": "number",
+   "remarks": "Captured score value or manually overridden value.",
+   "maxLength": 13
+  },
+  "_rowstamp": {
+   "type": "string"
+  },
+  "_imagelibref": {
+   "type": "string"
+  },
+  "assetid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Asset",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "unique id",
+   "maxLength": 11
+  },
+  "assetnum": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Asset",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Asset Number",
+   "maxLength": 25
+  },
+  "siteid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Site",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Site Identifier",
+   "maxLength": 8
+  },
+  "risk": {
+   "searchType": "EXACT",
+   "scale": 2,
+   "subType": "DECIMAL",
+   "title": "Value",
+   "persistent": true,
+   "type": "number",
+   "remarks": "Captured score value or manually overridden value.",
+   "maxLength": 13
+  },
+  "href": {
+   "type": "string",
+   "title": "AHASSETLOCANAPMVAL object reference"
+  },
+  "_id": {
+   "type": "string"
+  },
+  "status": {
+   "default": "!NOT READY!",
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Status",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Status of the asset, for example, not ready, operating, or decommissioned.",
+   "maxLength": 20
+  }
+ },
+ "required": [
+  "assetid",
+  "assetnum",
+  "assetuid",
+  "siteid"
+ ]
+}

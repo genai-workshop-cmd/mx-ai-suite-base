@@ -1,0 +1,971 @@
+{
+ "resource": "PLUSGASSET",
+ "description": "Oil and Gas' Asset Object Structure",
+ "pk": [
+  "siteid",
+  "assetnum"
+ ],
+ "title": "ASSET",
+ "type": "object",
+ "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/plusgasset",
+ "uniqueid": "assetuid",
+ "properties": {
+  "plusghoseinspectby": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Inspected By",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The person who inspected the hose.",
+   "maxLength": 100
+  },
+  "localref": {
+   "type": "string"
+  },
+  "plusgpiptype_description": {
+   "type": "string"
+  },
+  "plusgliftequreference": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Reference",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The reference to documentation  or to an identifier that is associated with the type of lifting equipment that is used.",
+   "maxLength": 20
+  },
+  "plusgpipprocessmedium_description": {
+   "type": "string"
+  },
+  "plusdhavesamplewo": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Sampling WO Pending",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Indicates if there is a pending work order to perform"
+  },
+  "plusgaccequreference": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Reference",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The reference to documentation or to an identifier that is associated with the type of access equipment that is used.",
+   "maxLength": 20
+  },
+  "plusgfmperson": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Failure Analysis Leader",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The person who is leading the failure analysis effort.",
+   "maxLength": 100
+  },
+  "href": {
+   "type": "string",
+   "title": "ASSET object reference"
+  },
+  "plusdmeterphase_description": {
+   "type": "string"
+  },
+  "plusdsupercompress": {
+   "searchType": "EXACT",
+   "scale": 4,
+   "subType": "DECIMAL",
+   "title": "Supercompressibility",
+   "persistent": true,
+   "type": "number",
+   "remarks": "The pressure correction factor for the meter that is based on the environment where the meter is operating.",
+   "maxLength": 11
+  },
+  "plusgfmcomplete": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Complete",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The date when the failure analysis is set to be completed."
+  },
+  "plusghosereference": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Reference",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The reference to documentation or to an identifier that is associated with the type of hose that is used.",
+   "maxLength": 20
+  },
+  "plusgliftequtype": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Lift Equipment Type",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The type of lifting equipment that is used.",
+   "maxLength": 20
+  },
+  "assetmeter": {
+   "objectName": "ASSETMETER",
+   "type": "array",
+   "items": {
+    "definition": {
+     "subSchema": {
+      "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/plusgasset/assetmeter"
+     }
+    },
+    "type": "object"
+   },
+   "cardinality": "UNDEFINED",
+   "relation": "INT_ASSETMETER"
+  },
+  "record_descriptor": {
+   "type": "string",
+   "title": "Record/Object Descriptor"
+  },
+  "plusgfmstart": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Start",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The date when the failure analysis is set to begin."
+  },
+  "plusgbenchsource": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Benchmark Source",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The source of the benchmark mean time between failures for the asset. Valid values are in the PLUSGBENCHSOURCE domain.",
+   "maxLength": 30
+  },
+  "plusgaccequinspectby": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Inspected By",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The person who inspected the access equipment.",
+   "maxLength": 100
+  },
+  "plusgpolicyid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Operating Policy",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "The unique identifier of an operating policy.",
+   "maxLength": 11
+  },
+  "plusgliftequinspectby": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Inspected By",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The person who inspected the lifting equipment.",
+   "maxLength": 100
+  },
+  "plusgactionsumm": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Review Action Summary",
+   "persistent": true,
+   "type": "string",
+   "remarks": "A summary of the review actions that are associated with the asset.",
+   "maxLength": 200
+  },
+  "plusdmeterconfig": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Meter Configuration Code",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Meter configuration code",
+   "maxLength": 12
+  },
+  "plusgleakdetails": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Leak Details",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Describes the source of the leak, and any other information about the leak.",
+   "maxLength": 4000
+  },
+  "plusghoseprocessmedium_description": {
+   "type": "string"
+  },
+  "plusdpressure": {
+   "searchType": "EXACT",
+   "scale": 2,
+   "subType": "DECIMAL",
+   "title": "Meter Pressure",
+   "persistent": true,
+   "type": "number",
+   "remarks": "The maximum operating pressure for the meter.",
+   "maxLength": 6
+  },
+  "status": {
+   "default": "!NOT READY!",
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Status",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Status of the asset, for example, not ready, operating, or decommissioned.",
+   "maxLength": 20
+  },
+  "plusdutilitytype": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Utility Type Code",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The utility type code that is defined in the customer billing system.",
+   "maxLength": 4
+  },
+  "plusgtargetmtbf": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "INTEGER",
+   "title": "Target MTBF",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "The target mean time between failures for the asset, in hours. The value must be an integer.",
+   "maxLength": 11
+  },
+  "plusdbusinessunit_description": {
+   "type": "string"
+  },
+  "plusdmetersize": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Meter Size Code",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Meter Size",
+   "maxLength": 4
+  },
+  "plusghoseinspectdate": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Last Inspection",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The date and time when the hose was last inspected."
+  },
+  "plusddemandconst": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "INTEGER",
+   "title": "Demand Constant",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "Demand constant",
+   "maxLength": 11
+  },
+  "plusdmeterconfig_description": {
+   "type": "string"
+  },
+  "plusdneedsamplewo": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Sampling WO Needed",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Indicates that a sampling work order needs to be generated for this record"
+  },
+  "assetnum": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Asset",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Asset Number",
+   "maxLength": 25
+  },
+  "plusgpipprocessmedium": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Process Medium",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The type of medium, such as fuel or water, that the pipe is designed to carry.",
+   "maxLength": 20
+  },
+  "plusdmetersize_description": {
+   "type": "string"
+  },
+  "plusddialcount_description": {
+   "type": "string"
+  },
+  "plusgpiprating": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Rating",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The pressure class that the pipe is designed to withstand.",
+   "maxLength": 20
+  },
+  "plusgprotectinspectby": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Inspected By",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The person who inspected the personal protective equipment.",
+   "maxLength": 100
+  },
+  "plusgriskassessid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Risk Assessment Unique Identifier",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "The unique identifier of the risk assessment.",
+   "maxLength": 11
+  },
+  "plusgaccequinspectbyid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Inspected By ID",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "The person who inspected the access equipment.",
+   "maxLength": 11
+  },
+  "plusgfmtype_description": {
+   "type": "string"
+  },
+  "plusgprotectinspectdate": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Last Inspection",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The date and time when the personal protective equipment was last inspected."
+  },
+  "plusgliftequtype_description": {
+   "type": "string"
+  },
+  "plusdpressurewater": {
+   "searchType": "EXACT",
+   "scale": 2,
+   "subType": "DECIMAL",
+   "title": "Inches of Water",
+   "persistent": true,
+   "type": "number",
+   "remarks": "The pressure in units of inches of water",
+   "maxLength": 6
+  },
+  "plusglastchkdate": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Last Checked Date",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The date and time when the valve was last checked for leaks."
+  },
+  "plusgprotectinspectbyid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Inspected By ID",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "The person who inspected the personal protective equipment.",
+   "maxLength": 11
+  },
+  "plusghoseinspectbyid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Inspected By ID",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "The person who inspected the hose.",
+   "maxLength": 11
+  },
+  "plusgispassvalve": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Passing Valve",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Specifies whether the valve is closed properly and that it is not leaking fluids or gases. "
+  },
+  "plusghosetype_description": {
+   "type": "string"
+  },
+  "plusdmetertype": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Meter Type",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The type of meter.",
+   "maxLength": 4
+  },
+  "plusgaccequinspectdate": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Last Inspection Date/Time",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The date and time when the access equipment was last inspected."
+  },
+  "plusdpalletnum": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Pallet Number",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The pallet number from receiving.",
+   "maxLength": 12
+  },
+  "plusgpipinspectby": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Inspected By",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The person who inspected the pipe.",
+   "maxLength": 100
+  },
+  "plusdfulldemand": {
+   "searchType": "EXACT",
+   "scale": 2,
+   "subType": "DECIMAL",
+   "title": "Full Scale Demand Value",
+   "persistent": true,
+   "type": "number",
+   "remarks": "Maximum demand value supported by the meter in amps.",
+   "maxLength": 7
+  },
+  "plusdmeterphase": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Meter Phase Code",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Indicate if the meter is single phase or three phase or indicates the phase associated with the meter.",
+   "maxLength": 4
+  },
+  "plusdequipmenttype_description": {
+   "type": "string"
+  },
+  "plusdmetertype_description": {
+   "type": "string"
+  },
+  "plusgfmtype": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Failure Analysis Type",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The type of procedural analysis that must be done to identify the potential failure of this asset. An FMEA analysis is done at the functional level. An FMECA analysis extends the FMEA analysis by including a criticality analysis, which identifies the potential failure of the asset and the consequences of the failure. Criticality-based maintenance identifies which assets are critical and what the impact would be if the assets were to fail. Criticality-based maintenance also informs procurement strategy so that inventories, and the costs associated with keeping them, are reduced but not at the expense of increased downtime.",
+   "maxLength": 30
+  },
+  "_rowstamp": {
+   "type": "string"
+  },
+  "plusdboxnum": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Box Number",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The box number from receiving.",
+   "maxLength": 12
+  },
+  "plusgpiplineclass": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Line Class",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The classification to which the pipe is assigned.",
+   "maxLength": 20
+  },
+  "plusghoserating": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Rating",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The pressure that the hose is designed to withstand.",
+   "maxLength": 20
+  },
+  "siteid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Site",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Site Identifier",
+   "maxLength": 8
+  },
+  "plusgistemp": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Temporary",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Indicates whether an asset is only needed for a limited time. The asset is tracked for historical purposes."
+  },
+  "status_description": {
+   "type": "string"
+  },
+  "plusgpredictedmtbf": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "INTEGER",
+   "title": "Predicted MTBF",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "The predicted mean time between failures for the asset, in hours. The value must be an integer.",
+   "maxLength": 11
+  },
+  "plusdbusinessunit": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Business Unit",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The business unit that is responsible for the asset.",
+   "maxLength": 20
+  },
+  "plusdsamplingid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Internal ID",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "Internal ID column used to Generate WO",
+   "maxLength": 11
+  },
+  "plusdprimaryind": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Primary Meter Indicator",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Indicates if the meter record is for primary metering"
+  },
+  "plusgprotecttype": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "PPE Type",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The type of personal protective equipment, such as breathing apparatus, that is used to ensure personal safety.",
+   "maxLength": 20
+  },
+  "plusgmttr": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "INTEGER",
+   "title": "MTTR",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "The mean time to repair for the asset, in hours. This value must be an integer.",
+   "maxLength": 11
+  },
+  "plusdmultiplier": {
+   "searchType": "EXACT",
+   "scale": 2,
+   "subType": "DECIMAL",
+   "title": "Multiplier",
+   "persistent": true,
+   "type": "number",
+   "remarks": "The meter multiplier is a billing factor that is used in the calculation of customer bills.",
+   "maxLength": 13
+  },
+  "riskassessnum": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Risk Assessment",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The identifier for the risk assessment.",
+   "maxLength": 10
+  },
+  "_id": {
+   "type": "string"
+  },
+  "plusgfasummary": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Summary",
+   "persistent": true,
+   "type": "string",
+   "remarks": "A summary of the details of the failure analysis, such as which method is used.",
+   "maxLength": 50
+  },
+  "plusdregtype": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Regulatory Type",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The regulatory asset type which determines reporting requirements and may relate to the standards that applies to this asset record",
+   "maxLength": 12
+  },
+  "plusgliftequrating": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Rating",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The rating for the lifting equipment.",
+   "maxLength": 20
+  },
+  "plusghosetype": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Hose Type",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The type of hose, such as a fire hose, that is used for this asset.",
+   "maxLength": 20
+  },
+  "assetusercust": {
+   "objectName": "ASSETUSERCUST",
+   "type": "array",
+   "items": {
+    "definition": {
+     "subSchema": {
+      "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/plusgasset/assetusercust"
+     }
+    },
+    "type": "object"
+   },
+   "cardinality": "MULTIPLE",
+   "relation": "ASSETUSERCUST"
+  },
+  "plusgprotectreference": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Reference",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The reference to documentation or to an identifier that is associated with the type of personal protective equipment that is required.",
+   "maxLength": 20
+  },
+  "plusdsampledate": {
+   "searchType": "EXACT",
+   "subType": "DATE",
+   "title": "Last Sample Date",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The last date that a sample work order was generated for this meter."
+  },
+  "plusgpiptype": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Piping Type",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The type of piping that is used for this asset.",
+   "maxLength": 20
+  },
+  "description": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Description",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Describes the asset. To enter or view additional information, click Long  Description.",
+   "maxLength": 100
+  },
+  "plusgtotalscore": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Total Score",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "The total score that is assigned to the review actions that are associated with the asset.",
+   "maxLength": 11
+  },
+  "plusdfixedfactor": {
+   "searchType": "EXACT",
+   "scale": 4,
+   "subType": "DECIMAL",
+   "title": "Fix Factor Value",
+   "persistent": true,
+   "type": "number",
+   "remarks": "A billing factor that is associated with the delivery pressure.",
+   "maxLength": 7
+  },
+  "_imagelibref": {
+   "type": "string"
+  },
+  "plusdregtype_description": {
+   "type": "string"
+  },
+  "plusgfmpersonid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Failure Analysis Leader ID",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "The person who is leading the failure analysis effort.",
+   "maxLength": 11
+  },
+  "assetspec": {
+   "objectName": "ASSETSPEC",
+   "type": "array",
+   "items": {
+    "definition": {
+     "subSchema": {
+      "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/plusgasset/assetspec"
+     }
+    },
+    "type": "object"
+   },
+   "cardinality": "UNDEFINED",
+   "relation": "ASSETSPECCLASS"
+  },
+  "plusgbenchmarkmtbf": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "INTEGER",
+   "title": "Benchmark MTBF",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "The benchmark mean time between failures for the asset, in hours. The value must be an integer.",
+   "maxLength": 11
+  },
+  "plusgpipreference": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Reference",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The reference to documentation or to an identifier that is associated with the type of piping that is used.",
+   "maxLength": 20
+  },
+  "plusgaccequtype": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Access Equipment Type",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The type of equipment that provides access.",
+   "maxLength": 20
+  },
+  "plusgaccequtype_description": {
+   "type": "string"
+  },
+  "plusgprotecttype_description": {
+   "type": "string"
+  },
+  "plusgbenchsource_description": {
+   "type": "string"
+  },
+  "plusghoseprocessmedium": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Process Medium",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The type of medium, such as fuel or water, that the hose is designed to carry.",
+   "maxLength": 20
+  },
+  "plusgpipinspectdate": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Last Inspection",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The date and time when the pipe was last inspected."
+  },
+  "plusddialcount": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Dial Count",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The number of dials on the meter",
+   "maxLength": 2
+  },
+  "plusgpipinspectbyid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Inspected By ID",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "The person who inspected the pipe.",
+   "maxLength": 11
+  },
+  "plusdutilitytype_description": {
+   "type": "string"
+  },
+  "plusghistoricmtbf": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "INTEGER",
+   "title": "Historic MTBF",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "The historic mean time between failures for the asset, in hours. The value must be an integer.",
+   "maxLength": 11
+  },
+  "plusgopenomuid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "INTEGER",
+   "title": "Open Unique Idenfitier",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "The open unique identifier provided to an external system by Maximo.",
+   "maxLength": 11
+  },
+  "plusgleaking": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Leaking",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Indicates whether the asset is leaking."
+  },
+  "plusgpiplinenum": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Line Number",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The length of a piece of the pipe. The piece can be short or long, depending on how the pipe is constructed.",
+   "maxLength": 20
+  },
+  "plusdequipmenttype": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Equipment Type Code",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The equipment type code that is defined in the customer billing system.",
+   "maxLength": 4
+  },
+  "plusgliftequinspectdate": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Last Inspection Date/Time",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The date and time when the lifting equipment was last inspected."
+  },
+  "plusgliftequinspectbyid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Inspected By ID",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "The person who inspected the lifting equipment.",
+   "maxLength": 11
+  },
+  "plusgtempuntil": {
+   "searchType": "EXACT",
+   "subType": "DATE",
+   "title": "Temporary Until",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The date until which the asset retains its temporary status. After the temporary status expires, you can remove the asset or opt not to use it."
+  },
+  "location": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Location",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Asset Location",
+   "maxLength": 25
+  },
+  "plusgdateofprediction": {
+   "searchType": "EXACT",
+   "subType": "DATE",
+   "title": "Date of Prediction",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The date when the predicted mean time between failures was specified."
+  },
+  "plusdsamplinggroup": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Sampling Group",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The group of meters with similar characteristics that are tested as a batch.",
+   "maxLength": 12
+  }
+ },
+ "required": [
+  "assetnum",
+  "siteid"
+ ]
+}

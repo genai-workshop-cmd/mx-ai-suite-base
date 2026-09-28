@@ -1,0 +1,335 @@
+{
+ "resource": "PLUSDCUESTIMATE",
+ "description": "CUE Integration to External Systems",
+ "pk": [
+  "orgid",
+  "requestnum"
+ ],
+ "title": "PLUSDESTCONTROL",
+ "type": "object",
+ "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/plusdcuestimate",
+ "uniqueid": "plusdestcontrolid",
+ "properties": {
+  "npestverdescription": {
+   "searchType": "NONE",
+   "subType": "ALN",
+   "title": "Description",
+   "type": "string",
+   "remarks": "non persistent request number description",
+   "maxLength": 100
+  },
+  "nprequestnum": {
+   "searchType": "NONE",
+   "subType": "UPPER",
+   "title": "Estimate Request",
+   "type": "string",
+   "hasList": true,
+   "remarks": "non persistent request number field from plusdestcontrol.requestnum",
+   "maxLength": 8
+  },
+  "historyflag": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "History",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "History"
+  },
+  "plusdestcontrolid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Unique Id",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "uniqueid": true,
+   "remarks": "Unique Id",
+   "maxLength": 11
+  },
+  "localref": {
+   "type": "string"
+  },
+  "description": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Description",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Describes the estimate request. To enter or view additional information, click the  Long Description button.",
+   "maxLength": 254
+  },
+  "npreqnumdescription": {
+   "searchType": "NONE",
+   "subType": "ALN",
+   "title": "Description",
+   "type": "string",
+   "remarks": "non persistent request number description",
+   "maxLength": 254
+  },
+  "npestversion": {
+   "searchType": "NONE",
+   "maximum": 2147483647.0,
+   "subType": "SMALLINT",
+   "title": "Estimate Version",
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "hasList": true,
+   "remarks": "non persistent current record estimate version",
+   "maxLength": 11
+  },
+  "_rowstamp": {
+   "type": "string"
+  },
+  "requesttype": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Request Type",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Identifies the type of, or reason for, estimates to be done under this request.",
+   "maxLength": 12
+  },
+  "masterwonum": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Target WO",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The target work order for the estimate request type of Job, Project or Task. If you do not yet have a target work order you can enter a value later.",
+   "maxLength": 25
+  },
+  "plusdestversion": {
+   "objectName": "PLUSDESTVERSION",
+   "type": "array",
+   "items": {
+    "definition": {
+     "subSchema": {
+      "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/plusdcuestimate/plusdestversion"
+     }
+    },
+    "type": "object"
+   },
+   "cardinality": "",
+   "relation": "PLUSDESTVERSIONREL"
+  },
+  "_imagelibref": {
+   "type": "string"
+  },
+  "meainput": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Mea Input",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Mea Input",
+   "maxLength": 50
+  },
+  "siteid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Site",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Site to which the request belongs ; defaults to the site specified in the user's  profile information.",
+   "maxLength": 8
+  },
+  "href": {
+   "type": "string",
+   "title": "PLUSDESTCONTROL object reference"
+  },
+  "dupflag": {
+   "default": false,
+   "searchType": "NONE",
+   "subType": "YORN",
+   "title": "Duplicate flag",
+   "type": "boolean",
+   "remarks": "Duplicate flag"
+  },
+  "requestnum": {
+   "default": "&AUTOKEY&",
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Estimate Request",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "System generated unique identifier for the estimate record. You can overwrite this value until you save the estimate. After saving the record, this field becomes read only.",
+   "maxLength": 8
+  },
+  "status_description": {
+   "type": "string"
+  },
+  "description_longdescription": {
+   "searchType": "WILDCARD",
+   "subType": "LONGALN",
+   "title": "DESCRIPTION Long description",
+   "type": "string",
+   "remarks": "Long description for DESCRIPTION",
+   "maxLength": 32000
+  },
+  "changechkdate": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "CHANGECHKDATE",
+   "persistent": true,
+   "type": "string",
+   "remarks": "CHANGECHKDATE"
+  },
+  "changeby": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "By",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The login I.D. of the person who last changed the record.",
+   "maxLength": 100
+  },
+  "changedate": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Date",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Date and time the record was last changed."
+  },
+  "record_descriptor": {
+   "type": "string",
+   "title": "Record/Object Descriptor"
+  },
+  "asbuiltversion": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "SMALLINT",
+   "title": "Accepted As-Built Version",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "Identifies the version number of the accepted version. Maximo enters the version  number in this field when you accept an Estimate Type of ASBUILT.",
+   "maxLength": 11
+  },
+  "cnsttaskid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "INTEGER",
+   "title": "Default Craft WO/Task",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "hasList": true,
+   "remarks": "The tasks that are on the default construction work order. If you did not select a default construction work order, the tasks on the target work order are shown. When you select a task, all the labor requirements from the estimate are copied to the task when the estimate is accepted.",
+   "maxLength": 11
+  },
+  "orgid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Organization",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Identifies the organization to which the request belongs.",
+   "maxLength": 8
+  },
+  "statusdate": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Status Date",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Date and time the estimate status was last changed."
+  },
+  "supporttaskid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "INTEGER",
+   "title": "Default Support WO/Task",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "hasList": true,
+   "remarks": "The tasks that are on the default support work order. If you did not select a default support work order, the tasks are shown on the target work order. When you select a task, the support activity labor requirements from the estimate are copied to the task when the estimate is accepted.",
+   "maxLength": 11
+  },
+  "requesttype_description": {
+   "type": "string"
+  },
+  "inprgversion": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "INTEGER",
+   "title": "Accepted In Progress Version",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "Identifies the version number of the accepted version. Maximo enters the version number in this field when you accept an Estimate Type of INPRG",
+   "maxLength": 11
+  },
+  "estimateaction": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Estimate Action",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Identifies action to be performed through the MEA for an external system",
+   "maxLength": 8
+  },
+  "acceptedversion": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "SMALLINT",
+   "title": "Accepted Design Version",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "Identifies the version number of the accepted version. Maximo enters the version  number in this field when you accept an estimate type of DESIGN.",
+   "maxLength": 11
+  },
+  "cnstwonum": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Default Craft WO/Task",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The child work order for construction. This work order must be a child of the target work order. If a compatible unit or station is not defined as support, then the associated labor is copied to the designated construction work order when you accept a version of the estimate.",
+   "maxLength": 25
+  },
+  "_id": {
+   "type": "string"
+  },
+  "supportwonum": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Default Support WO/Task",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The child work order for support activities. This work order must be a child of the target work order. Support activities can include creating the design, securing a permit, or any other pre-construction activity that is not included in the craft or construction labor estimate.",
+   "maxLength": 25
+  },
+  "status": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Status",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The current status of the estimate. Maximo changes the version's status when you  select the Perform Estimate, Peform Quote, and Peform Acceptance actions.",
+   "maxLength": 12
+  }
+ },
+ "required": [
+  "changeby",
+  "changedate",
+  "dupflag",
+  "orgid",
+  "requesttype",
+  "siteid",
+  "status",
+  "statusdate"
+ ]
+}

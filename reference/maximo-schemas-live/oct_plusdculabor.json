@@ -1,0 +1,415 @@
+{
+ "resource": "OCT_PLUSDCULABOR",
+ "description": "PLUSDCU",
+ "pk": [
+  "orgid",
+  "cuname",
+  "cuversion"
+ ],
+ "title": "PLUSDCU",
+ "type": "object",
+ "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/oct_plusdculabor",
+ "uniqueid": "plusdcuid",
+ "properties": {
+  "plusdcuid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Unique Id",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "uniqueid": true,
+   "remarks": "Unique Id",
+   "maxLength": 11
+  },
+  "historyflag": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Historyflag",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "History Flag"
+  },
+  "wfactive": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Wfactive",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Indicates whether the CU record is in a workflow process. If the check box is selected, the CU record is in a workflow. If the check box is cleared (the default), the CU record is not in a workflow. Maximo selects this checkbox then it starts the workflow process for the CU. The workflow process can be used to track the approval process prior to activating a CU record."
+  },
+  "localref": {
+   "type": "string"
+  },
+  "description": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Description",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Describes the compatible unit. To enter or view additional information, click the  Long Description button.",
+   "maxLength": 100
+  },
+  "culevelnum_description": {
+   "type": "string"
+  },
+  "sketchfeatureflag": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Sketch feature",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Specifies whether the CU record has a direct counterpart in an external graphical  design tool. If the check box is selected, a sketch exists. If the check box is cleared (the default), there is no corresponding sketch for the CU."
+  },
+  "bidunitflag": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Bid Unit",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Specifies whether the CU record can be selected on a contract line in the Purchase  Contracts (T&D) application. If the check box is selected, the CU can be used on a contract line. If the check box is cleared (the default), the CU cannot be used on a contract line."
+  },
+  "_rowstamp": {
+   "type": "string"
+  },
+  "uom": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Unit of Measure",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The unit of measure for the compatible unit. Most compatible units will use EACH for their measurment unit, but other CUs, such as those that are for installing cable, will have a linear unit of measure, such as feet. Maximo uses the UOM to estimate the correct amount of material needed.",
+   "maxLength": 16
+  },
+  "cudetailflag": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "CU Detail",
+   "persistent": true,
+   "type": "boolean",
+   "hasList": true,
+   "remarks": "Specifies whether the CU record can be used as a child CU. If the check box is  selected (the default), the CU can be used as a child CU. If the check box is cleared, the CU cannot be used as a child CU."
+  },
+  "spanflag": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Span Unit",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Specifies whether the CU is related to a span between two stations. If the check box is selected, you must enter a value in the Back to Station field. If the check box is cleared (the default), you do not need a value in the Back to Station field."
+  },
+  "cuupdateset": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "CU Update Set",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Identifies the work set to which the CU record belongs. A work set allows you to  group multiple CUs together to activate them all in one step. Choose any name for your set and enter the same name in each CU record's CU Update Set field. This field is case sensitive.",
+   "maxLength": 8
+  },
+  "jobinstructionflag": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Job Instruction",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Specifies whether the CU record should appear on the Job Instructions report. If the check box is selected, the CU should appear on the Job Instructions report. If the check box is cleared (the default), the CU should not appear on the report. This flag only applies to CUs directly referenced in the CU Estimating (T&D) application or the first level at which it is encountered during the estimate generation process."
+  },
+  "supportflag": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Support Activity",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Specifies whether the CU record identifies office activities, such as designing or drafting, rather than construction activities. If the check box is selected, the CU contains support activities. If the check box is cleared (the default), the CU does not contain support activities. If a CU with its Support Activity check box selected is used on an estimate, when the estimate is accepted, Maximo copies the labor requirements from the CU to the Target Work Order or Default Support Work Order indicated on that estimate. The Support Activity? check box allows you to separate non-construction from construction costs on an estimate."
+  },
+  "_imagelibref": {
+   "type": "string"
+  },
+  "budgetflag": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Budget Only",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Specifies whether the CU is to be used for rough estimates only, not for final  estimations. If the check box is selected, the CU is to be used only for rough estimates. If the check box is cleared (the default), the CU can be used for final estimates. Budget CUs can only be applied to Cost Only and Project request types. These request types cannot be accepted to a work order."
+  },
+  "meainput": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Mean Input",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Mea Input",
+   "maxLength": 50
+  },
+  "href": {
+   "type": "string",
+   "title": "PLUSDCU object reference"
+  },
+  "acctcode": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Accounting Code",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Defines how to account for charges based on the FERC system of accounts.",
+   "maxLength": 6
+  },
+  "wfid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "INTEGER",
+   "title": "Wfid",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "Workflow ID",
+   "maxLength": 11
+  },
+  "standardssheet": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Standards Sheet",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Identifies the sheet or page of the Construction Standards manual on which the CU  appears.",
+   "maxLength": 12
+  },
+  "status_description": {
+   "type": "string"
+  },
+  "description_longdescription": {
+   "searchType": "WILDCARD",
+   "subType": "LONGALN",
+   "title": "DESCRIPTION Long description",
+   "type": "string",
+   "remarks": "Long description for DESCRIPTION",
+   "maxLength": 32000
+  },
+  "tasktype": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Task Type",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The phase of construction or the type of work that will be performed by the Child CU. This field is used to group similar compatible units into the same work order task.",
+   "maxLength": 24
+  },
+  "statisticalcode": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Statistical Code",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Identifies the CU record for statistical reporting purposes.",
+   "maxLength": 10
+  },
+  "classstructureid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Class Structure",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Class Structure",
+   "maxLength": 25
+  },
+  "changeby": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Modified By",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Login I.D. of the person who last changed the record.",
+   "maxLength": 100
+  },
+  "stationdetailflag": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Station Detail",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Specifies whether the CU record can be selected in the CU Estimating (T&D) application. If the check box is selected (the default), the CU can be used on an estimate request. If the check box is cleared, the CU cannot be used on an estimate request, and the CU will not appear when you peform a search for CU records in the CU Estimating (T&D) application."
+  },
+  "tasktype_description": {
+   "type": "string"
+  },
+  "worktype": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Work Type",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Identifies the type of crew needed to perform the work the CU record requires, for example, overhead service crew, pole setting crew, or non-crew (support).",
+   "maxLength": 4
+  },
+  "yearflag": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Year Required",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Specifies whether a value is required in the Vintage Year field on the Stations subtab in the CU Estimating (T&D) application. The vintage year is the year in which the asset or facilities to be removed or abandoned were originally installed. If the check box is selected, a value is required. If the check box is cleared (the default), a value is not required. The Vintage Year requirement only applies when the CU is removed or abandoned."
+  },
+  "changedate": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Date",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Date and time that the record was modified."
+  },
+  "record_descriptor": {
+   "type": "string",
+   "title": "Record/Object Descriptor"
+  },
+  "culevelnum": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "INTEGER",
+   "title": "CU Level",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "hasList": true,
+   "remarks": "Level at which the CU resides within the CU hierarchy. When you create a new CU  record, its default level is zero. When you add a child CU to a parent, the parent must have a higher CU level than that of any of its children. The highest level is 9 and child CUs must be created prior to parent CUs. You must build CU library records from the bottom up ; that is, you must create a Level 1 CU before you can create a Level 2 CU, and so on.",
+   "maxLength": 11
+  },
+  "financialwo": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Financial WO",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Identifies how a CU is to be charged. This field is provided for integration with an external Financial Work Order (or Project) Accounting system. Any value specified on a CU overrides values specified on the Estimate Version or Stations tabs in CU Estimating (T&D).",
+   "maxLength": 10
+  },
+  "cuname": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "CU",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Identifies the compatible unit record. This value must be unique for all CU records.",
+   "maxLength": 25
+  },
+  "orgid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Organization",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Identifies the organization to which the CU belongs.",
+   "maxLength": 8
+  },
+  "statusdate": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Status Date",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Date and time of the latest status change."
+  },
+  "assetcode": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Asset Code",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Idenfities the CU as an asset. This is useful if you want to use the CU to support asset installation and be able to track whenever a new asset is installed. Asset codes are an additional level of detail beyond the standard FERC codes. Asset codes are also commonly referred to as point accounts.",
+   "maxLength": 8
+  },
+  "autoexpandflag": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Auto Expand",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Specifies whether the Expand? check box will be selected by default when the CU record is used on an estimate. You can only select this check box if the Expandable? check box is also selected. If the AutoExpand check box is selected, the CU will be replaced by its child CUs when you save the estimate record."
+  },
+  "statisticalcode_description": {
+   "type": "string"
+  },
+  "worktype_description": {
+   "type": "string"
+  },
+  "cuversion": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "SMALLINT",
+   "title": "Version",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "Tracks the number of changes made to the CU record. Value defaults to one when  creating a new record. Only one version of a CU can be Active at a time.",
+   "maxLength": 11
+  },
+  "plusdculabor": {
+   "objectName": "PLUSDCULABOR",
+   "type": "array",
+   "items": {
+    "definition": {
+     "subSchema": {
+      "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/oct_plusdculabor/plusdculabor"
+     }
+    },
+    "type": "object"
+   },
+   "cardinality": "",
+   "relation": "PLUSDCULABOR"
+  },
+  "expandableflag": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Expandable",
+   "persistent": true,
+   "type": "boolean",
+   "hasList": true,
+   "remarks": "Specifies whether the CU can be expanded into its Child CU's on the Compatible Units subtab on the Stations tab in the CU Estimating (T&D) application. If the check box is selected, the CU can be expanded. If the check box is cleared, the CU cannot be expanded. When the Expand? flag is selected in the CU Estimating (T&D) application, it causes the entered CU to be replaced with its children CU records when the estimate record is saved.  If a CU is expandable, it cannot have any material, labor, or tool details."
+  },
+  "_id": {
+   "type": "string"
+  },
+  "status": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Status",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Status of the CU record. Valid statuses are Pending, Active, and Inactive.",
+   "maxLength": 12
+  }
+ },
+ "required": [
+  "changeby",
+  "changedate",
+  "culevelnum",
+  "cuname",
+  "cuversion",
+  "orgid",
+  "status",
+  "statusdate"
+ ]
+}

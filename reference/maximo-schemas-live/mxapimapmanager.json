@@ -1,0 +1,340 @@
+{
+ "resource": "MXAPIMAPMANAGER",
+ "description": "Maximo API for Map Manager",
+ "pk": [
+  "mapname"
+ ],
+ "title": "MAPMANAGER",
+ "type": "object",
+ "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/mxapimapmanager",
+ "uniqueid": "mapmanagerid",
+ "properties": {
+  "localref": {
+   "type": "string"
+  },
+  "gmapshttps": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Enable HTTPS",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Enables HTTPS support for Google."
+  },
+  "lengthunit_description": {
+   "type": "string"
+  },
+  "mapprovider": {
+   "default": "!GMAPS!",
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Map provider name",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Map provider name",
+   "maxLength": 25
+  },
+  "openmapurl": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Basemap URL",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Basemap URL",
+   "maxLength": 1000
+  },
+  "description": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Description",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The description of the map.",
+   "maxLength": 50
+  },
+  "gmapauthmethod": {
+   "default": "!CLIENTID!",
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Google Maps Authentication Method",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Google Maps Authentication Method",
+   "maxLength": 40
+  },
+  "spatialroute": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Route service URL",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The URL of the ESRI route service that is used to create routes between two points on the map. Route services run on external geographic information system (GIS) servers. The default values can change if the external GIS service is modified.",
+   "maxLength": 1000
+  },
+  "mapsymbologyconfigschema": {
+   "searchType": "WILDCARD",
+   "subType": "CLOB",
+   "title": "Map Symbology Schema",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Map Symbology Schema",
+   "maxLength": 999999
+  },
+  "spatialdistancematrix": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Distance matrix service URL - Direct Request",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The URL of the ESRI Maps Distance Matrix service that is used to find the travel times between combinations of a set of origins and a set of destinations. Distance Matrix services run on external geographic information system (GIS) servers. The default values can change if the external GIS service is modified.",
+   "maxLength": 1000
+  },
+  "mapname": {
+   "default": "&AUTOKEY&",
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Map",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The name of the map configuration.",
+   "maxLength": 18
+  },
+  "spatialgeocode": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Geocode service URL",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The URL of the ESRI geocode service that the map uses to find a location that is based on an address or point. Geocode services run on external geographic information system (GIS) servers. The default values can change if the external GIS service is modified.",
+   "maxLength": 1000
+  },
+  "_rowstamp": {
+   "type": "string"
+  },
+  "linearlayeroptionname": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Sigoption Name",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Signature Option Name to control the Maximo Linear Graphic Layers",
+   "maxLength": 25
+  },
+  "carbonmap": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "MAF map component",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Available in apps outside of Maximo Application Suite, but in the Maximo Application Framework, such as Maximo Mobile and Maximo Health and Predict."
+  },
+  "_imagelibref": {
+   "type": "string"
+  },
+  "mapsymbologyconfiginfo": {
+   "searchType": "WILDCARD",
+   "subType": "CLOB",
+   "title": "Map Symbology Configuration Information",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Map Symbology Configuration Information",
+   "maxLength": 999999
+  },
+  "mapsymbologyconfig": {
+   "searchType": "WILDCARD",
+   "subType": "CLOB",
+   "title": "Default Symbology Configuration",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Default Symbology Configuration",
+   "maxLength": 999999
+  },
+  "spatialpassword": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "ESRI password",
+   "persistent": true,
+   "type": "string",
+   "remarks": "To access ESRI Maps paid services, enter the ESRI password.",
+   "maxLength": 1000
+  },
+  "href": {
+   "type": "string",
+   "title": "MAPMANAGER object reference"
+  },
+  "ismobile": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Is Mobile",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Indicates whether the map is designed for use on a mobile device."
+  },
+  "gmapauthmethod_description": {
+   "type": "string"
+  },
+  "gmapsdistancematrix": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Distance matrix service URL",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The URL of the Google Maps Distance Matrix service that is used to find the travel times between combinations of a set of origins and a set of destinations. Distance Matrix services run on external geographic information system (GIS) servers. The default values can change if the external GIS service is modified.",
+   "maxLength": 1000
+  },
+  "mapconfiguration": {
+   "searchType": "NONE",
+   "subType": "BLOB",
+   "title": "Map Configuration Object",
+   "persistent": true,
+   "type": "string",
+   "remarks": "-",
+   "maxLength": 999999
+  },
+  "activelinearlayer": {
+   "default": true,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Activate Maximo Linear Graphic Layers",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Enables the Linear Graphic Layers on the map for the sites that you specified"
+  },
+  "active": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Enable map",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Enables the map for the sites that you specified."
+  },
+  "openmapprovider_description": {
+   "type": "string"
+  },
+  "record_descriptor": {
+   "type": "string",
+   "title": "Record/Object Descriptor"
+  },
+  "bmapshttps": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Enable HTTPS",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Enables HTTPS support for Bing Maps."
+  },
+  "lengthunit": {
+   "default": "!MILES!",
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Length and Distance Unit",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Length and Distance Unit",
+   "maxLength": 25
+  },
+  "spatialjobmatrix": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Distance matrix service URL - Job Request",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The URL to be used in the ESRI Maps Matrix Job service.",
+   "maxLength": 1000
+  },
+  "mapsites": {
+   "objectName": "MAPSITES",
+   "type": "array",
+   "items": {
+    "definition": {
+     "subSchema": {
+      "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/mxapimapmanager/mapsites"
+     }
+    },
+    "type": "object"
+   },
+   "cardinality": "",
+   "relation": "MAPSITES"
+  },
+  "optcleanup": {
+   "default": 30,
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "SMALLINT",
+   "title": "Optimization Cleanup",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "Amount of days before cached travel time data needs to be deleted from the optimization matrix table.",
+   "maxLength": 11
+  },
+  "bmapsroute": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Bing Maps route service URL",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The URL of the Bing Maps route service that is used to create routes between two points on the map. Route services run on external geographic information system (GIS) servers. The default values can change if the external GIS service is modified.",
+   "maxLength": 1000
+  },
+  "bmapsgeocode": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Geocode service URL",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The URL of the Bing geocode service that the map uses to find a location that is based on an address or point. Geocode services run on external geographic information system (GIS) servers. The default values can change if the external GIS service is modified.",
+   "maxLength": 1000
+  },
+  "bmapsdistancematrix": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Distance matrix service URL",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The URL of the Bing Maps Distance Matrix service that is used to find the travel times between combinations of a set of origins and a set of destinations. Distance Matrix services run on external geographic information system (GIS) servers. The default values can change if the external GIS service is modified.",
+   "maxLength": 1000
+  },
+  "openmapprovider": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Open Map provider",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Open Map provider",
+   "maxLength": 25
+  },
+  "_id": {
+   "type": "string"
+  },
+  "spatialusername": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "ESRI user name",
+   "persistent": true,
+   "type": "string",
+   "remarks": "To access ESRI Maps paid services, enter the ESRI user name.",
+   "maxLength": 1000
+  },
+  "mapprovider_description": {
+   "type": "string"
+  }
+ },
+ "required": [
+  "bmapsdistancematrix",
+  "bmapsgeocode",
+  "bmapsroute",
+  "gmapsdistancematrix",
+  "spatialgeocode",
+  "spatialroute"
+ ]
+}

@@ -1,0 +1,166 @@
+{
+ "resource": "REP_PLUSGCFW",
+ "description": "Condition for Work (Oil) Details",
+ "pk": [
+  "orgid",
+  "siteid",
+  "cfwnum"
+ ],
+ "title": "PLUSGCFW",
+ "type": "object",
+ "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/rep_plusgcfw",
+ "uniqueid": "plusgcfwid",
+ "properties": {
+  "status_description": {
+   "type": "string"
+  },
+  "functn_description": {
+   "type": "string"
+  },
+  "localref": {
+   "type": "string"
+  },
+  "assoccfwnum1": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Associated Condition for Work 1",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Identifies another condition for work (for example, isolated or depressurized) associated with this condition for work.",
+   "maxLength": 12
+  },
+  "assoccfwnum2": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Associated Condition for Work 2",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Identifies another condition for work (for example, isolated or depressurized) associated with this condition for work.",
+   "maxLength": 12
+  },
+  "description": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Description",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The description of the condition for work.",
+   "maxLength": 100
+  },
+  "record_descriptor": {
+   "type": "string",
+   "title": "Record/Object Descriptor"
+  },
+  "functn": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Function",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The condition for work function (for example, drilling, production, projects, or inspection).",
+   "maxLength": 24
+  },
+  "type": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Type",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Identifies the condition for work type to distinguish among plant operation modes (for example, shutdown or operational).",
+   "maxLength": 12
+  },
+  "orgid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Organization",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Identifies the organization.",
+   "maxLength": 8
+  },
+  "statusdate": {
+   "default": "&SYSDATE&",
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Status Date",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The date and time when the condition for work was created or was changed through the Change Status action."
+  },
+  "_rowstamp": {
+   "type": "string"
+  },
+  "_imagelibref": {
+   "type": "string"
+  },
+  "cfwnum": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Condition for Work",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The identifier of the condition for work.",
+   "maxLength": 12
+  },
+  "siteid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Site",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Identifies the site.",
+   "maxLength": 8
+  },
+  "usewithpermit": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Use with Permit to Work",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Specifies whether to associate a permit to work record with this condition for work record."
+  },
+  "href": {
+   "type": "string",
+   "title": "PLUSGCFW object reference"
+  },
+  "_id": {
+   "type": "string"
+  },
+  "plusgcfwid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Unique Id",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "uniqueid": true,
+   "remarks": "Unique Id",
+   "maxLength": 11
+  },
+  "type_description": {
+   "type": "string"
+  },
+  "status": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Status",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The status of the condition for work.",
+   "maxLength": 16
+  }
+ },
+ "required": [
+  "cfwnum",
+  "status"
+ ]
+}

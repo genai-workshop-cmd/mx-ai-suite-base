@@ -1,0 +1,128 @@
+{
+ "resource": "MXAPIWORKZONE",
+ "description": "WORKZONE",
+ "pk": [
+  "workzone",
+  "orgid"
+ ],
+ "title": "WORKZONE",
+ "type": "object",
+ "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/mxapiworkzone",
+ "uniqueid": "workzoneid",
+ "properties": {
+  "amcrewworkzone": {
+   "objectName": "AMCREWWORKZONE",
+   "type": "array",
+   "items": {
+    "definition": {
+     "subSchema": {
+      "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/mxapiworkzone/amcrewworkzone"
+     }
+    },
+    "type": "object"
+   },
+   "cardinality": "",
+   "relation": "AMCREWWORKZONE"
+  },
+  "description_longdescription": {
+   "searchType": "WILDCARD",
+   "subType": "LONGALN",
+   "title": "Description Long description",
+   "type": "string",
+   "remarks": "Long Description for Description",
+   "maxLength": 32000
+  },
+  "localref": {
+   "type": "string"
+  },
+  "description": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Description",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Describes the work zone.",
+   "maxLength": 50
+  },
+  "record_descriptor": {
+   "type": "string",
+   "title": "Record/Object Descriptor"
+  },
+  "type": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Work Zone Type",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The type of the work zone",
+   "maxLength": 20
+  },
+  "orgid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Organization",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The name of the organization that is associated with this work zone.",
+   "maxLength": 8
+  },
+  "_rowstamp": {
+   "type": "string"
+  },
+  "laborworkzone": {
+   "objectName": "LABORWORKZONE",
+   "type": "array",
+   "items": {
+    "definition": {
+     "subSchema": {
+      "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/mxapiworkzone/laborworkzone"
+     }
+    },
+    "type": "object"
+   },
+   "cardinality": "",
+   "relation": "LABORWORKZONE"
+  },
+  "_imagelibref": {
+   "type": "string"
+  },
+  "workzoneid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Unique Id",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "uniqueid": true,
+   "remarks": "Unique Id",
+   "maxLength": 11
+  },
+  "workzone": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Work Zone",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Identifies the area in which a labor record or crew performs work. You can define more than one work zone for a labor record or crew. This value must be unique within an organization.",
+   "maxLength": 12
+  },
+  "href": {
+   "type": "string",
+   "title": "WORKZONE object reference"
+  },
+  "_id": {
+   "type": "string"
+  },
+  "type_description": {
+   "type": "string"
+  }
+ },
+ "required": [
+  "orgid",
+  "type",
+  "workzone"
+ ]
+}

@@ -1,0 +1,129 @@
+{
+  "resource": "MXAPICALOCATIONWO",
+  "description": "CALOCATIONWO",
+  "pk": [
+    "siteid",
+    "wonum",
+    "location"
+  ],
+  "title": "CALOCATIONWO",
+  "type": "object",
+  "$ref": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapicalocationwo",
+  "uniqueid": "locationsid",
+  "properties": {
+    "installdate": {
+      "searchType": "EXACT",
+      "subType": "DATE",
+      "title": "Installation Date",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Installation Date"
+    },
+    "localref": {
+      "type": "string"
+    },
+    "description": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Description",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Describes the storeroom location. To enter or view additional information, click the Long Description button.",
+      "maxLength": 100
+    },
+    "health": {
+      "searchType": "EXACT",
+      "scale": 2,
+      "subType": "DECIMAL",
+      "title": "Location Health",
+      "persistent": true,
+      "type": "number",
+      "remarks": "Location Health",
+      "maxLength": 13
+    },
+    "worktype": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Work Type",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Identifies the work order's type. Some example types are: preventive maintenance, corrective maintenance, emergency maintenace, capital project, and event report.",
+      "maxLength": 5
+    },
+    "orgid": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Organization",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Organization Identifier",
+      "maxLength": 8
+    },
+    "statusdate": {
+      "searchType": "EXACT",
+      "subType": "DATETIME",
+      "title": "Last Completion Date",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Date the work order status was last changed."
+    },
+    "wonum": {
+      "default": "&AUTOKEY&",
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Work Order",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Identifies the work order.",
+      "maxLength": 25
+    },
+    "_rowstamp": {
+      "type": "string"
+    },
+    "_imagelibref": {
+      "type": "string"
+    },
+    "pmnextduedate": {
+      "searchType": "EXACT",
+      "subType": "DATE",
+      "title": "Next Due Date",
+      "persistent": true,
+      "type": "string",
+      "remarks": "From the next Next Due Date of the PM"
+    },
+    "siteid": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Site",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Specifies the site where this location or storeroom resides.",
+      "maxLength": 8
+    },
+    "location": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Location",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Storeroom where the item is stored.",
+      "maxLength": 25
+    },
+    "href": {
+      "type": "string"
+    },
+    "_id": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "location",
+    "orgid",
+    "statusdate"
+  ]
+}

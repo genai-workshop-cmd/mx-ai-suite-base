@@ -1,0 +1,1031 @@
+{
+ "resource": "MASPERUSER",
+ "description": "Person and user sync from MAS",
+ "pk": [
+  "personid"
+ ],
+ "title": "PERSON",
+ "type": "object",
+ "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/masperuser",
+ "uniqueid": "personuid",
+ "properties": {
+  "personuid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "PERSONUID",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "uniqueid": true,
+   "remarks": "Unique Identifier",
+   "maxLength": 11
+  },
+  "birthdate": {
+   "searchType": "EXACT",
+   "subType": "DATE",
+   "title": "Date of Birth",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The date of this person's birth."
+  },
+  "localref": {
+   "type": "string"
+  },
+  "county": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "County",
+   "persistent": true,
+   "type": "string",
+   "remarks": "County",
+   "maxLength": 36
+  },
+  "plusgisospec": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Isolation Specialist",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Indicates whether the person is qualified to handle the type of isolation that is required, such as high voltage electrical isolation."
+  },
+  "ownergroup": {
+   "searchType": "EXACT",
+   "subType": "UPPER",
+   "title": "Person Group",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The default group for a person. The default group applies to a person record if they belong to one group or multiple groups or if they do not belong to any groups.",
+   "maxLength": 8
+  },
+  "usernotftype_description": {
+   "type": "string"
+  },
+  "primarysms": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Primary",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Primary SMS Address",
+   "maxLength": 128
+  },
+  "wfmailelection_description": {
+   "type": "string"
+  },
+  "href": {
+   "type": "string",
+   "title": "PERSON object reference"
+  },
+  "plusgbyprevapp": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Authorized for Bypass Management Review or Approval",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "When selected, this option indicates that the person is authorized to review or to approve bypass operations. When this option is not selected, the person is not authorized to review or to approve bypass operations."
+  },
+  "vip": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "INTEGER",
+   "title": "VIP",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "hasList": true,
+   "remarks": "Indicates if this person is a VIP. This field displays a value indicating the level of importance of the VIP.",
+   "maxLength": 11
+  },
+  "plusgcertrevapp": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Authorized for Certifications Review and Approval",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "If this check box is selected, the corresponding person is authorized to review, approve, and authorize management of change records. If this check box is cleared, the person is not authorized to perform those actions."
+  },
+  "plusgrcfaapprover": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Authorized for RCFA Approval",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Specifies whether this person has authority to approve a root cause failure analysis (RCFA). If the check box is selected, this person is authorized. The default value is False (check box is empty)."
+  },
+  "plusgtechauthority": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Technical Authority",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Indicates whether this person is a technical authority. If the check box is selected, this person is a technical authority, and a technical authority type is required."
+  },
+  "wopriority": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "INTEGER",
+   "title": "Default WO Priority",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "hasList": true,
+   "remarks": "The default priority a work order receives when reported by this person.",
+   "maxLength": 11
+  },
+  "plusgarea": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Area",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The area that is associated with the person record.",
+   "maxLength": 16
+  },
+  "plusgisolationauth": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Authorized Isolation Authority",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Specifies whether the person is authorized to be an isolation authority. An isolation authority controls the mechanical and electric isolations, assuring they are in a safe state to return to operation. If the check box is selected, the person is authorized. The default value is false (not selected). Depending on the setting of control of work options in the Organizations application, this authorization might be required of isolation authorities."
+  },
+  "primaryphonetype_description": {
+   "type": "string"
+  },
+  "record_descriptor": {
+   "type": "string",
+   "title": "Record/Object Descriptor"
+  },
+  "primaryphone": {
+   "searchType": "NONE",
+   "subType": "ALN",
+   "title": "Primary phone",
+   "type": "string",
+   "remarks": "The primary phone number that is used to contact this person. Use the People application to add or to modify the phone numbers for this person. To display all phone numbers for this person, click the Show/Manage icon to display the Phone Numbers dialog box. You can modify this number directly in the Primary Phone field if it is the only phone number displayed in the Phone Numbers dialog box for this person. The primary phone number may not be deleted unless it is the only phone number.",
+   "maxLength": 20
+  },
+  "lastname": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Last name",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The last name of the person whose record this is.",
+   "maxLength": 50
+  },
+  "plusgsitecheckerauth": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Authorized Site Checker",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Indicates whether the person is authorized for checking the site."
+  },
+  "saddresscode": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Service Address",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The address code identifies a service address. It must be unique by site for each service address.",
+   "maxLength": 12
+  },
+  "acceptingwfmail": {
+   "default": true,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Accepting E-mail",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "System-managed flag indicating whether a user is currently accepting emailed workflow assignments"
+  },
+  "phone": {
+   "objectName": "PHONE",
+   "type": "array",
+   "items": {
+    "definition": {
+     "subSchema": {
+      "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/masperuser/phone"
+     }
+    },
+    "type": "object"
+   },
+   "cardinality": "MULTIPLE",
+   "relation": "PHONE"
+  },
+  "addressline3": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "State/Province",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Address Line 3",
+   "maxLength": 55
+  },
+  "caltype_description": {
+   "type": "string"
+  },
+  "primaryphonetype": {
+   "searchType": "NONE",
+   "subType": "UPPER",
+   "title": "Primary phone type",
+   "type": "string",
+   "hasList": true,
+   "remarks": "Primary Email Type",
+   "maxLength": 10
+  },
+  "addressline2": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "City",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Address Line 2",
+   "maxLength": 55
+  },
+  "addressline1": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Street address",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The address of this person.",
+   "maxLength": 55
+  },
+  "pcardtype": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Card Type",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The type of credit card used. Enter a value or click Select Value.",
+   "maxLength": 20
+  },
+  "plusgperissueauth": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Authorized Issuing Authority",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Specifies whether the person is authorized to be an issuing authority for permit and certificate types. An issuing authority can issue permits. If the check box is selected, the person is authorized. The default value is false (not selected). Depending on the setting of control of work options in the Organizations application, this authorization might be required of issuing authorities for jobs plans and work orders."
+  },
+  "primaryemail": {
+   "searchType": "NONE",
+   "subType": "ALN",
+   "title": "Primary email",
+   "type": "string",
+   "remarks": "The primary email address that is used to contact this person. Use the People application to add or to modify the email address for this person. To display all email addresses for this person, click the Show/Manage icon to display the E-mail Addresses dialog box. You can modify this email address directly in the Primary E-mail field if it is the only email address displayed in the  E-mail Addresses dialog box for this person. The primary email address may not be deleted unless it is the only email address.",
+   "maxLength": 100
+  },
+  "status": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Status",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The current status of the person. On inserting a new record, this field defaults to an active status.",
+   "maxLength": 12
+  },
+  "plusgptwissuecounter": {
+   "default": 0,
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "INTEGER",
+   "title": "Number of ACTIVE Permit to Work",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "Number of Issuing Permit to Workk Records associated to this person.",
+   "maxLength": 11
+  },
+  "plusgperperfauth": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Authorized Performing Authority",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Specifies whether the person is authorized to be a performing authority for permit and certificate types. A performing authority can accept a permit on behalf of the permit users. If the check box is selected, the person is authorized. The default value is false (not selected). Depending on the setting of control of work options in the Organizations application, this authorization might be required of performing authorities for job plans and work orders."
+  },
+  "plusgriskrevapp": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Authorized for Risk Assessment Review or Approval",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "When selected, this option indicates that the person is authorized to review or to approve risk assessments. When this option is not selected, the person is not authorized to review or to approve risk assessments."
+  },
+  "city": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "City",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The city where this person resides.",
+   "maxLength": 36
+  },
+  "plusgconfspaceauth": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Controls Entry into Confined Spaces",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Indicates whether the person is authorized to control the entry into confined spaces."
+  },
+  "billtoaddress": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Bill to Address",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The billing address of this person. This will be used as the default billing address for purchase transactions entered by the user.",
+   "maxLength": 30
+  },
+  "plusgsolnapprover": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Authorized for Solution Approval",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Specifies whether this person has authority to approve a solution. If the check box is selected, this person is authorized. The default value is False (check box is empty)."
+  },
+  "plusgiscertified": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Certified",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Identifies whether a person is certified."
+  },
+  "primaryemailtype_description": {
+   "type": "string"
+  },
+  "delegate": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Workflow Delegate",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The delegate for Workflow assignments for this person. If there is a value in this field and if the workflow assignment is received between the Delegate To and Delegate From date, Workflow sends the assignment to the delegate. Enter a value or click Detail Menu to select an option and retrieve a value",
+   "maxLength": 100
+  },
+  "droppoint": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Drop Point",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The drop point for making deliveries.",
+   "maxLength": 12
+  },
+  "plusgauditapprover": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Authorized for Audit and Survey Approval",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Specifies whether the person is authorized to approve audit and survey."
+  },
+  "vip_description": {
+   "type": "string"
+  },
+  "personid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Person",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Identifier of the person's record. This field must be unique.When you save a person record, this field becomes read only.",
+   "maxLength": 100
+  },
+  "email": {
+   "objectName": "EMAIL",
+   "type": "array",
+   "items": {
+    "definition": {
+     "subSchema": {
+      "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/masperuser/email"
+     }
+    },
+    "type": "object"
+   },
+   "cardinality": "MULTIPLE",
+   "relation": "EMAIL"
+  },
+  "plusgarea_description": {
+   "type": "string"
+  },
+  "deviceclass_description": {
+   "type": "string"
+  },
+  "sendersysid": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Sender System ID",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Column used by ERP-Integration (APIs)",
+   "maxLength": 50
+  },
+  "shiptoaddress": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Ship to Address",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The shipping address of the person. This will be the default shipping address used for purchase transactions entered by this person.",
+   "maxLength": 30
+  },
+  "statusdate": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Status Date",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The date of the last status change."
+  },
+  "maxuser": {
+   "objectName": "MAXUSER",
+   "type": "array",
+   "items": {
+    "definition": {
+     "subSchema": {
+      "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/masperuser/maxuser"
+     }
+    },
+    "type": "object"
+   },
+   "cardinality": "UNDEFINED",
+   "relation": "USER"
+  },
+  "dfltapp": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Default application",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The application that is opened by default after the user logs in. If you do not specify an application, either the application specified for your security group or the system default application displays.",
+   "maxLength": 40
+  },
+  "displayname": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Name",
+   "persistent": true,
+   "type": "string",
+   "remarks": "A nick name or a friendly name that this person can be identified with.This field is automatically populated when values are entered in the First Name and/or Last Name fields.",
+   "maxLength": 82
+  },
+  "delegatetodate": {
+   "searchType": "EXACT",
+   "subType": "DATE",
+   "title": "Delegate To",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The last date till which this person's delegate works on the workflow assignments. The value entered in this field must be either equal to or greater than the value in the Delegate From field."
+  },
+  "jobcode": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Job Code",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The job code of this person.",
+   "maxLength": 10
+  },
+  "sourcesysid": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Source System ID",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Source System ID",
+   "maxLength": 10
+  },
+  "np_statusmemo": {
+   "searchType": "NONE",
+   "subType": "ALN",
+   "title": "Change Status Memo",
+   "type": "string",
+   "remarks": "Status change memo, temporary non-persistent field used by MEA",
+   "maxLength": 50
+  },
+  "country": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Country",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The country where this person resides.",
+   "maxLength": 36
+  },
+  "ownersysid": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Owner System ID",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Owner System ID",
+   "maxLength": 10
+  },
+  "primaryemailtype": {
+   "searchType": "NONE",
+   "subType": "UPPER",
+   "title": "Primary email type",
+   "type": "string",
+   "hasList": true,
+   "remarks": "Primary Email Type",
+   "maxLength": 10
+  },
+  "plusgradiosrcauth": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Authorized for Radioactive Sources",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Indicates whether the person is authorized for radioactive sources."
+  },
+  "language": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Language",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "This person's language preference for using Maximo.",
+   "maxLength": 4
+  },
+  "hiredate": {
+   "searchType": "EXACT",
+   "subType": "DATE",
+   "title": "Hire Date",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The date that this person started working for the company."
+  },
+  "pcardnum": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Card #",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The number on the person's company's credit card.",
+   "maxLength": 30
+  },
+  "wfmailelection": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Workflow E-mail Notification",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The person's choice of when to receive emailed workflow assignments. A value list field defining the circumstances in which this person will receive workflow related e-mail notification.",
+   "maxLength": 15
+  },
+  "employeetype_description": {
+   "type": "string"
+  },
+  "_rowstamp": {
+   "type": "string"
+  },
+  "plusghfapprover": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Authorized for Approval of Human Factors Analyses",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "When selected, this option indicates that the person is authorized to approve analyses of the human factors that are identified during investigations."
+  },
+  "plusgtechauthtype_description": {
+   "type": "string"
+  },
+  "plusgmocrevapp": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Authorized for MOC Review, Approval, and Authorization",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "If this check box is selected, the corresponding person is authorized to review, approve, and authorize management of change records. If this check box is cleared, the person is not authorized to perform those actions."
+  },
+  "plusgauthlockmgmt": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Authorized for Lock Management",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Indicates whether the person is authorized to modify the In Use? field under Lock Management (Oil) application."
+  },
+  "plusgisospectype": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Isolation Specialist Type",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The type of isolation with which the specialist is qualified to handle.",
+   "maxLength": 30
+  },
+  "status_description": {
+   "type": "string"
+  },
+  "nextevaldate": {
+   "searchType": "EXACT",
+   "subType": "DATE",
+   "title": "Next Evaluation",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The date of this person's next evaluation."
+  },
+  "plusgfinauthlevel_description": {
+   "type": "string"
+  },
+  "timezone_description": {
+   "type": "string"
+  },
+  "pcardexpdate": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Expiration Date",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The expiration date of the company credit card.",
+   "maxLength": 7
+  },
+  "stateprovince": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "State/Province",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The state or province where this person resides; can be the two-character code or full spelling.",
+   "maxLength": 36
+  },
+  "jobcode_description": {
+   "type": "string"
+  },
+  "plusggastestauth": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Authorized Gas Tester Authority",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Specifies whether the person is authorized to be a gas tester authority. If the check box is selected, the person is authorized. The default value is false (not selected). Depending on the setting of control of work options in the Organizations application, this authorization might be required of gas tester authorities."
+  },
+  "locale_description": {
+   "type": "string"
+  },
+  "plusgfinauthority": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Financial Authority",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Indicates whether this person is a financial authority. If the check box is selected, this person is a financial authority, and a financial authority level is required."
+  },
+  "regiondistrict": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Regional/District",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Region/District",
+   "maxLength": 36
+  },
+  "plusgisospectype_description": {
+   "type": "string"
+  },
+  "_id": {
+   "type": "string"
+  },
+  "supervisor": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Supervisor",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The name of this person's supervisor.",
+   "maxLength": 100
+  },
+  "caltype": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Calendar Type",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Calendar Type",
+   "maxLength": 10
+  },
+  "firstname": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "First name",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The first name of the person whose record this is.",
+   "maxLength": 30
+  },
+  "usernotftype": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "User Notification Type",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "User Notification Type",
+   "maxLength": 20
+  },
+  "transemailelection_description": {
+   "type": "string"
+  },
+  "timezone": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Time zone",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The time zone of this person's location.",
+   "maxLength": 28
+  },
+  "loctoservreq": {
+   "default": true,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Default Location to Service Request",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Indicates if service requests reported by this person will default to the location associated with this person"
+  },
+  "externalrefid": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "External Ref ID",
+   "persistent": true,
+   "type": "string",
+   "remarks": "External Ref ID",
+   "maxLength": 10
+  },
+  "locale": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Locale",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The date format and the currency format used in the region where this person resides.",
+   "maxLength": 20
+  },
+  "title": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Job title",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The job title of this person.",
+   "maxLength": 30
+  },
+  "plusgaddcontactdet": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Additional Contact Details",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Additional contact information for this person, for example, a mobile telephone number.",
+   "maxLength": 200
+  },
+  "pcardverification": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Verification Value",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The three- or four-digit code at the end of a credit card number; you can find this verification code on the back or front of the card.",
+   "maxLength": 4
+  },
+  "delegatefromdate": {
+   "searchType": "EXACT",
+   "subType": "DATE",
+   "title": "Delegate From",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The first date from which this person's delegate takes over the workflow assignments."
+  },
+  "languserupdated": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Language updated by user",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Flag to indicate whether the language is updated in Maximo (not from MAS)"
+  },
+  "plusgtechauthtype": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Technical Authority Type",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The type of technical authority that this person has. Valid values are in the PLUSGTECHAUTHORITY domain.",
+   "maxLength": 30
+  },
+  "_imagelibref": {
+   "type": "string"
+  },
+  "lastevaldate": {
+   "searchType": "EXACT",
+   "subType": "DATE",
+   "title": "Last Evaluation",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The date of this person's most recent evaluation."
+  },
+  "postalcode": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Postal code",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The zip or postal code of this person.",
+   "maxLength": 12
+  },
+  "department": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Department",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The department this person belongs to.",
+   "maxLength": 30
+  },
+  "deviceclass": {
+   "default": 2,
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "SMALLINT",
+   "title": "Email format",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "hasList": true,
+   "remarks": "The email format you want to use for email interaction.",
+   "maxLength": 11
+  },
+  "plusgfinauthlevel": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "INTEGER",
+   "title": "Financial Authority Level",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "hasList": true,
+   "remarks": "The level of financial authority that this person has. Valid values are in the PLUSGFINAUTHORITY domain.",
+   "maxLength": 11
+  },
+  "employeetype": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Employee Type",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The type of employee this person is, such as full time or a part time employee.",
+   "maxLength": 10
+  },
+  "terminationdate": {
+   "searchType": "EXACT",
+   "subType": "DATE",
+   "title": "Termination Date",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The date when this person's services are terminated."
+  },
+  "locationorg": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Organization",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Organization of the location",
+   "maxLength": 8
+  },
+  "classstructureid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Classification",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Class Structure Identifier.",
+   "maxLength": 25
+  },
+  "locationsite": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Person's Site",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The site to which this person belongs.",
+   "maxLength": 8
+  },
+  "plusgperareaauth": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Authorized Area Authority",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Specifies whether the person is authorized to be an area authority for permit and certificate types. An area authority controls the location where permit work will be performed. If the check box is selected, the person is authorized. The default value is false (not selected). Depending on the setting of control of work options in the Organizations application, this authorization might be required of area authorities for job plans and work orders."
+  },
+  "im_id": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Instant Messaging Id",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Instant Messaging Id",
+   "maxLength": 50
+  },
+  "transemailelection": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Notice of E-commerce Exceptions",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The person''s choice of when to receive transaction email.",
+   "maxLength": 15
+  },
+  "plusgptwrevapp": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Authorized for Permit to Work Review and Approval",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "If this check box is selected, the person is authorized to review or to approve permit to work records. If this check box is cleared, the person is not authorized to perform those actions."
+  },
+  "statusiface": {
+   "default": false,
+   "searchType": "NONE",
+   "subType": "YORN",
+   "title": "Has Status Changed",
+   "type": "boolean",
+   "remarks": "Non persistent boolean field to indicate whether the status has been changed after the stateful object is fetched from the database."
+  },
+  "location": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Person's Location",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The place where this person is located.",
+   "maxLength": 25
+  },
+  "pcardtype_description": {
+   "type": "string"
+  }
+ },
+ "required": [
+  "personid",
+  "status",
+  "statusdate",
+  "statusiface",
+  "transemailelection"
+ ]
+}

@@ -1,0 +1,110 @@
+{
+  "resource": "MXAPIWEATHERORG",
+  "description": "WEATHERORG",
+  "pk": [
+    "org"
+  ],
+  "title": "WEATHERORG",
+  "type": "object",
+  "$ref": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapiweatherorg",
+  "uniqueid": "weatherorgid",
+  "properties": {
+    "clientid": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Client ID",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Client ID",
+      "maxLength": 100
+    },
+    "localref": {
+      "type": "string"
+    },
+    "org": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Ticker",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Ticker",
+      "maxLength": 20
+    },
+    "weatherorgid": {
+      "searchType": "EXACT",
+      "maximum": 2147483647.0,
+      "subType": "BIGINT",
+      "title": "Unique Id",
+      "persistent": true,
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "uniqueid": true,
+      "remarks": "Unique Id",
+      "maxLength": 11
+    },
+    "clientsecret": {
+      "searchType": "NONE",
+      "subType": "CRYPTO",
+      "title": "Client secret",
+      "persistent": true,
+      "type": "object",
+      "remarks": "For a field marked as a password, this field allows maintenance of the password in an encrypted manner."
+    },
+    "isregistered": {
+      "default": false,
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "End Points Registered",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "End Points Registered"
+    },
+    "weatherendpoint": {
+      "objectName": "WEATHERENDPOINT",
+      "type": "array",
+      "items": {
+        "definition": {
+          "subSchema": {
+            "$ref": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapiweatherorg/weatherendpoint"
+          }
+        },
+        "type": "object"
+      },
+      "cardinality": "",
+      "relation": "WEATHERENDPOINT"
+    },
+    "_rowstamp": {
+      "type": "string"
+    },
+    "_imagelibref": {
+      "type": "string"
+    },
+    "serverurl": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Weather server URL",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Weather server URL.",
+      "maxLength": 100
+    },
+    "name": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Name",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Name",
+      "maxLength": 100
+    },
+    "href": {
+      "type": "string"
+    },
+    "_id": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "org"
+  ]
+}

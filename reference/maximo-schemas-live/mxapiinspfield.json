@@ -1,0 +1,355 @@
+{
+ "resource": "MXAPIINSPFIELD",
+ "description": "Maximo API for Inspection Fields",
+ "pk": [
+  "inspformnum",
+  "inspquestionnum",
+  "inspfieldnum",
+  "revision",
+  "orgid"
+ ],
+ "title": "INSPFIELD",
+ "type": "object",
+ "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/mxapiinspfield",
+ "uniqueid": "inspfieldid",
+ "properties": {
+  "audiocachefield": {
+   "searchType": "NONE",
+   "subType": "BLOB",
+   "title": "Audio Cache for Field Description",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Audio Cache for Field Description from Watson TTS",
+   "maxLength": 999999
+  },
+  "localref": {
+   "type": "string"
+  },
+  "inspquestionnum": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Inspection Form Question",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Composed Identifier For Inspection Form Question",
+   "maxLength": 12
+  },
+  "description": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Field Description",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Field Description",
+   "maxLength": 250
+  },
+  "metertype_description": {
+   "type": "string"
+  },
+  "fieldtype": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Type of Field and Data Entry",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Type of Field and Data Entry",
+   "maxLength": 20
+  },
+  "domainid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Domain",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Domain",
+   "maxLength": 18
+  },
+  "required": {
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Field Required",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Field Required"
+  },
+  "langcode": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Language Code",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Language Code",
+   "maxLength": 4
+  },
+  "_rowstamp": {
+   "type": "string"
+  },
+  "domaintype": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Domain Type",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Domain Type",
+   "maxLength": 20
+  },
+  "inspfieldid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Unique Identifier",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "uniqueid": true,
+   "remarks": "Unique Identifier",
+   "maxLength": 11
+  },
+  "_imagelibref": {
+   "type": "string"
+  },
+  "showtime": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Request Time Entry",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Request Time Entry"
+  },
+  "siteid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Site",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Site",
+   "maxLength": 8
+  },
+  "href": {
+   "type": "string",
+   "title": "INSPFIELD object reference"
+  },
+  "metertype": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Meter Type",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Maximo supports three types of meters: CONTINUOUS, GAUGE and CHARACTERISTIC.",
+   "maxLength": 25
+  },
+  "endvalue": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "INTEGER",
+   "title": "Final Value for Numeric Ranges",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "Final Value for Numeric Ranges",
+   "maxLength": 11
+  },
+  "visible": {
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Visible",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Define the default visibility for response fields."
+  },
+  "autoanalyze": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Always perform MVI analysis",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Enables auto mvi analyze"
+  },
+  "audiocacheoption": {
+   "searchType": "NONE",
+   "subType": "BLOB",
+   "title": "Audio Cache for Field Options",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Audio Cache for Field Options from Watson TTS",
+   "maxLength": 999999
+  },
+  "record_descriptor": {
+   "type": "string",
+   "title": "Record/Object Descriptor"
+  },
+  "fieldtype_description": {
+   "type": "string"
+  },
+  "fieldalias": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Alias",
+   "persistent": true,
+   "type": "string",
+   "remarks": "An unique identification of the response field inside the form to be referenced by calculation response type.",
+   "maxLength": 25
+  },
+  "steps": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "INTEGER",
+   "title": "Amount of Steps between Initial and End value",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "Amount of Steps between Initial and End value",
+   "maxLength": 11
+  },
+  "orgid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Organization",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Organization",
+   "maxLength": 8
+  },
+  "revision": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "INTEGER",
+   "title": "Current Form Revision",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "Current Form Revision",
+   "maxLength": 11
+  },
+  "doctype": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Doc Type",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Name of the Maximo folder that will be used to associate attachments",
+   "maxLength": 16
+  },
+  "endlabel": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Final Label for Numeric Ranges",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Final Label for Numeric Ranges",
+   "maxLength": 20
+  },
+  "sequence": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "INTEGER",
+   "title": "Sequence used to present the fields",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "Sequence used to present the fields",
+   "maxLength": 11
+  },
+  "measureunitid": {
+   "searchType": "EXACT",
+   "subType": "UPPER",
+   "title": "Unit of Measure",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Entered units",
+   "maxLength": 16
+  },
+  "metername": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Maximo Meter Name",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Maximo Meter Name",
+   "maxLength": 10
+  },
+  "hasld": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Has Long Description",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Boolean flag to indicate if there is any long description for this record"
+  },
+  "initiallabel": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Initial Label for Numeric Ranges",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Initial Label for Numeric Ranges",
+   "maxLength": 20
+  },
+  "selectedmodel": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Selected Model",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Maximo Visual Inspection model",
+   "maxLength": 64
+  },
+  "_id": {
+   "type": "string"
+  },
+  "inspformnum": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Inspection Form",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Foreign key from Inspection Form",
+   "maxLength": 12
+  },
+  "initialvalue": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "INTEGER",
+   "title": "Initial Value for Numeric Ranges",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "Initial Value for Numeric Ranges",
+   "maxLength": 11
+  },
+  "inspfieldnum": {
+   "default": "&AUTOKEY&",
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Inspection Question Field",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Composed Identifier For Inspection Question Field",
+   "maxLength": 12
+  },
+  "showdate": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Request Date Entry",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Request Date Entry"
+  }
+ },
+ "required": [
+  "fieldtype",
+  "inspformnum",
+  "inspquestionnum",
+  "langcode",
+  "required",
+  "revision",
+  "sequence"
+ ]
+}

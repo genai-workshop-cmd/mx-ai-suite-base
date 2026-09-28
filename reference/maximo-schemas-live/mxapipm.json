@@ -1,0 +1,1549 @@
+{
+ "resource": "MXAPIPM",
+ "description": "Maximo API for Preventive Maintenance",
+ "pk": [
+  "siteid",
+  "pmnum"
+ ],
+ "title": "PM",
+ "type": "object",
+ "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/mxapipm",
+ "uniqueid": "pmuid",
+ "properties": {
+  "parent": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Parent",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Parent of the PM shown in the PM field.",
+   "maxLength": 8
+  },
+  "localref": {
+   "type": "string"
+  },
+  "startassetfeatureid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Start Asset Feature ID",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "A previously defined feature or relationship used, in conjunction with the start offset, to determine the start measure for this linear segment.   ",
+   "maxLength": 11
+  },
+  "lastcompdate": {
+   "searchType": "EXACT",
+   "subType": "DATE",
+   "title": "Last Completion Date",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Latest completion date of any work order that is generated from this PM. This field is automatically updated when a PM work order is completed or closed."
+  },
+  "endzoffsetref_description": {
+   "type": "string"
+  },
+  "parentchgsstatus": {
+   "default": true,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Child Work Orders and Tasks Will Inherit Status Changes",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Specifies whether the child work order should change its status when the parents status changes. If the check box is selected, the status of the child work orders will change. If the check box is cleared, the status of the child work orders will not change."
+  },
+  "ownergroup": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Owner Group",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The person group who will be responsible for the work order generated from this PM.",
+   "maxLength": 8
+  },
+  "plusregusestartdate": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Use Last WO's Actual Start Date to Calculate Regulatory Dates",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Indicates whether the actual start or the actual finish date of the preceding work order is used to calculate the regulatory, dead, and 3.25 dates for the work order that succeeds it. By default, the calculation is based on the actual finish date. Additional rules apply when the work type for the PM record is subject to PM retest."
+  },
+  "startmeasure": {
+   "searchType": "EXACT",
+   "scale": 2,
+   "subType": "DECIMAL",
+   "title": "Start Measure",
+   "persistent": true,
+   "type": "number",
+   "remarks": "Absolute distance taken from the start of the linear asset to where the work for this PM will take place.  This can be manually entered or calculated by entering a start reference point and start offset.",
+   "maxLength": 11
+  },
+  "endoffsetunitid": {
+   "searchType": "EXACT",
+   "subType": "UPPER",
+   "title": "Unit of End Offset",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Unit of measure for the offset (before or after) from the end reference point of the asset on this PM.",
+   "maxLength": 16
+  },
+  "usefrequency": {
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Use this PM to Trigger PM Hierarchy",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "TelSelect the Use Frequency for Scheduling? box to generate work orders for the PM hierarchy when this PM's frequency criteria are met. The box is selected on a top-level PM. When the box is not selected on a child PM, the child PM cannot trigger generation of work orders for the PM hierarchy."
+  },
+  "startyoffsetref_description": {
+   "type": "string"
+  },
+  "endzoffset": {
+   "searchType": "EXACT",
+   "scale": 2,
+   "subType": "DECIMAL",
+   "title": "End Z Offset",
+   "persistent": true,
+   "type": "number",
+   "remarks": "Distance above or below this linear asset.  For example, if a sign is 10 feet above the road, the  Z-Offset is 10 feet.  This value is measured from the Z  Reference Point and can be positive (above) or negative (below).",
+   "maxLength": 11
+  },
+  "plusworkcat": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Work Category",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "AP-928 Work Order category",
+   "maxLength": 12
+  },
+  "stconoffset": {
+   "searchType": "EXACT",
+   "scale": 0,
+   "subType": "DURATION",
+   "title": "Start Constraint Offset",
+   "persistent": true,
+   "type": "number",
+   "remarks": "The amount of time (in hours) to be subtracted from the Target Start date in order to calculate the Start No Earlier Than date of the work record.",
+   "maxLength": 8
+  },
+  "plusseqdate": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "PM Sequence Date",
+   "persistent": true,
+   "type": "string",
+   "remarks": "PM Sequence Date"
+  },
+  "plusfreqname": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "PM Frequency",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Identifies the PM frequency. You use the PM frequency record to define the time and frequency with which work orders are generated from a PM record.",
+   "maxLength": 8
+  },
+  "plusgrace": {
+   "searchType": "EXACT",
+   "scale": 2,
+   "subType": "DECIMAL",
+   "title": "Grace period",
+   "persistent": true,
+   "type": "number",
+   "remarks": "The user-specified percentage of the frequency interval that Maximo will add to extend the due date. This gives you a limited amount of flexibility to deal with unforeseen issues that might arise.",
+   "maxLength": 6
+  },
+  "href": {
+   "type": "string",
+   "title": "PM object reference"
+  },
+  "pmassetwogen": {
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Generate Work Order When Meter Frequency is Reached",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Flag that indicates to generate work orders automatically from a PM when meter frequency is reached."
+  },
+  "fnconoffset": {
+   "searchType": "EXACT",
+   "scale": 0,
+   "subType": "DURATION",
+   "title": "Finish Constraint Offset",
+   "persistent": true,
+   "type": "number",
+   "remarks": "The amount of time (in hours) to be added to the Target Finish date in order to calculate the Finish No Later Than date of the work record.",
+   "maxLength": 8
+  },
+  "plusworkcat_description": {
+   "type": "string"
+  },
+  "plusglossunits": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Loss Units",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The unit of measure, such as gallons, that is associated with this planned loss of production.",
+   "maxLength": 16
+  },
+  "ltdpmcounter": {
+   "default": 0,
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "INTEGER",
+   "title": "Life To Date Counter",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "Number of work orders generated from the PM since the First Start Date. The counter is set to zero when you insert a new PM record, and increases each time you generate a top-level work order from the PM. If you are using a job plan sequence, the job plan is selected after the counter increments. Life to Date Counter cannot be reset by Set PM Counter.",
+   "maxLength": 11
+  },
+  "pluscirev": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "INTEGER",
+   "title": "CI Revision",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "The revision of the configuration item (CI) at the time of its association with the current record.",
+   "maxLength": 11
+  },
+  "plusseq": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "PM Sequence",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Identifies the PM. This value must be unique for all PM records.",
+   "maxLength": 8
+  },
+  "schedearly": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Schedule Early on Frequency Conflict",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Check box determines how conflicts between the PM frequency and the day of the week are resolved.  If the check box is selected, then the PM work order is conservatively assigned a Target Start on a selected day of the week that is earlier or the same as the normal frequency-based schedule date.  If the check box is cleared, the PM work order will only be assigned a Target Start on a selected day of the week that is the same as or later than the normal frequency-based schedule date."
+  },
+  "record_descriptor": {
+   "type": "string",
+   "title": "Record/Object Descriptor"
+  },
+  "priority": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "INTEGER",
+   "title": "Priority",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "PrPriority level MAXIMO uses when scheduling work orders generated from this PM. Values from 0-999 are valid, but we recommend that you limit your range of values to 0-9, where 0 designates the lowest priority.",
+   "maxLength": 11
+  },
+  "endyoffsetref_description": {
+   "type": "string"
+  },
+  "pmfpcostcaldate": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Last Calculated Date",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The date when the PM forecast cost was last calculated."
+  },
+  "sunday": {
+   "default": true,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Sunday",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Flag to indicate if this day is active for the PM"
+  },
+  "masterpm": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Master PM",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The Master PM that can be used to update the current PM's scheduling information.",
+   "maxLength": 8
+  },
+  "plusgpolicyid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Operating Policy",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "The unique identifier of an operating policy.",
+   "maxLength": 11
+  },
+  "route": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Route",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Identifies the route associated with the PM. A route is a list of stops that represent asset or work locations. When you generate work orders from a PM with an associated route, you create a parent work order for the asset shown in the Asset or Location field or for the GL account, and a child work order for each asset listed on the route.",
+   "maxLength": 8
+  },
+  "pmnum": {
+   "default": "&AUTOKEY&",
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "PM",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Identifies the PM. This value must be unique for all PM records.",
+   "maxLength": 8
+  },
+  "leadtime": {
+   "default": 0,
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "INTEGER",
+   "title": "Lead Time (Days)",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "The number of days in advance of the Next Due Date that Maximo generates work orders from this PM. The target start date for the work order will still be the Next Due Date. You must Select the Lead Time Active checkbox before you can enter or edit data in this field.",
+   "maxLength": 11
+  },
+  "reqasstdwntime": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Require Asset Downtime",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Indicates if the asset requires downtime while work is performed."
+  },
+  "amcrew": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Crew",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Identifies the crew that performed the work.",
+   "maxLength": 8
+  },
+  "enforcemaxdayofmonth": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Set Due Date to End of Month",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Select the checkbox to set the PM Due Date to the last day of the month when the Frequency Unit field is set to Months."
+  },
+  "targstarttime": {
+   "default": "24:00",
+   "searchType": "EXACT",
+   "subType": "TIME",
+   "title": "Target Start Time",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Target time for starting the PM Work Order."
+  },
+  "plussafediv": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Safety Division",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The safety division to which this component belongs. The safety division attribute applies only to locations. The safety division for an asset or configuration item is determined by association with a location record. ",
+   "maxLength": 12
+  },
+  "jobplan": {
+   "objectName": "JOBPLAN",
+   "type": "array",
+   "items": {
+    "definition": {
+     "subSchema": {
+      "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/mxapipm/jobplan"
+     }
+    },
+    "type": "object"
+   },
+   "cardinality": "UNDEFINED",
+   "relation": "JOBPLAN"
+  },
+  "status": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Status",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Status of the PM.",
+   "maxLength": 20
+  },
+  "copywheninactive": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Copy When Inactive on Receipt of Transferred Asset",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Should this PM be copied to the new asset that is created on receipt of a cross-site or cross-organization asset transfer even if status is INACTIVE? The system uses this flag to determine which PMs became INACTIVE when the asset was SHIPPED so that the PMs are copied to the asset created in the new site or organization when the shipment is received. This flag pertains only to PMs created from Master PMs because these are the only PMs that are moved cross-site or cross-organization with an asset when it is transferred."
+  },
+  "plusgcertid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Certification",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "The unique identifier of the certification record.",
+   "maxLength": 11
+  },
+  "saturday": {
+   "default": true,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Saturday",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Flag to indicate if this day is active for the PM"
+  },
+  "pmmeter": {
+   "objectName": "PMMETER",
+   "type": "array",
+   "items": {
+    "definition": {
+     "subSchema": {
+      "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/mxapipm/pmmeter"
+     }
+    },
+    "type": "object"
+   },
+   "cardinality": "UNDEFINED",
+   "relation": "PMMETER"
+  },
+  "plusoutagecode_description": {
+   "type": "string"
+  },
+  "plusgprofnum": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Location Profile",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The location profile that is associated with this preventive maintenance record. The location profile contains information about production data. You can use location profiles to reduce the production losses that can result from planned or unplanned maintenance shutdowns. ",
+   "maxLength": 10
+  },
+  "plusinstchnl_description": {
+   "type": "string"
+  },
+  "startmeasureunituid": {
+   "searchType": "EXACT",
+   "subType": "UPPER",
+   "title": "Unit of Start Measure",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Start Measure Units",
+   "maxLength": 16
+  },
+  "storelocsite": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Storeroom Site",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Specifies the Storeroom's Site of an item",
+   "maxLength": 8
+  },
+  "assignedownergroup": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Assigned Owner Group",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Identifies the owner group who will be responsible for the work order created with this PM. Use the Select Action menu to assign an owner group. You can enter a value either in this field or the Owner field.",
+   "maxLength": 8
+  },
+  "plusgrace325": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Is 3.25 Rule in effect?",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "This rule states that the grace period may only be used once over consecutively generated work orders for this PM. Takes precedence over the grace period."
+  },
+  "assetnum": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Asset",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Asset on which the preventive maintenance is done.",
+   "maxLength": 25
+  },
+  "alertlead": {
+   "default": 0,
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "INTEGER",
+   "title": "Alert Lead (Days)",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "Acceptable period (in days), prior to the PM due date, during which the PM may be performed.",
+   "maxLength": 11
+  },
+  "crewworkgroup": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Crew Work Group",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Identifies the resource pool to which the labor belongs.",
+   "maxLength": 8
+  },
+  "persongroup": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Work Group",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Identifies the Person Group for the supervisor.",
+   "maxLength": 8
+  },
+  "plusoutagecode": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Outage Code",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Identifies the specific outage or outage type.",
+   "maxLength": 12
+  },
+  "startzoffset": {
+   "searchType": "EXACT",
+   "scale": 2,
+   "subType": "DECIMAL",
+   "title": "Start Z Offset",
+   "persistent": true,
+   "type": "number",
+   "remarks": "Distance above or below this linear asset.  For example, if a sign is 10 feet above the road, the  Z-Offset is 10 feet.  This value is measured from the Z  Reference Point and can be positive (above) or negative (below).",
+   "maxLength": 11
+  },
+  "crewid": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Crew",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "ID of the work crew assigned to work orders you generate from this PM. Maximo copies this field from either a single job plan on the PM, or from the first job plan in a job plan sequence. If you change the job plan used on the PM, you must update this field manually.",
+   "maxLength": 12
+  },
+  "wednesday": {
+   "default": true,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Wednesday",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Flag to indicate if this day is active for the PM"
+  },
+  "plusgoutageconseq_description": {
+   "type": "string"
+  },
+  "plusinstchnl": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Instrument Channel",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The instrument channel to which this component belongs. The instrument channel attribute applies only to locations. The instrument channel for an asset or configuration item is determined by association with a location record. ",
+   "maxLength": 12
+  },
+  "plusmilestone": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "PM Milestone",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "PM Milestone code",
+   "maxLength": 12
+  },
+  "plustsfreq": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "INTEGER",
+   "title": "Regulatory Frequency",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "The frequency listed in the technical specification for this surveillance. The value in the Regulatory Freq field may differ from the value in the Frequency field.",
+   "maxLength": 11
+  },
+  "startzoffsetref": {
+   "searchType": "EXACT",
+   "subType": "ALN",
+   "title": "Start Z Offset Referent",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Reference point from which the start Z-Offset (distance above or below the linear asset) is measured.  ",
+   "maxLength": 30
+  },
+  "pluspmscplk": {
+   "default": true,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "PM Scope Lock",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "This hidden field supports the capability to temporarily override the lock on editing-controlled PM data."
+  },
+  "doclinks": {
+   "objectName": "DOCLINKS",
+   "type": "array",
+   "items": {
+    "definition": {
+     "subSchema": {
+      "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/mxapipm/doclinks"
+     }
+    },
+    "type": "object"
+   },
+   "cardinality": "UNDEFINED",
+   "relation": "DOCLINKS"
+  },
+  "erlstwogendate": {
+   "searchType": "NONE",
+   "subType": "DATE",
+   "title": "Earliest Next Due Date",
+   "type": "string",
+   "remarks": "Earliest next due date for a work order generated from this PM."
+  },
+  "monday": {
+   "default": true,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Monday",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Flag to indicate if this day is active for the PM"
+  },
+  "calendar": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Calendar",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Calendar to determine shift work is to be done on.",
+   "maxLength": 8
+  },
+  "description_longdescription": {
+   "searchType": "WILDCARD",
+   "subType": "LONGALN",
+   "title": "Details",
+   "type": "string",
+   "remarks": "Long Description for One Line Short Description Of PM",
+   "maxLength": 32000
+  },
+  "extdate": {
+   "searchType": "EXACT",
+   "subType": "DATE",
+   "title": "Extended Date",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Date that overrides the PM's usual next due date for generating PM work orders. If the PM has a value in this field, Maximo ignores the dates in the Active Season fields. The Extended Date field is read-only if there is no data in the Next Due Date or First Start Date fields. Whenever there is a value in this field, the Adjust Next Due Date? field is required. If there is no value in this field, the Adjust Next Due Date field is NULL and read-only. Maximo always clears the Extended Date and Adjust Next Due Date fields after you generate work orders from this PM. Notes: 1.  This date only applies to the current PM record; it does not apply to other PMs in a PM hierarchy. 2.  If an extension date is used on a parent PM in a hierarchy and one of the child PMs is due to generate a work order earlier than the extension date, the entire PM hierarchy generates work orders. Maximo then clears all extension dates in the hierarchy. 3.  If the extension date is later than the calculation of the Next Due Date + Frequency, you may disrupt the PM's frequency cycle."
+  },
+  "basemeasureunitid": {
+   "searchType": "EXACT",
+   "subType": "UPPER",
+   "title": "Unit of Base Measure",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Usually, this is the same as the unit of measure  for the asset. If they differ, Maximo will display measures in the unit of measure but will store measures in both the unit of measure and base unit of measure.  A conversion between the unit of measure and base unit of measure, entered via the Units of Measure and Conversion Action in Assets, must exist if the base unit of measure differs from the unit of measure.",
+   "maxLength": 16
+  },
+  "changeby": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Changed By",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Person Who Entered-Modified PM",
+   "maxLength": 100
+  },
+  "endmeasure": {
+   "searchType": "EXACT",
+   "scale": 2,
+   "subType": "DECIMAL",
+   "title": "End Measure",
+   "persistent": true,
+   "type": "number",
+   "remarks": "Absolute distance taken from the start of the linear asset to where this PM segment ends.  This can be manually entered or calculated by entering an end reference point and end offset.",
+   "maxLength": 11
+  },
+  "pluspwrblk": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Power Block",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Power Block"
+  },
+  "startyoffset": {
+   "searchType": "EXACT",
+   "scale": 2,
+   "subType": "DECIMAL",
+   "title": "Start Y Offset",
+   "persistent": true,
+   "type": "number",
+   "remarks": "Perpendicular distance from this linear asset.  For example, if a sign is 10 feet to the right of the road, the Y-Offset is 10 feet.  This value is measured from the Y Reference Point and can be positive (right) or negative (left).",
+   "maxLength": 11
+  },
+  "thursday": {
+   "default": true,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Thursday",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Flag to indicate if this day is active for the PM"
+  },
+  "interruptible": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Interruptible",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Specifies if the work order created from this PM is allowed to be stopped and restarted during resource scheduling. If the checkbox is selected, the work order can be stopped and restarted. If the checkbox is cleared, the work order cannot be interrupted for resource scheduling."
+  },
+  "overridemasterupd": {
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Override Updates from Master PM",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Specifies whether changes to the Master PM will update this PM. If the checkbox is selected, changes to the Master PM will not affect this PM. If the checkbox is cleared, changes to the master PM will roll down to this PM whenever the Update Associated PMs action is performed."
+  },
+  "lead": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Lead",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The lead person for the work order generated from this PM.",
+   "maxLength": 100
+  },
+  "pmuid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "PMUID",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "uniqueid": true,
+   "remarks": "Unique id for PM",
+   "maxLength": 11
+  },
+  "inclforecast": {
+   "default": true,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Include this PM in the Forecast",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Indicates if this PM  should be included in the forecast"
+  },
+  "plusmilestone_description": {
+   "type": "string"
+  },
+  "downtime": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Downtime",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Does the Asset have to be down to perform work order?"
+  },
+  "endyoffset": {
+   "searchType": "EXACT",
+   "scale": 2,
+   "subType": "DECIMAL",
+   "title": "End Y Offset",
+   "persistent": true,
+   "type": "number",
+   "remarks": "Perpendicular distance from this linear asset.  For example, if a sign is 10 feet to the right of the road, the Y-Offset is 10 feet.  This value is measured from the Y Reference Point and can be positive (right) or negative (left).",
+   "maxLength": 11
+  },
+  "pluswoacceptscharges": {
+   "default": true,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Accepts Charges",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "This check box indicates that the work order accepts charges. By default, this check box is selected and you can enter charges."
+  },
+  "frequnit_description": {
+   "type": "string"
+  },
+  "usetargetdate": {
+   "default": true,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Use Last Work Order's Start Date to Calculate Next Due Date",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Select the Use Target Start? box to begin the PM frequency count at the date in the Last Target Start field when you measure time between generating work orders from this PM. Do not select the box if you want to measure from the date in the Last Completion Date field."
+  },
+  "adjnextdue": {
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Adjust Next Due Date",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Select this box to have Maximo use the extended date to calculate the Next Due Date field after you generate one or more work orders from this PM. The field is required when there is data in the PM's Extended Date field."
+  },
+  "basemeasureunituid": {
+   "searchType": "EXACT",
+   "subType": "UPPER",
+   "title": "Unit of Base Measure",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Base Measurement Units",
+   "maxLength": 16
+  },
+  "pluspmtype": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "PM Type",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Classification or type of PM. The PM Type field lets you classify a PM as regulatory, administrative, et cettera.",
+   "maxLength": 16
+  },
+  "asset": {
+   "objectName": "ASSET",
+   "type": "array",
+   "items": {
+    "definition": {
+     "subSchema": {
+      "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/mxapipm/asset"
+     }
+    },
+    "type": "object"
+   },
+   "cardinality": "UNDEFINED",
+   "relation": "ASSET"
+  },
+  "startbasemeasure": {
+   "searchType": "EXACT",
+   "scale": 2,
+   "subType": "DECIMAL",
+   "title": "Start Base Measure",
+   "persistent": true,
+   "type": "number",
+   "remarks": "An absolute measure that is calculated by converting from the end measure using a defined conversion method.  Conversion methods are defined in the Assets application using the Add/Modify Conversions action.",
+   "maxLength": 11
+  },
+  "endoffsetunituid": {
+   "searchType": "EXACT",
+   "subType": "UPPER",
+   "title": "Unit of End Offset",
+   "persistent": true,
+   "type": "string",
+   "remarks": "End Offset Units",
+   "maxLength": 16
+  },
+  "endzoffsetref": {
+   "searchType": "EXACT",
+   "subType": "ALN",
+   "title": "End Z Offset Referent",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Point from which the Z-Offset is measured.  ",
+   "maxLength": 30
+  },
+  "plusgbennum": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Loss Reference",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The loss record that defines the production loss that is associated with work for this preventive maintenance record.",
+   "maxLength": 12
+  },
+  "plusglossquantity": {
+   "searchType": "EXACT",
+   "scale": 2,
+   "subType": "AMOUNT",
+   "title": "Loss Quantity",
+   "persistent": true,
+   "type": "number",
+   "remarks": "The number of units that could be lost during production.",
+   "maxLength": 11
+  },
+  "assetfeatureid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Asset Feature ID",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "Asset Feature that is the focus of work (e.g. Guardrail 127) as opposed to the start/end asset features that identify where the work takes place",
+   "maxLength": 11
+  },
+  "wostatus": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Work Order Status",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Specify the status of work orders you will generate from the PM. Note: If the status is set to waiting for approval, MAXIMO does not place inventory reservations until the status changes to approved (WSCH, APPR, WPCOND or their synonyms).",
+   "maxLength": 16
+  },
+  "jpnum": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Job Plan",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Based on the value in the Counter field, the projected next job plan in the job plan sequence. When you generate a work order, MAXIMO increments the counter, then selects the job plan. You can modify this field if there is only one job plan in the sequence. View or modify the job plan sequence on the Job Plan Sequence tab.",
+   "maxLength": 12
+  },
+  "laststartdate": {
+   "searchType": "EXACT",
+   "subType": "DATE",
+   "title": "Last Start Date",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Date on which the last work order generated from the PM was scheduled to start. This field is copied to work orders you generate from the PM. The frequency count between time-based PMs starts with either this date or the Last Completion Date. When you do not use frequency criteria while generating work orders, the Last Target Start Date field is set to the system date if the PM is not due."
+  },
+  "frequency": {
+   "default": 0,
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "INTEGER",
+   "title": "Frequency",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "Number of time units (days, weeks, months, or years) to elapse between work orders you generate from this PM. The count begins at the value in the Last Target Start Date (if Use Target Start? is selected or Last Completion Date (if Use Target Start? is not selected field. This value may differ differ from the Regulatory Frequency to facilitate scheduling. For example, a regulatory frequency of 31 days may have a frequency of 28 days.",
+   "maxLength": 11
+  },
+  "pluslocrev": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "INTEGER",
+   "title": "Location Revision",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "The revision of the location at the time of its association with the current record.",
+   "maxLength": 11
+  },
+  "_rowstamp": {
+   "type": "string"
+  },
+  "pluscduedate": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Due Date",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Determines which PM is the one that establishes the Assets next calibration due date"
+  },
+  "startmeasureunitid": {
+   "searchType": "EXACT",
+   "subType": "UPPER",
+   "title": "Unit of Start Measure",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Start measure units",
+   "maxLength": 16
+  },
+  "startoffsetunituid": {
+   "searchType": "EXACT",
+   "subType": "UPPER",
+   "title": "Unit of Start Offset",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Start Offset Units",
+   "maxLength": 16
+  },
+  "siteid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Site",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Identifies the site.",
+   "maxLength": 8
+  },
+  "crewid_description": {
+   "type": "string"
+  },
+  "plusmer_description": {
+   "type": "string"
+  },
+  "status_description": {
+   "type": "string"
+  },
+  "plusestregdate": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Estimate Regulatory Dates for Work Orders",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Indicates whether estimated regulatory and dead dates are calculated for work orders that are generated from this PM record. When this check box is selected, regulatory dates are estimated during work order generation for work orders that have a preceding work order, but do not have actual regulatory dates. Estimated regulatory dates are calculated by adding the regulatory frequency to the best available date information from the preceding work order. Actual dates are used where possible, followed by scheduled and target dates, in that order. The setting for Use Last WO's Actual Start Date to Calculate Regulatory Dates determines whether the calculation is based on start or finish dates. Estimated regulatory dates are shown in the View Work Order History window in this application, and on the main tab in the Work Order Tracking (Nuc) application."
+  },
+  "endbasemeasure": {
+   "searchType": "EXACT",
+   "scale": 2,
+   "subType": "DECIMAL",
+   "title": "End Base Measure",
+   "persistent": true,
+   "type": "number",
+   "remarks": "An absolute measure that is calculated by converting from the end measure using a defined conversion method.  Conversion methods are defined in the Assets application using the Add/Modify Conversions action.",
+   "maxLength": 11
+  },
+  "endmeasureunituid": {
+   "searchType": "EXACT",
+   "subType": "UPPER",
+   "title": "Unit of End Measure",
+   "persistent": true,
+   "type": "string",
+   "remarks": "End Measure Units",
+   "maxLength": 16
+  },
+  "repairlocflag": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Repair Facility Required",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Indicates whether the repair location is required."
+  },
+  "changedate": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Changed Date",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Date PM Last Changed"
+  },
+  "firstdate": {
+   "searchType": "EXACT",
+   "subType": "DATE",
+   "title": "First Start Date",
+   "persistent": true,
+   "type": "string",
+   "remarks": "First date you generate a work order from the PM; this date initiates the PM cycle. You can interrupt the PM cycle by resetting the field to a future date. There must be a value in the field before you can begin to generate work orders for the PM."
+  },
+  "plusmer": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "MER Code",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Mode Entry Requirement. This work must be completed before entering the listed mode. It is only applicable to the stated direction (A - ascending, D - descending).",
+   "maxLength": 6
+  },
+  "reforecast": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Reforecast Subsequent Dates",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Indicates if subsequent dates for this PM should be adjusted as a result of the New Date entered. If you select this checkbox, the forecast dates following the adjusted date will be reforecasted automatically. If you clear this checkbox, subsequent PM dates in the forecast will remain unchanged. If a forecast exists for this PM, this field is read-only."
+  },
+  "jpseqinuse": {
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Use Job Plan Sequences",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Specifies whether the PM uses job plan sequences. If the check box is selected, the PM generates different work orders each time based on a job plan sequence. If the checkbox is cleared, the PM generates identical work orders every time."
+  },
+  "orgid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Organization",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Organization Identifie",
+   "maxLength": 8
+  },
+  "wostatus_description": {
+   "type": "string"
+  },
+  "plusgoutageconseq": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Outage Consequence",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The impact on production if there is an outage for this preventive maintenance record.",
+   "maxLength": 20
+  },
+  "startoffsetunitid": {
+   "searchType": "EXACT",
+   "subType": "UPPER",
+   "title": "Unit of Start Offset",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Unit of measure for the offset (before or after) from the start reference point of the asset on this PM.",
+   "maxLength": 16
+  },
+  "plussched": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Scheduling Comments",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Scheduling comments for the PM",
+   "maxLength": 256
+  },
+  "pmeq2": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "PMEQ2",
+   "persistent": true,
+   "type": "string",
+   "remarks": "PM Extra Field #11"
+  },
+  "startoffset": {
+   "searchType": "EXACT",
+   "scale": 2,
+   "subType": "DECIMAL",
+   "title": "Start Offset",
+   "persistent": true,
+   "type": "number",
+   "remarks": "Distance used in conjunction with the start reference point to determine where the PM work location begins.  ",
+   "maxLength": 11
+  },
+  "pmeq1": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "PMEQ1",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Extra Field Copied From Asset",
+   "maxLength": 10
+  },
+  "endassetfeatureid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "End Asset Feature ID",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "A previously defined feature or relationship used, in conjunction with the end offset, to determine the end measure for this linear segment.   ",
+   "maxLength": 11
+  },
+  "pmcounter": {
+   "default": 0,
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "INTEGER",
+   "title": "Counter",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "Number of work orders generated from the PM since the First Start Date. The counter is set to zero when you insert a new PM record, and increases each time you generate a top-level work order from the PM. If you are using a job plan sequence, the job plan is selected after the counter increments.",
+   "maxLength": 11
+  },
+  "pmeq3": {
+   "searchType": "EXACT",
+   "scale": 2,
+   "subType": "DECIMAL",
+   "title": "PMEQ3",
+   "persistent": true,
+   "type": "number",
+   "remarks": "PM Extra Field #12",
+   "maxLength": 16
+  },
+  "_id": {
+   "type": "string"
+  },
+  "plusisfreq": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Frequency?",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Is this a frequency record?"
+  },
+  "supervisor": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Supervisor",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Person or craft responsible for implementing the work order. Maximo copies this field from either a single job plan on the PM, or from the first job plan in a job plan sequence. If you change the job plan associated with the PM, you must update this field manually.",
+   "maxLength": 100
+  },
+  "plussafediv_description": {
+   "type": "string"
+  },
+  "endmeasureunitid": {
+   "searchType": "EXACT",
+   "subType": "UPPER",
+   "title": "Unit of End Measure",
+   "persistent": true,
+   "type": "string",
+   "remarks": "End Measure Units",
+   "maxLength": 16
+  },
+  "lockforecast": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Forecast Dates Locked",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Indicates if New Dates can be modified or added to the forecast. If the check box is selected, no New Dates can be added or modified. To modify or add New Dates, select Unlock Forecast Dates from the Select Action menu."
+  },
+  "description": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Description",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Describes the PM. To enter or view additional information, click the Long Description button.",
+   "maxLength": 100
+  },
+  "endoffset": {
+   "searchType": "EXACT",
+   "scale": 2,
+   "subType": "DECIMAL",
+   "title": "End Offset",
+   "persistent": true,
+   "type": "number",
+   "remarks": "Distance used in conjunction with the end reference point to determine where the PM work location ends.  ",
+   "maxLength": 11
+  },
+  "nextdate": {
+   "searchType": "EXACT",
+   "subType": "DATE",
+   "title": "Estimated Next Due Date",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Date the next work order is scheduled to be generated from the PM. The Next Due Date field is NULL unless there is an integer value in the Frequency field."
+  },
+  "plusgbennumid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Loss Reference ID",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "The loss record that defines the production loss that is associated with work for this preventive maintenance record.",
+   "maxLength": 11
+  },
+  "_imagelibref": {
+   "type": "string"
+  },
+  "endyoffsetref": {
+   "searchType": "EXACT",
+   "subType": "ALN",
+   "title": "End Y Offset Referent",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The point from which the Y Offset is measured.  The user can create a domain for this purpose.  The value entered will not be used in calculations -- it is simply used to locate the feature in the field.",
+   "maxLength": 30
+  },
+  "plusondmd": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "On Demand",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "When selected, indicates that Maximo will only generate work orders when the PM or surveillance is run manually."
+  },
+  "pluspmtype_description": {
+   "type": "string"
+  },
+  "plusplcy": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Plant Cycle",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Plant Cycle",
+   "maxLength": 3
+  },
+  "friday": {
+   "default": true,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Friday",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Flag to indicate if this day is active for the PM"
+  },
+  "wosequence": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "INTEGER",
+   "title": "Sequence",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "Sequence in which the PM-generated work orders should be performed. MAXIMO copies the Sequence field to work orders you generate from this PM. There is no validation on this field -- nulls and duplicate values are allowed. MAXIMO clears the Sequence field if you change the parent identifier of the PM.",
+   "maxLength": 11
+  },
+  "owner": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Owner",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The person who will be responsible for the work order generated from this PM.",
+   "maxLength": 100
+  },
+  "plusschedcode": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Schedule Code",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Schedule code",
+   "maxLength": 12
+  },
+  "startyoffsetref": {
+   "searchType": "EXACT",
+   "subType": "ALN",
+   "title": "Start Y Offset Referent",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The point from which the Y Offset is measured.  The user can create a domain for this purpose.  The value entered will not be used in calculations -- it is simply used to locate the feature in the field.",
+   "maxLength": 30
+  },
+  "storeloc": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Storeroom",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The storeroom for materials on a PM with an associated job plan. If you leave this field blank, Maximo will populate this field with your default storeroom.",
+   "maxLength": 25
+  },
+  "worktype": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Work Type",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Classification or type of work order generated from this PM.",
+   "maxLength": 5
+  },
+  "plusglocprofid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Location Profile",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "The location profile that is associated with this preventive maintenance record. The location profile contains information about production data. You can use location profiles to reduce the production losses that can result from planned or unplanned maintenance shutdowns. ",
+   "maxLength": 11
+  },
+  "plusgpolicyjp": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Policy from Job Plan",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "This flag tells when the policy was inserted on a pm manually or brought by a job plan association. Zero means it was manually associated and one means it was a job plan association"
+  },
+  "plusschedcode_description": {
+   "type": "string"
+  },
+  "grandtotalcost": {
+   "searchType": "EXACT",
+   "scale": 2,
+   "subType": "AMOUNT",
+   "title": "Grand Total Cost",
+   "persistent": true,
+   "type": "number",
+   "remarks": "The grand total cost for this PM forecast.",
+   "maxLength": 11
+  },
+  "glaccount": {
+   "searchType": "WILDCARD",
+   "subType": "GL",
+   "title": "GL Account",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "General ledger account to which costs on work orders generated from this PM are charged.",
+   "maxLength": 23
+  },
+  "statusiface": {
+   "default": false,
+   "searchType": "NONE",
+   "subType": "YORN",
+   "title": "Has Status Changed",
+   "type": "boolean",
+   "remarks": "Non persistent boolean field to indicate whether the status has been changed after the stateful object is fetched from the database."
+  },
+  "tuesday": {
+   "default": true,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Tuesday",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Flag to indicate if this day is active for the PM"
+  },
+  "pmactmeter": {
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Generate Work Order Based on Meter Readings (Do Not Estimate)",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "PM Actual Meter Reading"
+  },
+  "pluspmod": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Plant Mode",
+   "persistent": true,
+   "type": "string",
+   "remarks": "One or more modes when the work orders generated by this PM may be performed",
+   "maxLength": 25
+  },
+  "frequnit": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Frequency Units",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The unit of measure used to determine when this PM will generate a work order. This value is applied to both the Frequency and Regulatory Freq fields.",
+   "maxLength": 8
+  },
+  "location": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Location",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Location where work is done when work orders are generated from this PM. There must be data in either the asset or Location field unless this is a Master PM.",
+   "maxLength": 25
+  },
+  "locations": {
+   "objectName": "LOCATIONS",
+   "type": "array",
+   "items": {
+    "definition": {
+     "subSchema": {
+      "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/mxapipm/locations"
+     }
+    },
+    "type": "object"
+   },
+   "cardinality": "UNDEFINED",
+   "relation": "LOCATIONS"
+  },
+  "plusassrev": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "INTEGER",
+   "title": "Asset Revision",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "The revision of the asset at the time of its association with the current record.",
+   "maxLength": 11
+  },
+  "haschildren": {
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Has Children",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Specifies whether the PM has any child PMs. If the check box is selected, the PM has child PMs associated with it. If the checkbox is cleared, the PM has no child PMs."
+  },
+  "startzoffsetref_description": {
+   "type": "string"
+  }
+ },
+ "required": [
+  "adjnextdue",
+  "changeby",
+  "changedate",
+  "frequnit",
+  "haschildren",
+  "jpseqinuse",
+  "orgid",
+  "overridemasterupd",
+  "pmactmeter",
+  "pmassetwogen",
+  "siteid",
+  "statusiface",
+  "usefrequency",
+  "wostatus"
+ ]
+}

@@ -1,0 +1,239 @@
+{
+  "resource": "MXIFACEINVOKE",
+  "description": "MAXIFACEINVOKE",
+  "pk": [
+    "ifacename"
+  ],
+  "title": "MAXIFACEINVOKE",
+  "type": "object",
+  "$ref": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxifaceinvoke",
+  "uniqueid": "maxifaceinvokeid",
+  "properties": {
+    "processresponse": {
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "Process Response",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "Process Response"
+    },
+    "replyexitclass": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Response Processing Class",
+      "persistent": true,
+      "type": "string",
+      "remarks": "The processing class for response",
+      "maxLength": 100
+    },
+    "localref": {
+      "type": "string"
+    },
+    "messagetype": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Operation",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Operation Name",
+      "maxLength": 20
+    },
+    "description": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Description",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Description",
+      "maxLength": 100
+    },
+    "maxifaceinvokeid": {
+      "searchType": "EXACT",
+      "maximum": 2147483647.0,
+      "subType": "BIGINT",
+      "title": "Unique Id",
+      "persistent": true,
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "uniqueid": true,
+      "remarks": "Unique Id",
+      "maxLength": 11
+    },
+    "bidiconfig_description": {
+      "type": "string"
+    },
+    "publishjson": {
+      "default": false,
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "Publish JSON",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "Publish JSON"
+    },
+    "_rowstamp": {
+      "type": "string"
+    },
+    "replymapname": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Response XSL File",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Response XSL File Location",
+      "maxLength": 100
+    },
+    "_imagelibref": {
+      "type": "string"
+    },
+    "templatename": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Request Template",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Request Template",
+      "maxLength": 50
+    },
+    "href": {
+      "type": "string"
+    },
+    "bidiconfig": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "BIDI Configuration",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "BIDI Configuration",
+      "maxLength": 5
+    },
+    "ifacetype_description": {
+      "type": "string"
+    },
+    "changeby": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Changed By",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Changed By User",
+      "maxLength": 100
+    },
+    "replyintobjname": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Response Object Structure",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Response Object Structure Name",
+      "maxLength": 20
+    },
+    "replyuserexitclass": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Response User Exit Class",
+      "persistent": true,
+      "type": "string",
+      "remarks": "The user exit class for processing response",
+      "maxLength": 100
+    },
+    "ifacemapname": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Request XSL File",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Request XSL File Location",
+      "maxLength": 100
+    },
+    "ifacename": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Invocation Channel",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Invocation Channel Name",
+      "maxLength": 25
+    },
+    "changedate": {
+      "searchType": "EXACT",
+      "subType": "DATETIME",
+      "title": "Change Date",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Change Date"
+    },
+    "ifaceexitclass": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Request Processing Class",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Request Processing Class Name",
+      "maxLength": 100
+    },
+    "intobjectname": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Request Object Structure",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Request Object Structure Name",
+      "maxLength": 20
+    },
+    "endpointname": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Endpoint",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Endpoint Name",
+      "maxLength": 20
+    },
+    "_id": {
+      "type": "string"
+    },
+    "ifacetype": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Adapter",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Invocation Channel Adapter Name",
+      "maxLength": 10
+    },
+    "ifaceuserexitclass": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Request User Exit",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Request User Exit Class Name",
+      "maxLength": 100
+    },
+    "userdefined": {
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "User Defined",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "User Defined"
+    }
+  },
+  "required": [
+    "changeby",
+    "changedate",
+    "ifacename",
+    "ifacetype",
+    "intobjectname",
+    "messagetype",
+    "processresponse",
+    "userdefined"
+  ]
+}

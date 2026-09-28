@@ -1,0 +1,579 @@
+{
+  "resource": "MXVENDORMSTR",
+  "description": "COMPMASTER",
+  "pk": [
+    "company",
+    "companysetid"
+  ],
+  "title": "COMPMASTER",
+  "type": "object",
+  "$ref": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxvendormstr",
+  "uniqueid": "compmasterid",
+  "properties": {
+    "ownersysid": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Owner System ID",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Owner System ID",
+      "maxLength": 10
+    },
+    "localref": {
+      "type": "string"
+    },
+    "customernum": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Customer #",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Code To Identify Client (Maximo User)",
+      "maxLength": 16
+    },
+    "autoapproveinv": {
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "Automatically Approve Invoice",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "Are Invoices automatically approved for the vendor upon receipt of the invoice?"
+    },
+    "currencycode": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Currency",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Currency type used.",
+      "maxLength": 8
+    },
+    "type": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Company Type",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Type Of Company (V For Vendor)",
+      "maxLength": 1
+    },
+    "autosendpocancel": {
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "Send Vendor Transaction on PO Cancel",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "Is the vendor sent a transaction upon PO cancellation?"
+    },
+    "_rowstamp": {
+      "type": "string"
+    },
+    "taxexemptcode_description": {
+      "type": "string"
+    },
+    "contact": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Customer Contact",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Name of the primary person to contact at the company. To view more information about the contact, go to the Contacts tab. This contact is the default on purchase orders. If you enter a name that is not listed on the Contacts tab for the company, MAXIMO adds the name.",
+      "maxLength": 50
+    },
+    "address5": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Country",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Address Of Company",
+      "maxLength": 50
+    },
+    "href": {
+      "type": "string"
+    },
+    "address4": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "ZIP/Postal Code",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Address Of Company",
+      "maxLength": 50
+    },
+    "punchoutenabled": {
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "Punchout Enabled",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "Can this vendors catalog be accessed through punchout?"
+    },
+    "fax": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Company Fax",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Fax Number",
+      "maxLength": 20
+    },
+    "mnetcompanyid": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "E-commerce Supplier",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Mnet assigned company code",
+      "maxLength": 50
+    },
+    "banknum": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Bank Reference #",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Bank and branch identification reference number. Used to transfer funds electronically and allow transfer of dollars between buyer and seller.",
+      "maxLength": 16
+    },
+    "shipvia_description": {
+      "type": "string"
+    },
+    "catalogname": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Catalog",
+      "persistent": true,
+      "type": "string",
+      "remarks": "The name that will display when choosing where to punch out.",
+      "maxLength": 50
+    },
+    "vendorsendsasn": {
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "Vendor Sends ASN",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "Does the vendor send ASN transactions?"
+    },
+    "vendorsendsstatus": {
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "Vendor Sends Order Status",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "Does the vendor send status transactions?"
+    },
+    "changedate": {
+      "searchType": "EXACT",
+      "subType": "DATETIME",
+      "title": "Changed Date",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Record update date"
+    },
+    "taxexemptnum": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Tax Exempt Number",
+      "persistent": true,
+      "type": "string",
+      "remarks": "National Tax Exempt Number for tax reporting purposes.",
+      "maxLength": 20
+    },
+    "inspectionrequired": {
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "Inspection on Receipt",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "Whether items ordered from this company need to be inspected on receipt."
+    },
+    "shipvia": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Ship Via",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Ship Via",
+      "maxLength": 20
+    },
+    "phone": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Phone",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Company Main Phone Number",
+      "maxLength": 20
+    },
+    "fob": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "FOB Point",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Freight On Board",
+      "maxLength": 20
+    },
+    "name": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Description",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Name Of Company",
+      "maxLength": 50
+    },
+    "_id": {
+      "type": "string"
+    },
+    "vendorsendsinv": {
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "Vendor Sends Invoice",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "Does the vendor send invoice transactions?"
+    },
+    "paymentterms": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Payment Terms",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Payment Terms",
+      "maxLength": 20
+    },
+    "payvendor": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Pay To",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Vendor code to which payment is to be made.",
+      "maxLength": 12
+    },
+    "bankaccount": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Bank",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Vendor bank account for direct credits.",
+      "maxLength": 20
+    },
+    "remitaddress3": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "State/Province",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Remit To Address line 3",
+      "maxLength": 50
+    },
+    "externalrefid": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "External Reference ID",
+      "persistent": true,
+      "type": "string",
+      "remarks": "External Reference ID",
+      "maxLength": 10
+    },
+    "remitaddress4": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "ZIP/Postal Code",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Remit To Address line 4",
+      "maxLength": 50
+    },
+    "taxexemptcode": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Tax Exempt Code",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Tax Exempt Code.",
+      "maxLength": 1
+    },
+    "remitaddress5": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Country",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Remit To Address line 5",
+      "maxLength": 50
+    },
+    "ecommerceenabled": {
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "E-commerce Enabled",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "Is this company Electronic Commerce enabled?."
+    },
+    "remitaddress1": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Address",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Remit To Address line 1",
+      "maxLength": 50
+    },
+    "remitaddress2": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "City",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Remit To Address line 2",
+      "maxLength": 50
+    },
+    "defaultwarehouse": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Default Warehouse",
+      "persistent": true,
+      "type": "string",
+      "remarks": "The Vendor's default warehouse",
+      "maxLength": 12
+    },
+    "autoreceiveonasn": {
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "Automatically Approve Receipt on ASN",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "Does the vendor automatically process the receipts for an ASN?"
+    },
+    "_imagelibref": {
+      "type": "string"
+    },
+    "remitcontact": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Contact",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Name of the person to contact at the Remit To company, which is a separate address used for invoicing. To view more information about the contact, go to the Contacts tab. This contact is the default value on invoices. If you enter a name that is not listed on the Contacts tab for the company, MAXIMO adds the name to the Contacts table.",
+      "maxLength": 50
+    },
+    "company": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Company",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Unique Identifier For Company",
+      "maxLength": 12
+    },
+    "disabled": {
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "Disqualified Vendor",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "Is this record active?"
+    },
+    "type_description": {
+      "type": "string"
+    },
+    "name_longdescription": {
+      "searchType": "WILDCARD",
+      "subType": "LONGALN",
+      "title": "Name Long Description",
+      "type": "string",
+      "remarks": "Long Description for this company.",
+      "maxLength": 32000
+    },
+    "registration2": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Registration # 2",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Tax registration number for tax type 2.",
+      "maxLength": 20
+    },
+    "registration1": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Registration #",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Tax registration number for tax type 1.",
+      "maxLength": 20
+    },
+    "registration4": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Registration # 4",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Tax registration number for tax type 4.",
+      "maxLength": 20
+    },
+    "registration3": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Registration # 3",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Tax registration number for tax type 3.",
+      "maxLength": 20
+    },
+    "address3": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "State/Province",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Address Of Company",
+      "maxLength": 50
+    },
+    "address2": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "City",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Address Of Company",
+      "maxLength": 50
+    },
+    "registration5": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Registration # 5",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Tax registration number for tax type 5.",
+      "maxLength": 20
+    },
+    "address1": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Address",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Address Of Company",
+      "maxLength": 50
+    },
+    "changeby": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Changed By",
+      "persistent": true,
+      "type": "string",
+      "remarks": "User Signature",
+      "maxLength": 100
+    },
+    "dunsnum": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "DUNS #",
+      "persistent": true,
+      "type": "string",
+      "remarks": "The D and B DUNS (Data Universal Numbering System) number to provide smoother internet procurement.",
+      "maxLength": 16
+    },
+    "sendersysid": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Sender System ID",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Column used by ERP-Integration (APIs)",
+      "maxLength": 50
+    },
+    "companysetid": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Company Set",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Company set identifier.",
+      "maxLength": 8
+    },
+    "compmasterid": {
+      "searchType": "EXACT",
+      "maximum": 2147483647.0,
+      "subType": "BIGINT",
+      "title": "COMPMASTERID",
+      "persistent": true,
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "uniqueid": true,
+      "remarks": "Unique Identifier",
+      "maxLength": 11
+    },
+    "freightterms": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Freight Terms",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Freight Terms",
+      "maxLength": 50
+    },
+    "ecominterface": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "E-commerce Supplier Location",
+      "persistent": true,
+      "type": "string",
+      "remarks": "E-Commerce supplier catalogue's location",
+      "maxLength": 30
+    },
+    "sourcesysid": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Source System ID",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Source System ID",
+      "maxLength": 10
+    },
+    "freightterms_longdescription": {
+      "searchType": "WILDCARD",
+      "subType": "LONGALN",
+      "title": "Freight Terms Long Description",
+      "type": "string",
+      "remarks": "Long Description for Freight Terms",
+      "maxLength": 32000
+    },
+    "homepage": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Home Page",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Home Page number for company. This number is the URL of the company's World Wide Web address.",
+      "maxLength": 250
+    }
+  },
+  "required": [
+    "autoapproveinv",
+    "autoreceiveonasn",
+    "autosendpocancel",
+    "company",
+    "companysetid",
+    "currencycode",
+    "disabled",
+    "ecommerceenabled",
+    "inspectionrequired",
+    "punchoutenabled",
+    "vendorsendsasn",
+    "vendorsendsinv",
+    "vendorsendsstatus"
+  ]
+}

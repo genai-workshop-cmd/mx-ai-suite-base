@@ -1,0 +1,375 @@
+{
+  "resource": "MXAPISERVITEM",
+  "description": "SERVICEITEMS",
+  "pk": [
+    "itemnum",
+    "itemsetid"
+  ],
+  "title": "SERVICEITEMS",
+  "type": "object",
+  "$ref": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapiservitem",
+  "uniqueid": "itemid",
+  "properties": {
+    "commodity": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Commodity Code",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Commodity",
+      "maxLength": 8
+    },
+    "ownersysid": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Owner System ID",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Owner System ID",
+      "maxLength": 10
+    },
+    "localref": {
+      "type": "string"
+    },
+    "commoditygroup": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Commodity Group",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Commodity Group",
+      "maxLength": 8
+    },
+    "pluscismte": {
+      "default": false,
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "Is M&TE",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "Defines whether a Tool is a standard used for measuring and testing equipment."
+    },
+    "description": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Description",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Item Description",
+      "maxLength": 100
+    },
+    "externalrefid": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "External Reference ID",
+      "persistent": true,
+      "type": "string",
+      "remarks": "External Reference ID",
+      "maxLength": 10
+    },
+    "pluscisinhousecal": {
+      "default": false,
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "Internal Calibration",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "When selected, indicates that this tool is calibrated in house. This field can be used to sort tools that are calibrated internally or externally."
+    },
+    "itemid": {
+      "searchType": "EXACT",
+      "maximum": 2147483647.0,
+      "subType": "BIGINT",
+      "title": "ITEMID",
+      "persistent": true,
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "uniqueid": true,
+      "remarks": "Unique Identifier",
+      "maxLength": 11
+    },
+    "_rowstamp": {
+      "type": "string"
+    },
+    "in20": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Extra Field 20",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Extra Field 20",
+      "maxLength": 10
+    },
+    "in22": {
+      "searchType": "EXACT",
+      "subType": "DATETIME",
+      "title": "Extra Field 22",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Extra Field 22"
+    },
+    "receipttolerance": {
+      "searchType": "EXACT",
+      "scale": 2,
+      "subType": "DECIMAL",
+      "title": "Receipt Tolerance %",
+      "persistent": true,
+      "type": "number",
+      "remarks": "The percentage value of items that can be received over the amount set in the initial agreement.",
+      "maxLength": 16
+    },
+    "in21": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Extra Field 21",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Extra Field 21",
+      "maxLength": 10
+    },
+    "_imagelibref": {
+      "type": "string"
+    },
+    "in24": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "IN24",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Extra Field 24",
+      "maxLength": 10
+    },
+    "in23": {
+      "searchType": "EXACT",
+      "scale": 2,
+      "subType": "DECIMAL",
+      "title": "Extra Field 23",
+      "persistent": true,
+      "type": "number",
+      "remarks": "Extra Field 23",
+      "maxLength": 16
+    },
+    "in26": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "IN26",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Extra Field 26",
+      "maxLength": 10
+    },
+    "pluscismteclass_description": {
+      "type": "string"
+    },
+    "in25": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "IN25",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Extra Field 25",
+      "maxLength": 10
+    },
+    "href": {
+      "type": "string"
+    },
+    "in27": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "IN27",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Extra Field 27",
+      "maxLength": 10
+    },
+    "prorate": {
+      "default": false,
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "Prorate",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "Prorate Service?"
+    },
+    "description_longdescription": {
+      "searchType": "WILDCARD",
+      "subType": "LONGALN",
+      "title": "Details",
+      "type": "string",
+      "remarks": "Long Description for Item Description",
+      "maxLength": 32000
+    },
+    "maxissue": {
+      "searchType": "EXACT",
+      "scale": 2,
+      "subType": "DECIMAL",
+      "title": "Maximum Quantity Issued",
+      "persistent": true,
+      "type": "number",
+      "remarks": "Total maximum quantity that can be issued to an asset.",
+      "maxLength": 16
+    },
+    "groupname": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Group",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Meter group for the item.  This attribute pertains to rotating items only, and is used to set the GroupName attribute of the new asset created from this item during the application of an item assembly structure.",
+      "maxLength": 10
+    },
+    "sendersysid": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Sender System ID",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Column used by ERP-Integration (APIs)",
+      "maxLength": 50
+    },
+    "pluscsolution": {
+      "default": false,
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "Buffer Solution",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "Buffer Solution Flag"
+    },
+    "taxexempt": {
+      "default": false,
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "Tax Exempt",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "Select this check box if the item, the tool, or the service is not taxable. The buyer for your organization determines the tax-exempt status of items, of tools, and of services."
+    },
+    "statusdate": {
+      "searchType": "EXACT",
+      "subType": "DATETIME",
+      "title": "Status Date",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Date the work order status was last changed."
+    },
+    "itemnum": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Service Item",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Inventory Item Number",
+      "maxLength": 30
+    },
+    "inspectionrequired": {
+      "default": false,
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "Inspection Required",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "Indicates whether inspection of item is required upon receipt."
+    },
+    "pluscismteclass": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "M&TE Classification",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "When the Is M&TE? field is checked then you have the option to choose a classification for M&TE.",
+      "maxLength": 80
+    },
+    "itemorginfo": {
+      "objectName": "ITEMORGINFO",
+      "type": "array",
+      "items": {
+        "definition": {
+          "subSchema": {
+            "$ref": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapiservitem/itemorginfo"
+          }
+        },
+        "type": "object"
+      },
+      "cardinality": "MULTIPLE",
+      "relation": "ITEMORGINFO"
+    },
+    "itemtype": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Type",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Item Type",
+      "maxLength": 15
+    },
+    "itemsetid": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Item Set",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "ItemSet Identifier.",
+      "maxLength": 8
+    },
+    "_id": {
+      "type": "string"
+    },
+    "iscrew": {
+      "default": false,
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "Crew",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "Specifies whether the tool can be used in Crew applications and Work Order Tracking applications. If the check box is selected, the tool can be used. If the check box is cleared, the tool cannot be used."
+    },
+    "hardresissue": {
+      "default": false,
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "Requires hard reservation on use",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "Indicates whether a hard reservation must be referenced when the item is issued from a storeroom."
+    },
+    "in19": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Extra Field 19",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Extra Field 19",
+      "maxLength": 10
+    },
+    "sourcesysid": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Source System ID",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Source System ID",
+      "maxLength": 10
+    },
+    "status": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Status",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "The current status of the item such as ACTIVE, PENDING, PLANNING, PENDOBS and OBSELETE.",
+      "maxLength": 16
+    }
+  },
+  "required": [
+    "itemnum",
+    "itemsetid",
+    "itemtype"
+  ]
+}

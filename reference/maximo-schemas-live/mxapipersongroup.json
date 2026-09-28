@@ -1,0 +1,113 @@
+{
+ "resource": "MXAPIPERSONGROUP",
+ "description": "Maximo API for Person Group UI",
+ "pk": [
+  "persongroup"
+ ],
+ "title": "PERSONGROUP",
+ "type": "object",
+ "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/mxapipersongroup",
+ "uniqueid": "persongroupid",
+ "properties": {
+  "persongroupteam": {
+   "objectName": "PERSONGROUPTEAM",
+   "type": "array",
+   "items": {
+    "definition": {
+     "subSchema": {
+      "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/mxapipersongroup/persongroupteam"
+     }
+    },
+    "type": "object"
+   },
+   "cardinality": "",
+   "relation": "PERSONGROUPTEAM_NONCNSLTNT"
+  },
+  "description_longdescription": {
+   "searchType": "WILDCARD",
+   "subType": "LONGALN",
+   "title": "Details",
+   "type": "string",
+   "remarks": "long description for description attribute",
+   "maxLength": 32000
+  },
+  "localref": {
+   "type": "string"
+  },
+  "userteam": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Team Of Users?",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Team Of Users"
+  },
+  "description": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Description",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Description of the person group record.",
+   "maxLength": 100
+  },
+  "record_descriptor": {
+   "type": "string",
+   "title": "Record/Object Descriptor"
+  },
+  "persongroupid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Unique Id",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "uniqueid": true,
+   "remarks": "Unique Id",
+   "maxLength": 11
+  },
+  "_rowstamp": {
+   "type": "string"
+  },
+  "_imagelibref": {
+   "type": "string"
+  },
+  "iscrewworkgroup": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Crew Work Group",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Specifies whether the work group can be used in Crew applications. If the check box is  selected, the resource can be used. If the check box is cleared (the default), the resource cannot be used."
+  },
+  "persongroup": {
+   "default": "&AUTOKEY&",
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Person Group",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Identifier of the person group record.",
+   "maxLength": 8
+  },
+  "href": {
+   "type": "string",
+   "title": "PERSONGROUP object reference"
+  },
+  "_id": {
+   "type": "string"
+  },
+  "plusdworkgroup": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Use with T&D",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Specifies whether the work group can be used in T&D applications.If the check box is  selected, the resource can be used. If the check box is cleared (the default), the resource cannot be used."
+  }
+ }
+}

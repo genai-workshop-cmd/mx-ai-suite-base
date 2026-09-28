@@ -1,0 +1,85 @@
+{
+ "resource": "MXOSLCERRORMAP",
+ "description": "OSLC Error Map Definition",
+ "pk": [
+  "errorgroup",
+  "errorkey"
+ ],
+ "title": "OSLCERRORMAP",
+ "type": "object",
+ "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/mxoslcerrormap",
+ "uniqueid": "oslcerrormapid",
+ "properties": {
+  "errorkey": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Error Key",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The error key code.",
+   "maxLength": 40
+  },
+  "errorgroup": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Error Group",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The error group code.",
+   "maxLength": 25
+  },
+  "_rowstamp": {
+   "type": "string"
+  },
+  "localref": {
+   "type": "string"
+  },
+  "_imagelibref": {
+   "type": "string"
+  },
+  "oslcerrormapid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Unique Id",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "uniqueid": true,
+   "remarks": "Unique Id",
+   "maxLength": 11
+  },
+  "httperrorcode": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "SMALLINT",
+   "title": "HTTP Error Code",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "hasList": true,
+   "remarks": "The HTTP error code that can be mapped to the error message.",
+   "maxLength": 11
+  },
+  "httperrorcode_description": {
+   "type": "string"
+  },
+  "href": {
+   "type": "string",
+   "title": "OSLCERRORMAP object reference"
+  },
+  "record_descriptor": {
+   "type": "string",
+   "title": "Record/Object Descriptor"
+  },
+  "_id": {
+   "type": "string"
+  }
+ },
+ "required": [
+  "errorgroup",
+  "httperrorcode"
+ ]
+}

@@ -1,0 +1,156 @@
+{
+ "resource": "MXIFACECONTROL",
+ "description": "Integration Control Definition",
+ "pk": [
+  "ifacecontrol"
+ ],
+ "title": "MAXIFACECONTROL",
+ "type": "object",
+ "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/mxifacecontrol",
+ "uniqueid": "maxifacecontrolid",
+ "properties": {
+  "description_longdescription": {
+   "searchType": "WILDCARD",
+   "subType": "LONGALN",
+   "title": "Details",
+   "type": "string",
+   "remarks": "DESCRIPTION_LONGDESCRIPTION",
+   "maxLength": 32000
+  },
+  "ifacecontrol": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Integration Control",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Identifies an interface control, which is a setting that lets you change or control the behavior of an interface.",
+   "maxLength": 20
+  },
+  "localref": {
+   "type": "string"
+  },
+  "controltype": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Type",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Type of the corresponding interface control.",
+   "maxLength": 20
+  },
+  "maxcontrolvalue": {
+   "objectName": "MAXCONTROLVALUE",
+   "type": "array",
+   "items": {
+    "definition": {
+     "subSchema": {
+      "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/mxifacecontrol/maxcontrolvalue"
+     }
+    },
+    "type": "object"
+   },
+   "cardinality": "UNDEFINED",
+   "relation": "MAXCONTROLVALUE"
+  },
+  "description": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Description",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Describes the interface control. To enter or view additional information, click the Long Description button.",
+   "maxLength": 100
+  },
+  "changedate": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Changed Date",
+   "persistent": true,
+   "type": "string",
+   "remarks": "CHANGEDATE"
+  },
+  "record_descriptor": {
+   "type": "string",
+   "title": "Record/Object Descriptor"
+  },
+  "domainid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Domain",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Identifies an existing Maximo domain that will validate the value(s) entered for the interface control. For more information about domains, refer to the Configuration module.",
+   "maxLength": 18
+  },
+  "istrue": {
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Default True",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Specifies whether the default value of a Boolean type interface control is True or False. If the check box is selected, the default value is True."
+  },
+  "langcode": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Language Code",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Language Column",
+   "maxLength": 4
+  },
+  "_rowstamp": {
+   "type": "string"
+  },
+  "_imagelibref": {
+   "type": "string"
+  },
+  "maxifacecontrolid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "MAXIFACECONTROLID",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "uniqueid": true,
+   "remarks": "Unique Identifier",
+   "maxLength": 11
+  },
+  "href": {
+   "type": "string",
+   "title": "MAXIFACECONTROL object reference"
+  },
+  "_id": {
+   "type": "string"
+  },
+  "value": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Default Value",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Value of the corresponding interface control.",
+   "maxLength": 100
+  },
+  "userdefined": {
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "User Defined",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Specifies whether the corresponding interface control was predefined (MEA-supplied) or added by a user. If the check box is selected, a user added the control."
+  }
+ },
+ "required": [
+  "changedate",
+  "controltype",
+  "ifacecontrol",
+  "istrue",
+  "langcode",
+  "userdefined"
+ ]
+}

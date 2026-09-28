@@ -1,0 +1,99 @@
+{
+  "resource": "TAMITINTSWREL",
+  "description": "TLOAMSWREL",
+  "pk": [
+    "tloamswrelid"
+  ],
+  "title": "TLOAMSWREL",
+  "type": "object",
+  "$ref": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/tamitintswrel",
+  "uniqueid": "tloamswrelid",
+  "properties": {
+    "_rowstamp": {
+      "type": "string"
+    },
+    "localref": {
+      "type": "string"
+    },
+    "parentsw": {
+      "searchType": "EXACT",
+      "maximum": 2147483647.0,
+      "subType": "BIGINT",
+      "title": "Parent Unique ID",
+      "persistent": true,
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "hasList": true,
+      "remarks": "Parent Unique ID",
+      "maxLength": 11
+    },
+    "relationshiptype_description": {
+      "type": "string"
+    },
+    "_imagelibref": {
+      "type": "string"
+    },
+    "relationshiptype": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Relationship",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Relationship",
+      "maxLength": 30
+    },
+    "href": {
+      "type": "string"
+    },
+    "_id": {
+      "type": "string"
+    },
+    "childsw": {
+      "searchType": "EXACT",
+      "maximum": 2147483647.0,
+      "subType": "BIGINT",
+      "title": "Child Unique ID",
+      "persistent": true,
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "hasList": true,
+      "remarks": "Child Unique ID",
+      "maxLength": 11
+    },
+    "deletedate": {
+      "searchType": "EXACT",
+      "subType": "DATETIME",
+      "title": "Delete Date",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Date when the record was deleted"
+    },
+    "isdeleted": {
+      "default": false,
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "Deleted",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "Is this entry deleted"
+    },
+    "tloamswrelid": {
+      "searchType": "EXACT",
+      "maximum": 2147483647.0,
+      "subType": "BIGINT",
+      "title": "Unique Id",
+      "persistent": true,
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "uniqueid": true,
+      "remarks": "Unique Id",
+      "maxLength": 11
+    }
+  },
+  "required": [
+    "childsw",
+    "parentsw",
+    "relationshiptype"
+  ]
+}

@@ -1,0 +1,157 @@
+{
+  "resource": "MXOMP",
+  "description": "OMP",
+  "pk": [
+    "ompguid"
+  ],
+  "title": "OMP",
+  "type": "object",
+  "$ref": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxomp",
+  "uniqueid": "ompid",
+  "properties": {
+    "ompid": {
+      "searchType": "EXACT",
+      "maximum": 2147483647.0,
+      "subType": "BIGINT",
+      "title": "Unique Id",
+      "persistent": true,
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "uniqueid": true,
+      "remarks": "Unique Id",
+      "maxLength": 11
+    },
+    "localref": {
+      "type": "string"
+    },
+    "changeby": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Changed By",
+      "persistent": true,
+      "type": "string",
+      "remarks": "changed by",
+      "maxLength": 100
+    },
+    "displaylabel": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Display Label",
+      "persistent": true,
+      "type": "string",
+      "remarks": "OMP Display Label",
+      "maxLength": 200
+    },
+    "description": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Description",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Description of OMP server",
+      "maxLength": 200
+    },
+    "changedate": {
+      "searchType": "EXACT",
+      "subType": "DATETIME",
+      "title": "Change Date",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Change date"
+    },
+    "version": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Version",
+      "persistent": true,
+      "type": "string",
+      "remarks": "OMP Version",
+      "maxLength": 20
+    },
+    "manufacturer": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Manufacturer Name",
+      "persistent": true,
+      "type": "string",
+      "remarks": "OMP Manufacturer Name",
+      "maxLength": 50
+    },
+    "ompcirln": {
+      "objectName": "OMPCIRLN",
+      "type": "array",
+      "items": {
+        "definition": {
+          "subSchema": {
+            "$ref": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxomp/ompcirln"
+          }
+        },
+        "type": "object"
+      },
+      "cardinality": "UNDEFINED",
+      "relation": "OMPCIRLN"
+    },
+    "_rowstamp": {
+      "type": "string"
+    },
+    "hostname": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Host Name",
+      "persistent": true,
+      "type": "string",
+      "remarks": "OMP hostname",
+      "maxLength": 50
+    },
+    "ompguid": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "GUID",
+      "persistent": true,
+      "type": "string",
+      "remarks": "A globally unique OMP ID that is generated from the OMP name field.",
+      "maxLength": 192
+    },
+    "_imagelibref": {
+      "type": "string"
+    },
+    "name": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "OMP Name",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Name of the OMP server",
+      "maxLength": 200
+    },
+    "productname": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Product Name",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Name of the Operational Management Product.  Required if name is not specified.  Change not allowed after insert.  If name is not specified, the combination of hostname/productname/manufacturer must be unique across all OMPs.",
+      "maxLength": 50
+    },
+    "href": {
+      "type": "string"
+    },
+    "_id": {
+      "type": "string"
+    },
+    "ompimlmorln": {
+      "objectName": "OMPIMLMORLN",
+      "type": "array",
+      "items": {
+        "definition": {
+          "subSchema": {
+            "$ref": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxomp/ompimlmorln"
+          }
+        },
+        "type": "object"
+      },
+      "cardinality": "UNDEFINED",
+      "relation": "OMPIMLMORLN"
+    }
+  }
+}

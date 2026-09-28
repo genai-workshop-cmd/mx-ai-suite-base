@@ -1,0 +1,148 @@
+{
+  "resource": "MXLMO2",
+  "description": "LMO",
+  "pk": [
+    "lmoname",
+    "lmonamespace"
+  ],
+  "title": "LMO",
+  "type": "object",
+  "$ref": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxlmo2",
+  "uniqueid": "lmoid",
+  "properties": {
+    "lmonamespace": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Name Space",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Name + Namespace is unique Identifier",
+      "maxLength": 50
+    },
+    "description_longdescription": {
+      "searchType": "WILDCARD",
+      "subType": "LONGALN",
+      "title": "DESCRIPTION Long description",
+      "type": "string",
+      "remarks": "Long description for DESCRIPTION",
+      "maxLength": 32000
+    },
+    "localref": {
+      "type": "string"
+    },
+    "responsembo": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Response Object Name",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Response MBO",
+      "maxLength": 30
+    },
+    "description": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Description",
+      "persistent": true,
+      "type": "string",
+      "remarks": "LMO Description",
+      "maxLength": 200
+    },
+    "lmoname": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Name",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Name + Namespace is unique Identifier",
+      "maxLength": 50
+    },
+    "changedate": {
+      "searchType": "EXACT",
+      "subType": "DATETIME",
+      "title": "Change Date",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Change Date"
+    },
+    "lmoid": {
+      "searchType": "EXACT",
+      "maximum": 2147483647.0,
+      "subType": "BIGINT",
+      "title": "Unique Id",
+      "persistent": true,
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "uniqueid": true,
+      "remarks": "Unique Id",
+      "maxLength": 11
+    },
+    "lmoatt": {
+      "objectName": "LMOATT",
+      "type": "array",
+      "items": {
+        "definition": {
+          "subSchema": {
+            "$ref": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxlmo2/lmoatt"
+          }
+        },
+        "type": "object"
+      },
+      "cardinality": "UNDEFINED",
+      "relation": "LMOATT"
+    },
+    "invocpattern_description": {
+      "type": "string"
+    },
+    "langcode": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Language Code",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Language Code",
+      "maxLength": 4
+    },
+    "_rowstamp": {
+      "type": "string"
+    },
+    "_imagelibref": {
+      "type": "string"
+    },
+    "href": {
+      "type": "string"
+    },
+    "_id": {
+      "type": "string"
+    },
+    "sourcembo": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Source Object Name",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Source MBO",
+      "maxLength": 30
+    },
+    "invocpattern": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Invocation Pattern",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Values for DOMAIN: Synchronous - Client issues a request and waits for the response. \tAsynchronous one-way - Client issues a request and a response is not expected. Asynchronous deferred response - Client issues a request and the response will be requested by the client at a later point in time. \tAsynchronous call back - Client issues a request and the target will call a service implemented by the client with the response.",
+      "maxLength": 50
+    }
+  },
+  "required": [
+    "changedate",
+    "invocpattern",
+    "langcode",
+    "lmoname",
+    "lmonamespace"
+  ]
+}

@@ -1,0 +1,565 @@
+{
+  "resource": "REP_PO",
+  "description": "PO",
+  "pk": [
+    "siteid",
+    "ponum",
+    "revisionnum"
+  ],
+  "title": "PO",
+  "type": "object",
+  "$ref": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/rep_po",
+  "uniqueid": "poid",
+  "properties": {
+    "ownersysid": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Owner System ID",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Owner System ID",
+      "maxLength": 10
+    },
+    "historyflag": {
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "History",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "Specifies whether to include PO records that are stored in history, rather than just current records, in the query. Records stored in history are closed, cancelled, etc. If the check box is selected, records stored in history will be included in the query results. If the check box is cleared, only current records will be included in the query results."
+    },
+    "localref": {
+      "type": "string"
+    },
+    "ignorecntrev": {
+      "default": false,
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "Bypass Contract Revision on PO Approval",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "You can bypass the validation of revisions to the contract that is associated with a purchase order, if any. You can then approve the purchase order."
+    },
+    "customernum": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Customer #",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Number used by the vendor to identify your company.",
+      "maxLength": 16
+    },
+    "originalponum": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Original PO",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Identifies the original purchase order from which this purchase order was created.",
+      "maxLength": 8
+    },
+    "purchaseagent": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Buyer",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Purchasing agent responsible for ordering the item(s).",
+      "maxLength": 100
+    },
+    "currencycode": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Currency",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Identifies the currency the PO is in.",
+      "maxLength": 8
+    },
+    "totalcost": {
+      "searchType": "EXACT",
+      "scale": 2,
+      "subType": "DECIMAL",
+      "title": "Total Cost",
+      "persistent": true,
+      "type": "number",
+      "remarks": "Total cost for the PO, including taxes. Maximo calculates this amount using the value in the Currency field. If the Currency field is blank, Maximo calculates this amount in your company's base currency.",
+      "maxLength": 11
+    },
+    "totaltax1": {
+      "searchType": "EXACT",
+      "scale": 2,
+      "subType": "DECIMAL",
+      "title": "Total Tax",
+      "persistent": true,
+      "type": "number",
+      "remarks": "Total Tax applied to the PO. Maximo calculates this amount based on the line items entered on the PO Lines tab.",
+      "maxLength": 11
+    },
+    "_rowstamp": {
+      "type": "string"
+    },
+    "companies": {
+      "objectName": "COMPANIES",
+      "type": "array",
+      "items": {
+        "definition": {
+          "subSchema": {
+            "$ref": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/rep_po/companies"
+          }
+        },
+        "type": "object"
+      },
+      "cardinality": "SINGLE",
+      "relation": "VENDOR"
+    },
+    "buyahead": {
+      "default": false,
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "Buy Ahead Rate",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "Is this a buy ahead rate, ie entered directly by the user and not calculated from the list of active exchange rate."
+    },
+    "contact": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Contact",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Primary person to contact at the vendor.",
+      "maxLength": 50
+    },
+    "siteid": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Site",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Site where the purchase order was entered.",
+      "maxLength": 8
+    },
+    "poterm": {
+      "objectName": "POTERM",
+      "type": "array",
+      "items": {
+        "definition": {
+          "subSchema": {
+            "$ref": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/rep_po/poterm"
+          }
+        },
+        "type": "object"
+      },
+      "cardinality": "MULTIPLE",
+      "relation": "POTERM"
+    },
+    "href": {
+      "type": "string"
+    },
+    "contractrefrev": {
+      "searchType": "EXACT",
+      "maximum": 2147483647.0,
+      "subType": "INTEGER",
+      "title": "Contract Revision",
+      "persistent": true,
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "remarks": "Revision number of the referenced contract.",
+      "maxLength": 11
+    },
+    "poline": {
+      "objectName": "POLINE",
+      "type": "array",
+      "items": {
+        "definition": {
+          "subSchema": {
+            "$ref": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/rep_po/poline"
+          }
+        },
+        "type": "object"
+      },
+      "cardinality": "MULTIPLE",
+      "relation": "POLINE"
+    },
+    "shipto": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Ship To",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Address code where the order will be shipped.",
+      "maxLength": 30
+    },
+    "status_description": {
+      "type": "string"
+    },
+    "shipvia_description": {
+      "type": "string"
+    },
+    "billtoattn": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Attention",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Person to whom the bill will be sent.",
+      "maxLength": 100
+    },
+    "changedate": {
+      "searchType": "EXACT",
+      "subType": "DATETIME",
+      "title": "Changed Date",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Last Modified Date"
+    },
+    "inclusive1": {
+      "default": false,
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "Pay Tax to Vendor",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "Specifies if the vendor is authorized to collect taxes and you will pay the tax amount to the vendor. Select the checkbox if you want to pay taxes to the vendor. Clear the checkbox if there is no tax, or if you want to pay taxes directly to the taxing authority."
+    },
+    "priority": {
+      "default": 0,
+      "searchType": "EXACT",
+      "maximum": 2147483647.0,
+      "subType": "INTEGER",
+      "title": "Priority",
+      "persistent": true,
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "remarks": "Priority level for this purchase order. You should limit your range of values from 0-9, where 0 designates the lowest priority.",
+      "maxLength": 11
+    },
+    "orgid": {
+      "searchType": "EXACT",
+      "subType": "UPPER",
+      "title": "Organization",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Organization Identifier",
+      "maxLength": 8
+    },
+    "inspectionrequired": {
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "Inspection Required",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "Specifies whether this item requires an approval of the receipt. When you receive items that require inspection, Maximo records a receipt transaction. However, the item does not appear in the storeroom until the receipt is approved. If the check box is selected, the item requires inspection. If the check box is cleared (the default), no approval of the receipt is necessary."
+    },
+    "shipvia": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Ship Via",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Specifies how the goods should be shipped. For example, First Class Mail.",
+      "maxLength": 20
+    },
+    "contreleaseseq": {
+      "searchType": "EXACT",
+      "maximum": 2147483647.0,
+      "subType": "INTEGER",
+      "title": "Release #",
+      "persistent": true,
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "remarks": "Identifies the sequential release number.",
+      "maxLength": 11
+    },
+    "fob": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "FOB Point",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Free On Board Point. The point where responsibility and liability are transferred. The FOB point is usually either the destination or the shipping point.",
+      "maxLength": 20
+    },
+    "shiptoattn": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Attention",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Person to whom the order is being shipped.",
+      "maxLength": 100
+    },
+    "_id": {
+      "type": "string"
+    },
+    "storelocsiteid": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Storeroom Site",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Identifies the site where the storeroom is located.",
+      "maxLength": 8
+    },
+    "requireddate": {
+      "searchType": "EXACT",
+      "subType": "DATETIME",
+      "title": "Required Date",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Date when the purchase order line items are needed."
+    },
+    "status": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Status",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Current status of the purchase order.",
+      "maxLength": 20
+    },
+    "buyercompany": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Buyer Company",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Site location of the purchasing agent responsible for ordering the item(s). The buyer company links the buyer's address to the order.",
+      "maxLength": 30
+    },
+    "internal": {
+      "default": false,
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "Internal",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "Specifies if the vendor is within your company. If the vendor is within your company (making this PO an internal PO), select the check box. If this PO is not an internal PO, clear the check box. An internal order cannot be for a service; it may only be for inventory material from a storeroom."
+    },
+    "paymentterms": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Payment Terms",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Specified terms of payment for this vendor. For example, net 30.",
+      "maxLength": 20
+    },
+    "exchangerate": {
+      "searchType": "EXACT",
+      "scale": 7,
+      "subType": "DECIMAL",
+      "title": "Exchange Rate",
+      "persistent": true,
+      "type": "number",
+      "remarks": "Exchange rate at time of PO approval.",
+      "maxLength": 15
+    },
+    "potype": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Type",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Identifies the purchase order type.",
+      "maxLength": 12
+    },
+    "description": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Description",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Describes the purchase order. To enter or view additional information, click the Long Description button.",
+      "maxLength": 100
+    },
+    "internalchange": {
+      "default": false,
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "Internal Change",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "When checked, Internal Change means that the purchase order contains information that you do not want to show to the vendor. This is an information-only field that does not affect the processing of purchase orders."
+    },
+    "orderdate": {
+      "searchType": "EXACT",
+      "subType": "DATETIME",
+      "title": "Ordered Date",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Date and time when the purchase order was issued. The default is the system date and time at the time of creation."
+    },
+    "followupdate": {
+      "searchType": "EXACT",
+      "subType": "DATE",
+      "title": "Follow-up Date",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Date that the vendor should be contacted for follow-up information on the purchase order."
+    },
+    "_imagelibref": {
+      "type": "string"
+    },
+    "vendor": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Company",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Identifies the vendor for the item.",
+      "maxLength": 12
+    },
+    "payonreceipt": {
+      "default": false,
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "Pay on Receipt",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "Specifies whether you have a pay on receipt agreement with the vendor. If the check box is selected, Maximo will generate an invoice upon receipt of the item or service. If the check box is cleared (the default), no invoice is generated."
+    },
+    "vendeliverydate": {
+      "searchType": "EXACT",
+      "subType": "DATE",
+      "title": "Vendor Date",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Date when the vendor expects to deliver the order."
+    },
+    "revcomments": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Revision Comments",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Description of the changes to the purchase order.",
+      "maxLength": 100
+    },
+    "storeloc": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Storeroom",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Storeroom location of the item. This field is required if the Issue on Receipt? check box on the PO Lines tab is cleared.",
+      "maxLength": 25
+    },
+    "changeby": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Changed By",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Last Modified By",
+      "maxLength": 100
+    },
+    "revisionnum": {
+      "default": 0,
+      "searchType": "EXACT",
+      "maximum": 2147483647.0,
+      "subType": "INTEGER",
+      "title": "Revision",
+      "persistent": true,
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "remarks": "Revision number of the purchase order. Indicates how many times a purchase order has been revised. A purchase order that has not been revised displays 0 for the revision number.",
+      "maxLength": 11
+    },
+    "exchangedate": {
+      "searchType": "EXACT",
+      "subType": "DATE",
+      "title": "Exchange Date",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Date of the exchange rate."
+    },
+    "statusdate": {
+      "searchType": "EXACT",
+      "subType": "DATETIME",
+      "title": "Status Date",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Date and time that the PO status was last changed. The default is the system date and time at the time of the status change."
+    },
+    "receipts": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Receipts",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Status of line items received. Possible values are None (the default when you create the PO), Partial, and Complete.",
+      "maxLength": 20
+    },
+    "receipts_description": {
+      "type": "string"
+    },
+    "freightterms": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Freight Terms",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Describes what is being shipped. Any riders to the shipping agreement should be included here. To enter or view additional information, click the Long Description button. For example, Fresh Fruit. Perishable. Must meet delivery dates.",
+      "maxLength": 50
+    },
+    "billto": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Bill To",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Address code where the order will be billed.",
+      "maxLength": 30
+    },
+    "contractrefnum": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Contract Reference",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Identifies the contract that was used to find the price of the item.",
+      "maxLength": 8
+    },
+    "ponum": {
+      "default": "&AUTOKEY&",
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "PO",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Identifies the purchase order record. This value must be unique for all purchase order records.",
+      "maxLength": 8
+    }
+  },
+  "required": [
+    "changeby",
+    "changedate",
+    "currencycode",
+    "historyflag",
+    "inspectionrequired",
+    "orgid",
+    "siteid",
+    "status",
+    "statusdate"
+  ]
+}

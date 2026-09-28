@@ -1,0 +1,130 @@
+{
+ "resource": "REP_DMCOMPRESULT",
+ "description": "Migration Manager comparison results",
+ "pk": [
+  "compjobnum",
+  "objectname",
+  "localuniqueid",
+  "remoteuniqueid"
+ ],
+ "title": "DMCOMPRESULT",
+ "type": "object",
+ "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/rep_dmcompresult",
+ "uniqueid": "dmcompresultid",
+ "properties": {
+  "compjobnum": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Job Number",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Identifies the specific compare job submitted by a user",
+   "maxLength": 10
+  },
+  "result_description": {
+   "type": "string"
+  },
+  "primarykeys": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Primary Key Information",
+   "persistent": true,
+   "type": "string",
+   "remarks": "A comma-separated list of the primary key columns and values of the object that was compared.",
+   "maxLength": 4000
+  },
+  "dmcompresrecord": {
+   "objectName": "DMCOMPRESRECORD",
+   "type": "array",
+   "items": {
+    "definition": {
+     "subSchema": {
+      "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/rep_dmcompresult/dmcompresrecord"
+     }
+    },
+    "type": "object"
+   },
+   "cardinality": "MULTIPLE",
+   "relation": "DMCOMPRESRECORD"
+  },
+  "localref": {
+   "type": "string"
+  },
+  "objectname": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Object",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The object that was compared.",
+   "maxLength": 30
+  },
+  "record_descriptor": {
+   "type": "string",
+   "title": "Record/Object Descriptor"
+  },
+  "remoteuniqueid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Remote Unique ID",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "The internal ID of the record in the target database that was compared.",
+   "maxLength": 11
+  },
+  "result": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Result",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The result is one of the following values: Match, Different, Local only, or Remote only.",
+   "maxLength": 20
+  },
+  "_rowstamp": {
+   "type": "string"
+  },
+  "cfgobject": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Migration Object",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The name of the object structure that is associated to the object that was compared.",
+   "maxLength": 20
+  },
+  "localuniqueid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Local Unique ID",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "The internal ID of the record in the source database that was compared.",
+   "maxLength": 11
+  },
+  "_imagelibref": {
+   "type": "string"
+  },
+  "href": {
+   "type": "string",
+   "title": "DMCOMPRESULT object reference"
+  },
+  "_id": {
+   "type": "string"
+  }
+ },
+ "required": [
+  "cfgobject",
+  "compjobnum",
+  "objectname",
+  "primarykeys",
+  "result"
+ ]
+}

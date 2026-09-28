@@ -1,0 +1,1520 @@
+[
+ {
+  "osName": "AHEAMSR"
+ },
+ {
+  "osName": "AHEAMWODETAIL"
+ },
+ {
+  "osName": "APPTIOASSETEXP"
+ },
+ {
+  "osName": "APPTIOLOCEXP"
+ },
+ {
+  "osName": "APPTIOORGEXP"
+ },
+ {
+  "osName": "APPTIOSITEEXP"
+ },
+ {
+  "osName": "APPTIOWOEXP"
+ },
+ {
+  "osName": "ARCMAXRELATIONSHIP"
+ },
+ {
+  "osName": "CONV_ASSET"
+ },
+ {
+  "osName": "CUELIBRARY"
+ },
+ {
+  "osName": "DEMO_WOD2"
+ },
+ {
+  "osName": "DEMO_WODETAILS"
+ },
+ {
+  "osName": "KPITEMPLATE"
+ },
+ {
+  "osName": "MASAPIGROUP"
+ },
+ {
+  "osName": "MASAPIGROUPLIST"
+ },
+ {
+  "osName": "MASAPIUSER"
+ },
+ {
+  "osName": "MASGROUP"
+ },
+ {
+  "osName": "MASPERUSER"
+ },
+ {
+  "osName": "MHAHCONTAINERCFG"
+ },
+ {
+  "osName": "MHCLASSSTRUCTURELOAD"
+ },
+ {
+  "osName": "MXACTION"
+ },
+ {
+  "osName": "MXAMCREW"
+ },
+ {
+  "osName": "MXAMCREWT"
+ },
+ {
+  "osName": "MXAPIACTION"
+ },
+ {
+  "osName": "MXAPIADDRESS"
+ },
+ {
+  "osName": "MXAPIADMIN"
+ },
+ {
+  "osName": "MXAPIAHASSETAPMVAL"
+ },
+ {
+  "osName": "MXAPIAHBLTHRESHOLD"
+ },
+ {
+  "osName": "MXAPIAHCAPAD"
+ },
+ {
+  "osName": "MXAPIAHCLASSIFICATN"
+ },
+ {
+  "osName": "MXAPIAHCONTAINERCFG"
+ },
+ {
+  "osName": "MXAPIAHDRIVERLIB"
+ },
+ {
+  "osName": "MXAPIAHFACTORLIB"
+ },
+ {
+  "osName": "MXAPIAHHISTORY"
+ },
+ {
+  "osName": "MXAPIAHLOCAPMVAL"
+ },
+ {
+  "osName": "MXAPIAHMATRIXCFG"
+ },
+ {
+  "osName": "MXAPIAHMEASUREPOINT"
+ },
+ {
+  "osName": "MXAPIAHMETHODOLOGY"
+ },
+ {
+  "osName": "MXAPIAHRRPLAN"
+ },
+ {
+  "osName": "MXAPIAHTHRESHOLD"
+ },
+ {
+  "osName": "MXAPIAHWODETAIL"
+ },
+ {
+  "osName": "MXAPIAIDOMAINRULE"
+ },
+ {
+  "osName": "MXAPIAIOASSET"
+ },
+ {
+  "osName": "MXAPIAIOASSETSCORE"
+ },
+ {
+  "osName": "MXAPIAIOPROJECT"
+ },
+ {
+  "osName": "MXAPIAIOSCHEDASSET"
+ },
+ {
+  "osName": "MXAPIAIOSCHEDULE"
+ },
+ {
+  "osName": "MXAPIAIOSTRATEGY"
+ },
+ {
+  "osName": "MXAPIAIOTEMPLATE"
+ },
+ {
+  "osName": "MXAPIALERT"
+ },
+ {
+  "osName": "MXAPIALLPRODUCTS"
+ },
+ {
+  "osName": "MXAPIALNDOMAIN"
+ },
+ {
+  "osName": "MXAPIAMCREW"
+ },
+ {
+  "osName": "MXAPIAMCREWT"
+ },
+ {
+  "osName": "MXAPIANALYTICDATASET"
+ },
+ {
+  "osName": "MXAPIAPIKEY"
+ },
+ {
+  "osName": "MXAPIAPMOBJECTATTR"
+ },
+ {
+  "osName": "MXAPIAPMVALUE"
+ },
+ {
+  "osName": "MXAPIAPMVALUEATTR"
+ },
+ {
+  "osName": "MXAPIAPMVALUEMETHOD"
+ },
+ {
+  "osName": "MXAPIAPPDOCTYPE"
+ },
+ {
+  "osName": "MXAPIAPPPROPCFG"
+ },
+ {
+  "osName": "MXAPIASSET"
+ },
+ {
+  "osName": "MXAPIASSETATTRIBUTE"
+ },
+ {
+  "osName": "MXAPIASSETINT"
+ },
+ {
+  "osName": "MXAPIASSETMETER"
+ },
+ {
+  "osName": "MXAPIASSETRRPLAN"
+ },
+ {
+  "osName": "MXAPIASSETSPARE"
+ },
+ {
+  "osName": "MXAPIASSETSTATUS"
+ },
+ {
+  "osName": "MXAPIASSIGNMENT"
+ },
+ {
+  "osName": "MXAPIATTRFORMULA"
+ },
+ {
+  "osName": "MXAPIAUTHCI"
+ },
+ {
+  "osName": "MXAPIAUTOSCRIPT"
+ },
+ {
+  "osName": "MXAPIBILLTOSHIPTO"
+ },
+ {
+  "osName": "MXAPIBOOKMARK"
+ },
+ {
+  "osName": "MXAPIBULLETINBOARD"
+ },
+ {
+  "osName": "MXAPICAASSETWO"
+ },
+ {
+  "osName": "MXAPICALOCATIONWO"
+ },
+ {
+  "osName": "MXAPICLASSSTRUCTURE"
+ },
+ {
+  "osName": "MXAPICNTBOOK"
+ },
+ {
+  "osName": "MXAPICNTBOOKLINE"
+ },
+ {
+  "osName": "MXAPICOA"
+ },
+ {
+  "osName": "MXAPICOLLECTAUTH"
+ },
+ {
+  "osName": "MXAPICOLLECTION"
+ },
+ {
+  "osName": "MXAPICOMMODITY"
+ },
+ {
+  "osName": "MXAPICOMPONENT"
+ },
+ {
+  "osName": "MXAPICONTRACT"
+ },
+ {
+  "osName": "MXAPICONVERSION"
+ },
+ {
+  "osName": "MXAPICRAFT"
+ },
+ {
+  "osName": "MXAPICRONTASKDEF"
+ },
+ {
+  "osName": "MXAPICTEMPLATE"
+ },
+ {
+  "osName": "MXAPIDATAPROFILE"
+ },
+ {
+  "osName": "MXAPIDATARESTRICTION"
+ },
+ {
+  "osName": "MXAPIDOCINFO"
+ },
+ {
+  "osName": "MXAPIDOCTYPE"
+ },
+ {
+  "osName": "MXAPIDOCTYPES"
+ },
+ {
+  "osName": "MXAPIDOMAIN"
+ },
+ {
+  "osName": "MXAPIEMPACT"
+ },
+ {
+  "osName": "MXAPIENDPOINT"
+ },
+ {
+  "osName": "MXAPIEXPGROUP"
+ },
+ {
+  "osName": "MXAPIEXPGROUPCHILD"
+ },
+ {
+  "osName": "MXAPIFAILURECODE"
+ },
+ {
+  "osName": "MXAPIFAILURELIST"
+ },
+ {
+  "osName": "MXAPIFILEIMPORTQUEUE"
+ },
+ {
+  "osName": "MXAPIGLCOMP"
+ },
+ {
+  "osName": "MXAPIGLCONFIGURE"
+ },
+ {
+  "osName": "MXAPIGLTXN"
+ },
+ {
+  "osName": "MXAPIGROUP"
+ },
+ {
+  "osName": "MXAPIHAZARD"
+ },
+ {
+  "osName": "MXAPIHSEPROBLEM"
+ },
+ {
+  "osName": "MXAPIINCIDENT"
+ },
+ {
+  "osName": "MXAPIINSIGHT"
+ },
+ {
+  "osName": "MXAPIINSIGHTFACTOR"
+ },
+ {
+  "osName": "MXAPIINSPACTIONS"
+ },
+ {
+  "osName": "MXAPIINSPECTIONRES"
+ },
+ {
+  "osName": "MXAPIINSPFDOCLINKS"
+ },
+ {
+  "osName": "MXAPIINSPFIELD"
+ },
+ {
+  "osName": "MXAPIINSPFORM"
+ },
+ {
+  "osName": "MXAPIINSPFORMSTATUS"
+ },
+ {
+  "osName": "MXAPIINSPFORMUSEWITH"
+ },
+ {
+  "osName": "MXAPIINSPRESULT"
+ },
+ {
+  "osName": "MXAPIINTOBJECT"
+ },
+ {
+  "osName": "MXAPIINVBAL"
+ },
+ {
+  "osName": "MXAPIINVENTORY"
+ },
+ {
+  "osName": "MXAPIINVISSUE"
+ },
+ {
+  "osName": "MXAPIINVOICE"
+ },
+ {
+  "osName": "MXAPIINVPICKLIST"
+ },
+ {
+  "osName": "MXAPIINVRES"
+ },
+ {
+  "osName": "MXAPIINVRESVIEW"
+ },
+ {
+  "osName": "MXAPIINVUSE"
+ },
+ {
+  "osName": "MXAPIINVVENDOR"
+ },
+ {
+  "osName": "MXAPIITEM"
+ },
+ {
+  "osName": "MXAPIITEMCONDITION"
+ },
+ {
+  "osName": "MXAPIJOBPLAN"
+ },
+ {
+  "osName": "MXAPIKPIHISTORY"
+ },
+ {
+  "osName": "MXAPIKPIMAIN"
+ },
+ {
+  "osName": "MXAPILABEL"
+ },
+ {
+  "osName": "MXAPILABOR"
+ },
+ {
+  "osName": "MXAPILABORCRAFTRATE"
+ },
+ {
+  "osName": "MXAPILABTRANS"
+ },
+ {
+  "osName": "MXAPILAUNCHPOINT"
+ },
+ {
+  "osName": "MXAPILBSLOCATION"
+ },
+ {
+  "osName": "MXAPILBSLOCHISTORY"
+ },
+ {
+  "osName": "MXAPILICAPPACCESS"
+ },
+ {
+  "osName": "MXAPILICENSE"
+ },
+ {
+  "osName": "MXAPILINEARREFMETHOD"
+ },
+ {
+  "osName": "MXAPILOCANCESTOR"
+ },
+ {
+  "osName": "MXAPILOCATION"
+ },
+ {
+  "osName": "MXAPILOCATIONMETER"
+ },
+ {
+  "osName": "MXAPILOCATIONS"
+ },
+ {
+  "osName": "MXAPILOCHIERARCHY"
+ },
+ {
+  "osName": "MXAPILOCRRPLAN"
+ },
+ {
+  "osName": "MXAPILOCSYS"
+ },
+ {
+  "osName": "MXAPILOCSYSTEM"
+ },
+ {
+  "osName": "MXAPIMAPMANAGER"
+ },
+ {
+  "osName": "MXAPIMASTERPM"
+ },
+ {
+  "osName": "MXAPIMATUSETRANSVIEW"
+ },
+ {
+  "osName": "MXAPIMAXAICONFIG"
+ },
+ {
+  "osName": "MXAPIMAXAIINFERENCE"
+ },
+ {
+  "osName": "MXAPIMAXAIINSIGHT"
+ },
+ {
+  "osName": "MXAPIMAXAPP"
+ },
+ {
+  "osName": "MXAPIMAXOBJECT"
+ },
+ {
+  "osName": "MXAPIMAXSESSION"
+ },
+ {
+  "osName": "MXAPIMAXVARS"
+ },
+ {
+  "osName": "MXAPIMBDBSTATUSINFO"
+ },
+ {
+  "osName": "MXAPIMEASUREMENTCBM"
+ },
+ {
+  "osName": "MXAPIMEASUREUNIT"
+ },
+ {
+  "osName": "MXAPIMESSAGE"
+ },
+ {
+  "osName": "MXAPIMETER"
+ },
+ {
+  "osName": "MXAPIMETERDATA"
+ },
+ {
+  "osName": "MXAPIMETERGROUP"
+ },
+ {
+  "osName": "MXAPIMOBPROPGROUP"
+ },
+ {
+  "osName": "MXAPIMOBSHAREDDEVICE"
+ },
+ {
+  "osName": "MXAPIMPFORMULA"
+ },
+ {
+  "osName": "MXAPIMR"
+ },
+ {
+  "osName": "MXAPIMSGHUB"
+ },
+ {
+  "osName": "MXAPIMSGREPROC"
+ },
+ {
+  "osName": "MXAPIMSGTRACK"
+ },
+ {
+  "osName": "MXAPIMVI"
+ },
+ {
+  "osName": "MXAPINOTIFICATION"
+ },
+ {
+  "osName": "MXAPINUMERICDOMAIN"
+ },
+ {
+  "osName": "MXAPIOAUTHCLIENT"
+ },
+ {
+  "osName": "MXAPIOBJECT"
+ },
+ {
+  "osName": "MXAPIOBJECTAUTH"
+ },
+ {
+  "osName": "MXAPIOBJFORMULA"
+ },
+ {
+  "osName": "MXAPIOPERLOC"
+ },
+ {
+  "osName": "MXAPIOPERLOCINT"
+ },
+ {
+  "osName": "MXAPIOPERSTORELOC"
+ },
+ {
+  "osName": "MXAPIORGANIZATION"
+ },
+ {
+  "osName": "MXAPIOSEVENT"
+ },
+ {
+  "osName": "MXAPIOSLCQUERY"
+ },
+ {
+  "osName": "MXAPIPC"
+ },
+ {
+  "osName": "MXAPIPERGROUP"
+ },
+ {
+  "osName": "MXAPIPERSON"
+ },
+ {
+  "osName": "MXAPIPERSONALIZATION"
+ },
+ {
+  "osName": "MXAPIPERSONGROUP"
+ },
+ {
+  "osName": "MXAPIPERSONGROUPVIEW"
+ },
+ {
+  "osName": "MXAPIPERUSER"
+ },
+ {
+  "osName": "MXAPIPLUSCASSETSTAT"
+ },
+ {
+  "osName": "MXAPIPLUSGAUDIT"
+ },
+ {
+  "osName": "MXAPIPLUSGPERMITWORK"
+ },
+ {
+  "osName": "MXAPIPLUSGPERTYPE"
+ },
+ {
+  "osName": "MXAPIPLUSGWASTEGRP"
+ },
+ {
+  "osName": "MXAPIPLUSGWASTEMGMT"
+ },
+ {
+  "osName": "MXAPIPM"
+ },
+ {
+  "osName": "MXAPIPO"
+ },
+ {
+  "osName": "MXAPIPOFANALYSIS"
+ },
+ {
+  "osName": "MXAPIPOFUSED"
+ },
+ {
+  "osName": "MXAPIPR"
+ },
+ {
+  "osName": "MXAPIPREGENEXECLOG"
+ },
+ {
+  "osName": "MXAPIPROBLEM"
+ },
+ {
+  "osName": "MXAPIPROJ"
+ },
+ {
+  "osName": "MXAPIPROP"
+ },
+ {
+  "osName": "MXAPIQTOSLCREF"
+ },
+ {
+  "osName": "MXAPIQUERY"
+ },
+ {
+  "osName": "MXAPIQUERYRECSTATE"
+ },
+ {
+  "osName": "MXAPIQUERYTEMPLATE"
+ },
+ {
+  "osName": "MXAPIRCVROTITM"
+ },
+ {
+  "osName": "MXAPIRECEIPT"
+ },
+ {
+  "osName": "MXAPIRESOURCEAUTH"
+ },
+ {
+  "osName": "MXAPIRETURN"
+ },
+ {
+  "osName": "MXAPIROUTES"
+ },
+ {
+  "osName": "MXAPISCORINGRANGE"
+ },
+ {
+  "osName": "MXAPISERADDRESS"
+ },
+ {
+  "osName": "MXAPISERVITEM"
+ },
+ {
+  "osName": "MXAPISETS"
+ },
+ {
+  "osName": "MXAPISHIFT"
+ },
+ {
+  "osName": "MXAPISHIPMENT"
+ },
+ {
+  "osName": "MXAPISITE"
+ },
+ {
+  "osName": "MXAPISKDODMERUN"
+ },
+ {
+  "osName": "MXAPISKDPROJACTIVITY"
+ },
+ {
+  "osName": "MXAPISKDPROJECT"
+ },
+ {
+  "osName": "MXAPISOLUTION"
+ },
+ {
+  "osName": "MXAPISR"
+ },
+ {
+  "osName": "MXAPISRGUESTDOMAIN"
+ },
+ {
+  "osName": "MXAPISRGUESTEMAIL"
+ },
+ {
+  "osName": "MXAPISRGUESTPOLICY"
+ },
+ {
+  "osName": "MXAPISRVAD"
+ },
+ {
+  "osName": "MXAPISRWATCHLIST"
+ },
+ {
+  "osName": "MXAPISRWATCHLISTDTS"
+ },
+ {
+  "osName": "MXAPISTATEMANAGER"
+ },
+ {
+  "osName": "MXAPISTDACTGRP"
+ },
+ {
+  "osName": "MXAPISTORELOC"
+ },
+ {
+  "osName": "MXAPISYNONYMDOMAIN"
+ },
+ {
+  "osName": "MXAPITABLEDOMAIN"
+ },
+ {
+  "osName": "MXAPITICKET"
+ },
+ {
+  "osName": "MXAPITKCLASS"
+ },
+ {
+  "osName": "MXAPITKSRVAD"
+ },
+ {
+  "osName": "MXAPITKTEMPLATE"
+ },
+ {
+  "osName": "MXAPITOOLINV"
+ },
+ {
+  "osName": "MXAPITOOLITEM"
+ },
+ {
+  "osName": "MXAPIUSERQUERY"
+ },
+ {
+  "osName": "MXAPIUSERTEAM"
+ },
+ {
+  "osName": "MXAPIVENDOR"
+ },
+ {
+  "osName": "MXAPIVENDORMSTR"
+ },
+ {
+  "osName": "MXAPIVIEWMANAGER"
+ },
+ {
+  "osName": "MXAPIVMUSEROPTIONS"
+ },
+ {
+  "osName": "MXAPIWEATHERGROUP"
+ },
+ {
+  "osName": "MXAPIWEATHERORG"
+ },
+ {
+  "osName": "MXAPIWEATHERPRODUCT"
+ },
+ {
+  "osName": "MXAPIWEATHERZONE"
+ },
+ {
+  "osName": "MXAPIWFASSIGNMENT"
+ },
+ {
+  "osName": "MXAPIWFPROCESS"
+ },
+ {
+  "osName": "MXAPIWMASSIGNMENT"
+ },
+ {
+  "osName": "MXAPIWO"
+ },
+ {
+  "osName": "MXAPIWOASSETTYPE"
+ },
+ {
+  "osName": "MXAPIWOCHANGESTATUS"
+ },
+ {
+  "osName": "MXAPIWODETAIL"
+ },
+ {
+  "osName": "MXAPIWOHIER"
+ },
+ {
+  "osName": "MXAPIWOINT"
+ },
+ {
+  "osName": "MXAPIWORKLOG"
+ },
+ {
+  "osName": "MXAPIWORKQUEUE"
+ },
+ {
+  "osName": "MXAPIWORKSCAPELAYOUT"
+ },
+ {
+  "osName": "MXAPIWORKTYPE"
+ },
+ {
+  "osName": "MXAPIWORKVIEW"
+ },
+ {
+  "osName": "MXAPIWORKZONE"
+ },
+ {
+  "osName": "MXAPIWOSDATASET"
+ },
+ {
+  "osName": "MXAPIWOSRVAD"
+ },
+ {
+  "osName": "MXAPIWPEDITSETTING"
+ },
+ {
+  "osName": "MXAPPTIOINPT"
+ },
+ {
+  "osName": "MXASSET"
+ },
+ {
+  "osName": "MXASSET_L"
+ },
+ {
+  "osName": "MXASSETPARTIUM"
+ },
+ {
+  "osName": "MXAUTHCI"
+ },
+ {
+  "osName": "MXBIMASSETWO"
+ },
+ {
+  "osName": "MXBIMFILTER"
+ },
+ {
+  "osName": "MXBIMPROJECT"
+ },
+ {
+  "osName": "MXBUDGET"
+ },
+ {
+  "osName": "MXCLASSIFICATION"
+ },
+ {
+  "osName": "MXCOA"
+ },
+ {
+  "osName": "MXCOLLECTAUTH"
+ },
+ {
+  "osName": "MXCOLLECTION"
+ },
+ {
+  "osName": "MXCRAFT"
+ },
+ {
+  "osName": "MXCTEMPLATE"
+ },
+ {
+  "osName": "MXDOMAIN"
+ },
+ {
+  "osName": "MXDOMAIN_FLAT"
+ },
+ {
+  "osName": "MXEMPACT"
+ },
+ {
+  "osName": "MXENDPOINT"
+ },
+ {
+  "osName": "MXENTSRV"
+ },
+ {
+  "osName": "MXEXTSYSTEM"
+ },
+ {
+  "osName": "MXFEATURE"
+ },
+ {
+  "osName": "MXGBTEMPLATE"
+ },
+ {
+  "osName": "MXGLCOMP"
+ },
+ {
+  "osName": "MXGLTXN"
+ },
+ {
+  "osName": "MXIFACECONTROL"
+ },
+ {
+  "osName": "MXIFACEINVOKE"
+ },
+ {
+  "osName": "MXIFACEOUT"
+ },
+ {
+  "osName": "MXIM"
+ },
+ {
+  "osName": "MXINCIDENT"
+ },
+ {
+  "osName": "MXINTOBJECT"
+ },
+ {
+  "osName": "MXINTOBJECT2"
+ },
+ {
+  "osName": "MXINVBAL"
+ },
+ {
+  "osName": "MXINVENTORY"
+ },
+ {
+  "osName": "MXINVISSUE"
+ },
+ {
+  "osName": "MXINVOICE"
+ },
+ {
+  "osName": "MXINVRES"
+ },
+ {
+  "osName": "MXINVUSE"
+ },
+ {
+  "osName": "MXINVVENDOR"
+ },
+ {
+  "osName": "MXITEM"
+ },
+ {
+  "osName": "MXITEMPARTIUM"
+ },
+ {
+  "osName": "MXJSONMAPPING"
+ },
+ {
+  "osName": "MXJSONRESNP"
+ },
+ {
+  "osName": "MXLABOR"
+ },
+ {
+  "osName": "MXLAUNCH"
+ },
+ {
+  "osName": "MXLAUNCHPOINT"
+ },
+ {
+  "osName": "MXLBSLOCATION"
+ },
+ {
+  "osName": "MXLMO2"
+ },
+ {
+  "osName": "MXMAPMAN"
+ },
+ {
+  "osName": "MXMESSAGE"
+ },
+ {
+  "osName": "MXMETERDATA"
+ },
+ {
+  "osName": "MXNOTIFICATION"
+ },
+ {
+  "osName": "MXOBJECTCFG"
+ },
+ {
+  "osName": "MXOMP"
+ },
+ {
+  "osName": "MXOPERLOC"
+ },
+ {
+  "osName": "MXORGANIZATION"
+ },
+ {
+  "osName": "MXOSLCCOMMONPROPS"
+ },
+ {
+  "osName": "MXOSLCDOMAIN"
+ },
+ {
+  "osName": "MXOSLCERRORMAP"
+ },
+ {
+  "osName": "MXOSLCINTERACTION"
+ },
+ {
+  "osName": "MXOSLCNSPREFIX"
+ },
+ {
+  "osName": "MXOSLCPROVIDER"
+ },
+ {
+  "osName": "MXOSLCRESOURCE"
+ },
+ {
+  "osName": "MXOSLCRESTYPE"
+ },
+ {
+  "osName": "MXPC"
+ },
+ {
+  "osName": "MXPERSON"
+ },
+ {
+  "osName": "MXPERUSER"
+ },
+ {
+  "osName": "MXPM_ASSET"
+ },
+ {
+  "osName": "MXPM_WORKORDER"
+ },
+ {
+  "osName": "MXPMIPM"
+ },
+ {
+  "osName": "MXPO"
+ },
+ {
+  "osName": "MXPR"
+ },
+ {
+  "osName": "MXPROBLEM"
+ },
+ {
+  "osName": "MXPROJ"
+ },
+ {
+  "osName": "MXPROP"
+ },
+ {
+  "osName": "MXQUEUE"
+ },
+ {
+  "osName": "MXRCVROTITM"
+ },
+ {
+  "osName": "MXRECEIPT"
+ },
+ {
+  "osName": "MXSCRIPT"
+ },
+ {
+  "osName": "MXSERVITEM"
+ },
+ {
+  "osName": "MXSR"
+ },
+ {
+  "osName": "MXSRVAD"
+ },
+ {
+  "osName": "MXSTORELOC"
+ },
+ {
+  "osName": "MXTKSRVAD"
+ },
+ {
+  "osName": "MXTOOLITEM"
+ },
+ {
+  "osName": "MXVENDOR"
+ },
+ {
+  "osName": "MXVENDORMSTR"
+ },
+ {
+  "osName": "MXWEATHERALERT"
+ },
+ {
+  "osName": "MXWFPROCESS"
+ },
+ {
+  "osName": "MXWO"
+ },
+ {
+  "osName": "MXWODETAIL"
+ },
+ {
+  "osName": "MXWOHIER"
+ },
+ {
+  "osName": "MXWOSRVAD"
+ },
+ {
+  "osName": "MXWOTASKRELATION"
+ },
+ {
+  "osName": "MXWSREGISTRY"
+ },
+ {
+  "osName": "OCT_CUESTIMATE"
+ },
+ {
+  "osName": "OCT_PLUSDCULABOR"
+ },
+ {
+  "osName": "OSLCMAFAPPDATA"
+ },
+ {
+  "osName": "PLUSASSETOPHIST"
+ },
+ {
+  "osName": "PLUSDCUESTIMATE"
+ },
+ {
+  "osName": "PLUSDELECTESTR"
+ },
+ {
+  "osName": "PLUSDGASTESTR"
+ },
+ {
+  "osName": "PLUSDMALARMS"
+ },
+ {
+  "osName": "PLUSDRCVROTITM"
+ },
+ {
+  "osName": "PLUSDUTYLOG"
+ },
+ {
+  "osName": "PLUSGASSET"
+ },
+ {
+  "osName": "PLUSGASSETMETER"
+ },
+ {
+  "osName": "PLUSGASSMETER"
+ },
+ {
+  "osName": "PLUSGDEFECT"
+ },
+ {
+  "osName": "PLUSGINCIDENT"
+ },
+ {
+  "osName": "PLUSGLOCATIONMETER"
+ },
+ {
+  "osName": "PLUSGLOCMETER"
+ },
+ {
+  "osName": "PLUSGOPERLOC"
+ },
+ {
+  "osName": "PLUSGORG"
+ },
+ {
+  "osName": "PLUSGSITE"
+ },
+ {
+  "osName": "PLUSGWO"
+ },
+ {
+  "osName": "PLUSLOCOPHIST"
+ },
+ {
+  "osName": "REP_AMCREW"
+ },
+ {
+  "osName": "REP_AMCREWT"
+ },
+ {
+  "osName": "REP_ASSET"
+ },
+ {
+  "osName": "REP_ASSETACTIVITY"
+ },
+ {
+  "osName": "REP_ASSETHIERARCHY"
+ },
+ {
+  "osName": "REP_ASSETSCHED"
+ },
+ {
+  "osName": "REP_CLASS"
+ },
+ {
+  "osName": "REP_CONDM"
+ },
+ {
+  "osName": "REP_DMCOMPRESULT"
+ },
+ {
+  "osName": "REP_INSPECTIONRESULT"
+ },
+ {
+  "osName": "REP_INVENTORY"
+ },
+ {
+  "osName": "REP_INVOICE"
+ },
+ {
+  "osName": "REP_INVUSE"
+ },
+ {
+  "osName": "REP_ITEM"
+ },
+ {
+  "osName": "REP_JOBPLAN"
+ },
+ {
+  "osName": "REP_LABOR"
+ },
+ {
+  "osName": "REP_LICTRACK"
+ },
+ {
+  "osName": "REP_LOCATIONS"
+ },
+ {
+  "osName": "REP_MXINTOBJECT"
+ },
+ {
+  "osName": "REP_PERSON"
+ },
+ {
+  "osName": "REP_PLUSASSET"
+ },
+ {
+  "osName": "REP_PLUSASSETACTIVIT"
+ },
+ {
+  "osName": "REP_PLUSASSETHIERARC"
+ },
+ {
+  "osName": "REP_PLUSASSETSCHED"
+ },
+ {
+  "osName": "REP_PLUSCA"
+ },
+ {
+  "osName": "REP_PLUSCHANGE"
+ },
+ {
+  "osName": "REP_PLUSCI"
+ },
+ {
+  "osName": "REP_PLUSCMT"
+ },
+ {
+  "osName": "REP_PLUSGACT"
+ },
+ {
+  "osName": "REP_PLUSGAP"
+ },
+ {
+  "osName": "REP_PLUSGASSET"
+ },
+ {
+  "osName": "REP_PLUSGASSETACTIVI"
+ },
+ {
+  "osName": "REP_PLUSGASSETHIERAR"
+ },
+ {
+  "osName": "REP_PLUSGASSETSCHED"
+ },
+ {
+  "osName": "REP_PLUSGAUDIT"
+ },
+ {
+  "osName": "REP_PLUSGBEN"
+ },
+ {
+  "osName": "REP_PLUSGBYP"
+ },
+ {
+  "osName": "REP_PLUSGCERT"
+ },
+ {
+  "osName": "REP_PLUSGCFW"
+ },
+ {
+  "osName": "REP_PLUSGCON"
+ },
+ {
+  "osName": "REP_PLUSGCRF"
+ },
+ {
+  "osName": "REP_PLUSGCRINC"
+ },
+ {
+  "osName": "REP_PLUSGDEF"
+ },
+ {
+  "osName": "REP_PLUSGDRL"
+ },
+ {
+  "osName": "REP_PLUSGIMP"
+ },
+ {
+  "osName": "REP_PLUSGINV"
+ },
+ {
+  "osName": "REP_PLUSGISO"
+ },
+ {
+  "osName": "REP_PLUSGITEM"
+ },
+ {
+  "osName": "REP_PLUSGJOBPLAN"
+ },
+ {
+  "osName": "REP_PLUSGLKBOX"
+ },
+ {
+  "osName": "REP_PLUSGLOCATIONS"
+ },
+ {
+  "osName": "REP_PLUSGLOG"
+ },
+ {
+  "osName": "REP_PLUSGLOGBK"
+ },
+ {
+  "osName": "REP_PLUSGLPROF"
+ },
+ {
+  "osName": "REP_PLUSGMCR"
+ },
+ {
+  "osName": "REP_PLUSGMOC"
+ },
+ {
+  "osName": "REP_PLUSGOPACT"
+ },
+ {
+  "osName": "REP_PLUSGPCT"
+ },
+ {
+  "osName": "REP_PLUSGPERSON"
+ },
+ {
+  "osName": "REP_PLUSGPLUSLOC"
+ },
+ {
+  "osName": "REP_PLUSGPO"
+ },
+ {
+  "osName": "REP_PLUSGPOL"
+ },
+ {
+  "osName": "REP_PLUSGPROC"
+ },
+ {
+  "osName": "REP_PLUSGPTW"
+ },
+ {
+  "osName": "REP_PLUSGREG"
+ },
+ {
+  "osName": "REP_PLUSGRFW"
+ },
+ {
+  "osName": "REP_PLUSGRLOG"
+ },
+ {
+  "osName": "REP_PLUSGRSK"
+ },
+ {
+  "osName": "REP_PLUSGSTA"
+ },
+ {
+  "osName": "REP_PLUSGSTAG"
+ },
+ {
+  "osName": "REP_PLUSGTKTMP"
+ },
+ {
+  "osName": "REP_PLUSGTRAIN"
+ },
+ {
+  "osName": "REP_PLUSGTRAMOD"
+ },
+ {
+  "osName": "REP_PLUSGVWINC"
+ },
+ {
+  "osName": "REP_PLUSGWOPLANACT"
+ },
+ {
+  "osName": "REP_PLUSGWORKORDER"
+ },
+ {
+  "osName": "REP_PLUSIMPACT"
+ },
+ {
+  "osName": "REP_PLUSINVENTORY"
+ },
+ {
+  "osName": "REP_PLUSITEM"
+ },
+ {
+  "osName": "REP_PLUSJOBPLAN"
+ },
+ {
+  "osName": "REP_PLUSLNUP"
+ },
+ {
+  "osName": "REP_PLUSLNUPPL"
+ },
+ {
+  "osName": "REP_PLUSLOC"
+ },
+ {
+  "osName": "REP_PLUSLOCATIONS"
+ },
+ {
+  "osName": "REP_PLUSPERMIT"
+ },
+ {
+  "osName": "REP_PLUSPLUSLOC"
+ },
+ {
+  "osName": "REP_PLUSPO"
+ },
+ {
+  "osName": "REP_PLUSRELEASE"
+ },
+ {
+  "osName": "REP_PLUSWOPLANACT"
+ },
+ {
+  "osName": "REP_PLUSWORKORDER"
+ },
+ {
+  "osName": "REP_PLUSWOTR"
+ },
+ {
+  "osName": "REP_PO"
+ },
+ {
+  "osName": "REP_RECEIPT"
+ },
+ {
+  "osName": "REP_REPDESIGN"
+ },
+ {
+  "osName": "REP_REPORTING"
+ },
+ {
+  "osName": "REP_REPUSAGE"
+ },
+ {
+  "osName": "REP_SECURITY"
+ },
+ {
+  "osName": "REP_SHIPMENT"
+ },
+ {
+  "osName": "REP_SRVITEM"
+ },
+ {
+  "osName": "REP_STKTOOL"
+ },
+ {
+  "osName": "REP_TOOL"
+ },
+ {
+  "osName": "REP_USER"
+ },
+ {
+  "osName": "REP_WOPLANACT"
+ },
+ {
+  "osName": "REP_WORKORDER"
+ },
+ {
+  "osName": "TAMITINTMF"
+ },
+ {
+  "osName": "TAMITINTSW"
+ },
+ {
+  "osName": "TAMITINTSWCAT"
+ },
+ {
+  "osName": "TAMITINTSWPRTNUM"
+ },
+ {
+  "osName": "TAMITINTSWREL"
+ },
+ {
+  "osName": "TAMITINTSWVAR"
+ }
+]

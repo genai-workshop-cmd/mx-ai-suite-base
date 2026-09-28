@@ -1,0 +1,90 @@
+{
+  "resource": "MXAPIMVI",
+  "description": "NPMVIMODELS",
+  "title": "NPMVIMODELS",
+  "type": "object",
+  "$ref": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapimvi",
+  "properties": {
+    "owner": {
+      "searchType": "NONE",
+      "subType": "ALN",
+      "title": "Owner",
+      "type": "string",
+      "remarks": "Owner of the Model",
+      "maxLength": 50
+    },
+    "_rowstamp": {
+      "type": "string"
+    },
+    "localref": {
+      "type": "string"
+    },
+    "modelid": {
+      "searchType": "NONE",
+      "subType": "ALN",
+      "title": "Model ID",
+      "type": "string",
+      "remarks": "Unique ID of the deployed model on MVI",
+      "maxLength": 36
+    },
+    "_imagelibref": {
+      "type": "string"
+    },
+    "modelname": {
+      "searchType": "NONE",
+      "subType": "ALN",
+      "title": "Model Name",
+      "type": "string",
+      "remarks": "MVI Model Name defined on MVI",
+      "maxLength": 100
+    },
+    "project": {
+      "searchType": "NONE",
+      "subType": "ALN",
+      "title": "MVI Project Name",
+      "type": "string",
+      "remarks": "MVI Project Name used on MVI",
+      "maxLength": 100
+    },
+    "href": {
+      "type": "string"
+    },
+    "_id": {
+      "type": "string"
+    },
+    "anomalycatalog": {
+      "objectName": "ANOMALYCATALOG",
+      "type": "array",
+      "items": {
+        "definition": {
+          "subSchema": {
+            "$ref": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapimvi/anomalycatalog"
+          }
+        },
+        "type": "object"
+      },
+      "cardinality": "",
+      "relation": "ANOMALYCATALOG"
+    },
+    "projectid": {
+      "searchType": "NONE",
+      "subType": "ALN",
+      "title": "MVI Project ID",
+      "type": "string",
+      "remarks": "MVI Project ID used on MVI (GUID)",
+      "maxLength": 36
+    },
+    "status": {
+      "searchType": "NONE",
+      "subType": "ALN",
+      "title": "Status",
+      "type": "string",
+      "remarks": "Status",
+      "maxLength": 20
+    }
+  },
+  "required": [
+    "modelid",
+    "modelname"
+  ]
+}

@@ -1,0 +1,130 @@
+{
+  "resource": "MXNOTIFICATION",
+  "description": "OSUSERNOTIFICATION",
+  "pk": [
+    "intobjectname",
+    "eventname",
+    "eventforuser",
+    "objectid",
+    "notificationtime"
+  ],
+  "title": "OSUSERNOTIFICATION",
+  "type": "object",
+  "$ref": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxnotification",
+  "uniqueid": "osusernotificationid",
+  "properties": {
+    "localref": {
+      "type": "string"
+    },
+    "notificationtime": {
+      "searchType": "EXACT",
+      "subType": "DATETIME",
+      "title": "Notification Time",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Notification Time"
+    },
+    "dismissed": {
+      "default": false,
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "Dismissed",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "Dismissed"
+    },
+    "objectname": {
+      "searchType": "NONE",
+      "subType": "UPPER",
+      "title": "Event Object Name",
+      "type": "string",
+      "remarks": "Event Object Name",
+      "maxLength": 30
+    },
+    "eventname": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Name",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Event Name.",
+      "maxLength": 50
+    },
+    "intobjectname": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Object Structure",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Object Structure",
+      "maxLength": 20
+    },
+    "_rowstamp": {
+      "type": "string"
+    },
+    "_imagelibref": {
+      "type": "string"
+    },
+    "endpointname": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Notification Endpoint",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Notification Endpoint",
+      "maxLength": 20
+    },
+    "eventforuser": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "User",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Event For User",
+      "maxLength": 100
+    },
+    "href": {
+      "type": "string"
+    },
+    "_id": {
+      "type": "string"
+    },
+    "eventresref": {
+      "searchType": "NONE",
+      "subType": "ALN",
+      "title": "Event Resource Link",
+      "type": "string",
+      "remarks": "Event Resource Link",
+      "maxLength": 500
+    },
+    "osusernotificationid": {
+      "searchType": "EXACT",
+      "maximum": 2147483647.0,
+      "subType": "BIGINT",
+      "title": "Unique Id",
+      "persistent": true,
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "uniqueid": true,
+      "remarks": "Unique Id",
+      "maxLength": 11
+    },
+    "objectid": {
+      "searchType": "EXACT",
+      "maximum": 2147483647.0,
+      "subType": "BIGINT",
+      "title": "Event For Record",
+      "persistent": true,
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "remarks": "Event For Record",
+      "maxLength": 11
+    }
+  },
+  "required": [
+    "eventforuser",
+    "eventname",
+    "intobjectname",
+    "notificationtime"
+  ]
+}

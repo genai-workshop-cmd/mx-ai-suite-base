@@ -1,0 +1,131 @@
+{
+  "resource": "MXAPIBILLTOSHIPTO",
+  "description": "BILLTOSHIPTO",
+  "pk": [
+    "addresscode",
+    "orgid",
+    "siteid"
+  ],
+  "title": "BILLTOSHIPTO",
+  "type": "object",
+  "$ref": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapibilltoshipto",
+  "uniqueid": "billtoshiptoid",
+  "properties": {
+    "localref": {
+      "type": "string"
+    },
+    "shiptodefault": {
+      "default": false,
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "Default Ship To",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "Indicates whether the specified address is the default shipping address. If only one shipping address is specified for a site, this address is the default ship-to address."
+    },
+    "billtocontact": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Bill to Contact",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "The person identified as the contact for billing for the site.",
+      "maxLength": 100
+    },
+    "billtodefault": {
+      "default": false,
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "Default Bill To",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "Indicates whether the specified address is the default billing address. If only one billing address is specified for a site, this address is the default bill-to address."
+    },
+    "addresscode": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Address",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "The identifier of the address that is associated with the current record.",
+      "maxLength": 30
+    },
+    "orgid": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Organization",
+      "persistent": true,
+      "type": "string",
+      "remarks": "The identifier of the organization.",
+      "maxLength": 8
+    },
+    "_rowstamp": {
+      "type": "string"
+    },
+    "_imagelibref": {
+      "type": "string"
+    },
+    "billtoshiptoid": {
+      "searchType": "EXACT",
+      "maximum": 2147483647.0,
+      "subType": "BIGINT",
+      "title": "Unique Id",
+      "persistent": true,
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "uniqueid": true,
+      "remarks": "Unique Id",
+      "maxLength": 11
+    },
+    "billto": {
+      "default": false,
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "Bill To",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "Indicates whether the specified address is to be used for billing."
+    },
+    "shiptocontact": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Ship to Contact",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "The person identified as the contact for shipping for the site.",
+      "maxLength": 100
+    },
+    "siteid": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Site",
+      "persistent": true,
+      "type": "string",
+      "remarks": "The identifier of the site within the organization.",
+      "maxLength": 8
+    },
+    "href": {
+      "type": "string"
+    },
+    "_id": {
+      "type": "string"
+    },
+    "shipto": {
+      "default": false,
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "Ship  To",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "Indicates whether the specified address is to be used for shipping."
+    }
+  },
+  "required": [
+    "addresscode",
+    "orgid",
+    "siteid"
+  ]
+}

@@ -1,0 +1,95 @@
+{
+ "resource": "MXAPIWOCHANGESTATUS",
+ "description": "WORKORDER",
+ "pk": [
+  "siteid",
+  "wonum"
+ ],
+ "title": "WORKORDER",
+ "type": "object",
+ "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/mxapiwochangestatus",
+ "uniqueid": "workorderid",
+ "properties": {
+  "wochangestatus": {
+   "objectName": "WOCHANGESTATUS",
+   "type": "array",
+   "items": {
+    "definition": {
+     "subSchema": {
+      "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/mxapiwochangestatus/wochangestatus"
+     }
+    },
+    "type": "object"
+   },
+   "cardinality": "UNDEFINED",
+   "relation": "WOCHANGESTATUS"
+  },
+  "_rowstamp": {
+   "type": "string"
+  },
+  "status_description": {
+   "type": "string"
+  },
+  "localref": {
+   "type": "string"
+  },
+  "_imagelibref": {
+   "type": "string"
+  },
+  "siteid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Site",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Identifies the site.",
+   "maxLength": 8
+  },
+  "href": {
+   "type": "string",
+   "title": "WORKORDER object reference"
+  },
+  "record_descriptor": {
+   "type": "string",
+   "title": "Record/Object Descriptor"
+  },
+  "_id": {
+   "type": "string"
+  },
+  "status": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Status",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Status of the work order, for example, in progress, waiting on material, waiting for approval, completed, or closed.",
+   "maxLength": 16
+  },
+  "statusdate": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Status Date",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Date the work order status was last changed."
+  },
+  "wonum": {
+   "default": "&AUTOKEY&",
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Work Order",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The number you use to track actions taken to satisfy agreement requirements. The agreement is identified in the Reference field.",
+   "maxLength": 25
+  }
+ },
+ "required": [
+  "siteid",
+  "status",
+  "statusdate"
+ ]
+}

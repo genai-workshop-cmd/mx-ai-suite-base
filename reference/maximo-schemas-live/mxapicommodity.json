@@ -1,0 +1,130 @@
+{
+ "resource": "MXAPICOMMODITY",
+ "description": "Maximo API for Commodities",
+ "pk": [
+  "commodity",
+  "itemsetid"
+ ],
+ "title": "COMMODITIES",
+ "type": "object",
+ "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/mxapicommodity",
+ "uniqueid": "commoditiesid",
+ "properties": {
+  "owner": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Contact",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The contact person for this service group. You create contacts in the People application.",
+   "maxLength": 100
+  },
+  "commodity": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Commodity Group",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The unique value for the commodity group that is used to classify items and services.",
+   "maxLength": 8
+  },
+  "parent": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Parent",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Identifies the parent commodity that is associated with the current record.",
+   "maxLength": 8
+  },
+  "localref": {
+   "type": "string"
+  },
+  "description": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Description",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Names or describes the commodity group that is used to classify items and services.",
+   "maxLength": 100
+  },
+  "record_descriptor": {
+   "type": "string",
+   "title": "Record/Object Descriptor"
+  },
+  "ownergroup": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Contact Group",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The group of contact people for this service group. You create contact groups in the Person Groups application.",
+   "maxLength": 8
+  },
+  "_rowstamp": {
+   "type": "string"
+  },
+  "servicetype": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Type",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "You can select the type of service. The service types are Procure, Provide, or Both.",
+   "maxLength": 10
+  },
+  "_imagelibref": {
+   "type": "string"
+  },
+  "commoditiesid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Commodity ID",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "uniqueid": true,
+   "remarks": "The unique identifier of the commodity.",
+   "maxLength": 11
+  },
+  "isservice": {
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Service",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Indicates whether the commodity can be used by a service type item and service level agreements (SLA)."
+  },
+  "servicetype_description": {
+   "type": "string"
+  },
+  "itemsetid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Item Set",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Identifies the item set.",
+   "maxLength": 8
+  },
+  "href": {
+   "type": "string",
+   "title": "COMMODITIES object reference"
+  },
+  "_id": {
+   "type": "string"
+  }
+ },
+ "required": [
+  "commodity",
+  "isservice",
+  "itemsetid",
+  "servicetype"
+ ]
+}

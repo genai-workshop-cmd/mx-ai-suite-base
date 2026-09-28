@@ -1,0 +1,562 @@
+{
+  "resource": "REP_USER",
+  "description": "MAXUSER",
+  "pk": [
+    "userid"
+  ],
+  "title": "MAXUSER",
+  "type": "object",
+  "$ref": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/rep_user",
+  "uniqueid": "maxuserid",
+  "properties": {
+    "pwhintanswer": {
+      "searchType": "NONE",
+      "subType": "CRYPTO",
+      "title": "Answer",
+      "persistent": true,
+      "type": "object",
+      "remarks": "Correct answer to the password hint question."
+    },
+    "maserrorcode": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "User sync error",
+      "persistent": true,
+      "type": "string",
+      "remarks": "The user sync error code information.",
+      "maxLength": 2000
+    },
+    "localref": {
+      "type": "string"
+    },
+    "maxuserid": {
+      "searchType": "EXACT",
+      "maximum": 2147483647.0,
+      "subType": "BIGINT",
+      "title": "MAXUSERID",
+      "persistent": true,
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "uniqueid": true,
+      "remarks": "Unique Identifier",
+      "maxLength": 11
+    },
+    "memo": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Memo",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Enter, as needed, additional information about the user.",
+      "maxLength": 256
+    },
+    "inactivitytimeout": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "User inactivity",
+      "persistent": true,
+      "type": "string",
+      "remarks": "The number of days that the user does not log in before the user is deactivated.",
+      "maxLength": 20
+    },
+    "isconsultant": {
+      "default": false,
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "Is Consultant",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "Indicates whether the user provides consultancy services for one or more tenants."
+    },
+    "type": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Type",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "The system contains users type 1 - 10. In the USERTYPE domain, the descriptions should be updated to reflect the types of users in the license. The appropriate type should be associated with each user id to ensure license compliance.",
+      "maxLength": 30
+    },
+    "esigpass": {
+      "searchType": "NONE",
+      "subType": "CRYPTOX",
+      "title": "New E-Signature Key",
+      "persistent": true,
+      "type": "object",
+      "remarks": "E-Signature Key."
+    },
+    "userid": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "User ID",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Identifies the user. The name or value must be unique for all User records. A Maximo user must be associated with a person record in the People application. If you enter a user name for which no person record exists, Maximo lets you create a person record with the same name when you create the user record. If you choose not to create a person record with the same name as the user name, you make the association with a person in the Person field.",
+      "maxLength": 100
+    },
+    "expiresat": {
+      "searchType": "EXACT",
+      "subType": "DATE",
+      "title": "Expiry date",
+      "persistent": true,
+      "type": "string",
+      "remarks": "The date that the user is deactivated."
+    },
+    "pwhintquestion": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Password Hint Question",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Question a user or administrator chooses to have asked to verify user identity. An administrator defines password hint questions by adding values to the PWHINTQUESTION domain in the Domains application.",
+      "maxLength": 25
+    },
+    "_rowstamp": {
+      "type": "string"
+    },
+    "password": {
+      "searchType": "NONE",
+      "subType": "CRYPTOX",
+      "title": "Password",
+      "persistent": true,
+      "type": "object",
+      "remarks": "Password for logging in to Maximo (encrypted)"
+    },
+    "pwhintquestion_description": {
+      "type": "string"
+    },
+    "systemadmin": {
+      "default": false,
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "System configuration",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "A user with system configuration access has administrative privileges to update all system configuration settings, such as database configuration and IdP authentication, deploy and activate applications, and manage license files. The user must have the premium administration entitlement."
+    },
+    "createdby": {
+      "default": "&USERNAME&",
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Created by",
+      "persistent": true,
+      "type": "string",
+      "remarks": "The user who created the record.",
+      "maxLength": 100
+    },
+    "href": {
+      "type": "string"
+    },
+    "querywithsite": {
+      "default": true,
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "Use Default Insert Site as a Display Filter",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "Specifies which records the user sees. If the check box is selected, Maximo displays only the records from the site specified in the Default Insert Site field. If the check box is cleared, Maximo displays all records. Note that even if this check box is selected, a user can still see records for all the sites for which they are authorized by clearing the filter."
+    },
+    "defstoreroom": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Default Storeroom for Self-Service Requisitions",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "When a user enters a material reservation, Maximo enters this site as the storeroom unless the storeroom is determined by some other relationship. If you specify a default storeroom, you must also enter a site in the Storeroom Site field.",
+      "maxLength": 25
+    },
+    "status_description": {
+      "type": "string"
+    },
+    "loginid": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "User Name",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Name that the user uses to log in to Maximo. The login user name can be the same as or different from the user ID.",
+      "maxLength": 100
+    },
+    "apikeyadmin": {
+      "default": false,
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "API key management",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "A user with API key management access can create and manage API keys. To assign specific access to API keys, the user must also have the same access type as the API key. For example, to create an API key with system configuration access, the user must also have system configuration access."
+    },
+    "isauthorized_description": {
+      "type": "string"
+    },
+    "sidenav": {
+      "default": 0,
+      "searchType": "EXACT",
+      "maximum": 2147483647.0,
+      "subType": "INTEGER",
+      "title": "User Display Side Navigation",
+      "persistent": true,
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "remarks": "Enables the side navigation menu, which replaces many of the actions that are normally found on the horizontal navigation toolbar, including the Select Action menu and toolbar buttons.",
+      "maxLength": 11
+    },
+    "forceexpiration": {
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "Password Should Expire After First Login",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "Indicates whether to force user to change password at the next login"
+    },
+    "massyncstatus": {
+      "default": 0,
+      "searchType": "EXACT",
+      "maximum": 2147483647.0,
+      "subType": "INTEGER",
+      "title": "User sync",
+      "persistent": true,
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "hasList": true,
+      "remarks": "The synchronization status of user data with the Maximo Application Suite database.",
+      "maxLength": 11
+    },
+    "changedate": {
+      "default": "&SYSDATE&",
+      "searchType": "EXACT",
+      "subType": "DATETIME",
+      "title": "Change date",
+      "persistent": true,
+      "type": "string",
+      "remarks": "The date the record was last updated."
+    },
+    "grpreassignauth": {
+      "objectName": "GRPREASSIGNAUTH",
+      "type": "array",
+      "items": {
+        "definition": {
+          "subSchema": {
+            "$ref": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/rep_user/grpreassignauth"
+          }
+        },
+        "type": "object"
+      },
+      "cardinality": "MULTIPLE",
+      "relation": "GRPREASSIGNAUTH"
+    },
+    "person": {
+      "objectName": "PERSON",
+      "type": "array",
+      "items": {
+        "definition": {
+          "subSchema": {
+            "$ref": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/rep_user/person"
+          }
+        },
+        "type": "object"
+      },
+      "cardinality": "SINGLE",
+      "relation": "PERSON"
+    },
+    "ldapuserref": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "LDAP User Reference",
+      "persistent": true,
+      "type": "string",
+      "remarks": "LDAP User Reference (cn name)",
+      "maxLength": 2048
+    },
+    "_id": {
+      "type": "string"
+    },
+    "status": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Status",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Read-only field that indicates whether a user's status is active or inactive. If inactive, a user cannot log in to Maximo. You change a user's status with the Change Status action on the Select Action menu.",
+      "maxLength": 12
+    },
+    "databaseuserid": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Database User",
+      "persistent": true,
+      "type": "string",
+      "remarks": "User name for connecting to the database outside of the Maximo applications (if any)",
+      "maxLength": 18
+    },
+    "masissuer": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "MAS Issuer",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Issuer can be local MAS user or IDP or SAML",
+      "maxLength": 20
+    },
+    "cognossyncstatus": {
+      "default": "notenabled",
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Granted Cognos Access",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Flag used to show the user has been granted access to Cognos",
+      "maxLength": 20
+    },
+    "createddate": {
+      "default": "&SYSDATE&",
+      "searchType": "EXACT",
+      "subType": "DATETIME",
+      "title": "Created on",
+      "persistent": true,
+      "type": "string",
+      "remarks": "The date the user record was created."
+    },
+    "licmetrictype": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "License Type",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Domain Type",
+      "maxLength": 20
+    },
+    "defaultrepfac": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Default Repair Facility",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "The default repair facility that is assigned to work orders that are inserted by this user.",
+      "maxLength": 25
+    },
+    "screenreader": {
+      "default": false,
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "Use Screen Reader",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "Indicates whether this user utilizes a screen reader, a device often used by the visually impaired."
+    },
+    "syncprofile": {
+      "default": false,
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "Sync Profile",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "If the check box is selected, sync profile with MAS."
+    },
+    "idpadmin": {
+      "default": false,
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "IDP management",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "A user with identity provider management access can configure LDAP and SAML authentication, SMTP, and user registry synchronization. This user can also customize the user interface and manage certificates.  Identity provider management access is a subset of system configuration with fewer access privileges. For example, this access type does not include the ability to deploy or activate applications or configure database connections."
+    },
+    "_imagelibref": {
+      "type": "string"
+    },
+    "defsite": {
+      "default": "AMHERST",
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Default insert site",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "When a user inserts a record, Maximo enters this site in the Site field unless the Site field is determined by some other relationship.",
+      "maxLength": 8
+    },
+    "iotrole_description": {
+      "type": "string"
+    },
+    "personid": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Person",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Identifies the person record in the People application. This field is already filled in if you entered a name in the User field that matched an existing person record or if you let Maximo create a new person record when you added the user. You can also use the Detail Menu button to choose an option and retrieve a person ID from the People application (only active persons who are not users will appear in the Select Value dialog box).",
+      "maxLength": 100
+    },
+    "type_description": {
+      "type": "string"
+    },
+    "massyncstatus_description": {
+      "type": "string"
+    },
+    "owner": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Owner",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Identifies the authentication type of either local, SAML, or LDAP.",
+      "maxLength": 10
+    },
+    "groupuser": {
+      "objectName": "GROUPUSER",
+      "type": "array",
+      "items": {
+        "definition": {
+          "subSchema": {
+            "$ref": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/rep_user/groupuser"
+          }
+        },
+        "type": "object"
+      },
+      "cardinality": "MULTIPLE",
+      "relation": "GROUPUSER"
+    },
+    "isauthorized": {
+      "default": 0,
+      "searchType": "EXACT",
+      "maximum": 2147483647.0,
+      "subType": "INTEGER",
+      "title": "Access type",
+      "persistent": true,
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "hasList": true,
+      "remarks": "The type of access for a user is authorized or concurrent.",
+      "maxLength": 11
+    },
+    "changeby": {
+      "default": "&USERNAME&",
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Changed by",
+      "persistent": true,
+      "type": "string",
+      "remarks": "The user who updated the record.",
+      "maxLength": 100
+    },
+    "islocked": {
+      "default": false,
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "Is locked",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "Identifies if user is locked"
+    },
+    "pwexpiration": {
+      "searchType": "EXACT",
+      "subType": "DATETIME",
+      "title": "Password Expiration Date",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Read-only field that displays a password expiration date if you specify a password duration using the Security Controls action."
+    },
+    "sysuser": {
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "System Account",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "Specifies whether the user ID can be deleted. If the check box is selected, the user ID is a system account and cannot be deleted. If the check box is cleared, the user ID is not a system account and can be deleted. Maximo has three system users when it is installed (MAXADMIN, MXINTADM, and MAXREG), but you can add others. Maximo requires system users for functions such as chron tasks and self registration."
+    },
+    "tririgaaccess": {
+      "default": "NO_ACCESS",
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Real estate and facilities",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "To give users access to Real Estate and Facilities, select either Self service. Limited, Base, or Premium. No access is the default.",
+      "maxLength": 25
+    },
+    "failedlogins": {
+      "default": 0,
+      "searchType": "EXACT",
+      "maximum": 2147483647.0,
+      "subType": "INTEGER",
+      "title": "Failed Logins",
+      "persistent": true,
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "remarks": "Number of consecutive failed login attempts",
+      "maxLength": 11
+    },
+    "tririgaaccess_description": {
+      "type": "string"
+    },
+    "storeroomsite": {
+      "default": "AMHERST",
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Storeroom Site for Self-Service Requisitions",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "When a user enters a material reservation, Maximo enters this site as the storeroom site unless the site is determined by some other relationship.",
+      "maxLength": 8
+    },
+    "iotrole": {
+      "default": "NO_ACCESS",
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "IoT role",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "To give users access to the IoT tool, select either User or Administrator. User  access provides regular user access rights. Administrator access provides administrator user access. No access is the default.",
+      "maxLength": 25
+    },
+    "defaultrepfacsiteid": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Repair Facility Site",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "The site for the repair facility.",
+      "maxLength": 8
+    },
+    "ibmid": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "IBM ID",
+      "persistent": true,
+      "type": "string",
+      "remarks": "IBM Login ID",
+      "maxLength": 100
+    },
+    "inactivesites": {
+      "default": false,
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "Can Access Inactive Sites",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "Identifies whether this user can use inactive sites in Maximo applications"
+    }
+  },
+  "required": [
+    "forceexpiration",
+    "loginid",
+    "password",
+    "personid",
+    "status",
+    "sysuser",
+    "type",
+    "userid"
+  ]
+}

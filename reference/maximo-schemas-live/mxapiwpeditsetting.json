@@ -1,0 +1,257 @@
+{
+ "resource": "MXAPIWPEDITSETTING",
+ "description": "Maximo API for WP Edit Settings",
+ "pk": [
+  "orgid",
+  "status"
+ ],
+ "title": "WPEDITSETTING",
+ "type": "object",
+ "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/mxapiwpeditsetting",
+ "uniqueid": "wpeditsettingid",
+ "properties": {
+  "localref": {
+   "type": "string"
+  },
+  "editasset": {
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Asset",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Specifies whether the asset can be edited when the work order is in the selected status. If the check box is selected, you can edit the work order's asset. If the check box is cleared, you cannot edit the work order's asset."
+  },
+  "plusgeditbypchkl": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Checklist",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Specifies whether the checklist fields in the Bypass Management application can be edited when the Bypass Management record has the corresponding status. If this check box is selected, the checklist fields can be edited."
+  },
+  "editwpmat": {
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "WP Materials",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Specifies whether the work plan materials can be edited when the work order is in the selected status. If the check box is selected, you can edit the work plan materials. If the check box is cleared, you cannot edit the work plan materials."
+  },
+  "editwpser": {
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "WP Service",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Specifies whether the work plan services can be edited when the work order is in the selected status. If the check box is selected, you can edit the work plan services. If the check box is cleared, you cannot edit the work plan services."
+  },
+  "plusgeditmocprelist": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Pre-start Actions",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Specifies whether pre-start actions in the MOC application can be edited when the management of change record has the corresponding status. If this check box is selected, the pre-start actions can be edited."
+  },
+  "plusceditpoint": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Edit Cal Point",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "When selected, you can add a calibration point to a work order data sheet that is in the selected status. For example, you can opt to add a calibration point to a work order data sheet only when the work order is in the In Progress or Waiting for Materials statuses."
+  },
+  "editloc": {
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Location",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Specifies whether the location can be edited when the work order is in the selected status. If the check box is selected, you can edit the work order's location. If the check box is cleared, you cannot edit the work order's location."
+  },
+  "_rowstamp": {
+   "type": "string"
+  },
+  "_imagelibref": {
+   "type": "string"
+  },
+  "plusgeditmocauth": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Authorization",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Specifies whether authorization information in the MOC application can be edited when the management of change record has the corresponding status. If this check box is selected, the authorization information can be edited."
+  },
+  "href": {
+   "type": "string",
+   "title": "WPEDITSETTING object reference"
+  },
+  "editglaccount": {
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "GL Account",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Specifies whether the general ledger account can be edited when the work order is in the selected status. If the check box is selected, you can edit the work order's general ledger account. If the check box is cleared, you cannot edit the work order's general ledger account."
+  },
+  "editwplab": {
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "WP Labor",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Specifies whether the work plan labor can be edited when the work order is in the selected status. If the check box is selected, you can edit the work plan labor. If the check box is cleared, you cannot edit the work plan labor."
+  },
+  "plusgeditmocpssr": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Pre-Start Safety Review",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Specifies whether the Pre-Start Safety Review in the MOC application can be edited when the MOC record has the corresponding status. If this check box is selected, the Pre-Start Safety Review can be edited."
+  },
+  "plusgeditbyprev": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Review and Approval",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Specifies whether the review and approval fields in the Bypass Management application can be edited when the Bypass Management record has the corresponding status. If this check box is selected, the review and approval fields can be edited."
+  },
+  "plusceditafal": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "As Found / As Left",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "When selected, you can edit the As Found and As Left values on a work order data sheet that is in the selected status. For example, you can opt to allow for the editing of As Found and As Left values only when the work order is in the In Progress or Waiting for Materials statuses."
+  },
+  "plusgeditmocrev": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Review and Approval",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Specifies whether review and approval information in the MOC application can be edited when the management of change record has the corresponding status. If this check box is selected, the review and approval information can be edited."
+  },
+  "applydjp": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Dynamic Job Plan",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Indicates if the dynamic job plan can be recalculated when the work order is in the selected status. If the check box is selected, you can perform the dynamic job plan calculation."
+  },
+  "record_descriptor": {
+   "type": "string",
+   "title": "Record/Object Descriptor"
+  },
+  "plusgeditmocpostlist": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Post-start Actions",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Specifies whether post-start actions in the MOC application can be edited when the management of change record has the corresponding status. If this check box is selected, the post-start actions can be edited."
+  },
+  "orgid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Organization",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Organization Identifier",
+   "maxLength": 8
+  },
+  "plusceditds": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "New Data Sheet",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "When selected, you can add a data sheet to a work order when the work order is in the selected status. For example, you can opt to add a data sheet to a work order when the work order is in the In Progress status."
+  },
+  "wpeditsettingid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "WPEDITSETTINGID",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "uniqueid": true,
+   "remarks": "Unique Identifier",
+   "maxLength": 11
+  },
+  "editwptool": {
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "WP Tools",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Specifies whether the work plan tools can be edited when the work order is in the selected status. If the check box is selected, you can edit the work plan tools. If the check box is cleared, you cannot edit the work plan tools."
+  },
+  "plusgeditbenefit": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Costs and Benefits",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Specifies whether cost and benefit information for an improvement can be edited when the improvement record has the corresponding status. If this check box is selected, the cost and benefit information can be edited."
+  },
+  "_id": {
+   "type": "string"
+  },
+  "editsafety": {
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Safety Tab",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Specifies whether safety information can be edited when the work order is in the selected status. If the check box is selected, you can edit the safety information. If the check box is cleared, you cannot edit the safety information."
+  },
+  "plusgeditbyprvac": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Review Action",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "You can allow changes when Bypass Management records are in a particular status. For example, to allow updates to reviewers or approvers when the status of a Bypass Management record is Waiting for Approval, select the check box that is in the Review and Approval column and in the WAPPR row."
+  },
+  "status": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Status",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Status at which fields are editable. For each field in the row, select the check box to make the field editable when the work order is at the indicated status level. Clear the check box for each field to disable editing at that status level.",
+   "maxLength": 8
+  }
+ },
+ "required": [
+  "editasset",
+  "editglaccount",
+  "editloc",
+  "editsafety",
+  "editwplab",
+  "editwpmat",
+  "editwpser",
+  "editwptool",
+  "orgid",
+  "status"
+ ]
+}

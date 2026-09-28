@@ -1,0 +1,343 @@
+{
+ "resource": "MXAPIINVBAL",
+ "description": "Maximo API for Inventory Balance",
+ "pk": [
+  "itemnum",
+  "location",
+  "binnum",
+  "lotnum",
+  "conditioncode",
+  "siteid",
+  "itemsetid"
+ ],
+ "title": "INVBALANCES",
+ "type": "object",
+ "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/mxapiinvbal",
+ "uniqueid": "invbalancesid",
+ "properties": {
+  "ownersysid": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Owner System ID",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Owner System ID",
+   "maxLength": 10
+  },
+  "localref": {
+   "type": "string"
+  },
+  "unitcost": {
+   "searchType": "NONE",
+   "scale": 2,
+   "subType": "AMOUNT",
+   "title": "Unit Cost",
+   "type": "number",
+   "remarks": "The LIFO/FIFO unit cost.",
+   "maxLength": 11
+  },
+  "physcnt": {
+   "searchType": "EXACT",
+   "scale": 2,
+   "subType": "DECIMAL",
+   "title": "Physical Count",
+   "persistent": true,
+   "type": "number",
+   "remarks": "The number of this item or tool logged the last time a physical count was performed at this location.",
+   "maxLength": 16
+  },
+  "pre_date": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Preview Reconcile Date",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Preview Reconcile Date."
+  },
+  "lotnum": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Lot",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Lot number of the item or tool, if it exists in a lot.",
+   "maxLength": 8
+  },
+  "externalrefid": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "External Reference ID",
+   "persistent": true,
+   "type": "string",
+   "remarks": "External Reference ID",
+   "maxLength": 10
+  },
+  "inventory": {
+   "objectName": "INVENTORY",
+   "type": "array",
+   "items": {
+    "definition": {
+     "subSchema": {
+      "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/mxapiinvbal/inventory"
+     }
+    },
+    "type": "object"
+   },
+   "cardinality": "UNDEFINED",
+   "relation": "INVENTORY"
+  },
+  "costdate": {
+   "default": "&SYSDATE&",
+   "searchType": "NONE",
+   "subType": "DATETIME",
+   "title": "Cost Date",
+   "type": "string",
+   "remarks": "The receipt date for the current cost record."
+  },
+  "_rowstamp": {
+   "type": "string"
+  },
+  "stagedcurbal": {
+   "default": 0.0,
+   "searchType": "EXACT",
+   "scale": 2,
+   "subType": "DECIMAL",
+   "title": "Staged Balance",
+   "persistent": true,
+   "type": "number",
+   "remarks": "The current balance in the bin that is staged for issue or transfer.",
+   "maxLength": 16
+  },
+  "_imagelibref": {
+   "type": "string"
+  },
+  "pre_curbalchange": {
+   "searchType": "EXACT",
+   "scale": 2,
+   "subType": "DECIMAL",
+   "title": "Current Balance Change",
+   "persistent": true,
+   "type": "number",
+   "remarks": "The balance change that will accure during reconciliation",
+   "maxLength": 16
+  },
+  "curbal": {
+   "searchType": "EXACT",
+   "scale": 2,
+   "subType": "DECIMAL",
+   "title": "Current Balance",
+   "persistent": true,
+   "type": "number",
+   "remarks": "Current balance of the item in the specified bin and/or lot at the specified location. Setting the current balance when you insert a row also sets the Physical Count and Count Date fields. When an item is issued or transferred out from the location/bin/lot, Maximo decreases the current balance. When items are received on a purchase order for this location, or transferred in from another location, Maximo increases the current balance.",
+   "maxLength": 16
+  },
+  "siteid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Site",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Site Identifier",
+   "maxLength": 8
+  },
+  "href": {
+   "type": "string",
+   "title": "INVBALANCES object reference"
+  },
+  "conditioncode": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Condition Code",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "A code indicating the condition of the item or tool.",
+   "maxLength": 30
+  },
+  "pre_curbal": {
+   "searchType": "EXACT",
+   "scale": 2,
+   "subType": "DECIMAL",
+   "title": " Preview Balance",
+   "persistent": true,
+   "type": "number",
+   "remarks": "Preview Balance.",
+   "maxLength": 16
+  },
+  "pickedqty": {
+   "searchType": "EXACT",
+   "scale": 2,
+   "subType": "DECIMAL",
+   "title": "Picked Quantity",
+   "persistent": true,
+   "type": "number",
+   "remarks": "The quantity of items that are picked.",
+   "maxLength": 16
+  },
+  "reconciled": {
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Reconciled",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Checking this box indicates if the record has been reconciled or not. Valid values for this field are Y (yes) or N (no)."
+  },
+  "adjustedphyscnt": {
+   "searchType": "NONE",
+   "scale": 2,
+   "subType": "DECIMAL",
+   "title": "New Count",
+   "type": "number",
+   "remarks": "The current number of this item at this location.",
+   "maxLength": 16
+  },
+  "binnum": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Bin",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "A unique identification code indicating the primary bin or storage location for the selected item or tool within a storeroom.",
+   "maxLength": 8
+  },
+  "record_descriptor": {
+   "type": "string",
+   "title": "Record/Object Descriptor"
+  },
+  "sendersysid": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Sender System ID",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Column used by ERP-Integration (APIs)",
+   "maxLength": 50
+  },
+  "orgid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Organization",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Organization Identifier",
+   "maxLength": 8
+  },
+  "itemnum": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Item",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "A unique identification number for an item in inventory in the selected storeroom.",
+   "maxLength": 30
+  },
+  "adjustedphyscntdate": {
+   "searchType": "NONE",
+   "subType": "DATETIME",
+   "title": "Count Date",
+   "type": "string",
+   "remarks": "The date on which you perform a physical count to adjust the physical count field."
+  },
+  "itemtype": {
+   "searchType": "NONE",
+   "subType": "UPPER",
+   "title": "Item Type",
+   "type": "string",
+   "remarks": "Item Type",
+   "maxLength": 15
+  },
+  "stagingbin": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Staging Bin",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Indicates if this bin is used exclusively for staged issues and transfers."
+  },
+  "physcntdate": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Physical Count Date",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Physical count of items at the specified location. When a new record is inserted, physical count is set equal to the current balance. The Physical Count field can only be modified via the Physical Count Adjustment option on the Select Action menu."
+  },
+  "pre_calccurbal": {
+   "searchType": "EXACT",
+   "scale": 2,
+   "subType": "DECIMAL",
+   "title": "New Current Balance",
+   "persistent": true,
+   "type": "number",
+   "remarks": "The new current number of this item or tool at this location.",
+   "maxLength": 16
+  },
+  "invbalancesid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "INVBALANCESID",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "uniqueid": true,
+   "remarks": "Unique Identifier",
+   "maxLength": 11
+  },
+  "nextphycntdate": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Next Physical Count Date",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Next Physical Count Date"
+  },
+  "itemsetid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Item Set",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Set identifier for the item.",
+   "maxLength": 8
+  },
+  "location": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Storeroom",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "A unique identification code indicating the primary storeroom location for the item.",
+   "maxLength": 25
+  },
+  "_id": {
+   "type": "string"
+  },
+  "sourcesysid": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Source System ID",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Source System ID",
+   "maxLength": 10
+  }
+ },
+ "required": [
+  "curbal",
+  "itemnum",
+  "itemsetid",
+  "location",
+  "orgid",
+  "physcnt",
+  "reconciled",
+  "siteid"
+ ]
+}

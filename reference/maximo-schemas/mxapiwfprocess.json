@@ -1,0 +1,242 @@
+{
+  "resource": "MXAPIWFPROCESS",
+  "description": "WFPROCESS",
+  "pk": [
+    "processname",
+    "processrev"
+  ],
+  "title": "WFPROCESS",
+  "type": "object",
+  "$ref": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapiwfprocess",
+  "uniqueid": "wfprocessid",
+  "properties": {
+    "ownersysid": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Owner System ID",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Owner System ID",
+      "maxLength": 10
+    },
+    "localref": {
+      "type": "string"
+    },
+    "deletable": {
+      "default": 0,
+      "searchType": "EXACT",
+      "maximum": 2147483647.0,
+      "subType": "INTEGER",
+      "title": "Allow Deletion",
+      "persistent": true,
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "remarks": "Can records be deleted after having this workflow run on them?",
+      "maxLength": 11
+    },
+    "description": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Description",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Description of the process",
+      "maxLength": 100
+    },
+    "externalrefid": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "External Ref ID",
+      "persistent": true,
+      "type": "string",
+      "remarks": "External Ref ID",
+      "maxLength": 10
+    },
+    "wfprocessid": {
+      "searchType": "EXACT",
+      "maximum": 2147483647.0,
+      "subType": "BIGINT",
+      "title": "WFPROCESSID",
+      "persistent": true,
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "uniqueid": true,
+      "remarks": "Unique Identifier",
+      "maxLength": 11
+    },
+    "enabled": {
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "Enabled",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "Is the process is available to be used?"
+    },
+    "langcode": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Language Code",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Language Column",
+      "maxLength": 4
+    },
+    "_rowstamp": {
+      "type": "string"
+    },
+    "_imagelibref": {
+      "type": "string"
+    },
+    "autoinitiate": {
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "Interactive Initiate",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "Start this process when a MBO is entered interactively?"
+    },
+    "href": {
+      "type": "string"
+    },
+    "migrated": {
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "Migrated",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "Was this template created during the 4.1.1 upgrade?"
+    },
+    "description_longdescription": {
+      "searchType": "WILDCARD",
+      "subType": "LONGALN",
+      "title": "Details",
+      "type": "string",
+      "remarks": "Long Description for Description of the process",
+      "maxLength": 32000
+    },
+    "changeby": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Changed By",
+      "persistent": true,
+      "type": "string",
+      "remarks": "The user that last changed the wfprocess row.",
+      "maxLength": 100
+    },
+    "processname": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Process",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Name of the process.",
+      "maxLength": 10
+    },
+    "objectname": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Object",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Type of Mbo this process is meant for.",
+      "maxLength": 30
+    },
+    "active": {
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "Active",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "Is process available to initiate on Mbos?"
+    },
+    "changedate": {
+      "searchType": "EXACT",
+      "subType": "DATETIME",
+      "title": "Changed Date",
+      "persistent": true,
+      "type": "string",
+      "remarks": "The Date the wfprocess row was changed"
+    },
+    "sendersysid": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Sender Systyem ID",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Column used by ERP-Integration (APIs)",
+      "maxLength": 50
+    },
+    "wfnode": {
+      "objectName": "WFNODE",
+      "type": "array",
+      "items": {
+        "definition": {
+          "subSchema": {
+            "$ref": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapiwfprocess/wfnode"
+          }
+        },
+        "type": "object"
+      },
+      "cardinality": "UNDEFINED",
+      "relation": "NODES"
+    },
+    "hasld": {
+      "default": false,
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "Has Long Description",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "Boolean flag to indicate if there is any long description for this record"
+    },
+    "_id": {
+      "type": "string"
+    },
+    "sourcesysid": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Source System ID",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Source System ID",
+      "maxLength": 10
+    },
+    "wfnotification": {
+      "objectName": "WFNOTIFICATION",
+      "type": "array",
+      "items": {
+        "definition": {
+          "subSchema": {
+            "$ref": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapiwfprocess/wfnotification"
+          }
+        },
+        "type": "object"
+      },
+      "cardinality": "UNDEFINED",
+      "relation": "NOTIFICATIONS"
+    },
+    "processrev": {
+      "searchType": "EXACT",
+      "maximum": 2147483647.0,
+      "subType": "INTEGER",
+      "title": "Process Revision",
+      "persistent": true,
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "remarks": "Revision for the process",
+      "maxLength": 11
+    }
+  },
+  "required": [
+    "active",
+    "autoinitiate",
+    "enabled",
+    "langcode",
+    "migrated",
+    "objectname",
+    "processname",
+    "processrev"
+  ]
+}

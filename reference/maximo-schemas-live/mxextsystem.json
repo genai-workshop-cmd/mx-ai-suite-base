@@ -1,0 +1,216 @@
+{
+ "resource": "MXEXTSYSTEM",
+ "description": "External System Definition",
+ "pk": [
+  "extsysname"
+ ],
+ "title": "MAXEXTSYSTEM",
+ "type": "object",
+ "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/mxextsystem",
+ "uniqueid": "maxextsystemid",
+ "properties": {
+  "incontqueuename": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Inbound Continuous Queue",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Identifies the inbound continuous queue to which the MEA writes inbound messages for interfaces that have the \"\"Use Continuous Queue\"\" check box selected. Multiple external systems can use the same inbound continuous queue.",
+   "maxLength": 250
+  },
+  "description_longdescription": {
+   "searchType": "WILDCARD",
+   "subType": "LONGALN",
+   "title": "Details",
+   "type": "string",
+   "remarks": "DESCRIPTION_LONGDESCRIPTION",
+   "maxLength": 32000
+  },
+  "localref": {
+   "type": "string"
+  },
+  "outseqqueuename": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Outbound Sequential Queue",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Identifies the queue that the external system will use for processing outbound messages. Multiple external systems can use the same outbound queue.",
+   "maxLength": 250
+  },
+  "maxextifaceout": {
+   "objectName": "MAXEXTIFACEOUT",
+   "type": "array",
+   "items": {
+    "definition": {
+     "subSchema": {
+      "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/mxextsystem/maxextifaceout"
+     }
+    },
+    "type": "object"
+   },
+   "cardinality": "UNDEFINED",
+   "relation": "MAXEXTIFACEOUT"
+  },
+  "changeby": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Changed By",
+   "persistent": true,
+   "type": "string",
+   "remarks": "CHANGEBY",
+   "maxLength": 100
+  },
+  "description": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Description",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Describes the external system. To enter or view additional information, click the Long Description button.",
+   "maxLength": 100
+  },
+  "changedate": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Changed Date",
+   "persistent": true,
+   "type": "string",
+   "remarks": "CHANGEDATE"
+  },
+  "record_descriptor": {
+   "type": "string",
+   "title": "Record/Object Descriptor"
+  },
+  "maxextsystemid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "MAXEXTSYSTEMID",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "uniqueid": true,
+   "remarks": "Unique Identifier",
+   "maxLength": 11
+  },
+  "maxextifacein": {
+   "objectName": "MAXEXTIFACEIN",
+   "type": "array",
+   "items": {
+    "definition": {
+     "subSchema": {
+      "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/mxextsystem/maxextifacein"
+     }
+    },
+    "type": "object"
+   },
+   "cardinality": "UNDEFINED",
+   "relation": "MAXEXTIFACEIN"
+  },
+  "enabled": {
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Enabled",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Specifies whether the external system is available for integration processing. If the check box is selected, the external system is available. If the check box is cleared (default), the external system is unavailable. A user sets this value."
+  },
+  "bidiconfig_description": {
+   "type": "string"
+  },
+  "maxextsyscontrol": {
+   "objectName": "MAXEXTSYSCONTROL",
+   "type": "array",
+   "items": {
+    "definition": {
+     "subSchema": {
+      "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/mxextsystem/maxextsyscontrol"
+     }
+    },
+    "type": "object"
+   },
+   "cardinality": "UNDEFINED",
+   "relation": "MAXEXTSYSCONTROL"
+  },
+  "_rowstamp": {
+   "type": "string"
+  },
+  "extsysname": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "System",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Identifies the external system. This value must be unique. This is the name that must be specified as the SenderID in all inbound messages from that system and as the RecipientID in outbound XML or interface table transactions.",
+   "maxLength": 20
+  },
+  "_imagelibref": {
+   "type": "string"
+  },
+  "inseqqueuename": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Inbound Sequential Queue",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Identifies the inbound sequential queue to which the MEA writes inbound messages. Multiple external systems can use the same inbound sequential queue.",
+   "maxLength": 250
+  },
+  "jmsmsgencoding": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Text Message Encoding",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Text Message Encoding",
+   "maxLength": 50
+  },
+  "endpointname": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "End Point",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Identifies the end point used by the external system. Outbound transactions are sent to this end point.",
+   "maxLength": 20
+  },
+  "href": {
+   "type": "string",
+   "title": "MAXEXTSYSTEM object reference"
+  },
+  "_id": {
+   "type": "string"
+  },
+  "bidiconfig": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "BIDI CONFIG",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "BIDI CONFIG",
+   "maxLength": 5
+  },
+  "outcontqueuename": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Outbound Continuous Queue",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Identifies the outbound continuous queue to which the MEA writes outbound messages for interfaces that have the 'Use Continuous Queue' check box selected. Multiple external systems can use the same outbound continuous queue.",
+   "maxLength": 250
+  }
+ },
+ "required": [
+  "changeby",
+  "changedate",
+  "enabled",
+  "extsysname"
+ ]
+}

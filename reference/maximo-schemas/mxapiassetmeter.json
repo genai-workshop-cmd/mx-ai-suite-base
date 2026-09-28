@@ -1,0 +1,724 @@
+{
+  "resource": "MXAPIASSETMETER",
+  "description": "ASSETMETER",
+  "pk": [
+    "assetnum",
+    "metername",
+    "siteid",
+    "linearassetmeterid"
+  ],
+  "title": "ASSETMETER",
+  "type": "object",
+  "$ref": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapiassetmeter",
+  "uniqueid": "assetmeterid",
+  "properties": {
+    "localref": {
+      "type": "string"
+    },
+    "sinceinstall": {
+      "searchType": "EXACT",
+      "scale": 2,
+      "subType": "DECIMAL",
+      "title": "Since Install",
+      "persistent": true,
+      "type": "number",
+      "remarks": "Difference between the current meter reading and the meter reading when this AssetMeter's asset was moved into its current configuration.",
+      "maxLength": 16
+    },
+    "startassetfeatureid": {
+      "searchType": "EXACT",
+      "maximum": 2147483647.0,
+      "subType": "BIGINT",
+      "title": "Start Asset Feature ID",
+      "persistent": true,
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "remarks": "A previously defined feature or relationship used, in conjunction with the start offset, to determine the start measure for this meter.   ",
+      "maxLength": 11
+    },
+    "endzoffsetref_description": {
+      "type": "string"
+    },
+    "devicestatus": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Device Status",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Status of the sensor",
+      "maxLength": 12
+    },
+    "startmeasure": {
+      "searchType": "EXACT",
+      "scale": 2,
+      "subType": "DECIMAL",
+      "title": "Start Measure",
+      "persistent": true,
+      "type": "number",
+      "remarks": "Absolute distance taken from the start of the linear asset to where this meter is defined.  This can be manually entered or calculated by entering a start reference point and start offset.",
+      "maxLength": 11
+    },
+    "ahiassetmeterstatusicon": {
+      "searchType": "NONE",
+      "subType": "ALN",
+      "title": "Status icon",
+      "type": "string",
+      "remarks": "Status icon calculated from last reading and measure point",
+      "maxLength": 200
+    },
+    "devicetype": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Device Type",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Device Type",
+      "maxLength": 50
+    },
+    "domainid": {
+      "searchType": "NONE",
+      "subType": "UPPER",
+      "title": "Domain",
+      "type": "string",
+      "remarks": "This domain information is used to validate a new CHARACTERISTIC measurement.",
+      "maxLength": 18
+    },
+    "endoffsetunitid": {
+      "searchType": "EXACT",
+      "subType": "UPPER",
+      "title": "Unit of End Offset",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Unit of measure for the offset (before or after) from the end reference point of this meter.",
+      "maxLength": 16
+    },
+    "sincelastinspect": {
+      "searchType": "EXACT",
+      "scale": 2,
+      "subType": "DECIMAL",
+      "title": "Since Last Inspection",
+      "persistent": true,
+      "type": "number",
+      "remarks": "Difference between the current meter reading and the meter reading when the last work order of type INSPECTION was opened or closed as determined by application setup.",
+      "maxLength": 16
+    },
+    "_rowstamp": {
+      "type": "string"
+    },
+    "startmeasureunitid": {
+      "searchType": "EXACT",
+      "subType": "UPPER",
+      "title": "Unit of Start Measure",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Start Measure Units",
+      "maxLength": 16
+    },
+    "startyoffsetref_description": {
+      "type": "string"
+    },
+    "endzoffset": {
+      "searchType": "EXACT",
+      "scale": 2,
+      "subType": "DECIMAL",
+      "title": "End Z Offset",
+      "persistent": true,
+      "type": "number",
+      "remarks": "Distance above or below this linear asset.  For example, if a sign is 10 feet above the road, the  Z-Offset is 10 feet.  This value is measured from the Z  Reference Point and can be positive (above) or negative (below).",
+      "maxLength": 11
+    },
+    "siteid": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Site",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Site identifier for this meter.",
+      "maxLength": 8
+    },
+    "href": {
+      "type": "string"
+    },
+    "readingtype_description": {
+      "type": "string"
+    },
+    "endbasemeasure": {
+      "searchType": "EXACT",
+      "scale": 2,
+      "subType": "DECIMAL",
+      "title": "End Base Measure",
+      "persistent": true,
+      "type": "number",
+      "remarks": "An absolute measure that is calculated by converting from the end measure using a defined conversion method.  Conversion methods are defined in the Assets application using the Add/Modify Conversions action.",
+      "maxLength": 11
+    },
+    "active": {
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "Active",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "Is this asset's meter available to accept manual or rolled down readings, or to be used in PM or CM work order generation?"
+    },
+    "changedate": {
+      "searchType": "EXACT",
+      "subType": "DATETIME",
+      "title": "Changed Date",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Date and time record was last modified."
+    },
+    "avgcalcmethod_description": {
+      "type": "string"
+    },
+    "endyoffsetref_description": {
+      "type": "string"
+    },
+    "orgid": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Organization",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Organization identifier for this AssetMeter.",
+      "maxLength": 8
+    },
+    "previousreadingdate": {
+      "searchType": "NONE",
+      "subType": "DATETIME",
+      "title": "Previous Reading Date",
+      "type": "string",
+      "remarks": "non-persistent attribute that is the date of the reading just previous to the meter reading being added or updated."
+    },
+    "sincelastrepair": {
+      "searchType": "EXACT",
+      "scale": 2,
+      "subType": "DECIMAL",
+      "title": "Since Last Repair",
+      "persistent": true,
+      "type": "number",
+      "remarks": "Difference between current meter reading and the meter reading when the last work order was opened or closed as determined by the application setup.",
+      "maxLength": 16
+    },
+    "startoffsetunitid": {
+      "searchType": "EXACT",
+      "subType": "UPPER",
+      "title": "Unit of Start Offset",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Unit of measure for the offset (before or after) from the start reference point of this meter.",
+      "maxLength": 16
+    },
+    "sequence": {
+      "searchType": "EXACT",
+      "maximum": 2147483647.0,
+      "subType": "SMALLINT",
+      "title": "Sequence",
+      "persistent": true,
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "remarks": "Meter display sequence",
+      "maxLength": 11
+    },
+    "startfeatureid": {
+      "searchType": "EXACT",
+      "maximum": 2147483647.0,
+      "subType": "BIGINT",
+      "title": "StartFeature ID",
+      "persistent": true,
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "remarks": "unique identifier for the feature that marks the start of the section of the linear asset for which this meter applies",
+      "maxLength": 11
+    },
+    "startfeature": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Start Feature",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "The feature (e.g. mile marker) that is used to identify where, on the linear asset, the meter reading was taken.",
+      "maxLength": 30
+    },
+    "measureunitid": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Unit of Measure",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Measure unit for the meter when attached to this asset, for example LITERS or RPM",
+      "maxLength": 16
+    },
+    "metername": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Meter",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Identifier for the meter attached to the asset, for example HOURS or KILOMETERS.",
+      "maxLength": 10
+    },
+    "startoffset": {
+      "searchType": "EXACT",
+      "scale": 2,
+      "subType": "DECIMAL",
+      "title": "Start Offset",
+      "persistent": true,
+      "type": "number",
+      "remarks": "Distance used in conjunction with the start reference point to determine where the meter resides.  ",
+      "maxLength": 11
+    },
+    "endassetfeatureid": {
+      "searchType": "EXACT",
+      "maximum": 2147483647.0,
+      "subType": "BIGINT",
+      "title": "End Asset Feature ID",
+      "persistent": true,
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "remarks": "A previously defined feature or relationship used, in conjunction with the end offset, to determine the end measure for this meter.",
+      "maxLength": 11
+    },
+    "_id": {
+      "type": "string"
+    },
+    "dorollover": {
+      "searchType": "NONE",
+      "subType": "YORN",
+      "title": "Rollover",
+      "type": "boolean",
+      "remarks": "non-persistent attribute to indicate if a new reading should cause the meter to roll over"
+    },
+    "slidingwindowsize": {
+      "searchType": "EXACT",
+      "maximum": 2147483647.0,
+      "subType": "INTEGER",
+      "title": "Sliding Window Size",
+      "persistent": true,
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "remarks": "The number of readings, days, weeks or months to include in a sliding average meter unit calculation.",
+      "maxLength": 11
+    },
+    "pointnum": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Point",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "identifier of this AssetMeter's related condition monitoring point.",
+      "maxLength": 8
+    },
+    "ahiassetmeterstatus": {
+      "searchType": "NONE",
+      "maximum": 2147483647.0,
+      "subType": "INTEGER",
+      "title": "Status",
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "remarks": "Status calculated from last reading and measure point",
+      "maxLength": 11
+    },
+    "average": {
+      "searchType": "EXACT",
+      "scale": 2,
+      "subType": "DECIMAL",
+      "title": "Average Units/Day",
+      "persistent": true,
+      "type": "number",
+      "remarks": "Average units per day for this meter",
+      "maxLength": 16
+    },
+    "endfeature": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "End Feature",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "The feature (e.g. mile marker) that is used to identify where, on the linear asset, the meter reading was taken.",
+      "maxLength": 30
+    },
+    "rolldownsource_description": {
+      "type": "string"
+    },
+    "lastreadingdate": {
+      "searchType": "EXACT",
+      "subType": "DATETIME",
+      "title": "Last Reading Date",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Date of the last reading for this meter."
+    },
+    "linearassetmeterid": {
+      "searchType": "EXACT",
+      "maximum": 2147483647.0,
+      "subType": "BIGINT",
+      "title": "Linear Specification Id",
+      "persistent": true,
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "remarks": "Part of the primary key to differentiate Linear asset meters only.",
+      "maxLength": 11
+    },
+    "endmeasureunitid": {
+      "searchType": "EXACT",
+      "subType": "UPPER",
+      "title": "Unit of End Measure",
+      "persistent": true,
+      "type": "string",
+      "remarks": "End Measure Units",
+      "maxLength": 16
+    },
+    "description": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Description",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Meter's description",
+      "maxLength": 200
+    },
+    "endoffset": {
+      "searchType": "EXACT",
+      "scale": 2,
+      "subType": "DECIMAL",
+      "title": "End Offset",
+      "persistent": true,
+      "type": "number",
+      "remarks": "Distance used in conjunction with the end reference point to determine where the meter resides.  ",
+      "maxLength": 11
+    },
+    "newreading": {
+      "searchType": "NONE",
+      "subType": "ALN",
+      "title": "New Reading",
+      "type": "string",
+      "hasList": true,
+      "remarks": "NEWREADING",
+      "maxLength": 18
+    },
+    "lastreading": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Last Reading",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Last reading taken for this meter. This should be the same as the most recent meter reading. An asset that was used before it was added to the system will have an asset meter reading. The last meter reading for an existing asset can be used as the initial meter reading for that asset in the system.",
+      "maxLength": 18
+    },
+    "metricid": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Metric ID",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Meter Metric ID",
+      "maxLength": 100
+    },
+    "_imagelibref": {
+      "type": "string"
+    },
+    "assetnum": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Asset",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Asset number to which the meter is attached",
+      "maxLength": 25
+    },
+    "endyoffsetref": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "End Y Offset Referent",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "The point from which the Y Offset is measured (e.g. centerline, edge, etc).   The user can create a domain for this purpose.  The value entered will not be used in calculations, it is simply used to locate the feature in the field.",
+      "maxLength": 30
+    },
+    "startzoffset": {
+      "searchType": "EXACT",
+      "scale": 2,
+      "subType": "DECIMAL",
+      "title": "Start Z Offset",
+      "persistent": true,
+      "type": "number",
+      "remarks": "Distance above or below this linear asset.  For example, if a sign is 10 feet above the road, the  Z-Offset is 10 feet.  This value is measured from the Z  Reference Point and can be positive (above) or negative (below).",
+      "maxLength": 11
+    },
+    "rollover": {
+      "searchType": "EXACT",
+      "scale": 2,
+      "subType": "DECIMAL",
+      "title": "Rollover",
+      "persistent": true,
+      "type": "number",
+      "remarks": "Point at which the asset's meter returns to the its mininum value. Rollover applies to CONTINUOUS meters only.",
+      "maxLength": 16
+    },
+    "startzoffsetref": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Start Z Offset Referent",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Reference point from which the start Z-Offset (distance above or below the linear asset) is measured.  ",
+      "maxLength": 30
+    },
+    "newreadingdate": {
+      "searchType": "NONE",
+      "subType": "DATETIME",
+      "title": "New Reading Date",
+      "type": "string",
+      "remarks": "NEWREADINGDATE"
+    },
+    "startyoffsetref": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Start Y Offset Referent",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "The point from which the Y Offset is measured (e.g. centerline, edge, etc).   The user can create a domain for this purpose.  The value entered will not be used in calculations, it is simply used to locate the feature in the field.",
+      "maxLength": 30
+    },
+    "avgcalcmethod": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Average Calculation Method",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Method used to calculate the average meter units per day: STATIC, ALL or SLIDING.",
+      "maxLength": 25
+    },
+    "basemeasureunitid": {
+      "searchType": "EXACT",
+      "subType": "UPPER",
+      "title": "Unit of Base Measure",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Base Measure Units",
+      "maxLength": 16
+    },
+    "changeby": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Changed By",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Name of user who last modified this record.",
+      "maxLength": 100
+    },
+    "endmeasure": {
+      "searchType": "EXACT",
+      "scale": 2,
+      "subType": "DECIMAL",
+      "title": "End Measure",
+      "persistent": true,
+      "type": "number",
+      "remarks": "Absolute distance taken from the start of the linear asset to where this meter is defined.  This can be manually entered or calculated by entering an end reference point and end offset.",
+      "maxLength": 11
+    },
+    "startyoffset": {
+      "searchType": "EXACT",
+      "scale": 2,
+      "subType": "DECIMAL",
+      "title": "Start Y Offset",
+      "persistent": true,
+      "type": "number",
+      "remarks": "Perpendicular distance from this linear asset.  For example, if a sign is 10 feet to the right of the road, the Y-Offset is 10 feet.  This value is measured from the Y Reference Point and can be positive (right) or negative (left).",
+      "maxLength": 11
+    },
+    "inspector": {
+      "searchType": "NONE",
+      "subType": "UPPER",
+      "title": "Inspector",
+      "type": "string",
+      "hasList": true,
+      "remarks": "INSPECTOR",
+      "maxLength": 100
+    },
+    "lastreadinginspctr": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Last Reading Inspector",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "inspector for this meter's most recent meter reading",
+      "maxLength": 100
+    },
+    "endfeatureid": {
+      "searchType": "EXACT",
+      "maximum": 2147483647.0,
+      "subType": "BIGINT",
+      "title": "EndFeature ID",
+      "persistent": true,
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "remarks": "unique identifier for the feature that marks the end of the section of the linear asset for which this meter applies",
+      "maxLength": 11
+    },
+    "deviceid": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Device ID",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Device ID",
+      "maxLength": 50
+    },
+    "assetmeterid": {
+      "searchType": "EXACT",
+      "maximum": 2147483647.0,
+      "subType": "BIGINT",
+      "title": "ASSETMETERID",
+      "persistent": true,
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "uniqueid": true,
+      "remarks": "Unique Identifier",
+      "maxLength": 11
+    },
+    "endyoffset": {
+      "searchType": "EXACT",
+      "scale": 2,
+      "subType": "DECIMAL",
+      "title": "End Y Offset",
+      "persistent": true,
+      "type": "number",
+      "remarks": "Perpendicular distance from this linear asset.  For example, if a sign is 10 feet to the right of the road, the Y-Offset is 10 feet.  This value is measured from the Y Reference Point and can be positive (right) or negative (left).",
+      "maxLength": 11
+    },
+    "lifetodate": {
+      "searchType": "EXACT",
+      "scale": 2,
+      "subType": "DECIMAL",
+      "title": "Life to Date for Asset",
+      "persistent": true,
+      "type": "number",
+      "remarks": "This value tracks the total use of an asset over its life span. It will always be equal to or exceed the last reading value and is used to determine the meter-based PM frequencies. If a meter does not roll over and is never replaced or reset, this value is the same as the last reading.  Even if the meter rolls over or the physical meter is replaced or reset, this value continues to increase because the value is based on the asset.",
+      "maxLength": 16
+    },
+    "ahiassetmeterstatuscolor": {
+      "searchType": "NONE",
+      "subType": "ALN",
+      "title": "Status color",
+      "type": "string",
+      "remarks": "Status color calculated from last reading and measure point",
+      "maxLength": 200
+    },
+    "sincelastoverhaul": {
+      "searchType": "EXACT",
+      "scale": 2,
+      "subType": "DECIMAL",
+      "title": "Since Last Overhaul",
+      "persistent": true,
+      "type": "number",
+      "remarks": "Difference between the current meter reading and the meter reading when the last work order of type OVERHAUL was opened or closed as determined by application setup.",
+      "maxLength": 16
+    },
+    "previousreading": {
+      "searchType": "NONE",
+      "subType": "ALN",
+      "title": "Previous Reading",
+      "type": "string",
+      "hasList": true,
+      "remarks": "non-persistent attribute that is the reading just previous to the meter reading being added or updated.",
+      "maxLength": 18
+    },
+    "readingtype": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Reading Type",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "reading type (CONTINUOUS or DELTA) for this meter.",
+      "maxLength": 10
+    },
+    "rolldownsource": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Accept Rolldown From",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Identifies whether or not an asset's meter accepts a reading delta from a parent asset's or location's meter. A value of NONE indicates that this Meter does not accept rolled down parent readings.",
+      "maxLength": 14
+    },
+    "asset": {
+      "objectName": "ASSET",
+      "type": "array",
+      "items": {
+        "definition": {
+          "subSchema": {
+            "$ref": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapiassetmeter/asset"
+          }
+        },
+        "type": "object"
+      },
+      "cardinality": "UNDEFINED",
+      "relation": "ASSET"
+    },
+    "startbasemeasure": {
+      "searchType": "EXACT",
+      "scale": 2,
+      "subType": "DECIMAL",
+      "title": "Start Base Measure",
+      "persistent": true,
+      "type": "number",
+      "remarks": "An absolute measure that is calculated by converting from the end measure using a defined conversion method.  Conversion methods are defined in the Assets application using the Add/Modify Conversions action.",
+      "maxLength": 11
+    },
+    "endzoffsetref": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "End Z Offset Referent",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Point from which the Z-Offset is measured.  ",
+      "maxLength": 30
+    },
+    "remarks": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Remarks",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Additional information supplied by the user regarding the record.",
+      "maxLength": 50
+    },
+    "startzoffsetref_description": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "active",
+    "assetnum",
+    "changeby",
+    "changedate",
+    "dorollover",
+    "lifetodate",
+    "linearassetmeterid",
+    "metername",
+    "orgid",
+    "sinceinstall",
+    "sincelastinspect",
+    "sincelastoverhaul",
+    "sincelastrepair",
+    "siteid"
+  ]
+}

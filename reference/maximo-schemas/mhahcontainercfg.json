@@ -1,0 +1,109 @@
+{
+  "resource": "MHAHCONTAINERCFG",
+  "description": "AHCONTAINERCFG",
+  "pk": [
+    "siteid",
+    "location"
+  ],
+  "title": "AHCONTAINERCFG",
+  "type": "object",
+  "$ref": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mhahcontainercfg",
+  "uniqueid": "ahcontainercfgid",
+  "properties": {
+    "_rowstamp": {
+      "type": "string"
+    },
+    "systemid": {
+      "searchType": "EXACT",
+      "subType": "UPPER",
+      "title": "System name",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Identifies the container's system.",
+      "maxLength": 12
+    },
+    "localref": {
+      "type": "string"
+    },
+    "mapwidthlower": {
+      "searchType": "EXACT",
+      "maximum": 2147483647.0,
+      "subType": "INTEGER",
+      "title": "Map lower width",
+      "persistent": true,
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "remarks": "Lower width to show the container on map",
+      "maxLength": 11
+    },
+    "_imagelibref": {
+      "type": "string"
+    },
+    "siteid": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Site",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Identifies the container's site",
+      "maxLength": 8
+    },
+    "location": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Location",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Identifies the container's location.",
+      "maxLength": 25
+    },
+    "mapwidthupper": {
+      "searchType": "EXACT",
+      "maximum": 2147483647.0,
+      "subType": "INTEGER",
+      "title": "Map upper width",
+      "persistent": true,
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "remarks": "Upper width to show the container on map",
+      "maxLength": 11
+    },
+    "href": {
+      "type": "string"
+    },
+    "_id": {
+      "type": "string"
+    },
+    "orgid": {
+      "searchType": "EXACT",
+      "subType": "UPPER",
+      "title": "Organization",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Identifies the container's organization",
+      "maxLength": 8
+    },
+    "ahcontainercfgid": {
+      "searchType": "EXACT",
+      "maximum": 2147483647.0,
+      "subType": "BIGINT",
+      "title": "Unique Id",
+      "persistent": true,
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "uniqueid": true,
+      "remarks": "Unique Id",
+      "maxLength": 11
+    }
+  },
+  "required": [
+    "location",
+    "mapwidthlower",
+    "mapwidthupper",
+    "orgid",
+    "siteid",
+    "systemid"
+  ]
+}

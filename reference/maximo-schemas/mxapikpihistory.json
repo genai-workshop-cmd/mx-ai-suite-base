@@ -1,0 +1,69 @@
+{
+  "resource": "MXAPIKPIHISTORY",
+  "description": "KPIHISTORY",
+  "pk": [
+    "kpihistoryid"
+  ],
+  "title": "KPIHISTORY",
+  "type": "object",
+  "$ref": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapikpihistory",
+  "uniqueid": "kpihistoryid",
+  "properties": {
+    "_rowstamp": {
+      "type": "string"
+    },
+    "localref": {
+      "type": "string"
+    },
+    "_imagelibref": {
+      "type": "string"
+    },
+    "recordedon": {
+      "searchType": "EXACT",
+      "subType": "DATETIME",
+      "title": "Recorded On",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Enter a date for when the KPI was recorded."
+    },
+    "href": {
+      "type": "string"
+    },
+    "_id": {
+      "type": "string"
+    },
+    "kpimainid": {
+      "searchType": "EXACT",
+      "maximum": 2147483647.0,
+      "subType": "BIGINT",
+      "title": "KPI Id",
+      "persistent": true,
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "remarks": "KPI Unique Id",
+      "maxLength": 11
+    },
+    "kpivalue": {
+      "searchType": "EXACT",
+      "scale": 2,
+      "subType": "DECIMAL",
+      "title": "KPI Value",
+      "persistent": true,
+      "type": "number",
+      "remarks": "Enter a value for the KPI.",
+      "maxLength": 11
+    },
+    "kpihistoryid": {
+      "searchType": "EXACT",
+      "maximum": 2147483647.0,
+      "subType": "BIGINT",
+      "title": "Unique Id",
+      "persistent": true,
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "uniqueid": true,
+      "remarks": "Unique Id",
+      "maxLength": 11
+    }
+  }
+}

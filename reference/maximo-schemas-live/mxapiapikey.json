@@ -1,0 +1,131 @@
+{
+ "resource": "MXAPIAPIKEY",
+ "description": "Maximo API for API Keys",
+ "pk": [
+  "apikey"
+ ],
+ "title": "APIKEYTOKEN",
+ "type": "object",
+ "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/mxapiapikey",
+ "uniqueid": "apikeytokenid",
+ "properties": {
+  "creationdate": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Created",
+   "persistent": true,
+   "type": "string",
+   "remarks": "last access date time"
+  },
+  "internal": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "INTERNAL",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Specifies internally versus client created certifcations"
+  },
+  "localref": {
+   "type": "string"
+  },
+  "apikey": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "API key",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Api Key Token",
+   "maxLength": 200
+  },
+  "record_descriptor": {
+   "type": "string",
+   "title": "Record/Object Descriptor"
+  },
+  "expiredate": {
+   "searchType": "NONE",
+   "subType": "DATETIME",
+   "title": "Expiry Date",
+   "type": "string",
+   "remarks": "Date on which the API Key is going to be Expired."
+  },
+  "userid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "User",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Select the type of user that the API key includes permissions for. For example, select an administrative user to create an API key that includes administrative privileges.",
+   "maxLength": 100
+  },
+  "minutesorexpdate": {
+   "default": false,
+   "searchType": "NONE",
+   "subType": "YORN",
+   "title": "Minutes or Expiry Date",
+   "type": "boolean",
+   "remarks": "API Key to be created by entering number of minutes to Expiry or entering the Expiration Date itself."
+  },
+  "_rowstamp": {
+   "type": "string"
+  },
+  "clientcert": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Is Client Cert",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Is Client Cert"
+  },
+  "apikeytokenid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Unique ID",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "uniqueid": true,
+   "remarks": "Unique ID",
+   "maxLength": 11
+  },
+  "_imagelibref": {
+   "type": "string"
+  },
+  "expiration": {
+   "default": 60,
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "INTEGER",
+   "title": "Token Expiry in Minutes",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "Token Expiry in Minutes",
+   "maxLength": 11
+  },
+  "href": {
+   "type": "string",
+   "title": "APIKEYTOKEN object reference"
+  },
+  "_id": {
+   "type": "string"
+  },
+  "usermapper": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "User Mapper",
+   "persistent": true,
+   "type": "string",
+   "remarks": "User Mapper",
+   "maxLength": 200
+  }
+ },
+ "required": [
+  "apikey",
+  "creationdate",
+  "minutesorexpdate"
+ ]
+}

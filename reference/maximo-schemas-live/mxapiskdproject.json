@@ -1,0 +1,1320 @@
+{
+ "resource": "MXAPISKDPROJECT",
+ "description": "Maximo API Object Structure for Scheduler",
+ "pk": [
+  "name",
+  "scenarioname"
+ ],
+ "title": "SKDPROJECT",
+ "type": "object",
+ "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/mxapiskdproject",
+ "uniqueid": "skdprojectid",
+ "properties": {
+  "scenarioallowed": {
+   "default": true,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Scenario Allowed",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Indicates that a scenario can be created for this schedule."
+  },
+  "historyflag": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "History",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Indicates that the record is a history record."
+  },
+  "localref": {
+   "type": "string"
+  },
+  "mntlocationsiteid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Repair Facility Site",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Specifies the site where this repair location resides.",
+   "maxLength": 8
+  },
+  "alternateavail": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Use Alternate Availability",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Indicates whether alternate availability should be used in the resource section of the Gantt view."
+  },
+  "prevactstarttime": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Start Date",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Identifies the start date of the earliest activity in the schedule before optimization."
+  },
+  "sdayoffset": {
+   "default": 14,
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "INTEGER",
+   "title": "Project Start Offset Days",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "Indicates the number of days that show in the graphical view before the start date of the project.",
+   "maxLength": 11
+  },
+  "createdate": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Created Date",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The date and time when the schedule or work list was created."
+  },
+  "viewtype": {
+   "default": true,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "View Type",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Daily view or weekly view, true daily view,false weekly view. Only used in Graphical crew assignment."
+  },
+  "allowpastload": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Show Workload in Past",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Determines whether the resource view shows past work loads. If not selected, all past work loads show on the first date of the schedule, or today's date."
+  },
+  "startdate": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Start Date",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The date on which the schedule should start. In the Scheduler application, CPM will not schedule any work earlier than the specified date. This date will also assign Schedule Dates to work records coming in with neither Schedule nor Target Dates of their own. In the Graphical Assignment application, the date when the route creation starts."
+  },
+  "type": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Scenario Type",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Identifies name of the ODM application.",
+   "maxLength": 30
+  },
+  "flexlocation": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Flexible Start/End Location",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Flexible Start/End Location."
+  },
+  "skdprojectscenario": {
+   "objectName": "SKDPROJECTSCENARIO",
+   "type": "array",
+   "items": {
+    "definition": {
+     "subSchema": {
+      "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/mxapiskdproject/skdprojectscenario"
+     }
+    },
+    "type": "object"
+   },
+   "cardinality": "",
+   "relation": "PROJECTSCENARIO"
+  },
+  "refreshdispatchintvl": {
+   "default": 30,
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "INTEGER",
+   "title": "Refresh Interval (in seconds)",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "The time interval used to automatically refresh the Dispatch View, in seconds.",
+   "maxLength": 11
+  },
+  "sdmstartlocsiteid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Start Location Site Id",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Start Location SiteId",
+   "maxLength": 8
+  },
+  "href": {
+   "type": "string",
+   "title": "SKDPROJECT object reference"
+  },
+  "startlocation": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Start location of SLR",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Specify the location where the labor, or the crew, or both starts the route. The start location must have a service address associated with it to gather the latitudinal and longitudinal coordinates for mapping  and for calculation of travel time.",
+   "maxLength": 25
+  },
+  "commitinprg": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "INTEGER",
+   "title": "Asynchronous commit job in progress",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "Asynchronous commit job is in progress",
+   "maxLength": 11
+  },
+  "odmapp765": {
+   "default": true,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Run 765 ODM Model",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Indicates whether to run 765 odm model or not."
+  },
+  "pctaskcomp": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "INTEGER",
+   "title": "Task % complete",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "Percent complete by tasks completed",
+   "maxLength": 11
+  },
+  "record_descriptor": {
+   "type": "string",
+   "title": "Record/Object Descriptor"
+  },
+  "daterestrict": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Restrict Work to Dates",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Indicates whether the work records that are included in the schedule must fall within the Start and End Date range specified. Clear the check box to show work records that fall outside of the date range, or work records that have no date specified."
+  },
+  "shareproject": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Can copy project in Assignment",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Project can be copied in assignment"
+  },
+  "enddate": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "End date of SLR",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Specify the date that the route creation finishes."
+  },
+  "labtrans": {
+   "objectName": "LABTRANS",
+   "type": "array",
+   "items": {
+    "definition": {
+     "subSchema": {
+      "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/mxapiskdproject/labtrans"
+     }
+    },
+    "type": "object"
+   },
+   "cardinality": "",
+   "relation": "SKDLABTRANSSUMMARY"
+  },
+  "pcacthrs": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "INTEGER",
+   "title": "Actual % Percent",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "Percent complete by actual hours",
+   "maxLength": 11
+  },
+  "pctaskcomplm": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Tasks Last Calculated",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Last call to calculate Task % complete"
+  },
+  "valschedule": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Validation Schedule",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The frequency with which validation is run on the schedule.",
+   "maxLength": 50
+  },
+  "snapshot": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Snapshot",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Indicates that the record is an image of the schedule at a point in time. No edits can be made to a snapshot."
+  },
+  "recalcganttrefresh": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Discard and Refresh",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Recalculate Summary Start / End times right after Discard and Refresh"
+  },
+  "status": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Status",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Current status of the schedule.",
+   "maxLength": 20
+  },
+  "systemid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Location System",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Identifies project location system.",
+   "maxLength": 12
+  },
+  "pcphys": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "INTEGER",
+   "title": "Physical % Complete",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "Physical percent complete",
+   "maxLength": 11
+  },
+  "committime": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Last Committed Time",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The date and time when the schedule was last used to update the work records."
+  },
+  "endlocation": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "End location",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Specify the location where the labor, or the crew, or both, ends the route. The end location must have a service address associated with it to gather the latitudinal and longitudinal coordinates for mapping  and for calculation of travel time.",
+   "maxLength": 25
+  },
+  "valrefreshbefore": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Refresh Before Validation",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Indicates whether the schedule is refreshed before validation is executed."
+  },
+  "projecttype_description": {
+   "type": "string"
+  },
+  "autorefreshgview": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Refresh When Opening Gantt View",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Indicates if the schedule or work list will be refreshed every time the Gantt view is opened. If this check box is selected, the queries used to gather the schedule data will be run every time the Gantt view is opened, and new or updated work record data will appear. If this check box is cleared, data will only be refreshed upon clicking the Refresh Schedule button in the Gantt view."
+  },
+  "projecalcmethod_description": {
+   "type": "string"
+  },
+  "savetime": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Last Saved Time",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The date and time when the schedule or work list was last saved."
+  },
+  "rolling": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Rolling Schedule",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Indicates whether the schedule has a rolling start date. Rolling schedules continue indefinitely, updating schedule start and end dates based on the values defined in the Roll Date Schedule field. For example, you might create a rolling schedule for ongoing maintenance in a facility."
+  },
+  "isautocompliance": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Cron Active",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Indicates if the schedule compliance is calculated automatically. Select the check box to make the cron task active."
+  },
+  "inccanwo": {
+   "default": true,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Include Cancelled Work Records",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Indicates if closed work records are included in the compliance calculation."
+  },
+  "directives_longdescription": {
+   "searchType": "WILDCARD",
+   "subType": "LONGALN",
+   "title": "DIRECTIVES Long description",
+   "type": "string",
+   "remarks": "Long Description for DIRECTIVES",
+   "maxLength": 32000
+  },
+  "includwonodates": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Include Work Orders Without Dates",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Allow users to include work without any dates - they would be placed on the first day of the schedule or current Date if project start is in past"
+  },
+  "initialized": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Initialized?",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Has the data been initialized?"
+  },
+  "assetsiteid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Asset Site",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Identifies the site the assets belong to.",
+   "maxLength": 8
+  },
+  "pcphyslm": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Physical Last Calculated",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Last call to calculate Physical % complete"
+  },
+  "dfltscenario": {
+   "default": true,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Default Scenario",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Indicates that the record is a default scenario."
+  },
+  "doclinks": {
+   "objectName": "DOCLINKS",
+   "type": "array",
+   "items": {
+    "definition": {
+     "subSchema": {
+      "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/mxapiskdproject/doclinks"
+     }
+    },
+    "type": "object"
+   },
+   "cardinality": "",
+   "relation": "DOCLINKS"
+  },
+  "travelthreshold": {
+   "default": 30.0,
+   "searchType": "EXACT",
+   "scale": 0,
+   "subType": "DURATION",
+   "title": "Travel Threshold",
+   "persistent": true,
+   "type": "number",
+   "remarks": "Indicates the maximum reasonable length of tavel time, in hours, for work or lead/lag time.",
+   "maxLength": 8
+  },
+  "pcacthrslm": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Actuals Last Calculated",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Specifies the last calculated value."
+  },
+  "saveby": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Last Saved By",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Last Saved By",
+   "maxLength": 100
+  },
+  "startweekday": {
+   "default": "02",
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Start Week Day",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Identifies the day of the week that should be the starting day for calculations.",
+   "maxLength": 10
+  },
+  "description_longdescription": {
+   "searchType": "WILDCARD",
+   "subType": "LONGALN",
+   "title": "Project Description Long description",
+   "type": "string",
+   "remarks": "Long Description for Project Description",
+   "maxLength": 32000
+  },
+  "projecalcmethod": {
+   "default": "!NONE!",
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Percent Complete Calculation Method",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Percent Complete Calculation Method",
+   "maxLength": 50
+  },
+  "directives": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "DIRECTIVES",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Text Atrribute for NLP optimization",
+   "maxLength": 254
+  },
+  "toplevelonly": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Top Level Work Records Only",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Indicates whether the schedule should include only top level work records. Select this check box to exclude child work records and tasks from the schedule."
+  },
+  "startassigndate": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Start date of crew assignments",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Date when crew assigments start."
+  },
+  "changeby": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Changed By",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The name of the person who modified the schedule.",
+   "maxLength": 100
+  },
+  "showlabor": {
+   "default": true,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Show Labor in Resource Chart",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Indicates whether labor is  shown in the resource chart."
+  },
+  "skdcost": {
+   "objectName": "SKDCOST",
+   "type": "array",
+   "items": {
+    "definition": {
+     "subSchema": {
+      "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/mxapiskdproject/skdcost"
+     }
+    },
+    "type": "object"
+   },
+   "cardinality": "",
+   "relation": "SKDCOSTSUMMARY"
+  },
+  "sdmendlocsiteid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "End Location Site Id",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Start Location SiteId",
+   "maxLength": 8
+  },
+  "skdactivity": {
+   "objectName": "SKDACTIVITY",
+   "type": "array",
+   "items": {
+    "definition": {
+     "subSchema": {
+      "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/mxapiskdproject/skdactivity"
+     }
+    },
+    "type": "object"
+   },
+   "cardinality": "",
+   "relation": "SKDACTIVITYUNSCHEDULED"
+  },
+  "statusdate": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Status Date",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Date and time that the status of the schedule was last changed. The default is the system date and time at the time of the status change."
+  },
+  "calstartdate": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Calendar Start Date",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The date from which working time is displayed in the Gantt view. The default value is the start date of your schedule, or today's date if your schedule does not specify a start date."
+  },
+  "isautoschedule": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Frequency Autoupdate",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Indicates if the schedule frequency is calculated automatically. Select the check box to update schedule frequency automatically."
+  },
+  "incclosewo": {
+   "default": true,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Include Closed Work Records",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Indicates if cancelled work records are included in the compliance calculation."
+  },
+  "baselinememo": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Memo",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Memo for snapshot.",
+   "maxLength": 50
+  },
+  "skdlaborhrs": {
+   "objectName": "SKDLABORHRS",
+   "type": "array",
+   "items": {
+    "definition": {
+     "subSchema": {
+      "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/mxapiskdproject/skdlaborhrs"
+     }
+    },
+    "type": "object"
+   },
+   "cardinality": "",
+   "relation": "SKDLABORHRSSUMMARY"
+  },
+  "frequnit_description": {
+   "type": "string"
+  },
+  "skdcompliance": {
+   "objectName": "SKDCOMPLIANCE",
+   "type": "array",
+   "items": {
+    "definition": {
+     "subSchema": {
+      "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/mxapiskdproject/skdcompliance"
+     }
+    },
+    "type": "object"
+   },
+   "cardinality": "",
+   "relation": "SKDCOMPLIANCELATEST"
+  },
+  "edayoffset": {
+   "default": 14,
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "INTEGER",
+   "title": "Project End Offset Days",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "Indicates the number of days that show in the graphical view after the end date of the project.",
+   "maxLength": 11
+  },
+  "cpslock": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "CPS Lock",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Flag to indicate if a CPS optimization request is under execution."
+  },
+  "calnum": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Calendar",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Calendar that will be used in the Gantt view. This is used to determine work days versus non-work days.",
+   "maxLength": 8
+  },
+  "preservestartdate": {
+   "default": true,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Preserve Schedule Start Dates",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Indicates if the start date of tasks included in the schedule will be preserved. If selected, CPM will not change the start date of tasks that do not have any predecessor constraints defined. If there are constraints defined, CPM will adjust the start date depending on the constraints."
+  },
+  "jobnum": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Job Number",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Job number of asynchronous job",
+   "maxLength": 8
+  },
+  "skdodmerun": {
+   "objectName": "SKDODMERUN",
+   "type": "array",
+   "items": {
+    "definition": {
+     "subSchema": {
+      "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/mxapiskdproject/skdodmerun"
+     }
+    },
+    "type": "object"
+   },
+   "cardinality": "",
+   "relation": "SKDODMERUNLATEST"
+  },
+  "shiftmargin": {
+   "default": 2,
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "INTEGER",
+   "title": "Shift Margin",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "The number of hours before and after the assigned shift that assignments can be scheduled as part of the route. Specify an integer between 0 and 4. For example, a shift runs from 7:00 a.m. to 3:00 p.m.  If you enter a shift margin of 2, work that is assigned from 5:00 a.m. to 5:00 p.m. will be included in the route.",
+   "maxLength": 11
+  },
+  "frequency": {
+   "default": 0,
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "INTEGER",
+   "title": "Duration",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "The length of the schedule compliance period, combined with the Duration Units field.",
+   "maxLength": 11
+  },
+  "_rowstamp": {
+   "type": "string"
+  },
+  "sdmendlocation": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "End location",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Specify the location where the labor, or the crew, or both, ends the route. The end location must have a service address associated with it to gather the latitudinal and longitudinal coordinates for mapping  and for calculation of travel time.",
+   "maxLength": 25
+  },
+  "sddashboard": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Scheduling Dashboard Ready",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Indicates that this scenario can be used in the Scheduling dashboard."
+  },
+  "cpsoptztime": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "CPS Optimization Time Completed",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The time when the CPS optimization request was completed."
+  },
+  "ispublic": {
+   "default": true,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Public",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Make a schedule or work list public if you want other users to be able to see it. Any records that the user does not have access to will not appear on the Gantt View tab, and dependencies between work records might be broken if changes are made to the schedule dates."
+  },
+  "numwo": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "INTEGER",
+   "title": "Number of Work records",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "Identifies the number of work records in the schedule. This includes both work orders and tasks if you have included tasks in the schedule.",
+   "maxLength": 11
+  },
+  "status_description": {
+   "type": "string"
+  },
+  "changedate": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Changed Date",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The date and time when the schedule was modified."
+  },
+  "ignorerefreshdates": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Ignore Changes and Refresh Schedule Dates",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Ignore changes and refresh schedule dates."
+  },
+  "resourcedisplay_description": {
+   "type": "string"
+  },
+  "preservedates": {
+   "default": true,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Preserve Dates",
+   "persistent": true,
+   "type": "boolean",
+   "hasList": true,
+   "remarks": "If checked Start Date and End Date will only be modified by the user. If unchecked, Start Date will be modified to the current date and End Date will become previous End Date the difference of the current date and the previous Start Date. Times will not be modified."
+  },
+  "orgid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Organization",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Organization Identifier.",
+   "maxLength": 8
+  },
+  "preserveskddata": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Preserve Existing Records On Refresh",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Indicates if existing records will always be visible in the Gantt view, even after changes to those records occur. For example, records that are closed or cancelled after initially being included in the Gantt view will not be deleted, even after the view is refreshed."
+  },
+  "skdcompactive": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Schedule Compliance Active",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Indicates whether the schedule compliance period is still in effect. This field is read-only."
+  },
+  "startdateacm": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Start Date",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The date on which the schedule starts."
+  },
+  "resourcedisplay": {
+   "default": "!1!",
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Resource Load and Availability Display Mode",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Specifies whether resource load and availability is displayed by shift, or in daily, weekly, or monthly segments.",
+   "maxLength": 20
+  },
+  "endlocsiteid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "End location site id",
+   "persistent": true,
+   "type": "string",
+   "remarks": "End Location SiteId",
+   "maxLength": 8
+  },
+  "name": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Key Name",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Identifies the schedule or work list. This value must be unique, and consists of a group of work records and their required resources. The record can be viewed and edited in the Gantt View tab.",
+   "maxLength": 20
+  },
+  "recalcprojrefresh": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Refresh Schedule",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Recalculate Summary Start / End times right after Refresh"
+  },
+  "_id": {
+   "type": "string"
+  },
+  "enddateacm": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "End Date",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The date on which the schedule ends."
+  },
+  "lastpublishdate": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Last Publish Date",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Date when the schedule was last published."
+  },
+  "prevactendtime": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "End Date",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Identifies the end date of the latest activity in the schedule before optimization."
+  },
+  "pccron": {
+   "default": true,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Enable Percent Complete Cron Task",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Enable Percent Complete Cron Tasks"
+  },
+  "actendtime": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "End Date",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Identifies the end date of the latest activity in the schedule."
+  },
+  "enablerelated": {
+   "default": true,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Enable Related Attributes",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Indicates if attributes from related tables should be included in the graphical view. Enabling this feature will impact performance."
+  },
+  "description": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Schedule Description",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Describes the schedule or work list.",
+   "maxLength": 255
+  },
+  "valfreqactive": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Validation Frequency Active",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Indicates whether the schedule validation is active."
+  },
+  "durationthreshold": {
+   "default": 30.0,
+   "searchType": "EXACT",
+   "scale": 0,
+   "subType": "DURATION",
+   "title": "Duration Threshold",
+   "persistent": true,
+   "type": "number",
+   "remarks": "Indicates the maximum reasonable length of time, in hours, for work or lead/lag time.",
+   "maxLength": 8
+  },
+  "showmaintoper": {
+   "default": true,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Show Maintenance and Operational Schedules",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Indicates whether maintenance and operational schedules are shown in the Gantt view. Clear the check box to display calendar work and non-work time in the Gantt view."
+  },
+  "duration": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "INTEGER",
+   "title": "Duration in Days",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "The number of days included in the schedule. For a rolling project, the schedule end date is calculated by adding this value to the schedule start date. For a non-rolling schedule, the Duration in Days is calculated automatically by the start and end date values that you defined.",
+   "maxLength": 11
+  },
+  "createby": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Created By",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The name of the person who created the schedule or work list.",
+   "maxLength": 100
+  },
+  "cpsoptzby": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "CPS Optimization Requested By",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The user that has made a optimization request to CPS.",
+   "maxLength": 100
+  },
+  "skdcompend": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Schedule Compliance End",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The end date of the current or next schedule compliance period."
+  },
+  "_imagelibref": {
+   "type": "string"
+  },
+  "skdprojectid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Unique Id",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "uniqueid": true,
+   "remarks": "Unique Id",
+   "maxLength": 11
+  },
+  "commitby": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Last Committed By",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Last Committed By",
+   "maxLength": 100
+  },
+  "skdpmfocostcaldate": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "PM Cost Last Calculated Date",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The date when the PM forecast cost was last calculated."
+  },
+  "recalcoptz": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Optimization Completes",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Recalculate Summary Start / End times right after Optimization"
+  },
+  "projecttype": {
+   "default": "!WORKSCHD!",
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Type",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Identifies the schedule type.",
+   "maxLength": 50
+  },
+  "baselinename": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Snapshot",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Name of the snapshot.",
+   "maxLength": 20
+  },
+  "validationinprg": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "INTEGER",
+   "title": "Asynchronous validation job in progress",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "Asynchronous validation job is in progress",
+   "maxLength": 11
+  },
+  "publishby": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Published By",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "User who last published the schedule.",
+   "maxLength": 100
+  },
+  "compstartroll": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Roll Before Start",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "For a rolling project, indicates whether the schedule should be rolled and refreshed before compliance is run. Select the check box to roll and refresh the schedule and to disable the rolling cron task if it is active."
+  },
+  "rolloffset": {
+   "default": 0,
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "INTEGER",
+   "title": "Rolling Offset in Days",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "The number of days added to or subtracted from the schedule start date when schedule dates are rolled. For example, if the schedule rolls every Monday and the Rolling Offset in Days field is set to 7, the schedule updates every Monday, but the schedule dates always begin on the following Monday (Monday plus 7 days).",
+   "maxLength": 11
+  },
+  "mntlocation": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Repair Facility",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Identifies the location where repairs are performed.",
+   "maxLength": 25
+  },
+  "sdmstartlocation": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Start location",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Specify the location where the labor, or the crew, or both starts the route. The start location must have a service address associated with it to gather the latitudinal and longitudinal coordinates for mapping  and for calculation of travel time.",
+   "maxLength": 25
+  },
+  "rolldateschedule": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Roll Date Schedule",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Specifies how the start and end date are updated in this rolling schedule.",
+   "maxLength": 50
+  },
+  "showamcrew": {
+   "default": true,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Show Crews in Resource Chart",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Indicates whether crews are shown in the resource chart."
+  },
+  "scenarioname": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Scenario",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Name of the scenario that was used to get this result. If no scenario exists, the schedule name is used.",
+   "maxLength": 20
+  },
+  "usewith": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Use for",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Use for project scheduler or assignment",
+   "maxLength": 15
+  },
+  "actstarttime": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Start Date",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Identifies the start date of the earliest activity in the schedule."
+  },
+  "schedule": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Schedule",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Defines the frequency of the schedule date refresh. For example, the schedule refreshes every Monday.",
+   "maxLength": 50
+  },
+  "recalcganttopen": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Opening Graphical View",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Recalculate Summary Start / End times right after opening the Graphical View"
+  },
+  "startlocsiteid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Start location site id",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Start Location SiteId",
+   "maxLength": 8
+  },
+  "calenddate": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Calendar End Date",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The last date for which working time is displayed in the Gantt view. The default value is six months from the Start Date."
+  },
+  "fetchnewwo": {
+   "default": true,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Fetch New Work Orders",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Fetch new work orders."
+  },
+  "skdcompstart": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Schedule Compliance Start",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The start date of the current or next  schedule compliance period."
+  },
+  "frequnit": {
+   "default": "!WEEKS!",
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Duration Units",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Units for the schedule compliance duration. Choose days, weeks, months, or years.",
+   "maxLength": 8
+  },
+  "skdcomplaststart": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Last Schedule Compliance Start",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The date that the last schedule compliance started, if it ran by cron task. This field is read-only."
+  },
+  "compfinishrefresh": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Refresh Before Finish",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Refresh  prior to compliance finish action (to get latest actuals, statuses, etc.)"
+  }
+ },
+ "required": [
+  "changedate",
+  "createdate",
+  "enddateacm",
+  "name",
+  "startdateacm",
+  "status",
+  "statusdate",
+  "usewith"
+ ]
+}

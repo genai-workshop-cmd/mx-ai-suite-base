@@ -1,0 +1,121 @@
+{
+  "resource": "MXAPIINSPFDOCLINKS",
+  "description": "Object Structure for Inspection Form attachments on mobile app",
+  "pk": [
+    "inspformnum",
+    "inspquestionnum",
+    "revision",
+    "orgid"
+  ],
+  "title": "INSPFORMDOCLINKS",
+  "type": "object",
+  "$ref": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapiinspfdoclinks",
+  "uniqueid": "inspquestionid",
+  "properties": {
+    "inspquestionid": {
+      "searchType": "EXACT",
+      "maximum": 2147483647.0,
+      "subType": "BIGINT",
+      "title": "Record Identification",
+      "persistent": true,
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "uniqueid": true,
+      "remarks": "Record Identification",
+      "maxLength": 11
+    },
+    "localref": {
+      "type": "string"
+    },
+    "inspquestionnum": {
+      "default": "&AUTOKEY&",
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Inspection Form Question",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Composed Identifier For Inspection Form Question",
+      "maxLength": 12
+    },
+    "orgid": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Organization",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Organization",
+      "maxLength": 8
+    },
+    "revision": {
+      "searchType": "EXACT",
+      "maximum": 2147483647.0,
+      "subType": "INTEGER",
+      "title": "Current Form Revision",
+      "persistent": true,
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "remarks": "Current Form Revision",
+      "maxLength": 11
+    },
+    "_rowstamp": {
+      "type": "string"
+    },
+    "inspectionformid": {
+      "searchType": "EXACT",
+      "maximum": 2147483647.0,
+      "subType": "BIGINT",
+      "title": "INSPECTIONFORMID",
+      "persistent": true,
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "remarks": "Unique Identifier",
+      "maxLength": 11
+    },
+    "_imagelibref": {
+      "type": "string"
+    },
+    "siteid": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Site",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Site",
+      "maxLength": 8
+    },
+    "href": {
+      "type": "string"
+    },
+    "_id": {
+      "type": "string"
+    },
+    "inspformnum": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Inspection Form",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Foreign key from Inspection Form",
+      "maxLength": 12
+    },
+    "doclinks": {
+      "objectName": "DOCLINKS",
+      "type": "array",
+      "items": {
+        "definition": {
+          "subSchema": {
+            "$ref": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapiinspfdoclinks/doclinks"
+          }
+        },
+        "type": "object"
+      },
+      "cardinality": "",
+      "relation": "DOCLINKS"
+    }
+  },
+  "required": [
+    "inspectionformid",
+    "inspformnum",
+    "revision"
+  ]
+}

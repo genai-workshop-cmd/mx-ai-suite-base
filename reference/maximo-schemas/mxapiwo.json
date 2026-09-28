@@ -1,0 +1,2252 @@
+{
+  "resource": "MXAPIWO",
+  "description": "WORKORDER",
+  "pk": [
+    "siteid",
+    "wonum"
+  ],
+  "title": "WORKORDER",
+  "type": "object",
+  "$ref": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapiwo",
+  "uniqueid": "workorderid",
+  "properties": {
+    "parent": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Parent WO",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Parent of the work order shown in the Work Order field. When this field is blank, the work order in the Work Order field is a top-level work order. To assign a work order to a parent, select Assign to New Parent from the Select Action menu.",
+      "maxLength": 25
+    },
+    "excpttype": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Exception Type",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Exception Type.",
+      "maxLength": 15
+    },
+    "localref": {
+      "type": "string"
+    },
+    "aos": {
+      "default": false,
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "Requires Asset Downtime",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "Indicates that the work cannot be performed while the asset is operating."
+    },
+    "estservcost": {
+      "searchType": "EXACT",
+      "scale": 2,
+      "subType": "AMOUNT",
+      "title": "Estimated Service Cost",
+      "persistent": true,
+      "type": "number",
+      "remarks": "Total estimated service cost against this work order.",
+      "maxLength": 11
+    },
+    "pluscismobile": {
+      "default": false,
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "Is Mobile",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "Workorder was added by mobile"
+    },
+    "wolablnk": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Labor",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Labor Code Link",
+      "maxLength": 100
+    },
+    "pluscfrequency": {
+      "searchType": "EXACT",
+      "maximum": 2147483647.0,
+      "subType": "INTEGER",
+      "title": "Frequency Field",
+      "persistent": true,
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "remarks": "Number of time units (days, weeks, months, or years) to elapse between work orders you generate from this PM. The count begins at the value in the Last Target Start Date (if Use Target Start? is selected or Last Completion Date (if Use Target Start? is not the selected field. This value may differ differ from the Regulatory Frequency to facilitate scheduling. For example, a regulatory frequency of 31 days may have a frequency of 28 days.",
+      "maxLength": 11
+    },
+    "ownergroup": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Owner Group",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "The group currently responsible for the work order.",
+      "maxLength": 8
+    },
+    "assetlocpriority": {
+      "searchType": "EXACT",
+      "maximum": 2147483647.0,
+      "subType": "INTEGER",
+      "title": "Asset/Location Priority",
+      "persistent": true,
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "remarks": "Identifies the priority level copied from the asset or location record and used to schedule the work order. Values from 0-999 are valid, but we recommend limiting your range of values to 0-9, where 0 designates the lowest priority. We also recommend assigning priority values only to locations. Entering a value will update the CalcPriority field according to the calculation option in the PriCalc table. MAXIMO uses this value to update the Respond By date.",
+      "maxLength": 11
+    },
+    "calcshift": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Shift",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Along with the calculation calendar, sets the business hours that calculate the Target Contact, Target Response, and Target Resolution dates on a ticket or work order. Click the Select Value button to choose a shift.",
+      "maxLength": 8
+    },
+    "workpackmtlstatus": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Work Package Material Status",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "The availability status of all materials on the current work order and related child records. The status is determined by the planned materials on a work order. The completion of the child records does not always determine the overall status of the materials in the work package.",
+      "maxLength": 20
+    },
+    "wol4": {
+      "searchType": "EXACT",
+      "subType": "DATETIME",
+      "title": "Wol4",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Extra Field"
+    },
+    "istask": {
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "Is Task",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "Specifies whether the work order is a task. If the check box is selected, the work order is a task. If the check box is cleared, the work order is not a task."
+    },
+    "storeroommtlstatus_description": {
+      "type": "string"
+    },
+    "estatapprmatcost": {
+      "searchType": "EXACT",
+      "scale": 2,
+      "subType": "AMOUNT",
+      "title": "Estimated Material Cost at Approval",
+      "persistent": true,
+      "type": "number",
+      "remarks": "Cost estimate of the work order's material at the time the work order was approved.",
+      "maxLength": 11
+    },
+    "flowaction": {
+      "searchType": "EXACT",
+      "subType": "UPPER",
+      "title": "Flow Action",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "The action to be performed (if any) when the workorder is started via process flow control",
+      "maxLength": 30
+    },
+    "taskid": {
+      "searchType": "EXACT",
+      "maximum": 2147483647.0,
+      "subType": "INTEGER",
+      "title": "Task",
+      "persistent": true,
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "remarks": "Identifies the task.",
+      "maxLength": 11
+    },
+    "pcpchangeby": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Physical percent complete - Who last changed",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Physical percent complete - Who last changed",
+      "maxLength": 100
+    },
+    "wopriority": {
+      "searchType": "EXACT",
+      "maximum": 2147483647.0,
+      "subType": "INTEGER",
+      "title": "Priority",
+      "persistent": true,
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "remarks": "Identifies the importance of the work order, from 0-999, where 0 is the lowest priority and 999 is the highest.",
+      "maxLength": 11
+    },
+    "pluscloop": {
+      "default": false,
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "Loop Calibration",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "Select this check box to identify the work order as a loop calibration. May be selected when a value is entered in the Location field."
+    },
+    "wol3": {
+      "searchType": "EXACT",
+      "scale": 2,
+      "subType": "AMOUNT",
+      "title": "Wol3",
+      "persistent": true,
+      "type": "number",
+      "remarks": "Extra Field",
+      "maxLength": 11
+    },
+    "wol2": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Wol2",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Extra Field",
+      "maxLength": 10
+    },
+    "actmatcost": {
+      "searchType": "EXACT",
+      "scale": 2,
+      "subType": "AMOUNT",
+      "title": "Actual Material Cost",
+      "persistent": true,
+      "type": "number",
+      "remarks": "Actual Material Cost",
+      "maxLength": 11
+    },
+    "generatedforpo": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "PO",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Work order for PO",
+      "maxLength": 8
+    },
+    "wol1": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Wol1",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Extra Field",
+      "maxLength": 10
+    },
+    "fnlconstraint": {
+      "searchType": "EXACT",
+      "subType": "DATETIME",
+      "title": "Finish No Later Than",
+      "persistent": true,
+      "type": "string",
+      "remarks": "The date that work should be completed by.  Scheduled dates should be before this date."
+    },
+    "nestedjpinprocess": {
+      "default": false,
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "Nested Job Plan Processing",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "Record will be locked while the jobplan containing nested jobplans is in the process of being applied to the record."
+    },
+    "estatapprtoolcost": {
+      "searchType": "EXACT",
+      "scale": 2,
+      "subType": "AMOUNT",
+      "title": "Estimated Tool Cost at Approval",
+      "persistent": true,
+      "type": "number",
+      "remarks": "Cost estimate of the work order's tools at the time the work order was approved.",
+      "maxLength": 11
+    },
+    "hasfollowupwork": {
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "Has Follow-up Work",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "Specifies whether the work order has follow up work. If the check box is selected, there is follow up work. If the check box is cleared (the default), there is no follow up work."
+    },
+    "route": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Route",
+      "persistent": true,
+      "type": "string",
+      "remarks": "add route field",
+      "maxLength": 8
+    },
+    "pmnum": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "PM",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Identifies the preventive maintenance record from which the work order was generated.",
+      "maxLength": 8
+    },
+    "flowactionassist": {
+      "default": false,
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "Flow Action Assist",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "Suppresses the automatic firing of the action in flow control"
+    },
+    "ignorediavail": {
+      "default": false,
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "Ignore Direct Issue Availability For Work Order Status",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "Indicates whether to ignore the availability of direct issues for the work order status approval."
+    },
+    "pcacthrs": {
+      "searchType": "EXACT",
+      "maximum": 2147483647.0,
+      "subType": "INTEGER",
+      "title": "Percent complete by actual hours",
+      "persistent": true,
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "remarks": "Specifies the percent complete as calculated by actual hours vs. planned hours.",
+      "maxLength": 11
+    },
+    "fincntrlid": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "FCID",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Financial Control Identifier",
+      "maxLength": 8
+    },
+    "amcrew": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Crew",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Defines the Crew who will be copied to the work order created with this job plan.",
+      "maxLength": 8
+    },
+    "launchentryname": {
+      "searchType": "EXACT",
+      "subType": "UPPER",
+      "title": "Launch Entry Name",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Launch Entry",
+      "maxLength": 32
+    },
+    "pointnum": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Measurement Point",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "The point number on the asset from which the measurement is taken.",
+      "maxLength": 8
+    },
+    "pluscfrequnit_description": {
+      "type": "string"
+    },
+    "commodity": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Service",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Defines the service for the work order, for example: customer support, painting, print, telecommunications, and welding.",
+      "maxLength": 8
+    },
+    "pluscfrequnit": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Frequency Unit",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Defines the time units (days, weeks, months, or years) for the Frequency field on time-based PMs.",
+      "maxLength": 8
+    },
+    "estlabhrs": {
+      "searchType": "EXACT",
+      "scale": 0,
+      "subType": "DURATION",
+      "title": "Estimated Labor Hours",
+      "persistent": true,
+      "type": "number",
+      "remarks": "Estimated Labor Hours",
+      "maxLength": 8
+    },
+    "assignedownergroup": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Assigned Owner Group",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Assigned Owner Group of the workorder record. This group has overall responsibility for the solution. Use the Select Action menu to assign an owner group. You can enter a value either in this field or the Owner field.",
+      "maxLength": 8
+    },
+    "dirissuemtlstatus_description": {
+      "type": "string"
+    },
+    "pluscoverduedate": {
+      "searchType": "EXACT",
+      "subType": "DATETIME",
+      "title": "Calibration Overdue Date",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Displays the over due date for the calibration, if the work order is not completed."
+    },
+    "workpackmtlstatus_description": {
+      "type": "string"
+    },
+    "pmextdate": {
+      "searchType": "EXACT",
+      "subType": "DATE",
+      "title": "PM Extension Date",
+      "persistent": true,
+      "type": "string",
+      "remarks": "From the Extended Date of the PM"
+    },
+    "estoutlabcost": {
+      "searchType": "EXACT",
+      "scale": 2,
+      "subType": "AMOUNT",
+      "title": "Estimated Cost of External Labor",
+      "persistent": true,
+      "type": "number",
+      "remarks": "The estimated hours of external labor that are required for the task on the current work order.",
+      "maxLength": 11
+    },
+    "vendor": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Vendor",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Identifies the vendor responsible for the work.",
+      "maxLength": 12
+    },
+    "crewworkgroup": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Crew Work Group",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Resource pool that will perform the work order.",
+      "maxLength": 8
+    },
+    "disabled": {
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "Disabled",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "Is this record active?"
+    },
+    "estdur": {
+      "searchType": "EXACT",
+      "scale": 0,
+      "subType": "DURATION",
+      "title": "Duration",
+      "persistent": true,
+      "type": "number",
+      "remarks": "Estimated remaining number of hours needed to complete the work.",
+      "maxLength": 8
+    },
+    "calendar": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Calendar",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Calendar to determine shift work is to be done on",
+      "maxLength": 8
+    },
+    "anywhererefid": {
+      "searchType": "EXACT",
+      "maximum": 2147483647.0,
+      "subType": "BIGINT",
+      "title": "Anywhere Ref ID",
+      "persistent": true,
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "remarks": "Anywhere Reference ID",
+      "maxLength": 11
+    },
+    "estatapprintlabhrs": {
+      "searchType": "EXACT",
+      "scale": 0,
+      "subType": "DURATION",
+      "title": "Estimated Hours of Internal Labor",
+      "persistent": true,
+      "type": "number",
+      "remarks": "The hours of internal labor for the task on the current work order at the time it was approved.",
+      "maxLength": 8
+    },
+    "statusdate": {
+      "searchType": "EXACT",
+      "subType": "DATETIME",
+      "title": "Status Date",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Date the work order status was last changed."
+    },
+    "worklog": {
+      "objectName": "WORKLOG",
+      "type": "array",
+      "items": {
+        "definition": {
+          "subSchema": {
+            "$ref": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapiwo/worklog"
+          }
+        },
+        "type": "object"
+      },
+      "cardinality": "MULTIPLE",
+      "relation": "MODIFYWORKLOG"
+    },
+    "repairfacility": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Repair Facility",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Specifies the repair facility location. A repair facility can take ownership of work orders from multiple sites in the same organization. User security can be configured to give permission to view work orders in multiple sites if the work orders are owned by a single repair facility.",
+      "maxLength": 25
+    },
+    "acttoolcost": {
+      "searchType": "EXACT",
+      "scale": 2,
+      "subType": "AMOUNT",
+      "title": "Actual Tool Cost",
+      "persistent": true,
+      "type": "number",
+      "remarks": "Actual Tool Cost",
+      "maxLength": 11
+    },
+    "actlabcost": {
+      "searchType": "EXACT",
+      "scale": 2,
+      "subType": "AMOUNT",
+      "title": "Actual Labor Cost",
+      "persistent": true,
+      "type": "number",
+      "remarks": "Actual Labor Cost",
+      "maxLength": 11
+    },
+    "estatapprlabhrs": {
+      "searchType": "EXACT",
+      "scale": 0,
+      "subType": "DURATION",
+      "title": "Estimated Labor Hours at Approval",
+      "persistent": true,
+      "type": "number",
+      "remarks": "Estimate of the work order's labor hours at the time the work order was approved.",
+      "maxLength": 8
+    },
+    "respondby": {
+      "searchType": "EXACT",
+      "subType": "DATETIME",
+      "title": "Respond By",
+      "persistent": true,
+      "type": "string",
+      "remarks": "A Calculated field specifying when by a breakdown should be responded to."
+    },
+    "jpnum": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Job Plan",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Identifies the work order's job plan. When you assign a job plan to a work order, Maximo copies the job plan operations, material, labor, and tool information to the work order's work plan. Maximo also copies job plan data into these fields: Interruptible?, Crew, Supervisor, and WO Priority. If there is an existing association between the job plan and a safety plan when the job plan is used on the asset or location, Maximo also copies the safety plan to the work order. In addition, Maximo automatically copies a single measurement point if there is an existing association between the asset on the work order and the point name on the job plan.",
+      "maxLength": 12
+    },
+    "estatapprlabcost": {
+      "searchType": "EXACT",
+      "scale": 2,
+      "subType": "AMOUNT",
+      "title": "Estimated Labor Cost at Approval",
+      "persistent": true,
+      "type": "number",
+      "remarks": "Cost estimate of the work order's labor at the time the work order was approved.",
+      "maxLength": 11
+    },
+    "lastcopylinkdate": {
+      "searchType": "EXACT",
+      "subType": "DATETIME",
+      "title": "Last Time doclinks Copied",
+      "persistent": true,
+      "type": "string",
+      "remarks": "The date time doclinks was copied from other related objects like asset,location,jobplan,safetyplan etc."
+    },
+    "routestopid": {
+      "searchType": "EXACT",
+      "maximum": 2147483647.0,
+      "subType": "BIGINT",
+      "title": "Route Stop",
+      "persistent": true,
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "remarks": "add a new field",
+      "maxLength": 11
+    },
+    "_rowstamp": {
+      "type": "string"
+    },
+    "siteid": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Site",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Identifies the site.",
+      "maxLength": 8
+    },
+    "crewid_description": {
+      "type": "string"
+    },
+    "worklocation": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Work Location",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Identifier of the Work Location that is to be responsible for the work.",
+      "maxLength": 25
+    },
+    "suspendflow": {
+      "default": false,
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "Suspend Flow Control",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "Flag used to suspend and resume flow control on a parent record.  Rolls down the hierarchy to all its child records."
+    },
+    "status_description": {
+      "type": "string"
+    },
+    "actintlabhrs": {
+      "searchType": "EXACT",
+      "scale": 0,
+      "subType": "DURATION",
+      "title": "Actual Hours of Internal Labor",
+      "persistent": true,
+      "type": "number",
+      "remarks": "The hours of internal labor that are required for the task on the current work order.",
+      "maxLength": 8
+    },
+    "targetdesc": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Target Description",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Temporary target description for targeting CIs",
+      "maxLength": 50
+    },
+    "calcpriority": {
+      "searchType": "EXACT",
+      "maximum": 2147483647.0,
+      "subType": "INTEGER",
+      "title": "Calculated Priority",
+      "persistent": true,
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "remarks": "Calculated Work Priority",
+      "maxLength": 11
+    },
+    "chargestore": {
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "Charge to Store",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "Check box that Indicates whether charges on the work order should be added to the asset record. If the check box is selected, the charges will be added to the asset; if the check box is cleared, the charges will not be added to the asset. If the asset on the work order is a non-capitalized rotating asset not located in an operating location or a storeroom, Maximo selects the check box; otherwise this check box is cleared."
+    },
+    "outlabcost": {
+      "searchType": "EXACT",
+      "scale": 2,
+      "subType": "AMOUNT",
+      "title": "Outside Labor Cost",
+      "persistent": true,
+      "type": "number",
+      "remarks": "Outside Labor Cost",
+      "maxLength": 11
+    },
+    "orgid": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Organization",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Organization Identifier",
+      "maxLength": 8
+    },
+    "schedfinish": {
+      "searchType": "EXACT",
+      "subType": "DATETIME",
+      "title": "Scheduled Finish",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Date and time the work is scheduled to be completed."
+    },
+    "justifypriority": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Priority Justification",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Describes why the work order received the priority it has been assigned. To enter or view additional information, click the Long Description button.",
+      "maxLength": 50
+    },
+    "inctasksinsched": {
+      "default": true,
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "Include Tasks in Schedule",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "Indicates that this work order's tasks will be included in the schedule view."
+    },
+    "cinum": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Configuration Item",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Configuration Item",
+      "maxLength": 12
+    },
+    "flowcontrolled": {
+      "default": false,
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "Under Flow Control",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "Flag used to indicate a records participation in flow control.  When applied to a parent, it rolls down the hierarchy to all its child records."
+    },
+    "storeroommtlstatus": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Storeroom Material Status",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "The availability status of storeroom materials on the current work order.",
+      "maxLength": 20
+    },
+    "actstart": {
+      "searchType": "EXACT",
+      "subType": "DATETIME",
+      "title": "Actual Start",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Date and time the actual work begain."
+    },
+    "description": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Description",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Describes the work order. To enter or view additional information, click the Long Description button.",
+      "maxLength": 113
+    },
+    "externalrefid": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "External Reference ID",
+      "persistent": true,
+      "type": "string",
+      "remarks": "External Reference ID",
+      "maxLength": 10
+    },
+    "estatapproutlabcost": {
+      "searchType": "EXACT",
+      "scale": 2,
+      "subType": "AMOUNT",
+      "title": "Estimated Hours of External Labor",
+      "persistent": true,
+      "type": "number",
+      "remarks": "The cost of external labor for the task on the current work order at the time it was approved.",
+      "maxLength": 11
+    },
+    "djpapplied": {
+      "default": "NO",
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Dynamic Job Plan applied",
+      "persistent": true,
+      "type": "string",
+      "remarks": "This flag can be set to YES, NO, ERROR",
+      "maxLength": 5
+    },
+    "sneconstraint": {
+      "searchType": "EXACT",
+      "subType": "DATETIME",
+      "title": "Start No Earlier Than",
+      "persistent": true,
+      "type": "string",
+      "remarks": "The earliest date at which work should start.  Scheduled dates should be after this date."
+    },
+    "estoutlabhrs": {
+      "searchType": "EXACT",
+      "scale": 0,
+      "subType": "DURATION",
+      "title": "Estimated Hours of External Labor",
+      "persistent": true,
+      "type": "number",
+      "remarks": "The estimated hours of external labor that are required for the task on the current work order.",
+      "maxLength": 8
+    },
+    "wosequence": {
+      "searchType": "EXACT",
+      "maximum": 2147483647.0,
+      "subType": "INTEGER",
+      "title": "Sequence",
+      "persistent": true,
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "remarks": "Indicates sequence in which to execute the work orders in a work order hierarchy.",
+      "maxLength": 11
+    },
+    "actintlabcost": {
+      "searchType": "EXACT",
+      "scale": 2,
+      "subType": "AMOUNT",
+      "title": "Actual Cost of Internal Labor",
+      "persistent": true,
+      "type": "number",
+      "remarks": "The cost of internal labor for the task on the current work order.",
+      "maxLength": 11
+    },
+    "ai_usefortraining": {
+      "default": false,
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "Use for AI training",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "A flag to mark a WO for use in a AI training model"
+    },
+    "owner": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Owner",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "The person currently responsible for the work order.",
+      "maxLength": 100
+    },
+    "calcorgid": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Organization",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Organization associated with the calculation calendar, and used with the Calendar and Shift fields to calculate the Target Contact, Target Response, and Target Resolution dates on a ticket or work order. Click the Detail Menu button to select an organization or go to the Organizations application to create one.",
+      "maxLength": 8
+    },
+    "wolo10": {
+      "searchType": "EXACT",
+      "maximum": 2147483647.0,
+      "subType": "INTEGER",
+      "title": "Wolo10",
+      "persistent": true,
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "remarks": "Extra Field",
+      "maxLength": 11
+    },
+    "environment": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Environment",
+      "persistent": true,
+      "type": "string",
+      "remarks": "This field defines the environment in which the change is taking place.",
+      "maxLength": 50
+    },
+    "wogroup": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "WO Group",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "This column is used to enhance performance of the Work Orders app.",
+      "maxLength": 25
+    },
+    "schedstart": {
+      "searchType": "EXACT",
+      "subType": "DATETIME",
+      "title": "Scheduled Start",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Date and time the work is scheduled to begin."
+    },
+    "location": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Location",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Identifies the work order's location. This is not necessarily the asset's location, however, if an asset is entered, its location will default here",
+      "maxLength": 25
+    },
+    "risk": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Risk Assessment",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Defines the risk level of the work order. Risk may be a numeric value or a term such as High, Medium, Low, or some other value based upon your business definitions.",
+      "maxLength": 10
+    },
+    "haschildren": {
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "Has Children",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "Y if WO has children N if it has no children"
+    },
+    "apptrequired": {
+      "default": false,
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "Appointment Required",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "Indicates if an appointment is required for the work order. Tasks that are created for this work order inherit this value, but can be modified."
+    },
+    "historyflag": {
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "History",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "Yes/No field or check box that specifies whether a record is a history record or is currently active. History records are complete, closed, canceled, etc. If a Y is in the History? field or the check box is selected, the record is a history record. On the List tab or the More Search Fields dialog box, you can enter a Y in the History? field to include only history records in the search results. If an N is in the field, Maximo includes only currently active records in the search results. If the field is empty (null), Maximo includes history and active records in the search results."
+    },
+    "excpttype_description": {
+      "type": "string"
+    },
+    "pluscnextdate": {
+      "searchType": "EXACT",
+      "subType": "DATETIME",
+      "title": "Next Calibration Due Date",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Date the next work order is scheduled to be generated from the PM. The Next Due Date field is NULL unless there is an integer value in the Frequency field."
+    },
+    "parentchgsstatus": {
+      "default": true,
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "Inherit Status Changes",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "Specifies whether the work order's status will change when its parent work order's status changes. If the check box is selected (the default), the work order's status will change when the parent work order's status changes. If the check box is cleared, the work order's status will not change when the parent work order's status changes."
+    },
+    "lms": {
+      "default": false,
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "Requires Location Maintenance Window",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "Indicates that the work must be performed during a dedicated maintenance window."
+    },
+    "wojp1": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Wojp1",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Extra Field",
+      "maxLength": 10
+    },
+    "wojp2": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Wojp2",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Extra Field",
+      "maxLength": 10
+    },
+    "wojp3": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Wojp3",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Extra Field",
+      "maxLength": 10
+    },
+    "genforpolineid": {
+      "searchType": "EXACT",
+      "maximum": 2147483647.0,
+      "subType": "BIGINT",
+      "title": "PO Line ID",
+      "persistent": true,
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "remarks": "POLINEID number that required the work",
+      "maxLength": 11
+    },
+    "wojp4": {
+      "searchType": "EXACT",
+      "scale": 2,
+      "subType": "AMOUNT",
+      "title": "Wojp4",
+      "persistent": true,
+      "type": "number",
+      "remarks": "Extra Field",
+      "maxLength": 11
+    },
+    "wojp5": {
+      "searchType": "EXACT",
+      "subType": "DATETIME",
+      "title": "Wojp5",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Extra Field"
+    },
+    "href": {
+      "type": "string"
+    },
+    "pmduedate": {
+      "searchType": "EXACT",
+      "subType": "DATE",
+      "title": "PM Due Date",
+      "persistent": true,
+      "type": "string",
+      "remarks": "From the original Next Due Date of the PM"
+    },
+    "contract": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Contract",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Identifies the warranty contract for the asset.",
+      "maxLength": 8
+    },
+    "pctaskcomp": {
+      "searchType": "EXACT",
+      "maximum": 2147483647.0,
+      "subType": "INTEGER",
+      "title": "Percent complete by tasks completed",
+      "persistent": true,
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "remarks": "Specifies the percent complete as calculated by tasks completed vs. planned.",
+      "maxLength": 11
+    },
+    "actlabhrs": {
+      "searchType": "EXACT",
+      "scale": 0,
+      "subType": "DURATION",
+      "title": "Actual Labor Hours",
+      "persistent": true,
+      "type": "number",
+      "remarks": "Actual Labor Hours",
+      "maxLength": 8
+    },
+    "measurementvalue": {
+      "searchType": "EXACT",
+      "scale": 3,
+      "subType": "DECIMAL",
+      "title": "Measurement",
+      "persistent": true,
+      "type": "number",
+      "remarks": "Recorded Measurement",
+      "maxLength": 16
+    },
+    "intshift": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Interruptible shift",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Specifies the shift on which the work will be interrupted in the Graphical Scheduling application.",
+      "maxLength": 8
+    },
+    "phone": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Phone",
+      "persistent": true,
+      "type": "string",
+      "remarks": "The phone number (usually a work site telephone number) associated with the work order. If the Reported By person has a phone number associated with it, that phone number is the default for this field.",
+      "maxLength": 20
+    },
+    "actservcost": {
+      "searchType": "EXACT",
+      "scale": 2,
+      "subType": "AMOUNT",
+      "title": "Actual Service Cost",
+      "persistent": true,
+      "type": "number",
+      "remarks": "Total actual service cost against this work order.",
+      "maxLength": 11
+    },
+    "reqasstdwntime": {
+      "default": false,
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "Require Asset Downtime",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "Indicates if the asset requires downtime while work is performed."
+    },
+    "estmatcost": {
+      "searchType": "EXACT",
+      "scale": 2,
+      "subType": "AMOUNT",
+      "title": "Estimated Material Cost",
+      "persistent": true,
+      "type": "number",
+      "remarks": "Estimated Material Cost",
+      "maxLength": 11
+    },
+    "targcompdate": {
+      "searchType": "EXACT",
+      "subType": "DATETIME",
+      "title": "Target Finish",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Date the work order is targeted to be completed."
+    },
+    "origrecordclass": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Originating Record Class",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Originating record's class, for example: change, release, incident, problem, or work order.",
+      "maxLength": 16
+    },
+    "status": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Status",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Status of the work order, for example, in progress, waiting on material, waiting for approval, completed, or closed.",
+      "maxLength": 16
+    },
+    "pcphys": {
+      "searchType": "EXACT",
+      "maximum": 2147483647.0,
+      "subType": "INTEGER",
+      "title": "Physical percent complete",
+      "persistent": true,
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "remarks": "Specifies the user-defined percent complete as entered manually.",
+      "maxLength": 11
+    },
+    "commoditygroup": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Service Group",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Defines the service group for the work order, for example: IT, production, facility, or fleet.",
+      "maxLength": 8
+    },
+    "problemcode": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Problem Code",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "The problem being reported based on the defined Failure Class. This is usually the code in the second level of the failure reporting hierarchy.",
+      "maxLength": 8
+    },
+    "esttoolcost": {
+      "searchType": "EXACT",
+      "scale": 2,
+      "subType": "AMOUNT",
+      "title": "Estimated Tool Cost",
+      "persistent": true,
+      "type": "number",
+      "remarks": "Estimated Tool Cost",
+      "maxLength": 11
+    },
+    "reportedby": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Reported By",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Identifies the person reporting the work order.",
+      "maxLength": 82
+    },
+    "unitsofwork": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Work Units",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Work Unit",
+      "maxLength": 16
+    },
+    "los": {
+      "default": false,
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "Requires Location Downtime",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "Indicates that the work must be performed when the location is not in use, and available for maintenance."
+    },
+    "reasonforchange": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Reason for Change",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Describes the reason for the change. To enter or view additional information, click the Long Description button.",
+      "maxLength": 20
+    },
+    "splanreviewdate": {
+      "searchType": "EXACT",
+      "subType": "DATETIME",
+      "title": "Has safetyplan review date?",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Does this Work Order safetplan is reviwed?"
+    },
+    "pluscjprevnum": {
+      "searchType": "EXACT",
+      "maximum": 2147483647.0,
+      "subType": "INTEGER",
+      "title": "Job Plan Revision Number",
+      "persistent": true,
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "remarks": "Displays the revision number of the Job Plan the work order was generated with.",
+      "maxLength": 11
+    },
+    "assetnum": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Asset",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Identifies the asset.",
+      "maxLength": 25
+    },
+    "persongroup": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Work Group",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Identifies the person group responsible for the work. Person groups are set up in the Person Groups application.",
+      "maxLength": 8
+    },
+    "crewid": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Crew",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "ID for a given crew within an craft",
+      "maxLength": 12
+    },
+    "outmatcost": {
+      "searchType": "EXACT",
+      "scale": 2,
+      "subType": "AMOUNT",
+      "title": "Outside Material Cost",
+      "persistent": true,
+      "type": "number",
+      "remarks": "Outside Material Cost",
+      "maxLength": 11
+    },
+    "onbehalfof": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "On Behalf Of",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Identifies for whom this work order has been created. For example, if someone did not have access to a computer, another user could create the work order on behalf of that person.",
+      "maxLength": 82
+    },
+    "observation": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Observation",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Describes the visual inspection data for this operation. If the work order has an associated work plan, Maximo copies this information from the Plans tab. You can edit this field until the work order is closed.",
+      "maxLength": 8
+    },
+    "changeby": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Changed By",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Modified By",
+      "maxLength": 100
+    },
+    "interruptible": {
+      "default": false,
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "Interruptible",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "Specifies whether the work order is allowed to be stopped once the work has begun and then restarted. If the check box is selected, the work can be stopped. If the check box is cleared, the work cannot be stopped and restarted."
+    },
+    "remdur": {
+      "searchType": "EXACT",
+      "scale": 0,
+      "subType": "DURATION",
+      "title": "Time Remaining",
+      "persistent": true,
+      "type": "number",
+      "remarks": "Indicates the number of remaining hours needed to complete the work. You can modify this value until the work order is closed.",
+      "maxLength": 8
+    },
+    "sendersysid": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Sender System ID",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Column used by ERP-Integration (APIs)",
+      "maxLength": 50
+    },
+    "estlabcost": {
+      "searchType": "EXACT",
+      "scale": 2,
+      "subType": "AMOUNT",
+      "title": "Estimated Labor Cost",
+      "persistent": true,
+      "type": "number",
+      "remarks": "Estimated Labor Cost",
+      "maxLength": 11
+    },
+    "lead": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Lead",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Lead person responsible for the work.",
+      "maxLength": 100
+    },
+    "wonum": {
+      "default": "&AUTOKEY&",
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Work Order",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Identifies the work order.",
+      "maxLength": 25
+    },
+    "downtime": {
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "Downtime",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "Does the Asset have to be down for this work order?"
+    },
+    "workorderid": {
+      "searchType": "EXACT",
+      "maximum": 2147483647.0,
+      "subType": "BIGINT",
+      "title": "WORKORDERID",
+      "persistent": true,
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "uniqueid": true,
+      "remarks": "Unique Identifier",
+      "maxLength": 11
+    },
+    "whomischangefor": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Whom is this change for",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Identifies whom a change is for.",
+      "maxLength": 20
+    },
+    "wojo1": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "WOJO1",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Extra Field",
+      "maxLength": 10
+    },
+    "wojo2": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "WOJO2",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Extra Field",
+      "maxLength": 10
+    },
+    "wojo3": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "WOJO3",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Extra Field",
+      "maxLength": 10
+    },
+    "wojo4": {
+      "searchType": "EXACT",
+      "scale": 2,
+      "subType": "DECIMAL",
+      "title": "WOJO4",
+      "persistent": true,
+      "type": "number",
+      "remarks": "Extra Field",
+      "maxLength": 16
+    },
+    "wojo5": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "WOJO5",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Extra Field",
+      "maxLength": 10
+    },
+    "wojo6": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "WOJO6",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Extra Field",
+      "maxLength": 10
+    },
+    "wojo7": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "WOJO7",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Extra Field",
+      "maxLength": 10
+    },
+    "wojo8": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "WOJO8",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Extra Field",
+      "maxLength": 10
+    },
+    "sourcesysid": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Source System ID",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Source System ID",
+      "maxLength": 10
+    },
+    "ownersysid": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Owner System ID",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Owner System ID",
+      "maxLength": 10
+    },
+    "actoutlabcost": {
+      "searchType": "EXACT",
+      "scale": 2,
+      "subType": "AMOUNT",
+      "title": "Actual Cost of External Labor",
+      "persistent": true,
+      "type": "number",
+      "remarks": "The cost of external labor that are required for the task on the current work order.",
+      "maxLength": 11
+    },
+    "estatapprservcost": {
+      "searchType": "EXACT",
+      "scale": 2,
+      "subType": "AMOUNT",
+      "title": "Estimated Service Cost at Approval",
+      "persistent": true,
+      "type": "number",
+      "remarks": "Cost estimate of the work order's services when the work order is approved.",
+      "maxLength": 11
+    },
+    "faildate": {
+      "searchType": "EXACT",
+      "subType": "DATETIME",
+      "title": "Failed Date",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Actual Failure Date"
+    },
+    "ignoresrmavail": {
+      "default": true,
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "Ignore Storeroom Availability For Work Order Status",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "Indicates whether to ignore the availability of items in the storeroom for the work order status approval."
+    },
+    "origrecordid": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Originating Record",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Identifies the source record that was used to create this record.",
+      "maxLength": 25
+    },
+    "outtoolcost": {
+      "searchType": "EXACT",
+      "scale": 2,
+      "subType": "AMOUNT",
+      "title": "Outside Tool Cost",
+      "persistent": true,
+      "type": "number",
+      "remarks": "Outside Tool Cost",
+      "maxLength": 11
+    },
+    "estatapproutlabhrs": {
+      "searchType": "EXACT",
+      "scale": 0,
+      "subType": "DURATION",
+      "title": "Estimated Cost of External Labor",
+      "persistent": true,
+      "type": "number",
+      "remarks": "The hours of internal labor for the task on the current work order at the time it was approved.",
+      "maxLength": 8
+    },
+    "estatapprintlabcost": {
+      "searchType": "EXACT",
+      "scale": 2,
+      "subType": "AMOUNT",
+      "title": "Approved Cost of Internal Labor",
+      "persistent": true,
+      "type": "number",
+      "remarks": "The cost of internal labor for the task on the current work order at the time it was approved.",
+      "maxLength": 11
+    },
+    "firstapprstatus": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "First Approve Status",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Identifies the first status change which approved the work order. This value is used to determine if the work order record has ever been approved. Work orders that have been approved are not allowed to be deleted.",
+      "maxLength": 16
+    },
+    "pmnextduedate": {
+      "searchType": "EXACT",
+      "subType": "DATE",
+      "title": "PM Next Due Date",
+      "persistent": true,
+      "type": "string",
+      "remarks": "From the next Next Due Date of the PM"
+    },
+    "totalworkunits": {
+      "searchType": "EXACT",
+      "scale": 2,
+      "subType": "DECIMAL",
+      "title": "Total Work Units",
+      "persistent": true,
+      "type": "number",
+      "remarks": "Total Work Units for WO, including header asset and assets in MultiAssetLocCI table",
+      "maxLength": 11
+    },
+    "verification": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Verification",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Used to verify that the Change was successful or describe how to determine if the Change was successful",
+      "maxLength": 20
+    },
+    "woisswap": {
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "Is this an Asset Swap",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "Identifies if the Move is a Move or a Swap"
+    },
+    "woacceptscharges": {
+      "default": true,
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "Accepts Charges",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "Check box specifies whether or not the work order accepts charges. If the check box is selected (the default), the work order accepts charges. If the check box is cleared, the work order does not accept charges, and you cannot enter charges on the work order."
+    },
+    "repairlocflag": {
+      "default": false,
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "Repair Facility Required",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "Indicates whether the repair location is required."
+    },
+    "changedate": {
+      "searchType": "EXACT",
+      "subType": "DATETIME",
+      "title": "Changed Date",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Date the work order was last modified."
+    },
+    "woclass_description": {
+      "type": "string"
+    },
+    "djperror": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Calculation error",
+      "persistent": true,
+      "type": "string",
+      "remarks": "The error message when trying to apply the dynamic job plan",
+      "maxLength": 400
+    },
+    "woclass": {
+      "searchType": "EXACT",
+      "subType": "UPPER",
+      "title": "Class",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Identifies the work order's class.",
+      "maxLength": 16
+    },
+    "backoutplan": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Back Out Plan",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Describes the back out plan in the event the change needs to be reversed.",
+      "maxLength": 50
+    },
+    "actoutlabhrs": {
+      "searchType": "EXACT",
+      "scale": 0,
+      "subType": "DURATION",
+      "title": "Actual Hours of External Labor",
+      "persistent": true,
+      "type": "number",
+      "remarks": "The hours of external labor that are required for the task on the current work order.",
+      "maxLength": 8
+    },
+    "_id": {
+      "type": "string"
+    },
+    "supervisor": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Supervisor",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Supervisor of the work. Maximo copies this information from the job plan, if there is one. You also can select a supervisor.",
+      "maxLength": 100
+    },
+    "calccalendar": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Calendar",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Business days and times used to calculate the Target Contact, Target Response, and Target Resolution dates on a ticket or work order. Click the Detail Menu to select a calendar or go to the Calendars application to create one.",
+      "maxLength": 8
+    },
+    "targstartdate": {
+      "searchType": "EXACT",
+      "subType": "DATETIME",
+      "title": "Target Start",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Date the work order is targeted to begin. If the work order is generated from a PM, the date is supplied by the PM work order generation process."
+    },
+    "ams": {
+      "default": false,
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "Requires Asset Maintenance Window",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "Indicates that the work must be performed during a dedicated maintenance window."
+    },
+    "jobtaskid": {
+      "searchType": "EXACT",
+      "maximum": 2147483647.0,
+      "subType": "BIGINT",
+      "title": "JOBTASKID",
+      "persistent": true,
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "remarks": "Unique Identifier",
+      "maxLength": 11
+    },
+    "reportdate": {
+      "searchType": "EXACT",
+      "subType": "DATETIME",
+      "title": "Reported Date",
+      "persistent": true,
+      "type": "string",
+      "remarks": "The date and time the work order was reported."
+    },
+    "newchildclass": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "New Child Class",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Identifies the child work order class.",
+      "maxLength": 16
+    },
+    "_imagelibref": {
+      "type": "string"
+    },
+    "isquickreported": {
+      "default": 0,
+      "searchType": "EXACT",
+      "maximum": 2147483647.0,
+      "subType": "INTEGER",
+      "title": "Quick Reported Work Order",
+      "persistent": true,
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "remarks": "Indicates if this work order was created through quick reporting.",
+      "maxLength": 11
+    },
+    "worts3": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Worts3",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Crossover field from Route_Stop.RTS3",
+      "maxLength": 10
+    },
+    "worts4": {
+      "searchType": "EXACT",
+      "subType": "DATETIME",
+      "title": "Worts4",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Crossover field from Route_Stop.RTS4"
+    },
+    "worts1": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Worts1",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Crossover field from Route_Stop.RTS1",
+      "maxLength": 10
+    },
+    "worts2": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Worts2",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Crossover field from Route_Stop.RTS2",
+      "maxLength": 10
+    },
+    "worts5": {
+      "searchType": "EXACT",
+      "scale": 2,
+      "subType": "DECIMAL",
+      "title": "Worts5",
+      "persistent": true,
+      "type": "number",
+      "remarks": "Crossover field from Route_Stop.RTS5",
+      "maxLength": 16
+    },
+    "measuredate": {
+      "searchType": "EXACT",
+      "subType": "DATETIME",
+      "title": "Measurement Date",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Date/Time when measurement was taken or when observation was taken. This field becomes read-only when you enter a measurement and save the record."
+    },
+    "availstatusdate": {
+      "searchType": "EXACT",
+      "subType": "DATETIME",
+      "title": "Material Status Last Updated",
+      "persistent": true,
+      "type": "string",
+      "remarks": "The date and time that the material status was last updated."
+    },
+    "classstructureid": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Class Structure",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "The Class Structure ID.",
+      "maxLength": 25
+    },
+    "worktype": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Work Type",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Identifies the work order's type. Some example types are: preventive maintenance, corrective maintenance, emergency maintenace, capital project, and event report.",
+      "maxLength": 5
+    },
+    "estintlabhrs": {
+      "searchType": "EXACT",
+      "scale": 0,
+      "subType": "DURATION",
+      "title": "Estimated Hours of Internal Labor",
+      "persistent": true,
+      "type": "number",
+      "remarks": "The estimated hours of internal labor that are required for the task on the current work order.",
+      "maxLength": 8
+    },
+    "inspector": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Inspector",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Identifies the inspector assigned to the work order",
+      "maxLength": 100
+    },
+    "woeq1": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Woeq1",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Extra Field Copied From Asset",
+      "maxLength": 10
+    },
+    "woeq2": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Woeq2",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Extra Field Copied From Asset",
+      "maxLength": 10
+    },
+    "woeq3": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Woeq3",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Extra Field Copied From Asset",
+      "maxLength": 10
+    },
+    "genforporevision": {
+      "searchType": "EXACT",
+      "maximum": 2147483647.0,
+      "subType": "INTEGER",
+      "title": "PO Revision",
+      "persistent": true,
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "remarks": "Revision number of the purchase order. Indicates how many times a purchase order has been revised.",
+      "maxLength": 11
+    },
+    "woeq4": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Woeq4",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Extra Field Copied From Asset",
+      "maxLength": 10
+    },
+    "woeq5": {
+      "searchType": "EXACT",
+      "scale": 2,
+      "subType": "AMOUNT",
+      "title": "Woeq5",
+      "persistent": true,
+      "type": "number",
+      "remarks": "Extra Field Copied From Asset",
+      "maxLength": 11
+    },
+    "woeq6": {
+      "searchType": "EXACT",
+      "subType": "DATETIME",
+      "title": "Woeq6",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Extra Field Copied From Asset"
+    },
+    "glaccount": {
+      "searchType": "WILDCARD",
+      "subType": "GL",
+      "title": "GL Account",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "General ledger account code to which work order costs are charged. The GL account consists of up to four components: cost center, activity, resource, and element, each separated by a hyphen. If the work order was generated from a PM, Maximo copies the GL account from the PM. This field is read-only if the Charge to Store? check box is selected.",
+      "maxLength": 23
+    },
+    "pcpchangedate": {
+      "searchType": "EXACT",
+      "subType": "DATETIME",
+      "title": "Physical percent complete - When last changed",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Physical percent complete - When last changed"
+    },
+    "woeq7": {
+      "searchType": "EXACT",
+      "scale": 2,
+      "subType": "DECIMAL",
+      "title": "Woeq7",
+      "persistent": true,
+      "type": "number",
+      "remarks": "Extra Field Copied From Asset",
+      "maxLength": 16
+    },
+    "failurecode": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Failure Class",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Failure class of the defined work asset. The failure class is the top level of the failure hierarchy.",
+      "maxLength": 8
+    },
+    "milestone": {
+      "default": false,
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "Is Milestone",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "Indicates if this Work Order is a milestone."
+    },
+    "woeq8": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Woeq8",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Extra Field Copied From Asset",
+      "maxLength": 10
+    },
+    "dirissuemtlstatus": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Direct Issue Material Status",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "The availability status of direct issue materials on the current work order.",
+      "maxLength": 20
+    },
+    "woeq9": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Woeq9",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Extra Field Copied From Asset",
+      "maxLength": 10
+    },
+    "wolo2": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Wolo2",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Extra Field",
+      "maxLength": 10
+    },
+    "wolo1": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Wolo1",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Extra Field",
+      "maxLength": 10
+    },
+    "woeq11": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Woeq11",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Extra Field Copied From Asset",
+      "maxLength": 10
+    },
+    "wolo4": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Wolo4",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Extra Field",
+      "maxLength": 10
+    },
+    "pluscphyloc": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Physical Location",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Enter a detailed description of the location of the asset or specify the location information using a hierarchy that you created. Using a hierarchy provides consistent identification and groups assets efficiently.",
+      "maxLength": 250
+    },
+    "woeq12": {
+      "searchType": "EXACT",
+      "scale": 2,
+      "subType": "AMOUNT",
+      "title": "Woeq12",
+      "persistent": true,
+      "type": "number",
+      "remarks": "Extra Field Copied From Asset",
+      "maxLength": 11
+    },
+    "wolo3": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Wolo3",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Extra Field",
+      "maxLength": 10
+    },
+    "woeq13": {
+      "searchType": "EXACT",
+      "subType": "DATETIME",
+      "title": "Woeq13",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Extra Field"
+    },
+    "wolo6": {
+      "searchType": "EXACT",
+      "scale": 2,
+      "subType": "AMOUNT",
+      "title": "Wolo6",
+      "persistent": true,
+      "type": "number",
+      "remarks": "Extra Field",
+      "maxLength": 11
+    },
+    "actfinish": {
+      "searchType": "EXACT",
+      "subType": "DATETIME",
+      "title": "Actual Finish",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Date and time the actual work was completed."
+    },
+    "estintlabcost": {
+      "searchType": "EXACT",
+      "scale": 2,
+      "subType": "AMOUNT",
+      "title": "Estimated Cost of Internal Labor",
+      "persistent": true,
+      "type": "number",
+      "remarks": "The estimated cost of internal labor for the task on the current work order.",
+      "maxLength": 11
+    },
+    "woeq14": {
+      "searchType": "EXACT",
+      "scale": 2,
+      "subType": "DECIMAL",
+      "title": "Woeq14",
+      "persistent": true,
+      "type": "number",
+      "remarks": "Extra Field",
+      "maxLength": 16
+    },
+    "wolo5": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Wolo5",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Extra Field",
+      "maxLength": 10
+    },
+    "inspformnum": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Inspection Form",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "The number of the inspection form.",
+      "maxLength": 12
+    },
+    "wolo8": {
+      "searchType": "EXACT",
+      "scale": 2,
+      "subType": "DECIMAL",
+      "title": "Wolo8",
+      "persistent": true,
+      "type": "number",
+      "remarks": "Extra Field",
+      "maxLength": 16
+    },
+    "wolo7": {
+      "searchType": "EXACT",
+      "subType": "DATETIME",
+      "title": "Wolo7",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Extra Field"
+    },
+    "repfacsiteid": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Repair Facility Site",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "The site for the repair facility.",
+      "maxLength": 8
+    },
+    "woeq10": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Woeq10",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Extra Field Copied From Asset",
+      "maxLength": 10
+    },
+    "wolo9": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Wolo9",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Extra Field",
+      "maxLength": 10
+    }
+  },
+  "required": [
+    "actlabcost",
+    "actlabhrs",
+    "actmatcost",
+    "actservcost",
+    "acttoolcost",
+    "chargestore",
+    "disabled",
+    "downtime",
+    "estatapprlabcost",
+    "estatapprlabhrs",
+    "estatapprmatcost",
+    "estatapprservcost",
+    "estatapprtoolcost",
+    "estdur",
+    "estlabcost",
+    "estlabhrs",
+    "estmatcost",
+    "estservcost",
+    "esttoolcost",
+    "haschildren",
+    "hasfollowupwork",
+    "historyflag",
+    "istask",
+    "newchildclass",
+    "orgid",
+    "outlabcost",
+    "outmatcost",
+    "outtoolcost",
+    "siteid",
+    "status",
+    "statusdate",
+    "woclass",
+    "woisswap"
+  ]
+}

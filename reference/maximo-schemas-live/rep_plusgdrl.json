@@ -1,0 +1,5239 @@
+{
+ "resource": "REP_PLUSGDRL",
+ "description": "Drilling and Completion (Oil) Details",
+ "pk": [
+  "siteid",
+  "wonum"
+ ],
+ "title": "PLUSGDRL",
+ "type": "object",
+ "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/rep_plusgdrl",
+ "uniqueid": "workorderid",
+ "properties": {
+  "plusgsecegrp": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "SECE Group",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The Safety and Environmentally Critical Elements group that is associated with the location.",
+   "maxLength": 25
+  },
+  "parent": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Parent WO",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Parent of the work order shown in the Work Order field. When this field is blank, the work order in the Work Order field is a top-level work order. To assign a work order to a parent, select Assign to New Parent from the Select Action menu.",
+   "maxLength": 25
+  },
+  "localref": {
+   "type": "string"
+  },
+  "estservcost": {
+   "searchType": "EXACT",
+   "scale": 2,
+   "subType": "AMOUNT",
+   "title": "Estimated Service Cost",
+   "persistent": true,
+   "type": "number",
+   "remarks": "Total estimated service cost against this work order.",
+   "maxLength": 11
+  },
+  "pluscismobile": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Is Mobile",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Workorder was added by mobile"
+  },
+  "wolablnk": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Labor",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Labor Code Link",
+   "maxLength": 8
+  },
+  "plusgmeastype": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Measurement Type",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The problem statement for the improvement project",
+   "maxLength": 16
+  },
+  "plusgcostestimate": {
+   "searchType": "EXACT",
+   "scale": 2,
+   "subType": "AMOUNT",
+   "title": "Cost Estimate",
+   "persistent": true,
+   "type": "number",
+   "remarks": "Estimated cost of the management of change.",
+   "maxLength": 11
+  },
+  "plusgfreezedate": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Freeze Date",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The date when the preparation activities are specified. The freeze date remains the same so that the scope of the activities is recorded for that date."
+  },
+  "assetlocpriority": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "INTEGER",
+   "title": "Asset/Location Priority",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "Identifies the priority level copied from the asset or location record and used to schedule the work order. Values from 0-999 are valid, but we recommend limiting your range of values to 0-9, where 0 designates the lowest priority. We also recommend assigning priority values only to locations. Entering a value will update the CalcPriority field according to the calculation option in the PriCalc table. MAXIMO uses this value to update the Respond By date.",
+   "maxLength": 11
+  },
+  "plusgcopyrevactrsk": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Review Actions Copied from Primary Risk Assessment",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "When checked, the review actions that were defined in the primary risk assessment are copied over to the work order."
+  },
+  "calcshift": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Shift",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Along with the calculation calendar, sets the business hours that calculate the Target Contact, Target Response, and Target Resolution dates on a ticket or work order. Click the Select Value button to choose a shift.",
+   "maxLength": 8
+  },
+  "compreference": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Company Reference",
+   "persistent": true,
+   "type": "string",
+   "remarks": "A reference for the company.",
+   "maxLength": 32
+  },
+  "plusgcementjobtype": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Cement Job Type",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The type of cement job. Valid values are in the PLUSGCEMENTJOBTYPE domain.",
+   "maxLength": 20
+  },
+  "workpackmtlstatus": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Work Package Material Status",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The availability status of all materials on the current work order and related child records. The status is determined by the planned materials on a work order. The completion of the child records does not always determine the overall status of the materials in the work package.",
+   "maxLength": 20
+  },
+  "plusgpermitworknum": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Permit",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The permit to work record that is associated with the bypass management record.",
+   "maxLength": 10
+  },
+  "plusgagreedby": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Agreed By",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The person agreeing to the action",
+   "maxLength": 82
+  },
+  "pluslock": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Locked",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Indicates whether the commitment is locked. When a commitment is locked, you cannot modify existing work package actions or add new actions to the work package."
+  },
+  "regulationid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Regulation",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The regulation that is associated with the action tracking record.",
+   "maxLength": 8
+  },
+  "istask": {
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Is Task",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Specifies whether the work order is a task. If the check box is selected, the work order is a task. If the check box is cleared, the work order is not a task."
+  },
+  "plusgregulationid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "PlusgRegulationID",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "The regulation that is associated with the action tracking.",
+   "maxLength": 11
+  },
+  "plusgopercondatfailure_description": {
+   "type": "string"
+  },
+  "plusgsafetyfailcat": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Safety Failure Category",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The category of the failure that is related to safety.",
+   "maxLength": 40
+  },
+  "plusgsalesorder": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Sales Order",
+   "persistent": true,
+   "type": "string",
+   "remarks": "A reference to the customer sales order.",
+   "maxLength": 20
+  },
+  "plusgbyptype": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Type",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The type of system for which a bypass operation is needed.",
+   "maxLength": 16
+  },
+  "plusgpertypeid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Permit and Certificate Type",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "Permit and certificate type. Only active permit and certificate types can be added to work order.",
+   "maxLength": 11
+  },
+  "plusgstagegate_description": {
+   "type": "string"
+  },
+  "pcpchangeby": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Physical percent complete - Who last changed",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Physical percent complete - Who last changed",
+   "maxLength": 100
+  },
+  "pluswogenrunid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "INTEGER",
+   "title": "Wo Gen Run ID",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "PM Work order generation process ID",
+   "maxLength": 11
+  },
+  "plusgclosrevby": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Closure Reviewed By",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The person reviewing the closure of the management of change.",
+   "maxLength": 100
+  },
+  "pluscloop": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Loop Calibration",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Select this check box to identify the work order as a loop calibration. May be selected when a value is entered in the Location field."
+  },
+  "plusgdrawworkstype": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Drawworks Type",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The type of draw works that is used on the drilling rig. Valid values are in the PLUSGDRAWTYPE domain.",
+   "maxLength": 40
+  },
+  "plusglossunits": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Loss Units",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The units of the loss. Used in conjunction with the loss quantity.",
+   "maxLength": 16
+  },
+  "plusgtechtype_description": {
+   "type": "string"
+  },
+  "plusgrigtype": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Rig Type",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The type of drilling rig. Valid values are in the PLUSGRIGTYPE domain.",
+   "maxLength": 40
+  },
+  "plusclearnum": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Selected Clearance",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Identifies the clearance that is currently selected in the Clearances table. If the work order is associated with multiple clearances, you must select the clearance that you want to work with before you select clearance-related actions from the Select Action menu. The actions in this menu process one clearance at a time.",
+   "maxLength": 12
+  },
+  "plusdisprereq": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Is Prerequisite",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Select this check box to indicate that the task is a prerequisite task."
+  },
+  "estatapprtoolcost": {
+   "searchType": "EXACT",
+   "scale": 2,
+   "subType": "AMOUNT",
+   "title": "Estimated Tool Cost at Approval",
+   "persistent": true,
+   "type": "number",
+   "remarks": "Cost estimate of the work order's tools at the time the work order was approved.",
+   "maxLength": 11
+  },
+  "hasfollowupwork": {
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Has Follow-up Work",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Specifies whether the work order has follow up work. If the check box is selected, there is follow up work. If the check box is cleared (the default), there is no follow up work."
+  },
+  "plusgpittype": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Pit Type",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The type of pit. Valid values are in the PLUSGPITTYPE domain.",
+   "maxLength": 30
+  },
+  "route": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Route",
+   "persistent": true,
+   "type": "string",
+   "remarks": "add route field",
+   "maxLength": 8
+  },
+  "flowactionassist": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Flow Action Assist",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Suppresses the automatic firing of the action in flow control"
+  },
+  "pcacthrs": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "INTEGER",
+   "title": "Percent complete by actual hours",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "Specifies the percent complete as calculated by actual hours vs. planned hours.",
+   "maxLength": 11
+  },
+  "fincntrlid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "FCID",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Financial Control Identifier",
+   "maxLength": 8
+  },
+  "plusgmoctype": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "MOC Type",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The type of the management of change request.",
+   "maxLength": 16
+  },
+  "amcrew": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Crew",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Defines the Crew who will be copied to the work order created with this job plan.",
+   "maxLength": 8
+  },
+  "launchentryname": {
+   "searchType": "EXACT",
+   "subType": "UPPER",
+   "title": "Launch Entry Name",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Launch Entry",
+   "maxLength": 32
+  },
+  "plusganalysismeth_description": {
+   "type": "string"
+  },
+  "plusqual": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Safety Class",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "What is the safety class required for this location to function properly?",
+   "maxLength": 8
+  },
+  "plussafediv": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Safety Division",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The safety division to which this component belongs. The safety division attribute applies only to locations. The safety division for an asset or configuration item is determined by association with a location record. ",
+   "maxLength": 12
+  },
+  "plusgdefectkpi": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "KPI",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The key performance indicator (KPI) used to track defect rates.",
+   "maxLength": 50
+  },
+  "pointnum": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Measurement Point",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Point number for which this measurement is taken. If the work order has an associated work plan, Maximo copies this information from the Plans tab. This field becomes read-only once it contains data and you save the record.",
+   "maxLength": 8
+  },
+  "pluscfrequnit_description": {
+   "type": "string"
+  },
+  "commodity": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Service",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Defines the service for the work order, for example: customer support, painting, print, telecommunications, and welding.",
+   "maxLength": 8
+  },
+  "pluscfrequnit": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Frequency Unit",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Defines the time units (days, weeks, months, or years) for the Frequency field on time-based PMs.",
+   "maxLength": 8
+  },
+  "plusinstchnl_description": {
+   "type": "string"
+  },
+  "assignedownergroup": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Assigned Owner Group",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Assigned Owner Group of the workorder record. This group has overall responsibility for the solution. Use the Select Action menu to assign an owner group. You can enter a value either in this field or the Owner field.",
+   "maxLength": 8
+  },
+  "dirissuemtlstatus_description": {
+   "type": "string"
+  },
+  "pluscoverduedate": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Calibration Overdue Date",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Displays the over due date for the calibration, if the work order is not completed."
+  },
+  "plusglongterm": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Long-Term Bypass Operation",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Indicates whether the bypass operation must be in place for a lengthy period of time."
+  },
+  "plusasfound_description": {
+   "type": "string"
+  },
+  "plusginsprevgrppos": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Reviewer  Owner Group",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Reviewer Group",
+   "maxLength": 8
+  },
+  "plusreference": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Reference",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Identifies the source of the agreement. The agreement source can be a document, or can refer to a telephonic or verbal agreement.",
+   "maxLength": 50
+  },
+  "plusgcomppertypeid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Certificate Type",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "Certificate unique identifier.",
+   "maxLength": 11
+  },
+  "plusoutagecode": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Outage Code",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Identifies the specific outage or outage type.",
+   "maxLength": 12
+  },
+  "plusgbypcat_description": {
+   "type": "string"
+  },
+  "plusinstchnl": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Instrument Channel",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The instrument channel to which this component belongs. The instrument channel attribute applies only to locations. The instrument channel for an asset or configuration item is determined by association with a location record. ",
+   "maxLength": 12
+  },
+  "plusgaarrequired": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "After Action Review Required",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Indicates whether an after action review is required as a result of the management of change."
+  },
+  "plusgwellstatus": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Well Status",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The status of the well or wellbore. Valid values are in the PLUSGWELLSTATUS domain.",
+   "maxLength": 50
+  },
+  "estdur": {
+   "searchType": "EXACT",
+   "scale": 0,
+   "subType": "DURATION",
+   "title": "Duration",
+   "persistent": true,
+   "type": "number",
+   "remarks": "Estimated remaining number of hours needed to complete the work.",
+   "maxLength": 8
+  },
+  "plusdestciac": {
+   "searchType": "EXACT",
+   "scale": 2,
+   "subType": "AMOUNT",
+   "title": "CIAC",
+   "persistent": true,
+   "type": "number",
+   "remarks": "Current Estimate - Estimated contribution in aide of construction paid by the customer for this work order",
+   "maxLength": 11
+  },
+  "plusdestapprsalv": {
+   "searchType": "EXACT",
+   "scale": 2,
+   "subType": "AMOUNT",
+   "title": "Salvage",
+   "persistent": true,
+   "type": "number",
+   "remarks": "Estimate at Approval - Salvage estimate at the time of work order approval.  This field is updated by the Work Order Approval Process",
+   "maxLength": 11
+  },
+  "plusgactagreeddate": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Agreed Date",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The date the action is agreed"
+  },
+  "plusgriskasscat": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Risk Assessment Category",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The category of the risk assessment. Valid values are in the PLUSGRISKASSESSCAT domain.",
+   "maxLength": 30
+  },
+  "pluswocompcodpartial": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Partial Performance",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "The new PM Due Date for the first work order."
+  },
+  "plusgfailmechrem": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Failure Mechanism Remarks",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The description of the failure mechanism.",
+   "maxLength": 200
+  },
+  "statusdate": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Status Date",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Date the work order status was last changed."
+  },
+  "plusgcompstage": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Completion Stage",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The stage of completion of construction and commissioning activity. Valid values are in the PLUSGCOMPSTAGE domain.",
+   "maxLength": 30
+  },
+  "plusgrevieweremail": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "E-mail",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The e-mail address of the person reviewing the management of change request.",
+   "maxLength": 100
+  },
+  "plusgrigno": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Rig Number",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The identification number of the rig.",
+   "maxLength": 20
+  },
+  "plusregduedate": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Regulatory Due Date",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Indicates the regulatory date for completion of the preventive maintenance (PM). This is calculated by adding the regulatory frequency to either the actual start date or the actual finish date of the previous performance."
+  },
+  "plusgpreptype_description": {
+   "type": "string"
+  },
+  "repairfacility": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Repair Facility",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Specifies the repair facility location. A repair facility can take ownership of work orders from multiple sites in the same organization. User security can be configured to give permission to view work orders in multiple sites if the work orders are owned by a single repair facility.",
+   "maxLength": 25
+  },
+  "acttoolcost": {
+   "searchType": "EXACT",
+   "scale": 2,
+   "subType": "AMOUNT",
+   "title": "Actual Tool Cost",
+   "persistent": true,
+   "type": "number",
+   "remarks": "Actual Tool Cost",
+   "maxLength": 11
+  },
+  "plusglossquantity": {
+   "searchType": "EXACT",
+   "scale": 2,
+   "subType": "AMOUNT",
+   "title": "Loss Quantity",
+   "persistent": true,
+   "type": "number",
+   "remarks": "The quantity of the loss. Used in conjunction with the loss units.",
+   "maxLength": 11
+  },
+  "plusgrequestemail": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "E-mail",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The e-mail address of the person requesting the management of change request.",
+   "maxLength": 100
+  },
+  "plusgestatapprcost": {
+   "searchType": "EXACT",
+   "scale": 2,
+   "subType": "AMOUNT",
+   "title": "Estimate at Approval",
+   "persistent": true,
+   "type": "number",
+   "remarks": "Total cost estimate at time of approval.",
+   "maxLength": 11
+  },
+  "pluspermvf": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Permit Valid From",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The date and time from which this permit is valid for use."
+  },
+  "respondby": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Respond By",
+   "persistent": true,
+   "type": "string",
+   "remarks": "A Calculated field specifying when by a breakdown should be responded to."
+  },
+  "plusglesslearned": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Lessons Learned",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Indicates whether lessons learned from the management of change must be recorded."
+  },
+  "plusgtubularassy_description": {
+   "type": "string"
+  },
+  "plusgauditreq": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Audit Required",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Indicates whether the bypass operation must be audited."
+  },
+  "routestopid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Route Stop",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "add a new field",
+   "maxLength": 11
+  },
+  "plusghighrisk": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "High Risk",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Identifies that the change has a high risk ranking."
+  },
+  "siteid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Site",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Identifies the site.",
+   "maxLength": 8
+  },
+  "crewid_description": {
+   "type": "string"
+  },
+  "plusdestsalvage": {
+   "searchType": "EXACT",
+   "scale": 2,
+   "subType": "AMOUNT",
+   "title": "Salvage",
+   "persistent": true,
+   "type": "number",
+   "remarks": "Current Estimate - Current estimate for salvage.  This field is updated by the CU Estimate Acceptance Process",
+   "maxLength": 11
+  },
+  "plusrefimpctnum": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Reference Impact Plan",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The Number of the Impact Plan that was initially used to create this Work Order s Impact Plan",
+   "maxLength": 12
+  },
+  "worklocation": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Work Location",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Identifier of the Work Location that is to be responsible for the work.",
+   "maxLength": 25
+  },
+  "plusgpmnumref": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "PM Reference",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The preventive maintenance record associated with the management of change request.",
+   "maxLength": 8
+  },
+  "actintlabhrs": {
+   "searchType": "EXACT",
+   "scale": 0,
+   "subType": "DURATION",
+   "title": "Actual Hours of Internal Labor",
+   "persistent": true,
+   "type": "number",
+   "remarks": "The hours of internal labor that are required for the task on the current work order.",
+   "maxLength": 8
+  },
+  "chargestore": {
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Charge to Store",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Check box that Indicates whether charges on the work order should be added to the asset record. If the check box is selected, the charges will be added to the asset; if the check box is cleared, the charges will not be added to the asset. If the asset on the work order is a non-capitalized rotating asset not located in an operating location or a storeroom, Maximo selects the check box; otherwise this check box is cleared."
+  },
+  "orgid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Organization",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Organization Identifier",
+   "maxLength": 8
+  },
+  "plusgorigrecevtid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Event",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "The incident event id that is related to this work order. The work order has a follow-up record relationship to the originating incident event.",
+   "maxLength": 11
+  },
+  "plusgactrequired": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Corrective Action Required",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Indicates whether corrective action is required as a result of the measurement taken."
+  },
+  "plusghazardsumm": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Hazard Summary",
+   "persistent": true,
+   "type": "string",
+   "remarks": "A summary of the hazards. The summary is based on the risk assessment analysis that was done for the bypass operation.",
+   "maxLength": 200
+  },
+  "plusgmeastype_description": {
+   "type": "string"
+  },
+  "plusgscheddev": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Schedule Deviation",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Indicates whether the corresponding work order is a deviation from the scheduled plan. If the check box is selected, the work order is a deviation and a reason for deviation is required."
+  },
+  "plusgmonmech_description": {
+   "type": "string"
+  },
+  "plusgfailmech": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "INTEGER",
+   "title": "Failure Mechanism Code",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "hasList": true,
+   "remarks": "The ISO 14224 code of the failure mechanism.",
+   "maxLength": 11
+  },
+  "plusgbarrierfail_description": {
+   "type": "string"
+  },
+  "inctasksinsched": {
+   "default": true,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Include Tasks in Schedule",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Indicates that this work order's tasks will be included in the schedule view."
+  },
+  "pluswocompletioncode": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "WO Completion Code",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Condition of the work order at its completion, compared to required completion acceptance criteria.",
+   "maxLength": 12
+  },
+  "cinum": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Configuration Item",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Configuration Item",
+   "maxLength": 12
+  },
+  "flowcontrolled": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Under Flow Control",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Flag used to indicate a records participation in flow control.  When applied to a parent, it rolls down the hierarchy to all its child records."
+  },
+  "storeroommtlstatus": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Storeroom Material Status",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The availability status of storeroom materials on the current work order.",
+   "maxLength": 20
+  },
+  "plusgmicode": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Maintainable Item/Part Code",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The identifier of the maintainable item or part that has failed.",
+   "maxLength": 50
+  },
+  "externalrefid": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "External Reference ID",
+   "persistent": true,
+   "type": "string",
+   "remarks": "External Reference ID",
+   "maxLength": 10
+  },
+  "plusdprereqtype_description": {
+   "type": "string"
+  },
+  "plusgbypunits_description": {
+   "type": "string"
+  },
+  "estatapproutlabcost": {
+   "searchType": "EXACT",
+   "scale": 2,
+   "subType": "AMOUNT",
+   "title": "Estimated Hours of External Labor",
+   "persistent": true,
+   "type": "number",
+   "remarks": "The cost of external labor for the task on the current work order at the time it was approved.",
+   "maxLength": 11
+  },
+  "plusgworkbreak": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Work Breakdown Structure",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The reference to the work breakdown structure or to the work package number that is associated with the preparation activities. If you use a project management system, you can specify the work breakdown structure from that system.",
+   "maxLength": 10
+  },
+  "djpapplied": {
+   "default": "NO",
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Dynamic Job Plan applied",
+   "persistent": true,
+   "type": "string",
+   "remarks": "This flag can be set to YES, NO, ERROR",
+   "maxLength": 5
+  },
+  "plusgtotalscore": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Total Score",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "The total score that is assigned to the hazards that are associated with the bypass operation.",
+   "maxLength": 11
+  },
+  "plusgwellstatus_description": {
+   "type": "string"
+  },
+  "plustechspec": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Tech Spec",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Select Tech. Spec. change required? if a change to the technical specifications for the plant are required."
+  },
+  "sneconstraint": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Start No Earlier Than",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The earliest date at which work should start.  Scheduled dates should be after this date."
+  },
+  "estoutlabhrs": {
+   "searchType": "EXACT",
+   "scale": 0,
+   "subType": "DURATION",
+   "title": "Estimated Hours of External Labor",
+   "persistent": true,
+   "type": "number",
+   "remarks": "The estimated hours of external labor that are required for the task on the current work order.",
+   "maxLength": 8
+  },
+  "mrefid": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Real Estate and Facilities Id",
+   "persistent": true,
+   "type": "string",
+   "remarks": "External display Id",
+   "maxLength": 1000
+  },
+  "plusgdetectionmethod": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Detection Method",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The method or activity by which a failure is discovered. The methods for discovering a failure can include casual observation during a routine check; a failure that is observed during continuous condition monitoring; or a failure that is discovered during corrective maintenance.",
+   "maxLength": 50
+  },
+  "plusgproblemstmt": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Problem Statement",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The problem statement for the improvement project",
+   "maxLength": 400
+  },
+  "plusgfailfix": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Fail-Fix",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Indicates whether the failure was found and fixed."
+  },
+  "actintlabcost": {
+   "searchType": "EXACT",
+   "scale": 2,
+   "subType": "AMOUNT",
+   "title": "Actual Cost of Internal Labor",
+   "persistent": true,
+   "type": "number",
+   "remarks": "The cost of internal labor for the task on the current work order.",
+   "maxLength": 11
+  },
+  "owner": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Owner",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The person currently responsible for the work order.",
+   "maxLength": 100
+  },
+  "plusschedcode": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Schedule Code",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Work order schedule code",
+   "maxLength": 12
+  },
+  "wolo10": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "INTEGER",
+   "title": "Wolo10",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "Extra Field",
+   "maxLength": 11
+  },
+  "plusgestatapprben": {
+   "searchType": "EXACT",
+   "scale": 2,
+   "subType": "AMOUNT",
+   "title": "Estimate at Approval",
+   "persistent": true,
+   "type": "number",
+   "remarks": "Total benefit estimate at time of approval.",
+   "maxLength": 11
+  },
+  "companiesid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Company",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "Company.",
+   "maxLength": 11
+  },
+  "environment": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Environment",
+   "persistent": true,
+   "type": "string",
+   "remarks": "This field defines the environment in which the change is taking place.",
+   "maxLength": 50
+  },
+  "plusgreviewreq": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Review Required",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Indicates whether a review of this work order is required for the continuous improvement process at your enterprise. If the check box is selected, a review of this work order is required. If the check box is selected, you can perform an advanced search for work orders that require a review."
+  },
+  "plusgdrivetype_description": {
+   "type": "string"
+  },
+  "wogroup": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "WO Group",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "This column is used to enhance performance of the Work Orders app.",
+   "maxLength": 25
+  },
+  "pluspmod": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Work Order Modes",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The plant modes in which this work order can be completed.",
+   "maxLength": 25
+  },
+  "plusgscope": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Scope",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The scope of the management of change request.",
+   "maxLength": 200
+  },
+  "plusglock": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Locked",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Check box that specifies if an action is locked. If the check box is selected, you cannot add assets, work orders, or PMs to the action or delete them from the action. If the check box is cleared, you can add or delete assets, work orders, and PMs. You can lock an action only if the Agreed By field on the corresponding action record contains a value. You cannot edit the Locked checkbox after the status of the action is Closed."
+  },
+  "plusgsafmtgagreedbyname": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Name",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The person who agreed to the actions that resulted from the safety meeting. The status of the person record in the People application must be active.",
+   "maxLength": 82
+  },
+  "haschildren": {
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Has Children",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Y if WO has children N if it has no children"
+  },
+  "apptrequired": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Appointment Required",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Indicates if an appointment is required for the work order. Tasks that are created for this work order inherit this value, but can be modified."
+  },
+  "plusgcfwnum": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Condition for Work",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The identifier of the condition for work.",
+   "maxLength": 12
+  },
+  "plusgassactivityimp": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Assurance Activity Imported",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Specifies whether the assurance activity was set by the user (value equals 0) or imported from an operating policy (value equals 1)."
+  },
+  "excpttype_description": {
+   "type": "string"
+  },
+  "parentchgsstatus": {
+   "default": true,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Inherit Status Changes",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Specifies whether the work order's status will change when its parent work order's status changes. If the check box is selected (the default), the work order's status will change when the parent work order's status changes. If the check box is cleared, the work order's status will not change when the parent work order's status changes."
+  },
+  "plusghazarduid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Hazard Unique ID",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "Hazard Unique ID",
+   "maxLength": 11
+  },
+  "plusgbarrierfaildetect": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Barrier Failure Detection Method",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The method or activity by which a barrier failure is discovered.",
+   "maxLength": 40
+  },
+  "plusgfailmech_description": {
+   "type": "string"
+  },
+  "plusgclosrevdate": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Reviewed Date",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The date that the Closure Reviewed By field was populated"
+  },
+  "plusggroupcode": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Grouping Code",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "A code to group related work orders. Valid values are in the PLUSGGROUPINGCODE domain. You can change this value until the status of the work order is Canceled or Closed.",
+   "maxLength": 16
+  },
+  "plusgdefmeasreq": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Measurement Required",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Indicates that defect measurement is required"
+  },
+  "plusgwellname": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Well Name",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The name of the well or hole.",
+   "maxLength": 50
+  },
+  "plusgdocsattached": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Documentation Attached",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Confirms that all documentation relevant to the management of change has been attached."
+  },
+  "plusworkcat_description": {
+   "type": "string"
+  },
+  "mrefrecordid": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Real Estate and Facilities record ID",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Internal MREF ID of the asset",
+   "maxLength": 50
+  },
+  "pluscirev": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "INTEGER",
+   "title": "CI Revision",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "The revision of the configuration item (CI) at the time of its association with the current work order.",
+   "maxLength": 11
+  },
+  "record_descriptor": {
+   "type": "string",
+   "title": "Record/Object Descriptor"
+  },
+  "plusrevisionnum": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "INTEGER",
+   "title": "Revision",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "The clearance revision that is currently active.",
+   "maxLength": 11
+  },
+  "plusdeaddate": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Dead Date",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Indicates the final date for completion of the preventive maintenance (PM). This is calculated by adding the regulatory frequency and grace period to either the actual start date or the actual finish date of the previous performance. Determined by adding the regulatory frequency and grace period to the actual start or finish of the previous performance."
+  },
+  "plusgmpoverride": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Matrix Priority Overridden",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Indicates whether the matrix priority was overridden. If this check box is selected, the matrix priority was overridden."
+  },
+  "plusgauditid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Audit",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "Audit unique identifier.",
+   "maxLength": 11
+  },
+  "reqasstdwntime": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Require Asset Downtime",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Indicates if the asset requires downtime while work is performed."
+  },
+  "plusginspownpre": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Inspector",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Inspector Owner",
+   "maxLength": 100
+  },
+  "plusgbypunits": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Units",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The amount of days or hours after which the bypass operation must be reviewed.",
+   "maxLength": 16
+  },
+  "targcompdate": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Target Finish",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Date the work order is targeted to be completed."
+  },
+  "plusdestoverhead": {
+   "searchType": "EXACT",
+   "scale": 2,
+   "subType": "AMOUNT",
+   "title": "Overhead",
+   "persistent": true,
+   "type": "number",
+   "remarks": "Current Estimate - Current estimated overhead costs from Compatible Unit Estimating application. This field is updated by the CU Estimate Acceptance Process.",
+   "maxLength": 11
+  },
+  "status": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Status",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Status of the work order, for example, in progress, waiting on material, waiting for approval, completed, or closed.",
+   "maxLength": 16
+  },
+  "template": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Template",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Indicates that the record, with its defined fields, is a template that can be used as a model to create MOC records. When you select More Actions > Create > Template, only those fields that are allowed to be duplicated are copied from the template into the new record."
+  },
+  "plusgcertid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Certification",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "The certification that is associated with the work order.",
+   "maxLength": 11
+  },
+  "plusgscenario_description": {
+   "type": "string"
+  },
+  "plusgissueauth": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Issuing Authority",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The issuing authority for the permit or certificate type associated with the corresponding work order. Depending on the setting in the Control of Work Options in the Organizations application, the issuing authority might need to be authorized in the People application.",
+   "maxLength": 100
+  },
+  "commoditygroup": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Service Group",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Defines the service group for the work order, for example: IT, production, facility, or fleet.",
+   "maxLength": 8
+  },
+  "plusalccompcode_description": {
+   "type": "string"
+  },
+  "plusgrfwnum": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Reason for Work",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The reason for work (RFW) record that is associated with the work order. The status of the RFW must be Active, and its organization must match the organization of the work order.",
+   "maxLength": 12
+  },
+  "plusginspownpos": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Inspector",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Inspector Owner",
+   "maxLength": 100
+  },
+  "plusgsubremarks": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Subunit/Component Remarks",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The description of the subunit or the component that failed.",
+   "maxLength": 200
+  },
+  "plusgactionprior": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "SMALLINT",
+   "title": "Action Priority",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "The priority of the action.",
+   "maxLength": 11
+  },
+  "unitsofwork": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Work Units",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Work Unit",
+   "maxLength": 16
+  },
+  "plusgprepphase": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Phase",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The phase of work, such as start-up, with which the preparation activities are associated.",
+   "maxLength": 20
+  },
+  "plusginspduepre": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Due Date",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Due Date"
+  },
+  "plusgrace325": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Is 3.25 Rule in effect?",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "This rule states that the grace period may only be used once over consecutively generated work orders for this PM. Takes precedence over the grace period."
+  },
+  "reasonforchange": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Reason for Change",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Describes the reason for the change. To enter or view additional information, click the Long Description button.",
+   "maxLength": 20
+  },
+  "pluscjprevnum": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "INTEGER",
+   "title": "Job Plan Revision Number",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "Displays the revision number of the Job Plan the work order was generated with.",
+   "maxLength": 11
+  },
+  "crewid": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Crew",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "ID for a given crew within an craft",
+   "maxLength": 12
+  },
+  "outmatcost": {
+   "searchType": "EXACT",
+   "scale": 2,
+   "subType": "AMOUNT",
+   "title": "Outside Material Cost",
+   "persistent": true,
+   "type": "number",
+   "remarks": "Outside Material Cost",
+   "maxLength": 11
+  },
+  "plusgprepactpri_description": {
+   "type": "string"
+  },
+  "plusgriskasscat_description": {
+   "type": "string"
+  },
+  "bulletinsrc": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Bulletin Source",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The source of the safety bulletin. Valid values are in the PLUSGBULLETINSRC domain.",
+   "maxLength": 18
+  },
+  "plusprmscplk": {
+   "default": true,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Permit Scope Lock",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "This hidden field supports the ability to temporarily override the lock on editing controlled permit data."
+  },
+  "plusgitemid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Item ID",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "Item Unique Identifier",
+   "maxLength": 11
+  },
+  "onbehalfof": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "On Behalf Of",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Identifies for whom this work order has been created. For example, if someone did not have access to a computer, another user could create the work order on behalf of that person.",
+   "maxLength": 82
+  },
+  "plusdcomments": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Comments",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Comments for the prerequisite.",
+   "maxLength": 100
+  },
+  "plusgcrittoqual": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Critical To Quality",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Critical To Quality"
+  },
+  "plusgriskassessid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Risk Assessment Unique Identifier",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "The unique identifier of the risk assessment.",
+   "maxLength": 11
+  },
+  "changeby": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Changed By",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The name of the user who enacted the transaction.",
+   "maxLength": 100
+  },
+  "plusgfailimpactonfunction_description": {
+   "type": "string"
+  },
+  "plusgdetectionmethod_description": {
+   "type": "string"
+  },
+  "pluspra": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Probabilistic Risk Assessment",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "The location impact on safety."
+  },
+  "pluscmtnum": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Commitment",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The source table for the drill down",
+   "maxLength": 10
+  },
+  "plusgtecauttype": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Technical Authority Type",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The type of technical authority, such as electrical or mechanical, that is required for the Management of Change. Personnel who are responsible for other operational areas might be required to review and approve the Management of Change.",
+   "maxLength": 30
+  },
+  "plusgtecauttype_description": {
+   "type": "string"
+  },
+  "sourcesysid": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Source System ID",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Source System ID",
+   "maxLength": 10
+  },
+  "plusgbennum": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Loss Reference",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The impact record that defines the production loss that is associated with this work order.",
+   "maxLength": 12
+  },
+  "plusgformrevpre": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "INTEGER",
+   "title": "Current Form Revision",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "The revision number of the risk  inspection form.",
+   "maxLength": 11
+  },
+  "plusginspduepos": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Due Date",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Due Date"
+  },
+  "plusginsprevgrppre": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Reviewer  Owner Group",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Reviewer Group",
+   "maxLength": 8
+  },
+  "pluswoscplk": {
+   "default": true,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Work Order Scope Lock",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "This hidden field supports the ability to temporarily override the lock on editing-controlled work order data."
+  },
+  "plusgtubularassy": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Tubular Assembly",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The tubular assembly that is used for the job. Valid values are in the PLUSGTUBULARASSY domain.",
+   "maxLength": 40
+  },
+  "plusgmigrationreq": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Mitigation Required",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Indicates whether the failure requires mitigating action to maintain overall system integrity."
+  },
+  "estatapproutlabhrs": {
+   "searchType": "EXACT",
+   "scale": 0,
+   "subType": "DURATION",
+   "title": "Estimated Cost of External Labor",
+   "persistent": true,
+   "type": "number",
+   "remarks": "The hours of internal labor for the task on the current work order at the time it was approved.",
+   "maxLength": 8
+  },
+  "plusgmonmech": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Monitoring Mechanism in Bypass Operation",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Indicates whether the bypass operation must be in place for a lengthy period of time.",
+   "maxLength": 16
+  },
+  "plusgprepactpri": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Priority of Preparation Activity",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The priority of the preparation activities.",
+   "maxLength": 20
+  },
+  "plusgcompstage_description": {
+   "type": "string"
+  },
+  "firstapprstatus": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "First Approve Status",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Identifies the first status change which approved the work order. This value is used to determine if the work order record has ever been approved. Work orders that have been approved are not allowed to be deleted.",
+   "maxLength": 16
+  },
+  "plusgwellbore_description": {
+   "type": "string"
+  },
+  "plusgshftlogentryid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Shift Log Entry",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "The shift log entry that is related to this work order. The work order has a follow-up record relationship to the originating shift log entry.",
+   "maxLength": 11
+  },
+  "verification": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Verification",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Used to verify that the Change was successful or describe how to determine if the Change was successful",
+   "maxLength": 20
+  },
+  "plusgmpoverridecod": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Matrix Priority Override Code",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The reason that the matrix priority was overridden. Valid values are in the PLUSGORIDECODE domain.",
+   "maxLength": 12
+  },
+  "plusalccompcode": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Completion Code",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Indicates the condition of the individual component upon completion of the work order. This can be compared to the required completion acceptance criteria.",
+   "maxLength": 12
+  },
+  "plusgcapex": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "CAPEX",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "When selected, this option indicates that the management of change relates to a capital expenditure. When this option is not selected, the management of change relates to an operational expenditure."
+  },
+  "woisswap": {
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Is this an Asset Swap",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Identifies if the Move is a Move or a Swap"
+  },
+  "plusgsecegrp_description": {
+   "type": "string"
+  },
+  "plusghassafetycrit": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Safety Critical Element Failure",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Indicates whether an element that is critical to safety has failed."
+  },
+  "woacceptscharges": {
+   "default": true,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Accepts Charges",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Check box specifies whether or not the work order accepts charges. If the check box is selected (the default), the work order accepts charges. If the check box is cleared, the work order does not accept charges, and you cannot enter charges on the work order."
+  },
+  "plusgoperationalphaseatfailure_description": {
+   "type": "string"
+  },
+  "plusmer": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Mode Entry Requirement",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "A plant mode that cannot be entered unless the work order is completed. The requirement is only applicable to mode entry from the stated direction (A - ascending, D - descending)",
+   "maxLength": 6
+  },
+  "plusgformrevpos": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "INTEGER",
+   "title": "Current Form Revision",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "The revision number of the risk  inspection form.",
+   "maxLength": 11
+  },
+  "plusgmissionstmt": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Mission Statement",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The mission statement for the improvement project",
+   "maxLength": 400
+  },
+  "plussched": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Scheduling Comments",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Scheduling comments for the Work Order",
+   "maxLength": 256
+  },
+  "plusgsafetyfailcat_description": {
+   "type": "string"
+  },
+  "plusgprocedureid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Operating Procedure",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "The unique identifier of an operating procedure.",
+   "maxLength": 11
+  },
+  "actoutlabhrs": {
+   "searchType": "EXACT",
+   "scale": 0,
+   "subType": "DURATION",
+   "title": "Actual Hours of External Labor",
+   "persistent": true,
+   "type": "number",
+   "remarks": "The hours of external labor that are required for the task on the current work order.",
+   "maxLength": 8
+  },
+  "plusgbypcat": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Category",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The length of time during which the bypass operation must be in place.",
+   "maxLength": 16
+  },
+  "plusgprojecttype": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Project Type",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The type of improvement project",
+   "maxLength": 16
+  },
+  "plusggatekeeper": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Gatekeeper",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The gatekeeper for the project stage gate that is associated with the work order.",
+   "maxLength": 100
+  },
+  "_id": {
+   "type": "string"
+  },
+  "plusgactownerid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Owner of Activity",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "Person unique identifier.",
+   "maxLength": 11
+  },
+  "supervisor": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Supervisor",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Supervisor of the work. Maximo copies this information from the job plan, if there is one. You also can select a supervisor.",
+   "maxLength": 100
+  },
+  "plusghardfailmode_description": {
+   "type": "string"
+  },
+  "plusgsafmtgenteredbyid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Meeting Details Entered By",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The person who entered the details about the safety meeting. The status of the person record in the People application must be active.",
+   "maxLength": 100
+  },
+  "targstartdate": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Target Start",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Date the work order is targeted to begin. If the work order is generated from a PM, the date is supplied by the PM work order generation process."
+  },
+  "plusdagency_description": {
+   "type": "string"
+  },
+  "plusgsafmtgentereddate": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Entered",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The date and time when details about the safety meeting were entered."
+  },
+  "resultnum": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Inspection Results",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The results of the MOC .",
+   "maxLength": 12
+  },
+  "ams": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Requires Asset Maintenance Window",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Indicates that the work must be performed during a dedicated maintenance window."
+  },
+  "jobtaskid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "JOBTASKID",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "Unique Identifier",
+   "maxLength": 11
+  },
+  "reportdate": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Reported Date",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The date and time the work order was reported."
+  },
+  "plusdregstandard_description": {
+   "type": "string"
+  },
+  "plusgreviewerphone": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Phone",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The phone number of the person reviewing the management of change request. If the Reviewed By person has a phone number associated with it, that phone number is the default for this field.",
+   "maxLength": 20
+  },
+  "plusgwellnamesys_description": {
+   "type": "string"
+  },
+  "plusplsystem_description": {
+   "type": "string"
+  },
+  "plusaction": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Action Type",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Action type, used by workflow processess.",
+   "maxLength": 12
+  },
+  "_imagelibref": {
+   "type": "string"
+  },
+  "plusgshiftlogid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Shift Log",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "The unique identifier of shift log.",
+   "maxLength": 11
+  },
+  "plusgsafecrielem_description": {
+   "type": "string"
+  },
+  "plusdtrackingnum": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Tracking Number",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The tracking number of the prerequisite that is assigned by the agency.",
+   "maxLength": 20
+  },
+  "plusginspformnumpos": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Inspection Form",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The identifier of the inspection form for the MOC .",
+   "maxLength": 12
+  },
+  "plusgoperationalphaseatfailure": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Operational Phase during Failure",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The type of operation that the equipment was carrying out at the time of the failure.",
+   "maxLength": 40
+  },
+  "measuredate": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Measurement Date",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Date/Time when measurement was taken or when observation was taken. This field becomes read-only when you enter a measurement and save the record."
+  },
+  "plusgrevcomments": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Comments",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Comments",
+   "maxLength": 200
+  },
+  "pluscritical": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Component Criticality",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Enter how critical this component is to the success or safety of the plant. This code determines if the item is critical, non-critical, or has been designated as Run-To-Failure (RTF). RTF is normally used for items such as light bulbs that are normally replaced only when they fail. Identification and evaluation of the structures and components that are associated with the performance of the function.",
+   "maxLength": 16
+  },
+  "plusgwellfluid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Well Fluid",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The type of fluid that is produced from or injected into the well facility. Valid values are in the PLUSGWELLFLUID domain.",
+   "maxLength": 30
+  },
+  "classstructureid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Class Structure",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The Class Structure ID.",
+   "maxLength": 25
+  },
+  "inspector": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Inspector",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Identifies the inspector assigned to the work order",
+   "maxLength": 100
+  },
+  "plusdestapprciac": {
+   "searchType": "EXACT",
+   "scale": 2,
+   "subType": "AMOUNT",
+   "title": "CIAC",
+   "persistent": true,
+   "type": "number",
+   "remarks": "Estimate at Approval - The Contribution in Aide of Construction from CU Estimating at the time of work order approval.",
+   "maxLength": 11
+  },
+  "woeq1": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Woeq1",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Extra Field Copied From Asset",
+   "maxLength": 10
+  },
+  "woeq2": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Woeq2",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Extra Field Copied From Asset",
+   "maxLength": 10
+  },
+  "woeq3": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Woeq3",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Extra Field Copied From Asset",
+   "maxLength": 10
+  },
+  "woeq4": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Woeq4",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Extra Field Copied From Asset",
+   "maxLength": 10
+  },
+  "woeq5": {
+   "searchType": "EXACT",
+   "scale": 2,
+   "subType": "AMOUNT",
+   "title": "Woeq5",
+   "persistent": true,
+   "type": "number",
+   "remarks": "Extra Field Copied From Asset",
+   "maxLength": 11
+  },
+  "woeq6": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Woeq6",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Extra Field Copied From Asset"
+  },
+  "glaccount": {
+   "searchType": "WILDCARD",
+   "subType": "GL",
+   "title": "GL Account",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "General ledger account code to which work order costs are charged. The GL account consists of up to four components: cost center, activity, resource, and element, each separated by a hyphen. If the work order was generated from a PM, Maximo copies the GL account from the PM. This field is read-only if the Charge to Store? check box is selected.",
+   "maxLength": 23
+  },
+  "woeq7": {
+   "searchType": "EXACT",
+   "scale": 2,
+   "subType": "DECIMAL",
+   "title": "Woeq7",
+   "persistent": true,
+   "type": "number",
+   "remarks": "Extra Field Copied From Asset",
+   "maxLength": 16
+  },
+  "failurecode": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Failure Class",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Failure class of the defined work asset. The failure class is the top level of the failure hierarchy.",
+   "maxLength": 8
+  },
+  "milestone": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Is Milestone",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Indicates if this Work Order is a milestone."
+  },
+  "woeq8": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Woeq8",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Extra Field Copied From Asset",
+   "maxLength": 10
+  },
+  "dirissuemtlstatus": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Direct Issue Material Status",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The availability status of direct issue materials on the current work order.",
+   "maxLength": 20
+  },
+  "plusgprojectid": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Project ID",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The project associated with the management of change request.",
+   "maxLength": 16
+  },
+  "woeq9": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Woeq9",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Extra Field Copied From Asset",
+   "maxLength": 10
+  },
+  "actfinish": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Actual Finish",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Date and time the actual work was completed."
+  },
+  "estintlabcost": {
+   "searchType": "EXACT",
+   "scale": 2,
+   "subType": "AMOUNT",
+   "title": "Estimated Cost of Internal Labor",
+   "persistent": true,
+   "type": "number",
+   "remarks": "The estimated cost of internal labor for the task on the current work order.",
+   "maxLength": 11
+  },
+  "plusretest": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Retest",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "This check box indicates a work order that is generated to satisfy requirements that have not been fully met."
+  },
+  "pluswocompletioncode_description": {
+   "type": "string"
+  },
+  "inspformnum": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Inspection Form",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The number of the inspection form.",
+   "maxLength": 12
+  },
+  "plusdsamplinggroup": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Sampling Group",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The meter group that is related to this work order. Specify the meter sampling group from the Select Value menu.",
+   "maxLength": 12
+  },
+  "plusgtargetdefrt": {
+   "searchType": "EXACT",
+   "scale": 2,
+   "subType": "AMOUNT",
+   "title": "Target Defect Rate",
+   "persistent": true,
+   "type": "number",
+   "remarks": "The target defect rate, for example, 3.4/million for Six Sigma.",
+   "maxLength": 11
+  },
+  "plusplanner": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Planner",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The individual assigned responsibility for planning the work order",
+   "maxLength": 100
+  },
+  "repfacsiteid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Repair Facility Site",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The site for the repair facility.",
+   "maxLength": 8
+  },
+  "plusgqualitycritical": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Quality Critical",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Specifies whether this work order is critical for ensuring quality. If the check box is selected, this work order is quality critical. If the check box is cleared, this work order is not quality critical."
+  },
+  "excpttype": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Exception Type",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Exception Type.",
+   "maxLength": 12
+  },
+  "aos": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Requires Asset Downtime",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Indicates that the work cannot be performed while the asset is operating."
+  },
+  "pluscfrequency": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "INTEGER",
+   "title": "Frequency Field",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "Number of time units (days, weeks, months, or years) to elapse between work orders you generate from this PM. The count begins at the value in the Last Target Start Date (if Use Target Start? is selected or Last Completion Date (if Use Target Start? is not the selected field. This value may differ differ from the Regulatory Frequency to facilitate scheduling. For example, a regulatory frequency of 31 days may have a frequency of 28 days.",
+   "maxLength": 11
+  },
+  "ownergroup": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Owner Group",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The group currently responsible for the work order.",
+   "maxLength": 8
+  },
+  "plusginspformnumpre": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Inspection Form",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The identifier of the inspection form for the MOC .",
+   "maxLength": 12
+  },
+  "plusgwellpurpose_description": {
+   "type": "string"
+  },
+  "wol4": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Wol4",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Extra Field"
+  },
+  "plusgjustification": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Justification",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The justification for the management of change request.",
+   "maxLength": 200
+  },
+  "plusgrace": {
+   "searchType": "EXACT",
+   "scale": 2,
+   "subType": "DECIMAL",
+   "title": "Grace period",
+   "persistent": true,
+   "type": "number",
+   "remarks": "Percentage of the frequency that is added to the next due date. Provides an extension for completing the work order.",
+   "maxLength": 6
+  },
+  "storeroommtlstatus_description": {
+   "type": "string"
+  },
+  "estatapprmatcost": {
+   "searchType": "EXACT",
+   "scale": 2,
+   "subType": "AMOUNT",
+   "title": "Estimated Material Cost at Approval",
+   "persistent": true,
+   "type": "number",
+   "remarks": "Cost estimate of the work order's material at the time the work order was approved.",
+   "maxLength": 11
+  },
+  "flowaction": {
+   "searchType": "EXACT",
+   "subType": "UPPER",
+   "title": "Flow Action",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The action to be performed (if any) when the workorder is started via process flow control",
+   "maxLength": 30
+  },
+  "taskid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "INTEGER",
+   "title": "Task",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "Number assigned to the task.",
+   "maxLength": 11
+  },
+  "plusgdefectmeter": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Meter",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Measurement which can be used to measure defect rate",
+   "maxLength": 10
+  },
+  "wopriority": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "INTEGER",
+   "title": "Priority",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "Identifies the importance of the work order, from 0-999, where 0 is the lowest priority and 999 is the highest.",
+   "maxLength": 11
+  },
+  "plusgwellbore": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Wellbore Type",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The classification of the wellbore with respect to its parent well or wellbore. Valid values are in the PLUSGWELLBORETYPE domain.",
+   "maxLength": 30
+  },
+  "wol3": {
+   "searchType": "EXACT",
+   "scale": 2,
+   "subType": "AMOUNT",
+   "title": "Wol3",
+   "persistent": true,
+   "type": "number",
+   "remarks": "Extra Field",
+   "maxLength": 11
+  },
+  "wol2": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Wol2",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Extra Field",
+   "maxLength": 10
+  },
+  "actmatcost": {
+   "searchType": "EXACT",
+   "scale": 2,
+   "subType": "AMOUNT",
+   "title": "Actual Material Cost",
+   "persistent": true,
+   "type": "number",
+   "remarks": "Actual Material Cost",
+   "maxLength": 11
+  },
+  "generatedforpo": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "PO",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Work order for PO",
+   "maxLength": 8
+  },
+  "wol1": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Wol1",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Extra Field",
+   "maxLength": 10
+  },
+  "fnlconstraint": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Finish No Later Than",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The date that work should be completed by.  Scheduled dates should be before this date."
+  },
+  "nestedjpinprocess": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Nested Job Plan Processing",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Record will be locked while the jobplan containing nested jobplans is in the process of being applied to the record."
+  },
+  "plusgreasonfordev": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Reason for Deviation",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The reason for the deviation from the scheduled plan. Valid values are in the PLUSGREASONFORDEV domain. This field is required when the schedule deviation check box is selected.",
+   "maxLength": 30
+  },
+  "resultnumpos": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Inspection Results",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The results of the MOC .",
+   "maxLength": 12
+  },
+  "plusgracedays": {
+   "searchType": "EXACT",
+   "scale": 5,
+   "subType": "DECIMAL",
+   "title": "Grace Days",
+   "persistent": true,
+   "type": "number",
+   "remarks": "The regulatory grace period, expressed in days, hours and minutes",
+   "maxLength": 11
+  },
+  "pmnum": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "PM",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Identifies the preventive maintenance record from which the work order was generated.",
+   "maxLength": 8
+  },
+  "ignorediavail": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Ignore Direct Issue Availability For Work Order Status",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Indicates whether to ignore the availability of direct issues for the work order status approval."
+  },
+  "plusgactionsumm": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Summary",
+   "persistent": true,
+   "type": "string",
+   "remarks": "A summary of the action",
+   "maxLength": 200
+  },
+  "plusgmatrixindex": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "INTEGER",
+   "title": "Matrix Index",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "Identifier of the matrix index.",
+   "maxLength": 11
+  },
+  "plusgriskassesscom": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Comments",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Comments about the risk assessment. You can change this value unless the status of the work order is Canceled or Closed.",
+   "maxLength": 200
+  },
+  "plusgmiremarks": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Maintainable Item/Part Remarks",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The description of the maintainable item or part.",
+   "maxLength": 200
+  },
+  "plusgtestcert": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Test Certification",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Indicates whether test certification is required. If this check box is selected, a certificate type is mandatory."
+  },
+  "plusgconsqnum": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Consequence",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Associates the detected failure with a Consequence record. You can use this field to track the consequences of a failure.",
+   "maxLength": 12
+  },
+  "estlabhrs": {
+   "searchType": "EXACT",
+   "scale": 0,
+   "subType": "DURATION",
+   "title": "Estimated Labor Hours",
+   "persistent": true,
+   "type": "number",
+   "remarks": "Estimated Labor Hours",
+   "maxLength": 8
+  },
+  "plusgbypunit": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Unit",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The unit that is associated with the bypass operation.",
+   "maxLength": 16
+  },
+  "plusgimpreqd": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Improvement Required",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Indicates whether an improvement is required arising from the management of change."
+  },
+  "workpackmtlstatus_description": {
+   "type": "string"
+  },
+  "plusunit_description": {
+   "type": "string"
+  },
+  "pmextdate": {
+   "searchType": "EXACT",
+   "subType": "DATE",
+   "title": "PM Extension Date",
+   "persistent": true,
+   "type": "string",
+   "remarks": "From the Extended Date of the PM"
+  },
+  "estoutlabcost": {
+   "searchType": "EXACT",
+   "scale": 2,
+   "subType": "AMOUNT",
+   "title": "Estimated Cost of External Labor",
+   "persistent": true,
+   "type": "number",
+   "remarks": "The estimated hours of external labor that are required for the task on the current work order.",
+   "maxLength": 11
+  },
+  "plusdtasktype": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Task Type",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The phase of construction or the type of work that will be performed.  This field is used to group similar compatible units into the same work order task.",
+   "maxLength": 24
+  },
+  "vendor": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Vendor",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Identifies the vendor responsible for the work.",
+   "maxLength": 12
+  },
+  "pluspermexp": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Permit Expires",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The expiration date and time for this permit. After this time, the permit is no longer valid for use."
+  },
+  "crewworkgroup": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Crew Work Group",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Resource pool that will perform the work order.",
+   "maxLength": 8
+  },
+  "plusgcategory": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Category",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The category of the management of change request.",
+   "maxLength": 16
+  },
+  "plusgrevactsumm": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Review Action Summary",
+   "persistent": true,
+   "type": "string",
+   "remarks": "A summary of the review actions that are associated with the work order.",
+   "maxLength": 200
+  },
+  "disabled": {
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Disabled",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Is this record active?"
+  },
+  "plusgbarrierfail": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Barrier Failure",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": " Indicates which barrier has failed.",
+   "maxLength": 40
+  },
+  "plusdtasktype_description": {
+   "type": "string"
+  },
+  "calendar": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Calendar",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Calendar to determine shift work is to be done on",
+   "maxLength": 8
+  },
+  "plusqual_description": {
+   "type": "string"
+  },
+  "plusalccompdate": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Completion Date",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Indicates the completion date for work or testing of the component."
+  },
+  "plusgelevationcode_description": {
+   "type": "string"
+  },
+  "plusgactcompleted": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Completion Checked",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Indicates that the action has been checked for completion."
+  },
+  "anywhererefid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Anywhere Ref ID",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "Anywhere Reference ID",
+   "maxLength": 11
+  },
+  "plusgpittype_description": {
+   "type": "string"
+  },
+  "estatapprintlabhrs": {
+   "searchType": "EXACT",
+   "scale": 0,
+   "subType": "DURATION",
+   "title": "Estimated Hours of Internal Labor",
+   "persistent": true,
+   "type": "number",
+   "remarks": "The hours of internal labor for the task on the current work order at the time it was approved.",
+   "maxLength": 8
+  },
+  "plusgfailsubdiv": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Failure Mechanism Subdivision Code",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The ISO 14224 subdivision code of the failure mechanism.",
+   "maxLength": 10
+  },
+  "plusmilestone_description": {
+   "type": "string"
+  },
+  "plusasfound": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "As Found Code",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The condition that the asset was found in when work started.",
+   "maxLength": 16
+  },
+  "plusgwellpurpose": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Well Purpose",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The purpose for which the well was originally drilled. Valid values are in the PLUSGWELLPURPOSE domain.",
+   "maxLength": 50
+  },
+  "plusgsafmtgagreedbyid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Actions Agreed By",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The person who agreed to the actions that resulted from the safety meeting. The status of the person record in the People application must be active.",
+   "maxLength": 100
+  },
+  "plusgwellnamesys": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Well Name System",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The type of the well or wellbore naming system. Valid values are in the PLUSGWELLNAMESYSTEM domain.",
+   "maxLength": 30
+  },
+  "plusgreference": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Action Reference",
+   "persistent": true,
+   "type": "string",
+   "remarks": "For a work order, this is the identifier of the record in the reference application that generated the work order. For an action, this is a reference source that might have information about the action. The source could be a document, or it could refer to a telephone or verbal agreement.",
+   "maxLength": 50
+  },
+  "plusggroupcode_description": {
+   "type": "string"
+  },
+  "actcategory": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Category",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The category, such as a safety meeting or a safety bulletin, that generated the creation of the action tracking record. Valid values are in the PLUSGACTCAT domain.",
+   "maxLength": 18
+  },
+  "actlabcost": {
+   "searchType": "EXACT",
+   "scale": 2,
+   "subType": "AMOUNT",
+   "title": "Actual Labor Cost",
+   "persistent": true,
+   "type": "number",
+   "remarks": "Actual Labor Cost",
+   "maxLength": 11
+  },
+  "estatapprlabhrs": {
+   "searchType": "EXACT",
+   "scale": 0,
+   "subType": "DURATION",
+   "title": "Estimated Labor Hours at Approval",
+   "persistent": true,
+   "type": "number",
+   "remarks": "Estimate of the work order's labor hours at the time the work order was approved.",
+   "maxLength": 8
+  },
+  "jpnum": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Job Plan",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Identifies the work order's job plan. When you assign a job plan to a work order, Maximo copies the job plan operations, material, labor, and tool information to the work order's work plan. Maximo also copies job plan data into these fields: Interruptible?, Crew, Supervisor, and WO Priority. If there is an existing association between the job plan and a safety plan when the job plan is used on the asset or location, Maximo also copies the safety plan to the work order. In addition, Maximo automatically copies a single measurement point if there is an existing association between the asset on the work order and the point name on the job plan.",
+   "maxLength": 12
+  },
+  "estatapprlabcost": {
+   "searchType": "EXACT",
+   "scale": 2,
+   "subType": "AMOUNT",
+   "title": "Estimated Labor Cost at Approval",
+   "persistent": true,
+   "type": "number",
+   "remarks": "Cost estimate of the work order's labor at the time the work order was approved.",
+   "maxLength": 11
+  },
+  "lastcopylinkdate": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Last Time doclinks Copied",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The date time doclinks was copied from other related objects like asset,location,jobplan,safetyplan etc."
+  },
+  "plusgfincntrlid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Project Unique Identifier",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The unique project identifier associated with the management of change.",
+   "maxLength": 8
+  },
+  "plusgactiontype": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Action Type",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The type of action",
+   "maxLength": 16
+  },
+  "plusdregstandard": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Regulatory Standard",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The regulatory standard that is associated with this work order.",
+   "maxLength": 12
+  },
+  "_rowstamp": {
+   "type": "string"
+  },
+  "plusgcomcrit": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Commercially Critical",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Indicates whether this location is commercially critical. If the check box is selected, this location is commercially critical."
+  },
+  "plusgsafmtgsummary": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Meeting Summary",
+   "persistent": true,
+   "type": "string",
+   "remarks": "A summary of what was discussed during the safety meeting.",
+   "maxLength": 10
+  },
+  "bulletintype": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Bulletin Type",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The type of safety bulletin, such as advisory or mandatory. Valid values are in the PLUSGBULLETINTYPE domain.",
+   "maxLength": 18
+  },
+  "suspendflow": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Suspend Flow Control",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Flag used to suspend and resume flow control on a parent record.  Rolls down the hierarchy to all its child records."
+  },
+  "status_description": {
+   "type": "string"
+  },
+  "addibulletindetails": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Additional Details",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Additional details about the content of the safety bulletin.",
+   "maxLength": 4000
+  },
+  "plusgderricktype_description": {
+   "type": "string"
+  },
+  "plusginsowngrppos": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Inspector  Owner Group",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Inspector Group ",
+   "maxLength": 8
+  },
+  "plusgpostactcomp": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Post MOC Actions Completed",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Confirms whether all post-management of change actions are completed."
+  },
+  "targetdesc": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Target Description",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Temporary target description for targeting CIs",
+   "maxLength": 50
+  },
+  "calcpriority": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "INTEGER",
+   "title": "Calculated Priority",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "Calculated Work Priority",
+   "maxLength": 11
+  },
+  "outlabcost": {
+   "searchType": "EXACT",
+   "scale": 2,
+   "subType": "AMOUNT",
+   "title": "Outside Labor Cost",
+   "persistent": true,
+   "type": "number",
+   "remarks": "Outside Labor Cost",
+   "maxLength": 11
+  },
+  "plusgfixedmeasvalue": {
+   "searchType": "EXACT",
+   "scale": 3,
+   "subType": "DECIMAL",
+   "title": "As-Fixed Measurement Value",
+   "persistent": true,
+   "type": "number",
+   "remarks": "The as-fixed measurement value that was recorded.",
+   "maxLength": 16
+  },
+  "plusgimptype": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Improvement Type",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The type of improvement.",
+   "maxLength": 16
+  },
+  "plusgsafetycritelm": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Safety Critical Element",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "A reference to any element that is critical to safety and that is associated with a regulation. A performance standard that regulates the emission of hazardous substances can be a type of reference that applies to elements that are critical to safety.",
+   "maxLength": 10
+  },
+  "schedfinish": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Scheduled Finish",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Date and time the work is scheduled to be finished. Must be earlier than current date/time.  If Schedule Finish has a value, Schedule Start must be earlier than Schedule Finish."
+  },
+  "justifypriority": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Priority Justification",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Describes why the work order received the priority it has been assigned. To enter or view additional information, click the Long Description button.",
+   "maxLength": 50
+  },
+  "plusgreviewed": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Reviewed",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Identifies that the improvement has been reviewed"
+  },
+  "plussafediv_description": {
+   "type": "string"
+  },
+  "plusdsabotage": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Sabotage",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Indicates that the work order is correcting or investigating an act of sabotage."
+  },
+  "plusgareaauth": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Area Authority",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The area authority for the permit or certificate type associated with the corresponding work order. Depending on the setting in the Control of Work Options in the Organizations application, the area authority might need to be authorized in the People application.",
+   "maxLength": 100
+  },
+  "plusgprojecttype_description": {
+   "type": "string"
+  },
+  "actstart": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Actual Start",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Date and time work begins. By default this is the date and time the work order status changes to INPRG (In Progress). Your system administrator can use an option in the Multisite Application to change the default value to the date and time the work order status changes to COMP (Complete). Must be earlier than current date/time.  If Actual Finish has a value, Actual Start must be earlier than Actual Finish."
+  },
+  "description": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Description",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Describes the work order. To enter or view additional information, click the Long Description button.",
+   "maxLength": 100
+  },
+  "plusgenvcrit": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Environmentally Critical",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Indicates whether this location is environmentally critical. If the check box is selected, this location is environmentally critical."
+  },
+  "plusgoperator": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Operator",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The operator of the field where drilling takes place. This value is the name of an oil company, not the name of a person.",
+   "maxLength": 20
+  },
+  "plusgpertypenum": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Permit and Certificate Type",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The permit or certificate type associated with the corresponding work oder.",
+   "maxLength": 10
+  },
+  "plusgprepaudid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Audit",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "The audit that is associated with the preparation activities.",
+   "maxLength": 11
+  },
+  "plusgtechtype": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Technical Authority Type",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The type of technical authority that is required for the test. Valid values are in the PLUSGTECHAUTHORITY domain.",
+   "maxLength": 30
+  },
+  "wosequence": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "INTEGER",
+   "title": "Sequence",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "Indicates sequence in which to execute the work orders in a work order hierarchy.",
+   "maxLength": 11
+  },
+  "plusgtesttype": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Test Type",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The type of test that is being conducted. Valid values are in the PLUSGTESTTYPE domain.",
+   "maxLength": 50
+  },
+  "ai_usefortraining": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Use for AI training",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "A flag to mark a WO for use in a AI training model"
+  },
+  "bulletintype_description": {
+   "type": "string"
+  },
+  "calcorgid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Organization",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Organization associated with the calculation calendar, and used with the Calendar and Shift fields to calculate the Target Contact, Target Response, and Target Resolution dates on a ticket or work order. Click the Detail Menu button to select an organization or go to the Organizations application to create one.",
+   "maxLength": 8
+  },
+  "plusgpreptype": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Type of Preparation",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The type of activity that is associated with the preparation activities.",
+   "maxLength": 20
+  },
+  "plusgactionsource": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Source",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The source of the action, for example, UK HSE.",
+   "maxLength": 16
+  },
+  "plusgpolicynum": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Operating Policy",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The operating policy that is associated with this record. The operating policy must be in Active status. When you duplicate a record, the operating policy identifier is not copied to the duplicated record.",
+   "maxLength": 10
+  },
+  "plusgdefmeaspt": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Measurement Point",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Measurement point that can be used to measure the defect rate.",
+   "maxLength": 8
+  },
+  "plusgmocdeferralid": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "MOC or Deferral ID",
+   "persistent": true,
+   "type": "string",
+   "remarks": "A reference for the originating management of change request or deferral.",
+   "maxLength": 16
+  },
+  "plusgbypunit_description": {
+   "type": "string"
+  },
+  "schedstart": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Scheduled Start",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Date and time the work is scheduled to begin. Must be earlier than current date/time.  If Schedule Finish has a value, Schedule Start must be earlier than Schedule Finish."
+  },
+  "location": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Location",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Identifies the work order's location. This is not necessarily the asset's location, however, if an asset is entered, its location will default here",
+   "maxLength": 25
+  },
+  "plusgdegfact": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Degradation Factor",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The factor by which the equipment has degraded.",
+   "maxLength": 20
+  },
+  "risk": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Risk Assessment",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Defines the risk level of the work order. Risk may be a numeric value or a term such as High, Medium, Low, or some other value based upon your business definitions.",
+   "maxLength": 10
+  },
+  "bulletinboardid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Message ID",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The identifier of the bulletin board message.",
+   "maxLength": 10
+  },
+  "plusassrev": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "INTEGER",
+   "title": "Asset Revision",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "The revision of the asset at the time of its association with the current work order.",
+   "maxLength": 11
+  },
+  "plusgpermitworkid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Permit to Work Identifier",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "The unique identifier of the permit to work.",
+   "maxLength": 11
+  },
+  "historyflag": {
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "History",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Yes/No field or check box that specifies whether a record is a history record or is currently active. History records are complete, closed, canceled, etc. If a Y is in the History? field or the check box is selected, the record is a history record. On the List tab or the More Search Fields dialog box, you can enter a Y in the History? field to include only history records in the search results. If an N is in the field, Maximo includes only currently active records in the search results. If the field is empty (null), Maximo includes history and active records in the search results."
+  },
+  "plusgreviewby": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Review By",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The person who created the pre-start safety review.",
+   "maxLength": 100
+  },
+  "pluscnextdate": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Next Calibration Due Date",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Date the next work order is scheduled to be generated from the PM. The Next Due Date field is NULL unless there is an integer value in the Frequency field."
+  },
+  "plusgccf": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Common Cause Failure",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "When selected, indicates that the failure has a common cause."
+  },
+  "plusdprereqtype": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Prerequisite Type",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Identifies the type of prerequisite that is needed.",
+   "maxLength": 12
+  },
+  "plusgteamleadid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Team Leader",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The team leader of the improvement project",
+   "maxLength": 100
+  },
+  "plusdestapproh": {
+   "searchType": "EXACT",
+   "scale": 2,
+   "subType": "AMOUNT",
+   "title": "Overhead",
+   "persistent": true,
+   "type": "number",
+   "remarks": "Estimate at Approval - Estimated overhead cost from Compatible Unit Estimating application at the time of work order approval.  This field is updated by the Work Order Approval Process.",
+   "maxLength": 11
+  },
+  "plusgdefectref": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Related Defect",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The reference number for the defect",
+   "maxLength": 25
+  },
+  "plusgdrivetype": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Drive Type",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The type of drive that is used on the drilling rig. Valid values are in the PLUSGDRIVETYPE domain.",
+   "maxLength": 30
+  },
+  "plusgdecision_description": {
+   "type": "string"
+  },
+  "plusgstagegate": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Project Stage Gate",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The project stage gate that is associated with the work order. Valid values are in the PLUSGSTAGEGATE domain. You can change this value until the work order is canceled or closed.",
+   "maxLength": 18
+  },
+  "lms": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Requires Location Maintenance Window",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Indicates that the work must be performed during a dedicated maintenance window."
+  },
+  "wojp1": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Wojp1",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Extra Field",
+   "maxLength": 10
+  },
+  "plusgprojectphase_description": {
+   "type": "string"
+  },
+  "plusmrule": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Maintenance Rule",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Indicates whether this component is critical to the successful operation of the plant and therefore subject to a regulatory maintenance rule. A maintenance rule typically states that when the performance or condition of a component does not meet established goals, appropriate corrective action must be taken."
+  },
+  "plusworkcat": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Work Category",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "AP-928 Work Order category",
+   "maxLength": 12
+  },
+  "wojp2": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Wojp2",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Extra Field",
+   "maxLength": 10
+  },
+  "plusgbarrierfaildetect_description": {
+   "type": "string"
+  },
+  "wojp3": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Wojp3",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Extra Field",
+   "maxLength": 10
+  },
+  "genforpolineid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "PO Line ID",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "POLINEID number that required the work",
+   "maxLength": 11
+  },
+  "wojp4": {
+   "searchType": "EXACT",
+   "scale": 2,
+   "subType": "AMOUNT",
+   "title": "Wojp4",
+   "persistent": true,
+   "type": "number",
+   "remarks": "Extra Field",
+   "maxLength": 11
+  },
+  "wojp5": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Wojp5",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Extra Field"
+  },
+  "href": {
+   "type": "string",
+   "title": "PLUSGDRL object reference"
+  },
+  "plusgconsqid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Consequence Identifier",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "Consequence Identifier",
+   "maxLength": 11
+  },
+  "plusginsowngrppre": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Inspector  Owner Group",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Inspector Group ",
+   "maxLength": 8
+  },
+  "plusgrigtype_description": {
+   "type": "string"
+  },
+  "pmduedate": {
+   "searchType": "EXACT",
+   "subType": "DATE",
+   "title": "PM Due Date",
+   "persistent": true,
+   "type": "string",
+   "remarks": "From the original Next Due Date of the PM"
+  },
+  "plusganalysismeth": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Analysis Method",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The method of analysis used for the improvement project",
+   "maxLength": 20
+  },
+  "plusgtechauthority": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Technical Authority",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The person who is the technical authority for the test. The person must be designated a technical authority in the People application.",
+   "maxLength": 100
+  },
+  "plusgtemp": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Temporary",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Identifies that the change is temporary."
+  },
+  "contract": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Contract",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Service contract number for the work being performed. Click Detail menu to choose an option to select a value.",
+   "maxLength": 8
+  },
+  "plusgactiontype_description": {
+   "type": "string"
+  },
+  "pctaskcomp": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "INTEGER",
+   "title": "Percent complete by tasks completed",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "Specifies the percent complete as calculated by tasks completed vs. planned.",
+   "maxLength": 11
+  },
+  "actlabhrs": {
+   "searchType": "EXACT",
+   "scale": 0,
+   "subType": "DURATION",
+   "title": "Actual Labor Hours",
+   "persistent": true,
+   "type": "number",
+   "remarks": "Number of hours to complete the task. If the work order has an associated work plan, Maximo copies this information from the Plans tab. You can edit this field until the work order is closed.",
+   "maxLength": 8
+  },
+  "measurementvalue": {
+   "searchType": "EXACT",
+   "scale": 3,
+   "subType": "DECIMAL",
+   "title": "Measurement",
+   "persistent": true,
+   "type": "number",
+   "remarks": "Measurement value recorded during the inspection. This field becomes read-only when you enter a value and save the record. If you enter a measurement for a measurement point, Maximo copies the new measurement and the measurement date to the Measurement table. If you enter a measurement without a measurement point, Maximo saves the measurement data with the work order. NOTE: If you change the asset on a work order Maximo does not update the Measurement field.",
+   "maxLength": 16
+  },
+  "bulletinsrc_description": {
+   "type": "string"
+  },
+  "plusgdefuntildate": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Deferral Until",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The date that the work deferred by the management of change can be deferred until."
+  },
+  "intshift": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Interruptible shift",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Specifies the shift on which the work will be interrupted in the Graphical Scheduling application.",
+   "maxLength": 8
+  },
+  "plusgpolicyid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Operating Policy",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "The operating procedure that is associated with this record.",
+   "maxLength": 11
+  },
+  "plusgrequireddate": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Required Date",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The date the management of change is required."
+  },
+  "phone": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Phone",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The phone number (usually a work site telephone number) associated with the work order. If the Reported By person has a phone number associated with it, that phone number is the default for this field.",
+   "maxLength": 20
+  },
+  "plusgcategory_description": {
+   "type": "string"
+  },
+  "actservcost": {
+   "searchType": "EXACT",
+   "scale": 2,
+   "subType": "AMOUNT",
+   "title": "Actual Service Cost",
+   "persistent": true,
+   "type": "number",
+   "remarks": "Total actual service cost against this work order.",
+   "maxLength": 11
+  },
+  "estmatcost": {
+   "searchType": "EXACT",
+   "scale": 2,
+   "subType": "AMOUNT",
+   "title": "Estimated Material Cost",
+   "persistent": true,
+   "type": "number",
+   "remarks": "Estimated Material Cost",
+   "maxLength": 11
+  },
+  "plusghardfailmode": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Hardware Failure Mode",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The hardware failure mode in accordance with International Electrotechnical Commission (IEC) standard 61508.",
+   "maxLength": 50
+  },
+  "origrecordclass": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Originating Record Class",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Originating record's class, for example: change, release, incident, problem, or work order.",
+   "maxLength": 16
+  },
+  "plusgevidence": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Evidence",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The reasons that support the decision to include the preparation activities in a package of work.",
+   "maxLength": 200
+  },
+  "plusgsubcode": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Subunit/Component Code",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The identifier of the subunit or the component that failed.",
+   "maxLength": 50
+  },
+  "pcphys": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "INTEGER",
+   "title": "Physical percent complete",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "Specifies the user-defined percent complete as entered manually.",
+   "maxLength": 11
+  },
+  "plusgfailimpactonfunction": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Impact of Failure on Function",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The impact of the failure on the functioning of the equipment.",
+   "maxLength": 35
+  },
+  "plusgfunction": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Function",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The function that is responsible for the reason for work that is associated with the work order. Valid values are in the PLUSGFUNCTION domain.",
+   "maxLength": 24
+  },
+  "plusoutagecode_description": {
+   "type": "string"
+  },
+  "plusdagency": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Agency",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The regulatory organization that requires the prerequisite to be completed.",
+   "maxLength": 16
+  },
+  "plusgsafecrielem": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Safety-Critical Element",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "A reference to any element that is critical to safety and that is associated with a regulation. A performance standard that regulates the emission of hazardous substances can be a type of safety-critical reference.",
+   "maxLength": 10
+  },
+  "problemcode": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Problem Code",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The problem being reported based on the defined Failure Class. This is usually the code in the second level of the failure reporting hierarchy.",
+   "maxLength": 8
+  },
+  "esttoolcost": {
+   "searchType": "EXACT",
+   "scale": 2,
+   "subType": "AMOUNT",
+   "title": "Estimated Tool Cost",
+   "persistent": true,
+   "type": "number",
+   "remarks": "Estimated Tool Cost",
+   "maxLength": 11
+  },
+  "reportedby": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Reported By",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Person reporting the problem or requesting maintenance work. Click Detail menu to choose an option to select a labor code. If you enter a labor code in the Reported By field, Maximo fills in the work order's Location and Work Phone fields with the respective location and work telephone values from the labor record. However, Maximo does not overwrite existing entries in the Location and Work Phone fields of the work order.",
+   "maxLength": 82
+  },
+  "plusalcexception": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Exception",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "This check box indicates that the condition does not satisfy the acceptance criteria."
+  },
+  "plusgclosurecomm": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Closure Comments",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Comments about the closure of the management of change.",
+   "maxLength": 300
+  },
+  "los": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Requires Location Downtime",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Indicates that the work must be performed when the location is not in use, and available for maintenance."
+  },
+  "splanreviewdate": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Has safetyplan review date?",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Does this Work Order safetplan is reviwed?"
+  },
+  "plusclearreq": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Clearance Protection Required",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Indicates whether the work order requires clearance protection. The association with a work order is defined in the clearance record. Depending on the settings that are defined for the clearance site, you can associate one or more clearances with a single work order."
+  },
+  "plusginsprevpre": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Reviewer",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Reviewer Owner",
+   "maxLength": 100
+  },
+  "assetnum": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Asset",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Identifies the asset.",
+   "maxLength": 25
+  },
+  "plusgra": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Generation Risk Assessment",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "The location impact on power generation."
+  },
+  "persongroup": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Work Group",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Identifies the person group responsible for the work. Person groups are set up in the Person Groups application.",
+   "maxLength": 8
+  },
+  "plusgmatrixprior": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "INTEGER",
+   "title": "Matrix Priority",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "hasList": true,
+   "remarks": "Identifier of the matrix priority. Valid values are in the PLUSGMATRIXPRIOR domain.",
+   "maxLength": 11
+  },
+  "plusgtempuntildate": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Temporary Until",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The date that the work deferred by the management of change can be deferred until."
+  },
+  "plusmilestone": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Milestone Code",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Milestone Code",
+   "maxLength": 12
+  },
+  "plusgcementjobtype_description": {
+   "type": "string"
+  },
+  "plusgtesttype_description": {
+   "type": "string"
+  },
+  "plusgpermitrefno": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Permit Reference",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Number of the permit or certificate associated with the corresponding work order. This field can be editable or read-only, depending on the setting in the Control of Work Options in the Organizations application.",
+   "maxLength": 16
+  },
+  "plusgsafmtgenteredbyname": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Name",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The person who entered the details about the safety meeting. The status of the person record in the People application must be active.",
+   "maxLength": 82
+  },
+  "plusgwellfluid_description": {
+   "type": "string"
+  },
+  "observation": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Observation",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Describes the visual inspection data for this operation. If the work order has an associated work plan, Maximo copies this information from the Plans tab. You can edit this field until the work order is closed.",
+   "maxLength": 8
+  },
+  "plusgisolationnum": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Isolation Certificate",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The isolation certificate record that is associated with the bypass management record.",
+   "maxLength": 10
+  },
+  "plusgelevationcode": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Casing Type",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The type of casing. Valid values are in the PLUSGCASINGTYPE domain.",
+   "maxLength": 40
+  },
+  "interruptible": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Interruptible",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Specifies whether the work order is allowed to be stopped once the work has begun and then restarted. If the check box is selected, the work can be stopped. If the check box is cleared, the work cannot be stopped and restarted."
+  },
+  "remdur": {
+   "searchType": "EXACT",
+   "scale": 0,
+   "subType": "DURATION",
+   "title": "Time Remaining",
+   "persistent": true,
+   "type": "number",
+   "remarks": "Indicates the number of remaining hours needed to complete the work. You can modify this value until the work order is closed.",
+   "maxLength": 8
+  },
+  "sendersysid": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Sender System ID",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Column used by ERP-Integration (APIs)",
+   "maxLength": 50
+  },
+  "estlabcost": {
+   "searchType": "EXACT",
+   "scale": 2,
+   "subType": "AMOUNT",
+   "title": "Estimated Labor Cost",
+   "persistent": true,
+   "type": "number",
+   "remarks": "Estimated Labor Cost",
+   "maxLength": 11
+  },
+  "lead": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Lead",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Lead person responsible for the work.",
+   "maxLength": 100
+  },
+  "plusgfailsubdiv_description": {
+   "type": "string"
+  },
+  "plusgbypvalidity": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "INTEGER",
+   "title": "Review Frequency",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "The interval of time, in days or hours, after which the bypass operation must be reviewed.",
+   "maxLength": 11
+  },
+  "wonum": {
+   "default": "&AUTOKEY&",
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Work Order",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The number you use to track actions taken to satisfy agreement requirements. The agreement is identified in the Reference field.",
+   "maxLength": 25
+  },
+  "actcategory_description": {
+   "type": "string"
+  },
+  "downtime": {
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Downtime",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Does the Asset have to be down for this work order?"
+  },
+  "workorderid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "WORKORDERID",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "uniqueid": true,
+   "remarks": "Unique Identifier",
+   "maxLength": 11
+  },
+  "whomischangefor": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Whom is this change for",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Identifies whom a change is for.",
+   "maxLength": 20
+  },
+  "wojo1": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "WOJO1",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Extra Field",
+   "maxLength": 10
+  },
+  "wojo2": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "WOJO2",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Extra Field",
+   "maxLength": 10
+  },
+  "wojo3": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "WOJO3",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Extra Field",
+   "maxLength": 10
+  },
+  "wojo4": {
+   "searchType": "EXACT",
+   "scale": 2,
+   "subType": "DECIMAL",
+   "title": "WOJO4",
+   "persistent": true,
+   "type": "number",
+   "remarks": "Extra Field",
+   "maxLength": 16
+  },
+  "wojo5": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "WOJO5",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Extra Field",
+   "maxLength": 10
+  },
+  "pluscondtag": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Condition Tag",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Identifies a tag that has been placed in the field to flag a condition, deficiency, or work that is currently in progress.",
+   "maxLength": 254
+  },
+  "wojo6": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "WOJO6",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Extra Field",
+   "maxLength": 10
+  },
+  "wojo7": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "WOJO7",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Extra Field",
+   "maxLength": 10
+  },
+  "wojo8": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "WOJO8",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Extra Field",
+   "maxLength": 10
+  },
+  "ownersysid": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Owner System ID",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Owner System ID",
+   "maxLength": 10
+  },
+  "actoutlabcost": {
+   "searchType": "EXACT",
+   "scale": 2,
+   "subType": "AMOUNT",
+   "title": "Actual Cost of External Labor",
+   "persistent": true,
+   "type": "number",
+   "remarks": "The cost of external labor that are required for the task on the current work order.",
+   "maxLength": 11
+  },
+  "plusgreasonfordev_description": {
+   "type": "string"
+  },
+  "estatapprservcost": {
+   "searchType": "EXACT",
+   "scale": 2,
+   "subType": "AMOUNT",
+   "title": "Estimated Service Cost at Approval",
+   "persistent": true,
+   "type": "number",
+   "remarks": "Cost estimate of the work order's services when the work order is approved.",
+   "maxLength": 11
+  },
+  "plusplsystem": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Plant System",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The plant system in which the specified component is located.",
+   "maxLength": 12
+  },
+  "plusgscenario": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Scenario",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The scenario that is associated with the preparation activities.",
+   "maxLength": 20
+  },
+  "faildate": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Failed Date",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Actual Failure Date"
+  },
+  "ignoresrmavail": {
+   "default": true,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Ignore Storeroom Availability For Work Order Status",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Indicates whether to ignore the availability of items in the storeroom for the work order status approval."
+  },
+  "origrecordid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Originating Record",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Identifies the source record that was used to create this record.",
+   "maxLength": 25
+  },
+  "outtoolcost": {
+   "searchType": "EXACT",
+   "scale": 2,
+   "subType": "AMOUNT",
+   "title": "Outside Tool Cost",
+   "persistent": true,
+   "type": "number",
+   "remarks": "Outside Tool Cost",
+   "maxLength": 11
+  },
+  "plusgimptype_description": {
+   "type": "string"
+  },
+  "pluslocrev": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "INTEGER",
+   "title": "Location Revision",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "The revision of the location at the time of its association with the current work order.",
+   "maxLength": 11
+  },
+  "plusgreviewbyid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Review By ID",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "Review By ID",
+   "maxLength": 11
+  },
+  "estatapprintlabcost": {
+   "searchType": "EXACT",
+   "scale": 2,
+   "subType": "AMOUNT",
+   "title": "Approved Cost of Internal Labor",
+   "persistent": true,
+   "type": "number",
+   "remarks": "The cost of internal labor for the task on the current work order at the time it was approved.",
+   "maxLength": 11
+  },
+  "plusgcontinplan": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Contingency Plan",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Indicates whether the work order requires a contingency plan. If the check box is selected, the work order requires a contingency plan."
+  },
+  "plusgfieldref": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Field Reference",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The field where drilling is occurring.",
+   "maxLength": 20
+  },
+  "pmnextduedate": {
+   "searchType": "EXACT",
+   "subType": "DATE",
+   "title": "PM Next Due Date",
+   "persistent": true,
+   "type": "string",
+   "remarks": "From the next Next Due Date of the PM"
+  },
+  "plusginsprevpos": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Reviewer",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Reviewer Owner",
+   "maxLength": 100
+  },
+  "plusgmpoverridecod_description": {
+   "type": "string"
+  },
+  "plusmer_description": {
+   "type": "string"
+  },
+  "totalworkunits": {
+   "searchType": "EXACT",
+   "scale": 2,
+   "subType": "DECIMAL",
+   "title": "Total Work Units",
+   "persistent": true,
+   "type": "number",
+   "remarks": "Total Work Units for WO, including header asset and assets in MultiAssetLocCI table",
+   "maxLength": 11
+  },
+  "plusgassactivity": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Assurance Activity",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Specifies whether the work order implements an assurance activity. If this check box is selected, an assurance activity is implemented."
+  },
+  "plusgsafetycritelm_description": {
+   "type": "string"
+  },
+  "repairlocflag": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Repair Facility Required",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Indicates whether the repair location is required."
+  },
+  "changedate": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Changed Date",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Date the work order was last modified."
+  },
+  "woclass_description": {
+   "type": "string"
+  },
+  "plusgactexternal": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "External",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Indicates that the action is in response to an external body"
+  },
+  "plusgciid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "CI Unique ID",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "Configuration Item Unique ID",
+   "maxLength": 11
+  },
+  "djperror": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Calculation error",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The error message when trying to apply the dynamic job plan",
+   "maxLength": 400
+  },
+  "woclass": {
+   "searchType": "EXACT",
+   "subType": "UPPER",
+   "title": "Class",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Identifies the work order's class.",
+   "maxLength": 16
+  },
+  "backoutplan": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Back Out Plan",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Describes the back out plan in the event the change needs to be reversed.",
+   "maxLength": 50
+  },
+  "plusgprepref": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Reference",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The reference to the work package that is associated with the preparation activities. If you use a project management system, you can reference the task identifier.",
+   "maxLength": 10
+  },
+  "plus325deaddate": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "3.25 Date",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Identifies the 3.25 date, which is used to ensure conservative use of the grace period. This date is determined by adding 3.25 times the regulatory frequency to the dates of the performance that occurred two instances before. "
+  },
+  "plusaction_description": {
+   "type": "string"
+  },
+  "plusgprepactiv": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Preparation Activity",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Indicates whether the work order is associated with preparation activities"
+  },
+  "plusgtag": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Tag",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The tag that is associated with the bypass operation.",
+   "maxLength": 20
+  },
+  "calccalendar": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Calendar",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Business days and times used to calculate the Target Contact, Target Response, and Target Resolution dates on a ticket or work order. Click the Detail Menu to select a calendar or go to the Calendars application to create one.",
+   "maxLength": 8
+  },
+  "plusestregduedate": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Estimated Regulatory Date",
+   "persistent": true,
+   "type": "string",
+   "remarks": "An estimate of the regulatory date for completion of a PM work order, that is based on the best available date information in the preceding PM work order. Actual dates are used where possible, followed by scheduled and target dates, in that order. The requirement for estimated regulatory dates must be specified in the associated PM record. If the requirement is set, an estimated regulatory date is calculated during work order generation for work orders that have a preceding work order, but do not have an actual regulatory date."
+  },
+  "plusgtgtdatemod": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Target Dates Overridden",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Indicates whether the target start or finish date for this work order was overridden and the new value exceeded the parameter set in the Organizations application. If the check box is selected, the target start or finish date was overridden and the new value exceeded the parameter."
+  },
+  "plusestdeaddate": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Estimated Dead Date",
+   "persistent": true,
+   "type": "string",
+   "remarks": "An estimate of the final date for completion of a PM work order, based on the best available date information in the preceding PM work order. Actual dates are used where possible, followed by scheduled and target dates, in that order. The requirement for estimated regulatory dates must be specified in the associated PM record. If the requirement is set, an estimated dead date is calculated during work order generation for work orders that have a preceding work order, but do not have an actual dead date."
+  },
+  "plusunit": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Unit",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The unit in which the specified component is located.",
+   "maxLength": 12
+  },
+  "plusgprepardnes": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Preparedness",
+   "persistent": true,
+   "type": "string",
+   "remarks": "An assessment of the readiness of the preparation activities.",
+   "maxLength": 10
+  },
+  "plusgprepphase_description": {
+   "type": "string"
+  },
+  "plusgshiftlognum": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Shift Log",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The shift log that is associated with this work order.",
+   "maxLength": 12
+  },
+  "newchildclass": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "New Child Class",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Identifies the child work order class.",
+   "maxLength": 16
+  },
+  "isquickreported": {
+   "default": 0,
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "INTEGER",
+   "title": "Quick Reported Work Order",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "Indicates if this work order was created through quick reporting.",
+   "maxLength": 11
+  },
+  "worts3": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Worts3",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Crossover field from Route_Stop.RTS3",
+   "maxLength": 10
+  },
+  "worts4": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Worts4",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Crossover field from Route_Stop.RTS4"
+  },
+  "worts1": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Worts1",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Crossover field from Route_Stop.RTS1",
+   "maxLength": 10
+  },
+  "plusgpass": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Pass",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Indicates whether the test result passed the acceptance criteria."
+  },
+  "worts2": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Worts2",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Crossover field from Route_Stop.RTS2",
+   "maxLength": 10
+  },
+  "plusgfunction_description": {
+   "type": "string"
+  },
+  "worts5": {
+   "searchType": "EXACT",
+   "scale": 2,
+   "subType": "DECIMAL",
+   "title": "Worts5",
+   "persistent": true,
+   "type": "number",
+   "remarks": "Crossover field from Route_Stop.RTS5",
+   "maxLength": 16
+  },
+  "plusgdecision": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Decision",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The decision that is associated with including the preparation activities in a package of work.",
+   "maxLength": 20
+  },
+  "plusgperfauth": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Performing Authority",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The performing authority for the permit or certificate type associated with the corresponding work order. Depending on the setting in the Control of Work Options in the Organizations application, the performing authority might need to be authorized in the People application.",
+   "maxLength": 100
+  },
+  "availstatusdate": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Material Status Last Updated",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The date and time that the material status was last updated."
+  },
+  "plusgcustref": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Customer Reference",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The reference that is used to identify the customer.",
+   "maxLength": 20
+  },
+  "plusgderricktype": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Derrick Type",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The type of derrick that is used on the drilling rig. Valid values are in the PLUSGDERRICKTYPE domain.",
+   "maxLength": 30
+  },
+  "plusgopenomuid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "INTEGER",
+   "title": "Open Unique Idenfitier",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "The open unique identifier provided to Maximo by an external system.",
+   "maxLength": 11
+  },
+  "plusgprojectphase": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Project Phase",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The phase of improvement project",
+   "maxLength": 16
+  },
+  "worktype": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Work Type",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Identifies the work order's type. Some example types are: preventive maintenance, corrective maintenance, emergency maintenace, capital project, and event report.",
+   "maxLength": 5
+  },
+  "estintlabhrs": {
+   "searchType": "EXACT",
+   "scale": 0,
+   "subType": "DURATION",
+   "title": "Estimated Hours of Internal Labor",
+   "persistent": true,
+   "type": "number",
+   "remarks": "The estimated hours of internal labor that are required for the task on the current work order.",
+   "maxLength": 8
+  },
+  "plusimpctrqd": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Impact Required",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Indicates a Impact is required for the Work Order"
+  },
+  "genforporevision": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "INTEGER",
+   "title": "PO Revision",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "Revision number of the purchase order. Indicates how many times a purchase order has been revised.",
+   "maxLength": 11
+  },
+  "plusgfailsubdivrem": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Failure Mechanism Subdivision Remarks",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The description of the failure mechanism subdivision.",
+   "maxLength": 200
+  },
+  "plusschedcode_description": {
+   "type": "string"
+  },
+  "pcpchangedate": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Physical percent complete - When last changed",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Physical percent complete - When last changed"
+  },
+  "plusgdrawworkstype_description": {
+   "type": "string"
+  },
+  "wolo2": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Wolo2",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Extra Field",
+   "maxLength": 10
+  },
+  "plusgbyptype_description": {
+   "type": "string"
+  },
+  "wolo1": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Wolo1",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Extra Field",
+   "maxLength": 10
+  },
+  "plusgmoctype_description": {
+   "type": "string"
+  },
+  "plusgopercondatfailure": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Operating Condition during Failure",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The state of the equipment at the time of the failure.",
+   "maxLength": 35
+  },
+  "woeq11": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Woeq11",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Extra Field Copied From Asset",
+   "maxLength": 10
+  },
+  "wolo4": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Wolo4",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Extra Field",
+   "maxLength": 10
+  },
+  "pluscphyloc": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Physical Location",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Enter a detailed description of the location of the asset or specify the location information using a hierarchy that you created. Using a hierarchy provides consistent identification and groups assets efficiently.",
+   "maxLength": 250
+  },
+  "woeq12": {
+   "searchType": "EXACT",
+   "scale": 2,
+   "subType": "AMOUNT",
+   "title": "Woeq12",
+   "persistent": true,
+   "type": "number",
+   "remarks": "Extra Field Copied From Asset",
+   "maxLength": 11
+  },
+  "wolo3": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Wolo3",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Extra Field",
+   "maxLength": 10
+  },
+  "woeq13": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Woeq13",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Extra Field"
+  },
+  "wolo6": {
+   "searchType": "EXACT",
+   "scale": 2,
+   "subType": "AMOUNT",
+   "title": "Wolo6",
+   "persistent": true,
+   "type": "number",
+   "remarks": "Extra Field",
+   "maxLength": 11
+  },
+  "woeq14": {
+   "searchType": "EXACT",
+   "scale": 2,
+   "subType": "DECIMAL",
+   "title": "Woeq14",
+   "persistent": true,
+   "type": "number",
+   "remarks": "Extra Field",
+   "maxLength": 16
+  },
+  "wolo5": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Wolo5",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Extra Field",
+   "maxLength": 10
+  },
+  "plusgsafetycrit": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Safety Critical",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Indicates whether this location is a safety critical area. If the check box is selected, this location is a safety critical area."
+  },
+  "wolo8": {
+   "searchType": "EXACT",
+   "scale": 2,
+   "subType": "DECIMAL",
+   "title": "Wolo8",
+   "persistent": true,
+   "type": "number",
+   "remarks": "Extra Field",
+   "maxLength": 16
+  },
+  "wolo7": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Wolo7",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Extra Field"
+  },
+  "woeq10": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Woeq10",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Extra Field Copied From Asset",
+   "maxLength": 10
+  },
+  "wolo9": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Wolo9",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Extra Field",
+   "maxLength": 10
+  }
+ },
+ "required": [
+  "actlabcost",
+  "actlabhrs",
+  "actmatcost",
+  "actservcost",
+  "acttoolcost",
+  "chargestore",
+  "disabled",
+  "downtime",
+  "estatapprlabcost",
+  "estatapprlabhrs",
+  "estatapprmatcost",
+  "estatapprservcost",
+  "estatapprtoolcost",
+  "estdur",
+  "estlabcost",
+  "estlabhrs",
+  "estmatcost",
+  "estservcost",
+  "esttoolcost",
+  "haschildren",
+  "hasfollowupwork",
+  "historyflag",
+  "istask",
+  "newchildclass",
+  "orgid",
+  "outlabcost",
+  "outmatcost",
+  "outtoolcost",
+  "siteid",
+  "status",
+  "statusdate",
+  "woclass",
+  "woisswap"
+ ]
+}

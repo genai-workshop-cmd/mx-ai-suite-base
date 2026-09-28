@@ -1,0 +1,184 @@
+{
+ "resource": "KPITEMPLATE",
+ "description": "KPITEMPLATE Object Structure",
+ "pk": [
+  "kpitemplatenum"
+ ],
+ "title": "KPITEMPLATE",
+ "type": "object",
+ "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/kpitemplate",
+ "uniqueid": "kpitemplateid",
+ "properties": {
+  "app": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Application",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Application on which this KPI is based on",
+   "maxLength": 40
+  },
+  "owner": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Created By",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The name of the person who created the KPI.",
+   "maxLength": 100
+  },
+  "revisedby": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Revised By",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Revised By",
+   "maxLength": 100
+  },
+  "localref": {
+   "type": "string"
+  },
+  "trendbatchsize": {
+   "default": 100,
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "INTEGER",
+   "title": "Calculate Trend Size",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "Batch Size of Trend",
+   "maxLength": 11
+  },
+  "createddate": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Created Date",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Created Date"
+  },
+  "format_description": {
+   "type": "string"
+  },
+  "query": {
+   "searchType": "WILDCARD",
+   "subType": "CLOB",
+   "title": "KPI Query",
+   "persistent": true,
+   "type": "string",
+   "remarks": "KPI Template Query",
+   "maxLength": 999999
+  },
+  "format": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Format",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Indicates whether the KPI is decimal or percentage based.",
+   "maxLength": 15
+  },
+  "description": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Description",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Template Description",
+   "maxLength": 256
+  },
+  "record_descriptor": {
+   "type": "string",
+   "title": "Record/Object Descriptor"
+  },
+  "kpitemplatemain": {
+   "objectName": "KPITEMPLATEMAIN",
+   "type": "array",
+   "items": {
+    "definition": {
+     "subSchema": {
+      "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/kpitemplate/kpitemplatemain"
+     }
+    },
+    "type": "object"
+   },
+   "cardinality": "",
+   "relation": "KPITEMPLATEMAINS"
+  },
+  "_rowstamp": {
+   "type": "string"
+  },
+  "reviseddate": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Revised Date",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Last Updated Date"
+  },
+  "kpitemplatevar": {
+   "objectName": "KPITEMPLATEVAR",
+   "type": "array",
+   "items": {
+    "definition": {
+     "subSchema": {
+      "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/kpitemplate/kpitemplatevar"
+     }
+    },
+    "type": "object"
+   },
+   "cardinality": "",
+   "relation": "KPITEMPLATEVARS"
+  },
+  "kpitemplatenum": {
+   "default": "&AUTOKEY&",
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Template",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Unique Template Identifier",
+   "maxLength": 10
+  },
+  "_imagelibref": {
+   "type": "string"
+  },
+  "trendenabled": {
+   "default": true,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Calculate Trend",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Is Trend Enabled"
+  },
+  "kpitemplateid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Unique Id",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "uniqueid": true,
+   "remarks": "Unique Id",
+   "maxLength": 11
+  },
+  "href": {
+   "type": "string",
+   "title": "KPITEMPLATE object reference"
+  },
+  "_id": {
+   "type": "string"
+  }
+ },
+ "required": [
+  "app",
+  "format",
+  "query"
+ ]
+}

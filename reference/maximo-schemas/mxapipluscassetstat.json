@@ -1,0 +1,107 @@
+{
+  "resource": "MXAPIPLUSCASSETSTAT",
+  "description": "PLUSCASSETSTATUS",
+  "pk": [
+    "pluscassetstatusid"
+  ],
+  "title": "PLUSCASSETSTATUS",
+  "type": "object",
+  "$ref": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapipluscassetstat",
+  "uniqueid": "pluscassetstatusid",
+  "properties": {
+    "localref": {
+      "type": "string"
+    },
+    "changeby": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Change By",
+      "persistent": true,
+      "type": "string",
+      "remarks": "The name of the logged in user who changed the status of the asset.",
+      "maxLength": 100
+    },
+    "memo": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Memo",
+      "persistent": true,
+      "type": "string",
+      "remarks": "A description of why the status was changed.",
+      "maxLength": 250
+    },
+    "changedate": {
+      "searchType": "EXACT",
+      "subType": "DATETIME",
+      "title": "Status Date",
+      "persistent": true,
+      "type": "string",
+      "remarks": "The date that the status was changed."
+    },
+    "orgid": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Organization ID",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Organization ID",
+      "maxLength": 8
+    },
+    "_rowstamp": {
+      "type": "string"
+    },
+    "pluscassetstatusid": {
+      "searchType": "EXACT",
+      "maximum": 2147483647.0,
+      "subType": "BIGINT",
+      "title": "Unique Id",
+      "persistent": true,
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "uniqueid": true,
+      "remarks": "Unique Id",
+      "maxLength": 11
+    },
+    "_imagelibref": {
+      "type": "string"
+    },
+    "assetnum": {
+      "default": "0",
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "ASSETNUM",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Asset number",
+      "maxLength": 25
+    },
+    "siteid": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Site ID",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Site ID",
+      "maxLength": 8
+    },
+    "href": {
+      "type": "string"
+    },
+    "_id": {
+      "type": "string"
+    },
+    "status": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Status",
+      "persistent": true,
+      "type": "string",
+      "remarks": "The status of what the asset has been changed to.",
+      "maxLength": 20
+    }
+  },
+  "required": [
+    "orgid",
+    "siteid"
+  ]
+}

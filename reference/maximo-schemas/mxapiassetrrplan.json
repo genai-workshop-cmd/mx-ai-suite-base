@@ -1,0 +1,378 @@
+{
+  "resource": "MXAPIASSETRRPLAN",
+  "description": "AHASSETRRPLAN",
+  "pk": [
+    "siteid",
+    "classstructureid",
+    "orgid",
+    "assetnum",
+    "manufacturer",
+    "parent",
+    "location",
+    "vendor",
+    "failurecode"
+  ],
+  "title": "AHASSETRRPLAN",
+  "type": "object",
+  "$ref": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapiassetrrplan",
+  "properties": {
+    "expectedlifedate": {
+      "searchType": "EXACT",
+      "subType": "DATE",
+      "title": "Expected EOL",
+      "persistent": true,
+      "type": "string",
+      "remarks": "The date that the asset reaches the expected useful life date. This date is calculated by using the Asset's original installation date and its expected useful life, which is defined by manufacturer or industry standard."
+    },
+    "parent": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Asset",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Asset Number",
+      "maxLength": 25
+    },
+    "installdate": {
+      "searchType": "EXACT",
+      "subType": "DATE",
+      "title": "Installation Date",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Installation Date"
+    },
+    "localref": {
+      "type": "string"
+    },
+    "assettype_description": {
+      "type": "string"
+    },
+    "usage_description": {
+      "type": "string"
+    },
+    "usage": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Usage",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Usage",
+      "maxLength": 15
+    },
+    "description": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Description",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Description",
+      "maxLength": 100
+    },
+    "assethealth": {
+      "searchType": "EXACT",
+      "scale": 2,
+      "subType": "DECIMAL",
+      "title": "Asset Health",
+      "persistent": true,
+      "type": "number",
+      "remarks": "Asset Health",
+      "maxLength": 13
+    },
+    "actualdate": {
+      "searchType": "EXACT",
+      "subType": "DATE",
+      "title": "Completion date",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Plan actual date."
+    },
+    "manufacturer": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Manufacturer",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Identifier of the company record. This field must be unique within an organization. When you save a company record, this field becomes read-only.",
+      "maxLength": 12
+    },
+    "actlaborhours": {
+      "searchType": "EXACT",
+      "scale": 0,
+      "subType": "DURATION",
+      "title": "Actual Labor Hours",
+      "persistent": true,
+      "type": "number",
+      "remarks": "Actual Labor Hours",
+      "maxLength": 8
+    },
+    "_rowstamp": {
+      "type": "string"
+    },
+    "rrplan_description": {
+      "type": "string"
+    },
+    "_imagelibref": {
+      "type": "string"
+    },
+    "vendor": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Vendor",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Identifier of the company record. This field must be unique within an organization. When you save a company record, this field becomes read-only.",
+      "maxLength": 12
+    },
+    "assetnum": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Asset",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Asset Number",
+      "maxLength": 25
+    },
+    "siteid": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Site",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Identifies the site with a short code, for example, TORONTO, for a company's Toronto, Canada site. This value must be unique for all sites.",
+      "maxLength": 8
+    },
+    "href": {
+      "type": "string"
+    },
+    "actcapex": {
+      "searchType": "EXACT",
+      "scale": 2,
+      "subType": "AMOUNT",
+      "title": "Actual Capital Expense",
+      "persistent": true,
+      "type": "number",
+      "remarks": "Actual Capital Expense",
+      "maxLength": 11
+    },
+    "assettype": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Type",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "The predefined type of this asset.",
+      "maxLength": 50
+    },
+    "status_description": {
+      "type": "string"
+    },
+    "estlaborhours": {
+      "searchType": "EXACT",
+      "scale": 0,
+      "subType": "DURATION",
+      "title": "Estimated Labor Hours",
+      "persistent": true,
+      "type": "number",
+      "remarks": "Estimated Labor Hours",
+      "maxLength": 8
+    },
+    "actopex": {
+      "searchType": "EXACT",
+      "scale": 2,
+      "subType": "AMOUNT",
+      "title": "Actual Operating Expense",
+      "persistent": true,
+      "type": "number",
+      "remarks": "Actual Operating Expense",
+      "maxLength": 11
+    },
+    "classstructureid": {
+      "default": "&AUTOKEY&",
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Class Structure",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Class Structure identifier",
+      "maxLength": 25
+    },
+    "objectname": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Object",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Name of the object for which plan record belongs to.",
+      "maxLength": 30
+    },
+    "actualcost": {
+      "default": 0.0,
+      "searchType": "EXACT",
+      "scale": 2,
+      "subType": "AMOUNT",
+      "title": "Actual Cost",
+      "persistent": true,
+      "type": "number",
+      "remarks": "Actual Cost.",
+      "maxLength": 11
+    },
+    "estcapex": {
+      "searchType": "EXACT",
+      "scale": 2,
+      "subType": "AMOUNT",
+      "title": "Estimated Capital Expense",
+      "persistent": true,
+      "type": "number",
+      "remarks": "Estimated Capital Expense",
+      "maxLength": 11
+    },
+    "rrplan": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Plan Type",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Repair or replace plan",
+      "maxLength": 16
+    },
+    "estendoflife": {
+      "searchType": "EXACT",
+      "subType": "DATE",
+      "title": "Estimated EOL",
+      "persistent": true,
+      "type": "string",
+      "remarks": "The date when the asset reaches its end of life. This date is based on the condition of the asset."
+    },
+    "expectedlife": {
+      "searchType": "EXACT",
+      "maximum": 2147483647.0,
+      "subType": "INTEGER",
+      "title": "Expected Life",
+      "persistent": true,
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "remarks": "Expected life of the asset in years.",
+      "maxLength": 11
+    },
+    "priority": {
+      "searchType": "EXACT",
+      "maximum": 2147483647.0,
+      "subType": "INTEGER",
+      "title": "Priority",
+      "persistent": true,
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "remarks": "Asset Priority - copied to Work Order when entered.",
+      "maxLength": 11
+    },
+    "estdowntime": {
+      "searchType": "EXACT",
+      "scale": 0,
+      "subType": "DURATION",
+      "title": "Estimated Downtime Hours",
+      "persistent": true,
+      "type": "number",
+      "remarks": "Estimated Downtime",
+      "maxLength": 8
+    },
+    "actdowntime": {
+      "searchType": "EXACT",
+      "scale": 0,
+      "subType": "DURATION",
+      "title": "Actual Downtime",
+      "persistent": true,
+      "type": "number",
+      "remarks": "Actual Downtime",
+      "maxLength": 8
+    },
+    "orgid": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Organization",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Identifies the organization by a short code value, for example, CANADA to represent a company's Canadian operations. This value must be unique for all organizations.",
+      "maxLength": 8
+    },
+    "estopex": {
+      "searchType": "EXACT",
+      "scale": 2,
+      "subType": "AMOUNT",
+      "title": "Estimated Operating Expense",
+      "persistent": true,
+      "type": "number",
+      "remarks": "Estimated Operating Expense",
+      "maxLength": 11
+    },
+    "failurecode": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Failure Code",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Failure Code",
+      "maxLength": 8
+    },
+    "estcost": {
+      "default": 0.0,
+      "searchType": "EXACT",
+      "scale": 2,
+      "subType": "AMOUNT",
+      "title": "Estimated Cost",
+      "persistent": true,
+      "type": "number",
+      "remarks": "Estimated Cost",
+      "maxLength": 11
+    },
+    "targetdate": {
+      "searchType": "EXACT",
+      "subType": "DATE",
+      "title": "Target Date",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Plan target date."
+    },
+    "location": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Location",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Storeroom where the item is stored.",
+      "maxLength": 25
+    },
+    "_id": {
+      "type": "string"
+    },
+    "status": {
+      "default": "!NOT READY!",
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Status",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Status of the asset, for example, not ready, operating, or decommissioned.",
+      "maxLength": 20
+    }
+  },
+  "required": [
+    "assetnum",
+    "failurecode",
+    "location",
+    "manufacturer",
+    "orgid",
+    "parent",
+    "siteid",
+    "vendor"
+  ]
+}

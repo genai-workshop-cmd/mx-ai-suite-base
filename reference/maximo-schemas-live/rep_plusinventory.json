@@ -1,0 +1,584 @@
+{
+ "resource": "REP_PLUSINVENTORY",
+ "description": "Inventory Details (PLUS)",
+ "pk": [
+  "itemnum",
+  "location",
+  "siteid",
+  "itemsetid"
+ ],
+ "title": "INVENTORY",
+ "type": "object",
+ "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/rep_plusinventory",
+ "uniqueid": "inventoryid",
+ "properties": {
+  "localref": {
+   "type": "string"
+  },
+  "invptol": {
+   "searchType": "EXACT",
+   "scale": 2,
+   "subType": "DECIMAL",
+   "title": "Plus Count Tolerance",
+   "persistent": true,
+   "type": "number",
+   "remarks": "Percentage by which a physical count can be above the adjusted balance and still be reconciled. An item's tolerance values are storeroom-specific. Maximo uses tolerance settings to determine the accuracy of the physical count. Maximo uses the tolerance value, established in the Organizations application, as the default value, unless you enter a value in the Plus Count Tolerance field on the Inventory tab.",
+   "maxLength": 6
+  },
+  "ccf": {
+   "default": 0,
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "INTEGER",
+   "title": "Count Frequency",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "Cycle Count Frequency The number of days between an audit or count of an inventory item.",
+   "maxLength": 11
+  },
+  "icg": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Count Group",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Count group identifier assigned to an item for selecting items by groups, for a count book in Count Books app.",
+   "maxLength": 15
+  },
+  "dfltstagebin": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Default Stage Bin",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The Default Staging bin for this inventory item.",
+   "maxLength": 8
+  },
+  "frequency": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "INTEGER",
+   "title": "Frequency",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "The numeric frequency value of the period to create invoices for the consumption of consignment items.",
+   "maxLength": 11
+  },
+  "issue2yrago": {
+   "searchType": "EXACT",
+   "scale": 2,
+   "subType": "DECIMAL",
+   "title": "2 Years Ago",
+   "persistent": true,
+   "type": "number",
+   "remarks": "Total year-to-date quantity issued from this location two years ago.",
+   "maxLength": 16
+  },
+  "_rowstamp": {
+   "type": "string"
+  },
+  "receipttolerance": {
+   "searchType": "EXACT",
+   "scale": 2,
+   "subType": "DECIMAL",
+   "title": "Receipt Tolerance %",
+   "persistent": true,
+   "type": "number",
+   "remarks": "The percentage value of items that can be received over the amount set in the initial agreement.",
+   "maxLength": 16
+  },
+  "issueytd": {
+   "searchType": "EXACT",
+   "scale": 2,
+   "subType": "DECIMAL",
+   "title": "Year to Date",
+   "persistent": true,
+   "type": "number",
+   "remarks": "Indicates the number of this item that have been issued in the current year.",
+   "maxLength": 16
+  },
+  "lastissuedate": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Last Issue Date",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Indicates the date and time that this item was last issued."
+  },
+  "abctype_description": {
+   "type": "string"
+  },
+  "inventoryid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "INVENTORYID",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "uniqueid": true,
+   "remarks": "Unique Identifier",
+   "maxLength": 11
+  },
+  "siteid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Site",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Unique identification code indicating the Site level location for an item.",
+   "maxLength": 8
+  },
+  "href": {
+   "type": "string",
+   "title": "INVENTORY object reference"
+  },
+  "issue1yrago": {
+   "searchType": "EXACT",
+   "scale": 2,
+   "subType": "DECIMAL",
+   "title": "Last Year",
+   "persistent": true,
+   "type": "number",
+   "remarks": "Total year-to-date quantity issued from this location for the previous year.",
+   "maxLength": 16
+  },
+  "maxlevel": {
+   "default": 0.0,
+   "searchType": "EXACT",
+   "scale": 2,
+   "subType": "DECIMAL",
+   "title": "Reorder Point",
+   "persistent": true,
+   "type": "number",
+   "remarks": "Maximum Level - Reorder Point",
+   "maxLength": 16
+  },
+  "invbalances": {
+   "objectName": "INVBALANCES",
+   "type": "array",
+   "items": {
+    "definition": {
+     "subSchema": {
+      "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/rep_plusinventory/invbalances"
+     }
+    },
+    "type": "object"
+   },
+   "cardinality": "MULTIPLE",
+   "relation": "INVBALANCES"
+  },
+  "modelnum": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Model",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Primary vendor's model number for this item.",
+   "maxLength": 8
+  },
+  "binnum": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Default Bin",
+   "persistent": true,
+   "type": "string",
+   "remarks": "A unique identification number indicating the primary bin or storage location for the selected item within a storeroom.",
+   "maxLength": 8
+  },
+  "record_descriptor": {
+   "type": "string",
+   "title": "Record/Object Descriptor"
+  },
+  "orgid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Organization",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Organization Identifier",
+   "maxLength": 8
+  },
+  "itemnum": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Item",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "A unique identification number for an item in inventory in the selected storeroom.",
+   "maxLength": 30
+  },
+  "shrinkageacc": {
+   "searchType": "WILDCARD",
+   "subType": "GL",
+   "title": "Shrinkage GL Account",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Shrinkage Account.",
+   "maxLength": 23
+  },
+  "costtype": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Issue Cost Type",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The issue cost type of an inventory item can be Average, Standard or Asset. You use the Asset cost type for rotating items only.",
+   "maxLength": 16
+  },
+  "itemsetid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Item Set",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Set identifier for the item.",
+   "maxLength": 8
+  },
+  "orderqty": {
+   "default": 1.0,
+   "searchType": "EXACT",
+   "scale": 2,
+   "subType": "DECIMAL",
+   "title": "Economic Order Quantity",
+   "persistent": true,
+   "type": "number",
+   "remarks": "Optimum reorder quantity of the item in the specified Order Units. Default order quantities are multiples of this amount. This amount should be the optimal point to best balance costs. If needed, this can be changed when the purchase requisition is generated. The EOQ report allows you to get an EOQ algorithm. This report can be used to update the EOQ field.",
+   "maxLength": 16
+  },
+  "_id": {
+   "type": "string"
+  },
+  "issue3yrago": {
+   "searchType": "EXACT",
+   "scale": 2,
+   "subType": "DECIMAL",
+   "title": "3 Years Ago",
+   "persistent": true,
+   "type": "number",
+   "remarks": "Total year-to-date quantity issued from this location three years ago.",
+   "maxLength": 16
+  },
+  "hardresissue": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Requires hard reservation on use",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Specifies when creating a reservation if the reservation can be only a hard reservation."
+  },
+  "storelocsiteid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Storeroom Site",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Identifies the site where the storeroom is located.",
+   "maxLength": 8
+  },
+  "abctype": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "ABC Type",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "ABC analysis in Inventory lets you quickly identify which inventory items represent your company's greatest investment in terms of monetary value and turnover rate. The ABC Type value for a item is determined by running an ABC Analysis report, which multiplies the current YTD issued quantity by the last cost of the item. The items are then sorted in descending order of the dollar value reached by this calculation.",
+   "maxLength": 1
+  },
+  "status": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Status",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The current status of the item such as ACTIVE, PENDING, PLANNING, PENDOBS and OBSELETE.",
+   "maxLength": 16
+  },
+  "internal": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Internal",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Internal Flag used for Reorder"
+  },
+  "reorder": {
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Reorder",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Specify whether to include the item in the inventory reorder process."
+  },
+  "sstock": {
+   "searchType": "EXACT",
+   "scale": 2,
+   "subType": "DECIMAL",
+   "title": "Safety Stock",
+   "persistent": true,
+   "type": "number",
+   "remarks": "Minimum amount of stock to be kept on hand at all times. You can consider the safety stock value to be the amount of stock you want left on hand at the time reordered stock arrives.",
+   "maxLength": 16
+  },
+  "issueunit": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Issue Unit",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Standard quantity by which the item is issued from the storeroom, such as each or roll. Click the Select Value button to view a list of valid issue units.",
+   "maxLength": 16
+  },
+  "manufacturer": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Manufacturer",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Manufacturer code indicating the company that makes this item.",
+   "maxLength": 12
+  },
+  "category_description": {
+   "type": "string"
+  },
+  "nextinvoicedate": {
+   "searchType": "EXACT",
+   "subType": "DATE",
+   "title": "Next Invoice Date",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The next date that an invoice will be generated if one is needed. When the Frequency and Frequency Units fields are specified, the Next Invoice Date will default based on the current date/time plus the frequency."
+  },
+  "plusabuy": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Auto buy",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "When selected, this item may be purchased without the consent of the procurement-engineering group  For new inventory records this will be defaulted from the corresponding item master. Changes to item master will not get reflected here though"
+  },
+  "_imagelibref": {
+   "type": "string"
+  },
+  "vendor": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Primary Vendor",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Identifier of the primary vendor for the item. Enter the value or click Detail to choose a value. The vendor can be another storeroom if that storeroom supplies the item to the current location. To list a storeroom as the vendor, you must enter it in the Companies table.",
+   "maxLength": 12
+  },
+  "consignment": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Consignment",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Select this check box to identify the item as a consignment type of item."
+  },
+  "icg_description": {
+   "type": "string"
+  },
+  "minlevel": {
+   "default": 0.0,
+   "searchType": "EXACT",
+   "scale": 2,
+   "subType": "DECIMAL",
+   "title": "Reorder Point",
+   "persistent": true,
+   "type": "number",
+   "remarks": "The minimum quantity of inventory stock items required. When the stock balance reaches this number, the inventory items must be reordered.",
+   "maxLength": 16
+  },
+  "invgentype_description": {
+   "type": "string"
+  },
+  "invmtol": {
+   "searchType": "EXACT",
+   "scale": 2,
+   "subType": "DECIMAL",
+   "title": "Minus Count Tolerance",
+   "persistent": true,
+   "type": "number",
+   "remarks": "Percentage by which a physical count can be below the adjusted balance and still be reconciled. Maximo uses tolerance settings to determine the accuracy of the physical count. An item's tolerance values are storeroom-specific. Maximo uses the tolerance value established in the Organizations application as the default value, unless you enter a value in the Minus Count Tolerance field on the Inventory tab.",
+   "maxLength": 6
+  },
+  "consvendor": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Consignment Vendor",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The vendor that is responsible for replenishing the consignment items. Purchase orders and invoices are generated for the vendor that is specified in this field.",
+   "maxLength": 12
+  },
+  "storeloc": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Storeroom",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Storeroom Location",
+   "maxLength": 25
+  },
+  "invgentype": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Invoice Generation Type",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "You can specify how the invoice is generated for the current item. You can specify that invoices are generated based on consumption or on frequency or that they are generated manually.",
+   "maxLength": 12
+  },
+  "orderunit": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Order Unit",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Unit Of Order. A unit can be each, box, roll, linear feet, cubic feet, square feet etc. For example, 1 box is 1 unit, but the box may be a part of a larger inventory issue element, perhaps a case or crate.",
+   "maxLength": 16
+  },
+  "invcost": {
+   "objectName": "INVCOST",
+   "type": "array",
+   "items": {
+    "definition": {
+     "subSchema": {
+      "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/rep_plusinventory/invcost"
+     }
+    },
+    "type": "object"
+   },
+   "cardinality": "MULTIPLE",
+   "relation": "INVCOST"
+  },
+  "statusdate": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Status Date",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Date the work order status was last changed."
+  },
+  "glaccount": {
+   "searchType": "WILDCARD",
+   "subType": "GL",
+   "title": "GL Account",
+   "persistent": true,
+   "type": "string",
+   "remarks": "GL Account code.",
+   "maxLength": 23
+  },
+  "deliverytime": {
+   "default": 0,
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "INTEGER",
+   "title": "Lead Time (Days)",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "The number of days it takes from ordering an item to receiving the item.",
+   "maxLength": 11
+  },
+  "frequnit_description": {
+   "type": "string"
+  },
+  "catalogcode": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Catalog #",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Primary vendor's catalog code for this item.",
+   "maxLength": 30
+  },
+  "controlacc": {
+   "searchType": "WILDCARD",
+   "subType": "GL",
+   "title": "GL Control Account",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Control Account.",
+   "maxLength": 23
+  },
+  "frequnit": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Frequency Units",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The unit of measure for the frequency value.",
+   "maxLength": 8
+  },
+  "invcostadjacc": {
+   "searchType": "WILDCARD",
+   "subType": "GL",
+   "title": "Cost Adjustment GL Account",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Cost Adjustment Account.",
+   "maxLength": 23
+  },
+  "location": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Storeroom",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The primary location for the selected item. If an item is stored in more than one storeroom location you can select View Availability from the Select Action menu to view balances for all storeroom locations.",
+   "maxLength": 25
+  },
+  "category": {
+   "searchType": "WILDCARD",
+   "isUserDefined": true,
+   "subType": "UPPER",
+   "title": "Stock Category",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Specifies whether the item is a stocked (STK), non-stocked (NS), or a special order (SP) item.Category of the item. Click Select Value to display a list of categories. Maximo supplies the following categories: STK -- Stocked items are items that you intend to keep permanently in your inventory database. Maximo will automatically reorder these items when conditions warrant. NS -- Nonstocked items are items that you intend to keep permanently in your inventory database Maximo will not automatically reorder these items. SP -- Special order items are items to be used once for a single event. You do not want to keep a permanent record of these items in your database.",
+   "maxLength": 16
+  }
+ },
+ "required": [
+  "costtype",
+  "issue1yrago",
+  "issue2yrago",
+  "issue3yrago",
+  "issueunit",
+  "issueytd",
+  "itemnum",
+  "itemsetid",
+  "location",
+  "orgid",
+  "siteid",
+  "status",
+  "statusdate"
+ ]
+}

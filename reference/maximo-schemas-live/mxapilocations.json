@@ -1,0 +1,1984 @@
+{
+ "resource": "MXAPILOCATIONS",
+ "description": "Maximo API for Locations",
+ "pk": [
+  "siteid",
+  "location"
+ ],
+ "title": "LOCATIONS",
+ "type": "object",
+ "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/mxapilocations",
+ "uniqueid": "locationsid",
+ "properties": {
+  "plusgisolevelind_description": {
+   "type": "string"
+  },
+  "plusgqualitycritical": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Quality Critical",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Specifies whether this location is critical for ensuring quality. If the check box is selected, this location is quality critical. If the check box is cleared, this location is not quality critical."
+  },
+  "plusgsecegrp": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "SECE Group",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The Safety and Environmentally Critical Elements group that is associated with the location.",
+   "maxLength": 25
+  },
+  "plusgmainstrategy_description": {
+   "type": "string"
+  },
+  "installdate": {
+   "searchType": "EXACT",
+   "subType": "DATE",
+   "title": "Installation Date",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Installation Date"
+  },
+  "localref": {
+   "type": "string"
+  },
+  "plusglatitude": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Latitude",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The latitude of this location.",
+   "maxLength": 12
+  },
+  "devicetype": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Device Type",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Device Type",
+   "maxLength": 50
+  },
+  "plusgpermittype_description": {
+   "type": "string"
+  },
+  "locationsid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "LOCATIONSID",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "uniqueid": true,
+   "remarks": "Unique Identifier",
+   "maxLength": 11
+  },
+  "adjustedlifedate": {
+   "searchType": "EXACT",
+   "subType": "DATE",
+   "title": "Adjusted life",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The date that the asset reaches the adjusted useful life date. This date is calculated by plans or asset expected life."
+  },
+  "plusgriskmethod_description": {
+   "type": "string"
+  },
+  "plusgfmperson": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Failure Analysis Leader",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The person who is leading the failure analysis effort.",
+   "maxLength": 100
+  },
+  "methodname": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Scoring Method",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The scoring method applied to the location.",
+   "maxLength": 250
+  },
+  "plusgpermitreq": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Permit Required",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Specifies whether a permit is required to work at this location. If the check box is selected, a permit is required. If the check box is cleared, a permit is not required."
+  },
+  "plusgfmcomplete": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Complete",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The date when the failure analysis is set to be completed."
+  },
+  "plusgsafinteglev_description": {
+   "type": "string"
+  },
+  "plusgarea": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Area",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The area that is associated with location.",
+   "maxLength": 16
+  },
+  "plusgnoropstate_description": {
+   "type": "string"
+  },
+  "pluscloop": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Loop Calibration",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Select this check box to identify the location as a loop calibration."
+  },
+  "plusgfirezone": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Fire Zone",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The fire zone that is associated with this location.",
+   "maxLength": 12
+  },
+  "plusglossunits": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Loss Units",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Loss Units",
+   "maxLength": 16
+  },
+  "plusgcurlockstate_description": {
+   "type": "string"
+  },
+  "purchvaracc": {
+   "searchType": "WILDCARD",
+   "subType": "GL",
+   "title": "Purchase Variance Account",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Account used to track fluctuations in purchase costs for items (or the variance between PO and original Last and Standard price). Not used with any MAXIMO transactions. Click the Select Value button to choose a GL account.",
+   "maxLength": 23
+  },
+  "plusgbenchsource": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Benchmark Source",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The source of the benchmark mean time between failures for the location. Valid values are in the PLUSGBENCHSOURCE domain.",
+   "maxLength": 30
+  },
+  "plusgnormalopmode": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Normal Operating Mode",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The normal operating mode (for example, running, active, standby, or intermittent) for this location.",
+   "maxLength": 12
+  },
+  "plusgactionsumm": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Review Action Summary",
+   "persistent": true,
+   "type": "string",
+   "remarks": "A summary of the review actions that are associated with the location.",
+   "maxLength": 200
+  },
+  "plusgleakdetails": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Leak Details",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Describes the source of the leak, and any other information about the leak.",
+   "maxLength": 4000
+  },
+  "plusqual": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Safety Class",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Identifies whether or not this component is safety related.  (IM Important to Non-Nuclear Safety, N Non-safety Related, Q Nuclear Safety Related).",
+   "maxLength": 8
+  },
+  "plussafediv": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Safety Division",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The Safety Division to which the Location belongs",
+   "maxLength": 12
+  },
+  "ahcaworktype": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Work Type",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Workorder work type",
+   "maxLength": 5
+  },
+  "serviceaddresscode": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Service Address",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Service Address Code",
+   "maxLength": 30
+  },
+  "plusghazareadwg": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Hazardous Area Classification Dwg",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The identifier of a plant hazardous area classification drawing.",
+   "maxLength": 14
+  },
+  "plusgtargetmtbf": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "INTEGER",
+   "title": "Target MTBF",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "The target mean time between failures for the location, in hours. The value must be an integer.",
+   "maxLength": 11
+  },
+  "plusinstchnl_description": {
+   "type": "string"
+  },
+  "autolocate": {
+   "searchType": "NONE",
+   "subType": "CLOB",
+   "title": "Formatted Geometry",
+   "type": "string",
+   "remarks": "String representation of the record geometry",
+   "maxLength": 999999
+  },
+  "plusgisolevelind": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Level 1 - Industry",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The ISO 14224 industry category. Valid values are in the PLUSGISO14224IND domain.",
+   "maxLength": 20
+  },
+  "plusunit_description": {
+   "type": "string"
+  },
+  "toolcontrolacc": {
+   "searchType": "WILDCARD",
+   "subType": "GL",
+   "title": "Tool Control Account",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Default debit account for capitalized tools. Click the Select Value button to choose a GL account.",
+   "maxLength": 23
+  },
+  "pluscpmextdate": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Due Date Extended",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "When this check box is selected, the Extended Date on the PM for the location was set. This check box is cleared when the work order is generated."
+  },
+  "plusgsolomonequip": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Solomon Equipment Type",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The Solomon equipment type for rotating equipment, fixed plant, pipe work and civil, electrical equipment, and instrumentation and controls.",
+   "maxLength": 25
+  },
+  "disabled": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Disabled",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Is this record active?"
+  },
+  "plusgopcategory_description": {
+   "type": "string"
+  },
+  "plusgoutageconseq_description": {
+   "type": "string"
+  },
+  "plusinstchnl": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Instrument Channel",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The Instrument Channel to which the Location belongs",
+   "maxLength": 12
+  },
+  "invoicevaracc": {
+   "searchType": "WILDCARD",
+   "subType": "GL",
+   "title": "Invoice Variance Account",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Debit account used to track variances in the price, expressed in the vendor's currency, between receipt and invoice for this storeroom. The transaction amount is positive when the invoice line cost is greater than the receipt cost. Click the Select Value button to choose a GL account.",
+   "maxLength": 23
+  },
+  "plusgpipprocessmedium": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Process Medium",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The type of medium, such as fuel or water, that the pipe is designed to carry.",
+   "maxLength": 20
+  },
+  "plusqual_description": {
+   "type": "string"
+  },
+  "intlabrec": {
+   "searchType": "WILDCARD",
+   "subType": "GL",
+   "title": "Internal Labor Account",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Used as the credit account for any internal labor transaction; it is the accrual account for the value of internal labor \"issued\" to work orders or other activities. For example, this is credited when internal labor usage on a work order is reported. This account is paired with the debit account in the transaction, which includes the labor resource code as a component.",
+   "maxLength": 23
+  },
+  "plusgpiprating": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Rating",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The pressure that the pipe is designed to withstand.",
+   "maxLength": 20
+  },
+  "pluspwrblk": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Power Block",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Power Block"
+  },
+  "plusgrisklevel": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "SMALLINT",
+   "title": "Risk Level (API580)",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "hasList": true,
+   "remarks": "Risk Level (API580)",
+   "maxLength": 11
+  },
+  "bimroomname": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Room Name/Number",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The name or number of the room or space",
+   "maxLength": 40
+  },
+  "expectedlife": {
+   "default": 0,
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "INTEGER",
+   "title": "Expected Life",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "Expected life of the location, expressed in years.  This value is based on the typical useful life that a manufacturer or industry standard recommends for a location or location type.",
+   "maxLength": 11
+  },
+  "plusglastchkdate": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Last Checked Date",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The date and time when the valve was last checked for leaks."
+  },
+  "plusgnoropstate": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Normal Lock State",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The lock state for this location or valve during normal operations. For example, indicates whether the location or valve is locked open or closed when operations are running normally.",
+   "maxLength": 16
+  },
+  "statusdate": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Status Date",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Date the Locations status was last changed."
+  },
+  "geometry": {
+   "searchType": "NONE",
+   "subType": "CLOB",
+   "title": "Geometry",
+   "type": "string",
+   "remarks": "Non persistent fields to access the MBO geometry",
+   "maxLength": 999999
+  },
+  "invcostadjacc": {
+   "searchType": "WILDCARD",
+   "subType": "GL",
+   "title": "Cost Adjustment Account",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Account that tracks changes in either the average price or the standard price from manual inventory price adjustments. These changes result from using the Adjust Average Cost and Adjust Standard Cost actions, respectively. Click the Select Value button to choose a GL account.",
+   "maxLength": 23
+  },
+  "plusprinttype_description": {
+   "type": "string"
+  },
+  "oldcontrolacc": {
+   "searchType": "WILDCARD",
+   "subType": "GL",
+   "title": "Old GL Control Account",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Last inventory/transit control account.",
+   "maxLength": 23
+  },
+  "plusglossquantity": {
+   "searchType": "EXACT",
+   "scale": 2,
+   "subType": "AMOUNT",
+   "title": "Loss Quantity",
+   "persistent": true,
+   "type": "number",
+   "remarks": "Loss Quantity",
+   "maxLength": 11
+  },
+  "ahcaresultnum": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Inspection Result",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Condition assessment inspection result",
+   "maxLength": 12
+  },
+  "plusgiso14224sec": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Section Detail",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Detail about the section.",
+   "maxLength": 24
+  },
+  "billtoaddresscode": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Bill to Address",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Default Bill To Address Code",
+   "maxLength": 30
+  },
+  "ahcapmnum": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "PM",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Condition assessment PM",
+   "maxLength": 8
+  },
+  "_rowstamp": {
+   "type": "string"
+  },
+  "pluscduedate": {
+   "searchType": "EXACT",
+   "subType": "DATE",
+   "title": "Next Calibration Due Date",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Displays the date that the next calibration must be completed by."
+  },
+  "plusgcomcrit": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Commercially Critical",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Specifies whether this location is commercially critical. If the check box is selected, this location is commercially critical. If the check box is cleared, this location is not commercially critical."
+  },
+  "plusghazareaclass": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Hazardous Area Classification",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The classification that is assigned to the hazardous area in this plant. Valid values are in the PLUSGHAZARDCLASS domain.",
+   "maxLength": 12
+  },
+  "plusgsolomonplant": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Solomon Plant Type",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The Solomon plant type.",
+   "maxLength": 10
+  },
+  "plusglegacytag": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Legacy Tag Number",
+   "persistent": true,
+   "type": "string",
+   "remarks": "A legacy or alternate tag number for this location. You can change this value when the location record is in any status. When this field displays in other applications, it is read-only.",
+   "maxLength": 24
+  },
+  "siteid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Site",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Specifies the site where this location or storeroom resides.",
+   "maxLength": 8
+  },
+  "invowner": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Inventory Owner",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Inventory Owner.",
+   "maxLength": 100
+  },
+  "plusgistemp": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Temporary",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Indicates whether a location is only needed for a limited time. The location is tracked for historical purposes."
+  },
+  "receiptvaracc": {
+   "searchType": "WILDCARD",
+   "subType": "GL",
+   "title": "Receipt Variance Account",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Debit account to track the variance between PO and Invoice exchange rates. This account contains the differences between the inventory standard cost and the receipt cost (specific to the storeroom) for any items in the associated storeroom location. It is used for standard costing only. Click the Select Value button to choose a GL account.",
+   "maxLength": 23
+  },
+  "plusgsldno": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Single Line Diagram",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The identifier of a plant single line diagram.",
+   "maxLength": 14
+  },
+  "useinpopr": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Use in PO/PR",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Specifies whether this storeroom can be used to supply and reserve inventory items and tools for use with internal purchase requisitions and internal purchase orders. If the check box is selected, you can order and reserve items or tools from this storeroom on internal POs and PRs. If the check box is cleared (the default), this storeroom cannot be used to supply items or tools internally."
+  },
+  "plusgopcategory": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Operation Category",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The operation category (for example, remote, manned, or sub-sea) for this location.",
+   "maxLength": 12
+  },
+  "status_description": {
+   "type": "string"
+  },
+  "plusgpredictedmtbf": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "INTEGER",
+   "title": "Predicted MTBF",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "The predicted mean time between failures for the location, in hours. The value must be an integer.",
+   "maxLength": 11
+  },
+  "plusgisolevelbus": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Level 2 - Business Category",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The ISO 14224 business category. Valid values are in the PLUSGISO14224BUS domain.",
+   "maxLength": 20
+  },
+  "gisparam3": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "GIS Parameter 3",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Graphical Information System interface parameter 3",
+   "maxLength": 1
+  },
+  "gisparam2": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "GIS Parameter 2",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Graphical Information System interface parameter 2",
+   "maxLength": 1
+  },
+  "gisparam1": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "GIS Parameter 1",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Graphical Information System interface parameter 1",
+   "maxLength": 1
+  },
+  "orgid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Organization",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Organization Identifier",
+   "maxLength": 8
+  },
+  "ahcainspformnum": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Inspection Form",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Condition assessment inspection form",
+   "maxLength": 12
+  },
+  "ahcawonum": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Work Order",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Condition assessment work order",
+   "maxLength": 25
+  },
+  "shrinkageacc": {
+   "searchType": "WILDCARD",
+   "subType": "GL",
+   "title": "Shrinkage Account",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Credit account used when manually adjusting the inventory quantity. The transaction is positive when the actual inventory quantity is greater than the MAXIMO-calculated current balance. Click the Select Value button to choose a GL account.",
+   "maxLength": 23
+  },
+  "plusgsafinteglev": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "SMALLINT",
+   "title": "Safety Integrity Level",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "hasList": true,
+   "remarks": "The safety integrity level according to IEC61508.",
+   "maxLength": 11
+  },
+  "ahcalastcompdate": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Completion Date",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Condition assessment last completion date"
+  },
+  "plusgisolevelinstn": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Level 3 - Installation Reference",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The ISO 14224 installation reference. Valid values are in the PLUSGISO14224INSTN domain.",
+   "maxLength": 24
+  },
+  "plusglongitude": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Longitude",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The longitude of this location.",
+   "maxLength": 12
+  },
+  "plusgfasummary": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Summary",
+   "persistent": true,
+   "type": "string",
+   "remarks": "A summary of the details of the failure analysis, such as which method is used.",
+   "maxLength": 50
+  },
+  "plusgisolevelbus_description": {
+   "type": "string"
+  },
+  "plussafediv_description": {
+   "type": "string"
+  },
+  "plusrevdatetime": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Revision Date",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The date on which the current revision was created."
+  },
+  "oldinvcostadjacc": {
+   "searchType": "WILDCARD",
+   "subType": "GL",
+   "title": "Old Invoice Cost Adjustment Account",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Last inventory cost adjustment account for manual inventory price adjustments.",
+   "maxLength": 23
+  },
+  "plusgbrstate": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Barrier State",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The current state of the barrier.",
+   "maxLength": 20
+  },
+  "plusgpiptype": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Piping Type",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The type of piping, such as process or small bore, that is used for this location.",
+   "maxLength": 20
+  },
+  "description": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Description",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The description of the location. To enter or view additional information, click the Long Description button.",
+   "maxLength": 100
+  },
+  "externalrefid": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "External Reference ID",
+   "persistent": true,
+   "type": "string",
+   "remarks": "External Reference ID",
+   "maxLength": 10
+  },
+  "plusgenvcrit": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Environmentally Critical",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Specifies whether this location is environmentally critical. If the check box is selected, this location is environmentally critical. If the check box is cleared, this location is not environmentally critical."
+  },
+  "plusgiso14224bus": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Business Category Detail",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Detail about the business category.",
+   "maxLength": 20
+  },
+  "plusgtotalscore": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Total Score",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "The total score that is assigned to the review actions that are associated with the location.",
+   "maxLength": 11
+  },
+  "plustechspec": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Tech Spec",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Specifies whether this location is covered by one or more LCOs (limiting conditions for operation) or equivalent regulations. You can associate the relevant tech spec records in the Associated Tech Specs table."
+  },
+  "plusgpermittype": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Permit Type",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The type of permit that is required to perform work at this location. Valid values are in the PLUSGPERMITTYPE domain.",
+   "maxLength": 15
+  },
+  "mrefid": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Real Estate and Facilities ID",
+   "persistent": true,
+   "type": "string",
+   "remarks": "External display Real Estate and Facilities id",
+   "maxLength": 1000
+  },
+  "ahcajpnum": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Job Plan",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Condition assessment job plan",
+   "maxLength": 12
+  },
+  "plusgisolevelsec": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Level 5 - Section",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The ISO 14224 main section of the plant. Valid values are in the PLUSGISO14224SECT domain.",
+   "maxLength": 24
+  },
+  "plusgbenchmarkmtbf": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "INTEGER",
+   "title": "Benchmark MTBF",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "The benchmark mean time between failures for the location, in hours. The value must be an integer.",
+   "maxLength": 11
+  },
+  "plusgpipreference": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Reference",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The reference to documentation or to an identifier that is associated with the type of piping that is used.",
+   "maxLength": 20
+  },
+  "plusgbenchsource_description": {
+   "type": "string"
+  },
+  "plusgnormalopmode_description": {
+   "type": "string"
+  },
+  "plusgbarrier_description": {
+   "type": "string"
+  },
+  "plusglocprofid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Location Profile",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "Location Profile unique identifier.",
+   "maxLength": 11
+  },
+  "plusgpiplinenum": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Line Number",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The line number for the pipe.",
+   "maxLength": 20
+  },
+  "ahcainspstatus": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Inspection Status",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Condition assessment inspection status",
+   "maxLength": 20
+  },
+  "plusgopmanualref": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Operating Manual Reference",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The identifier of an operating manual or section of an operating manual.",
+   "maxLength": 10
+  },
+  "plusgexatexstd": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Ex/ATEX Standard",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The Ex/ATEX standard that applies to the location. Valid values are in the PLUSGEXATEXSTD domain. If the Ex/ATEX check box is selected, this field is required. You can change this value while the location record is in any status.",
+   "maxLength": 16
+  },
+  "location": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Location",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The identifier of the location.",
+   "maxLength": 25
+  },
+  "lastahscoredate": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Last Scoring Date",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The last date that health score getting updated"
+  },
+  "expectedlifedate": {
+   "searchType": "EXACT",
+   "subType": "DATE",
+   "title": "Expected EOL",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The date that the location reaches the expected useful life date. This date is calculated by using the location's original installation date and its expected useful life, which is defined by manufacturer or industry standard."
+  },
+  "plusgpiptype_description": {
+   "type": "string"
+  },
+  "type": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Type",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The type of location (Operating, Storeroom, Repair, et cettera). In Insert mode, the default type is Operating (or a synonym default supplied by your system administrator). Operating is the only type of location you can insert on the Operating Locations screen. When adding a location record, click Select Value to choose from a list of valid types.",
+   "maxLength": 16
+  },
+  "mrefloctype_description": {
+   "type": "string"
+  },
+  "plusgriskmethod": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Risk Assessment Method",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The method used to assess this location for risk (for example, RCM, RBI, or FMECA).",
+   "maxLength": 12
+  },
+  "storeroomparent": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Parent Storeroom",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The parent storeroom of the current storeroom.",
+   "maxLength": 25
+  },
+  "bimusage": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "BIM Location type",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Describes how a location is used and controls COBie export behavior",
+   "maxLength": 20
+  },
+  "plusgpipprocessmedium_description": {
+   "type": "string"
+  },
+  "plusmrule": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Maintenance Rule",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Indicates whether this component is critical to the successful operation of the plant and therefore subject to a regulatory maintenance rule. A maintenance rule typically states that when the performance or condition of a component does not meet established goals, appropriate corrective action must be taken."
+  },
+  "href": {
+   "type": "string",
+   "title": "LOCATIONS object reference"
+  },
+  "modelid": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Import ID",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Import ID Typically from a BIM model or COBie data set",
+   "maxLength": 45
+  },
+  "pluscritical_description": {
+   "type": "string"
+  },
+  "shiptoaddresscode": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Ship to Address",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Default address code to ship items to when reorders are processed for this storeroom. Click the Select Value button to choose a shipping code.",
+   "maxLength": 30
+  },
+  "mrefrecordid": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Real Estate and Facilities record ID",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Internal Real Estate and Facilities ID of the location",
+   "maxLength": 50
+  },
+  "plusgrbicode": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Risk-Based Inspection Code",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The risk-based inspection code that is associated with the location. Valid values are in the PLUSGRBICODE domain.",
+   "maxLength": 15
+  },
+  "record_descriptor": {
+   "type": "string",
+   "title": "Record/Object Descriptor"
+  },
+  "estendoflife": {
+   "searchType": "EXACT",
+   "subType": "DATE",
+   "title": "Estimated EOL",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The date when the location reaches its end of life. This date is based on the condition of the location."
+  },
+  "replacecost": {
+   "default": 0.0,
+   "searchType": "EXACT",
+   "scale": 2,
+   "subType": "AMOUNT",
+   "title": "Replacement Cost",
+   "persistent": true,
+   "type": "number",
+   "remarks": "Replacement Cost",
+   "maxLength": 11
+  },
+  "plusgfmstart": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Start",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The date when the failure analysis is set to begin."
+  },
+  "saddresscode": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Service Address",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The address code identifies a service address. It must be unique by site for each service address.",
+   "maxLength": 25
+  },
+  "plusgiso14224ind": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Industry Detail",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Detail about the industry.",
+   "maxLength": 20
+  },
+  "plusgpolicyid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Operating Policy",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "The unique identifier of an operating policy.",
+   "maxLength": 11
+  },
+  "plusgopstate": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Operating State",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The current operating state of the location or valve.",
+   "maxLength": 16
+  },
+  "plusghazareaclass_description": {
+   "type": "string"
+  },
+  "status": {
+   "default": "!OPERATING!",
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Status",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "STATUS",
+   "maxLength": 20
+  },
+  "plusglocreference": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Location Reference",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Statutory information regarding this location.",
+   "maxLength": 12
+  },
+  "billtolaborcode": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Bill to Labor",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Default Bill To Labor Code",
+   "maxLength": 100
+  },
+  "plusgfunction": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Function",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The organizational function that is responsible for this location. Valid values are in the PLUSGFUNCTION domain.",
+   "maxLength": 24
+  },
+  "plusgrbicode_description": {
+   "type": "string"
+  },
+  "plusgsafecrielem": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Safety Critical Element",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "A reference to any element that is critical to safety and that is associated with a regulation. A performance standard that regulates the emission of hazardous substances can be a type of critical-safety reference.",
+   "maxLength": 10
+  },
+  "plusgbarrier": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Barrier",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The barrier that is associated with the location.",
+   "maxLength": 40
+  },
+  "plusgaccessreq_description": {
+   "type": "string"
+  },
+  "plusgbrstate_description": {
+   "type": "string"
+  },
+  "plusgexregistered": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Ex/ATEX",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Specifies if the location is Ex/ATEX. If the check box is selected, you must specify a value in the corresponding Ex/ATEX standard field."
+  },
+  "plusgisolevelplant": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Level 4 - Plant or Unit",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The ISO 14224 plant or unit type. Valid values are in the PLUSGISO14224PLANT domain.",
+   "maxLength": 24
+  },
+  "ahcawostatus": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "WO Status",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Condition assessment work order status",
+   "maxLength": 16
+  },
+  "bimusage_description": {
+   "type": "string"
+  },
+  "plusgra": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Generation Risk Assessment",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Generation Risk Assessment code. This value, determined by plant engineering, is a statistical measure of the impact the component's failure will have on the ability of the plant to generate electricity."
+  },
+  "plusgenvcrielem": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Environmentally Critical Element",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "A reference to any element that is critical to the environment, and that is associated with a regulation.",
+   "maxLength": 10
+  },
+  "plusgisolevelsys": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Level 5 - System",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The ISO 14224 main system of the plant. Valid values are in the PLUSGISO14224SYS domain.",
+   "maxLength": 24
+  },
+  "plusgenvcrielem_description": {
+   "type": "string"
+  },
+  "plusgrisklevel_description": {
+   "type": "string"
+  },
+  "plusgarea_description": {
+   "type": "string"
+  },
+  "plusgmainstrategy": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Maintenance Strategy",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Identifies the maintenance strategy for this location (for example, run to fail, condition-based, or campaign maintenance).",
+   "maxLength": 20
+  },
+  "plusrev": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "INTEGER",
+   "title": "Revision",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "The current revision of the location.",
+   "maxLength": 11
+  },
+  "plusgriskassessid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Risk Assessment Unique Identifier",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "The unique identifier of the risk assessment.",
+   "maxLength": 11
+  },
+  "changeby": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Changed By",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Last Changed by user",
+   "maxLength": 100
+  },
+  "plusgfmtype_description": {
+   "type": "string"
+  },
+  "health": {
+   "searchType": "EXACT",
+   "scale": 2,
+   "subType": "DECIMAL",
+   "title": "Health",
+   "persistent": true,
+   "type": "number",
+   "remarks": "The health score for the location. This score is calculated and applied to the location from the Reliability Engineer work center.",
+   "maxLength": 13
+  },
+  "plusgisolevelsys_description": {
+   "type": "string"
+  },
+  "pluspra": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Probabilistic Risk Assessment",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "The location's impact on safety."
+  },
+  "isrepairfacility": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Is a Repair Facility",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Specifies whether the location is a repair facility location. Repair facilities can take ownership of work orders from multiple sites in the same organization. User security can then be configured to give permissions to view work orders in multiple sites if the work orders are owned by the repair facility."
+  },
+  "plusgphysloc": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Physical Location",
+   "persistent": true,
+   "type": "string",
+   "remarks": "A description of the physical location in the plant.",
+   "maxLength": 100
+  },
+  "sendersysid": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Sender System ID",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Column used by ERP-Integration (APIs)",
+   "maxLength": 50
+  },
+  "plusgispassvalve": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Passing Valve",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Specifies whether the valve is closed properly and that it is not leaking fluids or gases."
+  },
+  "autowogen": {
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Automatically Generate Work Orders",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Flag that indicates whether to start the wogen process when meter frequency is reached for a location"
+  },
+  "plusgsolomonplant_description": {
+   "type": "string"
+  },
+  "plusgopstate_description": {
+   "type": "string"
+  },
+  "sourcesysid": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Source System ID",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Source System ID",
+   "maxLength": 10
+  },
+  "bimimportsrc": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Import source",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The external source for the data in this record such as a COBie sheet or an IFC class name",
+   "maxLength": 25
+  },
+  "plusgbennum": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Loss Reference",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The loss record that defines the production loss associated with work at this location.",
+   "maxLength": 12
+  },
+  "plusgpipinspectby": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Inspected By",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The person who inspected the pipe.",
+   "maxLength": 100
+  },
+  "inhibitalertgen": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Inhibit Alert Generation",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Inhibit Alert Generation"
+  },
+  "ownersysid": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Owner System ID",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Owner System ID",
+   "maxLength": 10
+  },
+  "plusglocknum": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Lock Number",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The identifier of the lock that is applied.",
+   "maxLength": 15
+  },
+  "reordfromstore": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Reorder Storeroom",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The storeroom that all the items in the current storeroom are reordered from.",
+   "maxLength": 25
+  },
+  "plusplsystem": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Plant System",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Plant System",
+   "maxLength": 12
+  },
+  "plusgcurlockstate": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Lock State",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The current state of the lock. For example, indicates whether the asset or location is locked in an open or closed position.",
+   "maxLength": 16
+  },
+  "plusgsolomonequip_description": {
+   "type": "string"
+  },
+  "shiptolaborcode": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Ship to Labor",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Default labor code to ship items to when reorders are processed for this storeroom. Click the Select Value button to choose a labor code.",
+   "maxLength": 100
+  },
+  "plusgfmtype": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Failure Analysis Type",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The type of procedural analysis that must be done to identify the potential causes of failures at this location. An FMEA analysis is done at the functional level. An FMECA analysis extends the FMEA analysis by including a criticality analysis, which identifies the potential causes of failures and the consequences of failures. Criticality-based maintenance identifies which locations are critical and what the impact would be if the locations were to fail. Criticality-based maintenance also informs procurement strategy so that inventories, and the costs associated with keeping them, are reduced but not at the expense of increased downtime.",
+   "maxLength": 30
+  },
+  "plusgpiplineclass": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Line Class",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The classification to which the pipe is assigned.",
+   "maxLength": 20
+  },
+  "isdefault": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Default Storeroom",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Specifies whether this storeroom is the default storeroom for the site. If the check box is selected, Maximo reserves items for this storeroom if a job plan or work order does not specify a storeroom. If the check box is cleared (the default), this storeroom is not used as the default storeroom when work orders are generated with no storeroom information."
+  },
+  "pluslocnotes": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Locality Notes",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Locality notes",
+   "maxLength": 256
+  },
+  "plusgexatexstd_description": {
+   "type": "string"
+  },
+  "reordfromstoresiteid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Reorder Site",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The site of the storeroom that all the items in the current storeroom are reordered from.",
+   "maxLength": 8
+  },
+  "ahcarevision": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "INTEGER",
+   "title": "Revision",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "Condition assessment inspectin form revision",
+   "maxLength": 11
+  },
+  "plusgsecegrp_description": {
+   "type": "string"
+  },
+  "ahcapmnextduedate": {
+   "searchType": "EXACT",
+   "subType": "DATE",
+   "title": "Next Due Date",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Condition assessment next due date"
+  },
+  "bimimportsrc_description": {
+   "type": "string"
+  },
+  "plusgiso14224instn": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Installation Reference Detail",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Detail about the installation reference.",
+   "maxLength": 24
+  },
+  "oldshrinkageacc": {
+   "searchType": "WILDCARD",
+   "subType": "GL",
+   "title": "Old Shrinkage Account",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Last shrinkage cost account for manual adjustment for inventory quantity.",
+   "maxLength": 23
+  },
+  "changedate": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Changed Date",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Last Change date"
+  },
+  "plusgdrawingref": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Drawing Reference",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The identifier of a plant reference drawing.",
+   "maxLength": 16
+  },
+  "plusgoutageconseq": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Outage Consequence",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The impact on production if there is an outage at this location.",
+   "maxLength": 20
+  },
+  "mrefloctype": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Real Estate and Facilities location Type",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "System identified as Real Estate and Facilities system and define top level property or building",
+   "maxLength": 50
+  },
+  "plusgmttr": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "INTEGER",
+   "title": "MTTR",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "The mean time to repair for the location, in hours. The value must be an integer.",
+   "maxLength": 11
+  },
+  "plusprinttype": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Print Type",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Print Type",
+   "maxLength": 12
+  },
+  "_id": {
+   "type": "string"
+  },
+  "plusunit": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Unit",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Unit",
+   "maxLength": 12
+  },
+  "plusgrisktype": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Risk Type",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The risk type for this location (for example, health and safety, environment, or production).",
+   "maxLength": 10
+  },
+  "plusgpandidnumber": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "P and ID",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The plant Piping and Instrumentation Diagram number.",
+   "maxLength": 24
+  },
+  "plusplsystem_description": {
+   "type": "string"
+  },
+  "_imagelibref": {
+   "type": "string"
+  },
+  "plusgfmpersonid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Failure Analysis Leader ID",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "The person who is leading the failure analysis effort.",
+   "maxLength": 11
+  },
+  "plusgsafecrielem_description": {
+   "type": "string"
+  },
+  "plusgiso14224plant": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Plant or Unit Detail",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Detail about the plant or unit.",
+   "maxLength": 24
+  },
+  "plusgfunction_description": {
+   "type": "string"
+  },
+  "type_description": {
+   "type": "string"
+  },
+  "plusgpipinspectdate": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Last Inspection Date/Time",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The date and time when the pipe was last inspected."
+  },
+  "plusgriskassessed": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Risk Assessed Location",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Specifies whether this location has been assessed for risk. If the check box is selected, this location has been assessed. If the check box is cleared, this location has not been assessed."
+  },
+  "pluscritical": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Criticality",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Enter how critical this component is to the success or safety of the plant. This code determines if the item is critical, non-critical, or has been designated as Run-To-Failure (RTF). RTF is normally used for items such as light bulbs that are normally replaced only when they fail. Identification and evaluation of the structures and components that are associated with the performance of the function. 1.  If a failure of the component or its structural supports defeats or degrades an important function or a function that is redundant to an important function, then it is a critical component 2.  In between the categories of critical and run-to-failure, there are a number of SSCs for which cost-effective preventive maintenance makes sense. 3.  A run-to-failure component is one for which the risks and consequences of failure are acceptable without any predictive or repetitive maintenance being performed and there is not a simple, cost-effective method to extend the useful life of the component. (Industry Reference: INPO AP913 r1 2001)",
+   "maxLength": 16
+  },
+  "plusgpipinspectbyid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Inspected By ID",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "The person who inspected the pipe.",
+   "maxLength": 11
+  },
+  "classstructureid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Class Structure",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Class Structure Identifier",
+   "maxLength": 25
+  },
+  "plusghistoricmtbf": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "INTEGER",
+   "title": "Historic MTBF",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "The historic mean time between failures for the location, in hours. The value must be an integer.",
+   "maxLength": 11
+  },
+  "plusgopenomuid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "INTEGER",
+   "title": "Open Unique Idenfitier",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "The open unique identifier provided to an external system by Maximo",
+   "maxLength": 11
+  },
+  "islocked": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Locked",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Indicates that the lock is applied to the location or valve, and the new state is applied."
+  },
+  "plusgreplacecost": {
+   "searchType": "EXACT",
+   "scale": 2,
+   "subType": "AMOUNT",
+   "title": "Replacement Cost",
+   "persistent": true,
+   "type": "number",
+   "remarks": "The cost to replace the particular unit of plant that is defined by the location, in base currency. This cost is used in the calculation of defect density in the Improvements application.",
+   "maxLength": 11
+  },
+  "plusgleaking": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Leaking",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Indicates whether the location or the asset at the location is leaking."
+  },
+  "deviceid": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Device Id",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Device Id",
+   "maxLength": 50
+  },
+  "glaccount": {
+   "searchType": "WILDCARD",
+   "subType": "GL",
+   "title": "GL Account",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The GL account code for this location. Click Select Value to view or select from a list of valid GL accounts.",
+   "maxLength": 23
+  },
+  "curvaracc": {
+   "searchType": "WILDCARD",
+   "subType": "GL",
+   "title": "Currency Variance Account",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Account containing the differences between the PO price and the invoice price that result from changes in the exchange rate. If, as a result of an exchange rate change, the invoice cost in base currency exceeds the receipt cost in base currency, then the transaction amount is positive. If the invoice cost in base currency is less than the receipt cost in base currency, then the transaction amount is negative. This account is paired with the GL control account; when the currency variance account's value decreases, the inventory control account's value decreases. Variance accounts track price variances by storeroom location, not by item. Click the Select Value button to choose a GL account.",
+   "maxLength": 23
+  },
+  "plusgtempuntil": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Temporary Until",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The date until which the location retains its temporary status. After the temporary status expires, you can opt not to use it."
+  },
+  "controlacc": {
+   "searchType": "WILDCARD",
+   "subType": "GL",
+   "title": "GL Control Account",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Default GL account that Maximo applies to items in this storeroom during GL transactions such as issues, returns, receipts, transfers, and adjustments. Click the Select Value button to choose a GL account.",
+   "maxLength": 23
+  },
+  "plusgaccessreq": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Access Requirements",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Special requirements that are needed to access this area. Valid values are in the PLUSGACCESSREQ domain.",
+   "maxLength": 12
+  },
+  "plusgdateofprediction": {
+   "searchType": "EXACT",
+   "subType": "DATE",
+   "title": "Date of Prediction",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The date when the predicted mean time between failures was specified."
+  },
+  "plusgsafetycrit": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Safety Critical",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Specifies whether this location is a safety critical area. If the check box is selected, this location is a safety critical area. If the check box is cleared, this location is not a safety critical area."
+  }
+ },
+ "required": [
+  "autowogen",
+  "changeby",
+  "changedate",
+  "location",
+  "orgid",
+  "statusdate",
+  "type"
+ ]
+}

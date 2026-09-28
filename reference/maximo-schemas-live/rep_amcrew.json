@@ -1,0 +1,389 @@
+{
+ "resource": "REP_AMCREW",
+ "description": "Crew Details",
+ "pk": [
+  "orgid",
+  "amcrew"
+ ],
+ "title": "AMCREW",
+ "type": "object",
+ "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/rep_amcrew",
+ "uniqueid": "amcrewid",
+ "properties": {
+  "calnum": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Calendar",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Identifies the work period for the crew. A calendar includes defined shifts. When you select a calendar value for the crew, Maximo also enters that value in the Shift field.",
+   "maxLength": 8
+  },
+  "amcrewworkzone": {
+   "objectName": "AMCREWWORKZONE",
+   "type": "array",
+   "items": {
+    "definition": {
+     "subSchema": {
+      "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/rep_amcrew/amcrewworkzone"
+     }
+    },
+    "type": "object"
+   },
+   "cardinality": "MULTIPLE",
+   "relation": "AMCREWWORKZONE"
+  },
+  "localref": {
+   "type": "string"
+  },
+  "endlocation": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "End Location",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The last location in a street-level route.",
+   "maxLength": 25
+  },
+  "amcrewlabpos": {
+   "objectName": "AMCREWLABPOS",
+   "type": "array",
+   "items": {
+    "definition": {
+     "subSchema": {
+      "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/rep_amcrew/amcrewlabpos"
+     }
+    },
+    "type": "object"
+   },
+   "cardinality": "MULTIPLE",
+   "relation": "AMCREWLABPOS"
+  },
+  "description": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Description",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Describes the crew. To enter or view additional information, click the Long Description button.",
+   "maxLength": 50
+  },
+  "amcrewtool": {
+   "objectName": "AMCREWTOOL",
+   "type": "array",
+   "items": {
+    "definition": {
+     "subSchema": {
+      "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/rep_amcrew/amcrewtool"
+     }
+    },
+    "type": "object"
+   },
+   "cardinality": "",
+   "relation": "AMCREWTOOL"
+  },
+  "lbslaborbased": {
+   "default": true,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Use Labor Location",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Determines whether the location is based on one of the labors on the crew and not on other factors, such as the location of the GPS in the truck."
+  },
+  "_rowstamp": {
+   "type": "string"
+  },
+  "lbsinterval": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "INTEGER",
+   "title": "Location Refresh (in seconds)",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "The interval to refresh the location of a labor or a crew. For example, if you enter 5, the GPS location is refreshed every five seconds.",
+   "maxLength": 11
+  },
+  "lbslocation": {
+   "objectName": "LBSLOCATION",
+   "type": "array",
+   "items": {
+    "definition": {
+     "subSchema": {
+      "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/rep_amcrew/lbslocation"
+     }
+    },
+    "type": "object"
+   },
+   "cardinality": "MULTIPLE",
+   "relation": "LBSLOCATION"
+  },
+  "rate": {
+   "searchType": "EXACT",
+   "scale": 2,
+   "subType": "AMOUNT",
+   "title": "Hourly Rate",
+   "persistent": true,
+   "type": "number",
+   "remarks": "The sum of the individual labor rates plus the asset rates that are assigned to the crew.",
+   "maxLength": 11
+  },
+  "_imagelibref": {
+   "type": "string"
+  },
+  "vendor": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Vendor",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Vendor",
+   "maxLength": 12
+  },
+  "amcrewid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Unique Id",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "uniqueid": true,
+   "remarks": "Unique Id",
+   "maxLength": 11
+  },
+  "crewworkgroup": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Crew Work Group",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The identifier of the person group that is used in the Crews applications. You define crew work groups in the Person Groups application.",
+   "maxLength": 8
+  },
+  "lbsdatafromwo": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Save Location with Work Order",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "If the audit history is enabled, and you select the Use Labor Location checkbox, the labor location is stored with the work order data in the LBSLOCATION table. To enable the audit history, configure the Database Configuration application."
+  },
+  "href": {
+   "type": "string",
+   "title": "AMCREW object reference"
+  },
+  "contractnum": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Contract",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The vendor contract number for the labor rate. Contracts are defined in the Labor Rate Contract application.",
+   "maxLength": 8
+  },
+  "worklocation": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Work Location",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The location where this labor code works. The work location may be used to select a labor code for work order assignments. This location's internal labor account is used to set the GL Control Account on all crafts for this labor that are not associated with a vendor. The GL Control Account, in turn, is used as the credit GL account for the labor transaction.",
+   "maxLength": 25
+  },
+  "orate": {
+   "searchType": "EXACT",
+   "scale": 2,
+   "subType": "AMOUNT",
+   "title": "Override Hourly Rate",
+   "persistent": true,
+   "type": "number",
+   "remarks": "Specifies the rate for the crew and overrides the hourly rate. The override hourly rate takes priority over the hourly rate.",
+   "maxLength": 11
+  },
+  "startlocation": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Start Location",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The first location in a street-level route.",
+   "maxLength": 25
+  },
+  "status_description": {
+   "type": "string"
+  },
+  "amcrewtype": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Crew Type",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Identifies the crew's type. The crew type defines the crafts, qualifications, and tools that must comprise the crew.",
+   "maxLength": 8
+  },
+  "revisionnum": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "INTEGER",
+   "title": "Revision",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "hasList": true,
+   "remarks": "Contract Revision Number",
+   "maxLength": 11
+  },
+  "record_descriptor": {
+   "type": "string",
+   "title": "Record/Object Descriptor"
+  },
+  "shiftnum": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Shift",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Identifies the crew's shift. When you select a calendar value for the crew, Maximo also enters that value in the Shift field.",
+   "maxLength": 8
+  },
+  "amcrewlabor": {
+   "objectName": "AMCREWLABOR",
+   "type": "array",
+   "items": {
+    "definition": {
+     "subSchema": {
+      "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/rep_amcrew/amcrewlabor"
+     }
+    },
+    "type": "object"
+   },
+   "cardinality": "MULTIPLE",
+   "relation": "AMCREWLABOR"
+  },
+  "amcrewtoolsq": {
+   "objectName": "AMCREWTOOLSQ",
+   "type": "array",
+   "items": {
+    "definition": {
+     "subSchema": {
+      "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/rep_amcrew/amcrewtoolsq"
+     }
+    },
+    "type": "object"
+   },
+   "cardinality": "MULTIPLE",
+   "relation": "AMCREWTOOLSQ"
+  },
+  "orgid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Organization",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Organization to which the crew belongs.The default value is the organization associated with the user's insert site.",
+   "maxLength": 8
+  },
+  "statusdate": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Status Date",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Date the status was last changed."
+  },
+  "amcrewqual": {
+   "objectName": "AMCREWQUAL",
+   "type": "array",
+   "items": {
+    "definition": {
+     "subSchema": {
+      "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/rep_amcrew/amcrewqual"
+     }
+    },
+    "type": "object"
+   },
+   "cardinality": "MULTIPLE",
+   "relation": "AMCREWQUAL"
+  },
+  "startlocsiteid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Start Location Site Id",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Start Location SiteId",
+   "maxLength": 8
+  },
+  "endlocsiteid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "End Location Site Id",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Start Location SiteId",
+   "maxLength": 8
+  },
+  "amcrew": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Crew",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Identfies the crew. This value must be unique within an organization.",
+   "maxLength": 8
+  },
+  "worksite": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Work Site",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The site where this labor code works.",
+   "maxLength": 8
+  },
+  "_id": {
+   "type": "string"
+  },
+  "supervisor": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Supervisor",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Supervisor of the crew. Same behavior as PERSON.SUPERVISOR.",
+   "maxLength": 100
+  },
+  "status": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Status",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The current status of the crew. When you create a crew, its default status is Active.",
+   "maxLength": 12
+  }
+ },
+ "required": [
+  "amcrew",
+  "amcrewtype",
+  "orgid",
+  "status",
+  "statusdate"
+ ]
+}

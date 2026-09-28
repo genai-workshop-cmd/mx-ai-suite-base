@@ -1,0 +1,187 @@
+{
+  "resource": "MXAPIAPPPROPCFG",
+  "description": "APPPROPCFG",
+  "pk": [
+    "app",
+    "propname"
+  ],
+  "title": "APPPROPCFG",
+  "type": "object",
+  "$ref": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapiapppropcfg",
+  "uniqueid": "apppropcfgid",
+  "properties": {
+    "app": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "App Name",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "App Name",
+      "maxLength": 40
+    },
+    "maxtype": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Value Type",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Value Type",
+      "maxLength": 50
+    },
+    "maxtype_description": {
+      "type": "string"
+    },
+    "localref": {
+      "type": "string"
+    },
+    "description": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Description",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Description of the property.",
+      "maxLength": 200
+    },
+    "domainid": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Domain ID",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Domain ID",
+      "maxLength": 18
+    },
+    "apppropcfgid": {
+      "searchType": "EXACT",
+      "maximum": 2147483647.0,
+      "subType": "BIGINT",
+      "title": "Unique Id",
+      "persistent": true,
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "uniqueid": true,
+      "remarks": "Unique Id",
+      "maxLength": 11
+    },
+    "_rowstamp": {
+      "type": "string"
+    },
+    "numericvalue": {
+      "searchType": "EXACT",
+      "maximum": 2147483647.0,
+      "subType": "INTEGER",
+      "title": "Numeric Value",
+      "persistent": true,
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "remarks": "Numeric Value",
+      "maxLength": 11
+    },
+    "_imagelibref": {
+      "type": "string"
+    },
+    "booleanvalueuser": {
+      "default": false,
+      "searchType": "NONE",
+      "subType": "YORN",
+      "title": "Boolean Value",
+      "type": "boolean",
+      "remarks": "Boolean Value"
+    },
+    "syspropname": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "System Property Name",
+      "persistent": true,
+      "type": "string",
+      "remarks": "System Property Name",
+      "maxLength": 50
+    },
+    "alnvalue": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "ALN Value",
+      "persistent": true,
+      "type": "string",
+      "remarks": "String Value",
+      "maxLength": 50
+    },
+    "validationclass": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Validation Class Name",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Validation Class Name",
+      "maxLength": 200
+    },
+    "href": {
+      "type": "string"
+    },
+    "_id": {
+      "type": "string"
+    },
+    "alnvalueuser": {
+      "searchType": "NONE",
+      "subType": "ALN",
+      "title": "ALN Value",
+      "type": "string",
+      "remarks": "String Value",
+      "maxLength": 50
+    },
+    "personalizable": {
+      "default": false,
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "Personalizable",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "System Property Name"
+    },
+    "userdefined": {
+      "default": true,
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "User Defined",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "User Defined"
+    },
+    "booleanvalue": {
+      "default": false,
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "Boolean Value",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "Boolean Value"
+    },
+    "numericvalueuser": {
+      "searchType": "NONE",
+      "maximum": 2147483647.0,
+      "subType": "INTEGER",
+      "title": "Numeric Value",
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "remarks": "Numeric Value",
+      "maxLength": 11
+    },
+    "propname": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Property Name",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Property Name",
+      "maxLength": 20
+    }
+  },
+  "required": [
+    "booleanvalueuser",
+    "maxtype",
+    "propname"
+  ]
+}

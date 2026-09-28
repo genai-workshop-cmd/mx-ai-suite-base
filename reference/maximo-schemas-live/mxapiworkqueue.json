@@ -1,0 +1,211 @@
+{
+ "resource": "MXAPIWORKQUEUE",
+ "description": "Maximo table for work queues",
+ "pk": [
+  "queuename"
+ ],
+ "title": "WORKQUEUE",
+ "type": "object",
+ "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/mxapiworkqueue",
+ "uniqueid": "workqueueid",
+ "properties": {
+  "app": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Application",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Links an application to the work queue.",
+   "maxLength": 40
+  },
+  "owner": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Author",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Author",
+   "maxLength": 100
+  },
+  "queuename": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Queue name",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The name of the work queue.",
+   "maxLength": 100
+  },
+  "workqueuecols": {
+   "objectName": "WORKQUEUECOLS",
+   "type": "array",
+   "items": {
+    "definition": {
+     "subSchema": {
+      "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/mxapiworkqueue/workqueuecols"
+     }
+    },
+    "type": "object"
+   },
+   "cardinality": "",
+   "relation": "WORKQUEUECOLS"
+  },
+  "workqueueactions": {
+   "objectName": "WORKQUEUEACTIONS",
+   "type": "array",
+   "items": {
+    "definition": {
+     "subSchema": {
+      "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/mxapiworkqueue/workqueueactions"
+     }
+    },
+    "type": "object"
+   },
+   "cardinality": "",
+   "relation": "WORKQUEUEACTIONS"
+  },
+  "localref": {
+   "type": "string"
+  },
+  "uniquecolumnname": {
+   "searchType": "NONE",
+   "subType": "UPPER",
+   "title": "Unique Column",
+   "type": "string",
+   "remarks": "Name of the column that composes the one-column unique index for this table.",
+   "maxLength": 30
+  },
+  "queuetype_description": {
+   "type": "string"
+  },
+  "isactive": {
+   "default": true,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Active",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "The work queue is active or inactive. Only active queues appear on the Dashboard. Only inactive work queues can be deleted."
+  },
+  "description": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Description",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The description of the work queue.",
+   "maxLength": 100
+  },
+  "clausename": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Query",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The SQL query to be used in the work queue.",
+   "maxLength": 50
+  },
+  "itemcount": {
+   "searchType": "NONE",
+   "maximum": 2147483647.0,
+   "subType": "INTEGER",
+   "title": "Count",
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "Number of Items in Work Queue",
+   "maxLength": 11
+  },
+  "record_descriptor": {
+   "type": "string",
+   "title": "Record/Object Descriptor"
+  },
+  "queuetype": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Type",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Type",
+   "maxLength": 16
+  },
+  "priority": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "INTEGER",
+   "title": "Priority",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "hasList": true,
+   "remarks": "The priority in which the work queue will be executed.",
+   "maxLength": 11
+  },
+  "priority_description": {
+   "type": "string"
+  },
+  "intobjectname": {
+   "default": "MXAPIWODETAIL",
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Object Structure",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The data source for the work queue.",
+   "maxLength": 20
+  },
+  "workqueueid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Unique Id",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "uniqueid": true,
+   "remarks": "Unique Id",
+   "maxLength": 11
+  },
+  "langcode": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Language Code",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Language Code",
+   "maxLength": 4
+  },
+  "_rowstamp": {
+   "type": "string"
+  },
+  "_imagelibref": {
+   "type": "string"
+  },
+  "instruction": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Notes",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Notes",
+   "maxLength": 8000
+  },
+  "href": {
+   "type": "string",
+   "title": "WORKQUEUE object reference"
+  },
+  "_id": {
+   "type": "string"
+  }
+ },
+ "required": [
+  "clausename",
+  "langcode",
+  "owner",
+  "queuename",
+  "queuetype"
+ ]
+}

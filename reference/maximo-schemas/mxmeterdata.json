@@ -1,0 +1,326 @@
+{
+  "resource": "MXMETERDATA",
+  "description": "METERDATA",
+  "title": "METERDATA",
+  "type": "object",
+  "$ref": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxmeterdata",
+  "properties": {
+    "endfeature": {
+      "searchType": "NONE",
+      "subType": "UPPER",
+      "title": "End Feature",
+      "type": "string",
+      "remarks": "The feature (e.g. mile marker) that is used to identify where, on the linear asset, the meter reading was taken.",
+      "maxLength": 30
+    },
+    "localref": {
+      "type": "string"
+    },
+    "endoffset": {
+      "searchType": "NONE",
+      "scale": 2,
+      "subType": "DECIMAL",
+      "title": "End Offset",
+      "type": "number",
+      "remarks": "Distance used in conjunction with the end reference point to determine where the meter resides.  ",
+      "maxLength": 11
+    },
+    "newreading": {
+      "searchType": "NONE",
+      "subType": "ALN",
+      "title": "New  Reading",
+      "type": "string",
+      "remarks": "NEWREADING",
+      "maxLength": 18
+    },
+    "startmeasure": {
+      "searchType": "NONE",
+      "scale": 2,
+      "subType": "DECIMAL",
+      "title": "Start Measure",
+      "type": "number",
+      "remarks": "Absolute distance taken from the start of the linear asset to where this meter is defined.  This can be manually entered or calculated by entering a start reference point and start offset.",
+      "maxLength": 11
+    },
+    "_rowstamp": {
+      "type": "string"
+    },
+    "isdelta": {
+      "searchType": "NONE",
+      "subType": "YORN",
+      "title": "Delta",
+      "type": "boolean",
+      "remarks": "ISDELTA"
+    },
+    "endzoffset": {
+      "searchType": "NONE",
+      "scale": 2,
+      "subType": "DECIMAL",
+      "title": "End Z Offset",
+      "type": "number",
+      "remarks": "Distance above or below this linear asset.  For example, if a sign is 10 feet above the road, the  Z-Offset is 10 feet.  This value is measured from the Z  Reference Point and can be positive (above) or negative (below).",
+      "maxLength": 11
+    },
+    "_imagelibref": {
+      "type": "string"
+    },
+    "assetnum": {
+      "searchType": "NONE",
+      "subType": "UPPER",
+      "title": "Asset",
+      "type": "string",
+      "remarks": "Asset number to which the meter is attached",
+      "maxLength": 25
+    },
+    "endyoffsetref": {
+      "searchType": "NONE",
+      "subType": "ALN",
+      "title": "End Y Offset Referent",
+      "type": "string",
+      "remarks": "The point from which the Y Offset is measured (e.g. centerline, edge, etc).   The user can create a domain for this purpose.  The value entered will not be used in calculations, it is simply used to locate the feature in the field.",
+      "maxLength": 30
+    },
+    "startzoffset": {
+      "searchType": "NONE",
+      "scale": 2,
+      "subType": "DECIMAL",
+      "title": "Start Z Offset",
+      "type": "number",
+      "remarks": "Distance above or below this linear asset.  For example, if a sign is 10 feet above the road, the  Z-Offset is 10 feet.  This value is measured from the Z  Reference Point and can be positive (above) or negative (below).",
+      "maxLength": 11
+    },
+    "siteid": {
+      "searchType": "NONE",
+      "subType": "UPPER",
+      "title": "Site",
+      "type": "string",
+      "remarks": "Site identifier for this meter.",
+      "maxLength": 8
+    },
+    "href": {
+      "type": "string"
+    },
+    "startzoffsetref": {
+      "searchType": "NONE",
+      "subType": "ALN",
+      "title": "Start Z Offset Referent",
+      "type": "string",
+      "remarks": "Reference point from which the start Z-Offset (distance above or below the linear asset) is measured.  ",
+      "maxLength": 30
+    },
+    "newreadingdate": {
+      "searchType": "NONE",
+      "subType": "DATETIME",
+      "title": "New Reading Date",
+      "type": "string",
+      "remarks": "NEWREADINGDATE"
+    },
+    "measuredate": {
+      "searchType": "NONE",
+      "subType": "DATETIME",
+      "title": "Measurement Date",
+      "type": "string",
+      "remarks": "Date The Measurement Was Taken"
+    },
+    "startyoffsetref": {
+      "searchType": "NONE",
+      "subType": "ALN",
+      "title": "Start Y Offset Referent",
+      "type": "string",
+      "remarks": "The point from which the Y Offset is measured (e.g. centerline, edge, etc).   The user can create a domain for this purpose.  The value entered will not be used in calculations, it is simply used to locate the feature in the field.",
+      "maxLength": 30
+    },
+    "observation": {
+      "searchType": "NONE",
+      "subType": "ALN",
+      "title": "Observation",
+      "type": "string",
+      "remarks": "Reading taken on a CHARACTERISTIC meter.  Valid values are from the ALNDOMAINVALUE table where the domain identifier is the same as the meter's domain identifier.",
+      "maxLength": 254
+    },
+    "changeby": {
+      "searchType": "NONE",
+      "subType": "UPPER",
+      "title": "Changed By",
+      "type": "string",
+      "remarks": "Name of user who last modified this record.",
+      "maxLength": 100
+    },
+    "endmeasure": {
+      "searchType": "NONE",
+      "scale": 2,
+      "subType": "DECIMAL",
+      "title": "End Measure",
+      "type": "number",
+      "remarks": "Absolute distance taken from the start of the linear asset to where the end of this meter is defined.  This can be manually entered or calculated by entering an end reference point and end offset.",
+      "maxLength": 11
+    },
+    "startyoffset": {
+      "searchType": "NONE",
+      "scale": 2,
+      "subType": "DECIMAL",
+      "title": "Start Y Offset",
+      "type": "number",
+      "remarks": "Perpendicular distance from this linear asset.  For example, if a sign is 10 feet to the right of the road, the Y-Offset is 10 feet.  This value is measured from the Y Reference Point and can be positive (right) or negative (left).",
+      "maxLength": 11
+    },
+    "changedate": {
+      "searchType": "NONE",
+      "subType": "DATETIME",
+      "title": "Changed Date",
+      "type": "string",
+      "remarks": "Date and time record was last modified."
+    },
+    "inspector": {
+      "searchType": "NONE",
+      "subType": "UPPER",
+      "title": "Inspector",
+      "type": "string",
+      "remarks": "Person who reported this Measurement",
+      "maxLength": 100
+    },
+    "measurementvalue": {
+      "searchType": "NONE",
+      "scale": 3,
+      "subType": "DECIMAL",
+      "title": "Measurement",
+      "type": "number",
+      "remarks": "Actual Measurement Value Recorded",
+      "maxLength": 16
+    },
+    "orgid": {
+      "searchType": "NONE",
+      "subType": "UPPER",
+      "title": "Organization",
+      "type": "string",
+      "remarks": "Organization identifier for this meter.",
+      "maxLength": 8
+    },
+    "wonum": {
+      "searchType": "NONE",
+      "subType": "UPPER",
+      "title": "Work Order",
+      "type": "string",
+      "remarks": "Identifies the work order.",
+      "maxLength": 25
+    },
+    "assetmeterid": {
+      "searchType": "NONE",
+      "maximum": 2147483647.0,
+      "subType": "BIGINT",
+      "title": "Asset Meter ID",
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "remarks": "Unique Identifier",
+      "maxLength": 11
+    },
+    "endyoffset": {
+      "searchType": "NONE",
+      "scale": 2,
+      "subType": "DECIMAL",
+      "title": "End Y Offset",
+      "type": "number",
+      "remarks": "Perpendicular distance from this linear asset.  For example, if a sign is 10 feet to the right of the road, the Y-Offset is 10 feet.  This value is measured from the Y Reference Point and can be positive (right) or negative (left).",
+      "maxLength": 11
+    },
+    "sequence": {
+      "searchType": "NONE",
+      "maximum": 2147483647.0,
+      "subType": "SMALLINT",
+      "title": "Meter display sequence",
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "remarks": "Meter display sequence",
+      "maxLength": 11
+    },
+    "startfeature": {
+      "searchType": "NONE",
+      "subType": "UPPER",
+      "title": "Start Feature",
+      "type": "string",
+      "remarks": "The feature (e.g. mile marker) that is used to identify where, on the linear asset, the meter reading was taken.",
+      "maxLength": 30
+    },
+    "metername": {
+      "searchType": "NONE",
+      "subType": "UPPER",
+      "title": "Meter",
+      "type": "string",
+      "remarks": "Identifier for the meter, for example HOURS or KILOMETERS.",
+      "maxLength": 10
+    },
+    "startoffset": {
+      "searchType": "NONE",
+      "scale": 2,
+      "subType": "DECIMAL",
+      "title": "Start Offset",
+      "type": "number",
+      "remarks": "Distance used in conjunction with the start reference point to determine where the meter resides.  ",
+      "maxLength": 11
+    },
+    "location": {
+      "searchType": "NONE",
+      "subType": "UPPER",
+      "title": "Location",
+      "type": "string",
+      "remarks": "Location to which the meter is attached",
+      "maxLength": 25
+    },
+    "_id": {
+      "type": "string"
+    },
+    "dorollover": {
+      "searchType": "NONE",
+      "subType": "YORN",
+      "title": "Rollover",
+      "type": "boolean",
+      "remarks": "Should new reading cause the meter to roll over?"
+    },
+    "measurementid": {
+      "searchType": "NONE",
+      "maximum": 2147483647.0,
+      "subType": "BIGINT",
+      "title": "Measurement",
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "remarks": "Unique identifier for this measurement. This value is automatically generated for each new measurement.",
+      "maxLength": 11
+    },
+    "endzoffsetref": {
+      "searchType": "NONE",
+      "subType": "ALN",
+      "title": "End Z Offset Referent",
+      "type": "string",
+      "remarks": "Point from which the Z-Offset is measured.  ",
+      "maxLength": 30
+    },
+    "pointnum": {
+      "searchType": "NONE",
+      "subType": "UPPER",
+      "title": "Point",
+      "type": "string",
+      "remarks": "Identifier of this Meter's related condition monitoring point.",
+      "maxLength": 8
+    },
+    "remarks": {
+      "searchType": "NONE",
+      "subType": "ALN",
+      "title": "Remarks",
+      "type": "string",
+      "remarks": "Additional information supplied by the user regarding the record.",
+      "maxLength": 50
+    },
+    "remarks_longdescription": {
+      "searchType": "WILDCARD",
+      "subType": "LONGALN",
+      "title": "Remarks Long Description",
+      "type": "string",
+      "remarks": "Long Description for Additional information supplied by the user regarding the record.",
+      "maxLength": 32000
+    }
+  },
+  "required": [
+    "dorollover",
+    "isdelta"
+  ]
+}

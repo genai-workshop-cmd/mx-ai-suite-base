@@ -1,0 +1,347 @@
+{
+ "resource": "REP_PLUSGOPACT",
+ "description": "Operational Actions (Oil) Details",
+ "pk": [
+  "plusgoperactionid"
+ ],
+ "title": "PLUSGOPERACTION",
+ "type": "object",
+ "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/rep_plusgopact",
+ "uniqueid": "plusgoperactionid",
+ "properties": {
+  "no": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "No",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Indicates whether the response requires an answer in the negative."
+  },
+  "reviewtype_description": {
+   "type": "string"
+  },
+  "plusgstdactid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Action ID",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "Action ID.",
+   "maxLength": 11
+  },
+  "localref": {
+   "type": "string"
+  },
+  "actionby": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Action By",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The person who is assigned to complete the action.",
+   "maxLength": 100
+  },
+  "actionbyid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Action By",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "Action By ID.",
+   "maxLength": 11
+  },
+  "hasscore": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Score",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Indicates whether the item that is reviewed requires a score type of response."
+  },
+  "score": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Score",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "This response requires you to enter a score.",
+   "maxLength": 11
+  },
+  "_rowstamp": {
+   "type": "string"
+  },
+  "stdactdesc": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Action Description",
+   "persistent": true,
+   "type": "string",
+   "remarks": "A description of the action in the originating application.",
+   "maxLength": 100
+  },
+  "origtabledesc_description": {
+   "type": "string"
+  },
+  "_imagelibref": {
+   "type": "string"
+  },
+  "actionbygroup": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Action By Group",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The person group that is assigned to complete the action.",
+   "maxLength": 8
+  },
+  "actionbygroupid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Action By Group",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "Action By Group.",
+   "maxLength": 11
+  },
+  "hasitems": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Review Action",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Indicates whether action is a review."
+  },
+  "reviewtype": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Review Response Type",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The type of review. Valid values are in the ALNDOMAIN.VALUE domain.",
+   "maxLength": 30
+  },
+  "notapplicable": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Not Applicable",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Indicates that a response does not apply."
+  },
+  "siteid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Site",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The site that is associated with the log book.",
+   "maxLength": 8
+  },
+  "href": {
+   "type": "string",
+   "title": "PLUSGOPERACTION object reference"
+  },
+  "class": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Application",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The application to which the record belongs that contains the actions.",
+   "maxLength": 50
+  },
+  "origtable": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "The name of the Object for the action",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The table that has generated the Action.",
+   "maxLength": 30
+  },
+  "alphanumeric": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Alphanumeric",
+   "persistent": true,
+   "type": "string",
+   "remarks": "This response requires you to specify a number, an alphabetic or alphanumeric identifier, or any of these combinations.",
+   "maxLength": 20
+  },
+  "plusgoperactionid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Unique Id",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "uniqueid": true,
+   "remarks": "Unique Id",
+   "maxLength": 11
+  },
+  "sourceid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Source Action Identifier",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "Source Action Identifier for relationship to Operations Action table.",
+   "maxLength": 11
+  },
+  "comments": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Comments",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Detailed information about the action.",
+   "maxLength": 200
+  },
+  "plusgstdactgrpid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Action Group",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "Action Group.",
+   "maxLength": 11
+  },
+  "yes": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Yes",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Indicates whether the response requires an affirmative answer."
+  },
+  "record_descriptor": {
+   "type": "string",
+   "title": "Record/Object Descriptor"
+  },
+  "completed": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Completed",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Specifies whether the action that is associated with the application record is complete."
+  },
+  "isrevact": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Review Action",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Indicates whether the action for the item must be reviewed."
+  },
+  "recnum": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Application Record",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The identifier of the record in the originating application..",
+   "maxLength": 12
+  },
+  "recordid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Record ID",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "The ID of the generating record.",
+   "maxLength": 11
+  },
+  "stdactnum": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Standard Action",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The identifier of the action in the originating application. You can select an action or you can create an action using the Standard Actions application.",
+   "maxLength": 12
+  },
+  "isalphanumeric": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Numeric",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Indicates whether the response for the item that is reviewed requires a number, an alphabetic or alphanumeric identifier, or any of these combinations."
+  },
+  "_id": {
+   "type": "string"
+  },
+  "origtabledesc": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Action Source",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The action tab in the originating application where the action is found.",
+   "maxLength": 50
+  },
+  "completeddate": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Sign Off Date",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The date and time when the action is marked as completed."
+  },
+  "status": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Status",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The status of the record in the originating application. You can create a query that searches for records that are in a particular status, such as approved.",
+   "maxLength": 20
+  },
+  "yesorno": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Yes or No",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Indicates whether the item that is reviewed requires a Yes or No answer."
+  }
+ },
+ "required": [
+  "plusgstdactid",
+  "status"
+ ]
+}

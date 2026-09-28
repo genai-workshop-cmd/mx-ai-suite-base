@@ -1,0 +1,180 @@
+{
+ "resource": "MXWOTASKRELATION",
+ "description": "Work Order Predecessor",
+ "pk": [
+  "wotaskrelationid"
+ ],
+ "title": "WOTASKRELATION",
+ "type": "object",
+ "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/mxwotaskrelation",
+ "uniqueid": "wotaskrelationid",
+ "properties": {
+  "optionalrel": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Optional Relationship",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Defines feasibility of the dependency. When YES (feasible), it is mandatory (HARD constraint). When NO (non-feasible), it is optional (SOFT constraint) and optimizer can choose to respect or not."
+  },
+  "wotaskrelationid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Unique Id",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "uniqueid": true,
+   "remarks": "Unique Id",
+   "maxLength": 11
+  },
+  "localref": {
+   "type": "string"
+  },
+  "useleadlagasshift": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Use Lead Lag As Shift Hours",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "If true, lead lag is understood as shift hours, otherwise (default) it is calendar hours. If shift ends at 6 and task ends at 5 and lead/lag=2h, next task can start next day at shift start (eg 8am) if calendar hours, should start after 9am if shift hours."
+  },
+  "record_descriptor": {
+   "type": "string",
+   "title": "Record/Object Descriptor"
+  },
+  "orgid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Organization",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Organization Identifier",
+   "maxLength": 8
+  },
+  "wonum": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Work Order",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Identifies the Work Order",
+   "maxLength": 25
+  },
+  "optsplit": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Splitted",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Task Splitted."
+  },
+  "reltype_description": {
+   "type": "string"
+  },
+  "_rowstamp": {
+   "type": "string"
+  },
+  "predrefwonum": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Predecessor WONUM",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Identifies the wonum of the predecessor work order task",
+   "maxLength": 25
+  },
+  "optimize": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Enforce Lead/Lag",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Allows the relationship to be relaxed by optimization."
+  },
+  "maxleadlaghours": {
+   "default": 0.0,
+   "searchType": "EXACT",
+   "scale": 2,
+   "subType": "DECIMAL",
+   "title": "Maximum Lead Lag Hours",
+   "persistent": true,
+   "type": "number",
+   "remarks": "Maximum lead lag hours to limit max delay between predecessor and successor. Task B must be done within max time X after the end/start of Task A.",
+   "maxLength": 19
+  },
+  "_imagelibref": {
+   "type": "string"
+  },
+  "siteid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Site",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Site Identifier",
+   "maxLength": 8
+  },
+  "href": {
+   "type": "string",
+   "title": "WOTASKRELATION object reference"
+  },
+  "_id": {
+   "type": "string"
+  },
+  "reltype": {
+   "default": "!FS!",
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Relationship",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The dependency between work records which determines scheduling order.  This includes Finish to Start, Finish to Finish, Start to Start, and Start to Finish.",
+   "maxLength": 8
+  },
+  "predwonum": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Predecessor Work Order",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Identifies the predecessor work order",
+   "maxLength": 25
+  },
+  "leadlaghours": {
+   "default": "0:00",
+   "searchType": "EXACT",
+   "scale": 0,
+   "subType": "DURATION",
+   "title": "Lead/Lag Hours",
+   "persistent": true,
+   "type": "number",
+   "remarks": "The overlap of, or delay between, work records that have a dependency.  Enter a positive duration for a Lag (delay).  Enter a negative duration for a Lead (overlap).",
+   "maxLength": 8
+  },
+  "predtaskid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "INTEGER",
+   "title": "Predecessor Task",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "Identifies the predecessor task.",
+   "maxLength": 11
+  }
+ },
+ "required": [
+  "orgid",
+  "predrefwonum",
+  "predwonum",
+  "siteid",
+  "wonum"
+ ]
+}

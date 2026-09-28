@@ -1,0 +1,174 @@
+{
+ "resource": "PLUSGLOCMETER",
+ "description": "Oil and Gas' Location Meter Object Structure",
+ "pk": [
+  "location",
+  "metername",
+  "siteid"
+ ],
+ "title": "LOCATIONMETER",
+ "type": "object",
+ "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/plusglocmeter",
+ "uniqueid": "locationmeterid",
+ "properties": {
+  "cotwomeasureunitid_description": {
+   "type": "string"
+  },
+  "plusgenvconmon": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Environmental Consent Monitoring",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Indicates whether monitoring for environmental consents, such as monitoring the quality of emissions to air, is associated with the meter for this location."
+  },
+  "localref": {
+   "type": "string"
+  },
+  "classstructureid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Class Structure",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Class Structure Identifier.",
+   "maxLength": 25
+  },
+  "active": {
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Active",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Is this location's meter available to accept manual or rolled down readings, or to be used in PM or CM work order generation?"
+  },
+  "plusgconsenttype_description": {
+   "type": "string"
+  },
+  "plusgemissioncat_description": {
+   "type": "string"
+  },
+  "record_descriptor": {
+   "type": "string",
+   "title": "Record/Object Descriptor"
+  },
+  "plusgemissiontype_description": {
+   "type": "string"
+  },
+  "plusgemissionimpact": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Emission Impact",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The impact of the emission such as fugitive or direct emission",
+   "maxLength": 30
+  },
+  "plusgemissionimpact_description": {
+   "type": "string"
+  },
+  "_rowstamp": {
+   "type": "string"
+  },
+  "metername": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Meter",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Identifier for the meter attached to the location, for example HOURS or KILOMETERS.",
+   "maxLength": 10
+  },
+  "plusgemissioncat": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Emission Category",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The category of emission such as leak, spill or vent",
+   "maxLength": 30
+  },
+  "_imagelibref": {
+   "type": "string"
+  },
+  "plusgconsenttype": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Consent Type",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The type of environmental consent, such as emissions to water, emissions to air, or energy usage.",
+   "maxLength": 30
+  },
+  "locationmeterid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "LOCATIONMETERID",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "uniqueid": true,
+   "remarks": "Unique Identifier",
+   "maxLength": 11
+  },
+  "siteid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Site",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Site identifier for this LocationMeter.",
+   "maxLength": 8
+  },
+  "location": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Location",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Location to which the meter is attached",
+   "maxLength": 25
+  },
+  "href": {
+   "type": "string",
+   "title": "LOCATIONMETER object reference"
+  },
+  "_id": {
+   "type": "string"
+  },
+  "cotwomeasureunitid": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "CO2 Measurement Unit",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The unit of measure such as kilograms or gallons",
+   "maxLength": 50
+  },
+  "plusgemissiontype": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Emission Type",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The type of emission such as emission to air, emission to ground",
+   "maxLength": 30
+  }
+ },
+ "required": [
+  "active",
+  "location",
+  "metername",
+  "siteid"
+ ]
+}

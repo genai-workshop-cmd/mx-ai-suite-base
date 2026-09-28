@@ -1,0 +1,85 @@
+{
+  "resource": "MXAPISTATEMANAGER",
+  "description": "STATEMANAGER",
+  "pk": [
+    "userid",
+    "app",
+    "componentid"
+  ],
+  "title": "STATEMANAGER",
+  "type": "object",
+  "$ref": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapistatemanager",
+  "uniqueid": "statemanagerid",
+  "properties": {
+    "app": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Application name",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Application Name",
+      "maxLength": 40
+    },
+    "_rowstamp": {
+      "type": "string"
+    },
+    "componentid": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Component Id",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Component ID",
+      "maxLength": 50
+    },
+    "localref": {
+      "type": "string"
+    },
+    "_imagelibref": {
+      "type": "string"
+    },
+    "statemanagerid": {
+      "default": "&AUTOKEY&",
+      "searchType": "EXACT",
+      "maximum": 2147483647.0,
+      "subType": "BIGINT",
+      "title": "State Manager ID",
+      "persistent": true,
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "uniqueid": true,
+      "remarks": "State Manager ID",
+      "maxLength": 11
+    },
+    "href": {
+      "type": "string"
+    },
+    "_id": {
+      "type": "string"
+    },
+    "userid": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "User",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Identifies the logged in user.",
+      "maxLength": 100
+    },
+    "content": {
+      "searchType": "WILDCARD",
+      "subType": "CLOB",
+      "title": "Content",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Component configuration content",
+      "maxLength": 999999
+    }
+  },
+  "required": [
+    "app",
+    "componentid",
+    "content",
+    "userid"
+  ]
+}

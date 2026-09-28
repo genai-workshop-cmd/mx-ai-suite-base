@@ -1,0 +1,259 @@
+{
+  "resource": "MXPM_ASSET",
+  "description": "ASSET",
+  "pk": [
+    "siteid",
+    "assetnum"
+  ],
+  "title": "ASSET",
+  "type": "object",
+  "$ref": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxpm_asset",
+  "uniqueid": "assetuid",
+  "properties": {
+    "localref": {
+      "type": "string"
+    },
+    "ahcaresultnum": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Inspection Result",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Condition assessment inspection result",
+      "maxLength": 12
+    },
+    "assettype_description": {
+      "type": "string"
+    },
+    "ahcapmnum": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "PM",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Condition assessment PM",
+      "maxLength": 8
+    },
+    "pmex_next_maintenance": {
+      "searchType": "NONE",
+      "subType": "DATE",
+      "title": "Prescriptive Maintenance on Cloud Next Maintenance",
+      "type": "string",
+      "remarks": "Prescriptive Maintenance on Cloud Next Maintenance"
+    },
+    "_rowstamp": {
+      "type": "string"
+    },
+    "ahcawostatus": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "WO Status",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Condition assessment work order status",
+      "maxLength": 16
+    },
+    "_imagelibref": {
+      "type": "string"
+    },
+    "adjustedlifedate": {
+      "searchType": "EXACT",
+      "subType": "DATE",
+      "title": "Adjusted life",
+      "persistent": true,
+      "type": "string",
+      "remarks": "The date that the asset reaches the adjusted useful life date. This date is calculated by plans or asset expected life."
+    },
+    "assetnum": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Asset",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Asset Number",
+      "maxLength": 25
+    },
+    "siteid": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Site",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Site Identifier",
+      "maxLength": 8
+    },
+    "ahcajpnum": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Job Plan",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Condition assessment job plan",
+      "maxLength": 12
+    },
+    "href": {
+      "type": "string"
+    },
+    "assettype": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Type",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "The predefined type of this asset.",
+      "maxLength": 50
+    },
+    "methodname": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Scoring Method",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "The scoring method applied to the asset.",
+      "maxLength": 50
+    },
+    "ahcarevision": {
+      "searchType": "EXACT",
+      "maximum": 2147483647.0,
+      "subType": "INTEGER",
+      "title": "Revision",
+      "persistent": true,
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "remarks": "Condition assessment inspectin form revision",
+      "maxLength": 11
+    },
+    "ahcapmnextduedate": {
+      "searchType": "EXACT",
+      "subType": "DATE",
+      "title": "Next Due Date",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Condition assessment next due date"
+    },
+    "pmex_manufacture_date": {
+      "searchType": "NONE",
+      "subType": "DATE",
+      "title": "Prescriptive Maintenance on Cloud Manufacture date",
+      "type": "string",
+      "remarks": "Prescriptive Maintenance on Cloud Manufacture date"
+    },
+    "lastauditdate": {
+      "searchType": "EXACT",
+      "subType": "DATETIME",
+      "title": "Last Audit Date",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Asset last audited date"
+    },
+    "pmex_asset_type": {
+      "searchType": "NONE",
+      "subType": "UPPER",
+      "title": "Prescriptive Maintenance on Cloud Asset Type",
+      "type": "string",
+      "remarks": "Prescriptive Maintenance on Cloud Asset Type",
+      "maxLength": 15
+    },
+    "ahcainspstatus": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Inspection Status",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Condition assessment inspection status",
+      "maxLength": 20
+    },
+    "ahcainspformnum": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Inspection Form",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Condition assessment inspection form",
+      "maxLength": 12
+    },
+    "ahcawonum": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Work Order",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Condition assessment work order",
+      "maxLength": 25
+    },
+    "condition": {
+      "searchType": "EXACT",
+      "scale": 2,
+      "subType": "DECIMAL",
+      "title": "Condition",
+      "persistent": true,
+      "type": "number",
+      "remarks": "Condition of the asset.",
+      "maxLength": 6
+    },
+    "ahcalastcompdate": {
+      "searchType": "EXACT",
+      "subType": "DATETIME",
+      "title": "Completion Date",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Condition assessment last completion date"
+    },
+    "lastauditby": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Last Audit By",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Asset last audit done by",
+      "maxLength": 100
+    },
+    "well_maintained": {
+      "searchType": "EXACT",
+      "maximum": 2147483647.0,
+      "subType": "INTEGER",
+      "title": "Prescriptive Maintenance on Cloud WELL_MAINTAINED",
+      "persistent": true,
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "remarks": "An attribute that is used in Prescriptive Maintenance on Cloud to specify the number of days before the next predicted failure date that scheduled maintenance can occur and the asset can be categorized as well maintained",
+      "maxLength": 11
+    },
+    "_id": {
+      "type": "string"
+    },
+    "lastahscoredate": {
+      "searchType": "EXACT",
+      "subType": "DATETIME",
+      "title": "Last Scoring Date",
+      "persistent": true,
+      "type": "string",
+      "remarks": "The last date that health score getting updated"
+    },
+    "pmex_asset_id": {
+      "searchType": "NONE",
+      "subType": "UPPER",
+      "title": "Prescriptive Maintenance on Cloud Asset Id",
+      "type": "string",
+      "remarks": "Prescriptive Maintenance on Cloud Asset Id",
+      "maxLength": 34
+    },
+    "ahcaworktype": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Work Type",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Workorder work type",
+      "maxLength": 5
+    }
+  },
+  "required": [
+    "assetnum",
+    "siteid"
+  ]
+}

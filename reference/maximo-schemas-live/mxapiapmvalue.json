@@ -1,0 +1,172 @@
+{
+ "resource": "MXAPIAPMVALUE",
+ "description": "APM Value Definition",
+ "pk": [
+  "apmownertable",
+  "apmownerid",
+  "apmattrname",
+  "apmmodelname",
+  "apmgroupname",
+  "apmmodelinstance"
+ ],
+ "title": "APMVALUE",
+ "type": "object",
+ "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/mxapiapmvalue",
+ "uniqueid": "apmvalueid",
+ "properties": {
+  "apmmodelname": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Model name",
+   "persistent": true,
+   "type": "string",
+   "remarks": "PMI Model name",
+   "maxLength": 50
+  },
+  "localref": {
+   "type": "string"
+  },
+  "apmgroupname": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Group Name",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Asset/Location group name",
+   "maxLength": 200
+  },
+  "apmattrname": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Attribute",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Attribute name",
+   "maxLength": 80
+  },
+  "apmmodelinstance": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Model instance name",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Model instance name",
+   "maxLength": 50
+  },
+  "record_descriptor": {
+   "type": "string",
+   "title": "Record/Object Descriptor"
+  },
+  "apmnumval": {
+   "searchType": "EXACT",
+   "scale": 2,
+   "subType": "DECIMAL",
+   "title": "Value",
+   "persistent": true,
+   "type": "number",
+   "remarks": "Attribute's number value",
+   "maxLength": 17
+  },
+  "apmownertable": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Owner Object Name",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Table name for the owning record.",
+   "maxLength": 30
+  },
+  "apmusewith": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Value",
+   "persistent": true,
+   "type": "string",
+   "remarks": "What this value is for",
+   "maxLength": 50
+  },
+  "apmassessmentdate": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Assessment date",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Assessment date"
+  },
+  "_rowstamp": {
+   "type": "string"
+  },
+  "_imagelibref": {
+   "type": "string"
+  },
+  "apmownerid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Owner Object ID",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "Object ID for the owning record",
+   "maxLength": 11
+  },
+  "apmalnval": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Value",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Attribute's ALN value",
+   "maxLength": 2000
+  },
+  "apmboolval": {
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Value",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Attribute's boolean value"
+  },
+  "apmdateval": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Value",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Attribute's date value"
+  },
+  "href": {
+   "type": "string",
+   "title": "APMVALUE object reference"
+  },
+  "_id": {
+   "type": "string"
+  },
+  "apmmethodname": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Method Name",
+   "persistent": true,
+   "type": "string",
+   "remarks": "method name",
+   "maxLength": 250
+  },
+  "apmvalueid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Unique Id",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "uniqueid": true,
+   "remarks": "Unique Id",
+   "maxLength": 11
+  }
+ },
+ "required": [
+  "apmattrname",
+  "apmownerid",
+  "apmownertable"
+ ]
+}

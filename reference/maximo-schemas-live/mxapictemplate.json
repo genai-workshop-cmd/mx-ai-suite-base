@@ -1,0 +1,250 @@
+{
+ "resource": "MXAPICTEMPLATE",
+ "description": "Maximo API for Communication Template Definition",
+ "pk": [
+  "templateid"
+ ],
+ "title": "COMMTEMPLATE",
+ "type": "object",
+ "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/mxapictemplate",
+ "uniqueid": "commtemplateid",
+ "properties": {
+  "localref": {
+   "type": "string"
+  },
+  "subject": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Subject",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Subject of the communication. Click the Detail Menu button to add substitution variables in the Subject line. Maximo populates the substitution variables with the appropriate information from the applicable record when the message is sent.",
+   "maxLength": 254
+  },
+  "createdate": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Date",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Date and time the communication template was created."
+  },
+  "description": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Description",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Describes the communication template. To enter or view additional information, click the Long Description button.",
+   "maxLength": 100
+  },
+  "commtmpltsendto": {
+   "objectName": "COMMTMPLTSENDTO",
+   "type": "array",
+   "items": {
+    "definition": {
+     "subSchema": {
+      "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/mxapictemplate/commtmpltsendto"
+     }
+    },
+    "type": "object"
+   },
+   "cardinality": "UNDEFINED",
+   "relation": "COMMTMPLT_SENDTO"
+  },
+  "sendfrom": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Send From",
+   "persistent": true,
+   "type": "string",
+   "remarks": "E-mail address that the communication is sent from.",
+   "maxLength": 100
+  },
+  "_rowstamp": {
+   "type": "string"
+  },
+  "createby": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Created By",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Name of person who created the template. Maximo uses the logged in user's ID to automatically populate this field.",
+   "maxLength": 100
+  },
+  "_imagelibref": {
+   "type": "string"
+  },
+  "logflag": {
+   "default": true,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Comm Log Entry",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Determines if a Comm Log Entry is generated for communications utilizing this communications template"
+  },
+  "replyto": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Reply To",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The email address to which a recipient of the communication replies. If an email address is not specified in this field, then the reply email is sent to the email addrress in the Send From field.",
+   "maxLength": 100
+  },
+  "href": {
+   "type": "string",
+   "title": "COMMTEMPLATE object reference"
+  },
+  "usewith_description": {
+   "type": "string"
+  },
+  "commtemplatedocs": {
+   "objectName": "COMMTEMPLATEDOCS",
+   "type": "array",
+   "items": {
+    "definition": {
+     "subSchema": {
+      "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/mxapictemplate/commtemplatedocs"
+     }
+    },
+    "type": "object"
+   },
+   "cardinality": "UNDEFINED",
+   "relation": "COMMTMPLTDOCS"
+  },
+  "status_description": {
+   "type": "string"
+  },
+  "description_longdescription": {
+   "searchType": "WILDCARD",
+   "subType": "LONGALN",
+   "title": "Details",
+   "type": "string",
+   "remarks": "Long Description for Communication Template Description",
+   "maxLength": 32000
+  },
+  "freeform": {
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Free Form",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Indicates whether template is created as free form."
+  },
+  "objectname": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Applies To",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Maximo business object to which this communication template applies. Some examples include INCIDENT, SR, and CHANGE. For example, if a user is in the Incidents application and applies a template to a record, the list of templates that Maximo displays are those with the Applies To value of INCIDENT. Click the Select Value button to choose an object.",
+   "maxLength": 30
+  },
+  "record_descriptor": {
+   "type": "string",
+   "title": "Record/Object Descriptor"
+  },
+  "message": {
+   "searchType": "NONE",
+   "subType": "CLOB",
+   "title": "Message",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Body of the communication. Click the Detail Menu button to add substitution variables. Maximo populates the substitution variables with the appropriate information from the applicable record when the message is sent.",
+   "maxLength": 999999
+  },
+  "templateid": {
+   "default": "&AUTOKEY&",
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Template",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Identifies the communication template record. This value must be unique for all communication template records.",
+   "maxLength": 16
+  },
+  "texttemplatename": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Text Template Name",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Text template name.",
+   "maxLength": 20
+  },
+  "sendersysid": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Sender System ID",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Column used by ERP-Integration (APIs)",
+   "maxLength": 50
+  },
+  "statusdate": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Status Date",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Date of last status change."
+  },
+  "commtemplateid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "COMMTEMPLATEID",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "uniqueid": true,
+   "remarks": "Unique Identifier",
+   "maxLength": 11
+  },
+  "usewith": {
+   "default": "!ALL!",
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Accessible From",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Indicates from where in Maximo the template is accessible. Possible values include: ALL, APPS, ESCALATION, and WORKFLOW. If you choose ALL, the template can be used from any Maximo application. If you choose APPS, the template is available from the Create Communication action in all applications, but cannot be used in Escalations or Workflow. Chosing either ESCALATION or WORKFLOW limits the use of the template to within that specific application. Click the Select Value button to indicate from where the template can be accessed.",
+   "maxLength": 18
+  },
+  "trackfailedmessages": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Track Failed Messages",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Flag to specifiy if failed email messages should be logged in the COMMLOG table"
+  },
+  "_id": {
+   "type": "string"
+  },
+  "status": {
+   "default": "!INACTIVE!",
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Status",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Status of the communication template. The status can be either ACTIVE or INACTIVE. Only active templates can be applied from Escalations, Workflow, or the Create Communication action in the Maximo applications.",
+   "maxLength": 12
+  }
+ },
+ "required": [
+  "createby",
+  "createdate",
+  "freeform",
+  "objectname",
+  "sendfrom"
+ ]
+}

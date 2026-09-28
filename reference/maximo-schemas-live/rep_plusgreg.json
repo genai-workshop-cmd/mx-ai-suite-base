@@ -1,0 +1,337 @@
+{
+ "resource": "REP_PLUSGREG",
+ "description": "Regulatory Compliance (Oil) Details",
+ "pk": [
+  "orgid",
+  "regulationid",
+  "siteid",
+  "revisionnum"
+ ],
+ "title": "PLUSGREGULATION",
+ "type": "object",
+ "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/rep_plusgreg",
+ "uniqueid": "plusgregulationid",
+ "properties": {
+  "safetycase": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Supports Safety Case",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Specifies whether this regulation supports a safety case. If this check box is selected, this regulation supports a safety case. If this check box is cleared, this regulation does not support a safety case."
+  },
+  "country": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Regulatory Country",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The country of the issuing authority.",
+   "maxLength": 36
+  },
+  "subsection": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Regulation Sub-Section",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The subsection of the regulation number for this regulation. The Regulation Number field must contain a value.",
+   "maxLength": 10
+  },
+  "historyflag": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "History",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "History Flag"
+  },
+  "localref": {
+   "type": "string"
+  },
+  "insurancereq": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Insurance Requirements",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Specifies whether insurance requirements apply to this regulation. If the check box is selected, insurance requirements apply. If the check box is cleared, insurance requirements do not apply."
+  },
+  "num": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Regulation Number",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The alphanumeric value that identifies the regulation (for example, DOT178).",
+   "maxLength": 20
+  },
+  "description": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Description",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The description of the regulation.",
+   "maxLength": 50
+  },
+  "techauthid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Technical Authority",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The technical authority who is associated with the regulation record. You can assign a person as a technical authority on the Details tab of the People application.",
+   "maxLength": 100
+  },
+  "ownergroup": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Owner Group",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The group that has responsibility for this regulation. The owner group is most likely the contact for questions concerning this regulation and has responsibility for keeping the regulation up to date. If the regulation is workflow enabled, the owner group is probably the group that is used for approval of changes to this regulation.",
+   "maxLength": 8
+  },
+  "type": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Regulation Type",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The type of regulation. Valid values are in the PLUSGREGTYPE domain.",
+   "maxLength": 14
+  },
+  "_rowstamp": {
+   "type": "string"
+  },
+  "revisionby": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Revised By",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The person who revised the regulation record.",
+   "maxLength": 100
+  },
+  "_imagelibref": {
+   "type": "string"
+  },
+  "appliesto_description": {
+   "type": "string"
+  },
+  "regulationid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Regulation",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The identifier of the regulation.",
+   "maxLength": 8
+  },
+  "safetycaseref": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Safety Case Reference",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The reference for the safety case that this regulation supports.",
+   "maxLength": 16
+  },
+  "siteid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Site",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Identifies the site.",
+   "maxLength": 8
+  },
+  "href": {
+   "type": "string",
+   "title": "PLUSGREGULATION object reference"
+  },
+  "plusgregulationid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Unique Id",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "uniqueid": true,
+   "remarks": "Unique Id",
+   "maxLength": 11
+  },
+  "safetycritelement_description": {
+   "type": "string"
+  },
+  "type_description": {
+   "type": "string"
+  },
+  "owner": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Regulation Owner",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The person who has responsibility for this regulation. The owner is most likely the contact for questions concerning this regulation and has responsibility for keeping the regulation up to date. If the regulation is workflow enabled, the owner is probably the person used for approval of changes to this regulation.",
+   "maxLength": 100
+  },
+  "externalsysref": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "External System Reference",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The reference number used by an external system to identify this regulation.",
+   "maxLength": 18
+  },
+  "status_description": {
+   "type": "string"
+  },
+  "classstructureid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Classification",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "A classification of the regulation.",
+   "maxLength": 25
+  },
+  "revisioncom": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Comments",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The comments for the revision.",
+   "maxLength": 200
+  },
+  "appliesto": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Applies To",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The type of work to which the regulation applies. Valid values are in the PLUSGREGAPPLIESTO domain.",
+   "maxLength": 36
+  },
+  "safetycritelement": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Safety Critical Element",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "A reference to any element that is critical to safety and that is associated with a regulation. A performance standard that regulates the emission of hazardous substances can be a type of critical-safety reference.",
+   "maxLength": 10
+  },
+  "revisionnum": {
+   "default": 0,
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "INTEGER",
+   "title": "Revision",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "The revision number of the regulation record. Indicates how many times a regulation record has been revised.",
+   "maxLength": 11
+  },
+  "record_descriptor": {
+   "type": "string",
+   "title": "Record/Object Descriptor"
+  },
+  "expirationdate": {
+   "searchType": "EXACT",
+   "subType": "DATE",
+   "title": "Expiration Date",
+   "persistent": true,
+   "type": "string",
+   "remarks": "If an expiration date applies, the expiration date of this regulation."
+  },
+  "orgid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Organization",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Identifies the organization.",
+   "maxLength": 8
+  },
+  "statusdate": {
+   "default": "&SYSDATE&",
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Status Date",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The date and time when the regulation was created or was changed through the Change Status action."
+  },
+  "authority": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Regulatory Authority",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The name of the issuing regulatory authority.",
+   "maxLength": 36
+  },
+  "revisiondate": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Revision Date",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The date when the regulation record was revised."
+  },
+  "validfrom": {
+   "searchType": "EXACT",
+   "subType": "DATE",
+   "title": "Valid From",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The date from which the regulation is valid."
+  },
+  "_id": {
+   "type": "string"
+  },
+  "region": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Regulatory Region",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The state or region of the issuing authority.",
+   "maxLength": 36
+  },
+  "status": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Status",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The status of the regulation. When you create a new regulation, the application assigns it a status of DRAFT.",
+   "maxLength": 16
+  }
+ },
+ "required": [
+  "appliesto",
+  "regulationid",
+  "status",
+  "validfrom"
+ ]
+}

@@ -1,0 +1,562 @@
+{
+ "resource": "MXAPIMR",
+ "description": "Maximo API for Material Requests",
+ "pk": [
+  "siteid",
+  "mrnum"
+ ],
+ "title": "MR",
+ "type": "object",
+ "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/mxapimr",
+ "uniqueid": "mrid",
+ "properties": {
+  "historyflag": {
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "History",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "History Flag to identify closed MR's"
+  },
+  "localref": {
+   "type": "string"
+  },
+  "type": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "MR Type",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Material request type",
+   "maxLength": 12
+  },
+  "pcardnum": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Card #",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Procurement card number.",
+   "maxLength": 30
+  },
+  "totalcost": {
+   "searchType": "EXACT",
+   "scale": 2,
+   "subType": "DECIMAL",
+   "title": "Total Cost",
+   "persistent": true,
+   "type": "number",
+   "remarks": "Total cost of the MR",
+   "maxLength": 11
+  },
+  "langcode": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Language Code",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Language Column",
+   "maxLength": 4
+  },
+  "_rowstamp": {
+   "type": "string"
+  },
+  "mrstatusseq": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "MR Status Sequence",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "MR Status Sequence",
+   "maxLength": 11
+  },
+  "siteid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Site",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Site Identifier",
+   "maxLength": 8
+  },
+  "href": {
+   "type": "string",
+   "title": "MR object reference"
+  },
+  "shipto": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Ship to",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Location code where the items should be shipped.",
+   "maxLength": 30
+  },
+  "mrla1": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "MRLA1",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Extra Crossover Field Crosses over to PR.PRLA1 or PO.POLA1",
+   "maxLength": 10
+  },
+  "status_description": {
+   "type": "string"
+  },
+  "mrdate": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Requested Date",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Date of request"
+  },
+  "changedate": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Changed Date",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Change date of request"
+  },
+  "record_descriptor": {
+   "type": "string",
+   "title": "Record/Object Descriptor"
+  },
+  "pcardexpdate": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Expiration Date",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Procurement card expiration date.",
+   "maxLength": 7
+  },
+  "basetotalcost": {
+   "searchType": "EXACT",
+   "scale": 2,
+   "subType": "DECIMAL",
+   "title": "Base Total Cost",
+   "persistent": true,
+   "type": "number",
+   "remarks": "Total cost of the Material Request in base currency1.",
+   "maxLength": 11
+  },
+  "mr2": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "MR2",
+   "persistent": true,
+   "type": "string",
+   "remarks": "MR Extra Field 2",
+   "maxLength": 1
+  },
+  "mrla3": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "MRLA3",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Extra Crossover Field Crosses over to PR.PRLA3 or PO.POLA3",
+   "maxLength": 10
+  },
+  "priority": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "INTEGER",
+   "title": "Priority",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "Priority of the requisition. We recommend that you limit your range of values from 0 to 9, where 0 designates the lowest priority. The default value is 0.",
+   "maxLength": 11
+  },
+  "mr1": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "MR1",
+   "persistent": true,
+   "type": "string",
+   "remarks": "MR Extra Field 1",
+   "maxLength": 1
+  },
+  "mrla2": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "MRLA2",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Extra Crossover Field Crosses over to PR.PRLA2 or PO.POLA2",
+   "maxLength": 10
+  },
+  "mr4": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "MR4",
+   "persistent": true,
+   "type": "string",
+   "remarks": "MR Extra Field 4",
+   "maxLength": 1
+  },
+  "mrla5": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "MRLA5",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Extra Crossover Field Crosses over to PR.PRLA5 or PO.POLA5",
+   "maxLength": 10
+  },
+  "orgid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Organization",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Organization Identifier",
+   "maxLength": 8
+  },
+  "mr3": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "MR3",
+   "persistent": true,
+   "type": "string",
+   "remarks": "MR Extra Field 3",
+   "maxLength": 1
+  },
+  "mrla4": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "MRLA4",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Extra Crossover Field Crosses over to PR.PRLA4 or PO.POLA4",
+   "maxLength": 10
+  },
+  "mr6": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "MR6",
+   "persistent": true,
+   "type": "string",
+   "remarks": "MR Extra Field 6",
+   "maxLength": 1
+  },
+  "mr5": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "MR5",
+   "persistent": true,
+   "type": "string",
+   "remarks": "MR Extra Field 5",
+   "maxLength": 1
+  },
+  "mr8": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "MR8",
+   "persistent": true,
+   "type": "string",
+   "remarks": "MR Extra Field 8",
+   "maxLength": 1
+  },
+  "enterby": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Entered By",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "MR entered by",
+   "maxLength": 100
+  },
+  "mr7": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "MR7",
+   "persistent": true,
+   "type": "string",
+   "remarks": "MR Extra Field 7",
+   "maxLength": 1
+  },
+  "mrid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "MRID",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "uniqueid": true,
+   "remarks": "Unique Identifier",
+   "maxLength": 11
+  },
+  "mr9": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "MR9",
+   "persistent": true,
+   "type": "string",
+   "remarks": "MR Extra Field 9",
+   "maxLength": 1
+  },
+  "phone": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Phone",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Phone number of the requestor",
+   "maxLength": 20
+  },
+  "mr10": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "MR10",
+   "persistent": true,
+   "type": "string",
+   "remarks": "MR Extra Field 10",
+   "maxLength": 1
+  },
+  "fincntrlid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "FCID",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Financial Control Identifier",
+   "maxLength": 8
+  },
+  "_id": {
+   "type": "string"
+  },
+  "pcardtype": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Card Type",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Procurement card type.",
+   "maxLength": 20
+  },
+  "requireddate": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Required Date",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Date the material is required by."
+  },
+  "status": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Status",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Status of Request",
+   "maxLength": 10
+  },
+  "description": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Description",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Describes the material request. To enter or view additional information, click the Long Description button.",
+   "maxLength": 100
+  },
+  "gldebitacct": {
+   "searchType": "WILDCARD",
+   "subType": "GL",
+   "title": "GL Debit Account",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Account code for the general ledger account that will be charged the cost of the line item.",
+   "maxLength": 23
+  },
+  "pcardverification": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Card Verification Value",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Procurement card verification value.",
+   "maxLength": 4
+  },
+  "requestedby": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Requested By",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Person who requested the material. The default value is the current login ID.",
+   "maxLength": 100
+  },
+  "droppoint": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Drop Point",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Delivery point at the ship-to address for delivery of the items. For example, loading dock.",
+   "maxLength": 12
+  },
+  "_imagelibref": {
+   "type": "string"
+  },
+  "assetnum": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Asset",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Identifies the asset that the item is for.",
+   "maxLength": 25
+  },
+  "type_description": {
+   "type": "string"
+  },
+  "requestedfor": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Requested For",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Person who the material was requested for.",
+   "maxLength": 100
+  },
+  "mrline": {
+   "objectName": "MRLINE",
+   "type": "array",
+   "items": {
+    "definition": {
+     "subSchema": {
+      "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/mxapimr/mrline"
+     }
+    },
+    "type": "object"
+   },
+   "cardinality": "UNDEFINED",
+   "relation": "MRLINE"
+  },
+  "anywhererefid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Anywhere Ref ID",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "Anywhere Reference ID",
+   "maxLength": 11
+  },
+  "enterdate": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Entered Date",
+   "persistent": true,
+   "type": "string",
+   "remarks": "MR's date of entry"
+  },
+  "changeby": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Changed By",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Request changed by",
+   "maxLength": 100
+  },
+  "basetotalcost2": {
+   "searchType": "EXACT",
+   "scale": 2,
+   "subType": "DECIMAL",
+   "title": "Base Total Cost 2",
+   "persistent": true,
+   "type": "number",
+   "remarks": "Total cost of the Material Request in base currency2.",
+   "maxLength": 11
+  },
+  "statusdate": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Status Date",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Status Date"
+  },
+  "wonum": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Work Order",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Identifies the work order for the item.",
+   "maxLength": 25
+  },
+  "mrnum": {
+   "default": "&AUTOKEY&",
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Requisition",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Identifies the requisition. This number must be unique for all requisition records.",
+   "maxLength": 8
+  },
+  "hasld": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Has Long Description",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Boolean flag to indicate if there is any long description for this record"
+  },
+  "location": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Location",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Location where the item will be used.",
+   "maxLength": 25
+  },
+  "pcardtype_description": {
+   "type": "string"
+  }
+ },
+ "required": [
+  "changeby",
+  "changedate",
+  "enterby",
+  "enterdate",
+  "historyflag",
+  "langcode",
+  "mrdate",
+  "orgid",
+  "priority",
+  "siteid",
+  "status",
+  "statusdate",
+  "totalcost",
+  "type"
+ ]
+}

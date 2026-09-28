@@ -1,0 +1,147 @@
+{
+  "resource": "MXAPIAIOSCHEDULE",
+  "description": "AIOSCHEDULE",
+  "pk": [
+    "aioprojectnum",
+    "aiostrategynum",
+    "siteid",
+    "assetnum",
+    "scheduledate"
+  ],
+  "title": "AIOSCHEDULE",
+  "type": "object",
+  "$ref": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapiaioschedule",
+  "uniqueid": "aioscheduleid",
+  "properties": {
+    "aioscheduleid": {
+      "searchType": "EXACT",
+      "maximum": 2147483647.0,
+      "subType": "BIGINT",
+      "title": "Unique Id",
+      "persistent": true,
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "uniqueid": true,
+      "remarks": "Unique Id",
+      "maxLength": 11
+    },
+    "aiostrategynum": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Strategy ID",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Strategy ID",
+      "maxLength": 25
+    },
+    "localref": {
+      "type": "string"
+    },
+    "totalcapex": {
+      "searchType": "EXACT",
+      "scale": 2,
+      "subType": "AMOUNT",
+      "title": "Total CAPEX",
+      "persistent": true,
+      "type": "number",
+      "remarks": "Total CAPEX",
+      "maxLength": 11
+    },
+    "scheduledate": {
+      "searchType": "EXACT",
+      "subType": "DATETIME",
+      "title": "Schedule date",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Schedule date"
+    },
+    "riskbeforeaction": {
+      "searchType": "EXACT",
+      "scale": 2,
+      "subType": "DECIMAL",
+      "title": "Risk before action",
+      "persistent": true,
+      "type": "number",
+      "remarks": "Risk before action",
+      "maxLength": 13
+    },
+    "_rowstamp": {
+      "type": "string"
+    },
+    "action_description": {
+      "type": "string"
+    },
+    "aioprojectnum": {
+      "searchType": "EXACT",
+      "subType": "UPPER",
+      "title": "Project ID",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Asset investment optimizer project",
+      "maxLength": 25
+    },
+    "_imagelibref": {
+      "type": "string"
+    },
+    "assetnum": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Asset",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Asset",
+      "maxLength": 25
+    },
+    "action": {
+      "searchType": "EXACT",
+      "subType": "UPPER",
+      "title": "Action",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Action",
+      "maxLength": 16
+    },
+    "siteid": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Site",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Identifies the asset's site",
+      "maxLength": 8
+    },
+    "risk": {
+      "searchType": "EXACT",
+      "scale": 2,
+      "subType": "DECIMAL",
+      "title": "Risk",
+      "persistent": true,
+      "type": "number",
+      "remarks": "Risk",
+      "maxLength": 13
+    },
+    "href": {
+      "type": "string"
+    },
+    "_id": {
+      "type": "string"
+    },
+    "totalopex": {
+      "searchType": "EXACT",
+      "scale": 2,
+      "subType": "AMOUNT",
+      "title": "Total OPEX",
+      "persistent": true,
+      "type": "number",
+      "remarks": "Total OPEX",
+      "maxLength": 11
+    }
+  },
+  "required": [
+    "aioprojectnum",
+    "aiostrategynum",
+    "assetnum",
+    "siteid"
+  ]
+}

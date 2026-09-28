@@ -1,0 +1,65 @@
+{
+  "resource": "MXAPIAPPDOCTYPE",
+  "description": "APPDOCTYPE",
+  "pk": [
+    "app",
+    "doctype"
+  ],
+  "title": "APPDOCTYPE",
+  "type": "object",
+  "$ref": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapiappdoctype",
+  "uniqueid": "appdoctypeid",
+  "properties": {
+    "app": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Application",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "The name of the record's application to which a user has attached document.",
+      "maxLength": 40
+    },
+    "doctype": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Document Folder",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "The name of a folder assigned by a user that is associated with this application.",
+      "maxLength": 16
+    },
+    "_rowstamp": {
+      "type": "string"
+    },
+    "localref": {
+      "type": "string"
+    },
+    "_imagelibref": {
+      "type": "string"
+    },
+    "appdoctypeid": {
+      "searchType": "EXACT",
+      "maximum": 2147483647.0,
+      "subType": "BIGINT",
+      "title": "APPDOCTYPEID",
+      "persistent": true,
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "uniqueid": true,
+      "remarks": "Unique Identifier",
+      "maxLength": 11
+    },
+    "href": {
+      "type": "string"
+    },
+    "_id": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "app",
+    "doctype"
+  ]
+}

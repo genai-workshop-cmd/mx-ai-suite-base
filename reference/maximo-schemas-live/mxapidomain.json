@@ -1,0 +1,230 @@
+{
+ "resource": "MXAPIDOMAIN",
+ "description": "Maximo API for Domain",
+ "pk": [
+  "domainid"
+ ],
+ "title": "MAXDOMAIN",
+ "type": "object",
+ "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/mxapidomain",
+ "uniqueid": "maxdomainid",
+ "properties": {
+  "maxtype": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Data Type",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Maximo data type",
+   "maxLength": 8
+  },
+  "nevercache": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Disable Caching",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Boolean flag to indicate that the domain should never be cached on the client"
+  },
+  "internal": {
+   "default": 0,
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "INTEGER",
+   "title": "Is Internal",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "hasList": true,
+   "remarks": "Flag to indicate if the domain is internal and/or localizable. 0: localizable and not internal; 1: internal and not localizable; 2: not localizable but not internal.",
+   "maxLength": 11
+  },
+  "localref": {
+   "type": "string"
+  },
+  "maxtabledomain": {
+   "objectName": "MAXTABLEDOMAIN",
+   "type": "array",
+   "items": {
+    "definition": {
+     "subSchema": {
+      "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/mxapidomain/maxtabledomain"
+     }
+    },
+    "type": "object"
+   },
+   "cardinality": "UNDEFINED",
+   "relation": "MAXTABLEDOMAIN"
+  },
+  "length": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "INTEGER",
+   "title": "Length",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "Maximum length of the domain value if used",
+   "maxLength": 11
+  },
+  "description": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Description",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Domain Description",
+   "maxLength": 100
+  },
+  "scale": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "INTEGER",
+   "title": "Scale",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "Scale of the numeric domain value if used",
+   "maxLength": 11
+  },
+  "alndomain": {
+   "objectName": "ALNDOMAIN",
+   "type": "array",
+   "items": {
+    "definition": {
+     "subSchema": {
+      "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/mxapidomain/alndomain"
+     }
+    },
+    "type": "object"
+   },
+   "cardinality": "UNDEFINED",
+   "relation": "ALNDOMAINVALUE"
+  },
+  "maxdomvalcond": {
+   "objectName": "MAXDOMVALCOND",
+   "type": "array",
+   "items": {
+    "definition": {
+     "subSchema": {
+      "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/mxapidomain/maxdomvalcond"
+     }
+    },
+    "type": "object"
+   },
+   "cardinality": "UNDEFINED",
+   "relation": "MAXDOMVALCOND"
+  },
+  "record_descriptor": {
+   "type": "string",
+   "title": "Record/Object Descriptor"
+  },
+  "domainid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Domain",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Domain Name",
+   "maxLength": 18
+  },
+  "_rowstamp": {
+   "type": "string"
+  },
+  "domaintype": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Domain Type",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Domain Type",
+   "maxLength": 20
+  },
+  "_imagelibref": {
+   "type": "string"
+  },
+  "domaintype_description": {
+   "type": "string"
+  },
+  "numericdomain": {
+   "objectName": "NUMERICDOMAIN",
+   "type": "array",
+   "items": {
+    "definition": {
+     "subSchema": {
+      "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/mxapidomain/numericdomain"
+     }
+    },
+    "type": "object"
+   },
+   "cardinality": "UNDEFINED",
+   "relation": "NUMDOMAINVALUE"
+  },
+  "maxdomainid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "MAXDOMAINID",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "uniqueid": true,
+   "remarks": "Unique Identifier",
+   "maxLength": 11
+  },
+  "href": {
+   "type": "string",
+   "title": "MAXDOMAIN object reference"
+  },
+  "_id": {
+   "type": "string"
+  },
+  "numrangedomain": {
+   "objectName": "NUMRANGEDOMAIN",
+   "type": "array",
+   "items": {
+    "definition": {
+     "subSchema": {
+      "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/mxapidomain/numrangedomain"
+     }
+    },
+    "type": "object"
+   },
+   "cardinality": "UNDEFINED",
+   "relation": "RANGEDOMSEGMENT"
+  },
+  "internal_description": {
+   "type": "string"
+  },
+  "changed": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Changed",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Changed.",
+   "maxLength": 1
+  },
+  "synonymdomain": {
+   "objectName": "SYNONYMDOMAIN",
+   "type": "array",
+   "items": {
+    "definition": {
+     "subSchema": {
+      "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/mxapidomain/synonymdomain"
+     }
+    },
+    "type": "object"
+   },
+   "cardinality": "UNDEFINED",
+   "relation": "SYNONYMDOMAIN"
+  }
+ },
+ "required": [
+  "domainid",
+  "domaintype"
+ ]
+}

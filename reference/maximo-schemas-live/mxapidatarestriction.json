@@ -1,0 +1,164 @@
+{
+ "resource": "MXAPIDATARESTRICTION",
+ "description": "API for data restrictions",
+ "pk": [
+  "app",
+  "groupname",
+  "attributename",
+  "objectname",
+  "restriction",
+  "type"
+ ],
+ "title": "SECURITYRESTRICT",
+ "type": "object",
+ "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/mxapidatarestriction",
+ "uniqueid": "securityrestrictid",
+ "properties": {
+  "app": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Application",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The application that the restriction applies to.",
+   "maxLength": 40
+  },
+  "condexpression": {
+   "searchType": "NONE",
+   "subType": "ALN",
+   "title": "Condition expression",
+   "type": "string",
+   "remarks": "Condition expression",
+   "maxLength": 4000
+  },
+  "localref": {
+   "type": "string"
+  },
+  "isformas": {
+   "searchType": "NONE",
+   "subType": "YORN",
+   "title": "For MAS",
+   "type": "boolean",
+   "remarks": "Is security restriction created for non-Manage apps"
+  },
+  "objectname": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Object",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The object that the restriction applies to.",
+   "maxLength": 30
+  },
+  "record_descriptor": {
+   "type": "string",
+   "title": "Record/Object Descriptor"
+  },
+  "attributename": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Attribute",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Attribute to which the restrictions are being applied",
+   "maxLength": 50
+  },
+  "type": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Type",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Data Element being restricted - object or attribute.",
+   "maxLength": 10
+  },
+  "groupname": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Group",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Security group name",
+   "maxLength": 30
+  },
+  "_rowstamp": {
+   "type": "string"
+  },
+  "restriction_description": {
+   "type": "string"
+  },
+  "reevaluate": {
+   "default": true,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Reevaluate",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Select this option for the restriction condition to be reevaluated when the user tabs to another field. If you do not select this option, the restriction conditions are evaluated after the changes to a field are saved."
+  },
+  "securityrestrictid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Unique Id",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "uniqueid": true,
+   "remarks": "Unique Id",
+   "maxLength": 11
+  },
+  "_imagelibref": {
+   "type": "string"
+  },
+  "srestrictnum": {
+   "default": "&AUTOKEY&",
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Restriction ID",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Security Restriction name, unique user-readable identifier.",
+   "maxLength": 12
+  },
+  "restriction": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Type",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Type of restriction being configured. Valid types are Hidden, Required, Read-only and Qualified. Qualified means that only data meeting the condition is 'qualified' to be fetched from the database and can only be applied to top-level objects (not child objects or attributes).",
+   "maxLength": 20
+  },
+  "conditionnum": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Condition",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The conditional expression applied to the restriction.",
+   "maxLength": 12
+  },
+  "href": {
+   "type": "string",
+   "title": "SECURITYRESTRICT object reference"
+  },
+  "_id": {
+   "type": "string"
+  },
+  "type_description": {
+   "type": "string"
+  }
+ },
+ "required": [
+  "objectname",
+  "restriction",
+  "type"
+ ]
+}

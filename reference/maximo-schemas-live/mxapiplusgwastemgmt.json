@@ -1,0 +1,796 @@
+{
+ "resource": "MXAPIPLUSGWASTEMGMT",
+ "description": "Integration for Waste Management",
+ "pk": [
+  "siteid",
+  "wastenum"
+ ],
+ "title": "PLUSGWASTEMGMT",
+ "type": "object",
+ "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/mxapiplusgwastemgmt",
+ "uniqueid": "plusgwastemgmtid",
+ "properties": {
+  "capacityunit": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Capacity unit of measure",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Capacity unit of measure",
+   "maxLength": 30
+  },
+  "localref": {
+   "type": "string"
+  },
+  "regulated": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Regulated?",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Waste controlled by law to prevent harm to people or the environment."
+  },
+  "plusgwastesafetylink": {
+   "objectName": "PLUSGWASTESAFETYLINK",
+   "type": "array",
+   "items": {
+    "definition": {
+     "subSchema": {
+      "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/mxapiplusgwastemgmt/plusgwastesafetylink"
+     }
+    },
+    "type": "object"
+   },
+   "cardinality": "",
+   "relation": "PLUSGWASTESAFETYLINK"
+  },
+  "wasteamount": {
+   "searchType": "EXACT",
+   "scale": 0,
+   "subType": "FLOAT",
+   "title": "Waste Amount",
+   "persistent": true,
+   "type": "number",
+   "remarks": "The maximum waste allowed in storage under regulatory limits.",
+   "maxLength": 9
+  },
+  "ownergroup": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Owner Group",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Owner Group",
+   "maxLength": 8
+  },
+  "servaddress": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Service Address",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "A unique code that identifies a service address. Each code must be unique within a site.",
+   "maxLength": 25
+  },
+  "langcode": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Language Code",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Language Code",
+   "maxLength": 4
+  },
+  "_rowstamp": {
+   "type": "string"
+  },
+  "wastetype": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Waste Type",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Identifies waste based on its characteristics or source, such as hazardous, non-hazardous, medical, or recyclable waste.",
+   "maxLength": 30
+  },
+  "limitdispdate": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Limit Disposal Date",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Limit Disposal Date"
+  },
+  "createdby": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Created By",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The person who has created the record.",
+   "maxLength": 100
+  },
+  "siteid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Site",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Site",
+   "maxLength": 8
+  },
+  "dispzip": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Zip",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The zip or postal code.",
+   "maxLength": 12
+  },
+  "href": {
+   "type": "string",
+   "title": "PLUSGWASTEMGMT object reference"
+  },
+  "wastenum": {
+   "default": "&AUTOKEY&",
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Waste number",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Identifies waste record number.",
+   "maxLength": 12
+  },
+  "dispstateprovince_description": {
+   "type": "string"
+  },
+  "inspectorbyid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Inspector",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Inspector",
+   "maxLength": 100
+  },
+  "zip": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Zip",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The zip or postal code.",
+   "maxLength": 12
+  },
+  "status_description": {
+   "type": "string"
+  },
+  "disposallocsid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Disposal Location unique identifier",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "hasList": true,
+   "remarks": "The disposal location unique identifier.",
+   "maxLength": 11
+  },
+  "wasteunit_description": {
+   "type": "string"
+  },
+  "hazardous": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Hazardous?",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Waste that includes toxic substances like chemicals, solvents, pesticides, or heavy metals."
+  },
+  "actiontaken_description": {
+   "type": "string"
+  },
+  "record_descriptor": {
+   "type": "string",
+   "title": "Record/Object Descriptor"
+  },
+  "expecteddispdate": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Expected Disposal Date",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Expected Disposal Date"
+  },
+  "formattedaddress": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Formatted Address",
+   "persistent": true,
+   "type": "string",
+   "remarks": "A map-provider formatted address that updates when the location is identified on the map tab. Use it to search for the address on the map.",
+   "maxLength": 150
+  },
+  "history": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "History record",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "History record"
+  },
+  "stateprovince": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "State/Province",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The state or the province of the service address.",
+   "maxLength": 25
+  },
+  "thirdparty": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Third Party?",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Third Party?"
+  },
+  "barcodeqrnotes": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Barcode / QR notes",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Barcode / QR notes",
+   "maxLength": 1000
+  },
+  "orgid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Organization",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Organization",
+   "maxLength": 8
+  },
+  "wastetype_description": {
+   "type": "string"
+  },
+  "plusgrelatedrec": {
+   "objectName": "PLUSGRELATEDREC",
+   "type": "array",
+   "items": {
+    "definition": {
+     "subSchema": {
+      "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/mxapiplusgwastemgmt/plusgrelatedrec"
+     }
+    },
+    "type": "object"
+   },
+   "cardinality": "",
+   "relation": "PLUSGRELATEDALL"
+  },
+  "itemnum": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Item",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Item",
+   "maxLength": 30
+  },
+  "labelid": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Label ID",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Label ID",
+   "maxLength": 100
+  },
+  "limitunit": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Limit Storage Unit of Measure",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The standard unit used to define storage limits, such as gallons, kilograms or liters.",
+   "maxLength": 30
+  },
+  "itemsetid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Item Set",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Identifies the item set, or group of items, to which this item belongs.",
+   "maxLength": 8
+  },
+  "riskassessnum": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Risk Assessment",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Identifies and analyzes hazards from hazardous waste to prevent harm and guide safe handling.",
+   "maxLength": 10
+  },
+  "_id": {
+   "type": "string"
+  },
+  "plusgwastemgmtid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Unique Id",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "uniqueid": true,
+   "remarks": "Unique Id",
+   "maxLength": 11
+  },
+  "containerid": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Container ID",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Container ID",
+   "maxLength": 100
+  },
+  "dispstreetaddress": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Street Address",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Street Address.",
+   "maxLength": 130
+  },
+  "disposalloc": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Disposal Location",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Disposal location",
+   "maxLength": 25
+  },
+  "status": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Status",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Status",
+   "maxLength": 35
+  },
+  "city": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "City",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The city of the service address.",
+   "maxLength": 36
+  },
+  "createddate": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Created Date",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Date and time when the record was created. The default is the system date and time at the time of creation."
+  },
+  "resultnum": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Inspection result",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Inspection result",
+   "maxLength": 12
+  },
+  "disposalby": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Disposal By",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Disposal By",
+   "maxLength": 100
+  },
+  "description": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Description",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Description",
+   "maxLength": 200
+  },
+  "plusgwastereg": {
+   "objectName": "PLUSGWASTEREG",
+   "type": "array",
+   "items": {
+    "definition": {
+     "subSchema": {
+      "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/mxapiplusgwastemgmt/plusgwastereg"
+     }
+    },
+    "type": "object"
+   },
+   "cardinality": "",
+   "relation": "PLUSGWASTEREG"
+  },
+  "inspduedate": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Due Date",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Due Date"
+  },
+  "limitunit_description": {
+   "type": "string"
+  },
+  "containertype_description": {
+   "type": "string"
+  },
+  "actiontaken": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Action taken",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Action taken",
+   "maxLength": 20
+  },
+  "_imagelibref": {
+   "type": "string"
+  },
+  "assetnum": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Asset",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Identifies asset number.",
+   "maxLength": 25
+  },
+  "plusgwastecert": {
+   "objectName": "PLUSGWASTECERT",
+   "type": "array",
+   "items": {
+    "definition": {
+     "subSchema": {
+      "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/mxapiplusgwastemgmt/plusgwastecert"
+     }
+    },
+    "type": "object"
+   },
+   "cardinality": "",
+   "relation": "PLUSGWASTECERT"
+  },
+  "wasteunit": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Waste Amount Unit of Measure",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The standard unit used to report waste quantity, such as gallons, kilograms or liters.",
+   "maxLength": 30
+  },
+  "capacityunit_description": {
+   "type": "string"
+  },
+  "company": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Disposal Company",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Disposal Company",
+   "maxLength": 12
+  },
+  "streetaddress": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Street Address",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Includes the house number, street direction, street name, and other details such as street type or apartment, unit, or suite information.",
+   "maxLength": 130
+  },
+  "reviewerbyid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Reviewer",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Reviewer",
+   "maxLength": 100
+  },
+  "dispformattedaddress": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Formatted Address",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Formatted Address",
+   "maxLength": 150
+  },
+  "plusgwastestdact": {
+   "objectName": "PLUSGWASTESTDACT",
+   "type": "array",
+   "items": {
+    "definition": {
+     "subSchema": {
+      "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/mxapiplusgwastemgmt/plusgwastestdact"
+     }
+    },
+    "type": "object"
+   },
+   "cardinality": "",
+   "relation": "PLUSGWASTESTDACT"
+  },
+  "doclinks": {
+   "objectName": "DOCLINKS",
+   "type": "array",
+   "items": {
+    "definition": {
+     "subSchema": {
+      "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/mxapiplusgwastemgmt/doclinks"
+     }
+    },
+    "type": "object"
+   },
+   "cardinality": "",
+   "relation": "DOCLINKS"
+  },
+  "owner": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Owner",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Owner",
+   "maxLength": 100
+  },
+  "inspformrev": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "INTEGER",
+   "title": "Revision",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "Revision.",
+   "maxLength": 11
+  },
+  "storagelocsid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Storage Location unique identifier",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "hasList": true,
+   "remarks": "The storage location unique identifier.",
+   "maxLength": 11
+  },
+  "actionsdetails": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Action Taken Details",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Action Taken Details",
+   "maxLength": 200
+  },
+  "classstructureid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Classification",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Identifies and characterizes similar objects.Organizes objects into a hierarchy so you can navigate related parent and child items.",
+   "maxLength": 25
+  },
+  "dispstateprovince": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "State/Province",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "State/Province.",
+   "maxLength": 25
+  },
+  "stateprovince_description": {
+   "type": "string"
+  },
+  "companiesid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Disposal Company unique identifier",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "hasList": true,
+   "remarks": "Disposal Company unique identifier",
+   "maxLength": 11
+  },
+  "requestor": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Requestor",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Requestor",
+   "maxLength": 100
+  },
+  "statusdate": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Status Date",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The server date and time when the record was created or updated through the Change Status action. This field is read-only."
+  },
+  "storageloc": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Storage Location",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Storage Location",
+   "maxLength": 25
+  },
+  "containertype": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Container type",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Container type",
+   "maxLength": 50
+  },
+  "hasld": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Has Long Description",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Boolean flag to indicate if there is any long description for this record"
+  },
+  "limitamount": {
+   "searchType": "EXACT",
+   "scale": 0,
+   "subType": "FLOAT",
+   "title": "Limit Storage Amount",
+   "persistent": true,
+   "type": "number",
+   "remarks": "The standard unit used to define waste allowed in storage under regulatory limits.",
+   "maxLength": 9
+  },
+  "disposaladdr": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Disposal Address",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The address code identifies a service address. Supports SYSTEMORGSITE filtering to allow system, org, or site level service addresses.",
+   "maxLength": 25
+  },
+  "dispcity": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "City",
+   "persistent": true,
+   "type": "string",
+   "remarks": "City",
+   "maxLength": 36
+  },
+  "location": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Location",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Identifies location.",
+   "maxLength": 25
+  },
+  "reviewerbygroup": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Reviewer Group",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Reviewer Group",
+   "maxLength": 8
+  },
+  "inspformnum": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Inspection Form",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Inspection Form",
+   "maxLength": 12
+  },
+  "inspectorbygroup": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Inspector Group",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Inspector Group",
+   "maxLength": 8
+  },
+  "plusgwastestatus": {
+   "objectName": "PLUSGWASTESTATUS",
+   "type": "array",
+   "items": {
+    "definition": {
+     "subSchema": {
+      "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/mxapiplusgwastemgmt/plusgwastestatus"
+     }
+    },
+    "type": "object"
+   },
+   "cardinality": "",
+   "relation": "PLUSGWASTESTATUS"
+  }
+ },
+ "required": [
+  "langcode",
+  "orgid",
+  "siteid",
+  "status",
+  "statusdate"
+ ]
+}

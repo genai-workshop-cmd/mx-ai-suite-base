@@ -1,0 +1,126 @@
+{
+ "resource": "MXAPIAHBLTHRESHOLD",
+ "description": "Maximo API for Baseline Thresholds",
+ "pk": [
+  "scoretype"
+ ],
+ "title": "AHBLTHRESHOLD",
+ "type": "object",
+ "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/mxapiahblthreshold",
+ "uniqueid": "ahblthresholdid",
+ "properties": {
+  "ahblthresholdnum": {
+   "default": "&AUTOKEY&",
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "AHBLTHRESHOLD ID",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "AHBLTHRESHOLD ID",
+   "maxLength": 11
+  },
+  "localref": {
+   "type": "string"
+  },
+  "ahblthresholdid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Unique Id",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "uniqueid": true,
+   "remarks": "Unique Id",
+   "maxLength": 11
+  },
+  "lower": {
+   "default": 0,
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "INTEGER",
+   "title": "Lower",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "The lower threshold",
+   "maxLength": 11
+  },
+  "upper": {
+   "default": 100,
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "INTEGER",
+   "title": "Upper",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "The upper threshold",
+   "maxLength": 11
+  },
+  "record_descriptor": {
+   "type": "string",
+   "title": "Record/Object Descriptor"
+  },
+  "lowerneedsattention": {
+   "default": true,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Lower value needs attention",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "The flag marks whether lower value needs attention"
+  },
+  "ahblthresholdrange": {
+   "objectName": "AHBLTHRESHOLDRANGE",
+   "type": "array",
+   "items": {
+    "definition": {
+     "subSchema": {
+      "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/mxapiahblthreshold/ahblthresholdrange"
+     }
+    },
+    "type": "object"
+   },
+   "cardinality": "",
+   "relation": "AHBLTHRESHOLDRANGE"
+  },
+  "title": {
+   "default": "Asset Health (default)",
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Asset Health Title",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Title of the asset health baseline threshold configuration",
+   "maxLength": 50
+  },
+  "_rowstamp": {
+   "type": "string"
+  },
+  "_imagelibref": {
+   "type": "string"
+  },
+  "scoretype": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Score Type",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The type of score this threshold will use with, it can be health, criticality or others",
+   "maxLength": 80
+  },
+  "href": {
+   "type": "string",
+   "title": "AHBLTHRESHOLD object reference"
+  },
+  "_id": {
+   "type": "string"
+  }
+ },
+ "required": [
+  "scoretype"
+ ]
+}

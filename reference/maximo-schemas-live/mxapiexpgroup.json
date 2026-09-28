@@ -1,0 +1,282 @@
+{
+ "resource": "MXAPIEXPGROUP",
+ "description": "Object Structure to retrieve APM Group",
+ "pk": [
+  "expgroupname",
+  "usewith"
+ ],
+ "title": "EXPGROUP",
+ "type": "object",
+ "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/mxapiexpgroup",
+ "uniqueid": "expgroupid",
+ "properties": {
+  "localref": {
+   "type": "string"
+  },
+  "methodschedule_description": {
+   "type": "string"
+  },
+  "description": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Description",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Description of the group.",
+   "maxLength": 200
+  },
+  "grouplabel": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Group Name",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Group Name",
+   "maxLength": 200
+  },
+  "attributename": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Attribute Name",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The attribute for the expression. Optional if a freeform expression is used.",
+   "maxLength": 80
+  },
+  "methodinstancename": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Method Cron Task Instance Name",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The name of the crontask instance for method.",
+   "maxLength": 50
+  },
+  "groupcalctype": {
+   "default": "INTERNAL",
+   "searchType": "EXACT",
+   "subType": "UPPER",
+   "title": "Calculation type",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The group calculation type, can be build scores by internal engine, or connect to external notebook",
+   "maxLength": 100
+  },
+  "_rowstamp": {
+   "type": "string"
+  },
+  "schedule_description": {
+   "type": "string"
+  },
+  "expgroupid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Unique Id",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "uniqueid": true,
+   "remarks": "Unique Id",
+   "maxLength": 11
+  },
+  "_imagelibref": {
+   "type": "string"
+  },
+  "egtype_description": {
+   "type": "string"
+  },
+  "pofanalysisid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "POF Analysis ID",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "Reference to POF Analysis for this expression group",
+   "maxLength": 11
+  },
+  "href": {
+   "type": "string",
+   "title": "EXPGROUP object reference"
+  },
+  "value": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Value",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The value of the attribute for the expression. Optional if a freeform expression is used.",
+   "maxLength": 200
+  },
+  "usewith_description": {
+   "type": "string"
+  },
+  "expgroupname": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Group ID",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Identifies the expression group.",
+   "maxLength": 200
+  },
+  "methodname": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Scoring Method",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The scoring method applied to the group.",
+   "maxLength": 250
+  },
+  "expression": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Expression",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Temporary storage for the full condition for the group.",
+   "maxLength": 2000
+  },
+  "usedby_description": {
+   "type": "string"
+  },
+  "egtype": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Group Type",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Group Type",
+   "maxLength": 20
+  },
+  "addmethodinstance": {
+   "default": false,
+   "searchType": "NONE",
+   "subType": "YORN",
+   "title": "Add New Instance for method",
+   "type": "boolean",
+   "remarks": "If generate new cron task instance for method."
+  },
+  "active": {
+   "default": false,
+   "searchType": "NONE",
+   "subType": "YORN",
+   "title": "Active",
+   "type": "boolean",
+   "remarks": "Group's active status, if any of the scores is active, the group's active status is true, if all scores are deactive, the group's active status is false"
+  },
+  "clausename": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Query",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Clause Name",
+   "maxLength": 200
+  },
+  "record_descriptor": {
+   "type": "string",
+   "title": "Record/Object Descriptor"
+  },
+  "intobjectname": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Object Structure Name",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Object Structure Name",
+   "maxLength": 20
+  },
+  "usewith": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Object",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The object that this expression group applies to.",
+   "maxLength": 100
+  },
+  "schedule": {
+   "default": "DAY",
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Schedule",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The schedule of group cron task instance",
+   "maxLength": 80
+  },
+  "ahmethodology": {
+   "objectName": "AHMETHODOLOGY",
+   "type": "array",
+   "items": {
+    "definition": {
+     "subSchema": {
+      "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/mxapiexpgroup/ahmethodology"
+     }
+    },
+    "type": "object"
+   },
+   "cardinality": "",
+   "relation": "AHMETHODOLOGY"
+  },
+  "instancename": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Cron Task Instance Name",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The name of the crontask instance for group.",
+   "maxLength": 50
+  },
+  "extmodelname": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "External model name",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Store the the external model name used by external health engine",
+   "maxLength": 200
+  },
+  "methodschedule": {
+   "default": "DAY",
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Schedule",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The schedule of method cron task instance",
+   "maxLength": 80
+  },
+  "_id": {
+   "type": "string"
+  },
+  "groupcalctype_description": {
+   "type": "string"
+  },
+  "usedby": {
+   "default": "SCORE",
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Used By",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The feature or product using this group",
+   "maxLength": 100
+  }
+ },
+ "required": [
+  "expgroupname",
+  "grouplabel",
+  "usewith"
+ ]
+}

@@ -1,0 +1,121 @@
+{
+  "resource": "MXAPIITEMCONDITION",
+  "description": "ITEMCONDITION",
+  "pk": [
+    "itemnum",
+    "conditioncode",
+    "itemsetid"
+  ],
+  "title": "ITEMCONDITION",
+  "type": "object",
+  "$ref": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapiitemcondition",
+  "uniqueid": "itemconditionid",
+  "properties": {
+    "commodity": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Commodity Code",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Commodity",
+      "maxLength": 8
+    },
+    "localref": {
+      "type": "string"
+    },
+    "commoditygroup": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Commodity Group",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Commodity Group",
+      "maxLength": 8
+    },
+    "description": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Description",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Describes the condition code associated with this item. A condition code allows you to track the balance and value of each item.",
+      "maxLength": 100
+    },
+    "condrate": {
+      "searchType": "EXACT",
+      "scale": 0,
+      "subType": "DECIMAL",
+      "title": "Condition Rate",
+      "persistent": true,
+      "type": "number",
+      "remarks": "Condition's rate expressed as a percentage. For example, a condition code of NEW would have 100 as the condition rate (in percent), while a condition code of FAIR might have 50 as the condition rate.",
+      "maxLength": 8
+    },
+    "itemnum": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Item ",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Item associated with the condition code",
+      "maxLength": 30
+    },
+    "_rowstamp": {
+      "type": "string"
+    },
+    "stocktype": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Stock Type",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Stock type of this condition code",
+      "maxLength": 12
+    },
+    "_imagelibref": {
+      "type": "string"
+    },
+    "itemconditionid": {
+      "searchType": "EXACT",
+      "maximum": 2147483647.0,
+      "subType": "BIGINT",
+      "title": "ITEMCONDITIONID",
+      "persistent": true,
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "uniqueid": true,
+      "remarks": "Unique Identifier",
+      "maxLength": 11
+    },
+    "itemsetid": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Set Identifier",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Set identifier for the item.",
+      "maxLength": 8
+    },
+    "href": {
+      "type": "string"
+    },
+    "_id": {
+      "type": "string"
+    },
+    "conditioncode": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Condition Code",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Condition code associated with the item. A condition code allows you to track the balance and value of each item. You can apply different rates to an item as its condition changes from use, such as from new to used. If you mark an item as condition enabled, you must assign at least one condition code to it. For each condition-enabled item, one condition code must have a \"\"full-value\"\" rate of 100%. Maximo uses this condition code as the reference point to calculate values for any other condition codes for this item. Each time the item is issued, transferred, or returned you specify the condition of the item based on codes you set up. Click the Detail Menu button to choose a condition code or go the Condition Codes application to create one.",
+      "maxLength": 30
+    }
+  },
+  "required": [
+    "conditioncode",
+    "itemsetid"
+  ]
+}

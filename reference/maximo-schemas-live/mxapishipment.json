@@ -1,0 +1,358 @@
+{
+ "resource": "MXAPISHIPMENT",
+ "description": "Maximo API for Shipment",
+ "pk": [
+  "fromsiteid",
+  "shipmentnum"
+ ],
+ "title": "SHIPMENT",
+ "type": "object",
+ "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/mxapishipment",
+ "uniqueid": "shipmentid",
+ "properties": {
+  "netweightuom": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Net Weight Unit of Measure",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The unit of measurement in which the net weight is shown.",
+   "maxLength": 50
+  },
+  "paymentterms": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Payment Terms",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The terms of payment for the shipment.",
+   "maxLength": 20
+  },
+  "specialhandling": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Special Handling",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Any special handling instructions that are needed for the shipment.",
+   "maxLength": 50
+  },
+  "localref": {
+   "type": "string"
+  },
+  "expreceiptdate": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Expected Receipt Date",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The expected date that the items will be received."
+  },
+  "billoflading": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Bill of Lading",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The details of the bill of lading for the shipment.",
+   "maxLength": 50
+  },
+  "grossweightuom": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Gross Weight Unit of Measure",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The unit of measurement in which the gross weight is displayed.",
+   "maxLength": 50
+  },
+  "shipmentline": {
+   "objectName": "SHIPMENTLINE",
+   "type": "array",
+   "items": {
+    "definition": {
+     "subSchema": {
+      "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/mxapishipment/shipmentline"
+     }
+    },
+    "type": "object"
+   },
+   "cardinality": "MULTIPLE",
+   "relation": "SHIPMENTLINE"
+  },
+  "freightbillnum": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Freight Bill Number",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The freight bill number for the shipment.",
+   "maxLength": 50
+  },
+  "invusenum": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Usage",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The identifier of the inventory usage.",
+   "maxLength": 8
+  },
+  "_rowstamp": {
+   "type": "string"
+  },
+  "droppoint": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Drop-off Point",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The precise location where the items are to be delivered.",
+   "maxLength": 50
+  },
+  "_imagelibref": {
+   "type": "string"
+  },
+  "shipmentid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Shipment",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "uniqueid": true,
+   "remarks": "The identifier of the shipment.",
+   "maxLength": 11
+  },
+  "vendor": {
+   "searchType": "EXACT",
+   "subType": "UPPER",
+   "title": "Vendor",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The vendor that is associated with the shipment.",
+   "maxLength": 12
+  },
+  "siteid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Site",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The site of the organization that is associated with the shipment.",
+   "maxLength": 8
+  },
+  "href": {
+   "type": "string",
+   "title": "SHIPMENT object reference"
+  },
+  "shipdate": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Shipment Date",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The date that the items were shipped. The shipment date is set when you start the shipping process by changing the status of the inventory record to Shipped."
+  },
+  "shipto": {
+   "searchType": "EXACT",
+   "subType": "UPPER",
+   "title": "Ship To",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The company or division where the items are to be shipped.",
+   "maxLength": 30
+  },
+  "shipmentnum": {
+   "default": "&AUTOKEY&",
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Shipment",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The reference number for the shipment record as provided by the supplier.",
+   "maxLength": 50
+  },
+  "freightamount": {
+   "searchType": "EXACT",
+   "scale": 2,
+   "subType": "DECIMAL",
+   "title": "Freight Amount",
+   "persistent": true,
+   "type": "number",
+   "remarks": "The freight amount for the shipment.",
+   "maxLength": 11
+  },
+  "carriermethod": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Carrier Method",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The method of shipment, such as by land or by air.",
+   "maxLength": 50
+  },
+  "enterdate": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "ASN Date",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The date the advance shipment notification was entered."
+  },
+  "waybillnum": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Way Bill Number",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The way bill number for the shipment.",
+   "maxLength": 50
+  },
+  "record_descriptor": {
+   "type": "string",
+   "title": "Record/Object Descriptor"
+  },
+  "fromsiteid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "From Site",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The site of the organization associated with the inventory. The site information comes from the default insert site in the user's profile, which also contains information about the organization and storeroom.",
+   "maxLength": 8
+  },
+  "orgid": {
+   "searchType": "EXACT",
+   "subType": "UPPER",
+   "title": "Organization",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The organization that is associated with the inventory.",
+   "maxLength": 8
+  },
+  "numofpackages": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Number of Packages",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The number of packages that are in the shipment.",
+   "maxLength": 50
+  },
+  "carrier": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Carrier",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The transportation agency that is responsible for delivering the shipment.",
+   "maxLength": 50
+  },
+  "enterby": {
+   "searchType": "EXACT",
+   "subType": "UPPER",
+   "title": "Entered by",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The person who created the shipment record.",
+   "maxLength": 100
+  },
+  "freightterms": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Freight Terms",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The freight terms for the shipment.",
+   "maxLength": 50
+  },
+  "grossweight": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Gross Weight",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The gross weight of the shipment.",
+   "maxLength": 50
+  },
+  "packingslipnum": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Packing Slip",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The number of the packing slip that accompanies the shipment.",
+   "maxLength": 50
+  },
+  "billto": {
+   "searchType": "EXACT",
+   "subType": "UPPER",
+   "title": "Bill To",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The company or division that is to be billed for the shipment.",
+   "maxLength": 30
+  },
+  "netweight": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Net Weight",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The net weight of the shipment.",
+   "maxLength": 50
+  },
+  "fob": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Freight on Board",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The freight on the carrier.",
+   "maxLength": 20
+  },
+  "shiptoattn": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Attention of",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The person to whom the inventory items are being shipped.",
+   "maxLength": 100
+  },
+  "_id": {
+   "type": "string"
+  },
+  "carriervehiclenum": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Carrier Vehicle",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The vehicle number of the carrier.",
+   "maxLength": 50
+  },
+  "status": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Status",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The current status of the shipment.",
+   "maxLength": 8
+  }
+ },
+ "required": [
+  "orgid",
+  "shipdate",
+  "siteid",
+  "status"
+ ]
+}

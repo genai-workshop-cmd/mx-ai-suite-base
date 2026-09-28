@@ -1,0 +1,376 @@
+{
+ "resource": "MXAPIAHRRPLAN",
+ "description": "Repair or Replace Plans",
+ "pk": [
+  "ahrrplanid"
+ ],
+ "title": "AHRRPLAN",
+ "type": "object",
+ "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/mxapiahrrplan",
+ "uniqueid": "ahrrplanid",
+ "properties": {
+  "ahrrplanid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Plan",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "uniqueid": true,
+   "remarks": "Plan",
+   "maxLength": 11
+  },
+  "localref": {
+   "type": "string"
+  },
+  "wostatus": {
+   "searchType": "NONE",
+   "subType": "UPPER",
+   "title": "WO Status",
+   "type": "string",
+   "remarks": "Work Order Status",
+   "maxLength": 16
+  },
+  "description": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Description",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Description",
+   "maxLength": 100
+  },
+  "jpnum": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Job Plan",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Job Plan based on which a work order would be created to implement the Repair or Replace plan. Note, the work order creation process would automatically select the active revision of the job plan.",
+   "maxLength": 12
+  },
+  "owneradjustedlifedate": {
+   "searchType": "EXACT",
+   "subType": "DATE",
+   "title": "Adjusted life",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The date that the owner reaches the adjusted useful life date. This date is entered by user."
+  },
+  "actualdate": {
+   "searchType": "EXACT",
+   "subType": "DATE",
+   "title": "Completion date",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Plan actual date."
+  },
+  "actlaborhours": {
+   "searchType": "EXACT",
+   "scale": 0,
+   "subType": "DURATION",
+   "title": "Actual Labor Hours",
+   "persistent": true,
+   "type": "number",
+   "remarks": "Actual Labor Hours",
+   "maxLength": 8
+  },
+  "_rowstamp": {
+   "type": "string"
+  },
+  "rrplan_description": {
+   "type": "string"
+  },
+  "failurecost": {
+   "searchType": "EXACT",
+   "scale": 2,
+   "subType": "AMOUNT",
+   "title": "Failure cost",
+   "persistent": true,
+   "type": "number",
+   "remarks": "Failure cost",
+   "maxLength": 11
+  },
+  "_imagelibref": {
+   "type": "string"
+  },
+  "pluscjprevnum": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "INTEGER",
+   "title": "JP Revision",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "Job Plan Revision",
+   "maxLength": 11
+  },
+  "assetnum": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Asset",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Asset",
+   "maxLength": 25
+  },
+  "siteid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Site",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Site Identifier",
+   "maxLength": 8
+  },
+  "updateesteol": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Update Est. EOL",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Automatically amend estimated life extension to assets estimated end of life upon plan completion (populating plan actual date)"
+  },
+  "href": {
+   "type": "string",
+   "title": "AHRRPLAN object reference"
+  },
+  "actcapex": {
+   "default": 0.0,
+   "searchType": "EXACT",
+   "scale": 2,
+   "subType": "AMOUNT",
+   "title": "Actual Capital Expense",
+   "persistent": true,
+   "type": "number",
+   "remarks": "Actual Capital Expense Cost",
+   "maxLength": 11
+  },
+  "estlaborhours": {
+   "searchType": "EXACT",
+   "scale": 0,
+   "subType": "DURATION",
+   "title": "Estimated Labor Hours",
+   "persistent": true,
+   "type": "number",
+   "remarks": "Estimated Labor Hours",
+   "maxLength": 8
+  },
+  "actopex": {
+   "default": 0.0,
+   "searchType": "EXACT",
+   "scale": 2,
+   "subType": "AMOUNT",
+   "title": "Actual Operating Expense",
+   "persistent": true,
+   "type": "number",
+   "remarks": "Actual Operating Expense Cost",
+   "maxLength": 11
+  },
+  "changeby": {
+   "default": "&PERSONID&",
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Change By",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Change By",
+   "maxLength": 100
+  },
+  "objectname": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Object",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Name of the object for which plan record belongs to.",
+   "maxLength": 30
+  },
+  "actualcost": {
+   "default": 0.0,
+   "searchType": "EXACT",
+   "scale": 2,
+   "subType": "AMOUNT",
+   "title": "Actual Cost",
+   "persistent": true,
+   "type": "number",
+   "remarks": "Actual Cost.",
+   "maxLength": 11
+  },
+  "estcapex": {
+   "default": 0.0,
+   "searchType": "EXACT",
+   "scale": 2,
+   "subType": "AMOUNT",
+   "title": "Capital expense",
+   "persistent": true,
+   "type": "number",
+   "remarks": "Estimated Capital Expense Cost",
+   "maxLength": 11
+  },
+  "changedate": {
+   "default": "&SYSDATE&",
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Change Date",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Change Date"
+  },
+  "rrplan": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Type",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Repair or replace plan",
+   "maxLength": 16
+  },
+  "record_descriptor": {
+   "type": "string",
+   "title": "Record/Object Descriptor"
+  },
+  "estlifeextension": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "INTEGER",
+   "title": "Estimated Life Extension",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "Estimated life extension resulting from this plan",
+   "maxLength": 11
+  },
+  "applywohierarchy": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Apply WO hierarchy",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "if value is No, apply actuals from work order only, otherwise, apply actuals based on work order hiearchy"
+  },
+  "estdowntime": {
+   "searchType": "EXACT",
+   "scale": 0,
+   "subType": "DURATION",
+   "title": "Estimated Downtime Hours",
+   "persistent": true,
+   "type": "number",
+   "remarks": "Estimated Downtime",
+   "maxLength": 8
+  },
+  "actdowntime": {
+   "searchType": "EXACT",
+   "scale": 0,
+   "subType": "DURATION",
+   "title": "Actual Downtime",
+   "persistent": true,
+   "type": "number",
+   "remarks": "Actual Downtime",
+   "maxLength": 8
+  },
+  "applyjphierarchy": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Apply JP Hiearchy",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "if value is No, apply estimates from job plan only, otherwise, apply estimates based on job plan hiearchy"
+  },
+  "orgid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Organization",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Organization",
+   "maxLength": 8
+  },
+  "wonum": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Work Order",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Work Order number",
+   "maxLength": 25
+  },
+  "estopex": {
+   "default": 0.0,
+   "searchType": "EXACT",
+   "scale": 2,
+   "subType": "AMOUNT",
+   "title": "Operating expense",
+   "persistent": true,
+   "type": "number",
+   "remarks": "Estimated Operating Expense Cost",
+   "maxLength": 11
+  },
+  "estcost": {
+   "default": 0.0,
+   "searchType": "EXACT",
+   "scale": 2,
+   "subType": "AMOUNT",
+   "title": "Total estimated cost",
+   "persistent": true,
+   "type": "number",
+   "remarks": "Estimated Cost",
+   "maxLength": 11
+  },
+  "targetdate": {
+   "searchType": "EXACT",
+   "subType": "DATE",
+   "title": "Target date",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Plan target date."
+  },
+  "location": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Location",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Location",
+   "maxLength": 25
+  },
+  "locations": {
+   "objectName": "LOCATIONS",
+   "type": "array",
+   "items": {
+    "definition": {
+     "subSchema": {
+      "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/mxapiahrrplan/locations"
+     }
+    },
+    "type": "object"
+   },
+   "cardinality": "",
+   "relation": "LOCATION"
+  },
+  "_id": {
+   "type": "string"
+  },
+  "asset": {
+   "objectName": "ASSET",
+   "type": "array",
+   "items": {
+    "definition": {
+     "subSchema": {
+      "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/mxapiahrrplan/asset"
+     }
+    },
+    "type": "object"
+   },
+   "cardinality": "",
+   "relation": "ASSET"
+  }
+ }
+}

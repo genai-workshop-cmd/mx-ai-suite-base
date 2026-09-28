@@ -1,0 +1,192 @@
+{
+  "resource": "MXAPIINVPICKLIST",
+  "description": "INVPICKLIST",
+  "pk": [
+    "picklistnum",
+    "siteid"
+  ],
+  "title": "INVPICKLIST",
+  "type": "object",
+  "$ref": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapiinvpicklist",
+  "uniqueid": "invpicklistid",
+  "properties": {
+    "invuseline": {
+      "objectName": "INVUSELINE",
+      "type": "array",
+      "items": {
+        "definition": {
+          "subSchema": {
+            "$ref": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapiinvpicklist/invuseline"
+          }
+        },
+        "type": "object"
+      },
+      "cardinality": "",
+      "relation": "INVUSELINE"
+    },
+    "invpicklistid": {
+      "searchType": "EXACT",
+      "maximum": 2147483647.0,
+      "subType": "BIGINT",
+      "title": "Unique Id",
+      "persistent": true,
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "uniqueid": true,
+      "remarks": "Unique Id",
+      "maxLength": 11
+    },
+    "localref": {
+      "type": "string"
+    },
+    "createddate": {
+      "default": "&SYSDATE&",
+      "searchType": "EXACT",
+      "subType": "DATETIME",
+      "title": "Created Date",
+      "persistent": true,
+      "type": "string",
+      "remarks": "The date the InvPickList was created."
+    },
+    "changeby": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Changed By",
+      "persistent": true,
+      "type": "string",
+      "remarks": "The person who last changed the record.",
+      "maxLength": 100
+    },
+    "description": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Description",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Describes the Pick List. To enter more information, click the Long Description push button.",
+      "maxLength": 100
+    },
+    "changedate": {
+      "default": "&SYSDATE&",
+      "searchType": "EXACT",
+      "subType": "DATETIME",
+      "title": "Changed Date",
+      "persistent": true,
+      "type": "string",
+      "remarks": "The date the record was last changed."
+    },
+    "sendersysid": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Sender System ID",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Column used by ERP-Integration (APIs).",
+      "maxLength": 50
+    },
+    "orgid": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Organization",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Organization Identifier.",
+      "maxLength": 8
+    },
+    "plowner": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Pick List Owner",
+      "persistent": true,
+      "type": "string",
+      "remarks": "The person responsible for the inventory.",
+      "maxLength": 100
+    },
+    "statusdate": {
+      "default": "&SYSDATE&",
+      "searchType": "EXACT",
+      "subType": "DATETIME",
+      "title": "Status Change Date",
+      "persistent": true,
+      "type": "string",
+      "remarks": "The date the status was last changed."
+    },
+    "_rowstamp": {
+      "type": "string"
+    },
+    "statusiface": {
+      "default": false,
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "Status Changed",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "Indicates whether the status has changed. This is used by the application to drive other business rules."
+    },
+    "_imagelibref": {
+      "type": "string"
+    },
+    "siteid": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Site",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Site Idenifier.",
+      "maxLength": 8
+    },
+    "href": {
+      "type": "string"
+    },
+    "_id": {
+      "type": "string"
+    },
+    "picklistnum": {
+      "default": "&AUTOKEY&",
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Pick List",
+      "persistent": true,
+      "type": "string",
+      "remarks": "The number associated with the pick list.",
+      "maxLength": 8
+    },
+    "fromstoreloc": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "From Location",
+      "persistent": true,
+      "type": "string",
+      "remarks": "The storeroom where the item is stocked. The storeroom information defaults from the user profile, which also contains information about the site and organization.",
+      "maxLength": 25
+    },
+    "requireddate": {
+      "searchType": "EXACT",
+      "subType": "DATETIME",
+      "title": "Required Date",
+      "persistent": true,
+      "type": "string",
+      "remarks": "The date the pick list is required to complete."
+    },
+    "status": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Status",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Picklist Status.",
+      "maxLength": 20
+    }
+  },
+  "required": [
+    "changeby",
+    "fromstoreloc",
+    "orgid",
+    "requireddate",
+    "siteid",
+    "status"
+  ]
+}

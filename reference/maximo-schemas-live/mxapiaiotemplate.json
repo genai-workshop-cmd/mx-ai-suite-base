@@ -1,0 +1,187 @@
+{
+ "resource": "MXAPIAIOTEMPLATE",
+ "description": "API for AIO TEMPLATE",
+ "pk": [
+  "templatetype",
+  "typevalue"
+ ],
+ "title": "AIOTEMPLATE",
+ "type": "object",
+ "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/mxapiaiotemplate",
+ "uniqueid": "aiotemplateid",
+ "properties": {
+  "localref": {
+   "type": "string"
+  },
+  "typevalue": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Type value",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Type value",
+   "maxLength": 50
+  },
+  "createdate": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Create time",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Create time of the template"
+  },
+  "description": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Description",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Template's description",
+   "maxLength": 100
+  },
+  "record_descriptor": {
+   "type": "string",
+   "title": "Record/Object Descriptor"
+  },
+  "plantype": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Plan type",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Identifies the template's plan type, by default, it's REPLACE",
+   "maxLength": 16
+  },
+  "aiotemplatenum": {
+   "default": "&AUTOKEY&",
+   "searchType": "EXACT",
+   "subType": "ALN",
+   "title": "Template ID",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Template ID",
+   "maxLength": 200
+  },
+  "downtime": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "INTEGER",
+   "title": "Downtime",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "Downtime",
+   "maxLength": 11
+  },
+  "langcode": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Language Code",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Language Code",
+   "maxLength": 4
+  },
+  "_rowstamp": {
+   "type": "string"
+  },
+  "failurecost": {
+   "searchType": "EXACT",
+   "scale": 2,
+   "subType": "AMOUNT",
+   "title": "Failure cost",
+   "persistent": true,
+   "type": "number",
+   "remarks": "Failure cost",
+   "maxLength": 11
+  },
+  "updatedate": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Last updated",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Last updated time of the template"
+  },
+  "hasld": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Has Long Description",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Boolean flag to indicate if there is any long description for this record"
+  },
+  "_imagelibref": {
+   "type": "string"
+  },
+  "templatetype": {
+   "searchType": "EXACT",
+   "subType": "ALN",
+   "title": "Template type",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Template type",
+   "maxLength": 20
+  },
+  "replaceopex": {
+   "searchType": "EXACT",
+   "scale": 2,
+   "subType": "AMOUNT",
+   "title": "Replace OPEX",
+   "persistent": true,
+   "type": "number",
+   "remarks": "Replace OPEX",
+   "maxLength": 11
+  },
+  "aiotemplateid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Unique Id",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "uniqueid": true,
+   "remarks": "Unique Id",
+   "maxLength": 11
+  },
+  "replacecapex": {
+   "searchType": "EXACT",
+   "scale": 2,
+   "subType": "AMOUNT",
+   "title": "Replace CAPEX",
+   "persistent": true,
+   "type": "number",
+   "remarks": "Replace CAPEX",
+   "maxLength": 11
+  },
+  "href": {
+   "type": "string",
+   "title": "AIOTEMPLATE object reference"
+  },
+  "_id": {
+   "type": "string"
+  },
+  "plantype_description": {
+   "type": "string"
+  },
+  "expectlife": {
+   "searchType": "EXACT",
+   "scale": 2,
+   "subType": "DECIMAL",
+   "title": "Expect life",
+   "persistent": true,
+   "type": "number",
+   "remarks": "Expect life",
+   "maxLength": 13
+  }
+ },
+ "required": [
+  "langcode",
+  "templatetype",
+  "typevalue"
+ ]
+}

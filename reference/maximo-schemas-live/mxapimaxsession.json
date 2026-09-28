@@ -1,0 +1,175 @@
+{
+ "resource": "MXAPIMAXSESSION",
+ "description": "API for querying user sessions.",
+ "pk": [
+  "maxsessionuid"
+ ],
+ "title": "MAXSESSION",
+ "type": "object",
+ "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/mxapimaxsession",
+ "uniqueid": "maxsessionuid",
+ "properties": {
+  "lastactivity": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Last Activity",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The timestamp of the most recent user activity for this session"
+  },
+  "localref": {
+   "type": "string"
+  },
+  "adminlogout": {
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Admin Logout",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Indicates that the session has been administratively logged out.  Eventually, the row will be removed by the User Monitor in SecurityService."
+  },
+  "maxsessionuid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "MAXSESSIONUID",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "uniqueid": true,
+   "remarks": "Unique Identifier",
+   "maxLength": 11
+  },
+  "logindatetime": {
+   "default": "&SYSDATE&",
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Log On Date/Time",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Login date and time"
+  },
+  "clientaddr": {
+   "searchType": "EXACT",
+   "subType": "ALN",
+   "title": "Client Address",
+   "persistent": true,
+   "type": "string",
+   "remarks": "IP Address of the user's client (remote address).",
+   "maxLength": 100
+  },
+  "active": {
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Active",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Indicates whether the session is active."
+  },
+  "record_descriptor": {
+   "type": "string",
+   "title": "Record/Object Descriptor"
+  },
+  "clienthost": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Client Host",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Host name of the user's client (remote host).",
+   "maxLength": 100
+  },
+  "userid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "User",
+   "persistent": true,
+   "type": "string",
+   "remarks": "User identifier",
+   "maxLength": 100
+  },
+  "_rowstamp": {
+   "type": "string"
+  },
+  "application": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Application",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Indicates the application for a connection from external systems such as ERP, MEA, and MS Project. This has nothing to do with applications for internal connections such as Work Orders, Purchase Orders, Changes, etc.",
+   "maxLength": 30
+  },
+  "_imagelibref": {
+   "type": "string"
+  },
+  "displayname": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Name",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Display name from the Person record of the logged in user.",
+   "maxLength": 82
+  },
+  "servertimestamp": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Server Timestamp",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Timestamp of the Application Server to make sure the Application Server is running"
+  },
+  "serverhost": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Server Host",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Host name or IP Address of the MXServer for this session",
+   "maxLength": 100
+  },
+  "servername": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Server",
+   "persistent": true,
+   "type": "string",
+   "remarks": "MXServer name",
+   "maxLength": 100
+  },
+  "href": {
+   "type": "string",
+   "title": "MAXSESSION object reference"
+  },
+  "_id": {
+   "type": "string"
+  },
+  "issystem": {
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "System",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "True if this is the session that MXServer connects to the database with. False for all other sessions. The System User setting on a User record has no bearing on this field."
+  },
+  "reloadcache": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Reload Cache",
+   "persistent": true,
+   "type": "string",
+   "remarks": "If this is a system connection, then reloadcache specifies which cache objects need to be reloaded (if any).",
+   "maxLength": 1024
+  }
+ },
+ "required": [
+  "active",
+  "adminlogout",
+  "clienthost",
+  "issystem",
+  "serverhost",
+  "servername",
+  "userid"
+ ]
+}

@@ -1,0 +1,56 @@
+{
+  "resource": "MXAPISRGUESTPOLICY",
+  "description": "GUESTTRUSTPOLICY",
+  "pk": [
+    "policycode"
+  ],
+  "title": "GUESTTRUSTPOLICY",
+  "type": "object",
+  "$ref": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapisrguestpolicy",
+  "uniqueid": "guesttrustpolicyid",
+  "properties": {
+    "_rowstamp": {
+      "type": "string"
+    },
+    "localref": {
+      "type": "string"
+    },
+    "_imagelibref": {
+      "type": "string"
+    },
+    "guesttrustpolicyid": {
+      "searchType": "EXACT",
+      "maximum": 2147483647.0,
+      "subType": "BIGINT",
+      "title": "Unique Id",
+      "persistent": true,
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "uniqueid": true,
+      "remarks": "Unique Id",
+      "maxLength": 11
+    },
+    "href": {
+      "type": "string"
+    },
+    "_id": {
+      "type": "string"
+    },
+    "policycode": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Domain",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Domain",
+      "maxLength": 50
+    },
+    "policycode_description": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "policycode"
+  ]
+}

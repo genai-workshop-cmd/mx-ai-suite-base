@@ -1,0 +1,327 @@
+{
+ "resource": "MXAUTHCI",
+ "description": "CI Definition",
+ "pk": [
+  "cinum"
+ ],
+ "title": "CI",
+ "type": "object",
+ "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/mxauthci",
+ "uniqueid": "ciid",
+ "properties": {
+  "plusrevdatetime": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Revision Date",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The date on which the current revision was created."
+  },
+  "calnum": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Calendar",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Calendar that is associated with the CI",
+   "maxLength": 8
+  },
+  "hierarchypath": {
+   "searchType": "NONE",
+   "subType": "ALN",
+   "title": "Hierarchy Path",
+   "type": "string",
+   "remarks": "Hierarchypath of the classstructure of the CI.",
+   "maxLength": 254
+  },
+  "localref": {
+   "type": "string"
+  },
+  "cinum": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Configuration Item",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Authorized CI Identifier",
+   "maxLength": 12
+  },
+  "ciguid": {
+   "searchType": "NONE",
+   "subType": "ALN",
+   "title": "CI GUID",
+   "type": "string",
+   "hasList": true,
+   "remarks": "Actual CI GUID",
+   "maxLength": 192
+  },
+  "description": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Description",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Description of the Authorized CI",
+   "maxLength": 100
+  },
+  "assetlocsiteid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Site",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The Site to which the CI belongs to if it is Asset or Location.",
+   "maxLength": 8
+  },
+  "servicegroup": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Service Group",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Identifies the Service Group to which the Service belongs to.",
+   "maxLength": 8
+  },
+  "cispec": {
+   "objectName": "CISPEC",
+   "type": "array",
+   "items": {
+    "definition": {
+     "subSchema": {
+      "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/mxauthci/cispec"
+     }
+    },
+    "type": "object"
+   },
+   "cardinality": "UNDEFINED",
+   "relation": "CISPECCLASS"
+  },
+  "cirelation": {
+   "objectName": "CIRELATION",
+   "type": "array",
+   "items": {
+    "definition": {
+     "subSchema": {
+      "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/mxauthci/cirelation"
+     }
+    },
+    "type": "object"
+   },
+   "cardinality": "UNDEFINED",
+   "relation": "RELATEDCI"
+  },
+  "assetlocorgid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Organization",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The Organization to which the CI belongs to if it is Asset or Location.",
+   "maxLength": 8
+  },
+  "_rowstamp": {
+   "type": "string"
+  },
+  "_imagelibref": {
+   "type": "string"
+  },
+  "assetnum": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Associated Asset",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Identifier of the Asset which is the CI",
+   "maxLength": 25
+  },
+  "personid": {
+   "searchType": "EXACT",
+   "subType": "UPPER",
+   "title": "CI Owner",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Owner of the CI",
+   "maxLength": 100
+  },
+  "href": {
+   "type": "string",
+   "title": "CI object reference"
+  },
+  "cilocation": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Physical Location",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Location where the CI is physically located",
+   "maxLength": 25
+  },
+  "status_description": {
+   "type": "string"
+  },
+  "classstructureid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Classification",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Classification of the CI.",
+   "maxLength": 25
+  },
+  "plusrev": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "INTEGER",
+   "title": "Revision",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "The current revision of the configuration item.",
+   "maxLength": 11
+  },
+  "changeby": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Change By",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Last Modified By",
+   "maxLength": 100
+  },
+  "changedate": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Change Date",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Change Date of CI"
+  },
+  "record_descriptor": {
+   "type": "string",
+   "title": "Record/Object Descriptor"
+  },
+  "shiftnum": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Shift",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Shift that is associated with the CI's calendar",
+   "maxLength": 8
+  },
+  "ciid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Unique Id",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "uniqueid": true,
+   "remarks": "Unique Id",
+   "maxLength": 11
+  },
+  "statusdate": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Status Date",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Date the CI status was last changed."
+  },
+  "itemnum": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Associated Item",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Identifier of Item which is the CI",
+   "maxLength": 30
+  },
+  "statusiface": {
+   "default": false,
+   "searchType": "NONE",
+   "subType": "YORN",
+   "title": "Has Status Changed",
+   "type": "boolean",
+   "remarks": "Non persistent boolean field to indicate whether the status has been changed after the stateful object is fetched from the database."
+  },
+  "service": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Associated Service",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Identifier of Service which is the CI",
+   "maxLength": 8
+  },
+  "itemsetid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Item Set",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The Item Set to which the CI belongs to if it is an Item or Service.",
+   "maxLength": 8
+  },
+  "location": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Associated Location",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Identifier of the Location which is the CI",
+   "maxLength": 25
+  },
+  "_id": {
+   "type": "string"
+  },
+  "np_statusmemo": {
+   "searchType": "NONE",
+   "subType": "ALN",
+   "title": "Change Status Memo",
+   "type": "string",
+   "remarks": "Status change memo, temporary non-persistent field used by MEA",
+   "maxLength": 50
+  },
+  "actcinum": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Actual CI",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Actual CI Identifier",
+   "maxLength": 12
+  },
+  "status": {
+   "default": "!NOT READY!",
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Status",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Current life cycle state of the CI",
+   "maxLength": 20
+  }
+ },
+ "required": [
+  "cinum",
+  "statusdate",
+  "statusiface"
+ ]
+}

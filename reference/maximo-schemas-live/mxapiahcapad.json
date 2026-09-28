@@ -1,0 +1,209 @@
+{
+ "resource": "MXAPIAHCAPAD",
+ "description": "AHCAPAD Object Structure",
+ "pk": [
+  "ahcapadid"
+ ],
+ "title": "AHCAPAD",
+ "type": "object",
+ "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/mxapiahcapad",
+ "uniqueid": "ahcapadid",
+ "properties": {
+  "inspstatus": {
+   "searchType": "EXACT",
+   "subType": "UPPER",
+   "title": "Insp Status",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Insp Status",
+   "maxLength": 20
+  },
+  "localref": {
+   "type": "string"
+  },
+  "resultnum": {
+   "searchType": "EXACT",
+   "subType": "UPPER",
+   "title": "Inspection Result",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Inspection Result",
+   "maxLength": 12
+  },
+  "ahcapadid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Unique Id",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "uniqueid": true,
+   "remarks": "Unique Id",
+   "maxLength": 11
+  },
+  "wostatus": {
+   "searchType": "EXACT",
+   "subType": "UPPER",
+   "title": "WO Status",
+   "persistent": true,
+   "type": "string",
+   "remarks": "WO Stataus",
+   "maxLength": 16
+  },
+  "description": {
+   "searchType": "EXACT",
+   "subType": "ALN",
+   "title": "Description",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Description",
+   "maxLength": 250
+  },
+  "jpnum": {
+   "searchType": "EXACT",
+   "subType": "UPPER",
+   "title": "Job Plan",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Job Plan",
+   "maxLength": 12
+  },
+  "userid": {
+   "searchType": "EXACT",
+   "subType": "UPPER",
+   "title": "User",
+   "persistent": true,
+   "type": "string",
+   "remarks": "User",
+   "maxLength": 100
+  },
+  "_rowstamp": {
+   "type": "string"
+  },
+  "_imagelibref": {
+   "type": "string"
+  },
+  "assetnum": {
+   "searchType": "EXACT",
+   "subType": "UPPER",
+   "title": "Asset",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Asset",
+   "maxLength": 25
+  },
+  "pmnextduedate": {
+   "searchType": "EXACT",
+   "subType": "DATE",
+   "title": "Next Due Date",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Next Due Date"
+  },
+  "siteid": {
+   "searchType": "EXACT",
+   "subType": "UPPER",
+   "title": "Site",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Site",
+   "maxLength": 8
+  },
+  "href": {
+   "type": "string",
+   "title": "AHCAPAD object reference"
+  },
+  "objectname": {
+   "searchType": "EXACT",
+   "subType": "UPPER",
+   "title": "Object Name",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Object Name",
+   "maxLength": 10
+  },
+  "worktype": {
+   "searchType": "NONE",
+   "subType": "UPPER",
+   "title": "Work Type",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Work Type",
+   "maxLength": 5
+  },
+  "record_descriptor": {
+   "type": "string",
+   "title": "Record/Object Descriptor"
+  },
+  "orgid": {
+   "searchType": "EXACT",
+   "subType": "UPPER",
+   "title": "Organization",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Organization",
+   "maxLength": 8
+  },
+  "revision": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "INTEGER",
+   "title": "Revision",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "Revision",
+   "maxLength": 11
+  },
+  "statusdate": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Status date",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Status date"
+  },
+  "wonum": {
+   "searchType": "EXACT",
+   "subType": "UPPER",
+   "title": "Work Order",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Work Order",
+   "maxLength": 25
+  },
+  "pmnum": {
+   "searchType": "EXACT",
+   "subType": "UPPER",
+   "title": "PM",
+   "persistent": true,
+   "type": "string",
+   "remarks": "PM",
+   "maxLength": 8
+  },
+  "location": {
+   "searchType": "EXACT",
+   "subType": "UPPER",
+   "title": "Location",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Location",
+   "maxLength": 25
+  },
+  "_id": {
+   "type": "string"
+  },
+  "inspformnum": {
+   "searchType": "EXACT",
+   "subType": "UPPER",
+   "title": "Inspection Form",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Inspection Form",
+   "maxLength": 12
+  }
+ }
+}

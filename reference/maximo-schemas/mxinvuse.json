@@ -1,0 +1,354 @@
+{
+  "resource": "MXINVUSE",
+  "description": "INVUSE",
+  "pk": [
+    "invusenum",
+    "siteid"
+  ],
+  "title": "INVUSE",
+  "type": "object",
+  "$ref": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxinvuse",
+  "uniqueid": "invuseid",
+  "properties": {
+    "localref": {
+      "type": "string"
+    },
+    "invusenum_longdescription": {
+      "searchType": "WILDCARD",
+      "subType": "LONGALN",
+      "title": "Usage Long description",
+      "type": "string",
+      "remarks": "Long Description for Usage",
+      "maxLength": 32000
+    },
+    "exchangerate": {
+      "searchType": "EXACT",
+      "scale": 7,
+      "subType": "DECIMAL",
+      "title": "Exchange Rate",
+      "persistent": true,
+      "type": "number",
+      "remarks": "Exchange rate at time of inventory usage shipped.",
+      "maxLength": 15
+    },
+    "expreceiptdate": {
+      "searchType": "NONE",
+      "subType": "DATETIME",
+      "title": "Shipmentnum",
+      "type": "string",
+      "remarks": "The expected date for the items to be received."
+    },
+    "description": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Description",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Describes the item. To enter more information, click the Long Description push button.",
+      "maxLength": 100
+    },
+    "shipmentdate": {
+      "searchType": "EXACT",
+      "subType": "DATETIME",
+      "title": "Shipment Date",
+      "persistent": true,
+      "type": "string",
+      "remarks": "The date the items were shipped. The shipment date is set when you commence the shipping process by changing the status of the inventory record to SHIPPED."
+    },
+    "currencycode": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Currency",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Identifies the currency inventory usage is in.",
+      "maxLength": 8
+    },
+    "invusenum": {
+      "default": "&AUTOKEY&",
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Usage",
+      "persistent": true,
+      "type": "string",
+      "remarks": "The number associated with the inventory usage.",
+      "maxLength": 8
+    },
+    "_rowstamp": {
+      "type": "string"
+    },
+    "exchangerate2": {
+      "searchType": "EXACT",
+      "scale": 7,
+      "subType": "DECIMAL",
+      "title": "Secondary Exchange Rate",
+      "persistent": true,
+      "type": "number",
+      "remarks": "Exchange Rate 2.",
+      "maxLength": 15
+    },
+    "_imagelibref": {
+      "type": "string"
+    },
+    "autosplit": {
+      "default": false,
+      "searchType": "NONE",
+      "subType": "YORN",
+      "title": "AUTOSPLIT",
+      "type": "boolean",
+      "remarks": "Autosplit the use line records across multiple bins/lots."
+    },
+    "siteid": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Site",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "The site of the organization associated with the inventory. The site information comes from the default insert site in the user's profile, which also contains information about the organization and storeroom.",
+      "maxLength": 8
+    },
+    "invowner": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Inventory Owner",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "The person responsible for the inventory.",
+      "maxLength": 100
+    },
+    "invuseid": {
+      "searchType": "EXACT",
+      "maximum": 2147483647.0,
+      "subType": "BIGINT",
+      "title": "Unique Id",
+      "persistent": true,
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "uniqueid": true,
+      "remarks": "Unique Id",
+      "maxLength": 11
+    },
+    "href": {
+      "type": "string"
+    },
+    "fromstoreloc": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "From Location",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "The storeroom where the item is stocked. The storeroom information defaults from the user profile, which also contains information about the site and organization.",
+      "maxLength": 25
+    },
+    "shipmentnum": {
+      "searchType": "NONE",
+      "subType": "ALN",
+      "title": "Shipment",
+      "type": "string",
+      "remarks": "The shipment document reference number provided by supplier.",
+      "maxLength": 50
+    },
+    "invuseline": {
+      "objectName": "INVUSELINE",
+      "type": "array",
+      "items": {
+        "definition": {
+          "subSchema": {
+            "$ref": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxinvuse/invuseline"
+          }
+        },
+        "type": "object"
+      },
+      "cardinality": "MULTIPLE",
+      "relation": "INVUSELINE"
+    },
+    "status_description": {
+      "type": "string"
+    },
+    "changeby": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Changed By",
+      "persistent": true,
+      "type": "string",
+      "remarks": "The person who last changed the record.",
+      "maxLength": 100
+    },
+    "changedate": {
+      "default": "&SYSDATE&",
+      "searchType": "EXACT",
+      "subType": "DATETIME",
+      "title": "Changed Date",
+      "persistent": true,
+      "type": "string",
+      "remarks": "The date the record was last changed."
+    },
+    "usetype_description": {
+      "type": "string"
+    },
+    "sendersysid": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Sender System ID",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Column used by ERP-Integration (APIs).",
+      "maxLength": 50
+    },
+    "orgid": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Organization",
+      "persistent": true,
+      "type": "string",
+      "remarks": "The organization associated with the inventory.",
+      "maxLength": 8
+    },
+    "exchangedate": {
+      "searchType": "EXACT",
+      "subType": "DATE",
+      "title": "Exchange Date",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Date of the exchange rate."
+    },
+    "statusdate": {
+      "searchType": "EXACT",
+      "subType": "DATETIME",
+      "title": "Status Change Date",
+      "persistent": true,
+      "type": "string",
+      "remarks": "The date the status was last changed."
+    },
+    "receipts": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Receipts",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "The receipt status of the inventory usage record. The receipt status applies only to inventory records that have been shipped.",
+      "maxLength": 20
+    },
+    "receipts_description": {
+      "type": "string"
+    },
+    "autocreated": {
+      "default": false,
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "Auto Created",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "Indicates whether the Inventory Usage document is automatically created as a result of WorkOrder/PO/MR approval."
+    },
+    "carrier": {
+      "searchType": "NONE",
+      "subType": "ALN",
+      "title": "Shipmentnum",
+      "type": "string",
+      "remarks": "The transportation agency that is responsible for delivering the shipment.",
+      "maxLength": 50
+    },
+    "stagingbin": {
+      "searchType": "NONE",
+      "subType": "ALN",
+      "title": "Staging Bin",
+      "type": "string",
+      "remarks": "Staging Bin",
+      "maxLength": 8
+    },
+    "statusiface": {
+      "default": false,
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "Status Changed",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "Indicates whether the status has changed. This is used by the application to drive other business rules."
+    },
+    "workorderid": {
+      "searchType": "EXACT",
+      "maximum": 2147483647.0,
+      "subType": "BIGINT",
+      "title": "Work Order Id",
+      "persistent": true,
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "remarks": "work order identifier",
+      "maxLength": 11
+    },
+    "packingslipnum": {
+      "searchType": "NONE",
+      "subType": "ALN",
+      "title": "Shipmentnum",
+      "type": "string",
+      "remarks": "The packing slip number for the shipment.",
+      "maxLength": 50
+    },
+    "shiptoattn": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Attention of",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "The person to whom the inventory items are being shipped.",
+      "maxLength": 100
+    },
+    "_id": {
+      "type": "string"
+    },
+    "usetype": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Usage Type",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "The type of usage that is contained in the record. The value in this field is filled based on the usage line types entered for the record. By default, the field is set to MIXED.",
+      "maxLength": 20
+    },
+    "binflag": {
+      "default": "2",
+      "searchType": "NONE",
+      "subType": "ALN",
+      "title": "Bin Flag",
+      "type": "string",
+      "remarks": "Bin Flag",
+      "maxLength": 1
+    },
+    "np_statusmemo": {
+      "searchType": "NONE",
+      "subType": "ALN",
+      "title": "Change Status Memo",
+      "type": "string",
+      "remarks": "Status change memo, temporary non-persistent field used by MEA.",
+      "maxLength": 50
+    },
+    "status": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Status",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "The status of the inventory usage record.",
+      "maxLength": 20
+    }
+  },
+  "required": [
+    "autosplit",
+    "changeby",
+    "fromstoreloc",
+    "orgid",
+    "siteid",
+    "status",
+    "statusdate",
+    "statusiface",
+    "usetype"
+  ]
+}

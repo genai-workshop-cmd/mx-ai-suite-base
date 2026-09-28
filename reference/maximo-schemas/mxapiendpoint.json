@@ -1,0 +1,125 @@
+{
+  "resource": "MXAPIENDPOINT",
+  "description": "MAXENDPOINT",
+  "pk": [
+    "endpointname"
+  ],
+  "title": "MAXENDPOINT",
+  "type": "object",
+  "$ref": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapiendpoint",
+  "uniqueid": "maxendpointid",
+  "properties": {
+    "localref": {
+      "type": "string"
+    },
+    "maxendpointdtl": {
+      "objectName": "MAXENDPOINTDTL",
+      "type": "array",
+      "items": {
+        "definition": {
+          "subSchema": {
+            "$ref": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapiendpoint/maxendpointdtl"
+          }
+        },
+        "type": "object"
+      },
+      "cardinality": "UNDEFINED",
+      "relation": "MAXENDPOINTDTL"
+    },
+    "changeby": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Changed By",
+      "persistent": true,
+      "type": "string",
+      "remarks": "CHANGEBY",
+      "maxLength": 100
+    },
+    "description": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Description",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Describes the end point. To enter or view additional information, click the Long Description button.",
+      "maxLength": 100
+    },
+    "changedate": {
+      "searchType": "EXACT",
+      "subType": "DATETIME",
+      "title": "Changed Date",
+      "persistent": true,
+      "type": "string",
+      "remarks": "CHANGEDATE"
+    },
+    "langcode": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Language Code",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Language Column",
+      "maxLength": 4
+    },
+    "_rowstamp": {
+      "type": "string"
+    },
+    "hasld": {
+      "default": false,
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "Has Long Description",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "Boolean flag to indicate if there is any long description for this record"
+    },
+    "_imagelibref": {
+      "type": "string"
+    },
+    "endpointname": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "End Point",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Identifies a location to which the MEA can send outbound messages. This value must be unique.",
+      "maxLength": 20
+    },
+    "maxendpointid": {
+      "searchType": "EXACT",
+      "maximum": 2147483647.0,
+      "subType": "BIGINT",
+      "title": "Unique Id",
+      "persistent": true,
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "uniqueid": true,
+      "remarks": "Unique Id",
+      "maxLength": 11
+    },
+    "href": {
+      "type": "string"
+    },
+    "_id": {
+      "type": "string"
+    },
+    "handlername": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Handler",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Identifies the handler that the end point uses to send outbound messages.",
+      "maxLength": 20
+    }
+  },
+  "required": [
+    "changeby",
+    "changedate",
+    "endpointname",
+    "handlername",
+    "langcode"
+  ]
+}

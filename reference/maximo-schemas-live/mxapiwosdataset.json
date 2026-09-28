@@ -1,0 +1,367 @@
+{
+ "resource": "MXAPIWOSDATASET",
+ "description": "Maximo API for WOS data Sets",
+ "pk": [
+  "intobjectname"
+ ],
+ "title": "MAXINTOBJECT",
+ "type": "object",
+ "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/mxapiwosdataset",
+ "uniqueid": "maxintobjectid",
+ "properties": {
+  "aliasconflict": {
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Alias Conflict",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Identifies the status of the Alias Validation Process"
+  },
+  "searchattrs": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Search Attributes",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Search Attributes.",
+   "maxLength": 500
+  },
+  "localref": {
+   "type": "string"
+  },
+  "useforassistant": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Use for assistant",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Enable this object structure\u2019s data to be accessed by the AI assistant."
+  },
+  "description": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Description",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Describes the integration object. To enter or view additional information, click the Long Description button.",
+   "maxLength": 100
+  },
+  "usewithproduct": {
+   "default": 0,
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "INTEGER",
+   "title": "Use with product",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "hasList": true,
+   "remarks": "Will be set to 0 if full Manage is sinatalled, 1 if Foundation only and 2 if Small SaaS",
+   "maxLength": 11
+  },
+  "authapp": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Authorization Name",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The specified application can authorize inbound queue-based or synchronous integration messages to this object structure. The application can also authorize export of data from this object structure.",
+   "maxLength": 40
+  },
+  "graphtype": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Graph Type",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Graph Type"
+  },
+  "langcode": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Language Code",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Language Column",
+   "maxLength": 4
+  },
+  "_rowstamp": {
+   "type": "string"
+  },
+  "autopagingthreshold": {
+   "default": -1,
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "INTEGER",
+   "title": "Auto Paging Threshold",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "Auto Paging Threshold",
+   "maxLength": 11
+  },
+  "selfreferencing": {
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Self Reference",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "SELFREFERENCING"
+  },
+  "_imagelibref": {
+   "type": "string"
+  },
+  "timelineattribute": {
+   "default": "-1",
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Time-Line Attribute",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Time-Line Attribute",
+   "maxLength": 50
+  },
+  "primaryapi": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Primary API",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Indicates whether this object structure is for a primary API. A primary API is provided with your Maximo system and is the preferred API for the associated Maximo business objects. If an object structure that is designated as a primary API exists, use that object structure for all interactions with the associated Maximo business objects."
+  },
+  "href": {
+   "type": "string",
+   "title": "MAXINTOBJECT object reference"
+  },
+  "loadqueryfromapp": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Load Query From All Apps",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Load Query From All Apps"
+  },
+  "usewith_description": {
+   "type": "string"
+  },
+  "app": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Application",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The application using this object structure. Only applies to report object structures.",
+   "maxLength": 40
+  },
+  "description_longdescription": {
+   "searchType": "WILDCARD",
+   "subType": "LONGALN",
+   "title": "Details",
+   "type": "string",
+   "remarks": "DESCRIPTION_LONGDESCRIPTION",
+   "maxLength": 32000
+  },
+  "changeby": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Changed By",
+   "persistent": true,
+   "type": "string",
+   "remarks": "CHANGEBY",
+   "maxLength": 100
+  },
+  "module": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Module Name",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The name of the module. The name must match the name of the module that is used for the associated Maximo application.",
+   "maxLength": 10
+  },
+  "queryapps": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Query Apps",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Query Apps",
+   "maxLength": 200
+  },
+  "changedate": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Changed Date",
+   "persistent": true,
+   "type": "string",
+   "remarks": "CHANGEDATE"
+  },
+  "record_descriptor": {
+   "type": "string",
+   "title": "Record/Object Descriptor"
+  },
+  "restrictwhere": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Data restriction condition",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Data restriction condition",
+   "maxLength": 12
+  },
+  "defclass": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Outbound Definition Class",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Path to a Java class file that contains outbound processing and filtering code. This is a processing class that is typically used to filter the content of any MOS created by Maximo. It is applicable only for Publishing and/ or filtering query responses. This class is not always required",
+   "maxLength": 256
+  },
+  "queryonly": {
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Query Only",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "This is a Boolean indicator identifying if the MOS can be used to create/ update Maximo MBOs"
+  },
+  "intobjectname": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Object Structure",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Identifies the integration object. This value must be unique.",
+   "maxLength": 20
+  },
+  "tags": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Tags",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Tags",
+   "maxLength": 50
+  },
+  "usewith": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Consumed By",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Indicates from where in Maximo the Maximo Object Structure is accessible. Possible values include: ALL, INTEGRATION and DEPLOYMENT MGR. If you choose ALL, the MOS can be used from any Maximo application. If you choose INTEGRATION, the template is available from the INTEGRATION applications, but cannot be used in other app. Chosing either DEPLOYMENT MGR or someother app limits the use of the MOS to within that specific application. Click the Select Value button to indicate from where the MOS can be accessed.",
+   "maxLength": 18
+  },
+  "completehierarchy": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Publish Complete Hierarchy",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "For self-referencing Object Stuctures publish complete hierarchy when unchecked data is published in a two level hierarchy."
+  },
+  "flatsupported": {
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Support Flat Structure",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "This is a Boolean indicator identifying if the MOS supports Flat File/ Interface table processing. This defaults to 'N"
+  },
+  "hasld": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Has Long Description",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Boolean flag to indicate if there is any long description for this record"
+  },
+  "graphtypename": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Graph Type Name",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Graph Type Name",
+   "maxLength": 20
+  },
+  "usewithproduct_description": {
+   "type": "string"
+  },
+  "maxintobjectid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "MAXINTOBJECTID",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "uniqueid": true,
+   "remarks": "Unique Identifier",
+   "maxLength": 11
+  },
+  "_id": {
+   "type": "string"
+  },
+  "procclass": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Inbound Processing Class",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Path to a Java class file that contains Inbound processing code. This is a processing class that facilitates the creation/ update of the MBOs that constitute the MOS. Note that this class does not contain any processing logic for query support it is only for facilitating Content Management (Create/ Update/ Delete) Services. This class is not always required.",
+   "maxLength": 256
+  },
+  "trackrequests": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Track Requests",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "For REST calls, if the Track requests checkbox is selected, the mxe.int.trackrestrequests system property is set to 0 and the Track Requests at the route level is deselected, then the request for this specific Object Structure is tracked. The field value is not considered if mxe.int.trackrestrequests is set to 1. If the system property is set to 1, all requests are tracked."
+  },
+  "configurable": {
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Configurable",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Identifies if the MOS is configurable i.e. if the user can Add/ Modify any of the MOS properties.This flag will always be 'Y' for all user-defined MOSs."
+  },
+  "userdefined": {
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "User Defined",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Specifies whether the corresponding object was predefined (MEA-supplied) or added by a user. If the check box is selected, a user created the object."
+  }
+ },
+ "required": [
+  "aliasconflict",
+  "changeby",
+  "changedate",
+  "configurable",
+  "flatsupported",
+  "intobjectname",
+  "langcode",
+  "queryonly",
+  "selfreferencing",
+  "userdefined",
+  "usewith"
+ ]
+}

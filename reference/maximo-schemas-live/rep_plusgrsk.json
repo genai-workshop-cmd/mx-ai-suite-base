@@ -1,0 +1,558 @@
+{
+ "resource": "REP_PLUSGRSK",
+ "description": "Risk Assessment (Oil) Details",
+ "pk": [
+  "orgid",
+  "siteid",
+  "riskassessnum"
+ ],
+ "title": "PLUSGRISKASSESS",
+ "type": "object",
+ "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/rep_plusgrsk",
+ "uniqueid": "plusgriskassessid",
+ "properties": {
+  "plusginspdue": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Due Date",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Due Date"
+  },
+  "historyflag": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "History",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "History Flag"
+  },
+  "localref": {
+   "type": "string"
+  },
+  "plusginsprevgrp": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Reviewer  Owner Group",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Reviewer Group",
+   "maxLength": 8
+  },
+  "jpnum": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Job Plan",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The job plan to which the risk assessment applies. The status of the job plan must be Active. You can change the status of this field when the status of the risk assessment record is Draft. If the risk assessment was created from within a job plan, this field contains the identifier from the job plan record.",
+   "maxLength": 12
+  },
+  "ownergroup": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Owner Group",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Group that owns the risk assessment record. To change this value, use the Select Owner action.",
+   "maxLength": 8
+  },
+  "tagout": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Lock Out / Tag Out",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The lock out and tag out plan that was created with the Lock Out / Tag Out Plan application. The lock out and tag out plan outlines the operations that are required for the risk assessment.",
+   "maxLength": 8
+  },
+  "approvaldate": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Approval Date",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The date and time when the risk assessment was approved. The system populates this field with the server date and time when the Approved By field is populated."
+  },
+  "plusginspown": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Inspector",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Inspector Owner",
+   "maxLength": 100
+  },
+  "_rowstamp": {
+   "type": "string"
+  },
+  "plusginsowngrp": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Inspector  Owner Group",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Inspector Group ",
+   "maxLength": 8
+  },
+  "locationsid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Locations ID",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "hasList": true,
+   "remarks": "The location unique identifier.",
+   "maxLength": 11
+  },
+  "regulationid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Regulation",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The regulation that is associated with the risk assessment.",
+   "maxLength": 8
+  },
+  "siteid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Site",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The site associated with the site of the risk assessment. If you specify a value in the Organization field, you can select from sites in that organization. If you specify a value in this field, the system populates the Organization field with the corresponding organization value. If you do not enter a value in the Organization field, you can change this value. After you create and save a risk assessment record, you cannot change this value. If the risk assessment was created from within a work order or management of change record, this field contains the site from the work order.",
+   "maxLength": 8
+  },
+  "href": {
+   "type": "string",
+   "title": "PLUSGRISKASSESS object reference"
+  },
+  "plusgregulationid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "PlusgRegulationID",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "The regulation that is associated with the risk assessment.",
+   "maxLength": 11
+  },
+  "mostsigrisk_description": {
+   "type": "string"
+  },
+  "status_description": {
+   "type": "string"
+  },
+  "approvedby": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Approved By",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The name of the person who approved the risk assessment. You can change this value if the status of the risk assessment record is Draft.",
+   "maxLength": 100
+  },
+  "record_descriptor": {
+   "type": "string",
+   "title": "Record/Object Descriptor"
+  },
+  "orgid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Organization",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The organization that is associated with the site of the risk assessment. If you specify a value in the Site field, the system populates this field with the corresponding organization. If you do not enter a value in the Site field, you can change this value. After you create and save a risk assessment record, you cannot change this value. If the risk assessment was created from within a work order or management of change record, this field contains the organization from the work order.",
+   "maxLength": 8
+  },
+  "plusgproductref": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Product",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The product that is associated with the risk assessment.",
+   "maxLength": 500
+  },
+  "mostsigpriority_description": {
+   "type": "string"
+  },
+  "plusgciid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "CI Unique ID",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "Configuration Item Unique ID",
+   "maxLength": 11
+  },
+  "assessmenttype_description": {
+   "type": "string"
+  },
+  "plusghazardsumm": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Hazard Summary",
+   "persistent": true,
+   "type": "string",
+   "remarks": "A summary of the hazards. The summary is based on the risk assessment analysis that was done for the risk assessment.",
+   "maxLength": 200
+  },
+  "plusginsprev": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Reviewer",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Reviewer Owner",
+   "maxLength": 100
+  },
+  "fincntrlid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Project Unique Identifier",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The project that is associated with the risk assessment.",
+   "maxLength": 8
+  },
+  "riskassessnum": {
+   "default": "&AUTOKEY&",
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Risk Assessment",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The identifier of the risk assessment. The combination of organization, site, and risk assessment identifier must be unique. After you create and save a risk assessment record, you cannot change this value.",
+   "maxLength": 10
+  },
+  "_id": {
+   "type": "string"
+  },
+  "status": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Status",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The status of the risk assessment record. Valid statuses are in the PLUSGRISKSTATUS synonym domain. The default value, when you create the record, is Draft. You can change the value only through the Change Status action.",
+   "maxLength": 16
+  },
+  "template": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Template",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Indicates that the record, with its defined fields, is a template that can be used as a model to create risk assessment records . When you use the Select Action > Create Risk Assessment from Template, only those fields that are allowed to be duplicated are copied from the template."
+  },
+  "plusgcertid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Certification",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "The unique identifier of the certification record.",
+   "maxLength": 11
+  },
+  "mostsigrisk": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Most Significant Risk Ranking",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": " The most significant risk ranking for the risk assessment. Valid values are in the PLUSGRISKRANKING domain. You can change this value only when the status of the risk assessment record is Draft.",
+   "maxLength": 24
+  },
+  "resultnum": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Inspection Results",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The results of the risk .",
+   "maxLength": 12
+  },
+  "description": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Description",
+   "persistent": true,
+   "type": "string",
+   "remarks": "A description of the risk assessment. If the risk assessment was created from within an incident, investigation, job plan, management of change, or work order, this field contains the description from the originating record. You can change this value when the status of the risk assessment record is Draft.",
+   "maxLength": 100
+  },
+  "plusgactivitytype": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Activity Type",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The type of activity, such as operations or construction, that is associated with the risk assessment.",
+   "maxLength": 30
+  },
+  "mostsigpriority": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "INTEGER",
+   "title": "Most Significant Risk Priority",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "hasList": true,
+   "remarks": "The most significant risk based priority for the risk assessment. Valid values are in the PLUSGRISKPRIORITY domain. You can change this value when the value of the risk assessment record is Draft.",
+   "maxLength": 11
+  },
+  "riskcategory": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Category",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The category of risk that is being assessed. Valid values are in the PLUSGRISKCATEGORY domain. You can change this value when the status of the risk assessment record is Draft.",
+   "maxLength": 30
+  },
+  "assessmenttype": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Type",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The type of risk assessment. Valid values are in the PLUSGASSESSMENTTYP domain. You can change this value if the status of the risk assessment record is Draft.",
+   "maxLength": 30
+  },
+  "itemid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Item ID",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "The service item that is associated with the risk assessment.",
+   "maxLength": 11
+  },
+  "plusgtotalscore": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Total Score",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "The total score that is assigned to the hazards that are associated with the risk assessment.",
+   "maxLength": 11
+  },
+  "tagoutid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Lock Out / Tag Out",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "The lock out and tag out plan that was created with the Lock Out / Tag Out Plan application. The lock out and tag out plan outlines the operations that are required for the risk assessment.",
+   "maxLength": 11
+  },
+  "_imagelibref": {
+   "type": "string"
+  },
+  "pluscjprevnum": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "INTEGER",
+   "title": "Job Plan Revision Number",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "Displays the revision level of the current job plan.",
+   "maxLength": 11
+  },
+  "assetnum": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Asset",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The asset that is associated with the risk assessment.",
+   "maxLength": 25
+  },
+  "jobplanid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Job Plan ID",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "hasList": true,
+   "remarks": "Job Plan Unique Identifier.",
+   "maxLength": 11
+  },
+  "owner": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Owner",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The owner of the risk assessment. You update this field through the Select Owner of Take Ownership action.",
+   "maxLength": 100
+  },
+  "inspformrev": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "INTEGER",
+   "title": "Current Form Revision",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "The revision number of the risk  inspection form.",
+   "maxLength": 11
+  },
+  "plusgdetails": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Details",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Details about the activities, products, or services with which the risk assessment is associated.",
+   "maxLength": 20
+  },
+  "classstructureid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Class Structure",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Classification Structure identifier.",
+   "maxLength": 25
+  },
+  "plusgriskassessid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Unique Id",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "uniqueid": true,
+   "remarks": "Unique Id",
+   "maxLength": 11
+  },
+  "locationsite": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Location Site",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Site identifier of the location.",
+   "maxLength": 8
+  },
+  "envirimpactassess": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Environmental Impact Assessment",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Indicates whether the assessment considers the impact of the potential risks to the environment, in support of the ISO 14000 standards."
+  },
+  "operational": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Operational Risk Assessment",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Indicates whether the hazards that are identified in the risk assessment are associated with operational risks, such as long term isolations or failures of safety-critical equipment."
+  },
+  "statusdate": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Status Date",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The server date and time when someone created the risk assessment record or used the Change Status action. You cannot change this value."
+  },
+  "plusgactivitytype_description": {
+   "type": "string"
+  },
+  "preparedby": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Prepared By",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The identifier of the person who prepared the risk assessment. You can change this value only when the status of the risk assessment record is Draft.",
+   "maxLength": 100
+  },
+  "assetid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Asset",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "The asset that is associated with the risk assessment..",
+   "maxLength": 11
+  },
+  "location": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Location",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The location to which the risk assessment applies. You can change the status of this field when the status of the risk assessment record is Draft. If the risk assessment was created from within a management of change or work order, this field contains the location from the originating record.",
+   "maxLength": 25
+  },
+  "inspformnum": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Inspection Form",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The identifier of the inspection form for the Risk .",
+   "maxLength": 12
+  },
+  "riskcategory_description": {
+   "type": "string"
+  }
+ },
+ "required": [
+  "status",
+  "statusdate"
+ ]
+}

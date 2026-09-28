@@ -1,0 +1,190 @@
+{
+ "resource": "MXAPIADDRESS",
+ "description": "Maximo API for Address",
+ "pk": [
+  "orgid",
+  "addresscode"
+ ],
+ "title": "ADDRESS",
+ "type": "object",
+ "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/mxapiaddress",
+ "uniqueid": "addressid",
+ "properties": {
+  "tax4code": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Tax Code 4",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Identifies the tax code of the address where the goods on the current record are to be received. You use the tax code for tax calculation.",
+   "maxLength": 8
+  },
+  "localref": {
+   "type": "string"
+  },
+  "address3": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "State/Province",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Third line of the address, typically the State or Province.",
+   "maxLength": 50
+  },
+  "address2": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "City",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Second line of the address, typically the city.",
+   "maxLength": 50
+  },
+  "address1": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Address",
+   "persistent": true,
+   "type": "string",
+   "remarks": "First line of the address, typically the street address.",
+   "maxLength": 50
+  },
+  "changeby": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Changed By",
+   "persistent": true,
+   "type": "string",
+   "remarks": "User name who last changed record",
+   "maxLength": 100
+  },
+  "description": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Description",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Describes the address code, for example, Nashua, New Hampshire main office.",
+   "maxLength": 100
+  },
+  "changedate": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Changed Date",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Date/Time Record was last modified"
+  },
+  "record_descriptor": {
+   "type": "string",
+   "title": "Record/Object Descriptor"
+  },
+  "tax2code": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Tax Code 2",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Identifies the tax code of the address where the goods on the current record are to be received. You use the tax code for tax calculation.",
+   "maxLength": 8
+  },
+  "addresscode": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Address Code",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Identifies an address with a code value, for example, NASHUA for an organization's Nashua, NH address. The value must be unique for all address codes. You define address codes at the organization level for each address you plan to integrate into your MAXIMO implementation. Typically, you have one or more addresses for each site. When you create a site you can specify the default ship to and bill to address by selecting an address code.",
+   "maxLength": 30
+  },
+  "orgid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Organization",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Constraint Identifier of the organization",
+   "maxLength": 8
+  },
+  "addressid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "ADDRESSID",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "uniqueid": true,
+   "remarks": "Unique Identifier",
+   "maxLength": 11
+  },
+  "_rowstamp": {
+   "type": "string"
+  },
+  "tax3code": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Tax Code 3",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Identifies the tax code of the address where the goods on the current record are to be received. You use the tax code for tax calculation.",
+   "maxLength": 8
+  },
+  "tax5code": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Tax Code 5",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Identifies the tax code of the address where the goods on the current record are to be received. You use the tax code for tax calculation.",
+   "maxLength": 8
+  },
+  "_imagelibref": {
+   "type": "string"
+  },
+  "tax1code": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Tax Code 1",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Identifies the tax code of the address where the goods on the current record are to be received. You use the tax code for tax calculation.",
+   "maxLength": 8
+  },
+  "address5": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Country",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Country of the address.",
+   "maxLength": 50
+  },
+  "href": {
+   "type": "string",
+   "title": "ADDRESS object reference"
+  },
+  "_id": {
+   "type": "string"
+  },
+  "address4": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "ZIP/Postal Code",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Postal code for the address.",
+   "maxLength": 50
+  }
+ },
+ "required": [
+  "addresscode",
+  "changedate",
+  "orgid"
+ ]
+}

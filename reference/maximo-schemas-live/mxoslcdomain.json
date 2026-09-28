@@ -1,0 +1,85 @@
+{
+ "resource": "MXOSLCDOMAIN",
+ "description": "OSLC Domain Definition",
+ "pk": [
+  "domainname"
+ ],
+ "title": "OSLCDOMAIN",
+ "type": "object",
+ "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/mxoslcdomain",
+ "uniqueid": "oslcdomainid",
+ "properties": {
+  "_rowstamp": {
+   "type": "string"
+  },
+  "nsuri": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Domain Namespace URI",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The namespace URI for a domain.",
+   "maxLength": 200
+  },
+  "localref": {
+   "type": "string"
+  },
+  "_imagelibref": {
+   "type": "string"
+  },
+  "domainname": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Domain Name",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The OSLC domain to which resources can belong.",
+   "maxLength": 50
+  },
+  "href": {
+   "type": "string",
+   "title": "OSLCDOMAIN object reference"
+  },
+  "record_descriptor": {
+   "type": "string",
+   "title": "Record/Object Descriptor"
+  },
+  "_id": {
+   "type": "string"
+  },
+  "oslcdomainid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Unique Id",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "uniqueid": true,
+   "remarks": "Identifies the unique OSLC Domain ID.",
+   "maxLength": 11
+  },
+  "providerobjname": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Service Provider",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Service Provider.",
+   "maxLength": 30
+  },
+  "userdefined": {
+   "default": true,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "User Defined",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "If the check box is selected, the domain was created by a user."
+  }
+ },
+ "required": [
+  "nsuri"
+ ]
+}

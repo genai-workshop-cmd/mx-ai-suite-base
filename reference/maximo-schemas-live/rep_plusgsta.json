@@ -1,0 +1,236 @@
+{
+ "resource": "REP_PLUSGSTA",
+ "description": "Standard Actions (Oil) Details",
+ "pk": [
+  "orgid",
+  "siteid",
+  "stdactnum"
+ ],
+ "title": "PLUSGSTDACT",
+ "type": "object",
+ "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/rep_plusgsta",
+ "uniqueid": "plusgstdactid",
+ "properties": {
+  "reviewtype_description": {
+   "type": "string"
+  },
+  "timing_description": {
+   "type": "string"
+  },
+  "plusgstdactid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Unique Id",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "uniqueid": true,
+   "remarks": "Unique Id",
+   "maxLength": 11
+  },
+  "historyflag": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "History",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "History Flag"
+  },
+  "localref": {
+   "type": "string"
+  },
+  "description": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Description",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The description of this standard action.",
+   "maxLength": 100
+  },
+  "type": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Type",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The type of standard action. Valid values are in the PLUSGSTDACTIONTYPE domain.",
+   "maxLength": 12
+  },
+  "hasscore": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Score",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Indicates whether the item that is reviewed requires a score type of response."
+  },
+  "category_description": {
+   "type": "string"
+  },
+  "_rowstamp": {
+   "type": "string"
+  },
+  "_imagelibref": {
+   "type": "string"
+  },
+  "hasitems": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Review Action",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Indicates whether action is a review."
+  },
+  "reviewtype": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Review Response Type",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The type of response that is required for the item that is reviewed, such as Yes or No, or a numeric response. An item can also have a combined type of response.",
+   "maxLength": 30
+  },
+  "siteid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Site",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The site associated with this standard action.",
+   "maxLength": 8
+  },
+  "href": {
+   "type": "string",
+   "title": "PLUSGSTDACT object reference"
+  },
+  "type_description": {
+   "type": "string"
+  },
+  "status_description": {
+   "type": "string"
+  },
+  "timing": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Timing",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The timing of the standard action identifies any time dependency on the action, for example, whether the action is required prior to, or after this management of change is implemented. Valid values are in the PLUSGACTIONTIMING domain.",
+   "maxLength": 24
+  },
+  "canrepeat": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Repeatable",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Indicates whether a standard action can be repeated."
+  },
+  "record_descriptor": {
+   "type": "string",
+   "title": "Record/Object Descriptor"
+  },
+  "ischecklist": {
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Checklist",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Indicates whether the standard action is a checklist item"
+  },
+  "orgid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Organization",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The organization associated with this standard action.",
+   "maxLength": 8
+  },
+  "isrevact": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Review Action",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Indicates whether the action for the item must be reviewed."
+  },
+  "statusdate": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Status Date",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The date and time when the standard action status is set or changed by someone using the Change Status action."
+  },
+  "stdactnum": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Standard Action",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The unique identifier of this standard action.",
+   "maxLength": 12
+  },
+  "isalphanumeric": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Alphanumeric",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Indicates whether the response for the item that is reviewed requires a number, an alphabetic or alphanumeric identifier, or any of these combinations."
+  },
+  "_id": {
+   "type": "string"
+  },
+  "category": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Category",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The category of the action. Valid values are in the PLUSGACTIONCAT domain.",
+   "maxLength": 12
+  },
+  "status": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Status",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The status of this standard action.",
+   "maxLength": 16
+  },
+  "yesorno": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Yes or No",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Indicates whether the item that is reviewed requires a Yes or No answer."
+  }
+ },
+ "required": [
+  "ischecklist",
+  "status",
+  "statusdate",
+  "stdactnum",
+  "timing"
+ ]
+}

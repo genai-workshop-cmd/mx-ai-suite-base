@@ -1,0 +1,205 @@
+{
+ "resource": "REP_INSPECTIONRESULT",
+ "description": "Inspection Results",
+ "pk": [
+  "resultnum",
+  "inspformnum",
+  "revision",
+  "inspquestionnum",
+  "orgid",
+  "inspfieldnum",
+  "siteid"
+ ],
+ "title": "INSPRESULTFORM",
+ "type": "object",
+ "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/rep_inspectionresult",
+ "properties": {
+  "status_description": {
+   "type": "string"
+  },
+  "description_field": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Field Description",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Field Description",
+   "maxLength": 250
+  },
+  "localref": {
+   "type": "string"
+  },
+  "resultnum": {
+   "default": "&AUTOKEY&",
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Inspection Result",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The number of the inspection result.",
+   "maxLength": 12
+  },
+  "inspquestionnum": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Inspection Form Question",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Composed Identifier For Inspection Form Question",
+   "maxLength": 12
+  },
+  "createdate": {
+   "default": "&SYSDATE&",
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Created Date",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The date and time that the form was created."
+  },
+  "description_question": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Question Description",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Question Description",
+   "maxLength": 250
+  },
+  "record_descriptor": {
+   "type": "string",
+   "title": "Record/Object Descriptor"
+  },
+  "inspfieldresult": {
+   "objectName": "INSPFIELDRESULT",
+   "type": "array",
+   "items": {
+    "definition": {
+     "subSchema": {
+      "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/rep_inspectionresult/inspfieldresult"
+     }
+    },
+    "type": "object"
+   },
+   "cardinality": "",
+   "relation": "INSPRESULTFORM"
+  },
+  "groupseq": {
+   "searchType": "EXACT",
+   "scale": 3,
+   "subType": "DECIMAL",
+   "title": "Composite of Group and Sequence for display",
+   "persistent": true,
+   "type": "number",
+   "remarks": "Composite of Group and Sequence for display",
+   "maxLength": 9
+  },
+  "orgid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Organization",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Organization Identification",
+   "maxLength": 8
+  },
+  "revision": {
+   "default": 1,
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "INTEGER",
+   "title": "Revision",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "Current Form Revision",
+   "maxLength": 11
+  },
+  "_rowstamp": {
+   "type": "string"
+  },
+  "_imagelibref": {
+   "type": "string"
+  },
+  "name": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Name",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Form Name",
+   "maxLength": 200
+  },
+  "siteid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Site",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Site Identification",
+   "maxLength": 8
+  },
+  "location": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Location",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Identification of the location that this inspection result is attached",
+   "maxLength": 25
+  },
+  "href": {
+   "type": "string",
+   "title": "INSPRESULTFORM object reference"
+  },
+  "_id": {
+   "type": "string"
+  },
+  "asset": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Asset",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Identification of the equipment that this inspection result is attached",
+   "maxLength": 25
+  },
+  "inspformnum": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Inspection Form",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Foreign key from Inspection Form",
+   "maxLength": 12
+  },
+  "inspfieldnum": {
+   "default": "&AUTOKEY&",
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Inspection Question Field",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Composed Identifier For Inspection Question Field",
+   "maxLength": 12
+  },
+  "status": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Status",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Will contain the current inspection result status, controlled by the system",
+   "maxLength": 20
+  }
+ },
+ "required": [
+  "description_question",
+  "groupseq",
+  "inspformnum",
+  "inspquestionnum",
+  "name",
+  "status"
+ ]
+}

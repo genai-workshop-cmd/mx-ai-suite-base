@@ -1,0 +1,160 @@
+{
+  "resource": "MXAPISITE",
+  "description": "SITE",
+  "pk": [
+    "siteid"
+  ],
+  "title": "SITE",
+  "type": "object",
+  "$ref": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapisite",
+  "uniqueid": "siteuid",
+  "properties": {
+    "siteuid": {
+      "searchType": "EXACT",
+      "maximum": 2147483647.0,
+      "subType": "BIGINT",
+      "title": "SITEUID",
+      "persistent": true,
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "uniqueid": true,
+      "remarks": "Unique Identifier",
+      "maxLength": 11
+    },
+    "description_longdescription": {
+      "searchType": "WILDCARD",
+      "subType": "LONGALN",
+      "title": "Details",
+      "type": "string",
+      "remarks": "Long Description for Site description",
+      "maxLength": 32000
+    },
+    "localref": {
+      "type": "string"
+    },
+    "contactgroup": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Site Contact Group",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Default person group at the site for approving work to be done.",
+      "maxLength": 8
+    },
+    "enterdate": {
+      "searchType": "EXACT",
+      "subType": "DATETIME",
+      "title": "Entered Date",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Date record was entered."
+    },
+    "changeby": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Changed By",
+      "persistent": true,
+      "type": "string",
+      "remarks": "User name who last changed record.",
+      "maxLength": 100
+    },
+    "active": {
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "Active",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "Specifies whether the site is active. If this check box is selected, the site is active and can be used wherever a site is specified in Maximo. It the check box is cleared, the site is inactive and will not appear when you use the select value function."
+    },
+    "description": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Description",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Describes the site, for example, Toronto IT Operations Center. To enter of view additional information, click the Long Description button.",
+      "maxLength": 100
+    },
+    "changedate": {
+      "searchType": "EXACT",
+      "subType": "DATETIME",
+      "title": "Changed Date",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Date/Time Record was last modified."
+    },
+    "orgid": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Organization",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "The organization identifier for this site",
+      "maxLength": 8
+    },
+    "_rowstamp": {
+      "type": "string"
+    },
+    "enterby": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Entered By",
+      "persistent": true,
+      "type": "string",
+      "remarks": "User name who entered record.",
+      "maxLength": 100
+    },
+    "billtoshipto": {
+      "objectName": "BILLTOSHIPTO",
+      "type": "array",
+      "items": {
+        "definition": {
+          "subSchema": {
+            "$ref": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapisite/billtoshipto"
+          }
+        },
+        "type": "object"
+      },
+      "cardinality": "",
+      "relation": "BILLTOSHIPTO"
+    },
+    "_imagelibref": {
+      "type": "string"
+    },
+    "contact": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Site Contact",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Default person at the site for approving work to be done.",
+      "maxLength": 100
+    },
+    "siteid": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Site",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Identifies the site with a short code, for example, TORONTO, for a company's Toronto, Canada site. This value must be unique for all sites.",
+      "maxLength": 8
+    },
+    "href": {
+      "type": "string"
+    },
+    "_id": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "active",
+    "changeby",
+    "changedate",
+    "orgid",
+    "siteid"
+  ]
+}

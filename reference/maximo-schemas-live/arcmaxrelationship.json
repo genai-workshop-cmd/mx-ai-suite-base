@@ -1,0 +1,291 @@
+{
+ "resource": "ARCMAXRELATIONSHIP",
+ "description": "Object, Attribute and Relationship export object for Optim integration",
+ "pk": [
+  "objectname"
+ ],
+ "title": "MAXOBJECTCFG",
+ "type": "object",
+ "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/arcmaxrelationship",
+ "uniqueid": "maxobjectid",
+ "properties": {
+  "internal": {
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Internal",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Indicates that the object is reserved for internal use by the platform and cannot be altered by using the Database Configuration application."
+  },
+  "localref": {
+   "type": "string"
+  },
+  "extendsobject": {
+   "searchType": "EXACT",
+   "subType": "UPPER",
+   "title": "Extends Object",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The business object that the specified business object extends. Extend an object only when the corresponding entity of the specified business object is a view.",
+   "maxLength": 30
+  },
+  "mainobject": {
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Main Object",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Indicates a main object for business applications and workflows."
+  },
+  "siteorgtype": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Level",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The organizational level to which the object applies.",
+   "maxLength": 18
+  },
+  "entityname": {
+   "searchType": "EXACT",
+   "subType": "UPPER",
+   "title": "Entity",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The name of the database object upon which the business object depends. The database object can be a table or a view.",
+   "maxLength": 30
+  },
+  "description": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Description",
+   "persistent": true,
+   "type": "string",
+   "remarks": "A clear description of the object.",
+   "maxLength": 100
+  },
+  "eauditenabled": {
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Audit Enabled",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "When checked, indicates that Electronic Auditing (EAUDIT) is enabled for this object."
+  },
+  "eauditfilter": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "E-audit Filter",
+   "persistent": true,
+   "type": "string",
+   "remarks": "User defined filter for an Electronic Audit record.",
+   "maxLength": 254
+  },
+  "langcode": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Language Code",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Language Code",
+   "maxLength": 4
+  },
+  "_rowstamp": {
+   "type": "string"
+  },
+  "maxobjectid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "MAXOBJECTCFGID",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "uniqueid": true,
+   "remarks": "Unique Identifier",
+   "maxLength": 11
+  },
+  "internalindicator": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Internal indicator",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Indicator of the modification during online upgrade",
+   "maxLength": 1
+  },
+  "_imagelibref": {
+   "type": "string"
+  },
+  "imported": {
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Imported",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Indicates that the object was created in the database and imported into the product environment."
+  },
+  "siteorgtype_description": {
+   "type": "string"
+  },
+  "maxrelationship": {
+   "objectName": "MAXRELATIONSHIP",
+   "type": "array",
+   "items": {
+    "definition": {
+     "subSchema": {
+      "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/arcmaxrelationship/maxrelationship"
+     }
+    },
+    "type": "object"
+   },
+   "cardinality": "UNDEFINED",
+   "relation": "MAXRELATIONSHIP"
+  },
+  "servicename": {
+   "searchType": "EXACT",
+   "subType": "UPPER",
+   "title": "Service",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The name of the start up service for the product on which the business object depends.",
+   "maxLength": 18
+  },
+  "href": {
+   "type": "string",
+   "title": "MAXOBJECTCFG object reference"
+  },
+  "persistent": {
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Persistent",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Indicates a persistent object that can be a view or a table. An object must be persistent for you to define an index on it."
+  },
+  "textdirection": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Text Direction",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The orientation of text that you enter into fields.",
+   "maxLength": 20
+  },
+  "maxattributecfg": {
+   "objectName": "MAXATTRIBUTECFG",
+   "type": "array",
+   "items": {
+    "definition": {
+     "subSchema": {
+      "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/arcmaxrelationship/maxattributecfg"
+     }
+    },
+    "type": "object"
+   },
+   "cardinality": "UNDEFINED",
+   "relation": "MAXATTRIBUTECFG"
+  },
+  "textdirection_description": {
+   "type": "string"
+  },
+  "objectname": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Object",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Name of the business object.",
+   "maxLength": 30
+  },
+  "record_descriptor": {
+   "type": "string",
+   "title": "Record/Object Descriptor"
+  },
+  "resourcetype": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Resource Type",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Resource Type",
+   "maxLength": 20
+  },
+  "classname": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Class",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The Java class that is used to represent and manage the business object.",
+   "maxLength": 256
+  },
+  "hasld": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Has Long Description",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Boolean flag to indicate if there is any long description for this record"
+  },
+  "isview": {
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "View",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "When checked, indicates that this is a view; when clear, indicates that this is a table."
+  },
+  "esigfilter": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "E-signature Filter",
+   "persistent": true,
+   "type": "string",
+   "remarks": "User defined filter for an Electronic Signature.",
+   "maxLength": 254
+  },
+  "_id": {
+   "type": "string"
+  },
+  "userdefined": {
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "User Defined",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Indicates that the object was created by a user."
+  },
+  "changed": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Changed",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Indicates whether this object has been changed via Configure",
+   "maxLength": 1
+  }
+ },
+ "required": [
+  "changed",
+  "description",
+  "eauditenabled",
+  "imported",
+  "internal",
+  "isview",
+  "langcode",
+  "mainobject",
+  "objectname",
+  "persistent",
+  "servicename",
+  "siteorgtype",
+  "userdefined"
+ ]
+}

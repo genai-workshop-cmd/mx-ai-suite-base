@@ -1,0 +1,1257 @@
+{
+ "resource": "PLUSDRCVROTITM",
+ "description": "Receive Rotating Meter Assets for Utilities",
+ "pk": [
+  "matrectransid"
+ ],
+ "title": "MATRECTRANS",
+ "type": "object",
+ "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/plusdrcvrotitm",
+ "uniqueid": "matrectransid",
+ "properties": {
+  "invuselineid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Inventory Usage Line Identifier",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "Identifies the inventory usage line, which can be associated with a completed transaction.",
+   "maxLength": 11
+  },
+  "invpicklistid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Unique Id for INVPICKLIST",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "Inventory Owner",
+   "maxLength": 11
+  },
+  "localref": {
+   "type": "string"
+  },
+  "issuetype_description": {
+   "type": "string"
+  },
+  "actualdate": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Actual Date",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The time and date of the receipt or transfer of items. This value can be different from the time and date that the transaction was logged. You can change the value in this field."
+  },
+  "rejectqty": {
+   "searchType": "EXACT",
+   "scale": 2,
+   "subType": "DECIMAL",
+   "title": "Quantity Rejected",
+   "persistent": true,
+   "type": "number",
+   "remarks": "The number of items that were rejected. If you enter a value in this field, the number of items in the Quantity field must not include the returned items.",
+   "maxLength": 16
+  },
+  "currencylinecost": {
+   "searchType": "EXACT",
+   "scale": 2,
+   "subType": "DECIMAL",
+   "title": "Currency Line Cost",
+   "persistent": true,
+   "type": "number",
+   "remarks": "The cost per shipment line in the currency of the vendor.",
+   "maxLength": 11
+  },
+  "fromconditioncode": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "From Condition Code",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The condition code that indicates the physical condition of the item as it was in the originating storeroom.",
+   "maxLength": 30
+  },
+  "href": {
+   "type": "string",
+   "title": "MATRECTRANS object reference"
+  },
+  "currencyunitcost": {
+   "searchType": "EXACT",
+   "scale": 2,
+   "subType": "DECIMAL",
+   "title": "Currency Unit Cost",
+   "persistent": true,
+   "type": "number",
+   "remarks": "The cost per issue unit in the currency of the vendor.",
+   "maxLength": 11
+  },
+  "rotassetnum": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Rotating Asset",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Identifies the rotating asset that is associated with the item.",
+   "maxLength": 25
+  },
+  "enteredastask": {
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Entered as Task",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Indicates whether the current transaction was created based on a work order task."
+  },
+  "prorated": {
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Prorated",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Indicates whether the amount for the current line was prorated."
+  },
+  "issueto": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Issue To",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Identifies the person or craft that the item is being shipped to.",
+   "maxLength": 100
+  },
+  "issue": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Issue on Receipt",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Indicates whether the line item on the current record is a direct issue. Items can be issued to a work order, a general ledger account, a location, or an asset. If the check box is cleared, the item is stocked in a storeroom."
+  },
+  "record_descriptor": {
+   "type": "string",
+   "title": "Record/Object Descriptor"
+  },
+  "polinenum": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "INTEGER",
+   "title": "PO Line",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "hasList": true,
+   "remarks": "The identifier of the item on the associated purchase order.",
+   "maxLength": 11
+  },
+  "enterby": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Entered By",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The person who created the shipment receipt record.",
+   "maxLength": 100
+  },
+  "courier": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Courier",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Identifies the company that is employed to transfer the item across organizations.",
+   "maxLength": 30
+  },
+  "packingslipnum": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Packing Slip",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The number of the packing slip that accompanies the shipment.",
+   "maxLength": 50
+  },
+  "fincntrlid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "FCID",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The financial control identifier, which is used by the Financial Control application to manage budgets.",
+   "maxLength": 8
+  },
+  "tax1code": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Tax Code 1",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The tax code that is used for tax calculation.",
+   "maxLength": 8
+  },
+  "mrlinenum": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "INTEGER",
+   "title": "Requisition Line",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "The material requisition line number that is associated with the item being issued. The material requisition is created and managed in the Desktop Requisitions application.",
+   "maxLength": 11
+  },
+  "tobin": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "To Bin",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The bin into which the items are to be placed.",
+   "maxLength": 8
+  },
+  "inspresultnum": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Inspection Result",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The number of the inspection result.",
+   "maxLength": 12
+  },
+  "costoverreceived": {
+   "searchType": "EXACT",
+   "scale": 2,
+   "subType": "AMOUNT",
+   "title": "Over Received Amount",
+   "persistent": true,
+   "type": "number",
+   "remarks": "The amount that exceeds the cost of the ordered items.",
+   "maxLength": 11
+  },
+  "status": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Transaction Status",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The status of the inventory transaction during receiving or staging. Receiving statuses include WINSP, WASSET, and COMP. For staging, BINUPDATE indicates the item was transferred from its original staging bin to a different staging bin in the Inventory Usage application.",
+   "maxLength": 12
+  },
+  "commodity": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Commodity Code",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The commodity code that is associated with this item or tool for categorization. Commodity codes are used in the purchasing process. For example, items can be categorized into electrical components or maintenance supplies.",
+   "maxLength": 8
+  },
+  "costinfo": {
+   "default": true,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Cost Information",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Information about the cost on the current shipment line."
+  },
+  "tax4code": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Tax Code 4",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The tax code that is used for tax calculation.",
+   "maxLength": 8
+  },
+  "commoditygroup": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Commodity Group",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The commodity group or product category that is associated with this item or tool.",
+   "maxLength": 8
+  },
+  "rejectcode": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Reject Code",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Indicates the reason that the items were rejected by the receiving storeroom, such as when items are damaged.",
+   "maxLength": 6
+  },
+  "shipmentlinenum": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Shipment Line",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The reference number for the shipment line as provided by the supplier.",
+   "maxLength": 50
+  },
+  "manufacturer": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Manufacturer",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Identifies the code that is associated with the manufacturer of the item.",
+   "maxLength": 12
+  },
+  "condrate": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "INTEGER",
+   "title": "Rate Percentage",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "Condition Rate Percentage",
+   "maxLength": 11
+  },
+  "exchangerate2": {
+   "searchType": "EXACT",
+   "scale": 7,
+   "subType": "DECIMAL",
+   "title": "Secondary Exchange Rate",
+   "persistent": true,
+   "type": "number",
+   "remarks": "The secondary exchange rate that can be applied to the cost of the transfer items.",
+   "maxLength": 15
+  },
+  "assetnum": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Asset",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Identifies the asset that is associated with the shipment or line item.",
+   "maxLength": 25
+  },
+  "consignment": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Consignment",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Indicates whether the transaction was created for a consignment item. This field also indicates that the consignment transaction is included in the consignment invoice, which is sent to the vendor who supplies the inventory item."
+  },
+  "curbal": {
+   "default": 0.0,
+   "searchType": "EXACT",
+   "scale": 2,
+   "subType": "DECIMAL",
+   "title": "Current Balance",
+   "persistent": true,
+   "type": "number",
+   "remarks": "The storeroom balance at the time of the transfer or receipt of the shipment.",
+   "maxLength": 16
+  },
+  "itin5": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "ITIN5",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Extra Field",
+   "maxLength": 10
+  },
+  "itin4": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "ITIN4",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Extra Field",
+   "maxLength": 10
+  },
+  "statuschangeby": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Status Changed By",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The person who last changed the receipt status.",
+   "maxLength": 100
+  },
+  "itin7": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "ITIN7",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Extra Field",
+   "maxLength": 10
+  },
+  "itin6": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "ITIN6",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Extra Field",
+   "maxLength": 10
+  },
+  "itin1": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Itin1",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Extra Field 06",
+   "maxLength": 10
+  },
+  "belongsto": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Belongs To",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "Identifies the transaction type of the parent record.",
+   "maxLength": 11
+  },
+  "conditioncode": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "To Condition Code",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The condition code that indicates the current physical condition of the item.",
+   "maxLength": 30
+  },
+  "itin3": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Itin3",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Extra Field 08",
+   "maxLength": 10
+  },
+  "itin2": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Itin2",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Extra Field 07",
+   "maxLength": 10
+  },
+  "shipmentnum": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Shipment",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The reference number for the shipment record as provided by the supplier.",
+   "maxLength": 50
+  },
+  "tolot": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "To Lot",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Internal lot number into which the item being transferred or received is placed, which is different than the manufacturer's lot number. The internal lot number is used to track a received item so that it can be used in the appropriate time frame, such as first-in first-out or last-in last-out. Click the Select Value button to choose a lot.",
+   "maxLength": 8
+  },
+  "it2": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "It2",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Extra Field 02",
+   "maxLength": 10
+  },
+  "qtyrequested": {
+   "searchType": "EXACT",
+   "scale": 2,
+   "subType": "DECIMAL",
+   "title": "Quantity Requested",
+   "persistent": true,
+   "type": "number",
+   "remarks": "The quantity of items that were requested to be transferred.",
+   "maxLength": 16
+  },
+  "it1": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "It1",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Extra Field 01",
+   "maxLength": 10
+  },
+  "it4": {
+   "searchType": "EXACT",
+   "scale": 2,
+   "subType": "DECIMAL",
+   "title": "It4",
+   "persistent": true,
+   "type": "number",
+   "remarks": "Extra Field 04",
+   "maxLength": 16
+  },
+  "acceptedqty": {
+   "searchType": "NONE",
+   "scale": 2,
+   "subType": "DECIMAL",
+   "title": "Quantity Accepted",
+   "type": "number",
+   "remarks": "The quantity of items that passed inspection.",
+   "maxLength": 16
+  },
+  "actualcost": {
+   "searchType": "EXACT",
+   "scale": 2,
+   "subType": "AMOUNT",
+   "title": "Actual Cost",
+   "persistent": true,
+   "type": "number",
+   "remarks": "The cost of the item that is being shipped. This value can be different from the unit cost.",
+   "maxLength": 11
+  },
+  "glcreditacct": {
+   "searchType": "WILDCARD",
+   "subType": "GL",
+   "title": "GL Credit Account",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The GL account that is credited when the item is received or transferred.",
+   "maxLength": 23
+  },
+  "it3": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "It3",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Extra Field 03",
+   "maxLength": 10
+  },
+  "it6": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "IT6",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Extra Field",
+   "maxLength": 10
+  },
+  "it5": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "It5",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Extra Field 05",
+   "maxLength": 10
+  },
+  "it8": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "IT8",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Extra Field",
+   "maxLength": 10
+  },
+  "fromsiteid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "From Site",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The identifier of the site that is transferring the inventory items. By default, this value is the site of the selected storeroom.",
+   "maxLength": 8
+  },
+  "it7": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "IT7",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Extra Field",
+   "maxLength": 10
+  },
+  "sendersysid": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Sender System ID",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Column used by ERP-Integration (APIs)",
+   "maxLength": 50
+  },
+  "it9": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "IT9",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Extra Field",
+   "maxLength": 10
+  },
+  "statusdate": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Status Date",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The date that the receipt status was last changed."
+  },
+  "receiptref": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "ReceiptRef",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "Identifies the transaction type of the related receipt record.",
+   "maxLength": 11
+  },
+  "invuselinenum": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "INTEGER",
+   "title": "Line",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "Identifies the inventory usage line that is associated with the current record.",
+   "maxLength": 11
+  },
+  "tostoreloc": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "To Location",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The identifier of the storeroom where the items are to be shipped.",
+   "maxLength": 25
+  },
+  "ponum": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "PO",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The purchase order that is associated with the item being shipped.",
+   "maxLength": 8
+  },
+  "matrectransid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Receipt ID",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "uniqueid": true,
+   "remarks": "The identifier of the shipment receipt record.",
+   "maxLength": 11
+  },
+  "asset": {
+   "objectName": "ASSET",
+   "type": "array",
+   "items": {
+    "definition": {
+     "subSchema": {
+      "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/plusdrcvrotitm/asset"
+     }
+    },
+    "type": "object"
+   },
+   "cardinality": "UNDEFINED",
+   "relation": "ASSETFORMATREC"
+  },
+  "sourcesysid": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Source System ID",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Source System ID",
+   "maxLength": 10
+  },
+  "issuetype": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Transaction Type",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The type of material receipt transaction that occurs as a result of the shipment.",
+   "maxLength": 20
+  },
+  "ownersysid": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Owner System ID",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Owner System ID",
+   "maxLength": 10
+  },
+  "inspectedqty": {
+   "searchType": "EXACT",
+   "scale": 2,
+   "subType": "DECIMAL",
+   "title": "Quantity to be Inspected",
+   "persistent": true,
+   "type": "number",
+   "remarks": "The quantity of items that must be inspected before or after transfer.",
+   "maxLength": 16
+  },
+  "oldavgcost": {
+   "searchType": "EXACT",
+   "scale": 2,
+   "subType": "AMOUNT",
+   "title": "Old Average Cost",
+   "persistent": true,
+   "type": "number",
+   "remarks": "The average cost of items, which is calculated at the time of receipt or transfer.",
+   "maxLength": 11
+  },
+  "qtyheld": {
+   "searchType": "EXACT",
+   "scale": 2,
+   "subType": "DECIMAL",
+   "title": "Quantity Held",
+   "persistent": true,
+   "type": "number",
+   "remarks": "The quantity of items that are being held for transfer to another site or storeroom.",
+   "maxLength": 16
+  },
+  "currencycode": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Currency",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The currency of the purchase requisition.",
+   "maxLength": 8
+  },
+  "frombin": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "From Bin",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The identifier of the storeroom bin from which the current item is being transferred.",
+   "maxLength": 8
+  },
+  "_rowstamp": {
+   "type": "string"
+  },
+  "receiptquantity": {
+   "searchType": "NONE",
+   "scale": 2,
+   "subType": "DECIMAL",
+   "title": "Quantity",
+   "type": "number",
+   "remarks": "The quantity of items that are being transferred into or out of the storeroom.",
+   "maxLength": 16
+  },
+  "totalcurbal": {
+   "searchType": "EXACT",
+   "scale": 2,
+   "subType": "DECIMAL",
+   "title": "Total Current Balance",
+   "persistent": true,
+   "type": "number",
+   "remarks": "The total balance of items in the storeroom.",
+   "maxLength": 16
+  },
+  "porevisionnum": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "INTEGER",
+   "title": "PO Revision",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "Indicates the number of times a purchase order has been revised.",
+   "maxLength": 11
+  },
+  "siteid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Site",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The site that is associated with the shipment receipt.",
+   "maxLength": 8
+  },
+  "qtyoverreceived": {
+   "searchType": "EXACT",
+   "scale": 2,
+   "subType": "DECIMAL",
+   "title": "Over Received Quantity",
+   "persistent": true,
+   "type": "number",
+   "remarks": "The quantity of received items over the amount specified by the PO line. This value is only calculated if a receipt tolerance has been defined.",
+   "maxLength": 16
+  },
+  "fromstoreloc": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "From Location",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The storeroom where the item is stocked. The storeroom information comes from the user profile, which also contains information about the site and organization.",
+   "maxLength": 25
+  },
+  "financialperiod": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Financial Period",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The financial accounting period in which the current transaction is recorded. This value is based on the actual date of the transaction.",
+   "maxLength": 6
+  },
+  "loadedcost": {
+   "default": 0.0,
+   "searchType": "EXACT",
+   "scale": 2,
+   "subType": "DECIMAL",
+   "title": "Loaded Cost",
+   "persistent": true,
+   "type": "number",
+   "remarks": "The overall cost that is attributed to the line. This value is calculated by multiplying the unit cost by the quantity and adding taxes and special charges.",
+   "maxLength": 11
+  },
+  "orgrcvexternalrefid": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "External Reference ID",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The external reference identifier of the original receipt.",
+   "maxLength": 10
+  },
+  "status_description": {
+   "type": "string"
+  },
+  "modelnum": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Model",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The model code that the manufacturer associates with the item. The default value for this field comes from the inventory record.",
+   "maxLength": 8
+  },
+  "receivedunit": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Order Unit",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The standard unit by which the item is ordered, such as by roll or by case.",
+   "maxLength": 16
+  },
+  "tax2code": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Tax Code 2",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The tax code that is used for tax calculation.",
+   "maxLength": 8
+  },
+  "orgid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Organization",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The organization that is associated with the shipment receipt.",
+   "maxLength": 8
+  },
+  "inspected": {
+   "default": false,
+   "searchType": "NONE",
+   "subType": "YORN",
+   "title": "Inspected",
+   "type": "boolean",
+   "remarks": "Indicates whether the items have been inspected."
+  },
+  "consinvoicenum": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Consignment Invoice",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The number that identifies the invoice that was created to pay for the inventory usage.",
+   "maxLength": 8
+  },
+  "itemnum": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Item",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The identifier of the item.",
+   "maxLength": 30
+  },
+  "outside": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Outside",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Indicates whether the item that is being shipped is a consignment good that belongs to an external vendor, but is stored on-site. If the check box is cleared, there is no charge for using this item."
+  },
+  "itemsetid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Item Set",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Identifies the item set, or group of items, to which the current item belongs. An organization is assigned to only one item set, but multiple organizations can use the same item set.",
+   "maxLength": 8
+  },
+  "linecost2": {
+   "searchType": "EXACT",
+   "scale": 2,
+   "subType": "DECIMAL",
+   "title": "Secondary Line Cost",
+   "persistent": true,
+   "type": "number",
+   "remarks": "The secondary cost per shipment line in the currency of the vendor.",
+   "maxLength": 11
+  },
+  "_id": {
+   "type": "string"
+  },
+  "it10": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "IT10",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Extra Field",
+   "maxLength": 10
+  },
+  "exchangerate": {
+   "searchType": "EXACT",
+   "scale": 7,
+   "subType": "DECIMAL",
+   "title": "Exchange Rate",
+   "persistent": true,
+   "type": "number",
+   "remarks": "The exchange rate at the time that the purchase requisition was approved.",
+   "maxLength": 15
+  },
+  "linetype": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Line Type",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The type of item used on the usage line. For example, Item or Tool.",
+   "maxLength": 15
+  },
+  "description": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Description",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Description of the shipment item.",
+   "maxLength": 100
+  },
+  "externalrefid": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "External Reference ID",
+   "persistent": true,
+   "type": "string",
+   "remarks": "External Reference ID",
+   "maxLength": 10
+  },
+  "remark": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Remarks",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Additional remarks about the current item or shipment.",
+   "maxLength": 254
+  },
+  "gldebitacct": {
+   "searchType": "WILDCARD",
+   "subType": "GL",
+   "title": "GL Debit Account",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The GL account that is debited when the item is received or transferred.",
+   "maxLength": 23
+  },
+  "invoicenum": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Invoice",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The invoice number for the shipment record as provided on the purchase order.",
+   "maxLength": 8
+  },
+  "tax1": {
+   "searchType": "EXACT",
+   "scale": 2,
+   "subType": "DECIMAL",
+   "title": "Tax 1",
+   "persistent": true,
+   "type": "number",
+   "remarks": "The amount of tax that is due for the current line item.",
+   "maxLength": 11
+  },
+  "requestedby": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Requested By",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The person who entered a request for the item.",
+   "maxLength": 100
+  },
+  "tax2": {
+   "searchType": "EXACT",
+   "scale": 2,
+   "subType": "DECIMAL",
+   "title": "Tax 2",
+   "persistent": true,
+   "type": "number",
+   "remarks": "The amount of tax that is due for the current line item.",
+   "maxLength": 11
+  },
+  "tax3code": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Tax Code 3",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The tax code that is used for tax calculation.",
+   "maxLength": 8
+  },
+  "_imagelibref": {
+   "type": "string"
+  },
+  "invuselinesplitid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Unique ID",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "Unique ID",
+   "maxLength": 11
+  },
+  "invuseid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Usage",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "Identifies the inventory usage record, which can be associated with a completed transaction.",
+   "maxLength": 11
+  },
+  "tax5": {
+   "searchType": "EXACT",
+   "scale": 2,
+   "subType": "DECIMAL",
+   "title": "Tax 5",
+   "persistent": true,
+   "type": "number",
+   "remarks": "The amount of tax that is due for the current line item.",
+   "maxLength": 11
+  },
+  "refwo": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Work Order",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Identifies the work order that is associated with the current record.",
+   "maxLength": 25
+  },
+  "tax3": {
+   "searchType": "EXACT",
+   "scale": 2,
+   "subType": "DECIMAL",
+   "title": "Tax 3",
+   "persistent": true,
+   "type": "number",
+   "remarks": "The amount of tax that is due for the current line item.",
+   "maxLength": 11
+  },
+  "conversion": {
+   "searchType": "EXACT",
+   "scale": 2,
+   "subType": "DECIMAL",
+   "title": "Conversion Factor",
+   "persistent": true,
+   "type": "number",
+   "remarks": "The numeric value that is used to convert the order unit of an item to the issue unit of the item. The number of items that you order at one time can be different from the number of items that you issue at one time. For example, if you order in batches of 36 but issue one item at a time, you can define a measurement unit of CASE and another measurement unit of EACH. You define a conversion ratio from CASE to EACH with a factor of 36. Then, when you receive an order of this item into a storeroom, the received order unit of one CASE is converted into issue unit of 36 EACH.",
+   "maxLength": 16
+  },
+  "tax4": {
+   "searchType": "EXACT",
+   "scale": 2,
+   "subType": "DECIMAL",
+   "title": "Tax 4",
+   "persistent": true,
+   "type": "number",
+   "remarks": "The amount of tax that is due for the current line item.",
+   "maxLength": 11
+  },
+  "consvendor": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Consignment Vendor",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The vendor that is responsible for replenishing the consignment items. Purchase orders and invoices are generated for the vendor that is specified in this field.",
+   "maxLength": 12
+  },
+  "transdate": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Transaction Date",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The time and date that the transaction was logged."
+  },
+  "positeid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "PO Site ID",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Identifies the site where the purchase order was created.",
+   "maxLength": 8
+  },
+  "fromlot": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "From Lot",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The identifier of the lot where the current item is stored.",
+   "maxLength": 8
+  },
+  "mrnum": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Requisition",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The material requisition number that is associated with the current transaction. The material requisition is created and managed in the Desktop Requisitions application.",
+   "maxLength": 8
+  },
+  "tax5code": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Tax Code 5",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The tax code that is used for tax calculation.",
+   "maxLength": 8
+  },
+  "matusetransid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Kit Use Identifier",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "The identifier of the MatUseTrans record for the kit item, which is used when breaking an inventory kit.",
+   "maxLength": 11
+  },
+  "location": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Location",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The location where the item is to be used.",
+   "maxLength": 25
+  },
+  "proratecost": {
+   "searchType": "EXACT",
+   "scale": 2,
+   "subType": "DECIMAL",
+   "title": "Prorate Cost",
+   "persistent": true,
+   "type": "number",
+   "remarks": "The amount of added costs that are applied to the cost of the line item.",
+   "maxLength": 11
+  }
+ },
+ "required": [
+  "actualcost",
+  "actualdate",
+  "currencycode",
+  "enterby",
+  "enteredastask",
+  "fromsiteid",
+  "inspected",
+  "linetype",
+  "orgid",
+  "prorated",
+  "rejectqty",
+  "siteid",
+  "transdate"
+ ]
+}

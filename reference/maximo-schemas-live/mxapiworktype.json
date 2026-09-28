@@ -1,0 +1,185 @@
+{
+ "resource": "MXAPIWORKTYPE",
+ "description": "Work Type",
+ "pk": [
+  "worktypeid"
+ ],
+ "title": "WORKTYPE",
+ "type": "object",
+ "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/mxapiworktype",
+ "uniqueid": "worktypeid",
+ "properties": {
+  "ahcondassess": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Condition Assessment?",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Is this a condition asssessment work type?"
+  },
+  "localref": {
+   "type": "string"
+  },
+  "wtypedesc": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Description",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Describes the work order's type. To enter or view additional information, click the Long Description button.",
+   "maxLength": 50
+  },
+  "completestatus": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Complete Status",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Status denoting a task's completion for sequencing purposes",
+   "maxLength": 16
+  },
+  "worktypeid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "WORKTYPEID",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "uniqueid": true,
+   "remarks": "Unique Identifier",
+   "maxLength": 11
+  },
+  "pluspmretest": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "PM Retest",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Indicates that preventive maintenance (PM) retest and associated functionality is available for the organization, work type, and class."
+  },
+  "worktype": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Work Type",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Defines the type for the selected class of work order. For example, for a release, work types are significant, major, or minor. For a change, work types are delta, full, or package. For a work order, work types are corrective maintenance, capital project, emergency maintenance, event report, and preventive maintenance. You also can define work types for any of work order class. For each type, you can set prompt information.",
+   "maxLength": 5
+  },
+  "record_descriptor": {
+   "type": "string",
+   "title": "Record/Object Descriptor"
+  },
+  "startstatus": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Start Status",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Status denoting a task's start for sequencing purposes",
+   "maxLength": 16
+  },
+  "type": {
+   "default": "!NONE!",
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Type",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Categorize the Work type as Repair or Overhaul",
+   "maxLength": 16
+  },
+  "woclass_description": {
+   "type": "string"
+  },
+  "orgid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Organization",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Organization Identifier",
+   "maxLength": 8
+  },
+  "completestatus_description": {
+   "type": "string"
+  },
+  "_rowstamp": {
+   "type": "string"
+  },
+  "contentuid": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Content Unique Id",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Content Unique Id",
+   "maxLength": 50
+  },
+  "promptdown": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Downtime Prompt",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Indicates whether Maximo displays a message to users informing them they have left an asset in the Down status while completing or closing a work order. If the check box is selected, Maximo will display the message if the asset is left in the Down position when the status is changed to complete or closedl. If the check box is cleared (the default), Maximo will not display a message."
+  },
+  "woclass": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Work Order Class",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Class of the work order whose type you are defining, for example, activity, change, release, or work order.",
+   "maxLength": 16
+  },
+  "_imagelibref": {
+   "type": "string"
+  },
+  "promptfail": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Failure Prompt",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Indicates whether Maximo displays a message to users informing them if they did not enter failure information when they complete or close the work order. If the check box is selected, Maximo will display the message. If the check box is cleared (the default), Maximo will not display the message."
+  },
+  "startstatus_description": {
+   "type": "string"
+  },
+  "href": {
+   "type": "string",
+   "title": "WORKTYPE object reference"
+  },
+  "_id": {
+   "type": "string"
+  },
+  "keeptaskstatushist": {
+   "default": true,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Record Status History for Work Order Tasks",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Record Status History for Work Order Tasks"
+  },
+  "type_description": {
+   "type": "string"
+  }
+ },
+ "required": [
+  "contentuid",
+  "orgid",
+  "woclass",
+  "worktype"
+ ]
+}

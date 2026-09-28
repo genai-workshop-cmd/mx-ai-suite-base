@@ -1,0 +1,91 @@
+# Compatible Unit (CU) business process — T&D utilities.
+#
+# The orchestrator loads exactly one of these per run and refuses to mix
+# vocabulary across processes (blueprint principle: no cross-process mixing).
+
+name: "CU"
+label: "Compatible Unit"
+description: >
+  Compatible Unit design, estimating and work packaging for Transmission &
+  Distribution electric and gas utilities. Covers the CU catalogue, CU
+  estimates, job plan cross-reference and work order generation from CU.
+
+# Vocabulary the classifier weights when deciding a requirement belongs to CU.
+keywords:
+  - compatible unit
+  - cu catalogue
+  - cu catalog
+  - cu header
+  - cu estimate
+  - cue
+  - cujp
+  - unit of work
+  - work package
+  - staking sheet
+  - construction standard
+  - assembly unit
+
+# Maximo objects this process legitimately touches. The validator warns when an
+# agent references an object outside this list for a CU run.
+objects:
+  primary:
+    - CUJP
+    - CUELIBRARY
+    - PLUSDCU
+  related:
+    - WORKORDER
+    - JOBPLAN
+    - JOBLABOR
+    - JOBMATERIAL
+    - ASSET
+    - LOCATIONS
+    - ITEM
+    - CLASSSTRUCTURE
+
+# Applications in App Designer that belong to this process.
+applications:
+  - CUHEADER
+  - CULIB
+  - JOBPLAN
+  - WOTRACK
+
+# Status values the process uses. Agents may not invent statuses outside this
+# list without raising a flag.
+statuses:
+  cu:
+    - DRAFT
+    - PENDING
+    - ACCEPTED
+    - REJECTED
+    - ACTIVE
+    - OBSOLETE
+  workorder:
+    - WAPPR
+    - APPR
+    - INPRG
+    - COMP
+    - CLOSE
+    - CAN
+
+# Naming conventions enforced on generated artifacts.
+naming:
+  autoscript_prefix: "CU"
+  publish_channel_suffix: "_PC"
+  external_system_suffix: "_EXTSYS"
+  object_structure_prefix: "MXAPI"
+
+# Effort baselines (hours) used by Agent 2's estimation table. Tuned to Maximo
+# delivery norms; override per engagement.
+estimation:
+  config: 4
+  customisation: 12
+  integration: 20
+  workflow: 10
+  report: 16
+  security: 3
+  data: 8
+  # multipliers
+  risk_multiplier:
+    low: 1.0
+    medium: 1.25
+    high: 1.6

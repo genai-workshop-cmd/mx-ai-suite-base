@@ -1,0 +1,1389 @@
+{
+  "resource": "MXAPIASSETSPARE",
+  "description": "ASSET",
+  "pk": [
+    "siteid",
+    "assetnum"
+  ],
+  "title": "ASSET",
+  "type": "object",
+  "$ref": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapiassetspare",
+  "uniqueid": "assetuid",
+  "properties": {
+    "expectedlifedate": {
+      "searchType": "EXACT",
+      "subType": "DATE",
+      "title": "Expected life",
+      "persistent": true,
+      "type": "string",
+      "remarks": "The date that the asset reaches the expected useful life date. This date is calculated by using the Asset's original installation date and its expected useful life, which is defined by manufacturer or industry standard."
+    },
+    "parent": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Parent",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Parent Asset Number",
+      "maxLength": 25
+    },
+    "installdate": {
+      "searchType": "EXACT",
+      "subType": "DATE",
+      "title": "Installation Date",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Installation Date"
+    },
+    "pluscsumeu": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Accuracy EU",
+      "persistent": true,
+      "type": "string",
+      "remarks": "This field is summed with the %Span, %URV, and %Reading EU fields to obtain the total accuracy of the asset.",
+      "maxLength": 15
+    },
+    "localref": {
+      "type": "string"
+    },
+    "eq1": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Eq1",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Asset Extra Field #1",
+      "maxLength": 10
+    },
+    "productid": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Product ID",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Product ID, relates an asset to a product",
+      "maxLength": 12
+    },
+    "assettype_description": {
+      "type": "string"
+    },
+    "usage_description": {
+      "type": "string"
+    },
+    "eq3": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Eq3",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Asset Extra Field #3",
+      "maxLength": 10
+    },
+    "eq2": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Eq2",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Asset Extra Field #2",
+      "maxLength": 10
+    },
+    "usage": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Usage",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Usage",
+      "maxLength": 15
+    },
+    "eq5": {
+      "searchType": "EXACT",
+      "scale": 2,
+      "subType": "AMOUNT",
+      "title": "Eq5",
+      "persistent": true,
+      "type": "number",
+      "remarks": "Asset Extra Field #5",
+      "maxLength": 11
+    },
+    "eq4": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Eq4",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Asset Extra Field #4",
+      "maxLength": 10
+    },
+    "eq7": {
+      "searchType": "EXACT",
+      "scale": 2,
+      "subType": "DECIMAL",
+      "title": "Eq7",
+      "persistent": true,
+      "type": "number",
+      "remarks": "Asset Extra Field #7",
+      "maxLength": 16
+    },
+    "eq6": {
+      "searchType": "EXACT",
+      "subType": "DATETIME",
+      "title": "Eq6",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Asset Extra Field #6"
+    },
+    "industryhealthscore": {
+      "searchType": "EXACT",
+      "scale": 0,
+      "subType": "FLOAT",
+      "title": "Industry Standard Health Score",
+      "persistent": true,
+      "type": "number",
+      "remarks": "Industry standard health score in numeric format",
+      "maxLength": 9
+    },
+    "eq9": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Eq9",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Asset Extra Field #9",
+      "maxLength": 10
+    },
+    "pluscsumspan": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "%SPAN",
+      "persistent": true,
+      "type": "string",
+      "remarks": "This field is summed with the %Reading, %URV, and Accuracy EU fields to obtain the total accuracy of the asset.",
+      "maxLength": 15
+    },
+    "eq8": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Eq8",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Asset Extra Field #8",
+      "maxLength": 10
+    },
+    "startmeasure": {
+      "searchType": "EXACT",
+      "scale": 2,
+      "subType": "DECIMAL",
+      "title": "Start Measure",
+      "persistent": true,
+      "type": "number",
+      "remarks": "A value that identifies the start of the linear asset.  The absolute value of the end measure minus the start measure will determine the length of the linear asset.  The start measure and the end measure also determine the boundary measures for any features or relationships applied to the asset.",
+      "maxLength": 11
+    },
+    "devicetype": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Device Type",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Device Type",
+      "maxLength": 50
+    },
+    "pluscisinhousecal": {
+      "default": false,
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "Internal Calibration",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "When selected indicates that this tool is calibrated in house. The default is cleared."
+    },
+    "pluscvendor": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Calibration Vendor",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Vendor/Facility that does the actual calibration.",
+      "maxLength": 12
+    },
+    "rotsuspacct": {
+      "searchType": "WILDCARD",
+      "subType": "GL",
+      "title": "Rotating Suspense Account",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Rotating Repairs Suspense Account.",
+      "maxLength": 23
+    },
+    "totunchargedcost": {
+      "default": 0.0,
+      "searchType": "EXACT",
+      "scale": 2,
+      "subType": "AMOUNT",
+      "title": "Total Uncharged Cost",
+      "persistent": true,
+      "type": "number",
+      "remarks": "Uncharged Cost Total",
+      "maxLength": 11
+    },
+    "children": {
+      "default": false,
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "Children",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "Has children"
+    },
+    "toolrate": {
+      "searchType": "EXACT",
+      "scale": 2,
+      "subType": "AMOUNT",
+      "title": "Tool Rate",
+      "persistent": true,
+      "type": "number",
+      "remarks": "Tool Rate",
+      "maxLength": 11
+    },
+    "adjustedlifedate": {
+      "searchType": "EXACT",
+      "subType": "DATE",
+      "title": "Adjusted life",
+      "persistent": true,
+      "type": "string",
+      "remarks": "The date that the asset reaches the adjusted useful life date. This date is calculated by plans or asset expected life."
+    },
+    "pluscismteclass_description": {
+      "type": "string"
+    },
+    "href": {
+      "type": "string"
+    },
+    "pluscoprgeto": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "To",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Enter the maximum numeric value of the operating range of the tool. This field is used in conjuction with the Operating Range From field.",
+      "maxLength": 15
+    },
+    "mainthierchy": {
+      "default": false,
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "Maintain Hierarchy",
+      "persistent": true,
+      "type": "boolean",
+      "hasList": true,
+      "remarks": "Maintain Hierarchy"
+    },
+    "methodname": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Scoring Method",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "The scoring method applied to the asset.",
+      "maxLength": 50
+    },
+    "modelid": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Import ID",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Import ID Typically from a BIM model or COBie data set.",
+      "maxLength": 45
+    },
+    "enddescription": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Asset End",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Free-form text describing the end of this linear asset.",
+      "maxLength": 100
+    },
+    "ancestor": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Ancestor",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Root Parent",
+      "maxLength": 25
+    },
+    "binnum": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Bin",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Bin Number (Rotable Asset).",
+      "maxLength": 8
+    },
+    "depreciationpending": {
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "Depreciation Pending",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "Indicates that generation of the depreciation schedule is pending final receipt or invoice of the PO that this rotating asset was purchased on."
+    },
+    "estendoflife": {
+      "searchType": "EXACT",
+      "subType": "DATE",
+      "title": "Estimated EOL",
+      "persistent": true,
+      "type": "string",
+      "remarks": "The date when the asset reaches its end of life. This date is based on the condition of the asset."
+    },
+    "replacecost": {
+      "default": 0.0,
+      "searchType": "EXACT",
+      "scale": 2,
+      "subType": "AMOUNT",
+      "title": "Replacement Cost",
+      "persistent": true,
+      "type": "number",
+      "remarks": "Replacement Cost",
+      "maxLength": 11
+    },
+    "industryhealthgrade": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Industry Standard Health Grade",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Industry standard health grade in alphanumeric format",
+      "maxLength": 20
+    },
+    "lastauditdate": {
+      "searchType": "EXACT",
+      "subType": "DATETIME",
+      "title": "Last Audit Date",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Asset last audited date"
+    },
+    "priority": {
+      "searchType": "EXACT",
+      "maximum": 2147483647.0,
+      "subType": "INTEGER",
+      "title": "Priority",
+      "persistent": true,
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "remarks": "Asset Priority - copied to Work Order when entered.",
+      "maxLength": 11
+    },
+    "groupname": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Meter Group",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "All meters belonging to this asset's metergroup are automatically associated with this Asset in the AssetMeter object. Additions to the meter group may also be added to this Asset's AssetMeters.",
+      "maxLength": 10
+    },
+    "pluscismteclass": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "M&TE Classification",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "If the Is (M&TE) checkbox is selected, specify the classification for tool.",
+      "maxLength": 80
+    },
+    "saddresscode": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Service Address",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "The address code identifies a service address. It must be unique by site for each service address.",
+      "maxLength": 25
+    },
+    "pluscclass_description": {
+      "type": "string"
+    },
+    "ahcaworktype": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Work Type",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Workorder work type",
+      "maxLength": 5
+    },
+    "status": {
+      "default": "!NOT READY!",
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Status",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Status of the asset, for example, not ready, operating, or decommissioned.",
+      "maxLength": 20
+    },
+    "pluscassetdept": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Asset Department",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Enter an asset department or click Select Value and choose one from the list.",
+      "maxLength": 80
+    },
+    "plusciscondesc": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Is Contaminated Description",
+      "persistent": true,
+      "type": "string",
+      "remarks": "This field is available when the Is Contaminated? Field is selected. It is used to enter a description of the contamination or other pertinent information.",
+      "maxLength": 250
+    },
+    "pluscloopnum": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Loop Number",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Enter the loop number of the asset, if applicable.",
+      "maxLength": 15
+    },
+    "pluscoprgefrom": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Operating Range From",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Enter the minimum numeric value of the operating range of the tool. This field is used in conjuction with the Operating Range To field.",
+      "maxLength": 15
+    },
+    "manufacturer": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Manufacturer",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Manufacturer Number",
+      "maxLength": 12
+    },
+    "totdowntime": {
+      "default": 0.0,
+      "searchType": "EXACT",
+      "scale": 0,
+      "subType": "DURATION",
+      "title": "Total Downtime",
+      "persistent": true,
+      "type": "number",
+      "remarks": "Total Downtime",
+      "maxLength": 8
+    },
+    "startdescription": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Asset Start",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Free-form text describing the start of this linear asset.",
+      "maxLength": 100
+    },
+    "ahcawostatus": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "WO Status",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Condition assessment work order status",
+      "maxLength": 16
+    },
+    "pluscpmextdate": {
+      "default": false,
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "Extend Date",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "This check box is selected if the date of the associated PM is extended."
+    },
+    "vendor": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Vendor",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Manufacturer-Vendor Code",
+      "maxLength": 12
+    },
+    "assetnum": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Asset",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Asset Number",
+      "maxLength": 25
+    },
+    "disabled": {
+      "default": false,
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "Disabled",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "Is this record active?"
+    },
+    "doclinks": {
+      "objectName": "DOCLINKS",
+      "type": "array",
+      "items": {
+        "definition": {
+          "subSchema": {
+            "$ref": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapiassetspare/doclinks"
+          }
+        },
+        "type": "object"
+      },
+      "cardinality": "UNDEFINED",
+      "relation": "DOCLINKS"
+    },
+    "assettype": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Type",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "The predefined type of this asset.",
+      "maxLength": 50
+    },
+    "conditioncode": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Condition Code",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "The item condition of the asset",
+      "maxLength": 30
+    },
+    "pluscsumdir_description": {
+      "type": "string"
+    },
+    "changeby": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Changed By",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Last Modified By",
+      "maxLength": 100
+    },
+    "endmeasure": {
+      "searchType": "EXACT",
+      "scale": 2,
+      "subType": "DECIMAL",
+      "title": "End Measure",
+      "persistent": true,
+      "type": "number",
+      "remarks": "A value that identifies the end of the linear asset.  The absolute value of the end measure minus the start measure will determine the length of the linear asset.  The start measure and the end measure also determine the boundary measures for any features or relationships applied to the asset.",
+      "maxLength": 11
+    },
+    "assettag": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Asset Tag",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Asset Tag Number",
+      "maxLength": 64
+    },
+    "expectedlife": {
+      "default": 0,
+      "searchType": "EXACT",
+      "maximum": 2147483647.0,
+      "subType": "INTEGER",
+      "title": "Expected life in years",
+      "persistent": true,
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "remarks": "Expected life of the asset, expressed in years.  This value is based on the typical useful life that a manufacturer or industry standard recommends for an asset or asset type.",
+      "maxLength": 11
+    },
+    "shiftnum": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Shift",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Shift of the calendar",
+      "maxLength": 8
+    },
+    "sendersysid": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Sender System ID",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Column used by ERP-Integration (APIs)",
+      "maxLength": 50
+    },
+    "statusdate": {
+      "searchType": "EXACT",
+      "subType": "DATETIME",
+      "title": "Last Changed Date",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Asset Status Date"
+    },
+    "pluscoprgeeu_description": {
+      "type": "string"
+    },
+    "budgetcost": {
+      "default": 0.0,
+      "searchType": "EXACT",
+      "scale": 2,
+      "subType": "AMOUNT",
+      "title": "Budgeted",
+      "persistent": true,
+      "type": "number",
+      "remarks": "Budgeted Cost Of Work For The Year",
+      "maxLength": 11
+    },
+    "tloamhash": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Partition ID",
+      "persistent": true,
+      "type": "string",
+      "remarks": "The unique ID which is used to identify a partition from a discovery perspective.  This field can be used by reconciliation to link and audit authorized partitions.",
+      "maxLength": 192
+    },
+    "autowogen": {
+      "default": false,
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "Automatically Generate Work Orders",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "Flag that indicates whether to start the wogen process when meter frequency is reached for an asset"
+    },
+    "sourcesysid": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Source System ID",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Source System ID",
+      "maxLength": 10
+    },
+    "pluscassetdept_description": {
+      "type": "string"
+    },
+    "sparepart": {
+      "objectName": "SPAREPART",
+      "type": "array",
+      "items": {
+        "definition": {
+          "subSchema": {
+            "$ref": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapiassetspare/sparepart"
+          }
+        },
+        "type": "object"
+      },
+      "cardinality": "MULTIPLE",
+      "relation": "SPAREPART"
+    },
+    "calnum": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Calendar",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Calendar Code",
+      "maxLength": 8
+    },
+    "ownersysid": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Owner System ID",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Owner System ID",
+      "maxLength": 10
+    },
+    "ytdcost": {
+      "default": 0.0,
+      "searchType": "EXACT",
+      "scale": 2,
+      "subType": "AMOUNT",
+      "title": "YTD Cost",
+      "persistent": true,
+      "type": "number",
+      "remarks": "Year To Date Cost",
+      "maxLength": 11
+    },
+    "pmnextfaildt": {
+      "searchType": "EXACT",
+      "subType": "DATETIME",
+      "title": "Predicted next failure date",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Predicted next failure date from Prescriptive Maintenance on Cloud"
+    },
+    "ahcaresultnum": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Inspection Result",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Condition assessment inspection result",
+      "maxLength": 12
+    },
+    "moved": {
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "Moved",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "flag indicates active or moved"
+    },
+    "toolcontrolaccount": {
+      "searchType": "WILDCARD",
+      "subType": "GL",
+      "title": "Control Account",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Control Account",
+      "maxLength": 23
+    },
+    "pluscismte": {
+      "default": false,
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "Is M&TE",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "When selected, indicates that the selected equipment is a piece of measurement and test equipment. The default for this check box is cleared (not M&TE)."
+    },
+    "assethealth": {
+      "searchType": "EXACT",
+      "scale": 2,
+      "subType": "DECIMAL",
+      "title": "Health",
+      "persistent": true,
+      "type": "number",
+      "remarks": "The health score for the asset. This score is calculated and applied to the asset from the Reliability Engineer work center.",
+      "maxLength": 13
+    },
+    "totalcost": {
+      "default": 0.0,
+      "searchType": "EXACT",
+      "scale": 2,
+      "subType": "AMOUNT",
+      "title": "Total Cost",
+      "persistent": true,
+      "type": "number",
+      "remarks": "Total Cost",
+      "maxLength": 11
+    },
+    "ahcapmnum": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "PM",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Condition assessment PM",
+      "maxLength": 8
+    },
+    "_rowstamp": {
+      "type": "string"
+    },
+    "pluscduedate": {
+      "searchType": "EXACT",
+      "subType": "DATETIME",
+      "title": "Calibration Due Date",
+      "persistent": true,
+      "type": "string",
+      "remarks": "The date that the next 'Cal' work type PM will be generated"
+    },
+    "tloampartition": {
+      "default": false,
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "Partition",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "Is this asset a partition?"
+    },
+    "siteid": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Site",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Site Identifier",
+      "maxLength": 8
+    },
+    "unchargedcost": {
+      "default": 0.0,
+      "searchType": "EXACT",
+      "scale": 2,
+      "subType": "AMOUNT",
+      "title": "Uncharged Cost",
+      "persistent": true,
+      "type": "number",
+      "remarks": "Uncharged Cost",
+      "maxLength": 11
+    },
+    "pluscmodelnum": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Model Number",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Enter the model number of the tool, if applicable. This field may be populated from the Assets (Cal) application.",
+      "maxLength": 8
+    },
+    "ahcarevision": {
+      "searchType": "EXACT",
+      "maximum": 2147483647.0,
+      "subType": "INTEGER",
+      "title": "Revision",
+      "persistent": true,
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "remarks": "Condition assessment inspectin form revision",
+      "maxLength": 11
+    },
+    "assetuid": {
+      "searchType": "EXACT",
+      "maximum": 2147483647.0,
+      "subType": "BIGINT",
+      "title": "ASSETUID",
+      "persistent": true,
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "uniqueid": true,
+      "remarks": "Unique Identifier",
+      "maxLength": 11
+    },
+    "status_description": {
+      "type": "string"
+    },
+    "ahcapmnextduedate": {
+      "searchType": "EXACT",
+      "subType": "DATE",
+      "title": "Next Due Date",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Condition assessment next due date"
+    },
+    "returnedtovendor": {
+      "default": false,
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "Returned To Vendor",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "Indicates whether the current asset was returned to the responsible vendor."
+    },
+    "lrm": {
+      "searchType": "EXACT",
+      "subType": "UPPER",
+      "title": "LRM",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "The Linear Referencing Method for this asset.  Defined using the Add/Modify Linear Referencing Methods Action, an LRM is a means for locating any point (e.g. feature, relationship, work) along the linear asset using a measure and a known point.  Changing the LRM is not recommended unless the base unit of measure is the same in the new LRM.",
+      "maxLength": 25
+    },
+    "changedate": {
+      "searchType": "EXACT",
+      "subType": "DATETIME",
+      "title": "Changed Date",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Last Modified Date"
+    },
+    "templateid": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Asset Template",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Identifies the asset template. Enter a value to identify a new asset template. This value must be unique for all asset templates.",
+      "maxLength": 12
+    },
+    "orgid": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Organization",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Organization Identifier",
+      "maxLength": 8
+    },
+    "pluscsolution": {
+      "default": false,
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "Buffer Solution Flag",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "Buffer Solution Flag"
+    },
+    "ahcainspformnum": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Inspection Form",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Condition assessment inspection form",
+      "maxLength": 12
+    },
+    "ahcawonum": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Work Order",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Condition assessment work order",
+      "maxLength": 25
+    },
+    "itemnum": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Rotating Item",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Inventory Item Number",
+      "maxLength": 30
+    },
+    "condition": {
+      "searchType": "EXACT",
+      "scale": 2,
+      "subType": "DECIMAL",
+      "title": "Condition",
+      "persistent": true,
+      "type": "number",
+      "remarks": "Condition of the asset.",
+      "maxLength": 6
+    },
+    "ahcalastcompdate": {
+      "searchType": "EXACT",
+      "subType": "DATETIME",
+      "title": "Completion Date",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Condition assessment last completion date"
+    },
+    "lastauditby": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Last Audit By",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Asset last audit done by",
+      "maxLength": 100
+    },
+    "itemsetid": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Item Set",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Set identifier for the item.",
+      "maxLength": 8
+    },
+    "_id": {
+      "type": "string"
+    },
+    "plusclploc": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Loop Location",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Defines the location number of the associated Loop Calibration record. To modify a loop location, click Move/Modify Assets or from the Select Action menu, select Move/Modify Assets.",
+      "maxLength": 25
+    },
+    "eq24": {
+      "searchType": "EXACT",
+      "scale": 2,
+      "subType": "DECIMAL",
+      "title": "Eq24",
+      "persistent": true,
+      "type": "number",
+      "remarks": "Asset Extra Field #24",
+      "maxLength": 16
+    },
+    "islinear": {
+      "default": false,
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "Linear",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "When checked, identifies an asset as a linear asset (e.g. road, railway)."
+    },
+    "eq23": {
+      "searchType": "EXACT",
+      "subType": "DATETIME",
+      "title": "Eq23",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Asset Extra Field #23"
+    },
+    "iscalibration": {
+      "default": false,
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "Calibration",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "Determines whether an asset is calibrated. If you select this checkbox, the calibration details are available. Specify the calibration details for the asset."
+    },
+    "serialnum": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Serial #",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Asset Serial Number",
+      "maxLength": 64
+    },
+    "description": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Description",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Describes the asset. To enter or view additional information, click the Long Description button.",
+      "maxLength": 100
+    },
+    "externalrefid": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "External Reference ID",
+      "persistent": true,
+      "type": "string",
+      "remarks": "External Reference ID",
+      "maxLength": 10
+    },
+    "pluscsumdir": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Applied As",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Enter the direction of the accuracy fields (%Span, %URV, and %Reading). Valid entries are  +, -, and +/-.",
+      "maxLength": 12
+    },
+    "defaultrepfac": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Default Repair Facility",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "The default repair facility that is assigned to work orders generated for PMs and Condition Monitoring. The repair facility can be changed during the manual work order generation process.",
+      "maxLength": 25
+    },
+    "direction_description": {
+      "type": "string"
+    },
+    "_imagelibref": {
+      "type": "string"
+    },
+    "plusciscontam": {
+      "default": false,
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "Is Contaminated",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "When selected, indicates that this tool is contaminated and allows you to enter a description of the contamination. The default is this field is cleared."
+    },
+    "warrantyexpdate": {
+      "searchType": "EXACT",
+      "subType": "DATE",
+      "title": "Warranty Expiration Date",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Warranty Expiration Date"
+    },
+    "ahcajpnum": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Job Plan",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Condition assessment job plan",
+      "maxLength": 12
+    },
+    "direction": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Direction",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Direction of this linear asset, for example North, South, East or West",
+      "maxLength": 30
+    },
+    "eq12": {
+      "searchType": "EXACT",
+      "scale": 2,
+      "subType": "AMOUNT",
+      "title": "Eq12",
+      "persistent": true,
+      "type": "number",
+      "remarks": "Asset Extra Field #12",
+      "maxLength": 11
+    },
+    "eq11": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Eq11",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Asset Extra Field #11",
+      "maxLength": 10
+    },
+    "eq10": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Eq10",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Asset Extra Field #10",
+      "maxLength": 10
+    },
+    "pluscclass": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Class",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Enter a value or click Select Value and choose an asset classification of the tool.",
+      "maxLength": 12
+    },
+    "classstructureid": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Class Structure",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Class Structure Identifier",
+      "maxLength": 25
+    },
+    "pluscsumread": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "% READING",
+      "persistent": true,
+      "type": "string",
+      "remarks": "This field is summed with the %Span, %URV, and Accuracy EU fields to obtain the total accuracy of the asset.",
+      "maxLength": 15
+    },
+    "pluscoprgeeu": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Units",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Enter the engineering units for the Operating Range values or click Select Value and choose the units from the list.",
+      "maxLength": 15
+    },
+    "ahcainspstatus": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Inspection Status",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Condition assessment inspection status",
+      "maxLength": 20
+    },
+    "deviceid": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Device Id",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Device Id",
+      "maxLength": 50
+    },
+    "invcost": {
+      "default": 0.0,
+      "searchType": "EXACT",
+      "scale": 2,
+      "subType": "AMOUNT",
+      "title": "Inventory Cost",
+      "persistent": true,
+      "type": "number",
+      "remarks": "Cost on WO or PO Line items flagged as CHARGESTORE",
+      "maxLength": 11
+    },
+    "purchaseprice": {
+      "default": 0.0,
+      "searchType": "EXACT",
+      "scale": 2,
+      "subType": "AMOUNT",
+      "title": "Purchase Price",
+      "persistent": true,
+      "type": "number",
+      "remarks": "Purchase Price",
+      "maxLength": 11
+    },
+    "isrunning": {
+      "default": true,
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "Asset Up",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "Asset Status (Running-Not Running)"
+    },
+    "glaccount": {
+      "searchType": "WILDCARD",
+      "subType": "GL",
+      "title": "GL Account",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "GL Account Code for the Asset",
+      "maxLength": 23
+    },
+    "itemtype": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Item Type",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Item Type",
+      "maxLength": 15
+    },
+    "failurecode": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Failure Class",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Indicates Top Level Failure Hierarchy",
+      "maxLength": 8
+    },
+    "pluscsumurv": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "%URV",
+      "persistent": true,
+      "type": "string",
+      "remarks": "This field is summed with the %Span, %Reading, and Accuracy EU fields to obtain the total accuracy of the asset.",
+      "maxLength": 15
+    },
+    "assetid": {
+      "searchType": "EXACT",
+      "maximum": 2147483647.0,
+      "subType": "BIGINT",
+      "title": "Asset",
+      "persistent": true,
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "remarks": "unique id",
+      "maxLength": 11
+    },
+    "defaultrepfacsiteid": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Repair Facility Site",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "The site for the repair facility.",
+      "maxLength": 8
+    },
+    "well_maintained": {
+      "searchType": "EXACT",
+      "maximum": 2147483647.0,
+      "subType": "INTEGER",
+      "title": "Prescriptive Maintenance on Cloud WELL_MAINTAINED",
+      "persistent": true,
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "remarks": "An attribute that is used in Prescriptive Maintenance on Cloud to specify the number of days before the next predicted failure date that scheduled maintenance can occur and the asset can be categorized as well maintained",
+      "maxLength": 11
+    },
+    "pluscphyloc": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Physical Location",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Actual physical location of the asset.",
+      "maxLength": 250
+    },
+    "location": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Location",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Asset Location",
+      "maxLength": 25
+    },
+    "lastahscoredate": {
+      "searchType": "EXACT",
+      "subType": "DATETIME",
+      "title": "Last Scoring Date",
+      "persistent": true,
+      "type": "string",
+      "remarks": "The last date that health score getting updated"
+    }
+  },
+  "required": [
+    "assetid",
+    "assetnum",
+    "changeby",
+    "changedate",
+    "moved",
+    "orgid",
+    "siteid"
+  ]
+}

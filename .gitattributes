@@ -1,0 +1,12 @@
+# Normalize line endings to LF in the repo, checkout as-is on all platforms
+* text=auto eol=lf
+
+# Binaries — never touch line endings
+*.docx binary
+*.xlsx binary
+*.png  binary
+*.jpg  binary
+*.pdf  binary
+*.zip  binary
+*.bin  binary
+*.sqlite3 binary

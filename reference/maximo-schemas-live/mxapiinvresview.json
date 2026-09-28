@@ -1,0 +1,116 @@
+{
+ "resource": "MXAPIINVRESVIEW",
+ "description": "Inventory reserve view for bin",
+ "pk": [
+  "siteid",
+  "requestnum"
+ ],
+ "title": "INVRESVIEW",
+ "type": "object",
+ "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/mxapiinvresview",
+ "properties": {
+  "requestnum": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Request",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Unique identification number that is generated for each reservation.",
+   "maxLength": 20
+  },
+  "localref": {
+   "type": "string"
+  },
+  "binnum": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Default Bin",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The identifier of default bin of inventory",
+   "maxLength": 8
+  },
+  "record_descriptor": {
+   "type": "string",
+   "title": "Record/Object Descriptor"
+  },
+  "orgid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Organization",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Organization Identifier",
+   "maxLength": 8
+  },
+  "wonum": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Work Order",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Work order number for which this item is reserved.",
+   "maxLength": 25
+  },
+  "restype": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Reservation Type",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Specify the type of reservation, depending on whether it is a firm request for material or not (hard or soft). The reservation type may also be set by automatic processing (APHARD or APSOFT), where a calculation of the required date of the reservation determines the reservation type.",
+   "maxLength": 16
+  },
+  "_rowstamp": {
+   "type": "string"
+  },
+  "mrnum": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Requisition",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Requisition number associated with this transaction. Click the Select Value button to choose a requisition.",
+   "maxLength": 8
+  },
+  "_imagelibref": {
+   "type": "string"
+  },
+  "siteid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Site",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Site Identifier",
+   "maxLength": 8
+  },
+  "location": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Storeroom",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Storeroom location of the reserved item.",
+   "maxLength": 25
+  },
+  "href": {
+   "type": "string",
+   "title": "INVRESVIEW object reference"
+  },
+  "_id": {
+   "type": "string"
+  }
+ },
+ "required": [
+  "orgid",
+  "requestnum",
+  "restype",
+  "siteid"
+ ]
+}

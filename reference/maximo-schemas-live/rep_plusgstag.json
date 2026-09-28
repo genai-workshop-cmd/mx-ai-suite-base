@@ -1,0 +1,136 @@
+{
+ "resource": "REP_PLUSGSTAG",
+ "description": "Standard Action Groups (Oil) Details",
+ "pk": [
+  "stdactgrpnum"
+ ],
+ "title": "PLUSGSTDACTGRP",
+ "type": "object",
+ "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/rep_plusgstag",
+ "uniqueid": "plusgstdactgrpid",
+ "properties": {
+  "owner": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Owner",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The owner of the standard action group. To change ownership, use the Select Owner action or the Take Ownership action.",
+   "maxLength": 100
+  },
+  "stdactgrpnum": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Standard Action Group",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Identifies a standard action group.",
+   "maxLength": 10
+  },
+  "status_description": {
+   "type": "string"
+  },
+  "historyflag": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "History",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "History Flag"
+  },
+  "localref": {
+   "type": "string"
+  },
+  "plusgstdactgrpid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Unique Id",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "uniqueid": true,
+   "remarks": "Unique Id",
+   "maxLength": 11
+  },
+  "description": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Description",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The description of this standard action group.",
+   "maxLength": 100
+  },
+  "record_descriptor": {
+   "type": "string",
+   "title": "Record/Object Descriptor"
+  },
+  "ownergroup": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Owner Group",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The group that owns the standard action group record. To change ownership, use the Select Owner action or the Take Ownership action.",
+   "maxLength": 8
+  },
+  "orgid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Organization",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The organization that is associated with the standard action group.",
+   "maxLength": 8
+  },
+  "statusdate": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Status Date",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The date when the standard action group was created or its status was changed through the Change Status action."
+  },
+  "_rowstamp": {
+   "type": "string"
+  },
+  "_imagelibref": {
+   "type": "string"
+  },
+  "siteid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Site",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Site associated with the standard action group.",
+   "maxLength": 8
+  },
+  "href": {
+   "type": "string",
+   "title": "PLUSGSTDACTGRP object reference"
+  },
+  "_id": {
+   "type": "string"
+  },
+  "status": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Status",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Status of the standard action group. Valid values are in the PLUSGSTACGRPSTATUS domain. The default value is Draft.",
+   "maxLength": 16
+  }
+ },
+ "required": [
+  "status",
+  "statusdate",
+  "stdactgrpnum"
+ ]
+}

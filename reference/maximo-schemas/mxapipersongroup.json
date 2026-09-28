@@ -1,0 +1,99 @@
+{
+  "resource": "MXAPIPERSONGROUP",
+  "description": "PERSONGROUP",
+  "pk": [
+    "persongroup"
+  ],
+  "title": "PERSONGROUP",
+  "type": "object",
+  "$ref": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapipersongroup",
+  "uniqueid": "persongroupid",
+  "properties": {
+    "persongroupteam": {
+      "objectName": "PERSONGROUPTEAM",
+      "type": "array",
+      "items": {
+        "definition": {
+          "subSchema": {
+            "$ref": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapipersongroup/persongroupteam"
+          }
+        },
+        "type": "object"
+      },
+      "cardinality": "",
+      "relation": "PERSONGROUPTEAM_NONCNSLTNT"
+    },
+    "_rowstamp": {
+      "type": "string"
+    },
+    "description_longdescription": {
+      "searchType": "WILDCARD",
+      "subType": "LONGALN",
+      "title": "Details",
+      "type": "string",
+      "remarks": "long description for description attribute",
+      "maxLength": 32000
+    },
+    "localref": {
+      "type": "string"
+    },
+    "userteam": {
+      "default": false,
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "Team Of Users?",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "Team Of Users"
+    },
+    "_imagelibref": {
+      "type": "string"
+    },
+    "iscrewworkgroup": {
+      "default": false,
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "Crew Work Group",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "Specifies whether the work group can be used in Crew applications. If the check box is  selected, the resource can be used. If the check box is cleared (the default), the resource cannot be used."
+    },
+    "persongroup": {
+      "default": "&AUTOKEY&",
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Person Group",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Identifier of the person group record.",
+      "maxLength": 8
+    },
+    "description": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Description",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Description of the person group record.",
+      "maxLength": 100
+    },
+    "href": {
+      "type": "string"
+    },
+    "_id": {
+      "type": "string"
+    },
+    "persongroupid": {
+      "searchType": "EXACT",
+      "maximum": 2147483647.0,
+      "subType": "BIGINT",
+      "title": "Unique Id",
+      "persistent": true,
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "uniqueid": true,
+      "remarks": "Unique Id",
+      "maxLength": 11
+    }
+  }
+}

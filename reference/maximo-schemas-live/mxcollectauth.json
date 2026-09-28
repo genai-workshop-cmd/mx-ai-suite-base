@@ -1,0 +1,169 @@
+{
+ "resource": "MXCOLLECTAUTH",
+ "description": "Collection Authorization Definition",
+ "pk": [
+  "groupname",
+  "collectionnum"
+ ],
+ "title": "COLLECTIONAUTH",
+ "type": "object",
+ "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/mxcollectauth",
+ "uniqueid": "collectionauthid",
+ "properties": {
+  "sridlocationhide": {
+   "searchType": "EXACT",
+   "subType": "UPPER",
+   "title": "Hidden Location Restriction",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Foreign key to SecurityRestrict for hidden Location object",
+   "maxLength": 12
+  },
+  "collectionauthid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Unique Id",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "uniqueid": true,
+   "remarks": "Unique Id",
+   "maxLength": 11
+  },
+  "sridciqual": {
+   "searchType": "EXACT",
+   "subType": "UPPER",
+   "title": "Qualified CI Restriction",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Foreign key to SecurityRestrict for qualified CI object",
+   "maxLength": 12
+  },
+  "localref": {
+   "type": "string"
+  },
+  "collectionnum": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Collection",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Collection to which the group has access",
+   "maxLength": 8
+  },
+  "sridcihide": {
+   "searchType": "EXACT",
+   "subType": "UPPER",
+   "title": "Hidden CI Restriction",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Foreign key to SecurityRestrict for hidden CI object",
+   "maxLength": 12
+  },
+  "sridlocationqual": {
+   "searchType": "EXACT",
+   "subType": "UPPER",
+   "title": "Qualified Location Restriction",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Foreign key to SecurityRestrict for qualified Location object",
+   "maxLength": 12
+  },
+  "record_descriptor": {
+   "type": "string",
+   "title": "Record/Object Descriptor"
+  },
+  "groupname": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Group Name",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Security Group having access to this collection",
+   "maxLength": 30
+  },
+  "sridassetqual": {
+   "searchType": "EXACT",
+   "subType": "UPPER",
+   "title": "Qualified Asset Restriction",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Foreign key to SecurityRestrict for qualified Asset object",
+   "maxLength": 12
+  },
+  "_rowstamp": {
+   "type": "string"
+  },
+  "sridaahide": {
+   "searchType": "EXACT",
+   "subType": "UPPER",
+   "title": "Hidden AUTOATTRUPDATE Restriction",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Foreign key to SecurityRestrict for hidden AUTOATTRUPDATE object",
+   "maxLength": 12
+  },
+  "sridmaqual": {
+   "searchType": "EXACT",
+   "subType": "UPPER",
+   "title": "Qualified MULTIASSETLOCCI Restriction",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Foreign key to SecurityRestrict for qualified MULTIASSETLOCCI object",
+   "maxLength": 12
+  },
+  "_imagelibref": {
+   "type": "string"
+  },
+  "sridmahide": {
+   "searchType": "EXACT",
+   "subType": "UPPER",
+   "title": "Hidden MULTIASSETLOCCI Restriction",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Foreign key to SecurityRestrict for hidden MULTIASSETLOCCI object",
+   "maxLength": 12
+  },
+  "sridaaqual": {
+   "searchType": "EXACT",
+   "subType": "UPPER",
+   "title": "Qualified AUTOATTRUPDATE Restriction",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Foreign key to SecurityRestrict for qualified AUTOATTRUPDATE restriction",
+   "maxLength": 12
+  },
+  "href": {
+   "type": "string",
+   "title": "COLLECTIONAUTH object reference"
+  },
+  "_id": {
+   "type": "string"
+  },
+  "collectionauthnum": {
+   "default": "&AUTOKEY&",
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Collection Authorization ID",
+   "persistent": true,
+   "type": "string",
+   "remarks": "CollectionAuth name, unique user-readable identifier.",
+   "maxLength": 12
+  },
+  "sridassethide": {
+   "searchType": "EXACT",
+   "subType": "UPPER",
+   "title": "Hidden Asset Restriction",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Foreign key to SecurityRestrict for hidden Asset object",
+   "maxLength": 12
+  }
+ },
+ "required": [
+  "collectionnum",
+  "groupname"
+ ]
+}

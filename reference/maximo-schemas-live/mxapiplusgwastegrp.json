@@ -1,0 +1,114 @@
+{
+ "resource": "MXAPIPLUSGWASTEGRP",
+ "description": "Grouped Waste Management by Storage Location",
+ "title": "PLUSGWASTE_GROUPED_STORAGE",
+ "type": "object",
+ "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/mxapiplusgwastegrp",
+ "properties": {
+  "record_count": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "INTEGER",
+   "title": "Record Count",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "Total number of waste records",
+   "maxLength": 11
+  },
+  "localref": {
+   "type": "string"
+  },
+  "wasteunit_description": {
+   "type": "string"
+  },
+  "record_descriptor": {
+   "type": "string",
+   "title": "Record/Object Descriptor"
+  },
+  "orgid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Organization",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Organization",
+   "maxLength": 8
+  },
+  "total_wasteamount": {
+   "searchType": "EXACT",
+   "scale": 2,
+   "subType": "DECIMAL",
+   "title": "Total Waste Amount",
+   "persistent": true,
+   "type": "number",
+   "remarks": "Total waste amount",
+   "maxLength": 20
+  },
+  "storageloc": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Storage Location",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Storage Location",
+   "maxLength": 25
+  },
+  "wastetype_description": {
+   "type": "string"
+  },
+  "_rowstamp": {
+   "type": "string"
+  },
+  "wastetype": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Waste Type",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Waste Type",
+   "maxLength": 30
+  },
+  "_imagelibref": {
+   "type": "string"
+  },
+  "wasteunit": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Waste Unit",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Waste Unit of Measure",
+   "maxLength": 30
+  },
+  "siteid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Site",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Site",
+   "maxLength": 8
+  },
+  "href": {
+   "type": "string",
+   "title": "PLUSGWASTE_GROUPED_STORAGE object reference"
+  },
+  "_id": {
+   "type": "string"
+  },
+  "avg_wasteamount": {
+   "searchType": "EXACT",
+   "scale": 2,
+   "subType": "DECIMAL",
+   "title": "Average Waste Amount",
+   "persistent": true,
+   "type": "number",
+   "remarks": "Average waste amount",
+   "maxLength": 20
+  }
+ }
+}

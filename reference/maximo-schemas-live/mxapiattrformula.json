@@ -1,0 +1,146 @@
+{
+ "resource": "MXAPIATTRFORMULA",
+ "description": "Maximo API Object Structure for formulas",
+ "pk": [
+  "objectname",
+  "attributename"
+ ],
+ "title": "ATTRFORMULA",
+ "type": "object",
+ "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/mxapiattrformula",
+ "uniqueid": "attrformulaid",
+ "properties": {
+  "localref": {
+   "type": "string"
+  },
+  "objectname": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Object Name",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The Maximo business object whose attribute you want to associate with the formula.",
+   "maxLength": 30
+  },
+  "active": {
+   "default": true,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Active",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "When active this formula can be used."
+  },
+  "description": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Description",
+   "persistent": true,
+   "type": "string",
+   "remarks": "A description helps you differentiate this formula from other formulas.",
+   "maxLength": 250
+  },
+  "changedate": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Change Date",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Change Date"
+  },
+  "record_descriptor": {
+   "type": "string",
+   "title": "Record/Object Descriptor"
+  },
+  "attributename": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Attribute Name",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Associates a Maximo business object attribute with the formula.",
+   "maxLength": 80
+  },
+  "attrformulacond": {
+   "objectName": "ATTRFORMULACOND",
+   "type": "array",
+   "items": {
+    "definition": {
+     "subSchema": {
+      "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/mxapiattrformula/attrformulacond"
+     }
+    },
+    "type": "object"
+   },
+   "cardinality": "",
+   "relation": "ATTRFORMULACOND"
+  },
+  "async": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Asynchronous Evaluation",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "When set to Yes, the formula is calculated asynchronously by an Escalation."
+  },
+  "formulaid": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "FORMULA ID",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Unique id to identify a formula",
+   "maxLength": 50
+  },
+  "_rowstamp": {
+   "type": "string"
+  },
+  "classname": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Expression Implementation Class",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Expression Implementation Class",
+   "maxLength": 100
+  },
+  "_imagelibref": {
+   "type": "string"
+  },
+  "formula": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Formula Expression",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Use a formula expression with operators and functions. For example, IF(pressuremeter$lastreading>60, 1, 0)",
+   "maxLength": 2000
+  },
+  "attrformulaid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Unique Id",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "uniqueid": true,
+   "remarks": "Unique Id",
+   "maxLength": 11
+  },
+  "href": {
+   "type": "string",
+   "title": "ATTRFORMULA object reference"
+  },
+  "_id": {
+   "type": "string"
+  }
+ },
+ "required": [
+  "attributename",
+  "objectname"
+ ]
+}

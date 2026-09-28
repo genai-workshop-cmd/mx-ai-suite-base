@@ -1,0 +1,161 @@
+{
+  "resource": "MXAPIASSETSTATUS",
+  "description": "ASSETSTATUS",
+  "pk": [
+    "assetstatusid"
+  ],
+  "title": "ASSETSTATUS",
+  "type": "object",
+  "$ref": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapiassetstatus",
+  "uniqueid": "assetstatusid",
+  "properties": {
+    "calnum": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Calendar",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Calendar Code",
+      "maxLength": 8
+    },
+    "code": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Code",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "The downtime code for this transaction",
+      "maxLength": 12
+    },
+    "localref": {
+      "type": "string"
+    },
+    "changeby": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Changed By",
+      "persistent": true,
+      "type": "string",
+      "remarks": "User Signature",
+      "maxLength": 100
+    },
+    "code_description": {
+      "type": "string"
+    },
+    "operational": {
+      "default": true,
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "Operational",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "Is this downtime Operational or Nonoperational?"
+    },
+    "changedate": {
+      "searchType": "EXACT",
+      "subType": "DATETIME",
+      "title": "Status Date",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Asset Status Change Date"
+    },
+    "orgid": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Organization",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Organization Identifier",
+      "maxLength": 8
+    },
+    "wonum": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Work Order",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Work Order Number",
+      "maxLength": 25
+    },
+    "downtime": {
+      "default": 0.0,
+      "searchType": "EXACT",
+      "scale": 0,
+      "subType": "DURATION",
+      "title": "Downtime",
+      "persistent": true,
+      "type": "number",
+      "remarks": "Standing Time",
+      "maxLength": 8
+    },
+    "_rowstamp": {
+      "type": "string"
+    },
+    "isrunning": {
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "Up",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "Asset Status"
+    },
+    "_imagelibref": {
+      "type": "string"
+    },
+    "assetnum": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Asset",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Asset Number",
+      "maxLength": 25
+    },
+    "assetstatusid": {
+      "searchType": "EXACT",
+      "maximum": 2147483647.0,
+      "subType": "BIGINT",
+      "title": "ASSETSTATUSID",
+      "persistent": true,
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "uniqueid": true,
+      "remarks": "Unique Identifier",
+      "maxLength": 11
+    },
+    "siteid": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Site",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Site Identifier",
+      "maxLength": 8
+    },
+    "location": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Location",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Asset Location when asset status changed.",
+      "maxLength": 25
+    },
+    "href": {
+      "type": "string"
+    },
+    "_id": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "assetnum",
+    "changeby",
+    "changedate",
+    "isrunning",
+    "orgid",
+    "siteid"
+  ]
+}

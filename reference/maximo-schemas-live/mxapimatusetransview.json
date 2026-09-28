@@ -1,0 +1,396 @@
+{
+ "resource": "MXAPIMATUSETRANSVIEW",
+ "description": "View on MATUSETRANS table",
+ "pk": [
+  "siteid",
+  "matusetransid"
+ ],
+ "title": "MATUSETRANSVIEW",
+ "type": "object",
+ "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/mxapimatusetransview",
+ "properties": {
+  "issuetype": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Transaction Type",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Type of transaction, either ISSUE or RETURN. Click the Select Value button to choose a transaction type.",
+   "maxLength": 20
+  },
+  "issueid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Issue Id",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "The ID of the Material Issue record this return is referring to.",
+   "maxLength": 11
+  },
+  "qtyreturned": {
+   "searchType": "EXACT",
+   "scale": 2,
+   "subType": "DECIMAL",
+   "title": "Quantity Returned",
+   "persistent": true,
+   "type": "number",
+   "remarks": "Qty returned for this issue-type ISSUE",
+   "maxLength": 16
+  },
+  "localref": {
+   "type": "string"
+  },
+  "issuetype_description": {
+   "type": "string"
+  },
+  "unitcost": {
+   "default": 0.0,
+   "searchType": "EXACT",
+   "scale": 2,
+   "subType": "AMOUNT",
+   "title": "Unit Cost",
+   "persistent": true,
+   "type": "number",
+   "remarks": "Cost of the item on this transaction.",
+   "maxLength": 11
+  },
+  "exchangerate": {
+   "default": 1.0,
+   "searchType": "EXACT",
+   "scale": 7,
+   "subType": "DECIMAL",
+   "title": "Exchange Rate",
+   "persistent": true,
+   "type": "number",
+   "remarks": "Exchange Rate.",
+   "maxLength": 15
+  },
+  "lotnum": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Lot",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Lot number of the item, if the item is in a lot.",
+   "maxLength": 8
+  },
+  "memo": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Memo",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Brief remark about the issue transaction.",
+   "maxLength": 254
+  },
+  "tositeid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Site",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Site to which the item is being issued. Click the Select Value button to choose a site.",
+   "maxLength": 8
+  },
+  "gldebitacct": {
+   "searchType": "WILDCARD",
+   "subType": "GL",
+   "title": "GL Debit Account",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "GL account being debited when the item is issued. Click the Select Value button to choose a GL account.",
+   "maxLength": 23
+  },
+  "currencycode": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Currency",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Currency the PR is in.",
+   "maxLength": 8
+  },
+  "actualdate": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Actual Date",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Date and time of the issue transaction, which may be different than the time the transaction is recorded in Maximo. Maximo populates the current date and time by default. You can modify the value in this field. Click the Select Date and Time button to use the calendar control."
+  },
+  "langcode": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Language Code",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Language Column",
+   "maxLength": 4
+  },
+  "_rowstamp": {
+   "type": "string"
+  },
+  "_imagelibref": {
+   "type": "string"
+  },
+  "porevisionnum": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "INTEGER",
+   "title": "PO Revision",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "Revision number of the purchase order. Indicates how many times a purchase order has been revised.",
+   "maxLength": 11
+  },
+  "assetnum": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Asset",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Asset number associated with this transaction.",
+   "maxLength": 25
+  },
+  "siteid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Site",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Site Identifier",
+   "maxLength": 8
+  },
+  "href": {
+   "type": "string",
+   "title": "MATUSETRANSVIEW object reference"
+  },
+  "conditioncode": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Condition Code",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Condition code that reflects the current physical condition of the item being issued. Click the Select Value button to choose a condition code.",
+   "maxLength": 30
+  },
+  "refwo": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Work Order",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "This field indicates the referenced work order number.",
+   "maxLength": 25
+  },
+  "rotassetnum": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Rotating Asset",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Identifies the rotating asset number associated with the item being issued.",
+   "maxLength": 25
+  },
+  "linecost": {
+   "default": 0.0,
+   "searchType": "EXACT",
+   "scale": 2,
+   "subType": "AMOUNT",
+   "title": "Line Cost",
+   "persistent": true,
+   "type": "number",
+   "remarks": "Line cost of the transaction, calculated as Unit Cost multiplied by the Quantity of the item.",
+   "maxLength": 11
+  },
+  "issueto": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Issued To",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Person to whom the item, tool, or material is issued. Click the Detail Menu button to choose a person or go to the People application.",
+   "maxLength": 100
+  },
+  "quantity": {
+   "searchType": "EXACT",
+   "scale": 2,
+   "subType": "DECIMAL",
+   "title": "Quantity",
+   "persistent": true,
+   "type": "number",
+   "remarks": "This field indicates the quantity in/out. It is a calculation of items addedand or subtracted.",
+   "maxLength": 16
+  },
+  "qtyrequested": {
+   "default": 0.0,
+   "searchType": "EXACT",
+   "scale": 2,
+   "subType": "DECIMAL",
+   "title": "Requested Quantity",
+   "persistent": true,
+   "type": "number",
+   "remarks": "The quantity requested for the issue.",
+   "maxLength": 16
+  },
+  "storeloc": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Storeroom",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The location of the storeroom.",
+   "maxLength": 25
+  },
+  "binnum": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Bin",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Bin number in this storeroom from which the item is issued.",
+   "maxLength": 8
+  },
+  "glcreditacct": {
+   "searchType": "WILDCARD",
+   "subType": "GL",
+   "title": "GL Credit Account",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "GL account being credited when the item is issued. Click the Select Value button to choose a GL account.",
+   "maxLength": 23
+  },
+  "record_descriptor": {
+   "type": "string",
+   "title": "Record/Object Descriptor"
+  },
+  "transdate": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Transaction Date",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Date and time the transaction was entered in Maximo. This field is read only."
+  },
+  "polinenum": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "INTEGER",
+   "title": "PO Line",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "Line Item Number",
+   "maxLength": 11
+  },
+  "orgid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Organization",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Organization Identifier",
+   "maxLength": 8
+  },
+  "itemnum": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Item",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Item that you want to issue from this storeroom or that you used on a work order.",
+   "maxLength": 30
+  },
+  "hasld": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Has Long Description",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Boolean flag to indicate if there is any long description for this record"
+  },
+  "itemsetid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Item Set",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Item set identifier for this item.",
+   "maxLength": 8
+  },
+  "matusetransid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Usage ID",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "Primary key for the table",
+   "maxLength": 11
+  },
+  "ponum": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "PO",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Purchase Order Number",
+   "maxLength": 8
+  },
+  "location": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Location",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Location to charge for this transaction.",
+   "maxLength": 25
+  },
+  "_id": {
+   "type": "string"
+  },
+  "sourcesysid": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Source System ID",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Source System ID",
+   "maxLength": 10
+  }
+ },
+ "required": [
+  "actualdate",
+  "currencycode",
+  "issuetype",
+  "langcode",
+  "matusetransid",
+  "orgid",
+  "quantity",
+  "siteid",
+  "tositeid",
+  "transdate"
+ ]
+}

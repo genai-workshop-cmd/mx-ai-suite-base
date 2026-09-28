@@ -1,0 +1,96 @@
+{
+ "resource": "MXAPIMPFORMULA",
+ "description": "MEASUREPOINTFORMULA",
+ "pk": [
+  "metername",
+  "siteid",
+  "assetnum",
+  "location"
+ ],
+ "title": "MEASUREPOINTFORMULA",
+ "type": "object",
+ "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/mxapimpformula",
+ "uniqueid": "measurepointformulaid",
+ "properties": {
+  "_rowstamp": {
+   "type": "string"
+  },
+  "localref": {
+   "type": "string"
+  },
+  "measurepointformulaid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Unique Id",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "uniqueid": true,
+   "remarks": "Unique Id",
+   "maxLength": 11
+  },
+  "metername": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Meter",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Name of meter associated with this formula",
+   "maxLength": 10
+  },
+  "_imagelibref": {
+   "type": "string"
+  },
+  "assetnum": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Asset",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Asset number the meter formula refers to",
+   "maxLength": 25
+  },
+  "formula": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Formula",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The formula used to calculate meter value",
+   "maxLength": 2000
+  },
+  "siteid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Site",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Site the meter formula refers to",
+   "maxLength": 8
+  },
+  "location": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Location",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Location the meter formula refers to",
+   "maxLength": 25
+  },
+  "href": {
+   "type": "string",
+   "title": "MEASUREPOINTFORMULA object reference"
+  },
+  "record_descriptor": {
+   "type": "string",
+   "title": "Record/Object Descriptor"
+  },
+  "_id": {
+   "type": "string"
+  }
+ },
+ "required": [
+  "metername"
+ ]
+}

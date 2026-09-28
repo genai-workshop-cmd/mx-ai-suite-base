@@ -1,0 +1,143 @@
+{
+ "resource": "MXAPIINSPACTIONS",
+ "description": "Object Structure for Inspection result allowed actions on mobile app",
+ "pk": [
+  "name",
+  "intobjectname"
+ ],
+ "title": "OSOSLCACTION",
+ "type": "object",
+ "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/mxapiinspactions",
+ "uniqueid": "ososlcactionid",
+ "properties": {
+  "app": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Security App",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Security App",
+   "maxLength": 40
+  },
+  "localref": {
+   "type": "string"
+  },
+  "description": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Description",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Describes action",
+   "maxLength": 200
+  },
+  "optionname": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Option Name",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Option Name.",
+   "maxLength": 25
+  },
+  "record_descriptor": {
+   "type": "string",
+   "title": "Record/Object Descriptor"
+  },
+  "collection": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Collection Action",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Collection Action"
+  },
+  "implname": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Implementation Name",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Implementation Name.",
+   "maxLength": 50
+  },
+  "intobjectname": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Object Structure",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Object Structure",
+   "maxLength": 20
+  },
+  "langcode": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Language Code",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Language Code",
+   "maxLength": 4
+  },
+  "_rowstamp": {
+   "type": "string"
+  },
+  "impltype": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Implementation Type",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Implementation Type.",
+   "maxLength": 20
+  },
+  "ososlcactionid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Unique Id",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "uniqueid": true,
+   "remarks": "Unique Id",
+   "maxLength": 11
+  },
+  "hasld": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Has Long Description",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Boolean flag to indicate if there is any long description for this record"
+  },
+  "_imagelibref": {
+   "type": "string"
+  },
+  "name": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Name",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Relation Property Name.",
+   "maxLength": 20
+  },
+  "href": {
+   "type": "string",
+   "title": "OSOSLCACTION object reference"
+  },
+  "_id": {
+   "type": "string"
+  }
+ },
+ "required": [
+  "app",
+  "langcode"
+ ]
+}

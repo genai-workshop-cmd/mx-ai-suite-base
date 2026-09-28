@@ -1,0 +1,151 @@
+{
+ "resource": "MXAPIMBDBSTATUSINFO",
+ "description": "Maximo API for Mobile DB Status Information",
+ "pk": [
+  "mobiledbstatusinfoid"
+ ],
+ "title": "MOBILEDBSTATUSINFO",
+ "type": "object",
+ "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/mxapimbdbstatusinfo",
+ "uniqueid": "mobiledbstatusinfoid",
+ "properties": {
+  "totalcount": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "INTEGER",
+   "title": "Total Count",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "Total number of records to be processed",
+   "maxLength": 11
+  },
+  "objectstructure": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Object Structure",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Object structure used for data retrieval",
+   "maxLength": 20
+  },
+  "status_description": {
+   "type": "string"
+  },
+  "mobiledbstatusinfoid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Unique Id",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "uniqueid": true,
+   "remarks": "Unique Id",
+   "maxLength": 11
+  },
+  "localref": {
+   "type": "string"
+  },
+  "mobiledbid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Mobile DB ID",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "Reference to the Mobile DB ID",
+   "maxLength": 11
+  },
+  "objectname": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Object Name",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Name of the object being processed",
+   "maxLength": 30
+  },
+  "record_descriptor": {
+   "type": "string",
+   "title": "Record/Object Descriptor"
+  },
+  "_rowstamp": {
+   "type": "string"
+  },
+  "_imagelibref": {
+   "type": "string"
+  },
+  "href": {
+   "type": "string",
+   "title": "MOBILEDBSTATUSINFO object reference"
+  },
+  "_id": {
+   "type": "string"
+  },
+  "errorinfo": {
+   "searchType": "WILDCARD",
+   "subType": "CLOB",
+   "title": "Error Information",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Detailed error information for the object processing",
+   "maxLength": 999999
+  },
+  "totalpages": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "INTEGER",
+   "title": "Total Pages",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "Total number of pages to be downloaded",
+   "maxLength": 11
+  },
+  "recordupdateddate": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Record Updated Date",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Timestamp of last update to this status record. Used by cleanLongRunning and cleanStuckStopping to identify stuck processes with 2-hour timeout"
+  },
+  "downloadedpagecount": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "INTEGER",
+   "title": "Downloaded Page Count",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "Number of pages downloaded so far",
+   "maxLength": 11
+  },
+  "savedquery": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Saved Query",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Saved query used for data retrieval",
+   "maxLength": 50
+  },
+  "status": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Status",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Status of the object processing",
+   "maxLength": 20
+  }
+ },
+ "required": [
+  "mobiledbid",
+  "objectname",
+  "status"
+ ]
+}

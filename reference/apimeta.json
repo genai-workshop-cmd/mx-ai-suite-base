@@ -1,0 +1,3621 @@
+[
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapicntbook",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxapicntbook",
+    "osName": "MXAPICNTBOOK",
+    "authApp": "MXAPICNTBOOK",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxapicntbook"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapivendormstr",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxapivendormstr",
+    "osName": "MXAPIVENDORMSTR",
+    "authApp": "MXAPIVENDORMSTR",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxapivendormstr"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/rep_amcrewt",
+    "defaultPageSize": 100,
+    "useWith": "REPORTING",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/rep_amcrewt",
+    "osName": "REP_AMCREWT",
+    "authApp": "AMCREWT",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/rep_amcrewt"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/apptiositeexp",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/apptiositeexp",
+    "osName": "APPTIOSITEEXP",
+    "authApp": null,
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/apptiositeexp"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxobjectcfg",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxobjectcfg",
+    "osName": "MXOBJECTCFG",
+    "authApp": null,
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxobjectcfg"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapilocrrplan",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxapilocrrplan",
+    "osName": "MXAPILOCRRPLAN",
+    "authApp": "MXAPILOCRRPLAN",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxapilocrrplan"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapicollection",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxapicollection",
+    "osName": "MXAPICOLLECTION",
+    "authApp": "MXAPICOLLECTION",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxapicollection"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapimpformula",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxapimpformula",
+    "osName": "MXAPIMPFORMULA",
+    "authApp": "MXAPIMPFORMULA",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxapimpformula"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxproblem",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxproblem",
+    "osName": "MXPROBLEM",
+    "authApp": null,
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxproblem"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mhinspectionres",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mhinspectionres",
+    "osName": "MHINSPECTIONRES",
+    "authApp": "MHINSPECTION",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mhinspectionres"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapiorganization",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxapiorganization",
+    "osName": "MXAPIORGANIZATION",
+    "authApp": "MXAPIORGANIZATION",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxapiorganization"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapiglconfigure",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxapiglconfigure",
+    "osName": "MXAPIGLCONFIGURE",
+    "authApp": "MXAPIGLCONFIGURE",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxapiglconfigure"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapiaioasset",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxapiaioasset",
+    "osName": "MXAPIAIOASSET",
+    "authApp": "MXAPIAIOASSET",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxapiaioasset"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapiaddress",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxapiaddress",
+    "osName": "MXAPIADDRESS",
+    "authApp": "MXAPIADDRESS",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxapiaddress"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxim",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxim",
+    "osName": "MXIM",
+    "authApp": null,
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxim"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapistoreloc",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxapistoreloc",
+    "osName": "MXAPISTORELOC",
+    "authApp": "MXAPISTORELOC",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxapistoreloc"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapisr",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxapisr",
+    "osName": "MXAPISR",
+    "authApp": "MXAPISR",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxapisr"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapioslcquery",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxapioslcquery",
+    "osName": "MXAPIOSLCQUERY",
+    "authApp": "MXAPIOSLCQUERY",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxapioslcquery"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxoslccommonprops",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxoslccommonprops",
+    "osName": "MXOSLCCOMMONPROPS",
+    "authApp": null,
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxoslccommonprops"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapilocationmeter",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxapilocationmeter",
+    "osName": "MXAPILOCATIONMETER",
+    "authApp": "MXAPILOCATIONMETER",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxapilocationmeter"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/apptioassetexp",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/apptioassetexp",
+    "osName": "APPTIOASSETEXP",
+    "authApp": null,
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/apptioassetexp"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxinventory",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxinventory",
+    "osName": "MXINVENTORY",
+    "authApp": null,
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxinventory"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapioauthclient",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxapioauthclient",
+    "osName": "MXAPIOAUTHCLIENT",
+    "authApp": "MXAPIOAUTHCLIENT",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxapioauthclient"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapiaiostrategy",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxapiaiostrategy",
+    "osName": "MXAPIAIOSTRATEGY",
+    "authApp": "MXAPIAIOSTRATEGY",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxapiaiostrategy"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapidataprofile",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxapidataprofile",
+    "osName": "MXAPIDATAPROFILE",
+    "authApp": "MXAPIDATAPROFILE",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxapidataprofile"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxdomain",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxdomain",
+    "osName": "MXDOMAIN",
+    "authApp": "DOMAINADM",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxdomain"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxendpoint",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxendpoint",
+    "osName": "MXENDPOINT",
+    "authApp": null,
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxendpoint"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapisrguestpolicy",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "searchAttributes": true,
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxapisrguestpolicy",
+    "osName": "MXAPISRGUESTPOLICY",
+    "authApp": "MXAPISRGUESTPOLICY",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxapisrguestpolicy"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapiinvres",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxapiinvres",
+    "osName": "MXAPIINVRES",
+    "authApp": "MXAPIINVRES",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxapiinvres"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxnotification",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxnotification",
+    "osName": "MXNOTIFICATION",
+    "authApp": "NOTIF",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxnotification"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxoslcprovider",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxoslcprovider",
+    "osName": "MXOSLCPROVIDER",
+    "authApp": null,
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxoslcprovider"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapiwfassignment",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxapiwfassignment",
+    "osName": "MXAPIWFASSIGNMENT",
+    "authApp": "MXAPIWFASSIGNMENT",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxapiwfassignment"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapialndomain",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxapialndomain",
+    "osName": "MXAPIALNDOMAIN",
+    "authApp": "MXAPIALNDOMAIN",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxapialndomain"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxasset_l",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxasset_l",
+    "osName": "MXASSET_L",
+    "authApp": null,
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxasset_l"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxoslcresource",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxoslcresource",
+    "osName": "MXOSLCRESOURCE",
+    "authApp": null,
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxoslcresource"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapiinspresult",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxapiinspresult",
+    "osName": "MXAPIINSPRESULT",
+    "authApp": "MXAPIINSPRESULT",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxapiinspresult"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapitkclass",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxapitkclass",
+    "osName": "MXAPITKCLASS",
+    "authApp": "MXAPITKCLASS",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxapitkclass"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/rep_reporting",
+    "defaultPageSize": 100,
+    "useWith": "REPORTING",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/rep_reporting",
+    "osName": "REP_REPORTING",
+    "authApp": "REPORT",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/rep_reporting"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/rep_user",
+    "defaultPageSize": 100,
+    "useWith": "REPORTING",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/rep_user",
+    "osName": "REP_USER",
+    "authApp": "USER",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/rep_user"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapiqueryrecstate",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxapiqueryrecstate",
+    "osName": "MXAPIQUERYRECSTATE",
+    "authApp": "MXAPIQUERYRECSTATE",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxapiqueryrecstate"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapimobpropgroup",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxapimobpropgroup",
+    "osName": "MXAPIMOBPROPGROUP",
+    "authApp": "MXAPIMOBPROPGROUP",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxapimobpropgroup"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapicrontaskdef",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxapicrontaskdef",
+    "osName": "MXAPICRONTASKDEF",
+    "authApp": "MXAPICRONTASKDEF",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxapicrontaskdef"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxpm_workorder",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxpm_workorder",
+    "osName": "MXPM_WORKORDER",
+    "authApp": null,
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxpm_workorder"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapisets",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxapisets",
+    "osName": "MXAPISETS",
+    "authApp": "MXAPISETS",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxapisets"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapiworkzone",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxapiworkzone",
+    "osName": "MXAPIWORKZONE",
+    "authApp": "MXAPIWORKZONE",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxapiworkzone"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapidocinfo",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxapidocinfo",
+    "osName": "MXAPIDOCINFO",
+    "authApp": "MXAPIDOCINFO",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxapidocinfo"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapinumericdomain",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxapinumericdomain",
+    "osName": "MXAPINUMERICDOMAIN",
+    "authApp": "MXAPINUMERICDOMAIN",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxapinumericdomain"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapivendor",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxapivendor",
+    "osName": "MXAPIVENDOR",
+    "authApp": "MXAPIVENDOR",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxapivendor"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/rep_class",
+    "defaultPageSize": 100,
+    "useWith": "REPORTING",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/rep_class",
+    "osName": "REP_CLASS",
+    "authApp": "ASSETCAT",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/rep_class"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapilocancestor",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxapilocancestor",
+    "osName": "MXAPILOCANCESTOR",
+    "authApp": "MXAPILOCANCESTOR",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxapilocancestor"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapiassetrrplan",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxapiassetrrplan",
+    "osName": "MXAPIASSETRRPLAN",
+    "authApp": "MXAPIASSETRRPLAN",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxapiassetrrplan"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapiaioassetscore",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxapiaioassetscore",
+    "osName": "MXAPIAIOASSETSCORE",
+    "authApp": "MXAPIAIOASSETSCORE",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxapiaioassetscore"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapimeterdata",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxapimeterdata",
+    "osName": "MXAPIMETERDATA",
+    "authApp": "MXAPIMETERDATA",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxapimeterdata"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapiassetattribute",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxapiassetattribute",
+    "osName": "MXAPIASSETATTRIBUTE",
+    "authApp": "MXAPIASSETATTRIBUTE",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxapiassetattribute"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxcraft",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxcraft",
+    "osName": "MXCRAFT",
+    "authApp": null,
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxcraft"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapisrguestdomain",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "searchAttributes": true,
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxapisrguestdomain",
+    "osName": "MXAPISRGUESTDOMAIN",
+    "authApp": "MXAPISRGUESTDOMAIN",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxapisrguestdomain"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/rep_lictrack",
+    "defaultPageSize": 100,
+    "useWith": "REPORTING",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/rep_lictrack",
+    "osName": "REP_LICTRACK",
+    "authApp": "LICTRACK",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/rep_lictrack"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapiinspformstatus",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxapiinspformstatus",
+    "osName": "MXAPIINSPFORMSTATUS",
+    "authApp": "MXAPIINSPFORMSTATUS",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxapiinspformstatus"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapisolution",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxapisolution",
+    "osName": "MXAPISOLUTION",
+    "authApp": "MXAPISOLUTION",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxapisolution"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapilbslochistory",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxapilbslochistory",
+    "osName": "MXAPILBSLOCHISTORY",
+    "authApp": "MXAPILBSLOCHISTORY",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxapilbslochistory"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/rep_amcrew",
+    "defaultPageSize": 100,
+    "useWith": "REPORTING",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/rep_amcrew",
+    "osName": "REP_AMCREW",
+    "authApp": "AMCREW",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/rep_amcrew"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapircvrotitm",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxapircvrotitm",
+    "osName": "MXAPIRCVROTITM",
+    "authApp": "MXAPIRCVROTITM",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxapircvrotitm"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapimsghub",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxapimsghub",
+    "osName": "MXAPIMSGHUB",
+    "authApp": "MXAPIMSGHUB",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxapimsghub"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapiapppropcfg",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxapiapppropcfg",
+    "osName": "MXAPIAPPPROPCFG",
+    "authApp": "MXAPIAPPPROPCFG",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxapiapppropcfg"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapimsgreproc",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxapimsgreproc",
+    "osName": "MXAPIMSGREPROC",
+    "authApp": "MXAPIMSGREPROC",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxapimsgreproc"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapiincident",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxapiincident",
+    "osName": "MXAPIINCIDENT",
+    "authApp": "MXAPIINCIDENT",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxapiincident"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxintobject2",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxintobject2",
+    "osName": "MXINTOBJECT2",
+    "authApp": null,
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxintobject2"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxfeature",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxfeature",
+    "osName": "MXFEATURE",
+    "authApp": null,
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxfeature"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapiwo",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxapiwo",
+    "osName": "MXAPIWO",
+    "authApp": "MXAPIWO",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxapiwo"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/rep_condm",
+    "defaultPageSize": 100,
+    "useWith": "REPORTING",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/rep_condm",
+    "osName": "REP_CONDM",
+    "authApp": "COND",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/rep_condm"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxservitem",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxservitem",
+    "osName": "MXSERVITEM",
+    "authApp": null,
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxservitem"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapiapmvalueattr",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxapiapmvalueattr",
+    "osName": "MXAPIAPMVALUEATTR",
+    "authApp": "MXAPIAPMVALUEATTR",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxapiapmvalueattr"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/aheamsr",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/aheamsr",
+    "osName": "AHEAMSR",
+    "authApp": "AHEAMSR",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/aheamsr"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxwsregistry",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxwsregistry",
+    "osName": "MXWSREGISTRY",
+    "authApp": null,
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxwsregistry"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapiuserquery",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxapiuserquery",
+    "osName": "MXAPIUSERQUERY",
+    "authApp": "MXAPIUSERQUERY",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxapiuserquery"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/masapigroup",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/masapigroup",
+    "osName": "MASAPIGROUP",
+    "authApp": "MASAPIGROUP",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/masapigroup"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxomp",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxomp",
+    "osName": "MXOMP",
+    "authApp": null,
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxomp"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxintobject",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxintobject",
+    "osName": "MXINTOBJECT",
+    "authApp": "MXINTOBJECT",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxintobject"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxpr",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxpr",
+    "osName": "MXPR",
+    "authApp": null,
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxpr"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxpo",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxpo",
+    "osName": "MXPO",
+    "authApp": null,
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxpo"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxoslcinteraction",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxoslcinteraction",
+    "osName": "MXOSLCINTERACTION",
+    "authApp": null,
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxoslcinteraction"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapiobjectauth",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxapiobjectauth",
+    "osName": "MXAPIOBJECTAUTH",
+    "authApp": "MXAPIOBJECTAUTH",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxapiobjectauth"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapicraft",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxapicraft",
+    "osName": "MXAPICRAFT",
+    "authApp": "MXAPICRAFT",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxapicraft"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapiworklog",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxapiworklog",
+    "osName": "MXAPIWORKLOG",
+    "authApp": "MXAPIWORKLOG",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxapiworklog"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapiahthreshold",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxapiahthreshold",
+    "osName": "MXAPIAHTHRESHOLD",
+    "authApp": "MXAPIAHTHRESHOLD",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxapiahthreshold"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/rep_security",
+    "defaultPageSize": 100,
+    "useWith": "REPORTING",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/rep_security",
+    "osName": "REP_SECURITY",
+    "authApp": "SECURGROUP",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/rep_security"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapiweathergroup",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxapiweathergroup",
+    "osName": "MXAPIWEATHERGROUP",
+    "authApp": "MXAPIWEATHERGROUP",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxapiweathergroup"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapiapmvalue",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxapiapmvalue",
+    "osName": "MXAPIAPMVALUE",
+    "authApp": "MXAPIAPMVALUE",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxapiapmvalue"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapiamcrewt",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxapiamcrewt",
+    "osName": "MXAPIAMCREWT",
+    "authApp": "MXAPIAMCREWT",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxapiamcrewt"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxauthci",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxauthci",
+    "osName": "MXAUTHCI",
+    "authApp": null,
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxauthci"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapiqtoslcref",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxapiqtoslcref",
+    "osName": "MXAPIQTOSLCREF",
+    "authApp": "MXAPIQTOSLCREF",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxapiqtoslcref"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxjsonmapping",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxjsonmapping",
+    "osName": "MXJSONMAPPING",
+    "authApp": null,
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxjsonmapping"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mhmeasureunit",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mhmeasureunit",
+    "osName": "MHMEASUREUNIT",
+    "authApp": "MHMEASUREUNIT",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mhmeasureunit"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxbimassetwo",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxbimassetwo",
+    "osName": "MXBIMASSETWO",
+    "authApp": "",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxbimassetwo"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapiworktype",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxapiworktype",
+    "osName": "MXAPIWORKTYPE",
+    "authApp": "MXAPIWORKTYPE",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxapiworktype"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mhclassstructureload",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mhclassstructureload",
+    "osName": "MHCLASSSTRUCTURELOAD",
+    "authApp": "MHCLASSSTRUCTURE",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mhclassstructureload"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxpc",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxpc",
+    "osName": "MXPC",
+    "authApp": null,
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxpc"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mhpm",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mhpm",
+    "osName": "MHPM",
+    "authApp": "MHPM",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mhpm"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapiinvresview",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxapiinvresview",
+    "osName": "MXAPIINVRESVIEW",
+    "authApp": "MXAPIINVRESVIEW",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxapiinvresview"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxinvbal",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxinvbal",
+    "osName": "MXINVBAL",
+    "authApp": null,
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxinvbal"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mhoperlocload",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mhoperlocload",
+    "osName": "MHOPERLOCLOAD",
+    "authApp": "MHOPERLOC",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mhoperlocload"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapiwodetail",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxapiwodetail",
+    "osName": "MXAPIWODETAIL",
+    "authApp": "MXAPIWODETAIL",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxapiwodetail"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapitoolitem",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxapitoolitem",
+    "osName": "MXAPITOOLITEM",
+    "authApp": "MXAPITOOLITEM",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxapitoolitem"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapigroup",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxapigroup",
+    "osName": "MXAPIGROUP",
+    "authApp": "MXAPIGROUP",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxapigroup"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapimaxaiconfig",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxapimaxaiconfig",
+    "osName": "MXAPIMAXAICONFIG",
+    "authApp": "MXAPIMAXAICONFIG",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxapimaxaiconfig"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapiwosdataset",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxapiwosdataset",
+    "osName": "MXAPIWOSDATASET",
+    "authApp": "MXAPIWOSDATASET",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxapiwosdataset"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxlaunchpoint",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxlaunchpoint",
+    "osName": "MXLAUNCHPOINT",
+    "authApp": null,
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxlaunchpoint"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapisite",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxapisite",
+    "osName": "MXAPISITE",
+    "authApp": "MXAPISITE",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxapisite"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapiwosrvad",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxapiwosrvad",
+    "osName": "MXAPIWOSRVAD",
+    "authApp": "MXAPIWOSRVAD",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxapiwosrvad"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapiitem",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxapiitem",
+    "osName": "MXAPIITEM",
+    "authApp": "MXAPIITEM",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxapiitem"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapictemplate",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxapictemplate",
+    "osName": "MXAPICTEMPLATE",
+    "authApp": "MXAPICTEMPLATE",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxapictemplate"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mhlocsystem",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mhlocsystem",
+    "osName": "MHLOCSYSTEM",
+    "authApp": "MHLOCSYSTEM",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mhlocsystem"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapimapmanager",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxapimapmanager",
+    "osName": "MXAPIMAPMANAGER",
+    "authApp": "MXAPIMAPMANAGER",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxapimapmanager"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapifailurelist",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxapifailurelist",
+    "osName": "MXAPIFAILURELIST",
+    "authApp": "MXAPIFAILURELIST",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxapifailurelist"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxwotaskrelation",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxwotaskrelation",
+    "osName": "MXWOTASKRELATION",
+    "authApp": "MXWOTASKRELATION",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxwotaskrelation"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapiosevent",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxapiosevent",
+    "osName": "MXAPIOSEVENT",
+    "authApp": "MXAPIOSEVENT",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxapiosevent"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapilocsys",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxapilocsys",
+    "osName": "MXAPILOCSYS",
+    "authApp": "MXAPILOCSYS",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxapilocsys"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapiwohier",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxapiwohier",
+    "osName": "MXAPIWOHIER",
+    "authApp": "MXAPIWOHIER",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxapiwohier"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapiassignment",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxapiassignment",
+    "osName": "MXAPIASSIGNMENT",
+    "authApp": "MXAPIASSIGNMENT",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxapiassignment"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxbimfilter",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxbimfilter",
+    "osName": "MXBIMFILTER",
+    "authApp": "BIMPROJECT",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxbimfilter"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapiallproducts",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "searchAttributes": true,
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxapiallproducts",
+    "osName": "MXAPIALLPRODUCTS",
+    "authApp": "MXAPIALLPRODUCTS",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxapiallproducts"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxifacecontrol",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxifacecontrol",
+    "osName": "MXIFACECONTROL",
+    "authApp": null,
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxifacecontrol"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapisrwatchlist",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxapisrwatchlist",
+    "osName": "MXAPISRWATCHLIST",
+    "authApp": "MXAPISRWATCHLIST",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxapisrwatchlist"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapiweatherorg",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxapiweatherorg",
+    "osName": "MXAPIWEATHERORG",
+    "authApp": "MXAPIWEATHERORG",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxapiweatherorg"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapiahrrplan",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxapiahrrplan",
+    "osName": "MXAPIAHRRPLAN",
+    "authApp": "MXAPIAHRRPLAN",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxapiahrrplan"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/apptiowoexp",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/apptiowoexp",
+    "osName": "APPTIOWOEXP",
+    "authApp": null,
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/apptiowoexp"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapipluscassetstat",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxapipluscassetstat",
+    "osName": "MXAPIPLUSCASSETSTAT",
+    "authApp": null,
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxapipluscassetstat"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mhmetergroup",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mhmetergroup",
+    "osName": "MHMETERGROUP",
+    "authApp": "MHMETER",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mhmetergroup"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mhmeasurepoint",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mhmeasurepoint",
+    "osName": "MHMEASUREPOINT",
+    "authApp": "MHMEASUREPOINT",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mhmeasurepoint"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxdomain_flat",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxdomain_flat",
+    "osName": "MXDOMAIN_FLAT",
+    "authApp": null,
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxdomain_flat"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapiprop",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxapiprop",
+    "osName": "MXAPIPROP",
+    "authApp": "MXAPIPROP",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxapiprop"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxoslcdomain",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxoslcdomain",
+    "osName": "MXOSLCDOMAIN",
+    "authApp": null,
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxoslcdomain"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxsrvad",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxsrvad",
+    "osName": "MXSRVAD",
+    "authApp": null,
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxsrvad"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapiproj",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxapiproj",
+    "osName": "MXAPIPROJ",
+    "authApp": "MXAPIPROJ",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxapiproj"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapimaxvars",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxapimaxvars",
+    "osName": "MXAPIMAXVARS",
+    "authApp": "MXAPIMAXVARS",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxapimaxvars"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapiaction",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxapiaction",
+    "osName": "MXAPIACTION",
+    "authApp": "MXAPIACTION",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxapiaction"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapiinvuse",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxapiinvuse",
+    "osName": "MXAPIINVUSE",
+    "authApp": "MXAPIINVUSE",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxapiinvuse"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapicontract",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxapicontract",
+    "osName": "MXAPICONTRACT",
+    "authApp": "MXAPICONTRACT",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxapicontract"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapilabel",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxapilabel",
+    "osName": "MXAPILABEL",
+    "authApp": "MXAPILABEL",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxapilabel"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapiahassetapmval",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxapiahassetapmval",
+    "osName": "MXAPIAHASSETAPMVAL",
+    "authApp": "MXAPIAHASSETAPMVAL",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxapiahassetapmval"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapiwfprocess",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxapiwfprocess",
+    "osName": "MXAPIWFPROCESS",
+    "authApp": "MXAPIWFPROCESS",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxapiwfprocess"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxscript",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxscript",
+    "osName": "MXSCRIPT",
+    "authApp": null,
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxscript"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/rep_assetsched",
+    "defaultPageSize": 100,
+    "useWith": "REPORTING",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/rep_assetsched",
+    "osName": "REP_ASSETSCHED",
+    "authApp": "ASSET",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/rep_assetsched"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapiinspactions",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxapiinspactions",
+    "osName": "MXAPIINSPACTIONS",
+    "title": "Object Structure for Inspection result allowed actions on mobile app",
+    "authApp": "MXAPIINSPACTIONS",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxapiinspactions"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapiworkview",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxapiworkview",
+    "osName": "MXAPIWORKVIEW",
+    "authApp": "MXAPIWORKVIEW",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxapiworkview"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxsr",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxsr",
+    "osName": "MXSR",
+    "authApp": null,
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxsr"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapiscoringrange",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxapiscoringrange",
+    "osName": "MXAPISCORINGRANGE",
+    "authApp": "MXAPISCORINGRANGE",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxapiscoringrange"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxmeterdata",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxmeterdata",
+    "osName": "MXMETERDATA",
+    "authApp": null,
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxmeterdata"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/arcmaxrelationship",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/arcmaxrelationship",
+    "osName": "ARCMAXRELATIONSHIP",
+    "authApp": null,
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/arcmaxrelationship"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapikpihistory",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxapikpihistory",
+    "osName": "MXAPIKPIHISTORY",
+    "authApp": "MXAPIKPIHISTORY",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxapikpihistory"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapiresourceauth",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxapiresourceauth",
+    "osName": "MXAPIRESOURCEAUTH",
+    "authApp": "MXAPIRESOURCEAUTH",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxapiresourceauth"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapisrguestemail",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "searchAttributes": true,
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxapisrguestemail",
+    "osName": "MXAPISRGUESTEMAIL",
+    "authApp": "MXAPISRGUESTEMAIL",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxapisrguestemail"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapiskdproject",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxapiskdproject",
+    "osName": "MXAPISKDPROJECT",
+    "authApp": "MXAPISKDPROJECT",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxapiskdproject"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mhassetload",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mhassetload",
+    "osName": "MHASSETLOAD",
+    "authApp": "MHASSET",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mhassetload"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapipc",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxapipc",
+    "osName": "MXAPIPC",
+    "authApp": "MXAPIPC",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxapipc"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapidatarestriction",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxapidatarestriction",
+    "osName": "MXAPIDATARESTRICTION",
+    "authApp": "MXAPIDATARESTRICTION",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxapidatarestriction"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapikpimain",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxapikpimain",
+    "osName": "MXAPIKPIMAIN",
+    "authApp": "MXAPIKPIMAIN",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxapikpimain"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxglcomp",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxglcomp",
+    "osName": "MXGLCOMP",
+    "authApp": null,
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxglcomp"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapiaioschedule",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxapiaioschedule",
+    "osName": "MXAPIAIOSCHEDULE",
+    "authApp": "MXAPIAIOSCHEDULE",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxapiaioschedule"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapipo",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxapipo",
+    "osName": "MXAPIPO",
+    "authApp": "MXAPIPO",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxapipo"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapiaioschedasset",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxapiaioschedasset",
+    "osName": "MXAPIAIOSCHEDASSET",
+    "authApp": "MXAPIAIOSCHEDASSET",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxapiaioschedasset"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapipm",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxapipm",
+    "osName": "MXAPIPM",
+    "authApp": "MXAPIPM",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxapipm"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapiappdoctype",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxapiappdoctype",
+    "osName": "MXAPIAPPDOCTYPE",
+    "authApp": "MXAPIAPPDOCTYPE",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxapiappdoctype"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapipr",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxapipr",
+    "osName": "MXAPIPR",
+    "authApp": "MXAPIPR",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxapipr"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapiproblem",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxapiproblem",
+    "osName": "MXAPIPROBLEM",
+    "authApp": "MXAPIPROBLEM",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxapiproblem"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxjsonresnp",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxjsonresnp",
+    "osName": "MXJSONRESNP",
+    "authApp": "JSONRES",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxjsonresnp"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapiinsight",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxapiinsight",
+    "osName": "MXAPIINSIGHT",
+    "authApp": "MXAPIINSIGHT",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxapiinsight"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapimsgtrack",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxapimsgtrack",
+    "osName": "MXAPIMSGTRACK",
+    "authApp": "MXAPIMSGTRACK",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxapimsgtrack"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mhwo",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mhwo",
+    "osName": "MHWO",
+    "authApp": "MHWO",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mhwo"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/rep_assethierarchy",
+    "defaultPageSize": 100,
+    "useWith": "REPORTING",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/rep_assethierarchy",
+    "osName": "REP_ASSETHIERARCHY",
+    "authApp": "ASSET",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/rep_assethierarchy"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapiexpgroup",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxapiexpgroup",
+    "osName": "MXAPIEXPGROUP",
+    "authApp": "MXAPIEXPGROUP",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxapiexpgroup"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapiweatherzone",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "searchAttributes": true,
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxapiweatherzone",
+    "osName": "MXAPIWEATHERZONE",
+    "authApp": "MXAPIWEATHERZONE",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxapiweatherzone"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapiaioproject",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxapiaioproject",
+    "osName": "MXAPIAIOPROJECT",
+    "authApp": "MXAPIAIOPROJECT",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxapiaioproject"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/rep_inspectionresult",
+    "defaultPageSize": 100,
+    "useWith": "REPORTING",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/rep_inspectionresult",
+    "osName": "REP_INSPECTIONRESULT",
+    "authApp": "INSPECTOR",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/rep_inspectionresult"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapimvi",
+    "defaultPageSize": 100,
+    "useWith": "OSLC",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxapimvi",
+    "osName": "MXAPIMVI",
+    "authApp": "MXAPIMVI",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxapimvi"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/rep_stktool",
+    "defaultPageSize": 100,
+    "useWith": "REPORTING",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/rep_stktool",
+    "osName": "REP_STKTOOL",
+    "authApp": "TOOLINV",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/rep_stktool"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapiworkqueue",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxapiworkqueue",
+    "osName": "MXAPIWORKQUEUE",
+    "authApp": "MXAPIWORKQUEUE",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxapiworkqueue"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapilbslocation",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxapilbslocation",
+    "osName": "MXAPILBSLOCATION",
+    "authApp": "MXAPILBSLOCATION",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxapilbslocation"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapicommodity",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxapicommodity",
+    "osName": "MXAPICOMMODITY",
+    "authApp": "MXAPICOMMODITY",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxapicommodity"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapiahblthreshold",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxapiahblthreshold",
+    "osName": "MXAPIAHBLTHRESHOLD",
+    "authApp": "MXAPIAHBLTHRESHOLD",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxapiahblthreshold"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapiintobject",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxapiintobject",
+    "osName": "MXAPIINTOBJECT",
+    "authApp": "MXAPIINTOBJECT",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxapiintobject"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mhasset",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mhasset",
+    "osName": "MHASSET",
+    "authApp": "MHASSET",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mhasset"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapicntbookline",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxapicntbookline",
+    "osName": "MXAPICNTBOOKLINE",
+    "authApp": "MXAPICNTBOOKLINE",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxapicntbookline"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapiasset",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxapiasset",
+    "osName": "MXAPIASSET",
+    "authApp": "MXAPIASSET",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxapiasset"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapihistory2",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxapihistory2",
+    "osName": "MXAPIHISTORY2",
+    "title": "Asset Health History Object Structure",
+    "authApp": "MXAPIAHHISTORY",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxapihistory2"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxoslcnsprefix",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxoslcnsprefix",
+    "osName": "MXOSLCNSPREFIX",
+    "authApp": null,
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxoslcnsprefix"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapiapikey",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxapiapikey",
+    "osName": "MXAPIAPIKEY",
+    "authApp": "MXAPIAPIKEY",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxapiapikey"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/rep_srvitem",
+    "defaultPageSize": 100,
+    "useWith": "REPORTING",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/rep_srvitem",
+    "osName": "REP_SRVITEM",
+    "authApp": "SRVITEM",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/rep_srvitem"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxamcrew",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxamcrew",
+    "osName": "MXAMCREW",
+    "authApp": null,
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxamcrew"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapimaxapp",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxapimaxapp",
+    "osName": "MXAPIMAXAPP",
+    "authApp": "MXAPIMAXAPP",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxapimaxapp"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapilinearrefmethod",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxapilinearrefmethod",
+    "osName": "MXAPILINEARREFMETHOD",
+    "authApp": "MXAPILINEARREFMETHOD",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxapilinearrefmethod"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxwo",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxwo",
+    "osName": "MXWO",
+    "authApp": null,
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxwo"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapishipment",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxapishipment",
+    "osName": "MXAPISHIPMENT",
+    "authApp": "MXAPISHIPMENT",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxapishipment"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/tamitintswvar",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/tamitintswvar",
+    "osName": "TAMITINTSWVAR",
+    "authApp": null,
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/tamitintswvar"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxpmipm",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxpmipm",
+    "osName": "MXPMIPM",
+    "authApp": "MXPMIPM",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxpmipm"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxamcrewt",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxamcrewt",
+    "osName": "MXAMCREWT",
+    "authApp": null,
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxamcrewt"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/tamitintsw",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/tamitintsw",
+    "osName": "TAMITINTSW",
+    "authApp": null,
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/tamitintsw"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxwodetail",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxwodetail",
+    "osName": "MXWODETAIL",
+    "authApp": null,
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxwodetail"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapianalyticdataset",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxapianalyticdataset",
+    "osName": "MXAPIANALYTICDATASET",
+    "authApp": "MXAPIANALYTICDATASET",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxapianalyticdataset"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapiinspform",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxapiinspform",
+    "osName": "MXAPIINSPFORM",
+    "authApp": "MXAPIINSPFORM",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxapiinspform"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapidomain",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxapidomain",
+    "osName": "MXAPIDOMAIN",
+    "authApp": "MXAPIDOMAIN",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxapidomain"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapiamcrew",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxapiamcrew",
+    "osName": "MXAPIAMCREW",
+    "authApp": "MXAPIAMCREW",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxapiamcrew"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapiinsightfactor",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxapiinsightfactor",
+    "osName": "MXAPIINSIGHTFACTOR",
+    "authApp": "MXAPIINSIGHTFACTOR",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxapiinsightfactor"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapimaxaiinference",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxapimaxaiinference",
+    "osName": "MXAPIMAXAIINFERENCE",
+    "authApp": "MXAPIMAXAIINFERENCE",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxapimaxaiinference"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapilaunchpoint",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxapilaunchpoint",
+    "osName": "MXAPILAUNCHPOINT",
+    "authApp": "MXAPILAUNCHPOINT",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxapilaunchpoint"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/rep_tool",
+    "defaultPageSize": 100,
+    "useWith": "REPORTING",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/rep_tool",
+    "osName": "REP_TOOL",
+    "authApp": "TOOL",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/rep_tool"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxincident",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxincident",
+    "osName": "MXINCIDENT",
+    "authApp": null,
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxincident"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapiauthci",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxapiauthci",
+    "osName": "MXAPIAUTHCI",
+    "authApp": "MXAPIAUTHCI",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxapiauthci"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapipersongroupview",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxapipersongroupview",
+    "osName": "MXAPIPERSONGROUPVIEW",
+    "authApp": "MXAPIPERSONGROUPVIEW",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxapipersongroupview"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mhclassstructure",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mhclassstructure",
+    "osName": "MHCLASSSTRUCTURE",
+    "authApp": "MHCLASSSTRUCTURE",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mhclassstructure"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/rep_receipt",
+    "defaultPageSize": 100,
+    "useWith": "REPORTING",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/rep_receipt",
+    "osName": "REP_RECEIPT",
+    "authApp": "RECEIPTS",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/rep_receipt"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mhdomain",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mhdomain",
+    "osName": "MHDOMAIN",
+    "authApp": "MHDOMAIN",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mhdomain"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/rep_dmcompresult",
+    "defaultPageSize": 100,
+    "useWith": "REPORTING",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/rep_dmcompresult",
+    "osName": "REP_DMCOMPRESULT",
+    "authApp": "DM",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/rep_dmcompresult"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapiadmin",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxapiadmin",
+    "osName": "MXAPIADMIN",
+    "authApp": "MXAPIADMIN",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxapiadmin"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxqueue",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxqueue",
+    "osName": "MXQUEUE",
+    "authApp": null,
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxqueue"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxtksrvad",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxtksrvad",
+    "osName": "MXTKSRVAD",
+    "authApp": null,
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxtksrvad"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxvendor",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxvendor",
+    "osName": "MXVENDOR",
+    "authApp": null,
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxvendor"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapptioinpt",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxapptioinpt",
+    "osName": "MXAPPTIOINPT",
+    "authApp": "MXAPPTIOINPT",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxapptioinpt"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/rep_repdesign",
+    "defaultPageSize": 100,
+    "useWith": "REPORTING",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/rep_repdesign",
+    "osName": "REP_REPDESIGN",
+    "authApp": "REPORT",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/rep_repdesign"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapiinvpicklist",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxapiinvpicklist",
+    "osName": "MXAPIINVPICKLIST",
+    "authApp": "MXAPIINVPICKLIST",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxapiinvpicklist"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapisrvad",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxapisrvad",
+    "osName": "MXAPISRVAD",
+    "authApp": "MXAPISRVAD",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxapisrvad"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/rep_labor",
+    "defaultPageSize": 100,
+    "useWith": "REPORTING",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/rep_labor",
+    "osName": "REP_LABOR",
+    "authApp": "LABOR",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/rep_labor"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/masapiuser",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/masapiuser",
+    "osName": "MASAPIUSER",
+    "authApp": "MASAPIUSER",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/masapiuser"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapiahlocapmval",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxapiahlocapmval",
+    "osName": "MXAPIAHLOCAPMVAL",
+    "authApp": "MXAPIAHLOCAPMVAL",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxapiahlocapmval"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxextsystem",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxextsystem",
+    "osName": "MXEXTSYSTEM",
+    "authApp": null,
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxextsystem"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapiskdodmerun",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxapiskdodmerun",
+    "osName": "MXAPISKDODMERUN",
+    "authApp": "MXAPISKDODMERUN",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxapiskdodmerun"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapiservitem",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxapiservitem",
+    "osName": "MXAPISERVITEM",
+    "authApp": "MXAPISERVITEM",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxapiservitem"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapiglcomp",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxapiglcomp",
+    "osName": "MXAPIGLCOMP",
+    "authApp": "MXAPIGLCOMP",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxapiglcomp"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapimaxobject",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxapimaxobject",
+    "osName": "MXAPIMAXOBJECT",
+    "authApp": "MXAPIMAXOBJECT",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxapimaxobject"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapistatemanager",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxapistatemanager",
+    "osName": "MXAPISTATEMANAGER",
+    "authApp": "MXAPISTATEMANAGER",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxapistatemanager"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapiclassstructure",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxapiclassstructure",
+    "osName": "MXAPICLASSSTRUCTURE",
+    "authApp": "MXAPICLASSSTRUCTURE",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxapiclassstructure"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapiinvoice",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxapiinvoice",
+    "osName": "MXAPIINVOICE",
+    "authApp": "MXAPIINVOICE",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxapiinvoice"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapishift",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxapishift",
+    "osName": "MXAPISHIFT",
+    "authApp": "MXAPISHIFT",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxapishift"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxlaunch",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxlaunch",
+    "osName": "MXLAUNCH",
+    "authApp": null,
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxlaunch"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapiinspfdoclinks",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxapiinspfdoclinks",
+    "osName": "MXAPIINSPFDOCLINKS",
+    "title": "Object Structure for Inspection Form attachments on mobile app",
+    "authApp": "MXAPIINSPFDOCLINKS",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxapiinspfdoclinks"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapitksrvad",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxapitksrvad",
+    "osName": "MXAPITKSRVAD",
+    "authApp": "MXAPITKSRVAD",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxapitksrvad"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapiperuser",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxapiperuser",
+    "osName": "MXAPIPERUSER",
+    "authApp": "MXAPIPERUSER",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxapiperuser"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/masgroup",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/masgroup",
+    "osName": "MASGROUP",
+    "authApp": "MASGROUP",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/masgroup"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxwfprocess",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxwfprocess",
+    "osName": "MXWFPROCESS",
+    "authApp": null,
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxwfprocess"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/apptioorgexp",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/apptioorgexp",
+    "osName": "APPTIOORGEXP",
+    "authApp": null,
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/apptioorgexp"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapiinspformusewith",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxapiinspformusewith",
+    "osName": "MXAPIINSPFORMUSEWITH",
+    "authApp": "MXAPIINSPFORMUSEWITH",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxapiinspformusewith"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxperuser",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxperuser",
+    "osName": "MXPERUSER",
+    "authApp": null,
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxperuser"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/tamitintswrel",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/tamitintswrel",
+    "osName": "TAMITINTSWREL",
+    "authApp": null,
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/tamitintswrel"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapiendpoint",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxapiendpoint",
+    "osName": "MXAPIENDPOINT",
+    "authApp": "MXAPIENDPOINT",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxapiendpoint"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapigltxn",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxapigltxn",
+    "osName": "MXAPIGLTXN",
+    "authApp": "MXAPIGLTXN",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxapigltxn"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxcollectauth",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxcollectauth",
+    "osName": "MXCOLLECTAUTH",
+    "authApp": null,
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxcollectauth"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapiobject",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxapiobject",
+    "osName": "MXAPIOBJECT",
+    "authApp": null,
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxapiobject"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxmessage",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxmessage",
+    "osName": "MXMESSAGE",
+    "authApp": null,
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxmessage"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxpluscdsconfig",
+    "defaultPageSize": 100,
+    "useWith": "OSLC",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxpluscdsconfig",
+    "osName": "MXPLUSCDSCONFIG",
+    "authApp": "MXPLUSCDSCONFIG",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxpluscdsconfig"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapiquerytemplate",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxapiquerytemplate",
+    "osName": "MXAPIQUERYTEMPLATE",
+    "authApp": "MXAPIQUERYTEMPLATE",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxapiquerytemplate"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapiempact",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxapiempact",
+    "osName": "MXAPIEMPACT",
+    "authApp": "MXAPIEMPACT",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxapiempact"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/aheamwodetail",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/aheamwodetail",
+    "osName": "AHEAMWODETAIL",
+    "authApp": "AHEAMWODETAIL",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/aheamwodetail"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapiitemcondition",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxapiitemcondition",
+    "osName": "MXAPIITEMCONDITION",
+    "authApp": "MXAPIITEMCONDITION",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxapiitemcondition"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mhserviceaddress",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mhserviceaddress",
+    "osName": "MHSERVICEADDRESS",
+    "authApp": "MHASSET",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mhserviceaddress"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapibilltoshipto",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxapibilltoshipto",
+    "osName": "MXAPIBILLTOSHIPTO",
+    "authApp": "MXAPIBILLTOSHIPTO",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxapibilltoshipto"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapiahcontainercfg",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxapiahcontainercfg",
+    "osName": "MXAPIAHCONTAINERCFG",
+    "authApp": "MXAPIAHCONTAINERCFG",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxapiahcontainercfg"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxassetpartium",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxassetpartium",
+    "osName": "MXASSETPARTIUM",
+    "authApp": null,
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxassetpartium"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapifailurecode",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxapifailurecode",
+    "osName": "MXAPIFAILURECODE",
+    "authApp": "MXAPIFAILURECODE",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxapifailurecode"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/tamitintmf",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/tamitintmf",
+    "osName": "TAMITINTMF",
+    "authApp": null,
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/tamitintmf"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/masapigrouplist",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/masapigrouplist",
+    "osName": "MASAPIGROUPLIST",
+    "authApp": "MASAPIGROUPLIST",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/masapigrouplist"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxoslcerrormap",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxoslcerrormap",
+    "osName": "MXOSLCERRORMAP",
+    "authApp": null,
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxoslcerrormap"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxperson",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxperson",
+    "osName": "MXPERSON",
+    "authApp": null,
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxperson"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapilaborcraftrate",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxapilaborcraftrate",
+    "osName": "MXAPILABORCRAFTRATE",
+    "authApp": "MXAPILABORCRAFTRATE",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxapilaborcraftrate"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapimessage",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxapimessage",
+    "osName": "MXAPIMESSAGE",
+    "authApp": "MXAPIMESSAGE",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxapimessage"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxentsrv",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxentsrv",
+    "osName": "MXENTSRV",
+    "authApp": null,
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxentsrv"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxinvoice",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxinvoice",
+    "osName": "MXINVOICE",
+    "authApp": null,
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxinvoice"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxinvres",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxinvres",
+    "osName": "MXINVRES",
+    "authApp": null,
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxinvres"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxcollection",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxcollection",
+    "osName": "MXCOLLECTION",
+    "authApp": null,
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxcollection"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapicomponent",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxapicomponent",
+    "osName": "MXAPICOMPONENT",
+    "authApp": "MXAPICOMPONENT",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxapicomponent"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/kpitemplate",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/kpitemplate",
+    "osName": "KPITEMPLATE",
+    "authApp": "KPITPL",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/kpitemplate"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/rep_jobplan",
+    "defaultPageSize": 100,
+    "useWith": "REPORTING",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/rep_jobplan",
+    "osName": "REP_JOBPLAN",
+    "authApp": "JOBPLAN",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/rep_jobplan"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxitempartium",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxitempartium",
+    "osName": "MXITEMPARTIUM",
+    "authApp": null,
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxitempartium"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxgbtemplate",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxgbtemplate",
+    "osName": "MXGBTEMPLATE",
+    "authApp": null,
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxgbtemplate"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapiapmvaluemethod",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxapiapmvaluemethod",
+    "osName": "MXAPIAPMVALUEMETHOD",
+    "authApp": "MXAPIAPMVALUEMETHOD",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxapiapmvaluemethod"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxvendormstr",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxvendormstr",
+    "osName": "MXVENDORMSTR",
+    "authApp": null,
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxvendormstr"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxlbslocation",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxlbslocation",
+    "osName": "MXLBSLOCATION",
+    "authApp": null,
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxlbslocation"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/tamitintswcat",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/tamitintswcat",
+    "osName": "TAMITINTSWCAT",
+    "authApp": null,
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/tamitintswcat"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mhorganization",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mhorganization",
+    "osName": "MHORGANIZATION",
+    "authApp": "MHORGANIZATION",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mhorganization"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapiwpeditsetting",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxapiwpeditsetting",
+    "osName": "MXAPIWPEDITSETTING",
+    "authApp": "MXAPIWPEDITSETTING",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxapiwpeditsetting"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapiahdriverlib",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxapiahdriverlib",
+    "osName": "MXAPIAHDRIVERLIB",
+    "authApp": "MXAPIAHDRIVERLIB",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxapiahdriverlib"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mhahcontainercfg",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mhahcontainercfg",
+    "osName": "MHAHCONTAINERCFG",
+    "authApp": "MHAHCONTAINERCFG",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mhahcontainercfg"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/rep_inventory",
+    "defaultPageSize": 100,
+    "useWith": "REPORTING",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/rep_inventory",
+    "osName": "REP_INVENTORY",
+    "authApp": "INVENTOR",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/rep_inventory"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapiinspfield",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxapiinspfield",
+    "osName": "MXAPIINSPFIELD",
+    "authApp": "MXAPIINSPFIELD",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxapiinspfield"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapilocsystem",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxapilocsystem",
+    "osName": "MXAPILOCSYSTEM",
+    "authApp": "MXAPILOCSYSTEM",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxapilocsystem"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapitoolinv",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxapitoolinv",
+    "osName": "MXAPITOOLINV",
+    "authApp": "MXAPITOOLINV",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxapitoolinv"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/rep_repusage",
+    "defaultPageSize": 100,
+    "useWith": "REPORTING",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/rep_repusage",
+    "osName": "REP_REPUSAGE",
+    "authApp": "REPORT",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/rep_repusage"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapiinspectionres",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxapiinspectionres",
+    "osName": "MXAPIINSPECTIONRES",
+    "authApp": "MXAPIINSPECTIONRES",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxapiinspectionres"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapisynonymdomain",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxapisynonymdomain",
+    "osName": "MXAPISYNONYMDOMAIN",
+    "authApp": "MXAPISYNONYMDOMAIN",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxapisynonymdomain"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapiwmassignment",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxapiwmassignment",
+    "osName": "MXAPIWMASSIGNMENT",
+    "authApp": "MXAPIWMASSIGNMENT",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxapiwmassignment"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mhmeter",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mhmeter",
+    "osName": "MHMETER",
+    "authApp": "MHMETER",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mhmeter"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapiahhistory",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxapiahhistory",
+    "osName": "MXAPIAHHISTORY",
+    "authApp": "MXAPIAHHISTORY",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxapiahhistory"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapitabledomain",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxapitabledomain",
+    "osName": "MXAPITABLEDOMAIN",
+    "authApp": "MXAPITABLEDOMAIN",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxapitabledomain"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/rep_po",
+    "defaultPageSize": 100,
+    "useWith": "REPORTING",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/rep_po",
+    "osName": "REP_PO",
+    "authApp": "PO",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/rep_po"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapitktemplate",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxapitktemplate",
+    "osName": "MXAPITKTEMPLATE",
+    "authApp": "MXAPITKTEMPLATE",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxapitktemplate"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapicalocationwo",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxapicalocationwo",
+    "osName": "MXAPICALOCATIONWO",
+    "authApp": "MXAPICALOCATIONWO",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxapicalocationwo"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapicollectauth",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxapicollectauth",
+    "osName": "MXAPICOLLECTAUTH",
+    "authApp": "MXAPICOLLECTAUTH",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxapicollectauth"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapiaiotemplate",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxapiaiotemplate",
+    "osName": "MXAPIAIOTEMPLATE",
+    "authApp": "MXAPIAIOTEMPLATE",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxapiaiotemplate"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapinotification",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxapinotification",
+    "osName": "MXAPINOTIFICATION",
+    "authApp": "MXAPINOTIFICATION",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxapinotification"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/rep_workorder",
+    "defaultPageSize": 100,
+    "useWith": "REPORTING",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/rep_workorder",
+    "osName": "REP_WORKORDER",
+    "authApp": "WOTRACK",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/rep_workorder"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapimeter",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxapimeter",
+    "osName": "MXAPIMETER",
+    "authApp": "MXAPIMETER",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxapimeter"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxlabor",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxlabor",
+    "osName": "MXLABOR",
+    "authApp": null,
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxlabor"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/rep_mxintobject",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/rep_mxintobject",
+    "osName": "REP_MXINTOBJECT",
+    "authApp": null,
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/rep_mxintobject"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxweatheralert",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxweatheralert",
+    "osName": "MXWEATHERALERT",
+    "authApp": "WEATHERADMIN",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxweatheralert"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxtoolitem",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxtoolitem",
+    "osName": "MXTOOLITEM",
+    "authApp": null,
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxtoolitem"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapifileimportqueue",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxapifileimportqueue",
+    "osName": "MXAPIFILEIMPORTQUEUE",
+    "authApp": "MXAPIFILEIMPORTQUEUE",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxapifileimportqueue"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxaction",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxaction",
+    "osName": "MXACTION",
+    "authApp": null,
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxaction"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapiskdprojactivity",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxapiskdprojactivity",
+    "osName": "MXAPISKDPROJACTIVITY",
+    "authApp": "MXAPISKDPROJACTIVITY",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxapiskdprojactivity"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapiattrformula",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxapiattrformula",
+    "osName": "MXAPIATTRFORMULA",
+    "authApp": "MXAPIATTRFORMULA",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxapiattrformula"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxgltxn",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxgltxn",
+    "osName": "MXGLTXN",
+    "authApp": null,
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxgltxn"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxrcvrotitm",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxrcvrotitm",
+    "osName": "MXRCVROTITM",
+    "authApp": null,
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxrcvrotitm"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapioperloc",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxapioperloc",
+    "osName": "MXAPIOPERLOC",
+    "authApp": "MXAPIOPERLOC",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxapioperloc"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapiaidomainrule",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxapiaidomainrule",
+    "osName": "MXAPIAIDOMAINRULE",
+    "authApp": null,
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxapiaidomainrule"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxmapman",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxmapman",
+    "osName": "MXMAPMAN",
+    "authApp": null,
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxmapman"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapiassetstatus",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxapiassetstatus",
+    "osName": "MXAPIASSETSTATUS",
+    "authApp": null,
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxapiassetstatus"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapivmuseroptions",
+    "defaultPageSize": 100,
+    "useWith": "OSLC",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxapivmuseroptions",
+    "osName": "MXAPIVMUSEROPTIONS",
+    "authApp": "MXAPIVMUSEROPTIONS",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxapivmuseroptions"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapidoctype",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxapidoctype",
+    "osName": "MXAPIDOCTYPE",
+    "authApp": "MXAPIDOCTYPE",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxapidoctype"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapisrwatchlistdts",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxapisrwatchlistdts",
+    "osName": "MXAPISRWATCHLISTDTS",
+    "authApp": "MXAPISRWATCHLISTDTS",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxapisrwatchlistdts"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxasset",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxasset",
+    "osName": "MXASSET",
+    "authApp": "MXASSET",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxasset"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/rep_woplanact",
+    "defaultPageSize": 100,
+    "useWith": "REPORTING",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/rep_woplanact",
+    "osName": "REP_WOPLANACT",
+    "authApp": "WOTRACK",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/rep_woplanact"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxoslcrestype",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxoslcrestype",
+    "osName": "MXOSLCRESTYPE",
+    "authApp": null,
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxoslcrestype"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapiapmobjectattr",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxapiapmobjectattr",
+    "osName": "MXAPIAPMOBJECTATTR",
+    "authApp": "MXAPIAPMOBJECTATTR",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxapiapmobjectattr"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapiconversion",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxapiconversion",
+    "osName": "MXAPICONVERSION",
+    "authApp": "MXAPICONVERSION",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxapiconversion"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/rep_invuse",
+    "defaultPageSize": 100,
+    "useWith": "REPORTING",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/rep_invuse",
+    "osName": "REP_INVUSE",
+    "authApp": "INVUSAGE",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/rep_invuse"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapiobjformula",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxapiobjformula",
+    "osName": "MXAPIOBJFORMULA",
+    "authApp": "MXAPIOBJFORMULA",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxapiobjformula"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxinvvendor",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxinvvendor",
+    "osName": "MXINVVENDOR",
+    "authApp": null,
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxinvvendor"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapiinventory",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxapiinventory",
+    "osName": "MXAPIINVENTORY",
+    "authApp": "MXAPIINVENTORY",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxapiinventory"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapiseraddress",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxapiseraddress",
+    "osName": "MXAPISERADDRESS",
+    "authApp": "MXAPISERADDRESS",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxapiseraddress"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapiahmeasurepoint",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxapiahmeasurepoint",
+    "osName": "MXAPIAHMEASUREPOINT",
+    "authApp": "MXAPIAHMEASUREPOINT",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxapiahmeasurepoint"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mhjobplan",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mhjobplan",
+    "osName": "MHJOBPLAN",
+    "authApp": "MHJOBPLAN",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mhjobplan"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapiwoassettype",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxapiwoassettype",
+    "osName": "MXAPIWOASSETTYPE",
+    "authApp": "MXAPIWOASSETTYPE",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxapiwoassettype"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxreceipt",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxreceipt",
+    "osName": "MXRECEIPT",
+    "authApp": null,
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxreceipt"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapihazard",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxapihazard",
+    "osName": "MXAPIHAZARD",
+    "authApp": "MXAPIHAZARD",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxapihazard"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapiahfactorlib",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxapiahfactorlib",
+    "osName": "MXAPIAHFACTORLIB",
+    "authApp": "MXAPIAHFACTORLIB",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxapiahfactorlib"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxclassification",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxclassification",
+    "osName": "MXCLASSIFICATION",
+    "authApp": null,
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxclassification"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapidoctypes",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxapidoctypes",
+    "osName": "MXAPIDOCTYPES",
+    "authApp": "MXAPIDOCTYPES",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxapidoctypes"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxlmo2",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxlmo2",
+    "osName": "MXLMO2",
+    "authApp": null,
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxlmo2"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/rep_assetactivity",
+    "defaultPageSize": 100,
+    "useWith": "REPORTING",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/rep_assetactivity",
+    "osName": "REP_ASSETACTIVITY",
+    "authApp": "ASSET",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/rep_assetactivity"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapireceipt",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxapireceipt",
+    "osName": "MXAPIRECEIPT",
+    "authApp": "MXAPIRECEIPT",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxapireceipt"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mhquery",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mhquery",
+    "osName": "MHQUERY",
+    "authApp": "MHQUERY",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mhquery"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapiahcapad",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxapiahcapad",
+    "osName": "MXAPIAHCAPAD",
+    "authApp": "MXAPIAHCAPAD",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxapiahcapad"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/tamitintswprtnum",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/tamitintswprtnum",
+    "osName": "TAMITINTSWPRTNUM",
+    "authApp": null,
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/tamitintswprtnum"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/testhistory",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/testhistory",
+    "osName": "TESTHISTORY",
+    "title": "Test History Health",
+    "authApp": "TESTHISTORY",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/testhistory"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapimaxsession",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxapimaxsession",
+    "osName": "MXAPIMAXSESSION",
+    "authApp": "MXAPIMAXSESSION",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxapimaxsession"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/oslcmafappdata",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/oslcmafappdata",
+    "osName": "OSLCMAFAPPDATA",
+    "authApp": "OSLCMAFAPPDATA",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/oslcmafappdata"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mhinspection",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mhinspection",
+    "osName": "MHINSPECTION",
+    "authApp": "MHINSPECTION",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mhinspection"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapiperson",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxapiperson",
+    "osName": "MXAPIPERSON",
+    "authApp": "MXAPIPERSON",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxapiperson"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxitem",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxitem",
+    "osName": "MXITEM",
+    "authApp": null,
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxitem"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/rep_person",
+    "defaultPageSize": 100,
+    "useWith": "REPORTING",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/rep_person",
+    "osName": "REP_PERSON",
+    "authApp": "PERSON",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/rep_person"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxifaceout",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxifaceout",
+    "osName": "MXIFACEOUT",
+    "authApp": null,
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxifaceout"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapimeasureunit",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxapimeasureunit",
+    "osName": "MXAPIMEASUREUNIT",
+    "authApp": "MXAPIMEASUREUNIT",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxapimeasureunit"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapiquery",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxapiquery",
+    "osName": "MXAPIQUERY",
+    "authApp": "MXAPIQUERY",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxapiquery"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxoperloc",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxoperloc",
+    "osName": "MXOPERLOC",
+    "authApp": "MXOPERLOC",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxoperloc"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mhoperloc",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mhoperloc",
+    "osName": "MHOPERLOC",
+    "authApp": "MHOPERLOC",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mhoperloc"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxorganization",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxorganization",
+    "osName": "MXORGANIZATION",
+    "authApp": null,
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxorganization"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxwohier",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxwohier",
+    "osName": "MXWOHIER",
+    "authApp": null,
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxwohier"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapimeasurementcbm",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxapimeasurementcbm",
+    "osName": "MXAPIMEASUREMENTCBM",
+    "authApp": "MXAPIMEASUREMENTCBM",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxapimeasurementcbm"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxinvuse",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxinvuse",
+    "osName": "MXINVUSE",
+    "authApp": null,
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxinvuse"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapibookmark",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxapibookmark",
+    "osName": "MXAPIBOOKMARK",
+    "authApp": "MXAPIBOOKMARK",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxapibookmark"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/apptiolocexp",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/apptiolocexp",
+    "osName": "APPTIOLOCEXP",
+    "authApp": null,
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/apptiolocexp"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapiahmatrixcfg",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxapiahmatrixcfg",
+    "osName": "MXAPIAHMATRIXCFG",
+    "authApp": "MXAPIAHMATRIXCFG",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxapiahmatrixcfg"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxwosrvad",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxwosrvad",
+    "osName": "MXWOSRVAD",
+    "authApp": null,
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxwosrvad"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapijobplan",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxapijobplan",
+    "osName": "MXAPIJOBPLAN",
+    "authApp": "MXAPIJOBPLAN",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxapijobplan"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapilabor",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxapilabor",
+    "osName": "MXAPILABOR",
+    "authApp": "MXAPILABOR",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxapilabor"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/rep_item",
+    "defaultPageSize": 100,
+    "useWith": "REPORTING",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/rep_item",
+    "osName": "REP_ITEM",
+    "authApp": "ITEM",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/rep_item"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapipergroup",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxapipergroup",
+    "osName": "MXAPIPERGROUP",
+    "authApp": "MXAPIPERGROUP",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxapipergroup"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapiassetmeter",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxapiassetmeter",
+    "osName": "MXAPIASSETMETER",
+    "authApp": "MXAPIASSETMETER",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxapiassetmeter"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxctemplate",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxctemplate",
+    "osName": "MXCTEMPLATE",
+    "authApp": null,
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxctemplate"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapiroutes",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxapiroutes",
+    "osName": "MXAPIROUTES",
+    "authApp": "MXAPIROUTES",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxapiroutes"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapiinvvendor",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxapiinvvendor",
+    "osName": "MXAPIINVVENDOR",
+    "authApp": "MXAPIINVVENDOR",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxapiinvvendor"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxbimproject",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxbimproject",
+    "osName": "MXBIMPROJECT",
+    "authApp": "",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxbimproject"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxpm_asset",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxpm_asset",
+    "osName": "MXPM_ASSET",
+    "authApp": null,
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxpm_asset"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxcoa",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxcoa",
+    "osName": "MXCOA",
+    "authApp": null,
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxcoa"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapilocations",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxapilocations",
+    "osName": "MXAPILOCATIONS",
+    "authApp": "MXAPILOCATIONS",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxapilocations"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/rep_locations",
+    "defaultPageSize": 100,
+    "useWith": "REPORTING",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/rep_locations",
+    "osName": "REP_LOCATIONS",
+    "authApp": "LOCATION",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/rep_locations"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxifaceinvoke",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxifaceinvoke",
+    "osName": "MXIFACEINVOKE",
+    "authApp": null,
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxifaceinvoke"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mhfailurelist",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mhfailurelist",
+    "osName": "MHFAILURELIST",
+    "authApp": "MHFAILURELIST",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mhfailurelist"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapiassetspare",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxapiassetspare",
+    "osName": "MXAPIASSETSPARE",
+    "authApp": "MXAPIASSETSPARE",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxapiassetspare"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapiweatherproduct",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "searchAttributes": true,
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxapiweatherproduct",
+    "osName": "MXAPIWEATHERPRODUCT",
+    "authApp": "MXAPIWEATHERPRODUCT",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxapiweatherproduct"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapiinvissue",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxapiinvissue",
+    "osName": "MXAPIINVISSUE",
+    "authApp": "MXAPIINVISSUE",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxapiinvissue"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapiuserteam",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxapiuserteam",
+    "osName": "MXAPIUSERTEAM",
+    "authApp": "MXAPIUSERTEAM",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxapiuserteam"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapiworkscapelayout",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxapiworkscapelayout",
+    "osName": "MXAPIWORKSCAPELAYOUT",
+    "authApp": "MXAPIWORKSCAPELAYOUT",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxapiworkscapelayout"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapipersongroup",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxapipersongroup",
+    "osName": "MXAPIPERSONGROUP",
+    "authApp": "MXAPIPERSONGROUP",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxapipersongroup"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxempact",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxempact",
+    "osName": "MXEMPACT",
+    "authApp": null,
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxempact"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapilocation",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxapilocation",
+    "osName": "MXAPILOCATION",
+    "authApp": "MXAPILOCATION",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxapilocation"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapilicense",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxapilicense",
+    "osName": "MXAPILICENSE",
+    "authApp": "MXAPILICENSE",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxapilicense"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapicoa",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxapicoa",
+    "osName": "MXAPICOA",
+    "authApp": "MXAPICOA",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxapicoa"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxinvissue",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxinvissue",
+    "osName": "MXINVISSUE",
+    "authApp": null,
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxinvissue"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapicaassetwo",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxapicaassetwo",
+    "osName": "MXAPICAASSETWO",
+    "authApp": "MXAPICAASSETWO",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxapicaassetwo"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapiinvbal",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxapiinvbal",
+    "osName": "MXAPIINVBAL",
+    "authApp": "MXAPIINVBAL",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxapiinvbal"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/rep_shipment",
+    "defaultPageSize": 100,
+    "useWith": "REPORTING",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/rep_shipment",
+    "osName": "REP_SHIPMENT",
+    "authApp": "SHIPREC",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/rep_shipment"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapiahmethodology",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxapiahmethodology",
+    "osName": "MXAPIAHMETHODOLOGY",
+    "authApp": "MXAPIAHMETHODOLOGY",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxapiahmethodology"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapiautoscript",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxapiautoscript",
+    "osName": "MXAPIAUTOSCRIPT",
+    "authApp": "MXAPIAUTOSCRIPT",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxapiautoscript"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/rep_asset",
+    "defaultPageSize": 100,
+    "useWith": "REPORTING",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/rep_asset",
+    "osName": "REP_ASSET",
+    "authApp": "ASSET",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/rep_asset"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxproj",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxproj",
+    "osName": "MXPROJ",
+    "authApp": null,
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxproj"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/rep_invoice",
+    "defaultPageSize": 100,
+    "useWith": "REPORTING",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/rep_invoice",
+    "osName": "REP_INVOICE",
+    "authApp": "INVOICE",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/rep_invoice"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxprop",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxprop",
+    "osName": "MXPROP",
+    "authApp": null,
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxprop"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapiviewmanager",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxapiviewmanager",
+    "osName": "MXAPIVIEWMANAGER",
+    "authApp": "MXAPIVIEWMANAGER",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxapiviewmanager"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapiahclassificatn",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxapiahclassificatn",
+    "osName": "MXAPIAHCLASSIFICATN",
+    "authApp": "MXAPIAHCLASSIFICATN",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxapiahclassificatn"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxstoreloc",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxstoreloc",
+    "osName": "MXSTORELOC",
+    "authApp": null,
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxstoreloc"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/masperuser",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/masperuser",
+    "osName": "MASPERUSER",
+    "authApp": "MASPERUSER",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/masperuser"
+  },
+  {
+    "schema": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxbudget",
+    "defaultPageSize": 100,
+    "useWith": "INTEGRATION",
+    "href": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/apimeta/mxbudget",
+    "osName": "MXBUDGET",
+    "authApp": "BUDGET",
+    "apidoc": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/yaml/mxbudget"
+  }
+]

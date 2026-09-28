@@ -1,0 +1,316 @@
+{
+  "resource": "MXOSLCINTERACTION",
+  "description": "OSLCINTERACTION",
+  "pk": [
+    "interactionname",
+    "providername"
+  ],
+  "title": "OSLCINTERACTION",
+  "type": "object",
+  "$ref": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxoslcinteraction",
+  "uniqueid": "oslcinteractionid",
+  "properties": {
+    "oslcinteractionid": {
+      "searchType": "EXACT",
+      "maximum": 2147483647.0,
+      "subType": "BIGINT",
+      "title": "Unique Id",
+      "persistent": true,
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "uniqueid": true,
+      "remarks": "Unique Id",
+      "maxLength": 11
+    },
+    "serviceprovider": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Service Provider URI",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "The service provider URI that supports the selected resource type and usage URI. If an interaction is configured to support all service providers, no URI can be specified here.",
+      "maxLength": 500
+    },
+    "localref": {
+      "type": "string"
+    },
+    "interactiontype": {
+      "default": "CREATIONDIALOG",
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Interaction Type",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "The type of OSLC interaction. The CREATIONDIALOG interaction creates data in the provider application. The SELECTIONDIALOG interaction links data in the provider application to data in the consumer application by using a selection dialog from the provider application. The QUERYCAPABILITY interaction retrieves resource data from a provider.",
+      "maxLength": 20
+    },
+    "usage": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Usage URI",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "The fully qualified name of a subclass of data within the resource type. The URI is retrieved from the OSLC provider application.",
+      "maxLength": 500
+    },
+    "linktype": {
+      "default": "OSLCLINK",
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Link Type",
+      "persistent": true,
+      "type": "string",
+      "remarks": "The base URI that groups links for different interactions on the same resource and usage combination. The combination might be for one or more OSLC providers.",
+      "maxLength": 200
+    },
+    "description": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Description",
+      "persistent": true,
+      "type": "string",
+      "remarks": "The description of the OSLC interaction.",
+      "maxLength": 200
+    },
+    "resourceuri": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Resource URI",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Resource URI",
+      "maxLength": 500
+    },
+    "oslcintquery": {
+      "objectName": "OSLCINTQUERY",
+      "type": "array",
+      "items": {
+        "definition": {
+          "subSchema": {
+            "$ref": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxoslcinteraction/oslcintquery"
+          }
+        },
+        "type": "object"
+      },
+      "cardinality": "",
+      "relation": "OSLCINTQUERY"
+    },
+    "appobject": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Mapping Object",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "The main object of the specified application that the mapping can be configured from.",
+      "maxLength": 30
+    },
+    "linkpropname": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Link Property",
+      "persistent": true,
+      "type": "string",
+      "remarks": "The Resource Description Framework (RDF) path that is used to retrieve the resource URI from the query result document.",
+      "maxLength": 200
+    },
+    "selectclause": {
+      "default": "*",
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Select Clause",
+      "persistent": true,
+      "type": "string",
+      "remarks": "A comma-separated list of attributes that you want to return from the resource query. To return all the attributes, specify the asterisk (*).",
+      "maxLength": 500
+    },
+    "tabname": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Application Tab",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "The tab that the user interface changes are implemented on. The end user starts the interaction from this tab.",
+      "maxLength": 50
+    },
+    "_rowstamp": {
+      "type": "string"
+    },
+    "appname": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Application",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "The application that the end user will start the interaction from. ",
+      "maxLength": 40
+    },
+    "linkproplabel": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Link Label",
+      "persistent": true,
+      "type": "string",
+      "remarks": "The RDF path that is used to retrieve the description that is associated with the resource URI from the query result document.",
+      "maxLength": 200
+    },
+    "_imagelibref": {
+      "type": "string"
+    },
+    "interactionname": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Interaction",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Identifies the OSLC interaction, that is, the interaction between the consumer application and the OSLC provider application.",
+      "maxLength": 30
+    },
+    "href": {
+      "type": "string"
+    },
+    "interactiontype_description": {
+      "type": "string"
+    },
+    "updatepropname": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Association Property",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "If the OSLC provider can store a link to the application object in a property, you can select the property that contains the link. If a shape document is not specified for the resource type, you can type a value instead of selecting one.",
+      "maxLength": 200
+    },
+    "resourcetypeuri": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Resource Type URI",
+      "persistent": true,
+      "type": "string",
+      "remarks": "The fully qualified name of a class of data that is available in an OSLC provider application.",
+      "maxLength": 500
+    },
+    "updatepropns": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Association Property Namespace",
+      "persistent": true,
+      "type": "string",
+      "remarks": "If a shape document is specified for the resource type, the namespace is displayed after the association property is selected. If a shape document is not specified for the resource type, you can type a value.",
+      "maxLength": 200
+    },
+    "changeby": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Change By",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Change By",
+      "maxLength": 100
+    },
+    "mapoption": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Push Button Signature Option",
+      "persistent": true,
+      "type": "string",
+      "remarks": "The signature option that is associated with the push button that launches the interaction from the consumer application. The signature option enables security groups to be granted access to the interaction. The field value matches the interaction name. The value is generated during interaction creation.",
+      "maxLength": 25
+    },
+    "prefillclass": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Interaction Mapping Class",
+      "persistent": true,
+      "type": "string",
+      "remarks": "The java class to be used as part of the mapping logic when the specified field mapping definitions are not sufficient for mapping.",
+      "maxLength": 500
+    },
+    "changedate": {
+      "searchType": "EXACT",
+      "subType": "DATETIME",
+      "title": "Change Date",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Change Date"
+    },
+    "linkrelation": {
+      "default": "OSLCLINK",
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Link Relationship",
+      "persistent": true,
+      "type": "string",
+      "remarks": "The object relationship that  associates the application main object with its related OSLC links.",
+      "maxLength": 50
+    },
+    "providername": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Provider",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Identifies the OSLC provider application.",
+      "maxLength": 20
+    },
+    "resourcetype": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Resource Type",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "The resource type or record type of the data in the OSLC provider application. A resource type identifies the type of data, such as a defect or a ticket, that is shared between the consumer application and the provider application. If the shape document for a resource type is specified, it describes the data of the resource type.",
+      "maxLength": 30
+    },
+    "intobjectname": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Object Structure",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Object Structure",
+      "maxLength": 20
+    },
+    "oslcprefillmap": {
+      "objectName": "OSLCPREFILLMAP",
+      "type": "array",
+      "items": {
+        "definition": {
+          "subSchema": {
+            "$ref": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxoslcinteraction/oslcprefillmap"
+          }
+        },
+        "type": "object"
+      },
+      "cardinality": "",
+      "relation": "OSLCPREFILLMAP"
+    },
+    "buttonid": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Interaction Button",
+      "persistent": true,
+      "type": "string",
+      "remarks": "The control ID for the button in the application user interface (UI) that initiates the interaction.",
+      "maxLength": 100
+    },
+    "_id": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "appname",
+    "appobject",
+    "interactionname",
+    "providername",
+    "resourcetypeuri"
+  ]
+}

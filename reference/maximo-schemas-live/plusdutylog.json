@@ -1,0 +1,316 @@
+{
+ "resource": "PLUSDUTYLOG",
+ "description": "PLUSDUTYLOG",
+ "pk": [
+  "siteid",
+  "stationid",
+  "revisionnum",
+  "unit",
+  "shiftid",
+  "entryid"
+ ],
+ "title": "PLUSDUTYLOG",
+ "type": "object",
+ "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/plusdutylog",
+ "uniqueid": "plusdutylogid",
+ "properties": {
+  "shiftid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Shift",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The shift record to which this log entry belongs.",
+   "maxLength": 12
+  },
+  "localref": {
+   "type": "string"
+  },
+  "entrytime": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Entry Created",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The time and date when this entry was created."
+  },
+  "originatingid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Originating Entry",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The entry to which the current entry applies if the current entry is a follow-up or correction.",
+   "maxLength": 12
+  },
+  "eventtime": {
+   "default": "&SYSDATE&",
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Event Time",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The time and date when the event in this entry occurred."
+  },
+  "plusdutylogid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Unique ID",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "uniqueid": true,
+   "remarks": "Unique ID",
+   "maxLength": 11
+  },
+  "entrytype": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Entry Type",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The type or purpose of this narrative log entry.",
+   "maxLength": 12
+  },
+  "_rowstamp": {
+   "type": "string"
+  },
+  "userunit_description": {
+   "type": "string"
+  },
+  "corrected_description": {
+   "type": "string"
+  },
+  "_imagelibref": {
+   "type": "string"
+  },
+  "comporig": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Completes Originating Entry",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Indicates whether the current entry completes the originating entry. This check box is automatically selected when you use the Complete Originating Entry button to create a follow-up entry. The check box cannot be manually selected or cleared."
+  },
+  "siteid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Site",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Identifies the site to which the shift record applies.",
+   "maxLength": 8
+  },
+  "href": {
+   "type": "string",
+   "title": "PLUSDUTYLOG object reference"
+  },
+  "tempentryid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Narrative Log Template",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The identifier of the duplicated narrative log template.",
+   "maxLength": 12
+  },
+  "ticketid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Condition Report",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The condition report that is related to this entry. You can click the Create/Relate Condition Report icon to create a condition report or relate an existing condition report.",
+   "maxLength": 10
+  },
+  "userunit": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Unit",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The unit of the person who created this entry.",
+   "maxLength": 12
+  },
+  "entrysummary": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Event Details",
+   "persistent": true,
+   "type": "string",
+   "remarks": "A short description of the event that is documented in this entry.",
+   "maxLength": 3500
+  },
+  "entrytype_description": {
+   "type": "string"
+  },
+  "followup_description": {
+   "type": "string"
+  },
+  "revisionnum": {
+   "default": 0,
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "INTEGER",
+   "title": "Revision",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "The revision of the duty station plan.",
+   "maxLength": 11
+  },
+  "record_descriptor": {
+   "type": "string",
+   "title": "Record/Object Descriptor"
+  },
+  "entryby": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Created By",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The person who created this entry.",
+   "maxLength": 100
+  },
+  "unit_description": {
+   "type": "string"
+  },
+  "priority": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "INTEGER",
+   "title": "Priority",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "The priority of this entry relative to other open entries in the narrative log.",
+   "maxLength": 11
+  },
+  "orgid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Organization",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The organzation to which this entry applies.",
+   "maxLength": 8
+  },
+  "ticketclass": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Class",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Class of the ticket. Default values are SR (service request), INCIDENT, and PROBLEM.",
+   "maxLength": 25
+  },
+  "corrected": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Correction Status",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Indicates whether the current entry corrects or is corrected by another entry. In both cases, the value is automatically defined.",
+   "maxLength": 12
+  },
+  "entryid": {
+   "default": "&AUTOKEY&",
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Current Entry",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Identifies the current entry.",
+   "maxLength": 12
+  },
+  "followup": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Follow-Up Status",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "If the current entry is new, specify whether it requires follow-up action. If the current entry is not new, the value in this field is automatically defined and indicates whether the required follow-up action is pending (REQD), in progress, or complete. ",
+   "maxLength": 12
+  },
+  "unit": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Unit",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Identifies the unit to which the shift record applies.",
+   "maxLength": 12
+  },
+  "isowner": {
+   "default": true,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Shift Owner",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Indicates whether the person who created this entry is the owner or an editor of the shift record for the specified function."
+  },
+  "location": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Location",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The location that is associated with the  narrative log template for the duty station.",
+   "maxLength": 25
+  },
+  "_id": {
+   "type": "string"
+  },
+  "position": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Function",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The function of the person who created this entry. The function is derived from active shift records to which the person has shift owner or editor access. Shift records that have a common log are excluded from the evaluation.",
+   "maxLength": 12
+  },
+  "asset": {
+   "objectName": "ASSET",
+   "type": "array",
+   "items": {
+    "definition": {
+     "subSchema": {
+      "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/plusdutylog/plusdutylog"
+     }
+    },
+    "type": "object"
+   },
+   "cardinality": "",
+   "relation": "PLUSDUTYORIGLOG"
+  },
+  "stationid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Duty Station Plan",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Identifies the duty station plan on which the shift record is based. ",
+   "maxLength": 12
+  }
+ },
+ "required": [
+  "entryby",
+  "orgid",
+  "shiftid",
+  "siteid",
+  "stationid"
+ ]
+}

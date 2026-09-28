@@ -1,0 +1,729 @@
+{
+  "resource": "MXAPIPERSON",
+  "description": "PERSON",
+  "pk": [
+    "personid"
+  ],
+  "title": "PERSON",
+  "type": "object",
+  "$ref": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapiperson",
+  "uniqueid": "personuid",
+  "properties": {
+    "country": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Country",
+      "persistent": true,
+      "type": "string",
+      "remarks": "The country where this person resides.",
+      "maxLength": 36
+    },
+    "ownersysid": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Owner System ID",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Owner System ID",
+      "maxLength": 10
+    },
+    "personuid": {
+      "searchType": "EXACT",
+      "maximum": 2147483647.0,
+      "subType": "BIGINT",
+      "title": "PERSONUID",
+      "persistent": true,
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "uniqueid": true,
+      "remarks": "Unique Identifier",
+      "maxLength": 11
+    },
+    "birthdate": {
+      "searchType": "EXACT",
+      "subType": "DATE",
+      "title": "Date of Birth",
+      "persistent": true,
+      "type": "string",
+      "remarks": "The date of this person's birth."
+    },
+    "localref": {
+      "type": "string"
+    },
+    "county": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "County",
+      "persistent": true,
+      "type": "string",
+      "remarks": "County",
+      "maxLength": 36
+    },
+    "language": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Language",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "This person's language preference for using Maximo.",
+      "maxLength": 4
+    },
+    "ownergroup": {
+      "searchType": "EXACT",
+      "subType": "UPPER",
+      "title": "Person Group",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "The default group for a person. The default group applies to a person record if they belong to one group or multiple groups or if they do not belong to any groups.",
+      "maxLength": 8
+    },
+    "hiredate": {
+      "searchType": "EXACT",
+      "subType": "DATE",
+      "title": "Hire Date",
+      "persistent": true,
+      "type": "string",
+      "remarks": "The date that this person started working for the company."
+    },
+    "pcardnum": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Card #",
+      "persistent": true,
+      "type": "string",
+      "remarks": "The number on the person's company's credit card.",
+      "maxLength": 30
+    },
+    "wfmailelection": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Workflow E-mail Notification",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "The person's choice of when to receive emailed workflow assignments. A value list field defining the circumstances in which this person will receive workflow related e-mail notification.",
+      "maxLength": 15
+    },
+    "usernotftype_description": {
+      "type": "string"
+    },
+    "employeetype_description": {
+      "type": "string"
+    },
+    "_rowstamp": {
+      "type": "string"
+    },
+    "primarysms": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Primary",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Primary SMS Address",
+      "maxLength": 128
+    },
+    "wfmailelection_description": {
+      "type": "string"
+    },
+    "href": {
+      "type": "string"
+    },
+    "vip": {
+      "searchType": "EXACT",
+      "maximum": 2147483647.0,
+      "subType": "INTEGER",
+      "title": "VIP",
+      "persistent": true,
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "hasList": true,
+      "remarks": "Indicates if this person is a VIP. This field displays a value indicating the level of importance of the VIP.",
+      "maxLength": 11
+    },
+    "status_description": {
+      "type": "string"
+    },
+    "wopriority": {
+      "searchType": "EXACT",
+      "maximum": 2147483647.0,
+      "subType": "INTEGER",
+      "title": "Default WO Priority",
+      "persistent": true,
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "hasList": true,
+      "remarks": "The default priority a work order receives when reported by this person.",
+      "maxLength": 11
+    },
+    "nextevaldate": {
+      "searchType": "EXACT",
+      "subType": "DATE",
+      "title": "Next Evaluation",
+      "persistent": true,
+      "type": "string",
+      "remarks": "The date of this person's next evaluation."
+    },
+    "timezone_description": {
+      "type": "string"
+    },
+    "pcardexpdate": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Expiration Date",
+      "persistent": true,
+      "type": "string",
+      "remarks": "The expiration date of the company credit card.",
+      "maxLength": 7
+    },
+    "primaryphone": {
+      "searchType": "NONE",
+      "subType": "ALN",
+      "title": "Primary phone",
+      "type": "string",
+      "remarks": "The primary phone number that is used to contact this person. To display all phone numbers of this person, click the Show/Manage icon to display the Add/Modify Phone Numbers dialog box. You can modify this number directly in the Primary Phone field if it is the only phone number displayed in the Add/Modify Phone Numbers dialog box for this person. The primary phone number may not be deleted unless it is the only phone number.",
+      "maxLength": 20
+    },
+    "stateprovince": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "State/Province",
+      "persistent": true,
+      "type": "string",
+      "remarks": "The state or province where this person resides; can be the two-character code or full spelling.",
+      "maxLength": 36
+    },
+    "lastname": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Last name",
+      "persistent": true,
+      "type": "string",
+      "remarks": "The last name of the person whose record this is.",
+      "maxLength": 50
+    },
+    "jobcode_description": {
+      "type": "string"
+    },
+    "saddresscode": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Service Address",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "The address code identifies a service address. It must be unique by site for each service address.",
+      "maxLength": 12
+    },
+    "locale_description": {
+      "type": "string"
+    },
+    "acceptingwfmail": {
+      "default": true,
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "Accepting E-mail",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "System-managed flag indicating whether a user is currently accepting emailed workflow assignments"
+    },
+    "phone": {
+      "objectName": "PHONE",
+      "type": "array",
+      "items": {
+        "definition": {
+          "subSchema": {
+            "$ref": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapiperson/phone"
+          }
+        },
+        "type": "object"
+      },
+      "cardinality": "MULTIPLE",
+      "relation": "PHONE"
+    },
+    "regiondistrict": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Regional/District",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Region/District",
+      "maxLength": 36
+    },
+    "addressline3": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "State/Province",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Address Line 3",
+      "maxLength": 55
+    },
+    "caltype_description": {
+      "type": "string"
+    },
+    "addressline2": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "City",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Address Line 2",
+      "maxLength": 55
+    },
+    "addressline1": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Street address",
+      "persistent": true,
+      "type": "string",
+      "remarks": "The address of this person.",
+      "maxLength": 55
+    },
+    "_id": {
+      "type": "string"
+    },
+    "pcardtype": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Card Type",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "The type of credit card used. Enter a value or click Select Value.",
+      "maxLength": 20
+    },
+    "primaryemail": {
+      "searchType": "NONE",
+      "subType": "ALN",
+      "title": "Primary email",
+      "type": "string",
+      "remarks": "The primary email address used to contact this person. To display all email addresses of this person, click the Show/Manage icon to display the Add/Modify Email Addresses dialog box. You can modify this email address directly in the Primay Email field if it is the only email address displayed in the Add/Modify Email Addresses dialog box for this person. The primary email address may not be deleted unless it is the only email address",
+      "maxLength": 100
+    },
+    "supervisor": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Supervisor",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "The name of this person's supervisor.",
+      "maxLength": 100
+    },
+    "caltype": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Calendar Type",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Calendar Type",
+      "maxLength": 10
+    },
+    "status": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Status",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "The current status of the person. On inserting a new record, this field defaults to an active status.",
+      "maxLength": 12
+    },
+    "firstname": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "First name",
+      "persistent": true,
+      "type": "string",
+      "remarks": "The first name of the person whose record this is.",
+      "maxLength": 30
+    },
+    "usernotftype": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "User Notification Type",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "User Notification Type",
+      "maxLength": 20
+    },
+    "transemailelection_description": {
+      "type": "string"
+    },
+    "city": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "City",
+      "persistent": true,
+      "type": "string",
+      "remarks": "The city where this person resides.",
+      "maxLength": 36
+    },
+    "timezone": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Time zone",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "The time zone of this person's location.",
+      "maxLength": 50
+    },
+    "loctoservreq": {
+      "default": true,
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "Default Location to Service Request",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "Indicates if service requests reported by this person will default to the location associated with this person"
+    },
+    "externalrefid": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "External Ref ID",
+      "persistent": true,
+      "type": "string",
+      "remarks": "External Ref ID",
+      "maxLength": 10
+    },
+    "billtoaddress": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Bill to Address",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "The billing address of this person. This will be used as the default billing address for purchase transactions entered by the user.",
+      "maxLength": 30
+    },
+    "locale": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Locale",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "The date format and the currency format used in the region where this person resides.",
+      "maxLength": 20
+    },
+    "title": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Job title",
+      "persistent": true,
+      "type": "string",
+      "remarks": "The job title of this person.",
+      "maxLength": 30
+    },
+    "pcardverification": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Verification Value",
+      "persistent": true,
+      "type": "string",
+      "remarks": "The three- or four-digit code at the end of a credit card number; you can find this verification code on the back or front of the card.",
+      "maxLength": 4
+    },
+    "delegate": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Workflow Delegate",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "The delegate for Workflow assignments for this person. If there is a value in this field and if the workflow assignment is received between the Delegate To and Delegate From date, Workflow sends the assignment to the delegate. Enter a value or click Detail Menu to select an option and retrieve a value",
+      "maxLength": 100
+    },
+    "delegatefromdate": {
+      "searchType": "EXACT",
+      "subType": "DATE",
+      "title": "Delegate From",
+      "persistent": true,
+      "type": "string",
+      "remarks": "The first date from which this person's delegate takes over the workflow assignments."
+    },
+    "languserupdated": {
+      "default": false,
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "Language updated by user",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "Flag to indicate whether the language is updated in Maximo (not from MAS)"
+    },
+    "droppoint": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Drop Point",
+      "persistent": true,
+      "type": "string",
+      "remarks": "The drop point for making deliveries.",
+      "maxLength": 12
+    },
+    "vip_description": {
+      "type": "string"
+    },
+    "_imagelibref": {
+      "type": "string"
+    },
+    "lastevaldate": {
+      "searchType": "EXACT",
+      "subType": "DATE",
+      "title": "Last Evaluation",
+      "persistent": true,
+      "type": "string",
+      "remarks": "The date of this person's most recent evaluation."
+    },
+    "postalcode": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Postal code",
+      "persistent": true,
+      "type": "string",
+      "remarks": "The zip or postal code of this person.",
+      "maxLength": 12
+    },
+    "sms": {
+      "objectName": "SMS",
+      "type": "array",
+      "items": {
+        "definition": {
+          "subSchema": {
+            "$ref": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapiperson/sms"
+          }
+        },
+        "type": "object"
+      },
+      "cardinality": "MULTIPLE",
+      "relation": "SMS"
+    },
+    "personid": {
+      "default": "&AUTOKEY&",
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Person",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Identifier of the person's record. This field must be unique.When you save a person record, this field becomes read only.",
+      "maxLength": 100
+    },
+    "department": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Department",
+      "persistent": true,
+      "type": "string",
+      "remarks": "The department this person belongs to.",
+      "maxLength": 30
+    },
+    "deviceclass": {
+      "default": 2,
+      "searchType": "EXACT",
+      "maximum": 2147483647.0,
+      "subType": "SMALLINT",
+      "title": "Email format",
+      "persistent": true,
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "hasList": true,
+      "remarks": "The email format you want to use for email interaction.",
+      "maxLength": 11
+    },
+    "email": {
+      "objectName": "EMAIL",
+      "type": "array",
+      "items": {
+        "definition": {
+          "subSchema": {
+            "$ref": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapiperson/email"
+          }
+        },
+        "type": "object"
+      },
+      "cardinality": "MULTIPLE",
+      "relation": "EMAIL"
+    },
+    "employeetype": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Employee Type",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "The type of employee this person is, such as full time or a part time employee.",
+      "maxLength": 10
+    },
+    "terminationdate": {
+      "searchType": "EXACT",
+      "subType": "DATE",
+      "title": "Termination Date",
+      "persistent": true,
+      "type": "string",
+      "remarks": "The date when this person's services are terminated."
+    },
+    "locationorg": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Organization",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Organization of the location",
+      "maxLength": 8
+    },
+    "classstructureid": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Classification",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Class Structure Identifier.",
+      "maxLength": 25
+    },
+    "locationsite": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Person's Site",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "The site to which this person belongs.",
+      "maxLength": 8
+    },
+    "deviceclass_description": {
+      "type": "string"
+    },
+    "im_id": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Instant Messaging Id",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Instant Messaging Id",
+      "maxLength": 50
+    },
+    "sendersysid": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Sender System ID",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Column used by ERP-Integration (APIs)",
+      "maxLength": 50
+    },
+    "transemailelection": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Notice of E-commerce Exceptions",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "The person''s choice of when to receive transaction email.",
+      "maxLength": 15
+    },
+    "shiptoaddress": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Ship to Address",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "The shipping address of the person. This will be the default shipping address used for purchase transactions entered by this person.",
+      "maxLength": 30
+    },
+    "statusdate": {
+      "searchType": "EXACT",
+      "subType": "DATETIME",
+      "title": "Status Date",
+      "persistent": true,
+      "type": "string",
+      "remarks": "The date of the last status change."
+    },
+    "dfltapp": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Default application",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "The application that is opened by default after the user logs in. If you do not specify an application, either the application specified for your security group or the system default application displays.",
+      "maxLength": 40
+    },
+    "statusiface": {
+      "default": false,
+      "searchType": "NONE",
+      "subType": "YORN",
+      "title": "Has Status Changed",
+      "type": "boolean",
+      "remarks": "Non persistent boolean field to indicate whether the status has been changed after the stateful object is fetched from the database."
+    },
+    "displayname": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Name",
+      "persistent": true,
+      "type": "string",
+      "remarks": "A nick name or a friendly name that this person can be identified with.This field is automatically populated when values are entered in the First Name and/or Last Name fields.",
+      "maxLength": 82
+    },
+    "delegatetodate": {
+      "searchType": "EXACT",
+      "subType": "DATE",
+      "title": "Delegate To",
+      "persistent": true,
+      "type": "string",
+      "remarks": "The last date till which this person's delegate works on the workflow assignments. The value entered in this field must be either equal to or greater than the value in the Delegate From field."
+    },
+    "jobcode": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Job Code",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "The job code of this person.",
+      "maxLength": 10
+    },
+    "location": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Person's Location",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "The place where this person is located.",
+      "maxLength": 25
+    },
+    "pcardtype_description": {
+      "type": "string"
+    },
+    "sourcesysid": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Source System ID",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Source System ID",
+      "maxLength": 10
+    },
+    "np_statusmemo": {
+      "searchType": "NONE",
+      "subType": "ALN",
+      "title": "Change Status Memo",
+      "type": "string",
+      "remarks": "Status change memo, temporary non-persistent field used by MEA",
+      "maxLength": 50
+    }
+  },
+  "required": [
+    "status",
+    "statusdate",
+    "statusiface",
+    "transemailelection"
+  ]
+}

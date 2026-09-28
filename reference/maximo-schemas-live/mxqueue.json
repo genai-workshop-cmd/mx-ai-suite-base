@@ -1,0 +1,254 @@
+{
+ "resource": "MXQUEUE",
+ "description": "Queue Definition",
+ "pk": [
+  "queuename"
+ ],
+ "title": "MAXQUEUE",
+ "type": "object",
+ "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/mxqueue",
+ "uniqueid": "maxqueueid",
+ "properties": {
+  "queuename": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Queue JNDI Name",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "JNDI name of the JMS queue.",
+   "maxLength": 250
+  },
+  "localref": {
+   "type": "string"
+  },
+  "maxqueueid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "MAXQUEUEID",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "uniqueid": true,
+   "remarks": "Unique Identifier",
+   "maxLength": 11
+  },
+  "providerpassword": {
+   "searchType": "NONE",
+   "subType": "CRYPTO",
+   "title": "Provider Password",
+   "persistent": true,
+   "type": "object",
+   "remarks": "Provider password used for creating jms connection"
+  },
+  "errorqueue": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Error Queue",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Error Queue",
+   "maxLength": 250
+  },
+  "inconfactory": {
+   "searchType": "EXACT",
+   "subType": "ALN",
+   "title": "Initial Context Factory",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Identifies the class that connects to the JMS server. This is specific to the application server.",
+   "maxLength": 80
+  },
+  "userid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "User ID",
+   "persistent": true,
+   "type": "string",
+   "remarks": "User ID for accessing the corresponding JMS queue.",
+   "maxLength": 100
+  },
+  "providerurl": {
+   "searchType": "EXACT",
+   "subType": "ALN",
+   "title": "Provider URL",
+   "persistent": true,
+   "type": "string",
+   "remarks": "URL for accessing the JMS server.",
+   "maxLength": 80
+  },
+  "_rowstamp": {
+   "type": "string"
+  },
+  "password": {
+   "searchType": "NONE",
+   "subType": "CRYPTO",
+   "title": "Password",
+   "persistent": true,
+   "type": "object",
+   "remarks": "Password for accessing a password-protected queue."
+  },
+  "provider": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Message Provider",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Message Provider",
+   "maxLength": 20
+  },
+  "_imagelibref": {
+   "type": "string"
+  },
+  "href": {
+   "type": "string",
+   "title": "MAXQUEUE object reference"
+  },
+  "tenantcode": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Tenant",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The unique identifier for the tenant. All users that belong to this tenant enter this code as part of their login credentials. The identifier is used as the USERID value and the PERSONID value for this tenant.If you enter a long identifier when you create a tenant, the identifier is shortened. You can modify the value, but after you save it, the identifier is  read only.",
+   "maxLength": 20
+  },
+  "istext": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Text",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Is Text Message"
+  },
+  "maxtrycount": {
+   "default": 1,
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "INTEGER",
+   "title": "Maximum Try Count",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "Number of times the MEA tries to process a message before writing the message to the error log and sending an email notification to the system administrator. Value cannot be less than 0.",
+   "maxLength": 11
+  },
+  "emailaddr": {
+   "searchType": "EXACT",
+   "subType": "ALN",
+   "title": "E-mail Address",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Address to which the MEA sends notification of transaction errors in the queue. This is typically the e-mail address of a system administrator If no value is specified, the MEA sends error notification to the Administrator Email Address specified in the Integration Administration Setup dialog box.",
+   "maxLength": 80
+  },
+  "changeby": {
+   "searchType": "EXACT",
+   "subType": "UPPER",
+   "title": "Changed By",
+   "persistent": true,
+   "type": "string",
+   "remarks": "CHANGEBY",
+   "maxLength": 100
+  },
+  "qconfactjndiname": {
+   "searchType": "EXACT",
+   "subType": "ALN",
+   "title": "Queue Connection Factory",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Identifies the connection factory for accessing the queue. Default is jms/mro/int/queues/sqin.",
+   "maxLength": 50
+  },
+  "provideruser": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Provider User",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Provider user used for creating jms connection",
+   "maxLength": 50
+  },
+  "iscompress": {
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Compress",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "add column to indicate compression requirements"
+  },
+  "changedate": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Changed Date",
+   "persistent": true,
+   "type": "string",
+   "remarks": "CHANGEDATE"
+  },
+  "record_descriptor": {
+   "type": "string",
+   "title": "Record/Object Descriptor"
+  },
+  "multipart": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Multi Part",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Multi Part"
+  },
+  "isinbound": {
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Inbound",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Specifies whether the corresponding queue is an inbound or an outbound queue. If the check box is selected, it is an inbound queue."
+  },
+  "_id": {
+   "type": "string"
+  },
+  "issequential": {
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Sequential ",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Specifies whether the inbound queue is a continuous or sequential queue. Both types process inbound messages on a first in first out basis, but the sequential queue stops processing messages in the queue if it encounters an error, while the continuous queue processes subsequent messages in the queue after it encounters an error. If the checkbox is selected, the queue is sequential."
+  },
+  "retentiontime": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "INTEGER",
+   "title": "Retention Time",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "Retention Time",
+   "maxLength": 11
+  },
+  "userdefined": {
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "User Defined",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Specifies whether the queue was predefined (MEA-supplied) or created by a user. If the check box is selected, a user created the queue."
+  }
+ },
+ "required": [
+  "changeby",
+  "changedate",
+  "iscompress",
+  "isinbound",
+  "issequential",
+  "queuename",
+  "userdefined"
+ ]
+}

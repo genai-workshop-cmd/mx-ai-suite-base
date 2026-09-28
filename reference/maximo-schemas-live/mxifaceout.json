@@ -1,0 +1,294 @@
+{
+ "resource": "MXIFACEOUT",
+ "description": "Publish Channel Definition",
+ "pk": [
+  "ifacename"
+ ],
+ "title": "MAXIFACEOUT",
+ "type": "object",
+ "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/mxifaceout",
+ "uniqueid": "maxifaceoutid",
+ "properties": {
+  "eventfilterclass": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Event Filter Class",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Event Filter Class Name",
+   "maxLength": 256
+  },
+  "localref": {
+   "type": "string"
+  },
+  "messagetype": {
+   "default": "Publish",
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Operation",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Operation Name",
+   "maxLength": 20
+  },
+  "skipdiffobject": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Skip Different Object Types",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Skip Different Object Types"
+  },
+  "usetxntracking": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Enable Message Tracking",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Enable Transaction Tracking"
+  },
+  "maxifaceoutcntl": {
+   "objectName": "MAXIFACEOUTCNTL",
+   "type": "array",
+   "items": {
+    "definition": {
+     "subSchema": {
+      "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/mxifaceout/maxifaceoutcntl"
+     }
+    },
+    "type": "object"
+   },
+   "cardinality": "UNDEFINED",
+   "relation": "MAXIFACEOUTCNTLDETAIL"
+  },
+  "listener": {
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Enable Listener",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Indicates if the event listener is enabled"
+  },
+  "description": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Description",
+   "persistent": true,
+   "type": "string",
+   "remarks": "description",
+   "maxLength": 100
+  },
+  "maxifaceproc": {
+   "objectName": "MAXIFACEPROC",
+   "type": "array",
+   "items": {
+    "definition": {
+     "subSchema": {
+      "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/mxifaceout/maxifaceproc"
+     }
+    },
+    "type": "object"
+   },
+   "cardinality": "UNDEFINED",
+   "relation": "MAXIFACEPROC"
+  },
+  "ifacetbname": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Interface Table",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Interface Table Name",
+   "maxLength": 30
+  },
+  "publishjson": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Publish JSON",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "When selected JSON format of the message will be produced."
+  },
+  "_rowstamp": {
+   "type": "string"
+  },
+  "_imagelibref": {
+   "type": "string"
+  },
+  "retainmbos": {
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Retain Mbo's",
+   "persistent": true,
+   "type": "boolean",
+   "hasList": true,
+   "remarks": "Retain Mbo's after creating the xml"
+  },
+  "storemsg": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Store Message",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Whether to store(save) the message. Option given due to performance implication"
+  },
+  "templatename": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Template Name",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Template Name",
+   "maxLength": 50
+  },
+  "href": {
+   "type": "string",
+   "title": "MAXIFACEOUT object reference"
+  },
+  "ifacetype_description": {
+   "type": "string"
+  },
+  "description_longdescription": {
+   "searchType": "WILDCARD",
+   "subType": "LONGALN",
+   "title": "DESCRIPTION Long description",
+   "type": "string",
+   "remarks": "Long description for DESCRIPTION",
+   "maxLength": 32000
+  },
+  "changeby": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Changed By",
+   "persistent": true,
+   "type": "string",
+   "remarks": "CHANGEBY",
+   "maxLength": 100
+  },
+  "ifacemapname": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "XSL Map",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Path to a class file that contains XSL mapping to be applied to the interface.",
+   "maxLength": 80
+  },
+  "ifacename": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Publish Channel",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Publish Channel Name",
+   "maxLength": 25
+  },
+  "changedate": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Changed Date",
+   "persistent": true,
+   "type": "string",
+   "remarks": "CHANGEDATE"
+  },
+  "extmsgidfield": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "External Message ID",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Transaction ID field name as supplied by External System",
+   "maxLength": 2000
+  },
+  "record_descriptor": {
+   "type": "string",
+   "title": "Record/Object Descriptor"
+  },
+  "searchfield": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Search ID",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Search Field name as set by Administrator for easy search",
+   "maxLength": 2000
+  },
+  "ifaceexitclass": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Processing Class",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Fully Qualified Java Class File Name That Contains Outbound Processing Logic For This Channel.",
+   "maxLength": 256
+  },
+  "intobjectname": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Object Structure",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Publish Object Structure Name",
+   "maxLength": 20
+  },
+  "_id": {
+   "type": "string"
+  },
+  "ifacetype": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Adapter",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Publish Channel Adapter Name",
+   "maxLength": 10
+  },
+  "ifaceuserexitclass": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "User Exit Class",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Fully Qualified Java Class File Name That Contains Custom Processing Logic.",
+   "maxLength": 256
+  },
+  "userdefined": {
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "User Defined",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "User Defined"
+  },
+  "maxifaceoutid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "MAXIFACEOUTID",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "uniqueid": true,
+   "remarks": "Unique Identifier",
+   "maxLength": 11
+  }
+ },
+ "required": [
+  "changeby",
+  "changedate",
+  "ifacename",
+  "ifacetype",
+  "intobjectname",
+  "listener",
+  "retainmbos",
+  "userdefined"
+ ]
+}

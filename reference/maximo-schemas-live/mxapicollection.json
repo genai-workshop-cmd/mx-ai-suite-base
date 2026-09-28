@@ -1,0 +1,98 @@
+{
+ "resource": "MXAPICOLLECTION",
+ "description": "Maximo API for Collection",
+ "pk": [
+  "collectionnum"
+ ],
+ "title": "COLLECTION",
+ "type": "object",
+ "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/mxapicollection",
+ "uniqueid": "collectionid",
+ "properties": {
+  "_rowstamp": {
+   "type": "string"
+  },
+  "description_longdescription": {
+   "searchType": "WILDCARD",
+   "subType": "LONGALN",
+   "title": "DESCRIPTION Long description",
+   "type": "string",
+   "remarks": "Long description for DESCRIPTION",
+   "maxLength": 32000
+  },
+  "localref": {
+   "type": "string"
+  },
+  "collectionnum": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Collection",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Identifier of the Collection",
+   "maxLength": 8
+  },
+  "_imagelibref": {
+   "type": "string"
+  },
+  "isactive": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Active",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Indicates if the Collection can be used or not"
+  },
+  "description": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Description",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Description of the COLLECTION",
+   "maxLength": 100
+  },
+  "href": {
+   "type": "string",
+   "title": "COLLECTION object reference"
+  },
+  "record_descriptor": {
+   "type": "string",
+   "title": "Record/Object Descriptor"
+  },
+  "_id": {
+   "type": "string"
+  },
+  "collectdetails": {
+   "objectName": "COLLECTDETAILS",
+   "type": "array",
+   "items": {
+    "definition": {
+     "subSchema": {
+      "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/mxapicollection/collectdetails"
+     }
+    },
+    "type": "object"
+   },
+   "cardinality": "UNDEFINED",
+   "relation": "COLLECTDETAILS"
+  },
+  "collectionid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Unique Id",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "uniqueid": true,
+   "remarks": "Unique Id",
+   "maxLength": 11
+  }
+ },
+ "required": [
+  "collectionnum"
+ ]
+}

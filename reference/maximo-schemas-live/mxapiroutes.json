@@ -1,0 +1,159 @@
+{
+ "resource": "MXAPIROUTES",
+ "description": "Routes and Route_Stops Object Structure",
+ "pk": [
+  "siteid",
+  "route"
+ ],
+ "title": "ROUTES",
+ "type": "object",
+ "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/mxapiroutes",
+ "uniqueid": "routesid",
+ "properties": {
+  "status_description": {
+   "type": "string"
+  },
+  "localref": {
+   "type": "string"
+  },
+  "routestopsbecome_description": {
+   "type": "string"
+  },
+  "description": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Description",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Name or description of the route.",
+   "maxLength": 100
+  },
+  "parentchgsstatus": {
+   "default": true,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Route Stops Inherit Status Changes",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Checkbox that determines if the status on child work orders gets updated automatically when you change the status of the parent work order."
+  },
+  "record_descriptor": {
+   "type": "string",
+   "title": "Record/Object Descriptor"
+  },
+  "routestopsbecome": {
+   "default": "!CHILD!",
+   "searchType": "EXACT",
+   "subType": "UPPER",
+   "title": "When this Route is applied to a Work Order, the Route Stops will become",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Identifies what Route Stops become when Routes are applied to Work Orders - Child Work Orders, Work Order Tasks or Entries in the Multi Asset, Location & CI table",
+   "maxLength": 8
+  },
+  "orgid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Organization",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Organization Identifier",
+   "maxLength": 8
+  },
+  "_rowstamp": {
+   "type": "string"
+  },
+  "route": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Route",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The identifier you assign to a list of assets. The asset list can contain asset, locations, or both asset and locations. The asset list also can contain job plans someone associated with the assets, to facilitate work order generation.",
+   "maxLength": 8
+  },
+  "_imagelibref": {
+   "type": "string"
+  },
+  "pluscjprevnum": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "INTEGER",
+   "title": "Job Plan Revision Number",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "Displays the revision level of the current job plan.",
+   "maxLength": 11
+  },
+  "routesid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "ROUTESID",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "uniqueid": true,
+   "remarks": "Unique Identifier",
+   "maxLength": 11
+  },
+  "siteid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Site",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Site Identifier",
+   "maxLength": 8
+  },
+  "href": {
+   "type": "string",
+   "title": "ROUTES object reference"
+  },
+  "_id": {
+   "type": "string"
+  },
+  "plusgcampaignref": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Campaign Reference",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The reference that identifies the initiating campaign.",
+   "maxLength": 24
+  },
+  "status": {
+   "default": "DRAFT",
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Status",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Indicates the current status of the Route. The status can be 'DRAFT', 'ACTIVE' or 'INACTIVE' with the default being 'DRAFT'.",
+   "maxLength": 12
+  },
+  "route_stop": {
+   "objectName": "ROUTE_STOP",
+   "type": "array",
+   "items": {
+    "definition": {
+     "subSchema": {
+      "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/mxapiroutes/route_stop"
+     }
+    },
+    "type": "object"
+   },
+   "cardinality": "UNDEFINED",
+   "relation": "ROUTE_STOP"
+  }
+ },
+ "required": [
+  "orgid",
+  "route",
+  "siteid"
+ ]
+}

@@ -1,0 +1,374 @@
+{
+  "resource": "MXAPIAUTOSCRIPT",
+  "description": "AUTOSCRIPT",
+  "pk": [
+    "autoscript"
+  ],
+  "title": "AUTOSCRIPT",
+  "type": "object",
+  "$ref": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapiautoscript",
+  "uniqueid": "autoscriptid",
+  "properties": {
+    "owneremail": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "E-mail",
+      "persistent": true,
+      "type": "string",
+      "remarks": "E-mail address of the owner of the script. The owner or owner group manages the script",
+      "maxLength": 100
+    },
+    "localref": {
+      "type": "string"
+    },
+    "createddate": {
+      "searchType": "EXACT",
+      "subType": "DATETIME",
+      "title": "Date",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Date and time the script was created."
+    },
+    "createdbyid": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Created By",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Identifies the person creating the script.",
+      "maxLength": 100
+    },
+    "description": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Description",
+      "persistent": true,
+      "type": "string",
+      "remarks": "The description of the script.",
+      "maxLength": 200
+    },
+    "createdbyemail": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "E-mail",
+      "persistent": true,
+      "type": "string",
+      "remarks": "E-mail address of the person creating the script.",
+      "maxLength": 100
+    },
+    "source": {
+      "searchType": "WILDCARD",
+      "subType": "CLOB",
+      "title": "Source Code",
+      "persistent": true,
+      "type": "string",
+      "remarks": "The source code of the script. You can write source code in an external application and import it into the Automation Scripts application, or you can enter code in this field.",
+      "maxLength": 999999
+    },
+    "interface": {
+      "default": false,
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "Is Interface",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "Is Interface Script"
+    },
+    "scriptlanguage": {
+      "default": "jython",
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Script Language",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "The language that is used in the script. The available languages depend on the script engines in the application server.",
+      "maxLength": 50
+    },
+    "_rowstamp": {
+      "type": "string"
+    },
+    "autoscriptvars": {
+      "objectName": "AUTOSCRIPTVARS",
+      "type": "array",
+      "items": {
+        "definition": {
+          "subSchema": {
+            "$ref": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapiautoscript/autoscriptvars"
+          }
+        },
+        "type": "object"
+      },
+      "cardinality": "",
+      "relation": "AUTOSCRIPTVARS"
+    },
+    "binaryscriptsource": {
+      "searchType": "NONE",
+      "subType": "BLOB",
+      "title": "Script Source",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Store the binary information for a script",
+      "maxLength": 999999
+    },
+    "createdby": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Created By Person",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Identifies the person creating the script.",
+      "maxLength": 82
+    },
+    "_imagelibref": {
+      "type": "string"
+    },
+    "action": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Action",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Action",
+      "maxLength": 30
+    },
+    "siteid": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Site",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Site Identifier",
+      "maxLength": 8
+    },
+    "href": {
+      "type": "string"
+    },
+    "createdbyphone": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Phone",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Telephone number of the person creating the script.",
+      "maxLength": 20
+    },
+    "owner": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Owner Person",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Identifies the owner of the script. The owner or owner group manages the script",
+      "maxLength": 82
+    },
+    "scheduledstatus": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Scheduled State",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Next desired state of the script",
+      "maxLength": 20
+    },
+    "status_description": {
+      "type": "string"
+    },
+    "comments": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Comments",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Comments",
+      "maxLength": 50
+    },
+    "autoscript": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Script",
+      "persistent": true,
+      "type": "string",
+      "remarks": "The unique identifier of the automation script.",
+      "maxLength": 100
+    },
+    "loglevel_description": {
+      "type": "string"
+    },
+    "ownername": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "name",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Name of the owner of the script. The owner or owner group manages the script",
+      "maxLength": 82
+    },
+    "changeby": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Changed By",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Modified By",
+      "maxLength": 100
+    },
+    "autoscriptid": {
+      "searchType": "EXACT",
+      "maximum": 2147483647.0,
+      "subType": "BIGINT",
+      "title": "Unique Id",
+      "persistent": true,
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "uniqueid": true,
+      "remarks": "Unique Id",
+      "maxLength": 11
+    },
+    "active": {
+      "default": true,
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "Active",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "Active"
+    },
+    "changedate": {
+      "searchType": "EXACT",
+      "subType": "DATETIME",
+      "title": "Date",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Date on which script was changed"
+    },
+    "ownerid": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Owner",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Identifies the owner of the script. The owner or owner group manages the script",
+      "maxLength": 100
+    },
+    "version": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Version",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Script Version",
+      "maxLength": 20
+    },
+    "orgid": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Organization",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Organization Identifier",
+      "maxLength": 8
+    },
+    "statusdate": {
+      "searchType": "EXACT",
+      "subType": "DATETIME",
+      "title": "State Date",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Date on which the script state was last changed."
+    },
+    "scheduledstatus_description": {
+      "type": "string"
+    },
+    "loglevel": {
+      "default": "ERROR",
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Log Level",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Determines when the output statements in the script code are written to the system console and the product log file.",
+      "maxLength": 20
+    },
+    "ownerphone": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Phone",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Telephone number of the owner of the script. The owner or owner group manages the script",
+      "maxLength": 20
+    },
+    "_id": {
+      "type": "string"
+    },
+    "category": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Type",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Script type",
+      "maxLength": 20
+    },
+    "userdefined": {
+      "default": true,
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "User Defined",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "Specifies whether the corresponding script was predefined or added by a user"
+    },
+    "scriptlaunchpoint": {
+      "objectName": "SCRIPTLAUNCHPOINT",
+      "type": "array",
+      "items": {
+        "definition": {
+          "subSchema": {
+            "$ref": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapiautoscript/scriptlaunchpoint"
+          }
+        },
+        "type": "object"
+      },
+      "cardinality": "",
+      "relation": "SCRIPTLAUNCHPOINT"
+    },
+    "createdbyname": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Name",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Name of the person creating the script.",
+      "maxLength": 82
+    },
+    "status": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Status",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Status of the script.",
+      "maxLength": 20
+    }
+  },
+  "required": [
+    "autoscript",
+    "changeby",
+    "changedate",
+    "createddate",
+    "status",
+    "statusdate"
+  ]
+}

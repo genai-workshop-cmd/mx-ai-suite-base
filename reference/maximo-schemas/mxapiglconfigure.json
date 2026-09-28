@@ -1,0 +1,118 @@
+{
+  "resource": "MXAPIGLCONFIGURE",
+  "description": "GLCONFIGURE",
+  "pk": [
+    "orgid",
+    "glorder"
+  ],
+  "title": "GLCONFIGURE",
+  "type": "object",
+  "$ref": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapiglconfigure",
+  "uniqueid": "glconfigureid",
+  "properties": {
+    "gllength": {
+      "searchType": "EXACT",
+      "maximum": 2147483647.0,
+      "subType": "INTEGER",
+      "title": "Length",
+      "persistent": true,
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "remarks": "Length of the GL component.",
+      "maxLength": 11
+    },
+    "localref": {
+      "type": "string"
+    },
+    "mandatory": {
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "Required",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "Is component required?."
+    },
+    "orgid": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Organization",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Orgaization Identifier",
+      "maxLength": 8
+    },
+    "_rowstamp": {
+      "type": "string"
+    },
+    "gltype": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Type",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Numeric, Alphanumeric, or Alphanumeric only.",
+      "maxLength": 8
+    },
+    "glconfigureid": {
+      "searchType": "EXACT",
+      "maximum": 2147483647.0,
+      "subType": "BIGINT",
+      "title": "GLCONFIGUREID",
+      "persistent": true,
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "uniqueid": true,
+      "remarks": "Unique Identifier",
+      "maxLength": 11
+    },
+    "_imagelibref": {
+      "type": "string"
+    },
+    "delimiter": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Screen Delimiter",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Separator character between components.",
+      "maxLength": 1
+    },
+    "glorder": {
+      "searchType": "EXACT",
+      "maximum": 2147483647.0,
+      "subType": "SMALLINT",
+      "title": "GL Order",
+      "persistent": true,
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "remarks": "Order of this component in GL Account.",
+      "maxLength": 11
+    },
+    "gltype_description": {
+      "type": "string"
+    },
+    "href": {
+      "type": "string"
+    },
+    "_id": {
+      "type": "string"
+    },
+    "glaccountfield": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Component",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Individual GL Account component.",
+      "maxLength": 18
+    }
+  },
+  "required": [
+    "glaccountfield",
+    "gllength",
+    "glorder",
+    "gltype",
+    "mandatory"
+  ]
+}

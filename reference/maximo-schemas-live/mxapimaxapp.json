@@ -1,0 +1,196 @@
+{
+ "resource": "MXAPIMAXAPP",
+ "description": "Maximo API for MaxApps",
+ "pk": [
+  "app"
+ ],
+ "title": "MAXAPPS",
+ "type": "object",
+ "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/mxapimaxapp",
+ "uniqueid": "maxappsid",
+ "properties": {
+  "app": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Application",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Application Name (Name of the .RUN file)",
+   "maxLength": 40
+  },
+  "lockenabled": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Edit Mode Enabled",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Indicates whether users of the application can open records in edit mode. When a record is in edit mode, no other users can change the record."
+  },
+  "localref": {
+   "type": "string"
+  },
+  "originalapp": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Original Application",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Application Name (Name of the .RUN file)",
+   "maxLength": 40
+  },
+  "skipnavigation": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Skip from navigation",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Skip app and show only app pages in navigation"
+  },
+  "apptype": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Application Type",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Application Type (.RUN .EXE etc.)",
+   "maxLength": 10
+  },
+  "module": {
+   "searchType": "NONE",
+   "subType": "UPPER",
+   "title": "Module Name",
+   "type": "string",
+   "remarks": "Non-persistent column used by Application Designer",
+   "maxLength": 10
+  },
+  "description": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Description",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Application Description",
+   "maxLength": 100
+  },
+  "orderby": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Order By",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Application Default Order By",
+   "maxLength": 254
+  },
+  "restrictions": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Restrictions",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Application Restrictions",
+   "maxLength": 254
+  },
+  "record_descriptor": {
+   "type": "string",
+   "title": "Record/Object Descriptor"
+  },
+  "custapptype": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Custom Application Type",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Custom Application Type. This further types MaxApps with AppType = NOTES.",
+   "maxLength": 18
+  },
+  "maxprodid": {
+   "searchType": "NONE",
+   "subType": "ALN",
+   "title": "Product ID",
+   "type": "string",
+   "remarks": "The ID for the Product this application belongs to",
+   "maxLength": 30
+  },
+  "custapptype_description": {
+   "type": "string"
+  },
+  "langcode": {
+   "default": "EN",
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Language Code",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Language Column",
+   "maxLength": 4
+  },
+  "_rowstamp": {
+   "type": "string"
+  },
+  "maintbname": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Main Object",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Main Object name (table or view) for APP used to get JAVA MBO set",
+   "maxLength": 30
+  },
+  "hasld": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Has Long Description",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Boolean flag to indicate if there is any long description for this record"
+  },
+  "_imagelibref": {
+   "type": "string"
+  },
+  "maxprodname": {
+   "searchType": "NONE",
+   "subType": "ALN",
+   "title": "Product name",
+   "type": "string",
+   "remarks": "The name for the Product this application belongs to",
+   "maxLength": 100
+  },
+  "maxappsid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "MAXAPPSID",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "uniqueid": true,
+   "remarks": "Unique Identifier",
+   "maxLength": 11
+  },
+  "href": {
+   "type": "string",
+   "title": "MAXAPPS object reference"
+  },
+  "_id": {
+   "type": "string"
+  },
+  "ismobile": {
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Is Mobile",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Checking this box switches the screen look and UI controls so that they are appropriate for interactions on a small, touch-screen device"
+  }
+ },
+ "required": [
+  "app",
+  "apptype",
+  "description"
+ ]
+}

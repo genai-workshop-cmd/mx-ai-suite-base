@@ -1,0 +1,213 @@
+{
+ "resource": "MXAPIOSEVENT",
+ "description": "Maximo API for Events",
+ "pk": [
+  "intobjectname",
+  "eventname"
+ ],
+ "title": "OSEVENT",
+ "type": "object",
+ "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/mxapiosevent",
+ "uniqueid": "oseventid",
+ "properties": {
+  "eventcondand": {
+   "default": true,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Event Conditions",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "If checked then All Conditions are AND. If not checked all conditions are OR."
+  },
+  "eventfilter": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Event Filter Condition",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Event Filter Condition",
+   "maxLength": 100
+  },
+  "localref": {
+   "type": "string"
+  },
+  "oseventcondition": {
+   "objectName": "OSEVENTCONDITION",
+   "type": "array",
+   "items": {
+    "definition": {
+     "subSchema": {
+      "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/mxapiosevent/oseventcondition"
+     }
+    },
+    "type": "object"
+   },
+   "cardinality": "",
+   "relation": "OSEVENTCONDITION"
+  },
+  "maxpushprojectname": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Project name",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Identifies the Maximo push notification project record.",
+   "maxLength": 30
+  },
+  "msgtopic": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Topic",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The topic is where the message is published to in Event Streams. You create topics in Event Streams.",
+   "maxLength": 100
+  },
+  "description": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Description",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The description of event template.",
+   "maxLength": 200
+  },
+  "activesub": {
+   "searchType": "NONE",
+   "subType": "YORN",
+   "title": "Activate event",
+   "type": "boolean",
+   "remarks": "Activate Subscription"
+  },
+  "record_descriptor": {
+   "type": "string",
+   "title": "Record/Object Descriptor"
+  },
+  "onadd": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "On Add",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Message sent when data is added"
+  },
+  "eventname": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Event name",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The description of the event",
+   "maxLength": 50
+  },
+  "intobjectname": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Object Structure",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "An object structure defines what types of data can be included in the message.",
+   "maxLength": 20
+  },
+  "usewith": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Use With",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Use Wtih.",
+   "maxLength": 40
+  },
+  "applyto": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Apply To Condition",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Apply To Condition.",
+   "maxLength": 100
+  },
+  "enfosrelations": {
+   "default": true,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Enforce Object Structure Relations",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Enforce Object Structure Relations."
+  },
+  "_rowstamp": {
+   "type": "string"
+  },
+  "_imagelibref": {
+   "type": "string"
+  },
+  "oseventid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Unique Id",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "uniqueid": true,
+   "remarks": "Unique Id",
+   "maxLength": 11
+  },
+  "onupdate": {
+   "default": true,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "On Update",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Message sent when data is updated"
+  },
+  "msgtemplate": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Message Template",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Message Template",
+   "maxLength": 20
+  },
+  "templatename": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Event Message Template",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Event Message Template",
+   "maxLength": 50
+  },
+  "href": {
+   "type": "string",
+   "title": "OSEVENT object reference"
+  },
+  "_id": {
+   "type": "string"
+  },
+  "ondelete": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "On Delete",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Message sent when data is deleted"
+  }
+ },
+ "required": [
+  "eventname",
+  "intobjectname"
+ ]
+}

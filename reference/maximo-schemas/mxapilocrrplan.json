@@ -1,0 +1,318 @@
+{
+  "resource": "MXAPILOCRRPLAN",
+  "description": "AHLOCRRPLAN",
+  "pk": [
+    "classstructureid",
+    "orgid",
+    "siteid",
+    "location"
+  ],
+  "title": "AHLOCRRPLAN",
+  "type": "object",
+  "$ref": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapilocrrplan",
+  "properties": {
+    "expectedlifedate": {
+      "searchType": "EXACT",
+      "subType": "DATE",
+      "title": "Expected EOL",
+      "persistent": true,
+      "type": "string",
+      "remarks": "The date that the location reaches the expected useful life date. This date is calculated by using the location's original installation date and its expected useful life, which is defined by manufacturer or industry standard."
+    },
+    "installdate": {
+      "searchType": "EXACT",
+      "subType": "DATE",
+      "title": "Installation Date",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Installation Date"
+    },
+    "localref": {
+      "type": "string"
+    },
+    "description": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Description",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Description",
+      "maxLength": 100
+    },
+    "type": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Type",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Type of location",
+      "maxLength": 16
+    },
+    "actualdate": {
+      "searchType": "EXACT",
+      "subType": "DATE",
+      "title": "Completion date",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Plan actual date."
+    },
+    "actlaborhours": {
+      "searchType": "EXACT",
+      "scale": 0,
+      "subType": "DURATION",
+      "title": "Actual Labor Hours",
+      "persistent": true,
+      "type": "number",
+      "remarks": "Actual Labor Hours",
+      "maxLength": 8
+    },
+    "_rowstamp": {
+      "type": "string"
+    },
+    "rrplan_description": {
+      "type": "string"
+    },
+    "_imagelibref": {
+      "type": "string"
+    },
+    "siteid": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Site",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Identifies the site with a short code, for example, TORONTO, for a company's Toronto, Canada site. This value must be unique for all sites.",
+      "maxLength": 8
+    },
+    "href": {
+      "type": "string"
+    },
+    "actcapex": {
+      "searchType": "EXACT",
+      "scale": 2,
+      "subType": "AMOUNT",
+      "title": "Actual Capital Expense",
+      "persistent": true,
+      "type": "number",
+      "remarks": "Actual Capital Expense",
+      "maxLength": 11
+    },
+    "type_description": {
+      "type": "string"
+    },
+    "status_description": {
+      "type": "string"
+    },
+    "estlaborhours": {
+      "searchType": "EXACT",
+      "scale": 0,
+      "subType": "DURATION",
+      "title": "Estimated Labor Hours",
+      "persistent": true,
+      "type": "number",
+      "remarks": "Estimated Labor Hours",
+      "maxLength": 8
+    },
+    "actopex": {
+      "searchType": "EXACT",
+      "scale": 2,
+      "subType": "AMOUNT",
+      "title": "Actual Operating Expense",
+      "persistent": true,
+      "type": "number",
+      "remarks": "Actual Operating Expense",
+      "maxLength": 11
+    },
+    "classstructureid": {
+      "default": "&AUTOKEY&",
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Class Structure",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Class Structure identifier",
+      "maxLength": 25
+    },
+    "objectname": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Object",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Name of the object for which plan record belongs to.",
+      "maxLength": 30
+    },
+    "actualcost": {
+      "default": 0.0,
+      "searchType": "EXACT",
+      "scale": 2,
+      "subType": "AMOUNT",
+      "title": "Actual Cost",
+      "persistent": true,
+      "type": "number",
+      "remarks": "Actual Cost.",
+      "maxLength": 11
+    },
+    "estcapex": {
+      "searchType": "EXACT",
+      "scale": 2,
+      "subType": "AMOUNT",
+      "title": "Estimated Capital Expense",
+      "persistent": true,
+      "type": "number",
+      "remarks": "Estimated Capital Expense",
+      "maxLength": 11
+    },
+    "health": {
+      "searchType": "EXACT",
+      "scale": 2,
+      "subType": "DECIMAL",
+      "title": "Location Health",
+      "persistent": true,
+      "type": "number",
+      "remarks": "Location Health",
+      "maxLength": 13
+    },
+    "rrplan": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Plan Type",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Repair or replace plan",
+      "maxLength": 16
+    },
+    "estendoflife": {
+      "searchType": "EXACT",
+      "subType": "DATE",
+      "title": "Estimated EOL",
+      "persistent": true,
+      "type": "string",
+      "remarks": "The date when the location reaches its end of life. This date is based on the condition of the location."
+    },
+    "expectedlife": {
+      "default": 0,
+      "searchType": "EXACT",
+      "maximum": 2147483647.0,
+      "subType": "INTEGER",
+      "title": "Expected Life",
+      "persistent": true,
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "remarks": "Expected life of the location, expressed in years.  This value is based on the typical useful life that a manufacturer or industry standard recommends for a location or location type.",
+      "maxLength": 11
+    },
+    "estdowntime": {
+      "searchType": "EXACT",
+      "scale": 0,
+      "subType": "DURATION",
+      "title": "Estimated Downtime Hours",
+      "persistent": true,
+      "type": "number",
+      "remarks": "Estimated Downtime",
+      "maxLength": 8
+    },
+    "actdowntime": {
+      "searchType": "EXACT",
+      "scale": 0,
+      "subType": "DURATION",
+      "title": "Actual Downtime",
+      "persistent": true,
+      "type": "number",
+      "remarks": "Actual Downtime",
+      "maxLength": 8
+    },
+    "orgid": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Organization",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Identifies the organization by a short code value, for example, CANADA to represent a company's Canadian operations. This value must be unique for all organizations.",
+      "maxLength": 8
+    },
+    "estopex": {
+      "searchType": "EXACT",
+      "scale": 2,
+      "subType": "AMOUNT",
+      "title": "Estimated Operating Expense",
+      "persistent": true,
+      "type": "number",
+      "remarks": "Estimated Operating Expense",
+      "maxLength": 11
+    },
+    "failurecode": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Failure Class",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Indicates top level failure hierarchy for the location",
+      "maxLength": 8
+    },
+    "locpriority": {
+      "searchType": "EXACT",
+      "maximum": 2147483647.0,
+      "subType": "INTEGER",
+      "title": "Priority",
+      "persistent": true,
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "remarks": "Location Priority",
+      "maxLength": 11
+    },
+    "estcost": {
+      "default": 0.0,
+      "searchType": "EXACT",
+      "scale": 2,
+      "subType": "AMOUNT",
+      "title": "Estimated Cost",
+      "persistent": true,
+      "type": "number",
+      "remarks": "Estimated Cost",
+      "maxLength": 11
+    },
+    "targetdate": {
+      "searchType": "EXACT",
+      "subType": "DATE",
+      "title": "Target Date",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Plan target date."
+    },
+    "location": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Location",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Storeroom where the item is stored.",
+      "maxLength": 25
+    },
+    "_id": {
+      "type": "string"
+    },
+    "status": {
+      "default": "!OPERATING!",
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Status",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "STATUS",
+      "maxLength": 20
+    }
+  },
+  "required": [
+    "location",
+    "orgid",
+    "siteid",
+    "type"
+  ]
+}

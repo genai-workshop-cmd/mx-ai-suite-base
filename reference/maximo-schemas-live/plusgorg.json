@@ -1,0 +1,74 @@
+{
+ "resource": "PLUSGORG",
+ "description": "Oil and Gas' Organization Object Structure",
+ "pk": [
+  "orgid"
+ ],
+ "title": "ORGANIZATION",
+ "type": "object",
+ "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/plusgorg",
+ "uniqueid": "organizationid",
+ "properties": {
+  "_rowstamp": {
+   "type": "string"
+  },
+  "localref": {
+   "type": "string"
+  },
+  "_imagelibref": {
+   "type": "string"
+  },
+  "active": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Active",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Specifies whether the organization is active? It the checkbox is selected, users can choose the organization for various functions. If the checkbox is cleared, the organization will not be listed. However, business procedures can still take place with the organization when the users do not have to specify the organization."
+  },
+  "description": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Description",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Describes the organization, for example, ABC Pharmaceuticals, Canada. To enter or view additional information, click the Long Description button.",
+   "maxLength": 100
+  },
+  "plusgopenomuid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "INTEGER",
+   "title": "Open Unique Identifier",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "The unique identifier used to identify an organization. This identifier is used for communication with external systems that use open standards. The value of the field must be an integer of 32 bits length.",
+   "maxLength": 11
+  },
+  "href": {
+   "type": "string",
+   "title": "ORGANIZATION object reference"
+  },
+  "record_descriptor": {
+   "type": "string",
+   "title": "Record/Object Descriptor"
+  },
+  "_id": {
+   "type": "string"
+  },
+  "orgid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Organization",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Identifies the organization by a short code value, for example, CANADA to represent a company's Canadian operations. This value must be unique for all organizations.",
+   "maxLength": 8
+  }
+ },
+ "required": [
+  "orgid"
+ ]
+}

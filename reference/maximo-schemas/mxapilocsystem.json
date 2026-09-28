@@ -1,0 +1,251 @@
+{
+  "resource": "MXAPILOCSYSTEM",
+  "description": "LOCSYSTEM",
+  "pk": [
+    "siteid",
+    "systemid"
+  ],
+  "title": "LOCSYSTEM",
+  "type": "object",
+  "$ref": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapilocsystem",
+  "uniqueid": "locsystemid",
+  "properties": {
+    "ownersysid": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Owner System ID",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Owner System ID",
+      "maxLength": 10
+    },
+    "systemid": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "System",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Identifier for a locations system",
+      "maxLength": 12
+    },
+    "localref": {
+      "type": "string"
+    },
+    "usage_description": {
+      "type": "string"
+    },
+    "usage": {
+      "searchType": "EXACT",
+      "subType": "UPPER",
+      "title": "Usage",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Identifies the locsystem's usage",
+      "maxLength": 30
+    },
+    "description": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Description",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Description of the system",
+      "maxLength": 100
+    },
+    "externalrefid": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "External Reference ID",
+      "persistent": true,
+      "type": "string",
+      "remarks": "External Reference ID",
+      "maxLength": 10
+    },
+    "network": {
+      "default": false,
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "Network",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "Indicates if this is a networked system"
+    },
+    "langcode": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Language Code",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Language Column",
+      "maxLength": 4
+    },
+    "_rowstamp": {
+      "type": "string"
+    },
+    "primarysystem": {
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "Primary System",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "Is this primary system or not ?"
+    },
+    "_imagelibref": {
+      "type": "string"
+    },
+    "locsystemid": {
+      "searchType": "EXACT",
+      "maximum": 2147483647.0,
+      "subType": "BIGINT",
+      "title": "LOCSYSTEMID",
+      "persistent": true,
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "uniqueid": true,
+      "remarks": "Unique Identifier",
+      "maxLength": 11
+    },
+    "siteid": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Site",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Site Identifier",
+      "maxLength": 8
+    },
+    "href": {
+      "type": "string"
+    },
+    "address": {
+      "default": false,
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "Address system",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "Identifies this system as the hierarchical system that creates relationships between addresses."
+    },
+    "classstructureid": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Classification",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Class Structure Identifier.",
+      "maxLength": 25
+    },
+    "modelid": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Import ID",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Import ID Typically from a BIM model or COBie data set",
+      "maxLength": 45
+    },
+    "bimimportsrc_description": {
+      "type": "string"
+    },
+    "gisparam3": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "GIS Parameter 3",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Graphical Information System interface parameter 3",
+      "maxLength": 1
+    },
+    "gisparam2": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "GIS Parameter 2",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Graphical Information System interface parameter 2",
+      "maxLength": 1
+    },
+    "gisparam1": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "GIS Parameter 1",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Graphical Information System interface parameter 1",
+      "maxLength": 1
+    },
+    "orgid": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Organization",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Organization Identifier",
+      "maxLength": 8
+    },
+    "doctype": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Document Folder",
+      "persistent": true,
+      "type": "string",
+      "remarks": "The document type",
+      "maxLength": 16
+    },
+    "hasld": {
+      "default": false,
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "Has Long Description",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "Boolean flag to indicate if there is any long description for this record"
+    },
+    "locations": {
+      "objectName": "LOCATIONS",
+      "type": "array",
+      "items": {
+        "definition": {
+          "subSchema": {
+            "$ref": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapilocsystem/locations"
+          }
+        },
+        "type": "object"
+      },
+      "cardinality": "",
+      "relation": "TOPLEVELLOC"
+    },
+    "_id": {
+      "type": "string"
+    },
+    "sourcesysid": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Source System ID",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Source System ID",
+      "maxLength": 10
+    },
+    "bimimportsrc": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Import source",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "The external source for the data in this record such as a COBie sheet or an IFC class name",
+      "maxLength": 25
+    }
+  },
+  "required": [
+    "langcode",
+    "orgid",
+    "primarysystem",
+    "siteid",
+    "systemid"
+  ]
+}

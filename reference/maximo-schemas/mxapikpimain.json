@@ -1,0 +1,343 @@
+{
+  "resource": "MXAPIKPIMAIN",
+  "description": "KPIMAIN",
+  "pk": [
+    "kpiname"
+  ],
+  "title": "KPIMAIN",
+  "type": "object",
+  "$ref": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapikpimain",
+  "uniqueid": "kpimainid",
+  "properties": {
+    "kpidate": {
+      "searchType": "EXACT",
+      "subType": "DATETIME",
+      "title": "Created Date",
+      "persistent": true,
+      "type": "string",
+      "remarks": "The date the KPI was created"
+    },
+    "recordtime": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Record Time",
+      "persistent": true,
+      "type": "string",
+      "remarks": "The period elapsed after which KPI will be recorded",
+      "maxLength": 20
+    },
+    "localref": {
+      "type": "string"
+    },
+    "format_description": {
+      "type": "string"
+    },
+    "description": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Description",
+      "persistent": true,
+      "type": "string",
+      "remarks": "A clear description of the KPI.",
+      "maxLength": 254
+    },
+    "cautionmin": {
+      "searchType": "EXACT",
+      "scale": 2,
+      "subType": "DECIMAL",
+      "title": "Caution At",
+      "persistent": true,
+      "type": "number",
+      "remarks": "The value where the indicators would change to a user-set color to indicate that the result of the KPI is in a caution stage. Note: If the Caution At value is greater than the Alert At value, the direction of the KPI will change to indicate that a higher number is more ideal than a lower number.",
+      "maxLength": 11
+    },
+    "_rowstamp": {
+      "type": "string"
+    },
+    "cautionmax": {
+      "searchType": "EXACT",
+      "scale": 2,
+      "subType": "DECIMAL",
+      "title": "Alert At",
+      "persistent": true,
+      "type": "number",
+      "remarks": "The value where the indicators would change to a user-set color to indicate that the result of the KPI is in an alert stage.",
+      "maxLength": 11
+    },
+    "reportname": {
+      "searchType": "EXACT",
+      "subType": "ALN",
+      "title": "Link to Report",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Select a report to link to this KPI so that you can drill down into the KPI for more information.",
+      "maxLength": 50
+    },
+    "_imagelibref": {
+      "type": "string"
+    },
+    "ispublic": {
+      "default": false,
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "Is Public",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "Give everyone access to the KPI"
+    },
+    "kpitextformat": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "KPI Text Format",
+      "persistent": true,
+      "type": "string",
+      "remarks": "KPI Text Format",
+      "maxLength": 50
+    },
+    "href": {
+      "type": "string"
+    },
+    "selectstmt": {
+      "searchType": "WILDCARD",
+      "subType": "CLOB",
+      "title": "Select",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Enter a statement about what information you want the KPI to select and from what tables. For example: select avg(actfinish-reportdate) from workorder. A Select statement is mandatory.",
+      "maxLength": 999999
+    },
+    "app": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Application",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Application on which this KPI is based on",
+      "maxLength": 40
+    },
+    "clause": {
+      "searchType": "WILDCARD",
+      "subType": "CLOB",
+      "title": "Where",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Enter a statement that sets up any conditions that must be met for the Select statement to be carried out. For example: where worktype = EM and istask=0. A Where statement is not mandatory.",
+      "maxLength": 999999
+    },
+    "owner": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Created By",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "The name of the person who created the KPI.",
+      "maxLength": 100
+    },
+    "realtime": {
+      "default": false,
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "Is Active",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "Used for flagging if this KPI is active or not. If not active then it will not be picked up by KPICron task"
+    },
+    "reportnum": {
+      "searchType": "EXACT",
+      "maximum": 2147483647.0,
+      "subType": "INTEGER",
+      "title": "Report Number",
+      "persistent": true,
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "remarks": "Report Number",
+      "maxLength": 11
+    },
+    "trendvalue": {
+      "searchType": "EXACT",
+      "scale": 10,
+      "subType": "DECIMAL",
+      "title": "Calculate Trend Status",
+      "persistent": true,
+      "type": "number",
+      "remarks": "Value of Trend",
+      "maxLength": 21
+    },
+    "description_longdescription": {
+      "searchType": "WILDCARD",
+      "subType": "LONGALN",
+      "title": "Details",
+      "type": "string",
+      "remarks": "DESCRIPTION_LONGDESCRIPTION",
+      "maxLength": 32000
+    },
+    "expression": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Expression",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Expression for evaluating endpoint response",
+      "maxLength": 200
+    },
+    "trendbatchsize": {
+      "default": 100,
+      "searchType": "EXACT",
+      "maximum": 2147483647.0,
+      "subType": "INTEGER",
+      "title": " Calculate Trend Size",
+      "persistent": true,
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "remarks": "Batch Size of Trend",
+      "maxLength": 11
+    },
+    "format": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Calculation Type",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Indicates whether the KPI is decimal or percentage based.",
+      "maxLength": 15
+    },
+    "reportappname": {
+      "searchType": "EXACT",
+      "subType": "UPPER",
+      "title": "Report Application",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Name of the application for the report",
+      "maxLength": 10
+    },
+    "lastkpivalue": {
+      "searchType": "EXACT",
+      "scale": 2,
+      "subType": "DECIMAL",
+      "title": "Last KPI Value",
+      "persistent": true,
+      "type": "number",
+      "remarks": "Last KPI Value",
+      "maxLength": 11
+    },
+    "kpimainid": {
+      "searchType": "EXACT",
+      "maximum": 2147483647.0,
+      "subType": "BIGINT",
+      "title": "KPI Unique Id",
+      "persistent": true,
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "uniqueid": true,
+      "remarks": "Unique Identifier",
+      "maxLength": 11
+    },
+    "url": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "URL",
+      "persistent": true,
+      "type": "string",
+      "remarks": "URL",
+      "maxLength": 254
+    },
+    "target": {
+      "searchType": "EXACT",
+      "scale": 2,
+      "subType": "DECIMAL",
+      "title": "Target",
+      "persistent": true,
+      "type": "number",
+      "remarks": "The target, or desired, value for the KPI.",
+      "maxLength": 11
+    },
+    "kpitemplatemainnum": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "KPI",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Unique KPI for the related KPI instance that generated this KPI ",
+      "maxLength": 10
+    },
+    "linkto": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Link to KPI",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Select another KPI to link this one to.",
+      "maxLength": 30
+    },
+    "kpitemplatenum": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Template",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Template Name for the related KPI Template that generated this KPI",
+      "maxLength": 10
+    },
+    "endpointname": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "End Point",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "End Point",
+      "maxLength": 20
+    },
+    "trendenabled": {
+      "default": true,
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "Calculate Trend",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "Is Trend Enabled"
+    },
+    "lastupdated": {
+      "searchType": "EXACT",
+      "subType": "DATETIME",
+      "title": "Last Updated",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Last Updated Date"
+    },
+    "_id": {
+      "type": "string"
+    },
+    "kpiname": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "KPI Name",
+      "persistent": true,
+      "type": "string",
+      "remarks": "The name of the KPI.",
+      "maxLength": 50
+    },
+    "kpivalue": {
+      "searchType": "EXACT",
+      "scale": 2,
+      "subType": "DECIMAL",
+      "title": "Current Value",
+      "persistent": true,
+      "type": "number",
+      "remarks": "The current value of the KPI.",
+      "maxLength": 11
+    }
+  },
+  "required": [
+    "cautionmax",
+    "cautionmin",
+    "format",
+    "kpidate",
+    "kpiname",
+    "target"
+  ]
+}

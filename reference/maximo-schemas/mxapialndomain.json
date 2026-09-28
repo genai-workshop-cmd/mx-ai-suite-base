@@ -1,0 +1,104 @@
+{
+  "resource": "MXAPIALNDOMAIN",
+  "description": "ALNDOMAIN",
+  "pk": [
+    "domainid",
+    "value",
+    "siteid",
+    "orgid"
+  ],
+  "title": "ALNDOMAIN",
+  "type": "object",
+  "$ref": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapialndomain",
+  "uniqueid": "alndomainid",
+  "properties": {
+    "_rowstamp": {
+      "type": "string"
+    },
+    "valueid": {
+      "searchType": "EXACT",
+      "subType": "ALN",
+      "title": "Value ID",
+      "persistent": true,
+      "type": "string",
+      "remarks": "System generated unique identifier of the value in a domain, internal and cannot be modified.",
+      "maxLength": 300
+    },
+    "localref": {
+      "type": "string"
+    },
+    "_imagelibref": {
+      "type": "string"
+    },
+    "description": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Description",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Value description",
+      "maxLength": 158
+    },
+    "siteid": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Site",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Identifier of the site for which the value is specified",
+      "maxLength": 8
+    },
+    "href": {
+      "type": "string"
+    },
+    "_id": {
+      "type": "string"
+    },
+    "value": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Value",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Value of the domain",
+      "maxLength": 254
+    },
+    "alndomainid": {
+      "searchType": "EXACT",
+      "maximum": 2147483647.0,
+      "subType": "BIGINT",
+      "title": "ALNDOMAINID",
+      "persistent": true,
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "uniqueid": true,
+      "remarks": "Unique Identifier",
+      "maxLength": 11
+    },
+    "domainid": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Domain",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Identifier of the domain",
+      "maxLength": 18
+    },
+    "orgid": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Organization",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Identifier of the organization for which the value is specified",
+      "maxLength": 8
+    }
+  },
+  "required": [
+    "domainid",
+    "value",
+    "valueid"
+  ]
+}

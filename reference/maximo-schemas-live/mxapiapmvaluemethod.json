@@ -1,0 +1,108 @@
+{
+ "resource": "MXAPIAPMVALUEMETHOD",
+ "description": "APM Value Meta Method Definition",
+ "pk": [
+  "apmapp",
+  "apmextmethod"
+ ],
+ "title": "APMVALUEMETAMETHOD",
+ "type": "object",
+ "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/mxapiapmvaluemethod",
+ "uniqueid": "apmvaluemetamethodid",
+ "properties": {
+  "apmapp": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "APM App Name",
+   "persistent": true,
+   "type": "string",
+   "remarks": "APM APP Name the method belongs to",
+   "maxLength": 20
+  },
+  "localref": {
+   "type": "string"
+  },
+  "apmvaluemetamethodid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Unique Id",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "uniqueid": true,
+   "remarks": "Unique Id",
+   "maxLength": 11
+  },
+  "description": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Description",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Description of this method",
+   "maxLength": 250
+  },
+  "record_descriptor": {
+   "type": "string",
+   "title": "Record/Object Descriptor"
+  },
+  "apmextmethod": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "APM External Method",
+   "persistent": true,
+   "type": "string",
+   "remarks": "APM External Method name",
+   "maxLength": 200
+  },
+  "url": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Url",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Url of this method",
+   "maxLength": 500
+  },
+  "_rowstamp": {
+   "type": "string"
+  },
+  "_imagelibref": {
+   "type": "string"
+  },
+  "apmvaluemetaattr": {
+   "objectName": "APMVALUEMETAATTR",
+   "type": "array",
+   "items": {
+    "definition": {
+     "subSchema": {
+      "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/mxapiapmvaluemethod/apmvaluemetaattr"
+     }
+    },
+    "type": "object"
+   },
+   "cardinality": "",
+   "relation": "APMVALUEMETAATTR"
+  },
+  "displayname": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Display Name",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Display name of this method",
+   "maxLength": 100
+  },
+  "href": {
+   "type": "string",
+   "title": "APMVALUEMETAMETHOD object reference"
+  },
+  "_id": {
+   "type": "string"
+  }
+ },
+ "required": [
+  "apmapp"
+ ]
+}

@@ -1,0 +1,1509 @@
+{
+  "resource": "MXRECEIPT",
+  "description": "MXRECEIPT",
+  "title": "MXRECEIPT",
+  "type": "object",
+  "$ref": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxreceipt",
+  "properties": {
+    "localref": {
+      "type": "string"
+    },
+    "shelflife": {
+      "searchType": "NONE",
+      "scale": 0,
+      "subType": "FLOAT",
+      "title": "Shelf Life (Days)",
+      "type": "number",
+      "remarks": "Shelf life, in days, of the lotted item. If there is an expiration date provided for this item, this field is typically blank. If there is no expiration date, but a shelf life is specified for the item, it is entered here, in days. Maximo calculates an expiration date as the current system date plus the shelf life, and enters this value in the Expiration Date field.",
+      "maxLength": 9
+    },
+    "actualdate": {
+      "searchType": "NONE",
+      "subType": "DATETIME",
+      "title": "Actual Date",
+      "type": "string",
+      "remarks": "Date and time of the receipt or transfer, which may be different than the time the transaction is recorded in Maximo. Maximo populates the current date and time by default. You can modify the value in this field. Click the Select Date and Time button to use the calendar control."
+    },
+    "rollup": {
+      "default": false,
+      "searchType": "NONE",
+      "subType": "YORN",
+      "title": "Rolled Up",
+      "type": "boolean",
+      "remarks": "Indicates whether or not this transaction has been rolled up."
+    },
+    "rejectqty": {
+      "searchType": "NONE",
+      "scale": 2,
+      "subType": "DECIMAL",
+      "title": "Quantity Rejected",
+      "type": "number",
+      "remarks": "Number of items rejected. If you enter a number in this field, make sure the number of items in the Qunatity field is the number of items you are keeping, and not the total number of items received.",
+      "maxLength": 16
+    },
+    "currencylinecost": {
+      "searchType": "NONE",
+      "scale": 2,
+      "subType": "DECIMAL",
+      "title": "Currency Line Cost",
+      "type": "number",
+      "remarks": "Line Cost in vendor currency.",
+      "maxLength": 11
+    },
+    "fromconditioncode": {
+      "searchType": "NONE",
+      "subType": "UPPER",
+      "title": "From Condition Code",
+      "type": "string",
+      "remarks": "Condition code that reflects the physical condition of the item as it was in the originating storeroom. Click the Select Value button to choose a condition code.",
+      "maxLength": 30
+    },
+    "mfglotnum": {
+      "searchType": "NONE",
+      "subType": "UPPER",
+      "title": "Manufacturer Lot",
+      "type": "string",
+      "remarks": "Manufacturer's lot number for the item. This is the manufacturer's internal lot number, and is the lot number the manufacturer would reference in any correspondence with you.",
+      "maxLength": 8
+    },
+    "href": {
+      "type": "string"
+    },
+    "currencyunitcost": {
+      "searchType": "NONE",
+      "scale": 2,
+      "subType": "DECIMAL",
+      "title": "Currency Unit Cost",
+      "type": "number",
+      "remarks": "Unit Cost in vendor currency.",
+      "maxLength": 11
+    },
+    "rotassetnum": {
+      "searchType": "NONE",
+      "subType": "UPPER",
+      "title": "Rotating Asset",
+      "type": "string",
+      "remarks": "Identifies the rotating asset number associated with the item being transfered.",
+      "maxLength": 25
+    },
+    "taskid": {
+      "searchType": "NONE",
+      "maximum": 2147483647.0,
+      "subType": "INTEGER",
+      "title": "Task",
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "remarks": "Work order's task ID number associated with the line item.",
+      "maxLength": 11
+    },
+    "enteredastask": {
+      "searchType": "NONE",
+      "subType": "YORN",
+      "title": "Entered as Task",
+      "type": "boolean",
+      "remarks": "Was this transaction created against a work order task?"
+    },
+    "prorated": {
+      "searchType": "NONE",
+      "subType": "YORN",
+      "title": "Prorated",
+      "type": "boolean",
+      "remarks": "Has line amount been prorated (allocated)?"
+    },
+    "issueto": {
+      "searchType": "NONE",
+      "subType": "UPPER",
+      "title": "Issue To",
+      "type": "string",
+      "remarks": "Person or craft to whom the item or tool is being transferred. Click the Detail Menu button to choose a person or go to the People application.",
+      "maxLength": 100
+    },
+    "issue": {
+      "default": false,
+      "searchType": "NONE",
+      "subType": "YORN",
+      "title": "Issue on Receipt",
+      "type": "boolean",
+      "remarks": "Specifies whether the line item is a direct issue to a work order, GL account, location, or asset. If the check box is selected, the line item is a direct issue. If the check box is cleared (the default), the item is stocked in a storeroom."
+    },
+    "actualstaskid": {
+      "searchType": "NONE",
+      "maximum": 2147483647.0,
+      "subType": "INTEGER",
+      "title": "Task",
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "remarks": "Identifies the task for which the service was used.",
+      "maxLength": 11
+    },
+    "isdistributed": {
+      "searchType": "NONE",
+      "subType": "YORN",
+      "title": "Distributed",
+      "type": "boolean",
+      "remarks": "ISDISTRIBUTED"
+    },
+    "polinenum": {
+      "searchType": "NONE",
+      "maximum": 2147483647.0,
+      "subType": "INTEGER",
+      "title": "PO Line",
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "remarks": "Line number of the item on the associated purchase order.",
+      "maxLength": 11
+    },
+    "pounitcost": {
+      "searchType": "NONE",
+      "scale": 2,
+      "subType": "DECIMAL",
+      "title": "Unit Cost",
+      "type": "number",
+      "remarks": "POUNITCOST",
+      "maxLength": 11
+    },
+    "enterby": {
+      "searchType": "NONE",
+      "subType": "UPPER",
+      "title": "Entered By",
+      "type": "string",
+      "remarks": "Maximo user name of the person initiating this transaction.",
+      "maxLength": 100
+    },
+    "courier": {
+      "searchType": "NONE",
+      "subType": "ALN",
+      "title": "Courier",
+      "type": "string",
+      "remarks": "Company used to transfer the item across organizations. Click the Select Value button to choose a courier.",
+      "maxLength": 30
+    },
+    "packingslipnum": {
+      "searchType": "NONE",
+      "subType": "ALN",
+      "title": "Packing Slip",
+      "type": "string",
+      "remarks": "Packing slip number for the received item.",
+      "maxLength": 50
+    },
+    "fincntrlid": {
+      "searchType": "NONE",
+      "subType": "UPPER",
+      "title": "FCID",
+      "type": "string",
+      "remarks": "Financial Control Identifier",
+      "maxLength": 8
+    },
+    "tax1code": {
+      "searchType": "NONE",
+      "subType": "UPPER",
+      "title": "Tax Code 1",
+      "type": "string",
+      "remarks": "Tax code used for calculation of Tax1 column.",
+      "maxLength": 8
+    },
+    "mrlinenum": {
+      "searchType": "NONE",
+      "maximum": 2147483647.0,
+      "subType": "INTEGER",
+      "title": "Requisition Line",
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "remarks": "MR Line Number",
+      "maxLength": 11
+    },
+    "orderqty": {
+      "searchType": "NONE",
+      "scale": 0,
+      "subType": "FLOAT",
+      "title": "Quantity",
+      "type": "number",
+      "remarks": "Order Quantity.",
+      "maxLength": 9
+    },
+    "tobin": {
+      "searchType": "NONE",
+      "subType": "ALN",
+      "title": "To Bin",
+      "type": "string",
+      "remarks": "Bin number in the storeroom for the received or transferred item. Click the Select Value button to choose a bin.",
+      "maxLength": 8
+    },
+    "newphyscnt": {
+      "searchType": "NONE",
+      "scale": 2,
+      "subType": "DECIMAL",
+      "title": "Physical Count",
+      "type": "number",
+      "remarks": "NEWPHYSCNT",
+      "maxLength": 16
+    },
+    "costoverreceived": {
+      "searchType": "NONE",
+      "scale": 2,
+      "subType": "AMOUNT",
+      "title": "Over Received Amount",
+      "type": "number",
+      "remarks": "The amount that exceeds the cost of the ordered items.",
+      "maxLength": 11
+    },
+    "linecostalreadyrecvd": {
+      "searchType": "NONE",
+      "scale": 0,
+      "subType": "FLOAT",
+      "title": "Line Cost Already Received",
+      "type": "number",
+      "remarks": "Line Cost Already Received",
+      "maxLength": 8
+    },
+    "status": {
+      "searchType": "NONE",
+      "subType": "UPPER",
+      "title": "Inspection Status",
+      "type": "string",
+      "remarks": "Status of the receipt.",
+      "maxLength": 12
+    },
+    "commodity": {
+      "searchType": "NONE",
+      "subType": "UPPER",
+      "title": "Commodity Code",
+      "type": "string",
+      "remarks": "Identifies the commodity code of the item.",
+      "maxLength": 8
+    },
+    "costinfo": {
+      "default": true,
+      "searchType": "NONE",
+      "subType": "YORN",
+      "title": "Cost Information",
+      "type": "boolean",
+      "remarks": "Is the cost Information on this line"
+    },
+    "tax4code": {
+      "searchType": "NONE",
+      "subType": "UPPER",
+      "title": "Tax Code 4",
+      "type": "string",
+      "remarks": "Tax code used for calculation of Tax4 column.",
+      "maxLength": 8
+    },
+    "commoditygroup": {
+      "searchType": "NONE",
+      "subType": "UPPER",
+      "title": "Commodity Group",
+      "type": "string",
+      "remarks": "Identifies the commodity group of the item.",
+      "maxLength": 8
+    },
+    "rejectcode": {
+      "searchType": "NONE",
+      "subType": "UPPER",
+      "title": "Reject Code",
+      "type": "string",
+      "remarks": "Code that indicates the reason items were rejected. For example, Damaged.",
+      "maxLength": 6
+    },
+    "shipmentlinenum": {
+      "searchType": "NONE",
+      "subType": "ALN",
+      "title": "Shipment Line",
+      "type": "string",
+      "remarks": "The shipment document reference line number provided by the supplier.",
+      "maxLength": 50
+    },
+    "manufacturer": {
+      "searchType": "NONE",
+      "subType": "UPPER",
+      "title": "Manufacturer",
+      "type": "string",
+      "remarks": "Identifying code for the manufacturer of the item.",
+      "maxLength": 12
+    },
+    "condrate": {
+      "searchType": "NONE",
+      "maximum": 2147483647.0,
+      "subType": "INTEGER",
+      "title": "Rate Percentage",
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "remarks": "Condition Rate Percentage",
+      "maxLength": 11
+    },
+    "exchangerate2": {
+      "searchType": "NONE",
+      "scale": 7,
+      "subType": "DECIMAL",
+      "title": "Secondary Exchange Rate",
+      "type": "number",
+      "remarks": "Base Exchange Rate 2",
+      "maxLength": 15
+    },
+    "assetnum": {
+      "searchType": "NONE",
+      "subType": "UPPER",
+      "title": "Asset",
+      "type": "string",
+      "remarks": "Asset number associated with this transaction or line item.",
+      "maxLength": 25
+    },
+    "curbal": {
+      "searchType": "NONE",
+      "scale": 2,
+      "subType": "DECIMAL",
+      "title": "Current Balance",
+      "type": "number",
+      "remarks": "Current balance at the time of the transfer or receipt",
+      "maxLength": 16
+    },
+    "itin5": {
+      "searchType": "NONE",
+      "subType": "ALN",
+      "title": "ITIN5",
+      "type": "string",
+      "remarks": "Extra Field",
+      "maxLength": 10
+    },
+    "itin4": {
+      "searchType": "NONE",
+      "subType": "ALN",
+      "title": "ITIN4",
+      "type": "string",
+      "remarks": "Extra Field",
+      "maxLength": 10
+    },
+    "statuschangeby": {
+      "searchType": "NONE",
+      "subType": "UPPER",
+      "title": "Status Changed By",
+      "type": "string",
+      "remarks": "Person who last changed the receipt status.",
+      "maxLength": 100
+    },
+    "itin7": {
+      "searchType": "NONE",
+      "subType": "ALN",
+      "title": "ITIN7",
+      "type": "string",
+      "remarks": "Extra Field",
+      "maxLength": 10
+    },
+    "itin6": {
+      "searchType": "NONE",
+      "subType": "ALN",
+      "title": "ITIN6",
+      "type": "string",
+      "remarks": "Extra Field",
+      "maxLength": 10
+    },
+    "itin1": {
+      "searchType": "NONE",
+      "subType": "ALN",
+      "title": "Itin1",
+      "type": "string",
+      "remarks": "Extra Field #6",
+      "maxLength": 10
+    },
+    "belongsto": {
+      "searchType": "NONE",
+      "maximum": 2147483647.0,
+      "subType": "BIGINT",
+      "title": "Belongs To",
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "remarks": "Matrectransid of the parent",
+      "maxLength": 11
+    },
+    "inspectedqtydsply": {
+      "searchType": "NONE",
+      "scale": 2,
+      "subType": "DECIMAL",
+      "title": "Inspected Qty",
+      "type": "number",
+      "remarks": "For display only - quantity left to display",
+      "maxLength": 16
+    },
+    "amttoreceive": {
+      "searchType": "NONE",
+      "scale": 2,
+      "subType": "AMOUNT",
+      "title": "Line Cost",
+      "type": "number",
+      "remarks": "AMTTORECEIVE",
+      "maxLength": 11
+    },
+    "conditioncode": {
+      "searchType": "NONE",
+      "subType": "UPPER",
+      "title": "To Condition Code",
+      "type": "string",
+      "remarks": "Condition code that reflects the current physical condition of the item being transferred. Click the Select Value button to choose a condition code.",
+      "maxLength": 30
+    },
+    "itin3": {
+      "searchType": "NONE",
+      "subType": "ALN",
+      "title": "Itin3",
+      "type": "string",
+      "remarks": "Extra Field #8",
+      "maxLength": 10
+    },
+    "itin2": {
+      "searchType": "NONE",
+      "subType": "ALN",
+      "title": "Itin2",
+      "type": "string",
+      "remarks": "Extra Field #7",
+      "maxLength": 10
+    },
+    "shipmentnum": {
+      "searchType": "NONE",
+      "subType": "ALN",
+      "title": "Shipment",
+      "type": "string",
+      "remarks": "The shipment document reference number provided by the supplier.",
+      "maxLength": 50
+    },
+    "tolot": {
+      "searchType": "NONE",
+      "subType": "UPPER",
+      "title": "To Lot",
+      "type": "string",
+      "remarks": "Internal lot number into which the item being transferred or received is placed, which is different than the manufacturer's lot number. The internal lot number is used to track a received item so that it can be used in the appropriate time frame, such as first-in first-out or last-in last-out. Click the Select Value button to choose a lot.",
+      "maxLength": 8
+    },
+    "currencyloadedcost": {
+      "searchType": "NONE",
+      "scale": 2,
+      "subType": "DECIMAL",
+      "title": "Loaded Cost",
+      "type": "number",
+      "remarks": "CURRENCYLOADEDCOST",
+      "maxLength": 11
+    },
+    "fctaskid": {
+      "searchType": "NONE",
+      "subType": "ALN",
+      "title": "FC Task ID",
+      "type": "string",
+      "remarks": "Financial control task identifier.",
+      "maxLength": 25
+    },
+    "description_longdescription": {
+      "searchType": "WILDCARD",
+      "subType": "LONGALN",
+      "title": "Details",
+      "type": "string",
+      "remarks": "Long Description for Item Description.",
+      "maxLength": 32000
+    },
+    "enterdate": {
+      "searchType": "NONE",
+      "subType": "DATETIME",
+      "title": "Entered Date",
+      "type": "string",
+      "remarks": "Date the service use is reported."
+    },
+    "it2": {
+      "searchType": "NONE",
+      "subType": "ALN",
+      "title": "It2",
+      "type": "string",
+      "remarks": "Extra Field 02",
+      "maxLength": 10
+    },
+    "qtyrequested": {
+      "searchType": "NONE",
+      "scale": 2,
+      "subType": "DECIMAL",
+      "title": "Quantity Requested",
+      "type": "number",
+      "remarks": "The quantity requested for the transfer.",
+      "maxLength": 16
+    },
+    "changeby": {
+      "searchType": "NONE",
+      "subType": "UPPER",
+      "title": "Changed By",
+      "type": "string",
+      "remarks": "User who last changed this record",
+      "maxLength": 100
+    },
+    "it1": {
+      "searchType": "NONE",
+      "subType": "ALN",
+      "title": "It1",
+      "type": "string",
+      "remarks": "Extra Field 01",
+      "maxLength": 10
+    },
+    "it4": {
+      "searchType": "NONE",
+      "scale": 2,
+      "subType": "DECIMAL",
+      "title": "It4",
+      "type": "number",
+      "remarks": "Extra Field 04",
+      "maxLength": 16
+    },
+    "acceptedqty": {
+      "searchType": "NONE",
+      "scale": 2,
+      "subType": "DECIMAL",
+      "title": "Quantity Accepted",
+      "type": "number",
+      "remarks": "Quantity that has been accepted",
+      "maxLength": 16
+    },
+    "actualcost": {
+      "searchType": "NONE",
+      "scale": 2,
+      "subType": "AMOUNT",
+      "title": "Actual Cost",
+      "type": "number",
+      "remarks": "The extended cost of the item on this transaction.",
+      "maxLength": 11
+    },
+    "glcreditacct": {
+      "searchType": "NONE",
+      "subType": "GL",
+      "title": "GL Credit Account",
+      "type": "string",
+      "remarks": "GL account being credited when the item is transferred. Click the Select Value button to choose a GL account.",
+      "maxLength": 23
+    },
+    "it3": {
+      "searchType": "NONE",
+      "subType": "ALN",
+      "title": "It3",
+      "type": "string",
+      "remarks": "Extra Field 03",
+      "maxLength": 10
+    },
+    "it6": {
+      "searchType": "NONE",
+      "subType": "ALN",
+      "title": "IT6",
+      "type": "string",
+      "remarks": "Extra Field",
+      "maxLength": 10
+    },
+    "it5": {
+      "searchType": "NONE",
+      "subType": "ALN",
+      "title": "It5",
+      "type": "string",
+      "remarks": "Extra Field 05",
+      "maxLength": 10
+    },
+    "qtyalreadyrecvd": {
+      "searchType": "NONE",
+      "scale": 0,
+      "subType": "FLOAT",
+      "title": "Quantity Already Received",
+      "type": "number",
+      "remarks": "Quantity Already Received",
+      "maxLength": 9
+    },
+    "it8": {
+      "searchType": "NONE",
+      "subType": "ALN",
+      "title": "IT8",
+      "type": "string",
+      "remarks": "Extra Field",
+      "maxLength": 10
+    },
+    "displayunitcost": {
+      "searchType": "NONE",
+      "scale": 2,
+      "subType": "AMOUNT",
+      "title": "Unit Cost",
+      "type": "number",
+      "remarks": "Displayed unitcost",
+      "maxLength": 11
+    },
+    "fromsiteid": {
+      "searchType": "NONE",
+      "subType": "UPPER",
+      "title": "From Site",
+      "type": "string",
+      "remarks": "Site from where the item is transferred. By default, Maximo uses the site of the selected storeroom. Click the Select Value button to choose a site.",
+      "maxLength": 8
+    },
+    "it7": {
+      "searchType": "NONE",
+      "subType": "ALN",
+      "title": "IT7",
+      "type": "string",
+      "remarks": "Extra Field",
+      "maxLength": 10
+    },
+    "polinecost": {
+      "searchType": "NONE",
+      "scale": 2,
+      "subType": "DECIMAL",
+      "title": "Line Cost",
+      "type": "number",
+      "remarks": "POLINECOST",
+      "maxLength": 11
+    },
+    "remark_longdescription": {
+      "searchType": "WILDCARD",
+      "subType": "LONGALN",
+      "title": "Remark Long Description",
+      "type": "string",
+      "remarks": "Long Description for Receipt line remark.",
+      "maxLength": 32000
+    },
+    "sendersysid": {
+      "searchType": "NONE",
+      "subType": "ALN",
+      "title": "Sender System ID",
+      "type": "string",
+      "remarks": "Column used by ERP-Integration (APIs)",
+      "maxLength": 50
+    },
+    "it9": {
+      "searchType": "NONE",
+      "subType": "ALN",
+      "title": "IT9",
+      "type": "string",
+      "remarks": "Extra Field",
+      "maxLength": 10
+    },
+    "statusdate": {
+      "searchType": "NONE",
+      "subType": "DATETIME",
+      "title": "Status Date",
+      "type": "string",
+      "remarks": "Date the receipt status last changed."
+    },
+    "wonum": {
+      "searchType": "NONE",
+      "subType": "UPPER",
+      "title": "Work Order",
+      "type": "string",
+      "remarks": "Identifies the work order for this line item.",
+      "maxLength": 25
+    },
+    "receiptref": {
+      "searchType": "NONE",
+      "maximum": 2147483647.0,
+      "subType": "BIGINT",
+      "title": "ReceiptRef",
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "remarks": "MatRecTransID of the creating receipt",
+      "maxLength": 11
+    },
+    "invuselinenum": {
+      "searchType": "NONE",
+      "maximum": 2147483647.0,
+      "subType": "INTEGER",
+      "title": "Line",
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "remarks": "The identifier of the inventory usage line.",
+      "maxLength": 11
+    },
+    "tostoreloc": {
+      "searchType": "NONE",
+      "subType": "UPPER",
+      "title": "To Location",
+      "type": "string",
+      "remarks": "Storeroom where the item is being transferred or received. Click the Select Value button to choose a storeroom location.",
+      "maxLength": 25
+    },
+    "ponum": {
+      "searchType": "NONE",
+      "subType": "UPPER",
+      "title": "PO",
+      "type": "string",
+      "remarks": "Purchase order number associated with this item. Select the Detail Menu button to go to the Purchase Orders application.",
+      "maxLength": 8
+    },
+    "matrectransid": {
+      "searchType": "NONE",
+      "maximum": 2147483647.0,
+      "subType": "BIGINT",
+      "title": "Receipt ID",
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "remarks": "Primary key for the table",
+      "maxLength": 11
+    },
+    "claimnum": {
+      "searchType": "NONE",
+      "subType": "UPPER",
+      "title": "Claim #",
+      "type": "string",
+      "remarks": "Claim number.",
+      "maxLength": 8
+    },
+    "asn": {
+      "searchType": "NONE",
+      "subType": "YORN",
+      "title": "ASN",
+      "type": "boolean",
+      "remarks": "Is created according to advanced shipping notice"
+    },
+    "sourcesysid": {
+      "searchType": "NONE",
+      "subType": "ALN",
+      "title": "Source System ID",
+      "type": "string",
+      "remarks": "Source System ID",
+      "maxLength": 10
+    },
+    "currencytax3": {
+      "searchType": "NONE",
+      "scale": 2,
+      "subType": "DECIMAL",
+      "title": "Tax 3",
+      "type": "number",
+      "remarks": "CURRENCYTAX3",
+      "maxLength": 11
+    },
+    "currencytax2": {
+      "searchType": "NONE",
+      "scale": 2,
+      "subType": "DECIMAL",
+      "title": "Tax 2",
+      "type": "number",
+      "remarks": "CURRENCYTAX2",
+      "maxLength": 11
+    },
+    "issuetype": {
+      "searchType": "NONE",
+      "subType": "UPPER",
+      "title": "Transaction Type",
+      "type": "string",
+      "remarks": "The type of Material Receipt Transaction (MatRecTrans).",
+      "maxLength": 24
+    },
+    "ownersysid": {
+      "searchType": "NONE",
+      "subType": "ALN",
+      "title": "Owner System ID",
+      "type": "string",
+      "remarks": "Owner System ID",
+      "maxLength": 10
+    },
+    "currencytax5": {
+      "searchType": "NONE",
+      "scale": 2,
+      "subType": "DECIMAL",
+      "title": "Tax 5",
+      "type": "number",
+      "remarks": "CURRENCYTAX5",
+      "maxLength": 11
+    },
+    "uninvoicedcost": {
+      "searchType": "NONE",
+      "scale": 2,
+      "subType": "DECIMAL",
+      "title": "Uninvoiced Cost",
+      "type": "number",
+      "remarks": "UNINVOICEDCOST",
+      "maxLength": 11
+    },
+    "currencytax4": {
+      "searchType": "NONE",
+      "scale": 2,
+      "subType": "DECIMAL",
+      "title": "Tax 4",
+      "type": "number",
+      "remarks": "CURRENCYTAX4",
+      "maxLength": 11
+    },
+    "inspectedqty": {
+      "searchType": "NONE",
+      "scale": 2,
+      "subType": "DECIMAL",
+      "title": "Quantity to be Inspected",
+      "type": "number",
+      "remarks": "Number of items inspected",
+      "maxLength": 16
+    },
+    "oldavgcost": {
+      "searchType": "NONE",
+      "scale": 2,
+      "subType": "AMOUNT",
+      "title": "Old Average Cost",
+      "type": "number",
+      "remarks": "Old Average Cost",
+      "maxLength": 11
+    },
+    "qtyheld": {
+      "searchType": "NONE",
+      "scale": 2,
+      "subType": "DECIMAL",
+      "title": "Quantity Held",
+      "type": "number",
+      "remarks": "Used for internal processing.",
+      "maxLength": 16
+    },
+    "reservedqty": {
+      "searchType": "NONE",
+      "scale": 2,
+      "subType": "DECIMAL",
+      "title": "Quantity Reserved",
+      "type": "number",
+      "remarks": "RESERVEDQTY",
+      "maxLength": 16
+    },
+    "currencycode": {
+      "searchType": "NONE",
+      "subType": "UPPER",
+      "title": "Currency",
+      "type": "string",
+      "remarks": "Currency the PR is in.",
+      "maxLength": 8
+    },
+    "currencytax1": {
+      "searchType": "NONE",
+      "scale": 2,
+      "subType": "DECIMAL",
+      "title": "Tax 1",
+      "type": "number",
+      "remarks": "CURRENCYTAX1",
+      "maxLength": 11
+    },
+    "frombin": {
+      "searchType": "NONE",
+      "subType": "ALN",
+      "title": "From Bin",
+      "type": "string",
+      "remarks": "Bin number in this storeroom from which the item is being transferred. Click the Select Value button to choose a bin.",
+      "maxLength": 8
+    },
+    "_rowstamp": {
+      "type": "string"
+    },
+    "receiptquantity": {
+      "searchType": "NONE",
+      "scale": 2,
+      "subType": "DECIMAL",
+      "title": "Quantity",
+      "type": "number",
+      "remarks": "Number of items you are receiving, or transferring from the storeroom.",
+      "maxLength": 16
+    },
+    "totalcurbal": {
+      "searchType": "NONE",
+      "scale": 2,
+      "subType": "DECIMAL",
+      "title": "Total Current Balance",
+      "type": "number",
+      "remarks": "Total Current Balance",
+      "maxLength": 16
+    },
+    "porevisionnum": {
+      "searchType": "NONE",
+      "maximum": 2147483647.0,
+      "subType": "INTEGER",
+      "title": "PO Revision",
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "remarks": "Revision number of the purchase order. Indicates how many times a purchase order has been revised.",
+      "maxLength": 11
+    },
+    "percentage": {
+      "searchType": "NONE",
+      "scale": 2,
+      "subType": "DECIMAL",
+      "title": "Percent",
+      "type": "number",
+      "remarks": "PERCENTAGE",
+      "maxLength": 6
+    },
+    "siteid": {
+      "searchType": "NONE",
+      "subType": "UPPER",
+      "title": "Site",
+      "type": "string",
+      "remarks": "Site Identifier",
+      "maxLength": 8
+    },
+    "qtyoverreceived": {
+      "searchType": "NONE",
+      "scale": 2,
+      "subType": "DECIMAL",
+      "title": "Over Received Quantity",
+      "type": "number",
+      "remarks": "The quantity of items that were received in excess of the amount ordered.",
+      "maxLength": 16
+    },
+    "fromstoreloc": {
+      "searchType": "NONE",
+      "subType": "UPPER",
+      "title": "From Location",
+      "type": "string",
+      "remarks": "Storeroom from where the item is received. Click the Select Value button to choose a storeroom location.",
+      "maxLength": 25
+    },
+    "financialperiod": {
+      "searchType": "NONE",
+      "subType": "ALN",
+      "title": "Financial Period",
+      "type": "string",
+      "remarks": "Financial Period of transaction",
+      "maxLength": 6
+    },
+    "loadedcost": {
+      "searchType": "NONE",
+      "scale": 2,
+      "subType": "DECIMAL",
+      "title": "Loaded Cost",
+      "type": "number",
+      "remarks": "The linecost of the transfer, calculated as unitcost multiplied by quantity plus taxes and special charges.",
+      "maxLength": 11
+    },
+    "orgrcvexternalrefid": {
+      "searchType": "NONE",
+      "subType": "ALN",
+      "title": "External Reference ID",
+      "type": "string",
+      "remarks": "The external reference identifier of the original receipt.",
+      "maxLength": 10
+    },
+    "requestnum": {
+      "searchType": "NONE",
+      "subType": "UPPER",
+      "title": "Request",
+      "type": "string",
+      "remarks": "REQUESTNUM",
+      "maxLength": 20
+    },
+    "modelnum": {
+      "searchType": "NONE",
+      "subType": "ALN",
+      "title": "Model",
+      "type": "string",
+      "remarks": "Manufacturer's model number for the item. The default value comes from the inventory record.",
+      "maxLength": 8
+    },
+    "changedate": {
+      "searchType": "NONE",
+      "subType": "DATE",
+      "title": "Changed Date",
+      "type": "string",
+      "remarks": "Timestamp of when the transaction was approved."
+    },
+    "rejectcost": {
+      "searchType": "NONE",
+      "scale": 2,
+      "subType": "DECIMAL",
+      "title": "Rejected Cost",
+      "type": "number",
+      "remarks": "Rejected extended or lump sum cost of this transaction line.",
+      "maxLength": 16
+    },
+    "receivedunit": {
+      "searchType": "NONE",
+      "subType": "UPPER",
+      "title": "Order Unit",
+      "type": "string",
+      "remarks": "Standard unit by which the item is ordered, such as roll or case.",
+      "maxLength": 16
+    },
+    "tax2code": {
+      "searchType": "NONE",
+      "subType": "UPPER",
+      "title": "Tax Code 2",
+      "type": "string",
+      "remarks": "Tax code used for calculation of Tax2 column.",
+      "maxLength": 8
+    },
+    "orgid": {
+      "searchType": "NONE",
+      "subType": "UPPER",
+      "title": "Organization",
+      "type": "string",
+      "remarks": "Organization Identifier",
+      "maxLength": 8
+    },
+    "inspected": {
+      "default": false,
+      "searchType": "NONE",
+      "subType": "YORN",
+      "title": "Inspected",
+      "type": "boolean",
+      "remarks": "Inspection Status Flag - Useful for Integration Users"
+    },
+    "itemnum": {
+      "searchType": "NONE",
+      "subType": "UPPER",
+      "title": "Item",
+      "type": "string",
+      "remarks": "Item that you want to transfer from this storeroom.",
+      "maxLength": 30
+    },
+    "currencyorderunitcost": {
+      "searchType": "NONE",
+      "scale": 2,
+      "subType": "DECIMAL",
+      "title": "Unit Cost",
+      "type": "number",
+      "remarks": "CURRENCYORDERUNITCOST",
+      "maxLength": 11
+    },
+    "outside": {
+      "default": false,
+      "searchType": "NONE",
+      "subType": "YORN",
+      "title": "Outside",
+      "type": "boolean",
+      "remarks": "Specifies whether the item being transferred is a consignment good. If the check box is selected, the item belongs to a contractor (or vendor), but it is stored on-site, and it is an item for which you expect to be charged for its use. If the check box is cleared (the default), the item is not owned by an outside party."
+    },
+    "useby": {
+      "searchType": "NONE",
+      "subType": "DATE",
+      "title": "Expiration Date",
+      "type": "string",
+      "remarks": "USEBY"
+    },
+    "itemsetid": {
+      "searchType": "NONE",
+      "subType": "UPPER",
+      "title": "Item Set",
+      "type": "string",
+      "remarks": "Item set identifier for this item.",
+      "maxLength": 8
+    },
+    "linecost2": {
+      "searchType": "NONE",
+      "scale": 2,
+      "subType": "DECIMAL",
+      "title": "Secondary Line Cost",
+      "type": "number",
+      "remarks": "Base Currency Line Cost 2.",
+      "maxLength": 11
+    },
+    "_id": {
+      "type": "string"
+    },
+    "it10": {
+      "searchType": "NONE",
+      "subType": "ALN",
+      "title": "IT10",
+      "type": "string",
+      "remarks": "Extra Field",
+      "maxLength": 10
+    },
+    "sourcembo": {
+      "searchType": "NONE",
+      "subType": "UPPER",
+      "title": "Source MBO",
+      "type": "string",
+      "remarks": "Source Mbo Name - Useful for Integration Users",
+      "maxLength": 30
+    },
+    "uninvoicedquantity": {
+      "searchType": "NONE",
+      "scale": 2,
+      "subType": "DECIMAL",
+      "title": "Uninvoiced Quantity",
+      "type": "number",
+      "remarks": "UNINVOICEDQUANTITY",
+      "maxLength": 16
+    },
+    "exchangerate": {
+      "searchType": "NONE",
+      "scale": 7,
+      "subType": "DECIMAL",
+      "title": "Exchange Rate",
+      "type": "number",
+      "remarks": "Exchange rate at time of PR approval.",
+      "maxLength": 15
+    },
+    "linetype": {
+      "searchType": "NONE",
+      "subType": "UPPER",
+      "title": "Line Type",
+      "type": "string",
+      "remarks": "Decribes the line type.",
+      "maxLength": 15
+    },
+    "description": {
+      "searchType": "NONE",
+      "subType": "ALN",
+      "title": "Description",
+      "type": "string",
+      "remarks": "Describes the item.",
+      "maxLength": 100
+    },
+    "externalrefid": {
+      "searchType": "NONE",
+      "subType": "ALN",
+      "title": "External Reference ID",
+      "type": "string",
+      "remarks": "External Reference ID",
+      "maxLength": 10
+    },
+    "rejectqtydisplay": {
+      "searchType": "NONE",
+      "scale": 2,
+      "subType": "DECIMAL",
+      "title": "Reject Quantity",
+      "type": "number",
+      "remarks": "The reject quantity field for the Change Inspection Status dialog.",
+      "maxLength": 16
+    },
+    "remark": {
+      "searchType": "NONE",
+      "subType": "ALN",
+      "title": "Remarks",
+      "type": "string",
+      "remarks": "Comment about the item or transaction. To enter or view additional information, click the Long Description button.",
+      "maxLength": 50
+    },
+    "gldebitacct": {
+      "searchType": "NONE",
+      "subType": "GL",
+      "title": "GL Debit Account",
+      "type": "string",
+      "remarks": "GL account being debited when the item is received or transferred. Click the Select Value button to choose a GL account.",
+      "maxLength": 23
+    },
+    "invoicenum": {
+      "searchType": "NONE",
+      "subType": "UPPER",
+      "title": "Invoice",
+      "type": "string",
+      "remarks": "Invoice number from the purchase order.",
+      "maxLength": 8
+    },
+    "servrectransid": {
+      "searchType": "NONE",
+      "maximum": 2147483647.0,
+      "subType": "BIGINT",
+      "title": "Service",
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "remarks": "Primary key for the table",
+      "maxLength": 11
+    },
+    "ext_rcv_cost": {
+      "default": false,
+      "searchType": "NONE",
+      "subType": "YORN",
+      "title": "Cost Override",
+      "type": "boolean",
+      "remarks": "Cost override flag fo ext system - Useful for Integration Users"
+    },
+    "sspl6": {
+      "searchType": "NONE",
+      "subType": "ALN",
+      "title": "SSPL6",
+      "type": "string",
+      "remarks": "Extra Field",
+      "maxLength": 10
+    },
+    "tax1": {
+      "searchType": "NONE",
+      "scale": 2,
+      "subType": "DECIMAL",
+      "title": "Tax 1",
+      "type": "number",
+      "remarks": "Amount of tax due on line item levied by Tax1Code.",
+      "maxLength": 11
+    },
+    "requestedby": {
+      "searchType": "NONE",
+      "subType": "UPPER",
+      "title": "Requested By",
+      "type": "string",
+      "remarks": "Person who asked for the item.",
+      "maxLength": 100
+    },
+    "sspl7": {
+      "searchType": "NONE",
+      "subType": "ALN",
+      "title": "SSPL7",
+      "type": "string",
+      "remarks": "Extra Field",
+      "maxLength": 10
+    },
+    "tax2": {
+      "searchType": "NONE",
+      "scale": 2,
+      "subType": "DECIMAL",
+      "title": "Tax 2",
+      "type": "number",
+      "remarks": "Amount of tax due on line item levied by Tax2Code.",
+      "maxLength": 11
+    },
+    "sspl4": {
+      "searchType": "NONE",
+      "subType": "ALN",
+      "title": "SSPL4",
+      "type": "string",
+      "remarks": "Extra Field",
+      "maxLength": 10
+    },
+    "tax3code": {
+      "searchType": "NONE",
+      "subType": "UPPER",
+      "title": "Tax Code 3",
+      "type": "string",
+      "remarks": "Tax code used for calculation of Tax3 column.",
+      "maxLength": 8
+    },
+    "invoicematunitcost": {
+      "searchType": "NONE",
+      "scale": 2,
+      "subType": "DECIMAL",
+      "title": "Unit Cost",
+      "type": "number",
+      "remarks": "INVOICEMATUNITCOST",
+      "maxLength": 11
+    },
+    "sspl5": {
+      "searchType": "NONE",
+      "subType": "ALN",
+      "title": "SSPL5",
+      "type": "string",
+      "remarks": "Extra Field",
+      "maxLength": 10
+    },
+    "_imagelibref": {
+      "type": "string"
+    },
+    "sspl2": {
+      "searchType": "NONE",
+      "subType": "ALN",
+      "title": "Sspl2",
+      "type": "string",
+      "remarks": "Service Reporting Crossover from POLINE.PLIN2.",
+      "maxLength": 10
+    },
+    "tax5": {
+      "searchType": "NONE",
+      "scale": 2,
+      "subType": "DECIMAL",
+      "title": "Tax 5",
+      "type": "number",
+      "remarks": "Amount of tax due on line item levied by Tax5Code.",
+      "maxLength": 11
+    },
+    "sspl3": {
+      "searchType": "NONE",
+      "subType": "ALN",
+      "title": "Sspl3",
+      "type": "string",
+      "remarks": "Service Reporting Crossover from POLINE.PLIN3.",
+      "maxLength": 10
+    },
+    "refwo": {
+      "searchType": "NONE",
+      "subType": "UPPER",
+      "title": "Work Order",
+      "type": "string",
+      "remarks": "Referenced Work Order",
+      "maxLength": 25
+    },
+    "tax3": {
+      "searchType": "NONE",
+      "scale": 2,
+      "subType": "DECIMAL",
+      "title": "Tax 3",
+      "type": "number",
+      "remarks": "Amount of tax due on line item levied by Tax3Code.",
+      "maxLength": 11
+    },
+    "conversion": {
+      "searchType": "NONE",
+      "scale": 2,
+      "subType": "DECIMAL",
+      "title": "Conversion Factor",
+      "type": "number",
+      "remarks": "Numeric value that is applied to relate an order unit to an issue unit. For example, if you order light bulbs in bulk, your unit of measure might be a case, with a quantity received of 36. But when you issue the item, you issue it one at a time. In this case, you can define a measure unit of CASE and another measure unit of EACH. You define a conversion ratio from CASE to EACH with a factor of 36. When you receive an order of this item into a storeroom, MAXIMO converts the received order unit of one CASE into the storeroom's issue unit of 36 EACH.",
+      "maxLength": 16
+    },
+    "sspl1": {
+      "searchType": "NONE",
+      "subType": "ALN",
+      "title": "Sspl1",
+      "type": "string",
+      "remarks": "Service Reporting Crossover from POLINE.PLIN1.",
+      "maxLength": 10
+    },
+    "tax4": {
+      "searchType": "NONE",
+      "scale": 2,
+      "subType": "DECIMAL",
+      "title": "Tax 4",
+      "type": "number",
+      "remarks": "Amount of tax due on line item levied by Tax4Code.",
+      "maxLength": 11
+    },
+    "newphyscntdate": {
+      "searchType": "NONE",
+      "subType": "DATETIME",
+      "title": "Physical Count Date",
+      "type": "string",
+      "remarks": "NEWPHYSCNTDATE"
+    },
+    "transdate": {
+      "searchType": "NONE",
+      "subType": "DATETIME",
+      "title": "Transaction Date",
+      "type": "string",
+      "remarks": "Date and time the transaction was entered in Maximo. This field is read only."
+    },
+    "inspectioncost": {
+      "searchType": "NONE",
+      "scale": 2,
+      "subType": "DECIMAL",
+      "title": "Cost to be Inspected",
+      "type": "number",
+      "remarks": "Cost of inspected items",
+      "maxLength": 16
+    },
+    "newsite": {
+      "searchType": "NONE",
+      "subType": "UPPER",
+      "title": "To Site",
+      "type": "string",
+      "remarks": "Site where the item is being transferred. By default, Maximo inserts the site of the storeroom you selected. Click the Select Value button to choose a site.",
+      "maxLength": 8
+    },
+    "temploadedcost": {
+      "searchType": "NONE",
+      "scale": 2,
+      "subType": "DECIMAL",
+      "title": "Loaded Cost",
+      "type": "number",
+      "remarks": "TEMPLOADEDCOST",
+      "maxLength": 11
+    },
+    "acceptedcost": {
+      "searchType": "NONE",
+      "scale": 2,
+      "subType": "DECIMAL",
+      "title": "Accepted Cost",
+      "type": "number",
+      "remarks": "Cost of accepted items",
+      "maxLength": 16
+    },
+    "positeid": {
+      "searchType": "NONE",
+      "subType": "UPPER",
+      "title": "PO Site ID",
+      "type": "string",
+      "remarks": "The siteid where the po was created.",
+      "maxLength": 8
+    },
+    "fromlot": {
+      "searchType": "NONE",
+      "subType": "UPPER",
+      "title": "From Lot",
+      "type": "string",
+      "remarks": "Manufacturer's batch, or lot, from which the item is being taken. Click the Select Value button to choose a lot.",
+      "maxLength": 8
+    },
+    "mrnum": {
+      "searchType": "NONE",
+      "subType": "UPPER",
+      "title": "Requisition",
+      "type": "string",
+      "remarks": "Material Request Number",
+      "maxLength": 8
+    },
+    "tax5code": {
+      "searchType": "NONE",
+      "subType": "UPPER",
+      "title": "Tax Code 5",
+      "type": "string",
+      "remarks": "Tax code used for calculation of Tax5 column.",
+      "maxLength": 8
+    },
+    "fcprojectid": {
+      "searchType": "NONE",
+      "subType": "ALN",
+      "title": "FC Project ID",
+      "type": "string",
+      "remarks": "Financial control project identifier.",
+      "maxLength": 25
+    },
+    "matusetransid": {
+      "searchType": "NONE",
+      "maximum": 2147483647.0,
+      "subType": "BIGINT",
+      "title": "Kit Use Identifier",
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "remarks": "Used when breaking an inventory Kit, this is the identifier of the MatUseTrans record for the Kit item.",
+      "maxLength": 11
+    },
+    "newassetnum": {
+      "searchType": "NONE",
+      "subType": "UPPER",
+      "title": "New Asset Number",
+      "type": "string",
+      "hasList": true,
+      "remarks": "Identifies the new asset number that is associated with this record.",
+      "maxLength": 25
+    },
+    "location": {
+      "searchType": "NONE",
+      "subType": "UPPER",
+      "title": "Location",
+      "type": "string",
+      "remarks": "Location where the item will be used.",
+      "maxLength": 25
+    },
+    "qtytoreceive": {
+      "searchType": "NONE",
+      "scale": 2,
+      "subType": "DECIMAL",
+      "title": "Quantity",
+      "type": "number",
+      "remarks": "QTYTORECEIVE",
+      "maxLength": 16
+    },
+    "rotatingassetdesc": {
+      "searchType": "NONE",
+      "subType": "ALN",
+      "title": "Description",
+      "type": "string",
+      "remarks": "ROTATINGASSETDESC",
+      "maxLength": 80
+    },
+    "proratecost": {
+      "searchType": "NONE",
+      "scale": 2,
+      "subType": "DECIMAL",
+      "title": "Prorate Cost",
+      "type": "number",
+      "remarks": "Amount of special charges loaded onto the line item.",
+      "maxLength": 11
+    },
+    "category": {
+      "searchType": "NONE",
+      "subType": "UPPER",
+      "title": "Category",
+      "type": "string",
+      "remarks": "Category of the item.",
+      "maxLength": 16
+    }
+  },
+  "required": [
+    "asn",
+    "costinfo",
+    "currencycode",
+    "enterby",
+    "enteredastask",
+    "ext_rcv_cost",
+    "inspected",
+    "isdistributed",
+    "issue",
+    "linetype",
+    "orgid",
+    "outside",
+    "prorated",
+    "rollup",
+    "siteid"
+  ]
+}

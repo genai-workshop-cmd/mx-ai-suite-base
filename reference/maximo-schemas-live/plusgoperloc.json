@@ -1,0 +1,647 @@
+{
+ "resource": "PLUSGOPERLOC",
+ "description": "Oil and Gas' Operation Location Object Structure",
+ "pk": [
+  "siteid",
+  "location"
+ ],
+ "title": "LOCATIONS",
+ "type": "object",
+ "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/plusgoperloc",
+ "uniqueid": "locationsid",
+ "properties": {
+  "plusgqualitycritical": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Quality Critical",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Specifies whether this location is critical for ensuring quality. If the check box is selected, this location is quality critical. If the check box is cleared, this location is not quality critical."
+  },
+  "plusgsecegrp": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "SECE Group",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The Safety and Environmentally Critical Elements group that is associated with the location.",
+   "maxLength": 25
+  },
+  "parent": {
+   "searchType": "NONE",
+   "subType": "UPPER",
+   "title": "Location",
+   "type": "string",
+   "hasList": true,
+   "remarks": "PARENT",
+   "maxLength": 25
+  },
+  "localref": {
+   "type": "string"
+  },
+  "plusglocknum": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Lock Number",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The identifier of the lock that is applied.",
+   "maxLength": 15
+  },
+  "plusgcurlockstate": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Lock State",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The current state of the lock. For example, indicates whether the asset or location is locked in an open or closed position.",
+   "maxLength": 16
+  },
+  "plusgpiptype_description": {
+   "type": "string"
+  },
+  "type": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Type",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The type of location (Operating, Storeroom, Repair, et cettera). In Insert mode, the default type is Operating (or a synonym default supplied by your system administrator). Operating is the only type of location you can insert on the Operating Locations screen. When adding a location record, click Select Value to choose from a list of valid types.",
+   "maxLength": 16
+  },
+  "plusgfmtype": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Failure Analysis Type",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The type of procedural analysis that must be done to identify the potential causes of failures at this location. An FMEA analysis is done at the functional level. An FMECA analysis extends the FMEA analysis by including a criticality analysis, which identifies the potential causes of failures and the consequences of failures. Criticality-based maintenance identifies which locations are critical and what the impact would be if the locations were to fail. Criticality-based maintenance also informs procurement strategy so that inventories, and the costs associated with keeping them, are reduced but not at the expense of increased downtime.",
+   "maxLength": 30
+  },
+  "_rowstamp": {
+   "type": "string"
+  },
+  "plusgpiplineclass": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Line Class",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The classification to which the pipe is assigned.",
+   "maxLength": 20
+  },
+  "plusgpipprocessmedium_description": {
+   "type": "string"
+  },
+  "locationusercust": {
+   "objectName": "LOCATIONUSERCUST",
+   "type": "array",
+   "items": {
+    "definition": {
+     "subSchema": {
+      "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/plusgoperloc/locationusercust"
+     }
+    },
+    "type": "object"
+   },
+   "cardinality": "MULTIPLE",
+   "relation": "LOCATIONUSERCUST"
+  },
+  "locationsid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "LOCATIONSID",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "uniqueid": true,
+   "remarks": "Unique Identifier",
+   "maxLength": 11
+  },
+  "siteid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Site",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Specifies the site where this location or storeroom resides.",
+   "maxLength": 8
+  },
+  "plusgfmperson": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Failure Analysis Leader",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The person who is leading the failure analysis effort.",
+   "maxLength": 100
+  },
+  "plusgistemp": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Temporary",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Indicates whether a location is only needed for a limited time. The location is tracked for historical purposes."
+  },
+  "href": {
+   "type": "string",
+   "title": "LOCATIONS object reference"
+  },
+  "status_description": {
+   "type": "string"
+  },
+  "plusgfmcomplete": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Complete",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The date when the failure analysis is set to be completed."
+  },
+  "plusgsecegrp_description": {
+   "type": "string"
+  },
+  "plusgarea": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Area",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The area that is associated with location.",
+   "maxLength": 16
+  },
+  "plusgnoropstate_description": {
+   "type": "string"
+  },
+  "plusgpredictedmtbf": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "INTEGER",
+   "title": "Predicted MTBF",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "The predicted mean time between failures for the location, in hours. The value must be an integer.",
+   "maxLength": 11
+  },
+  "record_descriptor": {
+   "type": "string",
+   "title": "Record/Object Descriptor"
+  },
+  "plusgcurlockstate_description": {
+   "type": "string"
+  },
+  "plusgfmstart": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Start",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The date when the failure analysis is set to begin."
+  },
+  "plusgbenchsource": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Benchmark Source",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The source of the benchmark mean time between failures for the location. Valid values are in the PLUSGBENCHSOURCE domain.",
+   "maxLength": 30
+  },
+  "plusgpolicyid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Operating Policy",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "The unique identifier of an operating policy.",
+   "maxLength": 11
+  },
+  "plusgmttr": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "INTEGER",
+   "title": "MTTR",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "The mean time to repair for the location, in hours. The value must be an integer.",
+   "maxLength": 11
+  },
+  "plusgactionsumm": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Review Action Summary",
+   "persistent": true,
+   "type": "string",
+   "remarks": "A summary of the review actions that are associated with the location.",
+   "maxLength": 200
+  },
+  "_id": {
+   "type": "string"
+  },
+  "plusgfasummary": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Summary",
+   "persistent": true,
+   "type": "string",
+   "remarks": "A summary of the details of the failure analysis, such as which method is used.",
+   "maxLength": 50
+  },
+  "plusgopstate": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Operating State",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The current operating state of the location or valve.",
+   "maxLength": 16
+  },
+  "plusgleakdetails": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Leak Details",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Describes the source of the leak, and any other information about the leak.",
+   "maxLength": 4000
+  },
+  "status": {
+   "default": "!OPERATING!",
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Status",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "STATUS",
+   "maxLength": 20
+  },
+  "plusgbrstate": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Barrier State",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The current state of the barrier.",
+   "maxLength": 20
+  },
+  "plusgpiptype": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Piping Type",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The type of piping, such as process or small bore, that is used for this location.",
+   "maxLength": 20
+  },
+  "plusgtargetmtbf": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "INTEGER",
+   "title": "Target MTBF",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "The target mean time between failures for the location, in hours. The value must be an integer.",
+   "maxLength": 11
+  },
+  "plusgsafecrielem": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Safety Critical Element",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "A reference to any element that is critical to safety and that is associated with a regulation. A performance standard that regulates the emission of hazardous substances can be a type of critical-safety reference.",
+   "maxLength": 10
+  },
+  "description": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Description",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The description of the location. To enter or view additional information, click the Long Description button.",
+   "maxLength": 100
+  },
+  "locsystem": {
+   "objectName": "LOCSYSTEM",
+   "type": "array",
+   "items": {
+    "definition": {
+     "subSchema": {
+      "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/plusgoperloc/locsystem"
+     }
+    },
+    "type": "object"
+   },
+   "cardinality": "UNDEFINED",
+   "relation": "LOCSYSTEM"
+  },
+  "plusgbarrier": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Barrier",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The barrier that is associated with the location.",
+   "maxLength": 40
+  },
+  "plusgbrstate_description": {
+   "type": "string"
+  },
+  "plusgtotalscore": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Total Score",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "The total score that is assigned to the review actions that are associated with the location.",
+   "maxLength": 11
+  },
+  "_imagelibref": {
+   "type": "string"
+  },
+  "plusgfmpersonid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Failure Analysis Leader ID",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "The person who is leading the failure analysis effort.",
+   "maxLength": 11
+  },
+  "plusgsafecrielem_description": {
+   "type": "string"
+  },
+  "plusgbenchmarkmtbf": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "INTEGER",
+   "title": "Benchmark MTBF",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "The benchmark mean time between failures for the location, in hours. The value must be an integer.",
+   "maxLength": 11
+  },
+  "plusgpipreference": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Reference",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The reference to documentation or to an identifier that is associated with the type of piping that is used.",
+   "maxLength": 20
+  },
+  "locationmeter": {
+   "objectName": "LOCATIONMETER",
+   "type": "array",
+   "items": {
+    "definition": {
+     "subSchema": {
+      "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/plusgoperloc/locationmeter"
+     }
+    },
+    "type": "object"
+   },
+   "cardinality": "UNDEFINED",
+   "relation": "INT_LOCATIONMETER"
+  },
+  "plusgenvcrielem": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Environmentally Critical Element",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "A reference to any element that is critical to the environment, and that is associated with a regulation.",
+   "maxLength": 10
+  },
+  "type_description": {
+   "type": "string"
+  },
+  "plusgenvcrielem_description": {
+   "type": "string"
+  },
+  "plusgpipprocessmedium": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Process Medium",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The type of medium, such as fuel or water, that the pipe is designed to carry.",
+   "maxLength": 20
+  },
+  "plusgbenchsource_description": {
+   "type": "string"
+  },
+  "plusgpipinspectdate": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Last Inspection Date/Time",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The date and time when the pipe was last inspected."
+  },
+  "plusgarea_description": {
+   "type": "string"
+  },
+  "plusgpipinspectbyid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Inspected By ID",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "The person who inspected the pipe.",
+   "maxLength": 11
+  },
+  "plusgpiprating": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Rating",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The pressure that the pipe is designed to withstand.",
+   "maxLength": 20
+  },
+  "locationspec": {
+   "objectName": "LOCATIONSPEC",
+   "type": "array",
+   "items": {
+    "definition": {
+     "subSchema": {
+      "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/plusgoperloc/locationspec"
+     }
+    },
+    "type": "object"
+   },
+   "cardinality": "UNDEFINED",
+   "relation": "LOCATIONSSPECCLASS"
+  },
+  "plusgbarrier_description": {
+   "type": "string"
+  },
+  "plusghistoricmtbf": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "INTEGER",
+   "title": "Historic MTBF",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "The historic mean time between failures for the location, in hours. The value must be an integer.",
+   "maxLength": 11
+  },
+  "plusgfmtype_description": {
+   "type": "string"
+  },
+  "plusgopenomuid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "INTEGER",
+   "title": "Open Unique Idenfitier",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "The open unique identifier provided to an external system by Maximo",
+   "maxLength": 11
+  },
+  "islocked": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Locked",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Indicates that the lock is applied to the location or valve, and the new state is applied."
+  },
+  "plusglastchkdate": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Last Checked Date",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The date and time when the valve was last checked for leaks."
+  },
+  "plusgleaking": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Leaking",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Indicates whether the location or the asset at the location is leaking."
+  },
+  "plusglocprofid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Location Profile",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "Location Profile unique identifier.",
+   "maxLength": 11
+  },
+  "plusgnoropstate": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Normal Lock State",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The lock state for this location or valve during normal operations. For example, indicates whether the location or valve is locked open or closed when operations are running normally.",
+   "maxLength": 16
+  },
+  "plusgpiplinenum": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Line Number",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The line number for the pipe.",
+   "maxLength": 20
+  },
+  "plusgispassvalve": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Passing Valve",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Specifies whether the valve is closed properly and that it is not leaking fluids or gases."
+  },
+  "plusgtempuntil": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Temporary Until",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The date until which the location retains its temporary status. After the temporary status expires, you can opt not to use it."
+  },
+  "location": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Location",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The identifier of the location.",
+   "maxLength": 25
+  },
+  "plusgdateofprediction": {
+   "searchType": "EXACT",
+   "subType": "DATE",
+   "title": "Date of Prediction",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The date when the predicted mean time between failures was specified."
+  },
+  "plusgopstate_description": {
+   "type": "string"
+  },
+  "plusgpipinspectby": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Inspected By",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The person who inspected the pipe.",
+   "maxLength": 100
+  }
+ },
+ "required": [
+  "location",
+  "type"
+ ]
+}

@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git -C \"/c/Users/aniket.dhokare/Desktop/Claude/mx-ai-suite\" config user.email \"aniket.dhokare@accenture.com\")",
+      "Bash(git -C \"/c/Users/aniket.dhokare/Desktop/Claude/mx-ai-suite\" config user.name \"Aniket Dhokare\")",
+      "Bash(git config *)"
+    ]
+  }
+}

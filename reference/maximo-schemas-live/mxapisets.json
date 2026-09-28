@@ -1,0 +1,148 @@
+{
+ "resource": "MXAPISETS",
+ "description": "Object Structure for SETS",
+ "pk": [
+  "setid"
+ ],
+ "title": "SETS",
+ "type": "object",
+ "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/mxapisets",
+ "uniqueid": "setsid",
+ "properties": {
+  "description_longdescription": {
+   "searchType": "WILDCARD",
+   "subType": "LONGALN",
+   "title": "Details",
+   "type": "string",
+   "remarks": "Long Description for this set.",
+   "maxLength": 32000
+  },
+  "settype": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Type",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Either COMPANY or ITEM. Enter the value or click the Select Value button.",
+   "maxLength": 8
+  },
+  "settype_description": {
+   "type": "string"
+  },
+  "localref": {
+   "type": "string"
+  },
+  "enterdate": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Entered Date",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Date and time the item set record was entered."
+  },
+  "description": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Description",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Describes the set.",
+   "maxLength": 100
+  },
+  "record_descriptor": {
+   "type": "string",
+   "title": "Record/Object Descriptor"
+  },
+  "autoupdate": {
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Automatically Add Companies to Company Master",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Specifies whether you want Maximo to automatically create a Company Master record when a user adds a company in the Companies application. If the check box is selected, a Company Master record will be created. If the check box is cleared (the default), a Company Master record will not be created, and users must add companies in the Company Master application. This field only applies to sets of the TYPE COMPANY."
+  },
+  "setsid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Set",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "uniqueid": true,
+   "remarks": "Unique Identifier",
+   "maxLength": 11
+  },
+  "langcode": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Language Code",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Language Column",
+   "maxLength": 4
+  },
+  "_rowstamp": {
+   "type": "string"
+  },
+  "enterby": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Entered By",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Name of user who entered item set record.",
+   "maxLength": 100
+  },
+  "hasld": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Has Long Description",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Boolean flag to indicate if there is any long description for this record"
+  },
+  "_imagelibref": {
+   "type": "string"
+  },
+  "dfltitemstatus": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Default Item Status",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The default item status for items added to the set.",
+   "maxLength": 16
+  },
+  "setid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Set",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Identifies the set. This value must be unique for all sets. You cannot use the same identifier for a company set and an item set.",
+   "maxLength": 8
+  },
+  "href": {
+   "type": "string",
+   "title": "SETS object reference"
+  },
+  "_id": {
+   "type": "string"
+  }
+ },
+ "required": [
+  "autoupdate",
+  "dfltitemstatus",
+  "enterby",
+  "enterdate",
+  "langcode",
+  "setid",
+  "settype"
+ ]
+}

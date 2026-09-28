@@ -1,0 +1,132 @@
+{
+ "resource": "MXAPIBULLETINBOARD",
+ "description": "Maximo table for Bulletin board",
+ "pk": [
+  "bulletinboardid"
+ ],
+ "title": "BULLETINBOARD",
+ "type": "object",
+ "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/mxapibulletinboard",
+ "uniqueid": "bulletinboarduid",
+ "properties": {
+  "status_description": {
+   "type": "string"
+  },
+  "localref": {
+   "type": "string"
+  },
+  "bulletinboarduid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "BULLETINBOARDUID",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "uniqueid": true,
+   "remarks": "Unique Identifier",
+   "maxLength": 11
+  },
+  "subject": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Subject",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The subject of the bulletin board message.",
+   "maxLength": 200
+  },
+  "postby": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Posted By",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Identifier of the person who composed and posted this message on the Bulletin Board.",
+   "maxLength": 100
+  },
+  "postdate": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Post Date",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The date and time that indicates when you want this message to be visible in the Bulletin Board."
+  },
+  "bboardmsgstatus": {
+   "objectName": "BBOARDMSGSTATUS",
+   "type": "array",
+   "items": {
+    "definition": {
+     "subSchema": {
+      "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/mxapibulletinboard/bboardmsgstatus"
+     }
+    },
+    "type": "object"
+   },
+   "cardinality": "",
+   "relation": "BLTBSTATUS"
+  },
+  "record_descriptor": {
+   "type": "string",
+   "title": "Record/Object Descriptor"
+  },
+  "expiredate": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Expiration Date",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The date and time that indicates when this message automatically gets removed from the bulletin board. The value entered in this field must be a future date and time."
+  },
+  "message": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Message",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The contents of the bulletin board message.",
+   "maxLength": 4000
+  },
+  "_rowstamp": {
+   "type": "string"
+  },
+  "_imagelibref": {
+   "type": "string"
+  },
+  "href": {
+   "type": "string",
+   "title": "BULLETINBOARD object reference"
+  },
+  "_id": {
+   "type": "string"
+  },
+  "bulletinboardid": {
+   "default": "&AUTOKEY&",
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Message ID",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Identifier of the bulletin board message.",
+   "maxLength": 10
+  },
+  "status": {
+   "default": "!DRAFT!",
+   "searchType": "EXACT",
+   "subType": "ALN",
+   "title": "Status",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The status column is used for storing the status of the bulletin board message",
+   "maxLength": 10
+  }
+ },
+ "required": [
+  "expiredate",
+  "postby",
+  "postdate",
+  "subject"
+ ]
+}

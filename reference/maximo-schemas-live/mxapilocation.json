@@ -1,0 +1,167 @@
+{
+ "resource": "MXAPILOCATION",
+ "description": "Maximo API for Location Information",
+ "pk": [
+  "siteid",
+  "location",
+  "systemid",
+  "parent"
+ ],
+ "title": "LOCHIERARCHY",
+ "type": "object",
+ "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/mxapilocation",
+ "uniqueid": "lochierarchyid",
+ "properties": {
+  "parent": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Parent",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Parent of the location. When there is an entry in this field, you can click Detail and select Move to if you want to display this location's record as the current record. The information on the page will change to reflect this Location entry.",
+   "maxLength": 25
+  },
+  "systemid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "System",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The system to which the location belongs (primary, electrical, heating, et cettera). Click Detail in the System field to select a value from the Select System page. A red dot appears in this field if the location belongs to more than one system. Click the Detail button while in Browse mode to display the Select System for Location page, where you can view other systems to which the location belongs.",
+   "maxLength": 12
+  },
+  "localref": {
+   "type": "string"
+  },
+  "locsystem": {
+   "objectName": "LOCSYSTEM",
+   "type": "array",
+   "items": {
+    "definition": {
+     "subSchema": {
+      "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/mxapilocation/locsystem"
+     }
+    },
+    "type": "object"
+   },
+   "cardinality": "UNDEFINED",
+   "relation": "LOCSYSTEM"
+  },
+  "record_descriptor": {
+   "type": "string",
+   "title": "Record/Object Descriptor"
+  },
+  "gisparam3": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "GIS Parameter 3",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Graphical Information System interface parameter 3",
+   "maxLength": 1
+  },
+  "gisparam2": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "GIS Parameter 2",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Graphical Information System interface parameter 2",
+   "maxLength": 1
+  },
+  "gisparam1": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "GIS Parameter 1",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Graphical Information System interface parameter 1",
+   "maxLength": 1
+  },
+  "orgid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Organization",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Organization Identifier",
+   "maxLength": 8
+  },
+  "_rowstamp": {
+   "type": "string"
+  },
+  "children": {
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Children",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "The child location of the current location record. To move the child to the Location field, in the Children table, click View Details for the record you want to view, and from the Location field, click Detail and select Move to. The information on the page will change to reflect the new Location entry. When there is no location in the Children table, click New Row to add a child location."
+  },
+  "_imagelibref": {
+   "type": "string"
+  },
+  "siteid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Site",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Site Identifier",
+   "maxLength": 8
+  },
+  "location": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Location",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Location Identifier",
+   "maxLength": 25
+  },
+  "lochierarchyid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "LOCHIERARCHYID",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "uniqueid": true,
+   "remarks": "Unique Identifier",
+   "maxLength": 11
+  },
+  "locations": {
+   "objectName": "LOCATIONS",
+   "type": "array",
+   "items": {
+    "definition": {
+     "subSchema": {
+      "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/mxapilocation/locations"
+     }
+    },
+    "type": "object"
+   },
+   "cardinality": "UNDEFINED",
+   "relation": "CHILDLOCATIONS"
+  },
+  "href": {
+   "type": "string",
+   "title": "LOCHIERARCHY object reference"
+  },
+  "_id": {
+   "type": "string"
+  }
+ },
+ "required": [
+  "children",
+  "location",
+  "orgid",
+  "siteid",
+  "systemid"
+ ]
+}

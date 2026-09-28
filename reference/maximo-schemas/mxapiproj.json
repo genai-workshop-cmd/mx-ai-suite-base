@@ -1,0 +1,414 @@
+{
+  "resource": "MXAPIPROJ",
+  "description": "FINCNTRL",
+  "pk": [
+    "orgid",
+    "taskid",
+    "projectid"
+  ],
+  "title": "FINCNTRL",
+  "type": "object",
+  "$ref": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapiproj",
+  "uniqueid": "fincntrluid",
+  "properties": {
+    "fcstatus_description": {
+      "type": "string"
+    },
+    "fctype": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "FC Type",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Financial control type",
+      "maxLength": 12
+    },
+    "ownersysid": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Owner System ID",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Application system managing the financial control entity",
+      "maxLength": 10
+    },
+    "asofdate": {
+      "searchType": "EXACT",
+      "subType": "DATETIME",
+      "title": "Last Reported Date",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Date Last Reported"
+    },
+    "issummary": {
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "Is Summary",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "Indicates whether this is a summary reporting cost entity"
+    },
+    "localref": {
+      "type": "string"
+    },
+    "committedcost": {
+      "searchType": "EXACT",
+      "scale": 2,
+      "subType": "AMOUNT",
+      "title": "Committed Amount",
+      "persistent": true,
+      "type": "number",
+      "remarks": "Committed Amount",
+      "maxLength": 11
+    },
+    "description": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Description",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Description",
+      "maxLength": 100
+    },
+    "externalrefid": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "External Reference ID",
+      "persistent": true,
+      "type": "string",
+      "remarks": "External Reference ID",
+      "maxLength": 10
+    },
+    "budgetid": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Budget",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Budget Identifier",
+      "maxLength": 25
+    },
+    "fincntrluid": {
+      "searchType": "EXACT",
+      "maximum": 2147483647.0,
+      "subType": "BIGINT",
+      "title": "FINCNTRLUID",
+      "persistent": true,
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "uniqueid": true,
+      "remarks": "Unique Identifier",
+      "maxLength": 11
+    },
+    "startdate": {
+      "searchType": "EXACT",
+      "subType": "DATETIME",
+      "title": "Start Date",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Effective start date for the financial control entity"
+    },
+    "fctype_description": {
+      "type": "string"
+    },
+    "budgettype": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Budget Type",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Budget type",
+      "maxLength": 30
+    },
+    "_rowstamp": {
+      "type": "string"
+    },
+    "_imagelibref": {
+      "type": "string"
+    },
+    "siteid": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Site",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Site Identifier",
+      "maxLength": 8
+    },
+    "disabled": {
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "Disabled",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "Indicates whether the financial control entity has been disabled from use"
+    },
+    "projecttype": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Type",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Project type",
+      "maxLength": 30
+    },
+    "href": {
+      "type": "string"
+    },
+    "allocatedcost": {
+      "searchType": "EXACT",
+      "scale": 2,
+      "subType": "AMOUNT",
+      "title": "Allocated Amount",
+      "persistent": true,
+      "type": "number",
+      "remarks": "Allocated Amount",
+      "maxLength": 11
+    },
+    "ischargeable": {
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "Is Chargeable",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "Indicates whether costs can be collected for this cost entity"
+    },
+    "projectid": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Project",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Project Identifier",
+      "maxLength": 25
+    },
+    "burdenedcost": {
+      "searchType": "EXACT",
+      "scale": 2,
+      "subType": "AMOUNT",
+      "title": "Burdened Amount",
+      "persistent": true,
+      "type": "number",
+      "remarks": "Burdened Amount",
+      "maxLength": 11
+    },
+    "taskid": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Task",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Task Identifier",
+      "maxLength": 25
+    },
+    "sourceid": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Source",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Source Identifier",
+      "maxLength": 25
+    },
+    "fcstatus": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Status",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Status of the financial control entity",
+      "maxLength": 12
+    },
+    "description_longdescription": {
+      "searchType": "WILDCARD",
+      "subType": "LONGALN",
+      "title": "Details",
+      "type": "string",
+      "remarks": "Long Description for Description",
+      "maxLength": 32000
+    },
+    "tasktype": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Type",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Task type",
+      "maxLength": 30
+    },
+    "budgetlinetype": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Budget Line Type",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Budget line type",
+      "maxLength": 30
+    },
+    "tasklevel": {
+      "searchType": "EXACT",
+      "maximum": 2147483647.0,
+      "subType": "INTEGER",
+      "title": "Task Level",
+      "persistent": true,
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "remarks": "Level from the top in a prent-child task-subtask relationship",
+      "maxLength": 11
+    },
+    "changeby": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Changed By",
+      "persistent": true,
+      "type": "string",
+      "remarks": "The user who last modified the financial control entity",
+      "maxLength": 100
+    },
+    "parentprojectid": {
+      "searchType": "NONE",
+      "subType": "ALN",
+      "title": "Parent Project",
+      "type": "string",
+      "hasList": true,
+      "remarks": "PARENTPROJECTID",
+      "maxLength": 25
+    },
+    "actualcost": {
+      "searchType": "EXACT",
+      "scale": 2,
+      "subType": "AMOUNT",
+      "title": "Value",
+      "persistent": true,
+      "type": "number",
+      "remarks": "Actual Amount",
+      "maxLength": 11
+    },
+    "changedate": {
+      "searchType": "EXACT",
+      "subType": "DATETIME",
+      "title": "Changed Date",
+      "persistent": true,
+      "type": "string",
+      "remarks": "The date the financial control entity was last modified"
+    },
+    "templateid": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Template",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Template Identifier",
+      "maxLength": 25
+    },
+    "parenttaskid": {
+      "searchType": "NONE",
+      "subType": "ALN",
+      "title": "Parent Task",
+      "type": "string",
+      "hasList": true,
+      "remarks": "PARENTTASKID",
+      "maxLength": 25
+    },
+    "sendersysid": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Sender System ID",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Column used by ERP-Integration (APIs)",
+      "maxLength": 50
+    },
+    "orgid": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Organization",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Organization Identifier",
+      "maxLength": 8
+    },
+    "remainingcost": {
+      "searchType": "EXACT",
+      "scale": 2,
+      "subType": "AMOUNT",
+      "title": "Remaining Amount",
+      "persistent": true,
+      "type": "number",
+      "remarks": "Remaining Amount",
+      "maxLength": 11
+    },
+    "enddate": {
+      "searchType": "EXACT",
+      "subType": "DATETIME",
+      "title": "End Date",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Effective finish date for the financial control entity"
+    },
+    "budgetcost": {
+      "searchType": "EXACT",
+      "scale": 2,
+      "subType": "AMOUNT",
+      "title": "Budgeted Amount",
+      "persistent": true,
+      "type": "number",
+      "remarks": "Budgeted Amount",
+      "maxLength": 11
+    },
+    "parentfincntrlid": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Parent FCID",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Parent Financial Control Identifier",
+      "maxLength": 8
+    },
+    "fincntrlid": {
+      "default": "&AUTOKEY&",
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "FCID",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Unique Financial Control Identifier",
+      "maxLength": 8
+    },
+    "_id": {
+      "type": "string"
+    },
+    "budgetlineid": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Budget Line",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Budget Line Identifier",
+      "maxLength": 25
+    },
+    "sourcesysid": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Source System ID",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Souce application system for this financial control entity",
+      "maxLength": 10
+    }
+  },
+  "required": [
+    "changeby",
+    "changedate",
+    "disabled",
+    "ischargeable",
+    "issummary",
+    "orgid",
+    "siteid"
+  ]
+}

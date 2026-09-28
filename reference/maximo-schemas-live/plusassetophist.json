@@ -1,0 +1,230 @@
+{
+ "resource": "PLUSASSETOPHIST",
+ "description": "PLUSASSETOPHIST",
+ "pk": [
+  "siteid",
+  "assetnum",
+  "recordtype",
+  "recordsite",
+  "recordkey",
+  "recordrev",
+  "recorddate",
+  "recorddtl1",
+  "recorddtl2",
+  "recorddtl3"
+ ],
+ "title": "PLUSASSETOPHIST",
+ "type": "object",
+ "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/plusassetophist",
+ "uniqueid": "plusassetophistid",
+ "properties": {
+  "recordsite": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Site",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The site of the event record.",
+   "maxLength": 8
+  },
+  "localref": {
+   "type": "string"
+  },
+  "eventdtl1": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Event Detail 1",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Information from the event record that further defines the event. For example, a component positioning event might include the requirement to independently verify the new component position. ",
+   "maxLength": 12
+  },
+  "recordrev": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "INTEGER",
+   "title": "Revision",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "The revision of the event record at the time that the event occurred.",
+   "maxLength": 11
+  },
+  "_rowstamp": {
+   "type": "string"
+  },
+  "eventdtl1_description": {
+   "type": "string"
+  },
+  "_imagelibref": {
+   "type": "string"
+  },
+  "recordkey": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Record",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Identifies the record that was used to specify and manage the event. ",
+   "maxLength": 12
+  },
+  "assetnum": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Asset",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Identifies the asset to which this operational event applies.",
+   "maxLength": 25
+  },
+  "recordtype": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Record Type",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The type of record that was used to specify and manage the event. For example, a lineup or clearance record can be used to specify and manage component positioning events. A duty station shift record can be used to report a new component condition or position.",
+   "maxLength": 12
+  },
+  "siteid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Asset Site",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The asset site.",
+   "maxLength": 8
+  },
+  "href": {
+   "type": "string",
+   "title": "PLUSASSETOPHIST object reference"
+  },
+  "event": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Event",
+   "persistent": true,
+   "type": "string",
+   "remarks": "A change in state of an operational asset. For example, the position of an asset might be changed during lineup or clearance activity, or a new condition might be reported during duty station shift activity. Events of this kind are tracked centrally on the location asset and constitute the operational history.",
+   "maxLength": 30
+  },
+  "recordtype_description": {
+   "type": "string"
+  },
+  "record_descriptor": {
+   "type": "string",
+   "title": "Record/Object Descriptor"
+  },
+  "recorddate": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Date Created",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The date on which the event record was created."
+  },
+  "eventdate": {
+   "default": "&SYSDATE&",
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Event Date",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The date on which the event occurred."
+  },
+  "orgid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Organization",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The asset organization.",
+   "maxLength": 8
+  },
+  "eventstate": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Event Status",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Indicates whether the event is complete, in progress, or incomplete. Events that are complete cannot be changed and qualify for reuse in related procedures. For example, a component positioning event that is complete on one lineup can be reused to position the same component by credit on another lineup. Similarly, events that are complete can be reliably factored into decision-making processes.",
+   "maxLength": 12
+  },
+  "recorddtl2": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Record Detail 2",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Information from the event record that further defines the event. For example, the lineup group or clearance tag associated with the event. ",
+   "maxLength": 12
+  },
+  "recorddtl1": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Record Detail 1",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Information from the event record that further defines the event. ",
+   "maxLength": 12
+  },
+  "plusassetophistid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Unique ID",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "uniqueid": true,
+   "remarks": "Unique ID of the operational history event.",
+   "maxLength": 11
+  },
+  "_id": {
+   "type": "string"
+  },
+  "asset": {
+   "objectName": "ASSET",
+   "type": "array",
+   "items": {
+    "definition": {
+     "subSchema": {
+      "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/plusassetophist/asset"
+     }
+    },
+    "type": "object"
+   },
+   "cardinality": "",
+   "relation": "PLUSASSET"
+  },
+  "recorddtl3": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Record Detail 3",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Information from the event record that defines the event. For example, for clearance-related positioning events, this detail indicates whether the event occurred during application or restoration.",
+   "maxLength": 12
+  },
+  "eventstate_description": {
+   "type": "string"
+  }
+ },
+ "required": [
+  "assetnum",
+  "event",
+  "eventdtl1",
+  "eventstate",
+  "orgid",
+  "recorddate",
+  "recordkey",
+  "recordtype"
+ ]
+}

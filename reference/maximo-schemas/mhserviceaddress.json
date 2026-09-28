@@ -1,0 +1,364 @@
+{
+  "resource": "MHSERVICEADDRESS",
+  "description": "SERVICEADDRESS",
+  "pk": [
+    "orgid",
+    "addresscode"
+  ],
+  "title": "SERVICEADDRESS",
+  "type": "object",
+  "$ref": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mhserviceaddress",
+  "uniqueid": "serviceaddressid",
+  "properties": {
+    "country": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Country",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "The country of the service address.",
+      "maxLength": 3
+    },
+    "parent": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Parent Address",
+      "persistent": true,
+      "type": "string",
+      "remarks": "The reference to the parent service address. In case this attribute is null, then it means this Service Address is a root.",
+      "maxLength": 25
+    },
+    "localref": {
+      "type": "string"
+    },
+    "latitudey": {
+      "searchType": "EXACT",
+      "scale": 10,
+      "subType": "DECIMAL",
+      "title": "Latitude(Y)",
+      "persistent": true,
+      "type": "number",
+      "remarks": "The measurement, in degrees, that the service address is north or south of the equator. Latitude is used with longitude to locate a place on a map. You must specify latitude in decimal degrees.",
+      "maxLength": 19
+    },
+    "staddrdirprfx": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Direction Prefix",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "A street direction prefix is part of an address that indicates the cardinal point of a compass, for example, N Florida Ave.",
+      "maxLength": 25
+    },
+    "city": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "City",
+      "persistent": true,
+      "type": "string",
+      "remarks": "The city of the service address.",
+      "maxLength": 36
+    },
+    "timezone": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Time Zone",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "The time zone of the service address.",
+      "maxLength": 50
+    },
+    "county": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "County",
+      "persistent": true,
+      "type": "string",
+      "remarks": "The county of the service address.",
+      "maxLength": 36
+    },
+    "referencepoint": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Reference Point",
+      "persistent": true,
+      "type": "string",
+      "remarks": "A reference point to help to locate the service address, for example, '300 feet behind large red outbuilding.'",
+      "maxLength": 50
+    },
+    "description": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Description",
+      "persistent": true,
+      "type": "string",
+      "remarks": "The description of the service address.",
+      "maxLength": 50
+    },
+    "staddrnumber": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "House Number",
+      "persistent": true,
+      "type": "string",
+      "remarks": "The building number of the service address.",
+      "maxLength": 9
+    },
+    "addresscode": {
+      "default": "&AUTOKEY&",
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Address Code",
+      "persistent": true,
+      "type": "string",
+      "remarks": "The address code identifies a service address. It must be unique by site for each service address.",
+      "maxLength": 25
+    },
+    "staddrunitnum": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Apartment/Unit/Suite",
+      "persistent": true,
+      "type": "string",
+      "remarks": "An optional part of a street address that identifies whether the address is an apartment, a unit, or a suite, for example.",
+      "maxLength": 6
+    },
+    "_rowstamp": {
+      "type": "string"
+    },
+    "serviceaddressid": {
+      "searchType": "EXACT",
+      "maximum": 2147483647.0,
+      "subType": "BIGINT",
+      "title": "Unique Id",
+      "persistent": true,
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "uniqueid": true,
+      "remarks": "Unique Id",
+      "maxLength": 11
+    },
+    "_imagelibref": {
+      "type": "string"
+    },
+    "postalcode": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Zip/Postal Code",
+      "persistent": true,
+      "type": "string",
+      "remarks": "The postal code of the service address.",
+      "maxLength": 12
+    },
+    "wkid": {
+      "searchType": "EXACT",
+      "maximum": 2147483647.0,
+      "subType": "INTEGER",
+      "title": "Spatial Reference WKID",
+      "persistent": true,
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "remarks": "The spatial reference WKID of the Service Address.",
+      "maxLength": 11
+    },
+    "siteid": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Site",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Identifies the site that is associated with the service address.",
+      "maxLength": 8
+    },
+    "streetaddress": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Street Address",
+      "persistent": true,
+      "type": "string",
+      "remarks": "The street address details of the service address, such as the house number, the street direction prefix, and the name of the street. Additional details can include the type of street, the street direction suffix, and whether the address is an apartment, a unit, or a suite.",
+      "maxLength": 115
+    },
+    "href": {
+      "type": "string"
+    },
+    "staddrstreet": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Street Name",
+      "persistent": true,
+      "type": "string",
+      "remarks": "The name of the street on which the service address is located.",
+      "maxLength": 25
+    },
+    "isweatherzone": {
+      "default": false,
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "Weather Alert Zone",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "For Weather Alert Zone"
+    },
+    "staddrsttype": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Street Type",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "The type of street on which the service address is located, such as avenue, circle, parkway, road, street, lane, court, boulevard, or terrace.",
+      "maxLength": 25
+    },
+    "anywhererefid": {
+      "searchType": "EXACT",
+      "maximum": 2147483647.0,
+      "subType": "BIGINT",
+      "title": "Anywhere Ref ID",
+      "persistent": true,
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "remarks": "Anywhere Reference ID",
+      "maxLength": 11
+    },
+    "country_description": {
+      "type": "string"
+    },
+    "objectname": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Maximo Object",
+      "persistent": true,
+      "type": "string",
+      "remarks": "The object name following internal Maximo domain for objects",
+      "maxLength": 30
+    },
+    "timezone_description": {
+      "type": "string"
+    },
+    "formattedaddress": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Formatted Address",
+      "persistent": true,
+      "type": "string",
+      "remarks": "This address is formatted according to the map provider's requirements and is updated when a location is found on the map tab. Formatted addresses are used to search for addresses on the map tab.",
+      "maxLength": 150
+    },
+    "stateprovince": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "State/Province",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "The state or the province of the service address.",
+      "maxLength": 25
+    },
+    "stateprovince_description": {
+      "type": "string"
+    },
+    "orgid": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Organization",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "The organization identifier that is assigned to this service address.",
+      "maxLength": 8
+    },
+    "staddrdirsfx_description": {
+      "type": "string"
+    },
+    "staddrsttype_description": {
+      "type": "string"
+    },
+    "staddrdirsfx": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Direction Suffix",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "A street direction suffix is part of an address that indicates the cardinal point of a compass, for example Florida Ave. N.",
+      "maxLength": 25
+    },
+    "directions": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Directions",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Directions to help locate the service address.",
+      "maxLength": 500
+    },
+    "regiondistrict": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Region/District",
+      "persistent": true,
+      "type": "string",
+      "remarks": "The region or district of the service address.",
+      "maxLength": 36
+    },
+    "staddrdirprfx_description": {
+      "type": "string"
+    },
+    "addressline3": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Address Line 3",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Optional additional service address information.",
+      "maxLength": 56
+    },
+    "geocode": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "GEO Code",
+      "persistent": true,
+      "type": "string",
+      "remarks": "GEO code for calculation of sales tax.",
+      "maxLength": 11
+    },
+    "longitudex": {
+      "searchType": "EXACT",
+      "scale": 10,
+      "subType": "DECIMAL",
+      "title": "Longitude(X)",
+      "persistent": true,
+      "type": "number",
+      "remarks": "The measurement, in degrees, that the service address is east or west of the prime meridian. Longitude is used with latitude to locate a place on a map. You must specify longitude in decimal degrees.",
+      "maxLength": 19
+    },
+    "addressline2": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Address Line 2",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Optional additional service address information.",
+      "maxLength": 56
+    },
+    "geometry": {
+      "searchType": "NONE",
+      "subType": "CLOB",
+      "title": "Geometry",
+      "type": "string",
+      "remarks": "Non persistent fields to access the MBO geometry",
+      "maxLength": 999999
+    },
+    "_id": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "orgid"
+  ]
+}

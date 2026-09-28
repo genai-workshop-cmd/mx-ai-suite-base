@@ -1,0 +1,421 @@
+{
+ "resource": "MXAPIWFASSIGNMENT",
+ "description": "Maximo API for Workflow Assigment",
+ "pk": [
+  "assignid",
+  "processname",
+  "processrev",
+  "wfid",
+  "nodeid"
+ ],
+ "title": "WFASSIGNMENT",
+ "type": "object",
+ "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/mxapiwfassignment",
+ "uniqueid": "wfassignmentid",
+ "properties": {
+  "localref": {
+   "type": "string"
+  },
+  "keeporigassgn": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Preserve Original Assignment when Delegating",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Indicates if the work should remain assigned to the original owner when the assignment is delegated. Select the check box to preserve the original assignment and also assign the work to the delegate. Clear the check box to assign the work only to the delegate, removing the original assignment. If no delegate is specified, the original assignment remains unchanged."
+  },
+  "wfassignmentid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "WFASSIGNMENTID",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "uniqueid": true,
+   "remarks": "Unique Identifier",
+   "maxLength": 11
+  },
+  "roleid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Role ID",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Identifies the role for the assignment",
+   "maxLength": 10
+  },
+  "separategroups": {
+   "default": true,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Separate Groups",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Flag to create separate groups for assignments created via the relationship"
+  },
+  "description": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Description",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Displayed by inbox and applications to tell user what needs to be done",
+   "maxLength": 100
+  },
+  "groupnum": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "INTEGER",
+   "title": "Group #",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "Group this assignment is a member of",
+   "maxLength": 11
+  },
+  "startdate": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Start Date",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The DATETIME that the assignment became current. It is set to the current date/time on the server. This value is NULL for process definitions"
+  },
+  "assignstatus": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Assignment Status",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The status of the assignment: DEFAULT ACTIVE COMPLETE INACTIVE",
+   "maxLength": 18
+  },
+  "calendarbased": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Calendar Based",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Is this a calendar based time limit?"
+  },
+  "escrole": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Escalation Role",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Role to use when assignment is escalated.",
+   "maxLength": 10
+  },
+  "assignstatus_description": {
+   "type": "string"
+  },
+  "_rowstamp": {
+   "type": "string"
+  },
+  "wfaction": {
+   "objectName": "WFACTION",
+   "type": "array",
+   "items": {
+    "definition": {
+     "subSchema": {
+      "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/mxapiwfassignment/wfaction"
+     }
+    },
+    "type": "object"
+   },
+   "cardinality": "UNDEFINED",
+   "relation": "ACTIONS"
+  },
+  "_imagelibref": {
+   "type": "string"
+  },
+  "conditionclass": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Condition Class",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Name of Object to instanciate to enable conditional assignment.",
+   "maxLength": 256
+  },
+  "acceptexpr": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Accept Expression",
+   "persistent": true,
+   "type": "string",
+   "remarks": "An expression that must evaluate to true before an assignment can be completed.",
+   "maxLength": 4000
+  },
+  "assign_05": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Extra Field 5",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Extra Field",
+   "maxLength": 1
+  },
+  "assign_04": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Extra Field 4",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Extra Field",
+   "maxLength": 1
+  },
+  "reassignwf": {
+   "objectName": "REASSIGNWF",
+   "type": "array",
+   "items": {
+    "definition": {
+     "subSchema": {
+      "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/mxapiwfassignment/reassignwf"
+     }
+    },
+    "type": "object"
+   },
+   "cardinality": "UNDEFINED",
+   "relation": "REASSIGNWF"
+  },
+  "href": {
+   "type": "string",
+   "title": "WFASSIGNMENT object reference"
+  },
+  "assign_01": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Extra Field 1",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Extra Field",
+   "maxLength": 1
+  },
+  "relationship": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Assignee Relationship",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Link to Person, PersonGroup, or MaxRole records to assign.",
+   "maxLength": 256
+  },
+  "nodeid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "INTEGER",
+   "title": "Node ID",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "The task node that this assignment is related to",
+   "maxLength": 11
+  },
+  "wfid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Workflow ID",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "The workflow that this assignment is related to.",
+   "maxLength": 11
+  },
+  "assign_03": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Extra Field 3",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Extra Field",
+   "maxLength": 1
+  },
+  "nonacceptmsg": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Non-Accept Message",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Message shown when the assignment cannot be completed due to the Accept Expression.",
+   "maxLength": 4000
+  },
+  "assign_02": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Extra Field 2",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Extra Field",
+   "maxLength": 1
+  },
+  "app": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Application",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Name of the application to launch",
+   "maxLength": 40
+  },
+  "origperson": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Original Assignee",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The original person for the assignment before any delegation is applied",
+   "maxLength": 100
+  },
+  "ownerdescription": {
+   "searchType": "NONE",
+   "subType": "ALN",
+   "title": "Owner Description",
+   "type": "string",
+   "remarks": "Descriptive text about MBO referenced by the assignment.",
+   "maxLength": 254
+  },
+  "processname": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Process",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Name of the owning process.",
+   "maxLength": 10
+  },
+  "record_descriptor": {
+   "type": "string",
+   "title": "Record/Object Descriptor"
+  },
+  "ownerid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Owner ID",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "Unique ID of the controlled record",
+   "maxLength": 11
+  },
+  "ownertable": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Owner Table",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Table name of the controlled record",
+   "maxLength": 30
+  },
+  "priority": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "INTEGER",
+   "title": "Priority",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "Priority of this assignment",
+   "maxLength": 11
+  },
+  "templateid": {
+   "default": "WFASSIGN",
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Communication Template",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Identifies the Communication Template to use to email assignees.",
+   "maxLength": 16
+  },
+  "timelimit": {
+   "searchType": "EXACT",
+   "scale": 0,
+   "subType": "DURATION",
+   "title": "Time Limit",
+   "persistent": true,
+   "type": "number",
+   "remarks": "This is the time in hours that can pass before the task is escalated. Defaults from the task time limit but can be changed.",
+   "maxLength": 8
+  },
+  "condition": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Condition Code",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Condition to check to enable this assignment.",
+   "maxLength": 2000
+  },
+  "duedate": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Due Date",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The date that the assignment is due according to the escalation time limit."
+  },
+  "_id": {
+   "type": "string"
+  },
+  "assigncode": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Assigned Person Code",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The labor code for the person in the Workflow process assigned to review this record.",
+   "maxLength": 100
+  },
+  "emailnotification": {
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Send E-mail",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Should the assigned person get an email notification when the task becomes the current task of a process instance."
+  },
+  "assignid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Assignment",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "Used to uniquely identify an assignment.",
+   "maxLength": 11
+  },
+  "processrev": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "INTEGER",
+   "title": "Process Revision",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "Process Revision",
+   "maxLength": 11
+  }
+ },
+ "required": [
+  "app",
+  "assignid",
+  "emailnotification",
+  "nodeid",
+  "processname",
+  "processrev",
+  "wfid"
+ ]
+}

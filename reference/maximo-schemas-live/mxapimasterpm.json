@@ -1,0 +1,411 @@
+{
+ "resource": "MXAPIMASTERPM",
+ "description": "Maximo API for Master PM",
+ "pk": [
+  "masterpmnum"
+ ],
+ "title": "MASTERPM",
+ "type": "object",
+ "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/mxapimasterpm",
+ "uniqueid": "masterpmid",
+ "properties": {
+  "saturday": {
+   "default": true,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Saturday",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "is Active Day?"
+  },
+  "localref": {
+   "type": "string"
+  },
+  "masterpmmeter": {
+   "objectName": "MASTERPMMETER",
+   "type": "array",
+   "items": {
+    "definition": {
+     "subSchema": {
+      "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/mxapimasterpm/masterpmmeter"
+     }
+    },
+    "type": "object"
+   },
+   "cardinality": "UNDEFINED",
+   "relation": "MASTERPMMETER"
+  },
+  "wostatus": {
+   "default": "!WSCH!",
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Work Order Status",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Identifies the initial status of generated work orders",
+   "maxLength": 16
+  },
+  "description": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Description",
+   "persistent": true,
+   "type": "string",
+   "remarks": "One Line Short Description Of PM",
+   "maxLength": 100
+  },
+  "updjpsequence": {
+   "default": true,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Update Job Plan Sequence in Existing PMs",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Will Master PM Update Job Plan Sequence on PMs associated with the Master PM?"
+  },
+  "nextdate": {
+   "searchType": "EXACT",
+   "subType": "DATE",
+   "title": "Next Due Date (Used During PM Create Only)",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Next WO Generation Date (Days)"
+  },
+  "frequency": {
+   "default": 0,
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "INTEGER",
+   "title": "Frequency",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "Frequency In Days",
+   "maxLength": 11
+  },
+  "usefrequency": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Use Frequency for Scheduling",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Tells the Generate WO function that the frequency for a lower level PM should be checked when determining if all of the PMs in the hierarchy should be generated."
+  },
+  "_rowstamp": {
+   "type": "string"
+  },
+  "masterpmseq": {
+   "objectName": "MASTERPMSEQ",
+   "type": "array",
+   "items": {
+    "definition": {
+     "subSchema": {
+      "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/mxapimasterpm/masterpmseq"
+     }
+    },
+    "type": "object"
+   },
+   "cardinality": "UNDEFINED",
+   "relation": "MASTERPMSEQ"
+  },
+  "_imagelibref": {
+   "type": "string"
+  },
+  "alertlead": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "INTEGER",
+   "title": "Alert Lead (Days)",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "Alert Lead",
+   "maxLength": 11
+  },
+  "applympmtoloc": {
+   "default": true,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Create Associated PMs for Item's Location",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Associate Location with the Master PM?"
+  },
+  "friday": {
+   "default": true,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Friday",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "is Active Day?"
+  },
+  "wednesday": {
+   "default": true,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Wednesday",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "is Active Day?"
+  },
+  "href": {
+   "type": "string",
+   "title": "MASTERPM object reference"
+  },
+  "monday": {
+   "default": true,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Monday",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "is Active day?"
+  },
+  "extdate": {
+   "searchType": "EXACT",
+   "subType": "DATE",
+   "title": "Extended Date",
+   "persistent": true,
+   "type": "string",
+   "remarks": "If Extended Date supplied it overrides Next Due Date."
+  },
+  "updextdate": {
+   "default": true,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Update Existing PMs",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Will Master PM Update Extended Date on PMs associated with the Master PM?"
+  },
+  "changeby": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Changed By",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Last  Modified By",
+   "maxLength": 100
+  },
+  "updtimebasedfreq": {
+   "default": true,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Update Time Based Information in Existing PMs",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Will Master PM Update Time Based Frequency on PMs associated with the Master PM?"
+  },
+  "thursday": {
+   "default": true,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Thursday",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "is Active Day?"
+  },
+  "updseasonaldates": {
+   "default": true,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Update Existing PMs Seasonal Dates",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Will Master PM Update Seasonal Dates on PMs associated with the Master PM?"
+  },
+  "worktype": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Work Type",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Type Of WO",
+   "maxLength": 5
+  },
+  "changedate": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Changed Date",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Last Modified Date"
+  },
+  "record_descriptor": {
+   "type": "string",
+   "title": "Record/Object Descriptor"
+  },
+  "priority": {
+   "default": 0,
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "INTEGER",
+   "title": "Work Order Priority",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "Priority Of PM WO",
+   "maxLength": 11
+  },
+  "interruptible": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Interruptible",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Is WO allowed to be stopped and restarted during resource scheduling"
+  },
+  "applympmtoasset": {
+   "default": true,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Create Associated PMs for Item's Asset",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Associate asset with the Master PM?"
+  },
+  "itemnum": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Item",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Identifies the Item used when creating the Master PM",
+   "maxLength": 30
+  },
+  "sunday": {
+   "default": true,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Sunday",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "is Active Day for a PM?"
+  },
+  "masterpmnum": {
+   "default": "&AUTOKEY&",
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Master PM",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Unique Identifier for generic PM template",
+   "maxLength": 8
+  },
+  "tuesday": {
+   "default": true,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Tuesday",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "is Active Day?"
+  },
+  "frequnit_description": {
+   "type": "string"
+  },
+  "usetargetdate": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Use Last Work Order's Start Information to Calculate Next Due Frequency",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Use Last Target Start Date"
+  },
+  "leadtime": {
+   "default": 0,
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "INTEGER",
+   "title": "Lead Time (Days)",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "Defines the lead time in days required for the PM.",
+   "maxLength": 11
+  },
+  "updwoinfo": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Update Work Order Information on Existing PMs",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Will Master PM update work order information (WORKTYPE,WOSTATUS,PRIORITY,INTERRUPTIBLE) on PMs associated with the Master PM?"
+  },
+  "adjnextdue": {
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Adjust Next Due Date",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Adjust the next due date after generation?"
+  },
+  "enforcemaxdayofmonth": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Set Due Date to End of Month",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Select the checkbox to set the PM Due Date to the last day of the month when the Frequency Unit field is set to Months."
+  },
+  "itemsetid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Item Set",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Item set identifier for this item.",
+   "maxLength": 8
+  },
+  "pluscxtdtcmt": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Comments",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Associated Pms Extend Dates",
+   "maxLength": 250
+  },
+  "frequnit": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Frequency Units",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Frequency Units DAYS WEEKS MONTHS or YEARS",
+   "maxLength": 8
+  },
+  "_id": {
+   "type": "string"
+  },
+  "masterpmid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "MASTERPMID",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "uniqueid": true,
+   "remarks": "Unique Identifier",
+   "maxLength": 11
+  }
+ },
+ "required": [
+  "adjnextdue",
+  "changeby",
+  "changedate",
+  "frequnit"
+ ]
+}

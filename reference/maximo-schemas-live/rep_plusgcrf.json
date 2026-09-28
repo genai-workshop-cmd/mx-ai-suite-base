@@ -1,0 +1,145 @@
+{
+ "resource": "REP_PLUSGCRF",
+ "description": "Crafts (Oil) Details",
+ "pk": [
+  "craft",
+  "orgid"
+ ],
+ "title": "CRAFT",
+ "type": "object",
+ "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/rep_plusgcrf",
+ "uniqueid": "craftid",
+ "properties": {
+  "workzonetype_description": {
+   "type": "string"
+  },
+  "ownersysid": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Owner System ID",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Owner System ID",
+   "maxLength": 10
+  },
+  "craftid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "CRAFTID",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "uniqueid": true,
+   "remarks": "Unique Identifier",
+   "maxLength": 11
+  },
+  "localref": {
+   "type": "string"
+  },
+  "craft": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Craft",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Identifier of the craft record. This field must be unique within an organization. When you save a craft record, this field becomes read-only.",
+   "maxLength": 8
+  },
+  "description": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Description",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Name or description of the craft.",
+   "maxLength": 100
+  },
+  "externalrefid": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "External Ref ID",
+   "persistent": true,
+   "type": "string",
+   "remarks": "External Ref ID",
+   "maxLength": 10
+  },
+  "record_descriptor": {
+   "type": "string",
+   "title": "Record/Object Descriptor"
+  },
+  "plusdvalidcucraft": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Use with CU",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Specifies whether the craft can be used in the CU Library (T&D)application. If the check box is selected, the craft can be used. If the check box is cleared, the craft cannot be used."
+  },
+  "sendersysid": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Sender System ID",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Column used by ERP-Integration (APIs)",
+   "maxLength": 50
+  },
+  "orgid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Organization",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The name of the organization associated with this craft record.",
+   "maxLength": 8
+  },
+  "_rowstamp": {
+   "type": "string"
+  },
+  "_imagelibref": {
+   "type": "string"
+  },
+  "href": {
+   "type": "string",
+   "title": "CRAFT object reference"
+  },
+  "_id": {
+   "type": "string"
+  },
+  "iscrew": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Crew",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Specifies whether the craft can be used in Crew applications and Work Order Tracking applications. If the check box is selected, the craft can be used. If the check box is cleared, the craft cannot be used."
+  },
+  "sourcesysid": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Source System ID",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Source System ID",
+   "maxLength": 10
+  },
+  "workzonetype": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Work Zone Type",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The type of the work zone",
+   "maxLength": 20
+  }
+ },
+ "required": [
+  "craft",
+  "orgid"
+ ]
+}

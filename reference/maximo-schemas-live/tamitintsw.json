@@ -1,0 +1,336 @@
+{
+ "resource": "TAMITINTSW",
+ "description": "SwKBT - Software Catalog",
+ "pk": [
+  "uniqueid"
+ ],
+ "title": "TLOAMSOFTWARE",
+ "type": "object",
+ "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/tamitintsw",
+ "uniqueid": "tloamsoftwareid",
+ "properties": {
+  "eid": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "EID",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Entitlement ID",
+   "maxLength": 64
+  },
+  "parent": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "INTEGER",
+   "title": "Parent Record",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "Maps to the parent of this record in the hierarchy product/version/release. Null if this is a top level record",
+   "maxLength": 11
+  },
+  "role": {
+   "default": "!SOFTWAREPRODUCT!",
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Role",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Role",
+   "maxLength": 30
+  },
+  "localref": {
+   "type": "string"
+  },
+  "productid": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Product Id",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Product Id",
+   "maxLength": 256
+  },
+  "release": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Release",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Release",
+   "maxLength": 128
+  },
+  "description": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Description",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Description",
+   "maxLength": 100
+  },
+  "externalid": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "External ID",
+   "persistent": true,
+   "type": "string",
+   "remarks": "External ID",
+   "maxLength": 256
+  },
+  "catalogsourceid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Catalog Source",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "Catalog Source",
+   "maxLength": 11
+  },
+  "type": {
+   "default": "!PRODUCT!",
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Type",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Type",
+   "maxLength": 30
+  },
+  "isdeleted": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Deleted",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Is this entry deleted"
+  },
+  "manufacturer": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Manufacturer",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Manufacturer",
+   "maxLength": 128
+  },
+  "platformbase": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Platform",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Platform",
+   "maxLength": 20
+  },
+  "points": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "INTEGER",
+   "title": "Points",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "The amount of licensing points associated to this Software Product.",
+   "maxLength": 11
+  },
+  "role_description": {
+   "type": "string"
+  },
+  "_rowstamp": {
+   "type": "string"
+  },
+  "managedas": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Managed As",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Specifies whether the software application needs to be managed in your enterprise. You can leave the field blank or click the Select Value icon to choose one of the available options.",
+   "maxLength": 40
+  },
+  "swname": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Software Name",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Software name",
+   "maxLength": 256
+  },
+  "targetsoftwareid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "INTEGER",
+   "title": "Target Record",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "Maps to the actual catalog record. Null if this is already a target",
+   "maxLength": 11
+  },
+  "ccid": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "CCID",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Chargeable component",
+   "maxLength": 32
+  },
+  "_imagelibref": {
+   "type": "string"
+  },
+  "issubcap": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Subcapacity Eligible",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Is this product eligible for subcapacity pricing"
+  },
+  "href": {
+   "type": "string",
+   "title": "TLOAMSOFTWARE object reference"
+  },
+  "type_description": {
+   "type": "string"
+  },
+  "uniqueid": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Unique ID",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Unique ID",
+   "maxLength": 640
+  },
+  "managedas_description": {
+   "type": "string"
+  },
+  "sspid": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "S&S PID",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Subscription and Support Product Identification Number",
+   "maxLength": 128
+  },
+  "isreviewed": {
+   "default": true,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Reviewed",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Indicates whether an administrator reviewed the record. The purpose of this attribute is to identify records created automatically, so an administrator can review them. By default, Maximo selects the check box when administrators create or change records using the Software Catalog application. By default, ITIC clears the check box when it creates records. To ensure that Maximo uses your naming conventions, after each ITIC import, filter newly imported records, which display an N in the Reviewed? column on the List tab. Review the new records and select this check box; if you edit the new records, Maximo automatically selects the check box."
+  },
+  "platformbase_description": {
+   "type": "string"
+  },
+  "sseid": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "S&S EID",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Subscription and Support Entitlement ID",
+   "maxLength": 128
+  },
+  "record_descriptor": {
+   "type": "string",
+   "title": "Record/Object Descriptor"
+  },
+  "tloamsoftwareid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Unique Id",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "uniqueid": true,
+   "remarks": "Unique Id",
+   "maxLength": 11
+  },
+  "deletedate": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Delete Date",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Date when the record was deleted"
+  },
+  "version": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Version",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Version",
+   "maxLength": 128
+  },
+  "url": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "URL",
+   "persistent": true,
+   "type": "string",
+   "remarks": "URL",
+   "maxLength": 1000
+  },
+  "func": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Function",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Function",
+   "maxLength": 256
+  },
+  "isipla": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Is IPLA",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Is this product licensed under an IPLA"
+  },
+  "ispvu": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Uses PVU",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Is this product licensed using the Processor Value Units metric"
+  },
+  "_id": {
+   "type": "string"
+  },
+  "vulexhibitid": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Value Unit Exhibit",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Value Unit Exhibit",
+   "maxLength": 32
+  }
+ },
+ "required": [
+  "manufacturer",
+  "uniqueid"
+ ]
+}

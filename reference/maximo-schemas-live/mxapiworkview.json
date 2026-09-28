@@ -1,0 +1,251 @@
+{
+ "resource": "MXAPIWORKVIEW",
+ "description": "Maximo API for Work View",
+ "pk": [
+  "recordkey",
+  "class",
+  "siteid"
+ ],
+ "title": "WORKVIEW",
+ "type": "object",
+ "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/mxapiworkview",
+ "uniqueid": "workviewid",
+ "properties": {
+  "targstartdate": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Target Start Date",
+   "persistent": true,
+   "type": "string",
+   "remarks": "target start date for the work order or ticket represented by this workview object"
+  },
+  "historyflag": {
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "History",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Specifies whether to search for ticket or work orders that are still in process or are closed or canceled. If the value is N (the default), Maximo searchs for all non-hisorical ticket and work orders (those that are not closed (CLOSE) or canceled (CAN). If the value is Y, Maximo searchs for all historical tickets and work orders (those with a status of CLOSE or CAN)."
+  },
+  "localref": {
+   "type": "string"
+  },
+  "reportdate": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Reported Date",
+   "persistent": true,
+   "type": "string",
+   "remarks": "System date and time the ticket or work order was reported. Click the Select Date and Time button to use the calendar functionality."
+  },
+  "description": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Description",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Describes the ticket or work order.",
+   "maxLength": 100
+  },
+  "ownergroup": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Owner Group",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Group or organization that owns the work on the ticket or work order. Click the Select Value button to choose an owner group.",
+   "maxLength": 8
+  },
+  "reportedby": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Reported By",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Person who reported the request for information, help, or service on the ticket or work order. Click the Select Value button to choose a person.",
+   "maxLength": 82
+  },
+  "assignedownergroup": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Assigned Owner Group",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Identifies the owner group that is currently assigned to the  record. ",
+   "maxLength": 8
+  },
+  "_rowstamp": {
+   "type": "string"
+  },
+  "_imagelibref": {
+   "type": "string"
+  },
+  "recordkey": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Record",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Identifies the ticket or work order.",
+   "maxLength": 25
+  },
+  "istask": {
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Is Task",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Is task work order?"
+  },
+  "siteid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Site",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Site associated with the ticket or work order. Click the Select Value button to choose a site.",
+   "maxLength": 8
+  },
+  "href": {
+   "type": "string",
+   "title": "WORKVIEW object reference"
+  },
+  "affectedperson": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Affected Person",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Affected Person ID",
+   "maxLength": 82
+  },
+  "class": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Class",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Type of ticket or work order. Possible ticket classes include SR (service request), INCIDENT, and PROBLEM. Possible work order classes include CHANGE, RELEASE, WORKORDER, and ACTIVITY. Click the Select Value button to choose a class.",
+   "maxLength": 25
+  },
+  "reportedbyname": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Reported By Name",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Display Name of the reported By person",
+   "maxLength": 82
+  },
+  "app": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Application",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Name of the application to launch",
+   "maxLength": 40
+  },
+  "owner": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Owner",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Individual person responsible for the work on a ticket or work order. Click the Select Value button to select a person.",
+   "maxLength": 100
+  },
+  "affectedpersonname": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Affected Person Name",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The name of the affected person",
+   "maxLength": 82
+  },
+  "record_descriptor": {
+   "type": "string",
+   "title": "Record/Object Descriptor"
+  },
+  "ownerid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Owner ID",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "uniqueid of the controlled record",
+   "maxLength": 11
+  },
+  "priority": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "INTEGER",
+   "title": "Priority",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "Number that indicates the importance of the ticket or work order in relation to other tickets or work orders, as defined by Service Desk personnel. Identifies the importance of the ticket or work order. In tickets, one (1) is the highest priority. In work orders, the implementation is left to the customer.",
+   "maxLength": 11
+  },
+  "orgid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Organization",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Orgnization Identifier",
+   "maxLength": 8
+  },
+  "workviewid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Unique Id",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "uniqueid": true,
+   "remarks": "Unique Id",
+   "maxLength": 11
+  },
+  "pmgroup": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "PM Group",
+   "persistent": true,
+   "type": "string",
+   "remarks": "PM number of the workorder/ticket, or PM number of the parent workorder/ticket if this is a task",
+   "maxLength": 8
+  },
+  "_id": {
+   "type": "string"
+  },
+  "status": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Status",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Current status of the ticket or work order, for example, WPPR for \"\"waiting on approval.\"\" Click the Select Value button to choose a status.",
+   "maxLength": 16
+  }
+ },
+ "required": [
+  "class",
+  "historyflag",
+  "istask",
+  "recordkey",
+  "status"
+ ]
+}

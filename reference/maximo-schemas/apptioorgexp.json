@@ -1,0 +1,200 @@
+{
+  "resource": "APPTIOORGEXP",
+  "description": "ORGANIZATION",
+  "pk": [
+    "orgid"
+  ],
+  "title": "ORGANIZATION",
+  "type": "object",
+  "$ref": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/apptioorgexp",
+  "uniqueid": "organizationid",
+  "properties": {
+    "localref": {
+      "type": "string"
+    },
+    "enterdate": {
+      "searchType": "EXACT",
+      "subType": "DATETIME",
+      "title": "Entered Date",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Date record was entered."
+    },
+    "active": {
+      "default": false,
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "Active",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "Specifies whether the organization is active? It the checkbox is selected, users can choose the organization for various functions. If the checkbox is cleared, the organization will not be listed. However, business procedures can still take place with the organization when the users do not have to specify the organization."
+    },
+    "description": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Description",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Describes the organization, for example, ABC Pharmaceuticals, Canada. To enter or view additional information, click the Long Description button.",
+      "maxLength": 100
+    },
+    "itemsetdesc": {
+      "searchType": "NONE",
+      "subType": "ALN",
+      "title": "Item set description",
+      "type": "string",
+      "remarks": "Item set description.",
+      "maxLength": 200
+    },
+    "orgid": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Organization",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Identifies the organization by a short code value, for example, CANADA to represent a company's Canadian operations. This value must be unique for all organizations.",
+      "maxLength": 8
+    },
+    "basecurrency1": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Base Currency 1",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Currency code for Base Currency 1. You can specify one or two base currencies for an organization, but you must specify Base Currency 1. Enter a currency code or click the Select Value button.",
+      "maxLength": 8
+    },
+    "basecurrency2": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Base Currency 2",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Currency code for Base Currency 2. Using a second base currency is optional. If you specify Base Currency 2, Maximo performs a currency conversion between Base Currencies 1 and 2 for each transaction.",
+      "maxLength": 8
+    },
+    "clearingacct": {
+      "searchType": "WILDCARD",
+      "subType": "GL",
+      "title": "Clearing Account",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Default GL clearing account for transfers between organizations.",
+      "maxLength": 23
+    },
+    "companysetid": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Company Set",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Identifies the company set. Enter a value or click the Select Value button.",
+      "maxLength": 8
+    },
+    "organizationid": {
+      "searchType": "EXACT",
+      "maximum": 2147483647.0,
+      "subType": "BIGINT",
+      "title": "Organization",
+      "persistent": true,
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "uniqueid": true,
+      "remarks": "Unique Identifier",
+      "maxLength": 11
+    },
+    "companysetdesc": {
+      "searchType": "NONE",
+      "subType": "ALN",
+      "title": "Company set description",
+      "type": "string",
+      "remarks": "Company set description",
+      "maxLength": 200
+    },
+    "langcode": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Language Code",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Language Column",
+      "maxLength": 4
+    },
+    "_rowstamp": {
+      "type": "string"
+    },
+    "enterby": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Entered By",
+      "persistent": true,
+      "type": "string",
+      "remarks": "User name who entered record.",
+      "maxLength": 100
+    },
+    "hasld": {
+      "default": false,
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "Has Long Description",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "Boolean flag to indicate if there is any long description for this record"
+    },
+    "_imagelibref": {
+      "type": "string"
+    },
+    "dfltitemstatus": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Default Item Status",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "The default item status for items added to the organization.",
+      "maxLength": 16
+    },
+    "itemsetid": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Item Set",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Identifies the item set. Enter a value or click the Select Value button.",
+      "maxLength": 8
+    },
+    "href": {
+      "type": "string"
+    },
+    "_id": {
+      "type": "string"
+    },
+    "category": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Default Stock Category",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Identifies the default stock category for new items. The stock category indicates whether the item is a stocked item (STK), or a non-stocked item (NS).",
+      "maxLength": 16
+    }
+  },
+  "required": [
+    "basecurrency1",
+    "category",
+    "companysetid",
+    "dfltitemstatus",
+    "enterby",
+    "enterdate",
+    "itemsetid",
+    "langcode",
+    "orgid"
+  ]
+}

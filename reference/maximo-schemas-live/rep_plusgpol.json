@@ -1,0 +1,392 @@
+{
+ "resource": "REP_PLUSGPOL",
+ "description": "Operating Policies (Oil) Details",
+ "pk": [
+  "orgid",
+  "siteid",
+  "policynum"
+ ],
+ "title": "PLUSGPOLICY",
+ "type": "object",
+ "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/rep_plusgpol",
+ "uniqueid": "plusgpolicyid",
+ "properties": {
+  "historyflag": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "History",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "History Flag"
+  },
+  "localref": {
+   "type": "string"
+  },
+  "createddate": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Created Date",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The system date and time when the operating policy record was created."
+  },
+  "description": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Description",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Description of the policy. You can change this value only when the status of the policy record is Draft.",
+   "maxLength": 100
+  },
+  "ownergroup": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Owner Group",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The group that is responsible for the policy record. You change this value by using the Select Owner action. You can change this value only when the status of the policy record is Draft.",
+   "maxLength": 8
+  },
+  "source": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Source",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The source of the operating policy. Valid values are in the PLUSGPOLICYSOURCE domain. You can change this value only when the status of the policy record is Draft.",
+   "maxLength": 30
+  },
+  "riskassessid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Risk Assessment",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "The unique identifier of the risk assessment.",
+   "maxLength": 11
+  },
+  "procedureid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Operating Procedure",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "The unique identifier of an operating procedure.",
+   "maxLength": 11
+  },
+  "failurecodenum": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Failure Class",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The failure class that is associated with the operating policy. You can change this value only when the status of the policy record is Draft.",
+   "maxLength": 8
+  },
+  "approvaldate": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Approval Date",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The system date and time when the operating policy record was approved."
+  },
+  "category_description": {
+   "type": "string"
+  },
+  "reference": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Reference",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The reference for the source of the operating policy. You can change this value only when the status of the policy record is Draft.",
+   "maxLength": 16
+  },
+  "_rowstamp": {
+   "type": "string"
+  },
+  "assactivityreqd": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Assurance Activity Required",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Specifies whether the operating policy requires an assurance activity. If this check box is selected, an assurance activity is required. You can change this value only when the status of the policy record is Draft."
+  },
+  "createdby": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Created By",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The identifier of the person who prepared the operating policy. The status of the person must be Active. The default value is the identifier of the logged-in user. You can change this value only when the status of the policy record is Draft.",
+   "maxLength": 100
+  },
+  "_imagelibref": {
+   "type": "string"
+  },
+  "assessagency": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Assessment Agency",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The assessment agency that is responsible for establishing or monitoring the implementation of the operating policy. Valid values are in the PLUSGASSESSAGENCY domain. You can change this value only when the status of the policy record is Draft.",
+   "maxLength": 30
+  },
+  "regulationid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Regulation",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "Regulation Unique Identifier.",
+   "maxLength": 11
+  },
+  "policynum": {
+   "default": "&AUTOKEY&",
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Operating Policy",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The unique identifier of the operating policy. You can use the same identifier for multiple operating policies, but the combination of  organization, site, and policy number must be unique. You cannot use the same identifier for a system-level (null organization and site) policy and an organization-level or site-level policy. You cannot use the same identifier for an organization-level policy and for a site-level policy in the same organization. After you save the policy record, you cannot change this value.",
+   "maxLength": 10
+  },
+  "regulationnum": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Regulation",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The regulation that is associated with the policy. You can change this value only when the status of the policy record is Draft. The status of the regulation must be Active.",
+   "maxLength": 8
+  },
+  "siteid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Site",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The site that is associated with the operating policy. By default, this value is null. After you save the policy record, you cannot change this value. To define a site-level policy, specify an organization and a site, or specify only a site and the organization field will be populated with the corresponding organization.",
+   "maxLength": 8
+  },
+  "href": {
+   "type": "string",
+   "title": "PLUSGPOLICY object reference"
+  },
+  "owner": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Owner",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The person who is responsible for the policy record. You change this value by using the Select Owner action or the Take Ownership action. You can change this value only when the status of the policy record is Draft. The status of the person must be Active.",
+   "maxLength": 100
+  },
+  "measurepointid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Measurement Point",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "Measure Point Unique Identifier.",
+   "maxLength": 11
+  },
+  "status_description": {
+   "type": "string"
+  },
+  "classstructureid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Classification",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "A classification of the operating policy.",
+   "maxLength": 25
+  },
+  "policytype": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Type",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The type of the operating policy. Valid values are in the PLUSGPOLICYTYPE domain. You can change this value only when the status of the policy record is Draft.",
+   "maxLength": 30
+  },
+  "approvedby": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Approved By",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The person who approved the operating policy. The status of the person must be Active. You can change this value only when the status of the policy record is Draft.",
+   "maxLength": 100
+  },
+  "record_descriptor": {
+   "type": "string",
+   "title": "Record/Object Descriptor"
+  },
+  "kpimainid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "KPI",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "KPI Unique Identifier.",
+   "maxLength": 11
+  },
+  "orgid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Organization",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The organization that is associated with the operating policy. By default, this value is null. After you save the policy record, you cannot change this value. To define an organization-level policy, specify an organization and no site. To define a site-level policy, specify an organization and a site, or specify only a site and the organization field will be populated with the corresponding organization.",
+   "maxLength": 8
+  },
+  "failurelist": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Failure Class",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "The unique identifier of the failure list.",
+   "maxLength": 11
+  },
+  "statusdate": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Status Date",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The server date and time when the operating policy record was created or its status was changed."
+  },
+  "plusgpolicyid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Unique Id",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "uniqueid": true,
+   "remarks": "Unique Id",
+   "maxLength": 11
+  },
+  "policytype_description": {
+   "type": "string"
+  },
+  "metername": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Meter",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The meter that is used to implement the operating policy. If a related measurement point is specified, this meter must be the meter that is associated with the measurement point. You can change this value only when the status of the operating policy record is Draft.",
+   "maxLength": 10
+  },
+  "assessagency_description": {
+   "type": "string"
+  },
+  "riskassessnum": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Risk Assessment",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The risk assessment that is associated with the policy. You can change this value only when the status of the policy record is Draft. The status of the risk assessment must be Active.",
+   "maxLength": 10
+  },
+  "_id": {
+   "type": "string"
+  },
+  "kpiname": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "KPI",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The key performance indicator that is used to track the implementation of the operating policy. You can change this value only when the status of the operating policy record is Draft.",
+   "maxLength": 50
+  },
+  "category": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Category",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The category of the operating policy. Valid values are in the PLUSGPOLICYCAT domain. You can change this value only when the status of the policy record is Draft.",
+   "maxLength": 30
+  },
+  "procnum": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Operating Procedure",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The operating procedure that is associated with the operating policy.",
+   "maxLength": 10
+  },
+  "pointnum": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Measurement Point",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The measurement point that is used to implement the operating policy. You can update this value only when the status of the operating policy is Draft. You must also specify the name of the meter that is associated with this measurement point.",
+   "maxLength": 8
+  },
+  "source_description": {
+   "type": "string"
+  },
+  "status": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Status",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The status of the operating policy record. The default status is Draft. Valid values are in the PLUSGPOLICYSTATUS domain. You can change the value by using the Change Status action. You cannot edit or delete a policy record when its status is Active. You can delete a policy record when its status is Draft or Inactive.",
+   "maxLength": 16
+  }
+ },
+ "required": [
+  "status",
+  "statusdate"
+ ]
+}

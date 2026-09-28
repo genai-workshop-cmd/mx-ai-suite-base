@@ -1,0 +1,130 @@
+{
+  "resource": "MXAPIAHTHRESHOLD",
+  "description": "AHTHRESHOLD",
+  "pk": [
+    "ahthresholdid"
+  ],
+  "title": "AHTHRESHOLD",
+  "type": "object",
+  "$ref": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapiahthreshold",
+  "uniqueid": "ahthresholdid",
+  "properties": {
+    "localref": {
+      "type": "string"
+    },
+    "ahthresholdrange": {
+      "objectName": "AHTHRESHOLDRANGE",
+      "type": "array",
+      "items": {
+        "definition": {
+          "subSchema": {
+            "$ref": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapiahthreshold/ahthresholdrange"
+          }
+        },
+        "type": "object"
+      },
+      "cardinality": "",
+      "relation": "AHTHRESHOLDRANGE"
+    },
+    "active": {
+      "default": true,
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "Active",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "if the threhold is active or not"
+    },
+    "description": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Description",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Threshold's description",
+      "maxLength": 200
+    },
+    "threshold": {
+      "searchType": "EXACT",
+      "maximum": 2147483647.0,
+      "subType": "INTEGER",
+      "title": "Threshold",
+      "persistent": true,
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "remarks": "The threshold number",
+      "maxLength": 11
+    },
+    "unit_description": {
+      "type": "string"
+    },
+    "langcode": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Language Code",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Language Code",
+      "maxLength": 4
+    },
+    "_rowstamp": {
+      "type": "string"
+    },
+    "unit": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Units(years, days, hrs)",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Units(years, days, hrs)",
+      "maxLength": 20
+    },
+    "ahthresholdid": {
+      "searchType": "EXACT",
+      "maximum": 2147483647.0,
+      "subType": "BIGINT",
+      "title": "Unique Id",
+      "persistent": true,
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "uniqueid": true,
+      "remarks": "Unique Id",
+      "maxLength": 11
+    },
+    "hasld": {
+      "default": false,
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "Has Long Description",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "Boolean flag to indicate if there is any long description for this record"
+    },
+    "_imagelibref": {
+      "type": "string"
+    },
+    "name": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Name",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Identifies the threshold's name.",
+      "maxLength": 200
+    },
+    "href": {
+      "type": "string"
+    },
+    "_id": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "langcode",
+    "name",
+    "threshold",
+    "unit"
+  ]
+}

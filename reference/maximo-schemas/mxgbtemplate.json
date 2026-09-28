@@ -1,0 +1,136 @@
+{
+  "resource": "MXGBTEMPLATE",
+  "description": "GBTEMPLATE",
+  "pk": [
+    "templatename",
+    "osname"
+  ],
+  "title": "GBTEMPLATE",
+  "type": "object",
+  "$ref": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxgbtemplate",
+  "uniqueid": "gbtemplateid",
+  "properties": {
+    "savedqueryname": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Saved Query for Template",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Saved Query for Template",
+      "maxLength": 100
+    },
+    "localref": {
+      "type": "string"
+    },
+    "havingclause": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Having Clause for Template",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Having Clause for Template",
+      "maxLength": 100
+    },
+    "gbtemplatecond": {
+      "objectName": "GBTEMPLATECOND",
+      "type": "array",
+      "items": {
+        "definition": {
+          "subSchema": {
+            "$ref": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxgbtemplate/gbtemplatecond"
+          }
+        },
+        "type": "object"
+      },
+      "cardinality": "",
+      "relation": "GBTEMPLATECOND"
+    },
+    "active": {
+      "default": true,
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "Active",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "Active"
+    },
+    "description": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Description",
+      "persistent": true,
+      "type": "string",
+      "remarks": "The description of the template.",
+      "maxLength": 200
+    },
+    "gbtemplateid": {
+      "searchType": "EXACT",
+      "maximum": 2147483647.0,
+      "subType": "BIGINT",
+      "title": "Unique Id",
+      "persistent": true,
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "uniqueid": true,
+      "remarks": "Unique Id",
+      "maxLength": 11
+    },
+    "_rowstamp": {
+      "type": "string"
+    },
+    "_imagelibref": {
+      "type": "string"
+    },
+    "relprop": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Where Clause for Template",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Where Clause for Template",
+      "maxLength": 100
+    },
+    "templatename": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Template Name",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Group By Template Name.",
+      "maxLength": 40
+    },
+    "href": {
+      "type": "string"
+    },
+    "_id": {
+      "type": "string"
+    },
+    "gbtemplatecfg": {
+      "objectName": "GBTEMPLATECFG",
+      "type": "array",
+      "items": {
+        "definition": {
+          "subSchema": {
+            "$ref": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxgbtemplate/gbtemplatecfg"
+          }
+        },
+        "type": "object"
+      },
+      "cardinality": "",
+      "relation": "GBTEMPLATECFG"
+    },
+    "osname": {
+      "default": "0",
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Request Name",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Request Name",
+      "maxLength": 20
+    }
+  },
+  "required": [
+    "templatename"
+  ]
+}

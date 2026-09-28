@@ -1,0 +1,90 @@
+{
+ "resource": "MXAPILABEL",
+ "description": "Maximo API for configuring MAXLABELS",
+ "pk": [
+  "app",
+  "id",
+  "property"
+ ],
+ "title": "MAXLABELS",
+ "type": "object",
+ "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/mxapilabel",
+ "uniqueid": "maxlabelsid",
+ "properties": {
+  "app": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Application",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Application Name",
+   "maxLength": 40
+  },
+  "_rowstamp": {
+   "type": "string"
+  },
+  "localref": {
+   "type": "string"
+  },
+  "_imagelibref": {
+   "type": "string"
+  },
+  "property": {
+   "searchType": "WILDCARD",
+   "subType": "LOWER",
+   "title": "Property",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Property Name",
+   "maxLength": 24
+  },
+  "href": {
+   "type": "string",
+   "title": "MAXLABELS object reference"
+  },
+  "record_descriptor": {
+   "type": "string",
+   "title": "Record/Object Descriptor"
+  },
+  "_id": {
+   "type": "string"
+  },
+  "id": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Id",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Property id",
+   "maxLength": 128
+  },
+  "value": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Value",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Value for the Label",
+   "maxLength": 4000
+  },
+  "maxlabelsid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "MAXLABELSID",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "uniqueid": true,
+   "remarks": "Unique Identifier",
+   "maxLength": 11
+  }
+ },
+ "required": [
+  "app",
+  "id",
+  "property",
+  "value"
+ ]
+}

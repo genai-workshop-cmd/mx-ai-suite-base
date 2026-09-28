@@ -1,0 +1,381 @@
+{
+ "resource": "MXAPIINVVENDOR",
+ "description": "Maximo API for Item Vendor",
+ "pk": [
+  "itemnum",
+  "vendor",
+  "manufacturer",
+  "modelnum",
+  "conditioncode",
+  "catalogcode",
+  "itemsetid",
+  "orgid",
+  "siteid"
+ ],
+ "title": "INVVENDOR",
+ "type": "object",
+ "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/mxapiinvvendor",
+ "uniqueid": "invvendorid",
+ "properties": {
+  "ownersysid": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Owner System ID",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Owner System ID",
+   "maxLength": 10
+  },
+  "tax4code": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Tax Code 4",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Tax 4 code.",
+   "maxLength": 8
+  },
+  "localref": {
+   "type": "string"
+  },
+  "productid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Product ID",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Product ID",
+   "maxLength": 12
+  },
+  "bidprice": {
+   "default": 0.0,
+   "searchType": "EXACT",
+   "scale": 2,
+   "subType": "DECIMAL",
+   "title": "Bid Price",
+   "persistent": true,
+   "type": "number",
+   "remarks": "Bid Price",
+   "maxLength": 11
+  },
+  "description": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Description",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Description of a specified vendor catalogue part",
+   "maxLength": 100
+  },
+  "externalrefid": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "External Reference ID",
+   "persistent": true,
+   "type": "string",
+   "remarks": "External Reference ID",
+   "maxLength": 10
+  },
+  "currencycode": {
+   "searchType": "NONE",
+   "subType": "UPPER",
+   "title": "Currency Code",
+   "type": "string",
+   "remarks": "Currency Code",
+   "maxLength": 8
+  },
+  "lastdate": {
+   "searchType": "EXACT",
+   "subType": "DATE",
+   "title": "Last Order Date",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Last date the item, tool, or service was ordered from this vendor. Click the Select Date button to use the calendar control."
+  },
+  "manufacturer": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Manufacturer",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Manufacturer of the item or tool for a particular vendor.",
+   "maxLength": 12
+  },
+  "promdeliverytime": {
+   "default": 0,
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "INTEGER",
+   "title": "Promised Lead Time (Days)",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "Promised delivery time (lead time) from the vendor for this item, tool, or service and this specific manufacturer, model, and catalog number.",
+   "maxLength": 11
+  },
+  "_rowstamp": {
+   "type": "string"
+  },
+  "tax3code": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Tax Code 3",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Tax 3 code",
+   "maxLength": 8
+  },
+  "biddate": {
+   "searchType": "EXACT",
+   "subType": "DATE",
+   "title": "Bid Date",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Bid Price Date (for analysis)"
+  },
+  "receipttolerance": {
+   "searchType": "EXACT",
+   "scale": 2,
+   "subType": "DECIMAL",
+   "title": "Receipt Tolerance %",
+   "persistent": true,
+   "type": "number",
+   "remarks": "The percentage value of items that can be received over the amount set in the initial agreement.",
+   "maxLength": 16
+  },
+  "_imagelibref": {
+   "type": "string"
+  },
+  "vendor": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Vendor",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Actual vendor from which this item, tool, service, or lot was received. This may not be the primary vendor.",
+   "maxLength": 12
+  },
+  "siteid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Site",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Site Identifier",
+   "maxLength": 8
+  },
+  "href": {
+   "type": "string",
+   "title": "INVVENDOR object reference"
+  },
+  "isdefault": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Default Vendor",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Specifies whether the current vendor is the default for a given item in an organization. If the check box is selected, this will be the default vendor used on Work Order Planned Materials and Services lines for direct issue requisitioning. If the check box is cleared (the default), this vendor is not the default vendor for this item. You can have only one default vendor for an item in an organization."
+  },
+  "conditioncode": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Condition Code",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Condition Code  For the Item",
+   "maxLength": 30
+  },
+  "catalogwebpage": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Catalog Web Page",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Internet address for this catalog item, tool, or service on the vendor's web page. Click the Detail Menu button to connect to the web page.",
+   "maxLength": 250
+  },
+  "invvendorid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "INVVENDORID",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "uniqueid": true,
+   "remarks": "Unique Identifier",
+   "maxLength": 11
+  },
+  "modelnum": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Model",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Primary vendor's model number for the item or tool.",
+   "maxLength": 8
+  },
+  "lastcost": {
+   "searchType": "EXACT",
+   "scale": 2,
+   "subType": "DECIMAL",
+   "title": "Last Price",
+   "persistent": true,
+   "type": "number",
+   "remarks": "Last price received from the vendor for this item, tool, or service and this specific manufacturer, model, and catalog number.",
+   "maxLength": 11
+  },
+  "orderunit": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Order Unit",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Order unit associated with the vendor's bid price for this item, tool, or service and this specific manufacturer, model, and catalog number. For example, the vendor sells the item at an order unit of EACH for this price. Click the Select Value button to view a list of order units.",
+   "maxLength": 16
+  },
+  "record_descriptor": {
+   "type": "string",
+   "title": "Record/Object Descriptor"
+  },
+  "sendersysid": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Sender System ID",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Column used by ERP-Integration (APIs)",
+   "maxLength": 50
+  },
+  "tax2code": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Tax Code 2",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Tax 2 code",
+   "maxLength": 8
+  },
+  "orgid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Organization",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Organization Identifier",
+   "maxLength": 8
+  },
+  "taxexempt": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Tax Exempt",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Select this check box if the item, the tool, or the service is not taxable. The buyer for your organization determines the tax-exempt status of items, of tools, and of services."
+  },
+  "itemnum": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Item",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Inventory Item Number",
+   "maxLength": 30
+  },
+  "itemtype": {
+   "searchType": "NONE",
+   "subType": "UPPER",
+   "title": "Item Type",
+   "type": "string",
+   "remarks": "Item Type",
+   "maxLength": 15
+  },
+  "tax5code": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Tax Code 5",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Tax 5 code.",
+   "maxLength": 8
+  },
+  "catalogcode": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Catalog #",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Vendor's catalog or part number for the item, tool, or service.",
+   "maxLength": 30
+  },
+  "tax1code": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Tax Code",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Tax code for this vendor, for example, NY for New York. This field defaults to the tax code of the vendor in the Companies application, if there is one.",
+   "maxLength": 8
+  },
+  "itemsetid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Item Set",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Item set identifier for this item.",
+   "maxLength": 8
+  },
+  "ecompartnum2": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Part Auxillary ID",
+   "persistent": true,
+   "type": "string",
+   "remarks": "E-Commerce Supplier Part auxiliary ID",
+   "maxLength": 30
+  },
+  "_id": {
+   "type": "string"
+  },
+  "ecompartnum1": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Supplier Part ID",
+   "persistent": true,
+   "type": "string",
+   "remarks": "E-Commerce Supplier Part ID",
+   "maxLength": 30
+  },
+  "sourcesysid": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Source System ID",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Source System ID",
+   "maxLength": 10
+  }
+ },
+ "required": [
+  "itemnum",
+  "itemsetid",
+  "orgid"
+ ]
+}

@@ -1,0 +1,66 @@
+{
+ "resource": "MXAPIMOBSHAREDDEVICE",
+ "description": "Object Structure for Mobile shared devices",
+ "pk": [
+  "userid"
+ ],
+ "title": "MOBILESHAREDDEVICES",
+ "type": "object",
+ "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/mxapimobshareddevice",
+ "uniqueid": "mobileshareddevicesid",
+ "properties": {
+  "_rowstamp": {
+   "type": "string"
+  },
+  "dbsharedkey": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Database shared key",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Database shared key for mobile users",
+   "maxLength": 200
+  },
+  "localref": {
+   "type": "string"
+  },
+  "_imagelibref": {
+   "type": "string"
+  },
+  "mobileshareddevicesid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Unique Id",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "uniqueid": true,
+   "remarks": "Unique Id",
+   "maxLength": 11
+  },
+  "href": {
+   "type": "string",
+   "title": "MOBILESHAREDDEVICES object reference"
+  },
+  "record_descriptor": {
+   "type": "string",
+   "title": "Record/Object Descriptor"
+  },
+  "_id": {
+   "type": "string"
+  },
+  "userid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "User ID",
+   "persistent": true,
+   "type": "string",
+   "remarks": "User ID",
+   "maxLength": 100
+  }
+ },
+ "required": [
+  "userid"
+ ]
+}

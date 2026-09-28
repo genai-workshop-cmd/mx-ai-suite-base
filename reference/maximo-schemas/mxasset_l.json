@@ -1,0 +1,568 @@
+{
+  "resource": "MXASSET_L",
+  "description": "ASSET",
+  "pk": [
+    "siteid",
+    "assetnum"
+  ],
+  "title": "ASSET",
+  "type": "object",
+  "$ref": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxasset_l",
+  "uniqueid": "assetuid",
+  "properties": {
+    "expectedlifedate": {
+      "searchType": "EXACT",
+      "subType": "DATE",
+      "title": "Expected life",
+      "persistent": true,
+      "type": "string",
+      "remarks": "The date that the asset reaches the expected useful life date. This date is calculated by using the Asset's original installation date and its expected useful life, which is defined by manufacturer or industry standard."
+    },
+    "parent": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Parent",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Parent Asset Number",
+      "maxLength": 25
+    },
+    "pmnextfaildt": {
+      "searchType": "EXACT",
+      "subType": "DATETIME",
+      "title": "Predicted next failure date",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Predicted next failure date from Prescriptive Maintenance on Cloud"
+    },
+    "localref": {
+      "type": "string"
+    },
+    "productid": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Product ID",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Product ID, relates an asset to a product",
+      "maxLength": 12
+    },
+    "ahcaresultnum": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Inspection Result",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Condition assessment inspection result",
+      "maxLength": 12
+    },
+    "industryhealthscore": {
+      "searchType": "EXACT",
+      "scale": 0,
+      "subType": "FLOAT",
+      "title": "Industry Standard Health Score",
+      "persistent": true,
+      "type": "number",
+      "remarks": "Industry standard health score in numeric format",
+      "maxLength": 9
+    },
+    "assethealth": {
+      "searchType": "EXACT",
+      "scale": 2,
+      "subType": "DECIMAL",
+      "title": "Health",
+      "persistent": true,
+      "type": "number",
+      "remarks": "The health score for the asset. This score is calculated and applied to the asset from the Reliability Engineer work center.",
+      "maxLength": 13
+    },
+    "startmeasure": {
+      "searchType": "EXACT",
+      "scale": 2,
+      "subType": "DECIMAL",
+      "title": "Start Measure",
+      "persistent": true,
+      "type": "number",
+      "remarks": "A value that identifies the start of the linear asset.  The absolute value of the end measure minus the start measure will determine the length of the linear asset.  The start measure and the end measure also determine the boundary measures for any features or relationships applied to the asset.",
+      "maxLength": 11
+    },
+    "devicetype": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Device Type",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Device Type",
+      "maxLength": 50
+    },
+    "ahcapmnum": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "PM",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Condition assessment PM",
+      "maxLength": 8
+    },
+    "_rowstamp": {
+      "type": "string"
+    },
+    "adjustedlifedate": {
+      "searchType": "EXACT",
+      "subType": "DATE",
+      "title": "Adjusted life",
+      "persistent": true,
+      "type": "string",
+      "remarks": "The date that the asset reaches the adjusted useful life date. This date is calculated by plans or asset expected life."
+    },
+    "siteid": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Site",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Site Identifier",
+      "maxLength": 8
+    },
+    "href": {
+      "type": "string"
+    },
+    "removefromactivesp": {
+      "default": false,
+      "searchType": "NONE",
+      "subType": "YORN",
+      "title": "Remove Asset Reference from Active Safety Plans",
+      "type": "boolean",
+      "remarks": "Remove Asset Reference from Active Safety Plans"
+    },
+    "methodname": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Scoring Method",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "The scoring method applied to the asset.",
+      "maxLength": 50
+    },
+    "ahcarevision": {
+      "searchType": "EXACT",
+      "maximum": 2147483647.0,
+      "subType": "INTEGER",
+      "title": "Revision",
+      "persistent": true,
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "remarks": "Condition assessment inspectin form revision",
+      "maxLength": 11
+    },
+    "status_description": {
+      "type": "string"
+    },
+    "ahcapmnextduedate": {
+      "searchType": "EXACT",
+      "subType": "DATE",
+      "title": "Next Due Date",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Condition assessment next due date"
+    },
+    "modelid": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Import ID",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Import ID Typically from a BIM model or COBie data set.",
+      "maxLength": 45
+    },
+    "changepmstatus": {
+      "default": false,
+      "searchType": "NONE",
+      "subType": "YORN",
+      "title": "Change the Status of All Associated PMs to Inactive",
+      "type": "boolean",
+      "remarks": "Change the Status of All Associated PMs to Inactive"
+    },
+    "enddescription": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Asset End",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Free-form text describing the end of this linear asset.",
+      "maxLength": 100
+    },
+    "lrm": {
+      "searchType": "EXACT",
+      "subType": "UPPER",
+      "title": "LRM",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "The Linear Referencing Method for this asset.  Defined using the Add/Modify Linear Referencing Methods Action, an LRM is a means for locating any point (e.g. feature, relationship, work) along the linear asset using a measure and a known point.  Changing the LRM is not recommended unless the base unit of measure is the same in the new LRM.",
+      "maxLength": 25
+    },
+    "depreciationpending": {
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "Depreciation Pending",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "Indicates that generation of the depreciation schedule is pending final receipt or invoice of the PO that this rotating asset was purchased on."
+    },
+    "assetlocrelation": {
+      "objectName": "ASSETLOCRELATION",
+      "type": "array",
+      "items": {
+        "definition": {
+          "subSchema": {
+            "$ref": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxasset_l/assetlocrelation"
+          }
+        },
+        "type": "object"
+      },
+      "cardinality": "UNDEFINED",
+      "relation": "ASSETLOCRELATION"
+    },
+    "estendoflife": {
+      "searchType": "EXACT",
+      "subType": "DATE",
+      "title": "Estimated EOL",
+      "persistent": true,
+      "type": "string",
+      "remarks": "The date when the asset reaches its end of life. This date is based on the condition of the asset."
+    },
+    "industryhealthgrade": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Industry Standard Health Grade",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Industry standard health grade in alphanumeric format",
+      "maxLength": 20
+    },
+    "lastauditdate": {
+      "searchType": "EXACT",
+      "subType": "DATETIME",
+      "title": "Last Audit Date",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Asset last audited date"
+    },
+    "orgid": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Organization",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Organization Identifier",
+      "maxLength": 8
+    },
+    "ahcainspformnum": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Inspection Form",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Condition assessment inspection form",
+      "maxLength": 12
+    },
+    "removefromactiveroutes": {
+      "default": false,
+      "searchType": "NONE",
+      "subType": "YORN",
+      "title": "Remove Asset Reference from Active Routes",
+      "type": "boolean",
+      "remarks": "Remove Asset Reference from Active Routes"
+    },
+    "rolltoallchildren": {
+      "default": false,
+      "searchType": "NONE",
+      "subType": "YORN",
+      "title": "Roll New Status to All Child Assets",
+      "type": "boolean",
+      "remarks": "Roll New Status to All Child Assets"
+    },
+    "ahcawonum": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Work Order",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Condition assessment work order",
+      "maxLength": 25
+    },
+    "condition": {
+      "searchType": "EXACT",
+      "scale": 2,
+      "subType": "DECIMAL",
+      "title": "Condition",
+      "persistent": true,
+      "type": "number",
+      "remarks": "Condition of the asset.",
+      "maxLength": 6
+    },
+    "saddresscode": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Service Address",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "The address code identifies a service address. It must be unique by site for each service address.",
+      "maxLength": 25
+    },
+    "assetfeature": {
+      "objectName": "ASSETFEATURE",
+      "type": "array",
+      "items": {
+        "definition": {
+          "subSchema": {
+            "$ref": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxasset_l/assetfeature"
+          }
+        },
+        "type": "object"
+      },
+      "cardinality": "UNDEFINED",
+      "relation": "ASSETFEATURES"
+    },
+    "ahcalastcompdate": {
+      "searchType": "EXACT",
+      "subType": "DATETIME",
+      "title": "Completion Date",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Condition assessment last completion date"
+    },
+    "lastauditby": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Last Audit By",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Asset last audit done by",
+      "maxLength": 100
+    },
+    "_id": {
+      "type": "string"
+    },
+    "ahcaworktype": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Work Type",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Workorder work type",
+      "maxLength": 5
+    },
+    "status": {
+      "default": "!NOT READY!",
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Status",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Status of the asset, for example, not ready, operating, or decommissioned.",
+      "maxLength": 20
+    },
+    "islinear": {
+      "default": false,
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "Linear",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "When checked, identifies an asset as a linear asset (e.g. road, railway)."
+    },
+    "hierarchypath": {
+      "searchType": "NONE",
+      "subType": "ALN",
+      "title": "Hierarchy Path",
+      "type": "string",
+      "remarks": "Sets value to HIERARCHYPATH, if the asset has an associated CLASSSTRUCTURE record",
+      "maxLength": 254
+    },
+    "serialnum": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Serial #",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Asset Serial Number",
+      "maxLength": 64
+    },
+    "direction_description": {
+      "type": "string"
+    },
+    "startdescription": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Asset Start",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Free-form text describing the start of this linear asset.",
+      "maxLength": 100
+    },
+    "ahcawostatus": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "WO Status",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Condition assessment work order status",
+      "maxLength": 16
+    },
+    "_imagelibref": {
+      "type": "string"
+    },
+    "assetnum": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Asset",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Asset Number",
+      "maxLength": 25
+    },
+    "assetspec": {
+      "objectName": "ASSETSPEC",
+      "type": "array",
+      "items": {
+        "definition": {
+          "subSchema": {
+            "$ref": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxasset_l/assetspec"
+          }
+        },
+        "type": "object"
+      },
+      "cardinality": "UNDEFINED",
+      "relation": "ASSETSPECCLASS"
+    },
+    "ahcajpnum": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Job Plan",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Condition assessment job plan",
+      "maxLength": 12
+    },
+    "direction": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Direction",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Direction of this linear asset, for example North, South, East or West",
+      "maxLength": 30
+    },
+    "description_longdescription": {
+      "searchType": "WILDCARD",
+      "subType": "LONGALN",
+      "title": "Details",
+      "type": "string",
+      "remarks": "Long Description for Asset Short Description (One Line)",
+      "maxLength": 32000
+    },
+    "endmeasure": {
+      "searchType": "EXACT",
+      "scale": 2,
+      "subType": "DECIMAL",
+      "title": "End Measure",
+      "persistent": true,
+      "type": "number",
+      "remarks": "A value that identifies the end of the linear asset.  The absolute value of the end measure minus the start measure will determine the length of the linear asset.  The start measure and the end measure also determine the boundary measures for any features or relationships applied to the asset.",
+      "maxLength": 11
+    },
+    "expectedlife": {
+      "default": 0,
+      "searchType": "EXACT",
+      "maximum": 2147483647.0,
+      "subType": "INTEGER",
+      "title": "Expected life in years",
+      "persistent": true,
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "remarks": "Expected life of the asset, expressed in years.  This value is based on the typical useful life that a manufacturer or industry standard recommends for an asset or asset type.",
+      "maxLength": 11
+    },
+    "ahcainspstatus": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Inspection Status",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Condition assessment inspection status",
+      "maxLength": 20
+    },
+    "deviceid": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Device Id",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Device Id",
+      "maxLength": 50
+    },
+    "newsite": {
+      "searchType": "NONE",
+      "subType": "UPPER",
+      "title": "To Site",
+      "type": "string",
+      "hasList": true,
+      "remarks": "NEWSITE",
+      "maxLength": 8
+    },
+    "statusdate": {
+      "searchType": "EXACT",
+      "subType": "DATETIME",
+      "title": "Last Changed Date",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Asset Status Date"
+    },
+    "well_maintained": {
+      "searchType": "EXACT",
+      "maximum": 2147483647.0,
+      "subType": "INTEGER",
+      "title": "Prescriptive Maintenance on Cloud WELL_MAINTAINED",
+      "persistent": true,
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "remarks": "An attribute that is used in Prescriptive Maintenance on Cloud to specify the number of days before the next predicted failure date that scheduled maintenance can occur and the asset can be categorized as well maintained",
+      "maxLength": 11
+    },
+    "location": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Location",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Asset Location",
+      "maxLength": 25
+    },
+    "lastahscoredate": {
+      "searchType": "EXACT",
+      "subType": "DATETIME",
+      "title": "Last Scoring Date",
+      "persistent": true,
+      "type": "string",
+      "remarks": "The last date that health score getting updated"
+    }
+  },
+  "required": [
+    "assetnum",
+    "orgid",
+    "siteid"
+  ]
+}

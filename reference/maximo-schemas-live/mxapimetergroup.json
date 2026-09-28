@@ -1,0 +1,74 @@
+{
+ "resource": "MXAPIMETERGROUP",
+ "description": "Maximo API for Meter Group",
+ "pk": [
+  "groupname"
+ ],
+ "title": "METERGROUP",
+ "type": "object",
+ "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/mxapimetergroup",
+ "uniqueid": "metergroupid",
+ "properties": {
+  "_rowstamp": {
+   "type": "string"
+  },
+  "description_longdescription": {
+   "searchType": "WILDCARD",
+   "subType": "LONGALN",
+   "title": "Details",
+   "type": "string",
+   "remarks": "Use the Long Description dialog box to enter or view descriptions that are too large (more than 50 characters in length) for the Description field.",
+   "maxLength": 32000
+  },
+  "localref": {
+   "type": "string"
+  },
+  "_imagelibref": {
+   "type": "string"
+  },
+  "description": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Description",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Describes the meter group.The description can be up to 255 characters in length. To enter or view additional information, click the Long Description button.",
+   "maxLength": 100
+  },
+  "metergroupid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "METERGROUPID",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "uniqueid": true,
+   "remarks": "Unique Identifier",
+   "maxLength": 11
+  },
+  "href": {
+   "type": "string",
+   "title": "METERGROUP object reference"
+  },
+  "record_descriptor": {
+   "type": "string",
+   "title": "Record/Object Descriptor"
+  },
+  "_id": {
+   "type": "string"
+  },
+  "groupname": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Meter Group",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Name of group under which meters can be grouped.",
+   "maxLength": 10
+  }
+ },
+ "required": [
+  "groupname"
+ ]
+}

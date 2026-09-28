@@ -1,0 +1,117 @@
+{
+  "resource": "MXAPIINSIGHTFACTOR",
+  "description": "INSIGHTFACTOR",
+  "pk": [
+    "insightname",
+    "factorname"
+  ],
+  "title": "INSIGHTFACTOR",
+  "type": "object",
+  "$ref": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapiinsightfactor",
+  "uniqueid": "insightfactorid",
+  "properties": {
+    "aggrfunction": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Aggregate Function",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Aggregate Function",
+      "maxLength": 50
+    },
+    "localref": {
+      "type": "string"
+    },
+    "factorname": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Factor Name",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Name of the Insight Factor",
+      "maxLength": 50
+    },
+    "insightname": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Insight Name",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Insight this factor is associated with",
+      "maxLength": 50
+    },
+    "description": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Description",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Description",
+      "maxLength": 50
+    },
+    "filter": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Filter",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Filter",
+      "maxLength": 200
+    },
+    "langcode": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Language Code",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Language Code",
+      "maxLength": 4
+    },
+    "_rowstamp": {
+      "type": "string"
+    },
+    "aggrattribute": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Aggregate Attribute",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Aggregate Attribute",
+      "maxLength": 50
+    },
+    "hasld": {
+      "default": false,
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "Has Long Description",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "Boolean flag to indicate if there is any long description for this record"
+    },
+    "_imagelibref": {
+      "type": "string"
+    },
+    "insightfactorid": {
+      "searchType": "EXACT",
+      "maximum": 2147483647.0,
+      "subType": "BIGINT",
+      "title": "Unique Id",
+      "persistent": true,
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "uniqueid": true,
+      "remarks": "Unique Id",
+      "maxLength": 11
+    },
+    "href": {
+      "type": "string"
+    },
+    "_id": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "langcode"
+  ]
+}

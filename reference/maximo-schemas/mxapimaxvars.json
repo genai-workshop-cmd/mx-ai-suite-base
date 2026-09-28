@@ -1,0 +1,92 @@
+{
+  "resource": "MXAPIMAXVARS",
+  "description": "MAXVARS",
+  "pk": [
+    "varname",
+    "orgid",
+    "siteid"
+  ],
+  "title": "MAXVARS",
+  "type": "object",
+  "$ref": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapimaxvars",
+  "uniqueid": "maxvarsid",
+  "properties": {
+    "_rowstamp": {
+      "type": "string"
+    },
+    "maxvarsid": {
+      "searchType": "EXACT",
+      "maximum": 2147483647.0,
+      "subType": "BIGINT",
+      "title": "MAXVARSID",
+      "persistent": true,
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "uniqueid": true,
+      "remarks": "Unique Identifier",
+      "maxLength": 11
+    },
+    "vartype": {
+      "default": "SYSTEM",
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Variable Type",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Domain of the MaxVar - System, Organization, or Site",
+      "maxLength": 6
+    },
+    "localref": {
+      "type": "string"
+    },
+    "_imagelibref": {
+      "type": "string"
+    },
+    "varvalue": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Value",
+      "persistent": true,
+      "type": "string",
+      "remarks": "System Variable Value",
+      "maxLength": 254
+    },
+    "siteid": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Site",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Site Identifier",
+      "maxLength": 8
+    },
+    "href": {
+      "type": "string"
+    },
+    "_id": {
+      "type": "string"
+    },
+    "varname": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Variable",
+      "persistent": true,
+      "type": "string",
+      "remarks": "System Variable Name",
+      "maxLength": 30
+    },
+    "orgid": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Organization",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Organization Identifier",
+      "maxLength": 8
+    }
+  },
+  "required": [
+    "varname"
+  ]
+}

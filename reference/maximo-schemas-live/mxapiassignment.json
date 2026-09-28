@@ -1,0 +1,393 @@
+{
+ "resource": "MXAPIASSIGNMENT",
+ "description": "Maximo API for Assignment",
+ "pk": [
+  "assignmentid"
+ ],
+ "title": "ASSIGNMENT",
+ "type": "object",
+ "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/mxapiassignment",
+ "uniqueid": "assignmentid",
+ "properties": {
+  "apptrequired": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Appointment Required",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Indicates if an appointment is required for the assignment."
+  },
+  "wplaborid": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "WP Labor ID",
+   "persistent": true,
+   "type": "string",
+   "remarks": "ID to identify the EXACT WPLABOR record used to generate this row.",
+   "maxLength": 20
+  },
+  "localref": {
+   "type": "string"
+  },
+  "craft": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Craft",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Code for the craft. Click Detail menu to choose an option to select a craft code.",
+   "maxLength": 8
+  },
+  "dispstatusdate": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Dispatching Status Date",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Date the assignment dispatching status was last changed."
+  },
+  "scheduledate": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Scheduled Start",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Scheduled start date and time for this assignment."
+  },
+  "actualenddate": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Actual End Date",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Date that labor or crew completed to work on the assignment."
+  },
+  "appointment": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Schedule Lock",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Indicates if the schedule is locked."
+  },
+  "startdate": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Start Date",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The datetime someone was assigned to start this requirement"
+  },
+  "assignmentid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "ASSIGNMENTID",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "uniqueid": true,
+   "remarks": "Unique Identifier",
+   "maxLength": 11
+  },
+  "dispatchstatus": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Assignment Status",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Assignment status.",
+   "maxLength": 12
+  },
+  "_rowstamp": {
+   "type": "string"
+  },
+  "skilllevel": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Skill Level",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Skill level assigned to the craft.",
+   "maxLength": 15
+  },
+  "splanreviewdate": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Review safety plan",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The date and time that the safety plan was reviewed"
+  },
+  "_imagelibref": {
+   "type": "string"
+  },
+  "vendor": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Vendor",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Vendor associated with this assigned labor.",
+   "maxLength": 12
+  },
+  "crewworkgroup": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Crew Work Group",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Crew Work Group",
+   "maxLength": 8
+  },
+  "resourcelock": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Resource Lock",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Indicates if the resource is locked. Resource lock can only be set if a value exists in either the Labor or Crew field."
+  },
+  "dispatchstatus_description": {
+   "type": "string"
+  },
+  "siteid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Site",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Site Identifier",
+   "maxLength": 8
+  },
+  "href": {
+   "type": "string",
+   "title": "ASSIGNMENT object reference"
+  },
+  "contractnum": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Contract",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Contract number for an outside rate.",
+   "maxLength": 8
+  },
+  "qualmet_description": {
+   "type": "string"
+  },
+  "status_description": {
+   "type": "string"
+  },
+  "anywhererefid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Anywhere Ref ID",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "Anywhere Reference ID for offline synchronization",
+   "maxLength": 11
+  },
+  "workdate": {
+   "searchType": "EXACT",
+   "subType": "DATE",
+   "title": "Work Date",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The day that labor availability was calculated for. This date can be different from the assignment dates if the shift crosses midnight."
+  },
+  "wplaboruid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "WPlabor Unique Id",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "WPlabor unique id",
+   "maxLength": 11
+  },
+  "changeby": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Change By",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Last Modified By",
+   "maxLength": 100
+  },
+  "finishdate": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Scheduled Finish",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The datetime someone was assigned to finish this requirement"
+  },
+  "amcrewtype": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Crew Type",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Type of Crew",
+   "maxLength": 8
+  },
+  "changedate": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Changed Date",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Last Modified Date"
+  },
+  "record_descriptor": {
+   "type": "string",
+   "title": "Record/Object Descriptor"
+  },
+  "orgid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Organization",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Organization Identifier",
+   "maxLength": 8
+  },
+  "plusgqualificationuid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Qualification ID",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "Qualification unique identifier.",
+   "maxLength": 11
+  },
+  "laborcode": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Labor",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Code for the labor or craft that performs the operation. To edit this field, click Detail menu to choose an option to select a value.",
+   "maxLength": 8
+  },
+  "wonum": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Work Order",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The work order number to which this requirement applies.",
+   "maxLength": 25
+  },
+  "labor": {
+   "objectName": "LABOR",
+   "type": "array",
+   "items": {
+    "definition": {
+     "subSchema": {
+      "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/mxapiassignment/labor"
+     }
+    },
+    "type": "object"
+   },
+   "cardinality": "",
+   "relation": "UXAVAILABLELABOR"
+  },
+  "actualstartdate": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Actual Start Date",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Date that labor or crew started to work on the assignment."
+  },
+  "amcrew": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Crew",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Identifies the crew that performed the work.",
+   "maxLength": 8
+  },
+  "_id": {
+   "type": "string"
+  },
+  "worklog": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "WORKLOG",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Indicates if work log exists for the assignment."
+  },
+  "parentassignid": {
+   "default": 0,
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Parent Assignment ID",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "The AssignmentID of the assignment this assignment was split off from.",
+   "maxLength": 11
+  },
+  "qualmet": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Qualification Met?",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Does this assignment meet the qualification requirements?",
+   "maxLength": 12
+  },
+  "laborhrs": {
+   "searchType": "EXACT",
+   "scale": 0,
+   "subType": "DURATION",
+   "title": "Hours",
+   "persistent": true,
+   "type": "number",
+   "remarks": "When an edit to the start date/time, regular hours, or overtime hours results in a total number of hours greater than the time span between the start date/time and the finish date/time, Maximo recalculates the finish date/time. You can edit this field until the work order is in the status specified on the Work Plan Edit Options page of Multisite.",
+   "maxLength": 8
+  },
+  "status": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Status",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Current status of the labor assignment. Click Select Value and choose one of the following: ASSIGNED - To assign a laborer to the current work order. COMPLETE - To indicate the labor requirement is complete. WAITASGN - To indicate the labor is unassigned",
+   "maxLength": 12
+  }
+ },
+ "required": [
+  "orgid",
+  "status",
+  "wonum"
+ ]
+}

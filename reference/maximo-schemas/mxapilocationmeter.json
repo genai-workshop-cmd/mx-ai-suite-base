@@ -1,0 +1,410 @@
+{
+  "resource": "MXAPILOCATIONMETER",
+  "description": "LOCATIONMETER",
+  "pk": [
+    "location",
+    "metername",
+    "siteid"
+  ],
+  "title": "LOCATIONMETER",
+  "type": "object",
+  "$ref": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapilocationmeter",
+  "uniqueid": "locationmeterid",
+  "properties": {
+    "average": {
+      "searchType": "EXACT",
+      "scale": 2,
+      "subType": "DECIMAL",
+      "title": "Average Units/Day",
+      "persistent": true,
+      "type": "number",
+      "remarks": "Average units per day for this AssetMeter",
+      "maxLength": 16
+    },
+    "lastreadingdate": {
+      "searchType": "EXACT",
+      "subType": "DATETIME",
+      "title": "Last Reading Date",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Date of last reading for this location meter."
+    },
+    "localref": {
+      "type": "string"
+    },
+    "sinceinstall": {
+      "searchType": "EXACT",
+      "scale": 2,
+      "subType": "DECIMAL",
+      "title": "Since Install",
+      "persistent": true,
+      "type": "number",
+      "remarks": "Difference between the current meter reading and the meter reading when this LocationMeter's location was moved into its current configuration.",
+      "maxLength": 16
+    },
+    "description": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Description",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Meter's description",
+      "maxLength": 200
+    },
+    "newreading": {
+      "searchType": "NONE",
+      "subType": "ALN",
+      "title": "New Reading",
+      "type": "string",
+      "hasList": true,
+      "remarks": "NEWREADING",
+      "maxLength": 18
+    },
+    "lastreading": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Last Reading",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Last reading taken for this location meter",
+      "maxLength": 18
+    },
+    "devicetype": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Device Type",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Device Type",
+      "maxLength": 50
+    },
+    "domainid": {
+      "searchType": "NONE",
+      "subType": "UPPER",
+      "title": "Domain",
+      "type": "string",
+      "remarks": "Non-persistent attribute. For LocationMeters associated with CHARACTERISTIC meters only, this attribute holds domain information from the Meter.  This domain information is used to validate a new CHARACTERISTIC measurement.",
+      "maxLength": 18
+    },
+    "sincelastinspect": {
+      "searchType": "EXACT",
+      "scale": 2,
+      "subType": "DECIMAL",
+      "title": "Since Last Inspection",
+      "persistent": true,
+      "type": "number",
+      "remarks": "Difference between the current meter reading and the meter reading when the last work order of type INSPECTION was opened or closed as determined by application setup.",
+      "maxLength": 16
+    },
+    "_rowstamp": {
+      "type": "string"
+    },
+    "isdelta": {
+      "searchType": "NONE",
+      "subType": "YORN",
+      "title": "Delta",
+      "type": "boolean",
+      "remarks": "ISDELTA"
+    },
+    "metricid": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Metric ID",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Meter Metric ID",
+      "maxLength": 100
+    },
+    "_imagelibref": {
+      "type": "string"
+    },
+    "locationmeterid": {
+      "searchType": "EXACT",
+      "maximum": 2147483647.0,
+      "subType": "BIGINT",
+      "title": "LOCATIONMETERID",
+      "persistent": true,
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "uniqueid": true,
+      "remarks": "Unique Identifier",
+      "maxLength": 11
+    },
+    "siteid": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Site",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Site identifier for this LocationMeter.",
+      "maxLength": 8
+    },
+    "rollover": {
+      "searchType": "EXACT",
+      "scale": 2,
+      "subType": "DECIMAL",
+      "title": "Rollover",
+      "persistent": true,
+      "type": "number",
+      "remarks": "Point at which the location's meter returns to the its mininum value.  Rollover applies to CONTINUOUS meters only.",
+      "maxLength": 16
+    },
+    "href": {
+      "type": "string"
+    },
+    "readingtype_description": {
+      "type": "string"
+    },
+    "newreadingdate": {
+      "searchType": "NONE",
+      "subType": "DATETIME",
+      "title": "New Reading Date",
+      "type": "string",
+      "remarks": "NEWREADINGDATE"
+    },
+    "avgcalcmethod": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Average Calculation Method",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Method used to calculate the average meter units per day:  STATIC, ALL or SLIDING.",
+      "maxLength": 25
+    },
+    "changeby": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Changed By",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Name of user who last modified this record.",
+      "maxLength": 100
+    },
+    "active": {
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "Active",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "Is this location's meter available to accept manual or rolled down readings, or to be used in PM or CM work order generation?"
+    },
+    "changedate": {
+      "searchType": "EXACT",
+      "subType": "DATETIME",
+      "title": "Changed Date",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Date and time record was last modified."
+    },
+    "inspector": {
+      "searchType": "NONE",
+      "subType": "UPPER",
+      "title": "Inspector",
+      "type": "string",
+      "hasList": true,
+      "remarks": "INSPECTOR",
+      "maxLength": 100
+    },
+    "lastreadinginspctr": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Last Reading Inspector",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "inspector for this assetmeter's most recent meter reading",
+      "maxLength": 100
+    },
+    "avgcalcmethod_description": {
+      "type": "string"
+    },
+    "deviceid": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Device ID",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Device ID",
+      "maxLength": 50
+    },
+    "orgid": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Organization ",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Organization identifier for this LocationMeter.",
+      "maxLength": 8
+    },
+    "previousreadingdate": {
+      "searchType": "NONE",
+      "subType": "DATETIME",
+      "title": "Previous Reading Date",
+      "type": "string",
+      "remarks": "non-persistent attribute that is the date of the location meter reading just previous to the location meter reading being added or updated."
+    },
+    "sincelastrepair": {
+      "searchType": "EXACT",
+      "scale": 2,
+      "subType": "DECIMAL",
+      "title": "Since Last Repair",
+      "persistent": true,
+      "type": "number",
+      "remarks": "Difference between current meter reading and the meter reading when the last work order was opened or closed as determined by the application setup.",
+      "maxLength": 16
+    },
+    "sequence": {
+      "searchType": "EXACT",
+      "maximum": 2147483647.0,
+      "subType": "SMALLINT",
+      "title": "Sequence",
+      "persistent": true,
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "remarks": "Meter display sequence",
+      "maxLength": 11
+    },
+    "lifetodate": {
+      "searchType": "EXACT",
+      "scale": 2,
+      "subType": "DECIMAL",
+      "title": "Life to Date for Location",
+      "persistent": true,
+      "type": "number",
+      "remarks": "Total readings over the life of this location.",
+      "maxLength": 16
+    },
+    "measureunitid": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Unit of Measure",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Measure unit for the meter when attached to this location, for example LITERS or RPM",
+      "maxLength": 16
+    },
+    "metername": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Meter",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Identifier for the meter attached to the location, for example HOURS or KILOMETERS.",
+      "maxLength": 10
+    },
+    "sincelastoverhaul": {
+      "searchType": "EXACT",
+      "scale": 2,
+      "subType": "DECIMAL",
+      "title": "Since Last Overhaul",
+      "persistent": true,
+      "type": "number",
+      "remarks": "Difference between the current meter reading and the meter reading when the last work order of type OVERHAUL was opened or closed as determined by application setup.",
+      "maxLength": 16
+    },
+    "location": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Location",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Location to which the meter is attached",
+      "maxLength": 25
+    },
+    "previousreading": {
+      "searchType": "NONE",
+      "subType": "ALN",
+      "title": "Previous Reading",
+      "type": "string",
+      "hasList": true,
+      "remarks": "non-persistent attribute that is the reading just previous to the location meter reading being added or updated.",
+      "maxLength": 18
+    },
+    "locations": {
+      "objectName": "LOCATIONS",
+      "type": "array",
+      "items": {
+        "definition": {
+          "subSchema": {
+            "$ref": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapilocationmeter/locations"
+          }
+        },
+        "type": "object"
+      },
+      "cardinality": "UNDEFINED",
+      "relation": "LOCATION"
+    },
+    "_id": {
+      "type": "string"
+    },
+    "dorollover": {
+      "searchType": "NONE",
+      "subType": "YORN",
+      "title": "Rollover",
+      "type": "boolean",
+      "remarks": "non-persistent attribute to indicate if a new reading should cause the meter to roll over"
+    },
+    "readingtype": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Reading Type",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "reading type (CONTINUOUS or DELTA) for this LocationMeter. Location meter readings default to this LocationMeter's readingtype value.",
+      "maxLength": 10
+    },
+    "slidingwindowsize": {
+      "searchType": "EXACT",
+      "maximum": 2147483647.0,
+      "subType": "INTEGER",
+      "title": "Sliding Window Size",
+      "persistent": true,
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "remarks": "The number of readings, days, weeks or months to include in a sliding average meter unit calculation.",
+      "maxLength": 11
+    },
+    "pointnum": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Point",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "identifier of this LocationMeter's related condition monitoring point.  A condition monitoring point is related if it shares this LocationMeter's Location and MeterName",
+      "maxLength": 8
+    },
+    "remarks": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Remarks",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Additional information supplied by the user regarding the LocationMeter record.",
+      "maxLength": 50
+    }
+  },
+  "required": [
+    "active",
+    "changeby",
+    "changedate",
+    "dorollover",
+    "isdelta",
+    "lifetodate",
+    "location",
+    "metername",
+    "orgid",
+    "sinceinstall",
+    "sincelastinspect",
+    "sincelastoverhaul",
+    "sincelastrepair",
+    "siteid"
+  ]
+}

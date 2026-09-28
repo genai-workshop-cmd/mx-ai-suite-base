@@ -1,0 +1,439 @@
+{
+ "resource": "REP_PLUSLNUP",
+ "description": "Nuclear Lineups Details",
+ "pk": [
+  "siteid",
+  "lineupid",
+  "revnum",
+  "type",
+  "createddate"
+ ],
+ "title": "PLUSLNUPWK",
+ "type": "object",
+ "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/rep_pluslnup",
+ "uniqueid": "pluslnupid",
+ "properties": {
+  "lineupid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Lineup",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Identifies the lineup.",
+   "maxLength": 12
+  },
+  "modes": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Lineup Modes",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Specifies the plant modes in which this lineup can be completed.",
+   "maxLength": 25
+  },
+  "localref": {
+   "type": "string"
+  },
+  "ownergroup": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Owner Group",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The person group responsible for this lineup.",
+   "maxLength": 8
+  },
+  "type": {
+   "default": "!WORKING!",
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Lineup Type",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Identifies the type of lineup: template or working. All lineup plans are the template type, and all lineups are the working type. You use lineup plans to create working lineups. You use working lineups to execute lineups in the field.",
+   "maxLength": 20
+  },
+  "reference": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Source",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Specifies the type of document, object, or event on which the configuration details in this lineup plan are based.",
+   "maxLength": 12
+  },
+  "eqtype_description": {
+   "type": "string"
+  },
+  "_rowstamp": {
+   "type": "string"
+  },
+  "schfin": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Scheduled Finish",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The date on which lineup activities are scheduled to finish."
+  },
+  "actfin": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Actual Finish",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The date on which lineup activities were completed."
+  },
+  "siteid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Site",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Identifies the site to which this lineup applies.",
+   "maxLength": 8
+  },
+  "href": {
+   "type": "string",
+   "title": "PLUSLNUPWK object reference"
+  },
+  "outagecode_description": {
+   "type": "string"
+  },
+  "status_description": {
+   "type": "string"
+  },
+  "targfin": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Target Finish",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The target date for completing lineup activities."
+  },
+  "record_descriptor": {
+   "type": "string",
+   "title": "Record/Object Descriptor"
+  },
+  "history": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "History",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Indicates whether this is a historical record."
+  },
+  "unit_description": {
+   "type": "string"
+  },
+  "eqtype": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Equipment Type",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Specifies the type of equipment that is managed in this lineup. In this context, the term equipment can refer to assets or locations.",
+   "maxLength": 20
+  },
+  "orgid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Organization",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Identifies the organization to which this lineup applies.",
+   "maxLength": 8
+  },
+  "unit": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Unit",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The unit to which this lineup applies.",
+   "maxLength": 12
+  },
+  "milestone_description": {
+   "type": "string"
+  },
+  "revdesc": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Revision Description",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Description of the specified revision of the lineup plan.",
+   "maxLength": 50
+  },
+  "outagecode": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Outage Code",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Specifies the outage and outage type associated with this lineup.",
+   "maxLength": 12
+  },
+  "_id": {
+   "type": "string"
+  },
+  "pluslnupgrp": {
+   "objectName": "PLUSLNUPGRP",
+   "type": "array",
+   "items": {
+    "definition": {
+     "subSchema": {
+      "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/rep_pluslnup/pluslnupgrp"
+     }
+    },
+    "type": "object"
+   },
+   "cardinality": "",
+   "relation": "PLUSLNUPGRP"
+  },
+  "resttype_description": {
+   "type": "string"
+  },
+  "status": {
+   "default": "!WAPPR!",
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Status",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The status of the lineup.",
+   "maxLength": 20
+  },
+  "note": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Notes",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Notes about the lineup.",
+   "maxLength": 100
+  },
+  "createddate": {
+   "default": "&SYSDATE&",
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Date Created",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The date on which the lineup was created."
+  },
+  "actstart": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Actual Start",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The date on which lineup activities began."
+  },
+  "schedulecode": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Schedule Code",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Indicates when lineup activities can take place. Typically, schedule codes indicate whether work can take place while the nuclear power plant is online or during a planned outage.",
+   "maxLength": 12
+  },
+  "description": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Description",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Description of the lineup.",
+   "maxLength": 100
+  },
+  "revnum": {
+   "default": 0,
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "INTEGER",
+   "title": "Revision",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "The lineup plan revision on which this lineup is based.",
+   "maxLength": 11
+  },
+  "duration": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "INTEGER",
+   "title": "Duration",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "The estimated number of hours required to complete a lineup of all components in the configuration list.",
+   "maxLength": 11
+  },
+  "pluslnupconfcomp": {
+   "objectName": "PLUSLNUPCONFCOMP",
+   "type": "array",
+   "items": {
+    "definition": {
+     "subSchema": {
+      "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/rep_pluslnup/pluslnupconfcomp"
+     }
+    },
+    "type": "object"
+   },
+   "cardinality": "",
+   "relation": "PLUSLNUPCONFCOMP"
+  },
+  "_imagelibref": {
+   "type": "string"
+  },
+  "mer": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Mode Entry Requirement",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Indicates that the lineup must be completed before entering the specified plant mode. The requirement only applies when entering the plant mode in the stated direction (A means ascending, D means descending).",
+   "maxLength": 6
+  },
+  "revdate": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Revision Date",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The date on which the specified revision of the originating lineup plan takes effect."
+  },
+  "type_description": {
+   "type": "string"
+  },
+  "owner": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Owner",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The person responsible for this lineup.",
+   "maxLength": 100
+  },
+  "classstructureid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Class Structure",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Identifies the class structure for this lineup plan or lineup.",
+   "maxLength": 25
+  },
+  "targstart": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Target Start",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The target date for starting lineup activities."
+  },
+  "remdur": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "INTEGER",
+   "title": "Remaining Duration",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "The remaining number of hours required to complete the lineup.",
+   "maxLength": 11
+  },
+  "statusdate": {
+   "default": "&SYSDATE&",
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Status Date",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The date on which the lineup status was last changed."
+  },
+  "mer_description": {
+   "type": "string"
+  },
+  "reference_description": {
+   "type": "string"
+  },
+  "milestone": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Milestone Code",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Specifies the plant operational milestone associated with this lineup.",
+   "maxLength": 12
+  },
+  "pluslnupid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Unique ID",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "uniqueid": true,
+   "remarks": "Unique ID",
+   "maxLength": 11
+  },
+  "schedulecode_description": {
+   "type": "string"
+  },
+  "schstart": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Scheduled Start",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The date on which lineup activities are scheduled to begin."
+  },
+  "pluslnupstatus": {
+   "objectName": "PLUSLNUPSTATUS",
+   "type": "array",
+   "items": {
+    "definition": {
+     "subSchema": {
+      "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/rep_pluslnup/pluslnupstatus"
+     }
+    },
+    "type": "object"
+   },
+   "cardinality": "",
+   "relation": "PLUSLNUPSTATUS"
+  },
+  "resttype": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Restoration Condition",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The restoration condition for which default restoration positions on this lineup are defined. The association between a lineup and a restoration condition is defined on the underlying lineup plan and cannot be modified on the lineup.",
+   "maxLength": 12
+  }
+ },
+ "required": [
+  "lineupid",
+  "orgid",
+  "siteid"
+ ]
+}

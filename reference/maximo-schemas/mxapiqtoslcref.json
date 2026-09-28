@@ -1,0 +1,157 @@
+{
+  "resource": "MXAPIQTOSLCREF",
+  "description": "AHQTOSLCREF",
+  "pk": [
+    "app",
+    "clausename",
+    "intobjectname",
+    "owner"
+  ],
+  "title": "AHQTOSLCREF",
+  "type": "object",
+  "$ref": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapiqtoslcref",
+  "uniqueid": "ahqtoslcrefid",
+  "properties": {
+    "app": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "App",
+      "persistent": true,
+      "type": "string",
+      "remarks": "App",
+      "maxLength": 40
+    },
+    "owner": {
+      "default": "&PERSONID&",
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Owner",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Owner",
+      "maxLength": 100
+    },
+    "localref": {
+      "type": "string"
+    },
+    "usage": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Usage",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Identify the area of the application this configuration is used for",
+      "maxLength": 50
+    },
+    "description": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Description",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Description",
+      "maxLength": 50
+    },
+    "clausename": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Clause Name",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Query Clause Name",
+      "maxLength": 50
+    },
+    "querytemplate": {
+      "objectName": "QUERYTEMPLATE",
+      "type": "array",
+      "items": {
+        "definition": {
+          "subSchema": {
+            "$ref": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapiqtoslcref/querytemplate"
+          }
+        },
+        "type": "object"
+      },
+      "cardinality": "",
+      "relation": "QUERYTEMPLATE"
+    },
+    "ahqtoslcrefid": {
+      "searchType": "EXACT",
+      "maximum": 2147483647.0,
+      "subType": "BIGINT",
+      "title": "AHQTOSLCREFID",
+      "persistent": true,
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "uniqueid": true,
+      "remarks": "Unique Identifier",
+      "maxLength": 11
+    },
+    "intobjectname": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Integration Object",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Integration Object",
+      "maxLength": 20
+    },
+    "langcode": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Language Code",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Language Code",
+      "maxLength": 4
+    },
+    "_rowstamp": {
+      "type": "string"
+    },
+    "_imagelibref": {
+      "type": "string"
+    },
+    "templatename": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Template Name",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Query template name",
+      "maxLength": 50
+    },
+    "href": {
+      "type": "string"
+    },
+    "_id": {
+      "type": "string"
+    },
+    "querytype": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Query Type",
+      "persistent": true,
+      "type": "string",
+      "remarks": "OSLC Query Type",
+      "maxLength": 20
+    },
+    "oslcquery": {
+      "objectName": "OSLCQUERY",
+      "type": "array",
+      "items": {
+        "definition": {
+          "subSchema": {
+            "$ref": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapiqtoslcref/oslcquery"
+          }
+        },
+        "type": "object"
+      },
+      "cardinality": "",
+      "relation": "OSLCQUERY"
+    }
+  },
+  "required": [
+    "langcode"
+  ]
+}

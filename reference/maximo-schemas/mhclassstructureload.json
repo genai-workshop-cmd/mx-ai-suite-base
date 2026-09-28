@@ -1,0 +1,189 @@
+{
+  "resource": "MHCLASSSTRUCTURELOAD",
+  "description": "CLASSSTRUCTURE",
+  "pk": [
+    "classstructureid"
+  ],
+  "title": "CLASSSTRUCTURE",
+  "type": "object",
+  "$ref": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mhclassstructureload",
+  "uniqueid": "classstructureuid",
+  "properties": {
+    "useclassindesc": {
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "Use Classification",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "Use Classification in Generated  Description?"
+    },
+    "hierarchypath": {
+      "searchType": "NONE",
+      "subType": "ALN",
+      "title": "Classification",
+      "type": "string",
+      "hasList": true,
+      "remarks": "When you specify a classification for an object, you can organize related parent and child objects in a hierarchical structure, similar to a file directory. You can then drill up and down through the hierarchy to view associated items. Create and manage classifications in the Classifications application.",
+      "maxLength": 254
+    },
+    "description_longdescription": {
+      "searchType": "WILDCARD",
+      "subType": "LONGALN",
+      "title": "Details",
+      "type": "string",
+      "remarks": "Long Description for Description for Class Structure",
+      "maxLength": 32000
+    },
+    "localref": {
+      "type": "string"
+    },
+    "classstructureid": {
+      "default": "&AUTOKEY&",
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Class Structure",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Class Structure identifier",
+      "maxLength": 25
+    },
+    "objectname": {
+      "searchType": "NONE",
+      "subType": "UPPER",
+      "title": "Object",
+      "type": "string",
+      "remarks": "The Name of this object",
+      "maxLength": 30
+    },
+    "show": {
+      "default": true,
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "Show in Service Request Work Center",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "Indicates that the classification will appear in the self service request work center."
+    },
+    "description": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Description",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Describes the selected asset class structure.",
+      "maxLength": 254
+    },
+    "classspec": {
+      "objectName": "CLASSSPEC",
+      "type": "array",
+      "items": {
+        "definition": {
+          "subSchema": {
+            "$ref": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mhclassstructureload/classspec"
+          }
+        },
+        "type": "object"
+      },
+      "cardinality": "MULTIPLE",
+      "relation": "CLASSSPEC"
+    },
+    "type": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Type",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Defines the type of the node. Common uses would be Solution Content, Asset Classifications, FAQ, etc.",
+      "maxLength": 10
+    },
+    "classificationid": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Classification",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Classification ID of the node",
+      "maxLength": 192
+    },
+    "orgid": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Organization",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Organization Identifier",
+      "maxLength": 8
+    },
+    "classusewith": {
+      "objectName": "CLASSUSEWITH",
+      "type": "array",
+      "items": {
+        "definition": {
+          "subSchema": {
+            "$ref": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mhclassstructureload/classusewith"
+          }
+        },
+        "type": "object"
+      },
+      "cardinality": "MULTIPLE",
+      "relation": "CLASSUSEWITH"
+    },
+    "_rowstamp": {
+      "type": "string"
+    },
+    "_imagelibref": {
+      "type": "string"
+    },
+    "showinassettopo": {
+      "default": false,
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "Show Asset In Topology",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "Show In Asset Topology Viewer"
+    },
+    "siteid": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Site",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Site Identifier",
+      "maxLength": 8
+    },
+    "sortorder": {
+      "searchType": "EXACT",
+      "maximum": 2147483647.0,
+      "subType": "INTEGER",
+      "title": "Order",
+      "persistent": true,
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "remarks": "Sort Order for Classifications.",
+      "maxLength": 11
+    },
+    "href": {
+      "type": "string"
+    },
+    "_id": {
+      "type": "string"
+    },
+    "genassetdesc": {
+      "default": true,
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "Generate Description",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "Generate asset description when using this class structure?"
+    }
+  },
+  "required": [
+    "classificationid",
+    "useclassindesc"
+  ]
+}

@@ -1,0 +1,104 @@
+{
+  "resource": "MXOSLCCOMMONPROPS",
+  "description": "OSLCCOMMONPROPS",
+  "pk": [
+    "oslcpropname",
+    "oslcpropns"
+  ],
+  "title": "OSLCCOMMONPROPS",
+  "type": "object",
+  "$ref": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxoslccommonprops",
+  "uniqueid": "oslccommonpropsid",
+  "properties": {
+    "description_longdescription": {
+      "searchType": "WILDCARD",
+      "subType": "LONGALN",
+      "title": "Description Long description",
+      "type": "string",
+      "remarks": "Long Description for Description",
+      "maxLength": 32000
+    },
+    "localref": {
+      "type": "string"
+    },
+    "description": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Description",
+      "persistent": true,
+      "type": "string",
+      "remarks": "The description of the property name.",
+      "maxLength": 200
+    },
+    "oslcpropname": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "OSLC Property Name",
+      "persistent": true,
+      "type": "string",
+      "remarks": "The OSLC common property name that is mapped to a resource attribute.",
+      "maxLength": 200
+    },
+    "_rowstamp": {
+      "type": "string"
+    },
+    "oslcproptype": {
+      "default": "http://www.w3.org/2001/XMLSchema#string",
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "OSLC Property Type",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "The option that identifies the property data type, such as a String, Integer, Date, or Boolean.",
+      "maxLength": 200
+    },
+    "oslcpropns": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "OSLC Property Namespace",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "The namespace of the OSLC property name.",
+      "maxLength": 200
+    },
+    "_imagelibref": {
+      "type": "string"
+    },
+    "oslcproptype_description": {
+      "type": "string"
+    },
+    "href": {
+      "type": "string"
+    },
+    "_id": {
+      "type": "string"
+    },
+    "oslccommonpropsid": {
+      "searchType": "EXACT",
+      "maximum": 2147483647.0,
+      "subType": "BIGINT",
+      "title": "Unique Id",
+      "persistent": true,
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "uniqueid": true,
+      "remarks": "Unique Id",
+      "maxLength": 11
+    },
+    "userdefined": {
+      "default": true,
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "User Defined",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "If the check box is selected, the common property was created by a user."
+    }
+  },
+  "required": [
+    "oslcpropname",
+    "oslcpropns"
+  ]
+}

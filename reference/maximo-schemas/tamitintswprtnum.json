@@ -1,0 +1,146 @@
+{
+  "resource": "TAMITINTSWPRTNUM",
+  "description": "TAMITSWPRTNUM",
+  "pk": [
+    "partnumber",
+    "ccid"
+  ],
+  "title": "TAMITSWPRTNUM",
+  "type": "object",
+  "$ref": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/tamitintswprtnum",
+  "uniqueid": "tamitswprtnumid",
+  "properties": {
+    "quantity": {
+      "searchType": "EXACT",
+      "maximum": 2147483647.0,
+      "subType": "INTEGER",
+      "title": "Quantity",
+      "persistent": true,
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "remarks": "The quantity for the part number charge type",
+      "maxLength": 11
+    },
+    "localref": {
+      "type": "string"
+    },
+    "description": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Description",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Description of the part number",
+      "maxLength": 255
+    },
+    "deletedate": {
+      "searchType": "EXACT",
+      "subType": "DATETIME",
+      "title": "Delete Date",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Date when the record was deleted"
+    },
+    "isdeleted": {
+      "default": false,
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "Deleted",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "Is this entry deleted"
+    },
+    "_rowstamp": {
+      "type": "string"
+    },
+    "ccid": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "CCID",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Chargeable Component",
+      "maxLength": 32
+    },
+    "productids": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Product IDs",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Product unique identifiers",
+      "maxLength": 256
+    },
+    "tamitswprtnumid": {
+      "searchType": "EXACT",
+      "maximum": 2147483647.0,
+      "subType": "BIGINT",
+      "title": "Unique Id",
+      "persistent": true,
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "uniqueid": true,
+      "remarks": "Unique Id",
+      "maxLength": 11
+    },
+    "_imagelibref": {
+      "type": "string"
+    },
+    "ispvu": {
+      "default": false,
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "Uses PVU",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "Is this product licensed using the Processor Value Units metric"
+    },
+    "issubcap": {
+      "default": false,
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "Subcapacity Eligible",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "Is this product eligible for subcapacity pricing"
+    },
+    "guid": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "GUID",
+      "persistent": true,
+      "type": "string",
+      "remarks": "GUID",
+      "maxLength": 192
+    },
+    "href": {
+      "type": "string"
+    },
+    "_id": {
+      "type": "string"
+    },
+    "chargetype": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Charge Type",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Charge type",
+      "maxLength": 128
+    },
+    "partnumber": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Part Number",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Software part number",
+      "maxLength": 32
+    }
+  },
+  "required": [
+    "ccid",
+    "partnumber"
+  ]
+}

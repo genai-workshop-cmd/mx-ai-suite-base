@@ -1,0 +1,140 @@
+{
+ "resource": "MXAPIMAXAIINFERENCE",
+ "description": "AI Inference API",
+ "pk": [
+  "aicfgname",
+  "objectname",
+  "objectid"
+ ],
+ "title": "MAXAIINFERENCE",
+ "type": "object",
+ "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/mxapimaxaiinference",
+ "uniqueid": "maxaiinferenceid",
+ "properties": {
+  "maxaiinferenceid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Unique Id",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "uniqueid": true,
+   "remarks": "Unique Id",
+   "maxLength": 11
+  },
+  "localref": {
+   "type": "string"
+  },
+  "changeby": {
+   "default": "MAXIMO",
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Changed by",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Changed by",
+   "maxLength": 100
+  },
+  "objectname": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Object name",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Object Name",
+   "maxLength": 30
+  },
+  "changedate": {
+   "default": "&SYSDATE&",
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Change date",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Change date"
+  },
+  "record_descriptor": {
+   "type": "string",
+   "title": "Record/Object Descriptor"
+  },
+  "_rowstamp": {
+   "type": "string"
+  },
+  "inferenceapplied": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Applied",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Applied"
+  },
+  "_imagelibref": {
+   "type": "string"
+  },
+  "inferenceappliedtime": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Applied date",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Applied Date"
+  },
+  "maxaiinferencedet": {
+   "objectName": "MAXAIINFERENCEDET",
+   "type": "array",
+   "items": {
+    "definition": {
+     "subSchema": {
+      "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/mxapimaxaiinference/maxaiinferencedet"
+     }
+    },
+    "type": "object"
+   },
+   "cardinality": "",
+   "relation": "MAXAIINFERENCEDET"
+  },
+  "aicfgname": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "AI config name",
+   "persistent": true,
+   "type": "string",
+   "remarks": "AI Config Name",
+   "maxLength": 20
+  },
+  "inferencetime": {
+   "default": "&SYSDATE&",
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Inference date",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Inference Date"
+  },
+  "href": {
+   "type": "string",
+   "title": "MAXAIINFERENCE object reference"
+  },
+  "_id": {
+   "type": "string"
+  },
+  "objectid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Object ID",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "Object Id",
+   "maxLength": 11
+  }
+ },
+ "required": [
+  "aicfgname",
+  "objectid",
+  "objectname"
+ ]
+}

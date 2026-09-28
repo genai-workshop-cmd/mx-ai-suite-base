@@ -1,0 +1,446 @@
+{
+  "resource": "REP_CONDM",
+  "description": "MEASUREPOINT",
+  "pk": [
+    "pointnum",
+    "siteid"
+  ],
+  "title": "MEASUREPOINT",
+  "type": "object",
+  "$ref": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/rep_condm",
+  "uniqueid": "measurepointid",
+  "properties": {
+    "ulpriority": {
+      "searchType": "EXACT",
+      "maximum": 2147483647.0,
+      "subType": "INTEGER",
+      "title": "Upper Limit Priority",
+      "persistent": true,
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "remarks": "Work priority for the Upper Limit PM or job plan",
+      "maxLength": 11
+    },
+    "localref": {
+      "type": "string"
+    },
+    "llpriority": {
+      "searchType": "EXACT",
+      "maximum": 2147483647.0,
+      "subType": "INTEGER",
+      "title": "Lower Limit Priority",
+      "persistent": true,
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "remarks": "Work priority for the Lower Limit PM or job plan",
+      "maxLength": 11
+    },
+    "uljpnum": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Upper Limit Job Plan",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Upper Limit (UL) JPNUM is the job plan that is used to generate a work order when a Measurement is entered above the MeasurePoint's Upper Limit.",
+      "maxLength": 12
+    },
+    "description": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Description",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Point Description (One Line)",
+      "maxLength": 100
+    },
+    "endoffset": {
+      "searchType": "EXACT",
+      "scale": 2,
+      "subType": "DECIMAL",
+      "title": "End Offset",
+      "persistent": true,
+      "type": "number",
+      "remarks": "Distance used in conjunction with the end reference point to determine where the measurepoint resides.  ",
+      "maxLength": 11
+    },
+    "endzoffsetref_description": {
+      "type": "string"
+    },
+    "startmeasure": {
+      "searchType": "EXACT",
+      "scale": 2,
+      "subType": "DECIMAL",
+      "title": "Measure",
+      "persistent": true,
+      "type": "number",
+      "remarks": "Absolute distance taken from the start of the linear asset to where this measure point is defined  This can be manually entered or calculated by entering start/end reference points and offsets.",
+      "maxLength": 11
+    },
+    "measurement": {
+      "objectName": "MEASUREMENT",
+      "type": "array",
+      "items": {
+        "definition": {
+          "subSchema": {
+            "$ref": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/rep_condm/measurement"
+          }
+        },
+        "type": "object"
+      },
+      "cardinality": "MULTIPLE",
+      "relation": "MEASUREMENT"
+    },
+    "upperwarning": {
+      "searchType": "EXACT",
+      "scale": 3,
+      "subType": "DECIMAL",
+      "title": "Upper Warning Limit",
+      "persistent": true,
+      "type": "number",
+      "remarks": "1st High Alarm",
+      "maxLength": 16
+    },
+    "_rowstamp": {
+      "type": "string"
+    },
+    "startyoffsetref_description": {
+      "type": "string"
+    },
+    "ulpmnum": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Upper Limit PM",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Upper Limit (UL) PMNUM is the PM that is used to generate a work order when a Measurement is entered above the MeasurePoint's Upper Limit.",
+      "maxLength": 8
+    },
+    "endzoffset": {
+      "searchType": "EXACT",
+      "scale": 2,
+      "subType": "DECIMAL",
+      "title": "End Z Offset",
+      "persistent": true,
+      "type": "number",
+      "remarks": "Distance above or below this linear asset.  For example, if a sign is 10 feet above the road, the  Z-Offset is 10 feet.  This value is measured from the Z  Reference Point and can be positive (above) or negative (below).",
+      "maxLength": 11
+    },
+    "_imagelibref": {
+      "type": "string"
+    },
+    "assetnum": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Asset",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Asset Number The Measurement Refers To",
+      "maxLength": 25
+    },
+    "endyoffsetref": {
+      "searchType": "EXACT",
+      "subType": "ALN",
+      "title": "End Y Offset Referent",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Starting point from which to measure the end Y-Offset at the end of the section of the linear asset to which this condition monitoring measurepoint applies.  GUARDRAIL and SURFACE are two examples.",
+      "maxLength": 30
+    },
+    "loweraction": {
+      "searchType": "EXACT",
+      "scale": 3,
+      "subType": "DECIMAL",
+      "title": "Lower Action Limit",
+      "persistent": true,
+      "type": "number",
+      "remarks": "2nd Low Alarm",
+      "maxLength": 16
+    },
+    "startzoffset": {
+      "searchType": "EXACT",
+      "scale": 2,
+      "subType": "DECIMAL",
+      "title": "Start Z Offset",
+      "persistent": true,
+      "type": "number",
+      "remarks": "Distance above or below this linear asset.  For example, if a sign is 10 feet above the road, the  Z-Offset is 10 feet.  This value is measured from the Z  Reference Point and can be positive (above) or negative (below).",
+      "maxLength": 11
+    },
+    "siteid": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Site",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Site Identifier",
+      "maxLength": 8
+    },
+    "href": {
+      "type": "string"
+    },
+    "startzoffsetref": {
+      "searchType": "EXACT",
+      "subType": "ALN",
+      "title": "Start Z Offset Referent",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Reference point from which the start Z-Offset (distance above or below the linear asset) is measured.  ",
+      "maxLength": 30
+    },
+    "locationmeter": {
+      "objectName": "LOCATIONMETER",
+      "type": "array",
+      "items": {
+        "definition": {
+          "subSchema": {
+            "$ref": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/rep_condm/locationmeter"
+          }
+        },
+        "type": "object"
+      },
+      "cardinality": "SINGLE",
+      "relation": "LOCATIONMETER"
+    },
+    "llpmnum": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Lower Limit PM",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Lower Limit (LL) PMNUM is the PM that is used to generate a work order when a Measurement is entered below the MeasurePoint's Lower Limit.",
+      "maxLength": 8
+    },
+    "measurepointid": {
+      "searchType": "EXACT",
+      "maximum": 2147483647.0,
+      "subType": "BIGINT",
+      "title": "MEASUREPOINTID",
+      "persistent": true,
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "uniqueid": true,
+      "remarks": "Unique Identifier",
+      "maxLength": 11
+    },
+    "startyoffsetref": {
+      "searchType": "EXACT",
+      "subType": "ALN",
+      "title": "Start Y Offset Referent",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Starting point from which to measure the Y-Offset at the start of the section of the linear asset to which this condition monitoring measurepoint applies.  CURB and CENTER-LINE are two examples.",
+      "maxLength": 30
+    },
+    "meter": {
+      "objectName": "METER",
+      "type": "array",
+      "items": {
+        "definition": {
+          "subSchema": {
+            "$ref": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/rep_condm/meter"
+          }
+        },
+        "type": "object"
+      },
+      "cardinality": "MULTIPLE",
+      "relation": "METER"
+    },
+    "endmeasure": {
+      "searchType": "EXACT",
+      "scale": 2,
+      "subType": "DECIMAL",
+      "title": "Measure",
+      "persistent": true,
+      "type": "number",
+      "remarks": "Absolute distance taken from the start of the linear asset to where the end of this measure point is defined  This can be manually entered or calculated by entering an end reference point and end offset.",
+      "maxLength": 11
+    },
+    "startyoffset": {
+      "searchType": "EXACT",
+      "scale": 2,
+      "subType": "DECIMAL",
+      "title": "Start Y Offset",
+      "persistent": true,
+      "type": "number",
+      "remarks": "Perpendicular distance from this linear asset.  For example, if a sign is 10 feet to the right of the road, the Y-Offset is 10 feet.  This value is measured from the Y Reference Point and can be positive (right) or negative (left).",
+      "maxLength": 11
+    },
+    "assetmeter": {
+      "objectName": "ASSETMETER",
+      "type": "array",
+      "items": {
+        "definition": {
+          "subSchema": {
+            "$ref": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/rep_condm/assetmeter"
+          }
+        },
+        "type": "object"
+      },
+      "cardinality": "MULTIPLE",
+      "relation": "ASSETMETER_REPORTING"
+    },
+    "endyoffsetref_description": {
+      "type": "string"
+    },
+    "orgid": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Organization",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Organization Identifier",
+      "maxLength": 8
+    },
+    "endyoffset": {
+      "searchType": "EXACT",
+      "scale": 2,
+      "subType": "DECIMAL",
+      "title": "End Y Offset",
+      "persistent": true,
+      "type": "number",
+      "remarks": "Perpendicular distance from this linear asset.  For example, if a sign is 10 feet to the right of the road, the Y-Offset is 10 feet.  This value is measured from the Y Reference Point and can be positive (right) or negative (left).",
+      "maxLength": 11
+    },
+    "lowerwarning": {
+      "searchType": "EXACT",
+      "scale": 3,
+      "subType": "DECIMAL",
+      "title": "Lower Warning Limit",
+      "persistent": true,
+      "type": "number",
+      "remarks": "1st Low Alarm",
+      "maxLength": 16
+    },
+    "metername": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Meter",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Name of meter associated with this MeasurePoint",
+      "maxLength": 10
+    },
+    "startoffset": {
+      "searchType": "EXACT",
+      "scale": 2,
+      "subType": "DECIMAL",
+      "title": "Start Offset",
+      "persistent": true,
+      "type": "number",
+      "remarks": "Distance used in conjunction with the start reference point to determine where the measurepoint resides.  ",
+      "maxLength": 11
+    },
+    "lljpnum": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Lower Limit Job Plan",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Lower Limit (LL) JPNUM is the job plan that is used to generate a work order when a Measurement is entered below the MeasurePoint's Lower Limit.",
+      "maxLength": 12
+    },
+    "pointwo": {
+      "objectName": "POINTWO",
+      "type": "array",
+      "items": {
+        "definition": {
+          "subSchema": {
+            "$ref": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/rep_condm/pointwo"
+          }
+        },
+        "type": "object"
+      },
+      "cardinality": "SINGLE",
+      "relation": "POINTWO"
+    },
+    "location": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Location",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Location where MeasurePoint is used.",
+      "maxLength": 25
+    },
+    "locations": {
+      "objectName": "LOCATIONS",
+      "type": "array",
+      "items": {
+        "definition": {
+          "subSchema": {
+            "$ref": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/rep_condm/locations"
+          }
+        },
+        "type": "object"
+      },
+      "cardinality": "SINGLE",
+      "relation": "LOCATION"
+    },
+    "_id": {
+      "type": "string"
+    },
+    "upperaction": {
+      "searchType": "EXACT",
+      "scale": 3,
+      "subType": "DECIMAL",
+      "title": "Upper Action Limit",
+      "persistent": true,
+      "type": "number",
+      "remarks": "2nd High Alarm",
+      "maxLength": 16
+    },
+    "asset": {
+      "objectName": "ASSET",
+      "type": "array",
+      "items": {
+        "definition": {
+          "subSchema": {
+            "$ref": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/rep_condm/asset"
+          }
+        },
+        "type": "object"
+      },
+      "cardinality": "MULTIPLE",
+      "relation": "ASSET_REPORTING"
+    },
+    "endzoffsetref": {
+      "searchType": "EXACT",
+      "subType": "ALN",
+      "title": "End Z Offset Referent",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Point from which the Z-Offset is measured.  ",
+      "maxLength": 30
+    },
+    "pointnum": {
+      "default": "&AUTOKEY&",
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Point",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Point Number For Measurement",
+      "maxLength": 8
+    },
+    "startzoffsetref_description": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "metername",
+    "orgid",
+    "siteid"
+  ]
+}

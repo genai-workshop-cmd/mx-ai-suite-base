@@ -1,0 +1,160 @@
+{
+  "resource": "MXACTION",
+  "description": "ACTION",
+  "pk": [
+    "action"
+  ],
+  "title": "ACTION",
+  "type": "object",
+  "$ref": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxaction",
+  "uniqueid": "actionid",
+  "properties": {
+    "dispvalue": {
+      "searchType": "NONE",
+      "subType": "ALN",
+      "title": "Value",
+      "type": "string",
+      "remarks": "Specify a display value for the action based on the action type.",
+      "maxLength": 254
+    },
+    "description_longdescription": {
+      "searchType": "WILDCARD",
+      "subType": "LONGALN",
+      "title": "Details",
+      "type": "string",
+      "remarks": "Describes the action.The description can be up to 255 characters in length. To enter or view additional information, click the Long Description button.",
+      "maxLength": 32000
+    },
+    "localref": {
+      "type": "string"
+    },
+    "value2": {
+      "searchType": "EXACT",
+      "subType": "ALN",
+      "title": "Value",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Field to store value for type APPACTION only.  This field is translatable.",
+      "maxLength": 254
+    },
+    "objectname": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Object",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Type of business objects on which an action can be applied.",
+      "maxLength": 30
+    },
+    "description": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Description",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Describes the action. Actions are associated to escalation points by action groups.",
+      "maxLength": 100
+    },
+    "memo": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Memo",
+      "persistent": true,
+      "type": "string",
+      "remarks": "A memo briefly describing why the status was changed, which is placed into the status table entry that records the status change for the business object.",
+      "maxLength": 50
+    },
+    "type": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Type",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Displays categories of actions. MAXIMO ships with a number of predefined action types, such as Set Owner, Status Change, or Create Ticket.",
+      "maxLength": 26
+    },
+    "sendersysid": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Sender System ID",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Column used by ERP-Integration (APIs)",
+      "maxLength": 50
+    },
+    "usewith": {
+      "default": "!ALL!",
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Accessible From",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Indicate from where action is accessible.",
+      "maxLength": 18
+    },
+    "_rowstamp": {
+      "type": "string"
+    },
+    "_imagelibref": {
+      "type": "string"
+    },
+    "parameter": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Parameter/Attribute",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Parameter for class name.",
+      "maxLength": 254
+    },
+    "action": {
+      "default": "&AUTOKEY&",
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Action",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Unique name identifying an action.",
+      "maxLength": 30
+    },
+    "actionid": {
+      "searchType": "EXACT",
+      "maximum": 2147483647.0,
+      "subType": "BIGINT",
+      "title": "Unique Id",
+      "persistent": true,
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "uniqueid": true,
+      "remarks": "Unique Id",
+      "maxLength": 11
+    },
+    "href": {
+      "type": "string"
+    },
+    "_id": {
+      "type": "string"
+    },
+    "value": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Value",
+      "persistent": true,
+      "type": "string",
+      "remarks": "An action string of an action, describes the outcome of an action.",
+      "maxLength": 254
+    },
+    "type_description": {
+      "type": "string"
+    },
+    "usewith_description": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "type"
+  ]
+}

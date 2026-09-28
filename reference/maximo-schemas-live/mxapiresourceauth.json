@@ -1,0 +1,120 @@
+{
+ "resource": "MXAPIRESOURCEAUTH",
+ "description": "Maximo API Object Structure for resource-based authorization",
+ "pk": [
+  "objectname",
+  "objectid",
+  "principaltype",
+  "principal",
+  "optionname"
+ ],
+ "title": "OBJECTAUTH",
+ "type": "object",
+ "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/mxapiresourceauth",
+ "uniqueid": "objectauthid",
+ "properties": {
+  "localref": {
+   "type": "string"
+  },
+  "objectname": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Object",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Object Name",
+   "maxLength": 40
+  },
+  "optionname": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Option",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Signature Option Option Name",
+   "maxLength": 25
+  },
+  "record_descriptor": {
+   "type": "string",
+   "title": "Record/Object Descriptor"
+  },
+  "groupname": {
+   "searchType": "NONE",
+   "subType": "UPPER",
+   "title": "Group Name",
+   "type": "string",
+   "hasList": true,
+   "remarks": "Group Name",
+   "maxLength": 8
+  },
+  "principaltype": {
+   "default": "USER",
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Principal Type",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Type of principal which have authorization to the object. Can be User ID or Group Name",
+   "maxLength": 20
+  },
+  "userid": {
+   "searchType": "NONE",
+   "subType": "UPPER",
+   "title": "User",
+   "type": "string",
+   "hasList": true,
+   "remarks": "User ID",
+   "maxLength": 100
+  },
+  "principal": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Principal Value",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Principal value",
+   "maxLength": 100
+  },
+  "_rowstamp": {
+   "type": "string"
+  },
+  "objectauthid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Unique Id",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "uniqueid": true,
+   "remarks": "Unique Id",
+   "maxLength": 11
+  },
+  "_imagelibref": {
+   "type": "string"
+  },
+  "href": {
+   "type": "string",
+   "title": "OBJECTAUTH object reference"
+  },
+  "_id": {
+   "type": "string"
+  },
+  "objectid": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Object ID",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Object ID",
+   "maxLength": 200
+  }
+ },
+ "required": [
+  "objectid",
+  "objectname",
+  "optionname",
+  "principal"
+ ]
+}

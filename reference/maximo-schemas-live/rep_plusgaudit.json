@@ -1,0 +1,650 @@
+{
+ "resource": "REP_PLUSGAUDIT",
+ "description": "Audit and Survey (Oil) Details",
+ "pk": [
+  "orgid",
+  "siteid",
+  "auditnum"
+ ],
+ "title": "PLUSGAUDIT",
+ "type": "object",
+ "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/rep_plusgaudit",
+ "uniqueid": "plusgauditid",
+ "properties": {
+  "plusginspdue": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Due Date",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Due Date"
+  },
+  "historyflag": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "History",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "History Flag"
+  },
+  "localref": {
+   "type": "string"
+  },
+  "externalagency": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "External Agency",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "If the audit is conducted by an external agency, specify the agency.",
+   "maxLength": 30
+  },
+  "samplegroup": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Sample Group",
+   "persistent": true,
+   "type": "string",
+   "remarks": "You can develop a sample group and assign a survey to that sample group. Then, you can analyze the responses from that sample group. All of the survey responses are calculated and displayed to authorized personnel as a summary at the header of the record.",
+   "maxLength": 12
+  },
+  "plusginsprevgrp": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Reviewer  Owner Group",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Reviewer Group",
+   "maxLength": 8
+  },
+  "techauth": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Technical Authority Type",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The type of technical authority that is associated with the certification that is required for the audit or the survey. Personnel who hold certifications in other operational areas might be required to review or approve the audit or the survey.",
+   "maxLength": 30
+  },
+  "ownergroup": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Owner Group",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The group that owns the audit and survey record. To change this value, use the Select Owner action.",
+   "maxLength": 8
+  },
+  "reviewedby": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Reviewed By",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The person who reviewed the audit and survey record.",
+   "maxLength": 100
+  },
+  "type": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Type",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The type of audit and survey record.",
+   "maxLength": 16
+  },
+  "reviewedbyid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Reviewed By",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "Person unique identifier.",
+   "maxLength": 11
+  },
+  "frequency": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Frequency",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The frequency of the audit or the survey.",
+   "maxLength": 20
+  },
+  "plusginspown": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Inspector",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Inspector Owner",
+   "maxLength": 100
+  },
+  "externalaudit": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "External Audit",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Indicates whether the audit is conducted by an external agency. If it is conducted by an external agency, specify the agency."
+  },
+  "_rowstamp": {
+   "type": "string"
+  },
+  "plusginsowngrp": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Inspector  Owner Group",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Inspector Group ",
+   "maxLength": 8
+  },
+  "createdby": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Created By",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The person who created the audit and survey record.",
+   "maxLength": 100
+  },
+  "locationsid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Location",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "The location unique identifier.",
+   "maxLength": 11
+  },
+  "policynum": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Operating Policy",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The operating policy that is associated with the audit or the survey.",
+   "maxLength": 10
+  },
+  "regulationnum": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Regulation",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The regulation that is associated with the audit or the survey.",
+   "maxLength": 8
+  },
+  "siteid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Site",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The site that is associated with the audit and survey record.",
+   "maxLength": 8
+  },
+  "techauth_description": {
+   "type": "string"
+  },
+  "details": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Details",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Detailed information about the audit and survey record.",
+   "maxLength": 200
+  },
+  "href": {
+   "type": "string",
+   "title": "PLUSGAUDIT object reference"
+  },
+  "plusgregulationid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Regulation",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "The identifier of the regulation.",
+   "maxLength": 11
+  },
+  "completedby": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Completed By",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The person who completed the audit and survey record.",
+   "maxLength": 100
+  },
+  "certreqd": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Certification Required",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Indicates whether certification is required for the audit or the survey. You use certifications to ensure that assets or locations meet or exceed standards of quality and of safety. You also use certifications to make sure that personnel are qualified for specialized tasks."
+  },
+  "plusgpertypeid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Permit and Certificate Type",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "The type of permit and certificate that is associated with the audit or the survey.",
+   "maxLength": 11
+  },
+  "status_description": {
+   "type": "string"
+  },
+  "externalagency_description": {
+   "type": "string"
+  },
+  "approvedby": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Approved By",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The person who approved the audit and survey record.",
+   "maxLength": 100
+  },
+  "approvedbyid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Approved By",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "Person unique identifier.",
+   "maxLength": 11
+  },
+  "record_descriptor": {
+   "type": "string",
+   "title": "Record/Object Descriptor"
+  },
+  "orgid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Organization",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The organization that is associated with the site of the audit or the survey.",
+   "maxLength": 8
+  },
+  "plusginsprev": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Reviewer",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Reviewer Owner",
+   "maxLength": 100
+  },
+  "plusgpolicyid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Operating Policy",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "The identifier of the operating policy.",
+   "maxLength": 11
+  },
+  "person": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Person",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The person who is responsible for conducting the audit or the survey.",
+   "maxLength": 100
+  },
+  "plusgprocedureid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Operating Procedure",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "The identifier of the operating procedure.",
+   "maxLength": 11
+  },
+  "completedbyid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Completed By",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "Person unique identifier.",
+   "maxLength": 11
+  },
+  "plusgauditid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Unique Id",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "uniqueid": true,
+   "remarks": "Unique Id",
+   "maxLength": 11
+  },
+  "vendoraudit": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Vendor Audit",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Indicates whether the audit is conducted by a vendor. If it is conducted by a vendor, specify the vendor."
+  },
+  "_id": {
+   "type": "string"
+  },
+  "status": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Status",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The status of the audit and survey record. Valid statuses are in the PLUSGAUDITSTATUS synonym domain. The default value when you create the audit and survey record is Draft. Use the Change Status icon on the toolbar to modify the status of the audit and survey.",
+   "maxLength": 20
+  },
+  "template": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Template",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Indicates that the record can be used as a template to create other audit and survey records. Only certain fields and their values are duplicated. Those fields and their values are copied from the originating record to the new record. Some fields and their values, such as the fields in the Findings tab, are not duplicated. This is because the results of each audit or survey are unique to that audit or survey."
+  },
+  "plusgcertid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Certification",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "The certification unique identifier.",
+   "maxLength": 11
+  },
+  "resultnum": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Inspection Results",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The results of the audit survey.",
+   "maxLength": 12
+  },
+  "completedbydate": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Completed",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The date and time when the audit and survey was completed."
+  },
+  "totalscore": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Total Score",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "The total score is calculated from the combined scores that are associated with each line in the audit and survey record.",
+   "maxLength": 11
+  },
+  "createdbyid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Created By",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "Person unique identifier.",
+   "maxLength": 11
+  },
+  "description": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Description",
+   "persistent": true,
+   "type": "string",
+   "remarks": "A description of the audit and survey record.",
+   "maxLength": 100
+  },
+  "surveyformat": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Survey Format",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Indicates whether a survey format is to be used for the audit or the survey. A survey format uses the Agree \u2013 Disagree response format."
+  },
+  "category_description": {
+   "type": "string"
+  },
+  "approvedbydate": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Approved",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The date and time when the audit and survey was approved."
+  },
+  "_imagelibref": {
+   "type": "string"
+  },
+  "assetnum": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Asset",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The asset that is associated with the audit and survey record.",
+   "maxLength": 25
+  },
+  "personid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Person",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "Person unique identifier.",
+   "maxLength": 11
+  },
+  "plusgplandate": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Planned",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The date when the audit or the survey is going to be conducted."
+  },
+  "createdbydate": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Created",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The date and time when the audit and survey was created."
+  },
+  "type_description": {
+   "type": "string"
+  },
+  "climatesurvey": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Climate Survey",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": " Indicates whether a climate survey is to be done. When you select this option, you can assign a numerical value to each question. The total score displays in the summary of the header for the record. You can use a climate survey to record the opinions of personnel relating to the prevention of accidents in the work place. You can also use climate surveys to record the opinions of personnel relating to the management of the plant. You can tailor the questions to request suggestions for improvement."
+  },
+  "owner": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Owner",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The owner of the audit and survey record. You update this field through the Select Action > Select Owner action or the Select Action > Take Ownership action.",
+   "maxLength": 100
+  },
+  "inspformrev": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "INTEGER",
+   "title": "Current Form Revision",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "The revision number of the audit survey inspection form.",
+   "maxLength": 11
+  },
+  "classstructureid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Class Structure",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The classification structure.",
+   "maxLength": 25
+  },
+  "auditnum": {
+   "default": "&AUTOKEY&",
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Audit and Survey",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The identifier of the audit and survey record.",
+   "maxLength": 10
+  },
+  "companiesid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Company",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "Company.",
+   "maxLength": 11
+  },
+  "statusdate": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Status Date",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The server date and time when the audit and survey record was created, or when the status changed. This value is read-only."
+  },
+  "frequency_description": {
+   "type": "string"
+  },
+  "assetid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Asset",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "The asset unique identifier.",
+   "maxLength": 11
+  },
+  "location": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Location",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The location that is associated with the audit and survey record.",
+   "maxLength": 25
+  },
+  "reviewedbydate": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Reviewed",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The date and time when the audit and survey was reviewed."
+  },
+  "category": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Category",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The category of the audit and survey record, such as inspection, process, or safety.",
+   "maxLength": 16
+  },
+  "inspformnum": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Inspection Form",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The identifier of the inspection form for the audit survey.",
+   "maxLength": 12
+  }
+ },
+ "required": [
+  "status",
+  "statusdate"
+ ]
+}

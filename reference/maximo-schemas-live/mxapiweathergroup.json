@@ -1,0 +1,98 @@
+{
+ "resource": "MXAPIWEATHERGROUP",
+ "description": "Maximo API for Weather Group",
+ "pk": [
+  "groupname",
+  "org"
+ ],
+ "title": "WEATHERGROUP",
+ "type": "object",
+ "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/mxapiweathergroup",
+ "uniqueid": "weathergroupid",
+ "properties": {
+  "_rowstamp": {
+   "type": "string"
+  },
+  "weathergroupid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Unique Id",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "uniqueid": true,
+   "remarks": "Unique Id",
+   "maxLength": 11
+  },
+  "description_longdescription": {
+   "searchType": "WILDCARD",
+   "subType": "LONGALN",
+   "title": "Description Long description",
+   "type": "string",
+   "remarks": "Long Description for Description",
+   "maxLength": 32000
+  },
+  "localref": {
+   "type": "string"
+  },
+  "org": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Organization",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Organization",
+   "maxLength": 20
+  },
+  "_imagelibref": {
+   "type": "string"
+  },
+  "description": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Description",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Description",
+   "maxLength": 100
+  },
+  "href": {
+   "type": "string",
+   "title": "WEATHERGROUP object reference"
+  },
+  "record_descriptor": {
+   "type": "string",
+   "title": "Record/Object Descriptor"
+  },
+  "_id": {
+   "type": "string"
+  },
+  "groupname": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Group Name",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Group Name",
+   "maxLength": 20
+  },
+  "weatherproduct": {
+   "objectName": "WEATHERPRODUCT",
+   "type": "array",
+   "items": {
+    "definition": {
+     "subSchema": {
+      "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/mxapiweathergroup/weatherproduct"
+     }
+    },
+    "type": "object"
+   },
+   "cardinality": "",
+   "relation": "WEATHERPRODUCT"
+  }
+ },
+ "required": [
+  "org"
+ ]
+}

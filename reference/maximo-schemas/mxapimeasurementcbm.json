@@ -1,0 +1,399 @@
+{
+  "resource": "MXAPIMEASUREMENTCBM",
+  "description": "MEASUREMENT",
+  "pk": [
+    "measurementid"
+  ],
+  "title": "MEASUREMENT",
+  "type": "object",
+  "$ref": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapimeasurementcbm",
+  "uniqueid": "measurementid",
+  "properties": {
+    "islinear": {
+      "default": false,
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "Is Linear",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "Is this measurement for a linear asset?"
+    },
+    "localref": {
+      "type": "string"
+    },
+    "startassetfeatureid": {
+      "searchType": "EXACT",
+      "maximum": 2147483647.0,
+      "subType": "BIGINT",
+      "title": "Start Feature",
+      "persistent": true,
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "remarks": "A previously defined feature or relationship used, in conjunction with the start offset, to determine the start measure for this measurement.   ",
+      "maxLength": 11
+    },
+    "endmeasureunitid": {
+      "searchType": "EXACT",
+      "subType": "UPPER",
+      "title": "Unit of End Measure",
+      "persistent": true,
+      "type": "string",
+      "remarks": "End Measure Units",
+      "maxLength": 16
+    },
+    "endoffset": {
+      "searchType": "EXACT",
+      "scale": 2,
+      "subType": "DECIMAL",
+      "title": "End Offset",
+      "persistent": true,
+      "type": "number",
+      "remarks": "Distance used in conjunction with the end reference point to determine where the measurement was taken.  ",
+      "maxLength": 11
+    },
+    "endzoffsetref_description": {
+      "type": "string"
+    },
+    "startmeasure": {
+      "searchType": "EXACT",
+      "scale": 2,
+      "subType": "DECIMAL",
+      "title": "Start Measure",
+      "persistent": true,
+      "type": "number",
+      "remarks": "Absolute distance taken from the start of the linear asset to where this measurement was taken.  This can be manually entered or calculated by entering a start reference point and start offset.",
+      "maxLength": 11
+    },
+    "endoffsetunitid": {
+      "searchType": "EXACT",
+      "subType": "UPPER",
+      "title": "Unit of End Offset",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Unit of measure for the offset (before or after) from the end reference point where this measurement was taken.",
+      "maxLength": 16
+    },
+    "_rowstamp": {
+      "type": "string"
+    },
+    "startmeasureunitid": {
+      "searchType": "EXACT",
+      "subType": "UPPER",
+      "title": "Unit of Start Measure",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Start Measure Units",
+      "maxLength": 16
+    },
+    "startyoffsetref_description": {
+      "type": "string"
+    },
+    "endzoffset": {
+      "searchType": "EXACT",
+      "scale": 2,
+      "subType": "DECIMAL",
+      "title": "End Z Offset",
+      "persistent": true,
+      "type": "number",
+      "remarks": "Distance above or below this linear asset.  For example, if a sign is 10 feet above the road, the  Z-Offset is 10 feet.  This value is measured from the Z  Reference Point and can be positive (above) or negative (below).",
+      "maxLength": 11
+    },
+    "_imagelibref": {
+      "type": "string"
+    },
+    "assetnum": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Asset",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Asset on this Measurement's MeasurePoint, AssetMeter or LocationMeter.",
+      "maxLength": 25
+    },
+    "endyoffsetref": {
+      "searchType": "EXACT",
+      "subType": "ALN",
+      "title": "End Y Offset Referent",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Point from which the Y Offset is measured, for example, centerline or edge. The system administrator can create a domain for this purpose.  The value entered will not be used in calculations, it is simply used to locate the feature in the field.",
+      "maxLength": 30
+    },
+    "startzoffset": {
+      "searchType": "EXACT",
+      "scale": 2,
+      "subType": "DECIMAL",
+      "title": "Start Z Offset",
+      "persistent": true,
+      "type": "number",
+      "remarks": "Distance above or below this linear asset.  For example, if a sign is 10 feet above the road, the  Z-Offset is 10 feet.  This value is measured from the Z  Reference Point and can be positive (above) or negative (below).",
+      "maxLength": 11
+    },
+    "siteid": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Site",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Site Identifier",
+      "maxLength": 8
+    },
+    "href": {
+      "type": "string"
+    },
+    "startzoffsetref": {
+      "searchType": "EXACT",
+      "subType": "ALN",
+      "title": "Start Z Offset Referent",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Reference point from which the start Z-Offset (distance above or below the linear asset) is measured.  ",
+      "maxLength": 30
+    },
+    "measuredate": {
+      "searchType": "EXACT",
+      "subType": "DATETIME",
+      "title": "Measurement Date",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Date The Measurement Was Taken"
+    },
+    "startyoffsetref": {
+      "searchType": "EXACT",
+      "subType": "ALN",
+      "title": "Start Y Offset Referent",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Point from which the Y Offset is measured, for example, centerline or edge.  The system administrator can create a domain for this purpose.  The value entered will not be used in calculations, it is simply used to locate the feature in the field.",
+      "maxLength": 30
+    },
+    "endbasemeasure": {
+      "searchType": "EXACT",
+      "scale": 2,
+      "subType": "DECIMAL",
+      "title": "End Base Measure",
+      "persistent": true,
+      "type": "number",
+      "remarks": "An absolute measure that is calculated by converting from the end measure using a defined conversion method.  Conversion methods are defined in the Assets application using the Add/Modify Conversions action.",
+      "maxLength": 11
+    },
+    "observation": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Observation",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Reading taken on a CHARACTERISTIC meter.  Valid values are from the ALNDOMAINVALUE table where the domain identifier is the same as the meter's domain identifier.",
+      "maxLength": 254
+    },
+    "basemeasureunitid": {
+      "searchType": "EXACT",
+      "subType": "UPPER",
+      "title": "Unit of Base Measure",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Usually, this is the same as the unit of measure  for the asset. If they differ, Maximo will display measures in the unit of measure but will store measures in both the unit of measure and base unit of measure.  A conversion between the unit of measure and base unit of measure, entered via the Units of Measure and Conversion Action in Assets, must exist if the base unit of measure differs from the unit of measure.",
+      "maxLength": 16
+    },
+    "endmeasure": {
+      "searchType": "EXACT",
+      "scale": 2,
+      "subType": "DECIMAL",
+      "title": "End Measure",
+      "persistent": true,
+      "type": "number",
+      "remarks": "Absolute distance taken from the start of the linear asset to where this measurement was taken.  This can be manually entered or calculated by entering an end reference point and end offset.",
+      "maxLength": 11
+    },
+    "startyoffset": {
+      "searchType": "EXACT",
+      "scale": 2,
+      "subType": "DECIMAL",
+      "title": "Start Y Offset",
+      "persistent": true,
+      "type": "number",
+      "remarks": "Perpendicular distance from this linear asset.  For example, if a sign is 10 feet to the right of the road, the Y-Offset is 10 feet.  This value is measured from the Y Reference Point and can be positive (right) or negative (left).",
+      "maxLength": 11
+    },
+    "evaluatedforwogen": {
+      "default": false,
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "Evaluate For WO Generation",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "Has this linear measurement been considered for work order generation?"
+    },
+    "inspector": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Inspector",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Person who reported this Measurement",
+      "maxLength": 100
+    },
+    "measurementvalue": {
+      "searchType": "EXACT",
+      "scale": 3,
+      "subType": "DECIMAL",
+      "title": "Measurement",
+      "persistent": true,
+      "type": "number",
+      "hasList": true,
+      "remarks": "Actual Measurement Value Recorded",
+      "maxLength": 16
+    },
+    "endyoffsetref_description": {
+      "type": "string"
+    },
+    "orgid": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Organization",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Organization Identifier",
+      "maxLength": 8
+    },
+    "startoffsetunitid": {
+      "searchType": "EXACT",
+      "subType": "UPPER",
+      "title": "Unit of Start Offset",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Unit of measure for the offset (before or after) from the start reference point where this measurement was taken.",
+      "maxLength": 16
+    },
+    "endyoffset": {
+      "searchType": "EXACT",
+      "scale": 2,
+      "subType": "DECIMAL",
+      "title": "End Y Offset",
+      "persistent": true,
+      "type": "number",
+      "remarks": "Perpendicular distance from this linear asset.  For example, if a sign is 10 feet to the right of the road, the Y-Offset is 10 feet.  This value is measured from the Y Reference Point and can be positive (right) or negative (left).",
+      "maxLength": 11
+    },
+    "workorderid": {
+      "searchType": "EXACT",
+      "maximum": 2147483647.0,
+      "subType": "BIGINT",
+      "title": "Work Order ID",
+      "persistent": true,
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "remarks": "Identifier of the work order generated for this measurement.",
+      "maxLength": 11
+    },
+    "metername": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Meter",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Meter on this Measurement's MeasurePoint, AssetMeter or LocationMeter.",
+      "maxLength": 10
+    },
+    "startoffset": {
+      "searchType": "EXACT",
+      "scale": 2,
+      "subType": "DECIMAL",
+      "title": "Start Offset",
+      "persistent": true,
+      "type": "number",
+      "remarks": "Distance used in conjunction with the start reference point to determine where the measurement was taken.  ",
+      "maxLength": 11
+    },
+    "assetid": {
+      "searchType": "EXACT",
+      "maximum": 2147483647.0,
+      "subType": "BIGINT",
+      "title": "Asset ID",
+      "persistent": true,
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "remarks": "asset identifier",
+      "maxLength": 11
+    },
+    "endassetfeatureid": {
+      "searchType": "EXACT",
+      "maximum": 2147483647.0,
+      "subType": "BIGINT",
+      "title": "End Feature",
+      "persistent": true,
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "remarks": "A previously defined feature or relationship used, in conjunction with the end offset to determine the end measure for this measurement.",
+      "maxLength": 11
+    },
+    "location": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Location",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Location on this Measurement's MeasurePoint, AssetMeter or LocationMeter.",
+      "maxLength": 25
+    },
+    "_id": {
+      "type": "string"
+    },
+    "measurementid": {
+      "searchType": "EXACT",
+      "maximum": 2147483647.0,
+      "subType": "BIGINT",
+      "title": "Measurement",
+      "persistent": true,
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "uniqueid": true,
+      "remarks": "Unique identifier for this measurement. This value is automatically generated for each new measurement.",
+      "maxLength": 11
+    },
+    "startbasemeasure": {
+      "searchType": "EXACT",
+      "scale": 2,
+      "subType": "DECIMAL",
+      "title": "Start Base Measure",
+      "persistent": true,
+      "type": "number",
+      "remarks": "An absolute measure that is calculated by converting from the end measure using a defined conversion method.  Conversion methods are defined in the Assets application using the Add/Modify Conversions action.",
+      "maxLength": 11
+    },
+    "endzoffsetref": {
+      "searchType": "EXACT",
+      "subType": "ALN",
+      "title": "End Z Offset Referent",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Point from which the Z-Offset is measured.  ",
+      "maxLength": 30
+    },
+    "pointnum": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Measurement Point",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Point Number For Measurement",
+      "maxLength": 8
+    },
+    "startzoffsetref_description": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "measuredate",
+    "orgid",
+    "siteid"
+  ]
+}

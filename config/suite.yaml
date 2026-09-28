@@ -1,0 +1,63 @@
+# Maximo Delivery AI Suite — master configuration.
+# Nothing in here is baked into an agent prompt; agents read this at runtime.
+
+suite:
+  project_name: "Maximo Delivery AI Suite"
+  version: "1.0"
+  maximo_version: "MAS 9 / Maximo 7.6"
+  domain: "Transmission & Distribution utilities"
+  default_process: "CU"
+  # Sections scoring below this are flagged for human review at the gate.
+  confidence_threshold: 0.75
+  log_level: "INFO"
+
+# Document templates, resolved by logical key. Swap the filenames per client —
+# the agents never hardcode a template structure.
+templates:
+  fdd: "fdd_template.docx"
+  tdd: "tdd_template.docx"
+  gap_analysis: "gap_analysis_template.docx"
+  workshop: "workshop_template.docx"
+
+llm:
+  # auto -> ANTHROPIC_API_KEY wins, else MODEL_URL1 + MODEL_API_KEY1,
+  # else offline (deterministic templates, no model calls).
+  provider: "auto"
+  anthropic_model: "claude-sonnet-5"
+  openai_model: "gpt-4o"
+  max_tokens: 8000
+  temperature: 0.0
+  timeout_seconds: 180
+  max_retries: 3
+
+maximo:
+  # "api"  -> /maximo/api/... with an `apikey` header.  <-- works on MAS trial + ACN IAX
+  # "oslc" -> /maximo/oslc/... with a MAXAUTH header.   <-- blueprint default; SAML-intercepted on the
+  #           environments documented in skills/mx_rest_api_SKILL.md, so it is not the default here.
+  route: "api"
+  # auto -> disable TLS verification only for the self-signed ACN IAX host.
+  verify_tls: "auto"
+  timeout_seconds: 30
+  # Offline validation source: 401 real object-structure schemas dumped from the MAS trial.
+  schema_dir: "reference/maximo-schemas"
+  apimeta_path: "reference/apimeta.json"
+
+brain:
+  store_dir: "C:/Users/aniket.dhokare/OneDrive - Accenture/Project Octopus/ProjectDocs/MX-AI-Brain"   # ← SharePoint sync path
+  vector_dir: "brain/vectors"   # ← stays local
+  #store_dir: "brain/store"
+  #vector_dir: "brain/vectors"
+  audit_log: "brain/audit.jsonl"
+  collection: "mx_ai_suite"
+  embed_model: "BAAI/bge-small-en-v1.5"
+  # Blueprint section 7.3: >= this cosine similarity means "existing document found".
+  duplicate_threshold: 0.85
+  top_k: 8
+  chunk_chars: 1800
+  chunk_overlap: 200
+  # Blueprint section 7.4: writes are proposed, then confirmed.
+  dry_run_default: true
+
+ui:
+  host: "127.0.0.1"
+  port: 8800

@@ -1,0 +1,82 @@
+{
+  "resource": "MXAPIUSERTEAM",
+  "description": "PERSONGROUP",
+  "pk": [
+    "persongroup"
+  ],
+  "title": "PERSONGROUP",
+  "type": "object",
+  "$ref": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapiuserteam",
+  "uniqueid": "persongroupid",
+  "properties": {
+    "persongroupteam": {
+      "objectName": "PERSONGROUPTEAM",
+      "type": "array",
+      "items": {
+        "definition": {
+          "subSchema": {
+            "$ref": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapiuserteam/persongroupteam"
+          }
+        },
+        "type": "object"
+      },
+      "cardinality": "UNDEFINED",
+      "relation": "PERSONGROUP_PRIMARYMEMBERS"
+    },
+    "_rowstamp": {
+      "type": "string"
+    },
+    "localref": {
+      "type": "string"
+    },
+    "userteam": {
+      "default": false,
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "Team Of Users?",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "Team Of Users"
+    },
+    "_imagelibref": {
+      "type": "string"
+    },
+    "persongroup": {
+      "default": "&AUTOKEY&",
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Person Group",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Identifier of the person group record.",
+      "maxLength": 8
+    },
+    "description": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Description",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Description of the person group record.",
+      "maxLength": 100
+    },
+    "href": {
+      "type": "string"
+    },
+    "_id": {
+      "type": "string"
+    },
+    "persongroupid": {
+      "searchType": "EXACT",
+      "maximum": 2147483647.0,
+      "subType": "BIGINT",
+      "title": "Unique Id",
+      "persistent": true,
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "uniqueid": true,
+      "remarks": "Unique Id",
+      "maxLength": 11
+    }
+  }
+}

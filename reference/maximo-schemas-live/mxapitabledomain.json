@@ -1,0 +1,90 @@
+{
+ "resource": "MXAPITABLEDOMAIN",
+ "description": "Maximo API for Table Domain",
+ "title": "MAXTABLEDOMAINVAL",
+ "type": "object",
+ "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/mxapitabledomain",
+ "properties": {
+  "localref": {
+   "type": "string"
+  },
+  "objectname": {
+   "searchType": "NONE",
+   "subType": "UPPER",
+   "title": "Object",
+   "type": "string",
+   "remarks": "Object Name.",
+   "maxLength": 30
+  },
+  "description": {
+   "searchType": "NONE",
+   "subType": "ALN",
+   "title": "Description",
+   "type": "string",
+   "remarks": "The table domain value description.",
+   "maxLength": 32000
+  },
+  "record_descriptor": {
+   "type": "string",
+   "title": "Record/Object Descriptor"
+  },
+  "domainid": {
+   "searchType": "NONE",
+   "subType": "UPPER",
+   "title": "Domain",
+   "type": "string",
+   "remarks": "Identifier of the domain",
+   "maxLength": 18
+  },
+  "orgid": {
+   "searchType": "NONE",
+   "subType": "UPPER",
+   "title": "Organization",
+   "type": "string",
+   "remarks": "Organization ID.",
+   "maxLength": 8
+  },
+  "_rowstamp": {
+   "type": "string"
+  },
+  "_imagelibref": {
+   "type": "string"
+  },
+  "itemsetid": {
+   "searchType": "NONE",
+   "subType": "UPPER",
+   "title": "Item Set",
+   "type": "string",
+   "remarks": "Identifies the item set.",
+   "maxLength": 8
+  },
+  "siteid": {
+   "searchType": "NONE",
+   "subType": "UPPER",
+   "title": "Site",
+   "type": "string",
+   "remarks": "Site ID.",
+   "maxLength": 8
+  },
+  "href": {
+   "type": "string",
+   "title": "MAXTABLEDOMAINVAL object reference"
+  },
+  "_id": {
+   "type": "string"
+  },
+  "value": {
+   "searchType": "NONE",
+   "subType": "ALN",
+   "title": "Value",
+   "type": "string",
+   "remarks": "The table domain value.",
+   "maxLength": 3000
+  }
+ },
+ "required": [
+  "domainid",
+  "objectname",
+  "value"
+ ]
+}

@@ -1,0 +1,90 @@
+{
+ "resource": "MXAPIBOOKMARK",
+ "description": "Maximo API Object Structure for Bookmark",
+ "pk": [
+  "userid",
+  "app",
+  "keyvalue"
+ ],
+ "title": "BOOKMARK",
+ "type": "object",
+ "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/mxapibookmark",
+ "uniqueid": "bookmarkid",
+ "properties": {
+  "app": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Application",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Application Name",
+   "maxLength": 40
+  },
+  "_rowstamp": {
+   "type": "string"
+  },
+  "bookmarkid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "BOOKMARKID",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "uniqueid": true,
+   "remarks": "Unique Identifier",
+   "maxLength": 11
+  },
+  "localref": {
+   "type": "string"
+  },
+  "enterdate": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Entered Date",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Date this bookmark was created"
+  },
+  "_imagelibref": {
+   "type": "string"
+  },
+  "keyvalue": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Bookmark",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "Key Value",
+   "maxLength": 11
+  },
+  "href": {
+   "type": "string",
+   "title": "BOOKMARK object reference"
+  },
+  "record_descriptor": {
+   "type": "string",
+   "title": "Record/Object Descriptor"
+  },
+  "_id": {
+   "type": "string"
+  },
+  "userid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "User",
+   "persistent": true,
+   "type": "string",
+   "remarks": "User identifier",
+   "maxLength": 100
+  }
+ },
+ "required": [
+  "app",
+  "enterdate",
+  "keyvalue",
+  "userid"
+ ]
+}

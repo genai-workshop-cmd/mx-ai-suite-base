@@ -1,0 +1,121 @@
+{
+  "resource": "MXAPISCORINGRANGE",
+  "description": "AHBLTHRESHOLDRANGE",
+  "pk": [
+    "scoretype",
+    "rangename"
+  ],
+  "title": "AHBLTHRESHOLDRANGE",
+  "type": "object",
+  "$ref": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapiscoringrange",
+  "uniqueid": "ahblthresholdrangeid",
+  "properties": {
+    "symbol": {
+      "default": "carbon:checkmark--filled",
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Symbol",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Symbol for this range",
+      "maxLength": 100
+    },
+    "localref": {
+      "type": "string"
+    },
+    "color": {
+      "default": "#1192e8",
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Color",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Color for this range",
+      "maxLength": 100
+    },
+    "color_description": {
+      "type": "string"
+    },
+    "upper": {
+      "searchType": "EXACT",
+      "scale": 1,
+      "subType": "DECIMAL",
+      "title": "Upper limit",
+      "persistent": true,
+      "type": "number",
+      "remarks": "Upper threshold for this range",
+      "maxLength": 13
+    },
+    "symbol_description": {
+      "type": "string"
+    },
+    "label": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Range Label",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Range Label",
+      "maxLength": 50
+    },
+    "title": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "title",
+      "persistent": true,
+      "type": "string",
+      "remarks": "remarks",
+      "maxLength": 50
+    },
+    "_rowstamp": {
+      "type": "string"
+    },
+    "ahblthresholdrangeid": {
+      "searchType": "EXACT",
+      "maximum": 2147483647.0,
+      "subType": "BIGINT",
+      "title": "Unique Id",
+      "persistent": true,
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "uniqueid": true,
+      "remarks": "Unique Id",
+      "maxLength": 11
+    },
+    "_imagelibref": {
+      "type": "string"
+    },
+    "rangename": {
+      "default": "&AUTOKEY&",
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Name",
+      "persistent": true,
+      "type": "string",
+      "remarks": "The name of the range (such as Poor, Fair, Good)",
+      "maxLength": 50
+    },
+    "scoretype": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Score Type",
+      "persistent": true,
+      "type": "string",
+      "remarks": "The type of score this threshold will use with, it can be health, criticality or others",
+      "maxLength": 50
+    },
+    "href": {
+      "type": "string"
+    },
+    "_id": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "scoretype",
+    "title",
+    "upper"
+  ]
+}

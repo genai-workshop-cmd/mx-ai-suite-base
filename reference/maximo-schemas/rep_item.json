@@ -1,0 +1,415 @@
+{
+  "resource": "REP_ITEM",
+  "description": "ITEM",
+  "pk": [
+    "itemnum",
+    "itemsetid"
+  ],
+  "title": "ITEM",
+  "type": "object",
+  "$ref": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/rep_item",
+  "uniqueid": "itemid",
+  "properties": {
+    "commodity": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Commodity Code",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Identifies the commodity code associated with this item or tool. Click the Select Value button to view a list of valid commodity codes.",
+      "maxLength": 8
+    },
+    "ownersysid": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Owner System ID",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Owner System ID",
+      "maxLength": 10
+    },
+    "rotating": {
+      "default": false,
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "Rotating",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "Specifies whether the item is a rotating asset. If the check box is selected, the item becomes an asset tracked by item number and individual asset number. If the check box is cleared (the default), the item is not tracked as an individual asset."
+    },
+    "localref": {
+      "type": "string"
+    },
+    "commoditygroup": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Commodity Group",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Identifies the commodity group, or product category, associated with this item or tool. Click the Select Value button to view a list of valid commdity groups.",
+      "maxLength": 8
+    },
+    "pluscismte": {
+      "default": false,
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "Is M&TE",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "Defines whether a Tool is a standard used for measuring and testing equipment."
+    },
+    "description": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Description",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Names or describes the inventory item. For additional information, click the Long Description button.",
+      "maxLength": 100
+    },
+    "msdsnum": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "MSDS",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Material Safety Data Sheet number issued by the Occupational Safety and Health Association (OSHA). The Material Safety Data Sheet (MSDS), which describes product dangers, must be available to purchasers and users of commercial quantities of all hazardous materials.",
+      "maxLength": 10
+    },
+    "lottype_description": {
+      "type": "string"
+    },
+    "itemcondition": {
+      "objectName": "ITEMCONDITION",
+      "type": "array",
+      "items": {
+        "definition": {
+          "subSchema": {
+            "$ref": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/rep_item/itemcondition"
+          }
+        },
+        "type": "object"
+      },
+      "cardinality": "MULTIPLE",
+      "relation": "ITEMCONDITION"
+    },
+    "pluscisinhousecal": {
+      "default": false,
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "Internal Calibration",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "When selected, indicates that this tool is calibrated in house. This field can be used to sort tools that are calibrated internally or externally."
+    },
+    "issueunit": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Issue Unit",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Unit of measure used to issue the item from the storeroom, such as EACH or ROLL. Click the Select Value button to choose an issue unit.",
+      "maxLength": 16
+    },
+    "iskit": {
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "Kit",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "Specifies whether the item is a kit item that contains a collection of items that can be issued together as a single item. If the check box is selected, the item is a kit. If the check box is cleared (the default), the item is not a kit."
+    },
+    "itemid": {
+      "searchType": "EXACT",
+      "maximum": 2147483647.0,
+      "subType": "BIGINT",
+      "title": "ITEMID",
+      "persistent": true,
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "uniqueid": true,
+      "remarks": "Unique Identifier",
+      "maxLength": 11
+    },
+    "_rowstamp": {
+      "type": "string"
+    },
+    "sparepartautoadd": {
+      "default": false,
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "Add as Spare Part",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "Specifies whether the item will be added as a spare part for the asset when issued, if the item is not already a spare part. If the checkbox is selected, the item can be added as a spare part. If the check box is cleared (the default), the item is not used as a spare part."
+    },
+    "receipttolerance": {
+      "searchType": "EXACT",
+      "scale": 2,
+      "subType": "DECIMAL",
+      "title": "Receipt Tolerance %",
+      "persistent": true,
+      "type": "number",
+      "remarks": "The percentage value of items that can be received over the amount set in the initial agreement.",
+      "maxLength": 16
+    },
+    "_imagelibref": {
+      "type": "string"
+    },
+    "pluscismteclass_description": {
+      "type": "string"
+    },
+    "href": {
+      "type": "string"
+    },
+    "prorate": {
+      "default": false,
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "Prorate Service",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "Prorate Service?"
+    },
+    "attachonissue": {
+      "default": false,
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "Attach to Parent Asset on Issue",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "Specifies whether to attach the item to the parent asset when the item is issued. If the check box is selected, the item becomes a subassembly of the parent asset upon issue. If the check box is cleared (the default), the item is not attached to the parent asset when issued."
+    },
+    "classstructureid": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Class Structure",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Class Structure identifier",
+      "maxLength": 25
+    },
+    "conditionenabled": {
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "Condition Enabled",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "Specifies whether this item has a value or worth you want to assign and track based on its physical condition. You can apply different rates to an item as its condition changes from use, such as from new to used. If the check box is selected, you must assign at least one full value (100%) condition code for this item, and any other codes you assign must be a percentage of that. If the check box is cleared (the default), the physical condition of the item is not tracked."
+    },
+    "altitem": {
+      "objectName": "ALTITEM",
+      "type": "array",
+      "items": {
+        "definition": {
+          "subSchema": {
+            "$ref": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/rep_item/altitem"
+          }
+        },
+        "type": "object"
+      },
+      "cardinality": "MULTIPLE",
+      "relation": "ALTITEM"
+    },
+    "maxissue": {
+      "searchType": "EXACT",
+      "scale": 2,
+      "subType": "DECIMAL",
+      "title": "Maximum Quantity Issued",
+      "persistent": true,
+      "type": "number",
+      "remarks": "Total maximum quantity that can be issued to an asset.",
+      "maxLength": 16
+    },
+    "orderunit": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Order Unit",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Unit of measure used to order the item, such as DOZEN or CASE. Click the Select Value button to view a list of valid order units.",
+      "maxLength": 16
+    },
+    "groupname": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Meter Group",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Identifies the meter group, or category of meters, to which the meter applied to this item belongs. Applies only to rotating items. Click the Select Value button to choose a meter group.",
+      "maxLength": 10
+    },
+    "pluscsolution": {
+      "default": false,
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "Buffer Solution",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "Buffer Solution Flag"
+    },
+    "taxexempt": {
+      "default": false,
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "Tax Exempt",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "Select this check box if the item, the tool, or the service is not taxable. The buyer for your organization determines the tax-exempt status of items, of tools, and of services."
+    },
+    "lottype": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Lot Type",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Specifies whether the item is tracked by lot (LOT) or not (NOLOT). LOT is used for an item that is lotted, typically has an expiration date, and is able to be assigned lot numbers upon receipt. NOLOT means that the item does not need to be tracked by lots. Click the Select Value button to choose a lot type.",
+      "maxLength": 16
+    },
+    "statusdate": {
+      "searchType": "EXACT",
+      "subType": "DATETIME",
+      "title": "Status Date",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Date the work order status was last changed."
+    },
+    "itemnum": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Item",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Identifies the item record. This value must be unique for all item records. Click the Detail Menu button to view items by classification or availability.",
+      "maxLength": 30
+    },
+    "inspectionrequired": {
+      "default": false,
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "Inspect on Receipt",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "Specifies whether the item should be held out of inventory when being received, until the purchase order receipt has been approved. If the check box is selected, the item cannot be received until it has been inspected. If the check box is cleared (the default), the item can be received without an inspection."
+    },
+    "pluscismteclass": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "M&TE Classification",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "When the Is M&TE? field is checked then you have the option to choose a classification for M&TE.",
+      "maxLength": 80
+    },
+    "itemorginfo": {
+      "objectName": "ITEMORGINFO",
+      "type": "array",
+      "items": {
+        "definition": {
+          "subSchema": {
+            "$ref": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/rep_item/itemorginfo"
+          }
+        },
+        "type": "object"
+      },
+      "cardinality": "MULTIPLE",
+      "relation": "ITEMORGINFO"
+    },
+    "itemtype": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Item Type",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Item Type",
+      "maxLength": 15
+    },
+    "metername": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Meter",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Identifies the meter associated with the item, for which a reading is to be recorded when this item is issued to an asset. A meter is a device designed to measure time, distance, speed, or intensity, or indicate and record or regulate the amount or volume, as of the flow of a gas or an electric current. Only non-rotating items can be associated with a meter.",
+      "maxLength": 10
+    },
+    "capitalized": {
+      "default": false,
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "Capitalized",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "Specifies whether the item is to be financially accounted for as a capitalized cost or a non-capitalized cost. If the check box is selected, the item is capitalized. If the check box is cleared (the default), the item is a non-capitalized cost. Tools are always accounted for as capitalized costs. You can only change the setting for this field by using the Change Capitalized Status action in Item Master. Capitalized items are always issued and returned at zero cost, regardless of the cost carried in inventory. Non-capitalized items are issued and returned at the standard, last, or average cost, as specified in Multisite."
+    },
+    "outside": {
+      "default": false,
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "Outside",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "Specifies whether the item is a consignment good. If the check box is selected, the item belongs to a contractor (or vendor), but it is stored on-site, and it is an item for which you expect to be charged for its use. If the check box is cleared (the default), the item is not owned by an outside party."
+    },
+    "itemsetid": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Item Set",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Identifies the item set, or group of items, to which this item belongs. An organization is assigned to only one item set, but multiple organizations can use the same item set. Click the Select Value button to choose an item set.",
+      "maxLength": 8
+    },
+    "_id": {
+      "type": "string"
+    },
+    "iscrew": {
+      "default": false,
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "Crew",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "Specifies whether the tool can be used in Crew applications and Work Order Tracking applications. If the check box is selected, the tool can be used. If the check box is cleared, the tool cannot be used."
+    },
+    "hardresissue": {
+      "default": false,
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "Requires hard reservation on use",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "Indicates whether a hard reservation must be referenced when the item is issued from a storeroom."
+    },
+    "status": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Status",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "The current status of the item such as ACTIVE, PENDING, PLANNING, PENDOBS and OBSELETE.",
+      "maxLength": 16
+    }
+  },
+  "required": [
+    "conditionenabled",
+    "iskit",
+    "itemnum",
+    "itemsetid",
+    "itemtype",
+    "lottype",
+    "status",
+    "statusdate"
+  ]
+}

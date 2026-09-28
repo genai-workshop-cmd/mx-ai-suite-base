@@ -1,0 +1,2928 @@
+{
+ "resource": "PLUSGDEFECT",
+ "description": "Oil and Gas' Defect Object Structure",
+ "pk": [
+  "class",
+  "ticketid"
+ ],
+ "title": "INCIDENT",
+ "type": "object",
+ "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/plusgdefect",
+ "uniqueid": "ticketuid",
+ "properties": {
+  "affecteddate": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Affected Date",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Date when user was affected by incident. Enter a date or click the Select Date button and select a date."
+  },
+  "plusgdefecttype_description": {
+   "type": "string"
+  },
+  "localref": {
+   "type": "string"
+  },
+  "ticketuid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "TICKETUID",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "uniqueid": true,
+   "remarks": "Unique Identifier",
+   "maxLength": 11
+  },
+  "plusgrelatetolocal": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Related to Local Issue",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Flag used to determine if a ticket is related to a local issue ticket."
+  },
+  "plusgisreviewreqd": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "From Review Required",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Specifies whether the incident record was created from a work order that requires review. If the check box is selected, the Review Required check box is selected in the Work Order Tracking application."
+  },
+  "externalrecid": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "External Record",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Ticket ID for any Ticket external to MAXIMO",
+   "maxLength": 20
+  },
+  "ownergroup": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Owner Group",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Owner Group of the incident record. This group has overall responsibility for the incident. Use the Select Action menu to assign an owner group. You can enter a value either in this field or the Owner field.",
+   "maxLength": 8
+  },
+  "plusgdefectsource": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Defect Source",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The origin of the defect. Valid values are in the PLUSGDEFECTSOURCE domain.",
+   "maxLength": 30
+  },
+  "plusgsuggcause": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Suggested Cause",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Proposed cause of the incident.",
+   "maxLength": 20
+  },
+  "calcshift": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Shift",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Along with the calculation calendar, sets the business hours that calculate the Target Contact, Target Response, and Target Resolution dates on a ticket or work order. Click the Select Value button to choose a shift.",
+   "maxLength": 8
+  },
+  "plusgrcfaapp": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Approved",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Indicates the root cause failure analysis has been approved."
+  },
+  "plusgwhathapp": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "What should have happened?",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Enter here what should have happened in the incident being reviewed.",
+   "maxLength": 250
+  },
+  "plussupervisorname": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Name",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Supervisor name",
+   "maxLength": 82
+  },
+  "plusgfmecaappdate": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Approval Date",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The date that the FMECA was approved."
+  },
+  "plusgregulationid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Regulation",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "Regulation Unique Identifier.",
+   "maxLength": 11
+  },
+  "plusgopercondatfailure_description": {
+   "type": "string"
+  },
+  "plusgsafetyfailcat": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Safety Failure Category",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The category of the failure that is related to safety.",
+   "maxLength": 40
+  },
+  "plusgrcaappbyname": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Name",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The name of the RCA approver.",
+   "maxLength": 82
+  },
+  "plusghfreqby_description": {
+   "type": "string"
+  },
+  "reportedpriority": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "INTEGER",
+   "title": "Reported Priority",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "hasList": true,
+   "remarks": "Priority of incident as determined by person reporting the incident.",
+   "maxLength": 11
+  },
+  "pluscalevel": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Level",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Level; used for Apply Level select action",
+   "maxLength": 12
+  },
+  "impact": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "INTEGER",
+   "title": "Impact",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "The Business Impact/severity of the Ticket",
+   "maxLength": 11
+  },
+  "plusclearnum": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Clearance",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The clearance identifier",
+   "maxLength": 12
+  },
+  "plusganalysiscomp": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Analysis Completed",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Specifies whether analysis of high context data is complete. If the check box is selected, the analysis is complete. The default value is False (check box is empty)."
+  },
+  "plusgfunctn_description": {
+   "type": "string"
+  },
+  "plusgactionsumm": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Review Action Summary",
+   "persistent": true,
+   "type": "string",
+   "remarks": "A summary of the review actions that are associated with the investigation.",
+   "maxLength": 200
+  },
+  "plusgactconsqid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Actual Consequence Unique Id",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "The actual consequence of the hazard that is associated with this incident. Valid values are in the PLUSGCONSQ synonym domain.",
+   "maxLength": 11
+  },
+  "plusqual": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Safety Class",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Safety class",
+   "maxLength": 8
+  },
+  "plusgmiremarks": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Maintainable Item/Part Remarks",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The description of the maintainable item or part.",
+   "maxLength": 200
+  },
+  "plusgrcareqby_description": {
+   "type": "string"
+  },
+  "plusgisinvestig": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Is Investigation",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Specifies whether the event is an investigation, rather than a problem. If the check box is selected (default), the event is an investigation."
+  },
+  "commodity": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Service",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Service provided or purchased. Enter a value or click the Detail Menu button to select an option and retrieve a value.",
+   "maxLength": 8
+  },
+  "plusgconsqnum": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Consequence",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Associates the detected failure with a Consequence record. You can use this field to track the consequences of a failure.",
+   "maxLength": 12
+  },
+  "inheritstatus": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Inherit Status Changes",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Inherit status from follow up record"
+  },
+  "plusgnonconcat": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Non-conformance Category",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The category of non-conformance with standards.",
+   "maxLength": 24
+  },
+  "targetcontactdate": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Target Contact",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Target contact date. Enter a date or click the Select Date button."
+  },
+  "assignedownergroup": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Assigned Owner Group",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Assigned Owner Group of the ticket record. This group has overall responsibility for the solution. Use the Select Action menu to assign an owner group. You can enter a value either in this field or the Owner field.",
+   "maxLength": 8
+  },
+  "plusunit_description": {
+   "type": "string"
+  },
+  "plusgwhydiff": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Why were there differences?",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Enter here why there were differences between what should have happened and what actually happened in the incident being reviewed.",
+   "maxLength": 250
+  },
+  "plusgaarrefno": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "AAR Reference Number",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The reference number for the after action review, if different from the problem identifier.",
+   "maxLength": 16
+  },
+  "origrecorgid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Originating Record Oganization",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Organization Identifier of the originating Record",
+   "maxLength": 8
+  },
+  "plusgisdefect": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Is Defect",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Indicates whether the incident is a defect."
+  },
+  "pluslco": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "LCO Required",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Identify if LCO is required."
+  },
+  "vendor": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Vendor",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Identifies the vendor for the service, service group, or asset. Enter a value or click the Detail Menu button to select an option and retrieve a value.",
+   "maxLength": 12
+  },
+  "plusgoperationalphasefailure_description": {
+   "type": "string"
+  },
+  "plusgregulationnum": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Regulation",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The regulation that is associated with the ticket. You can change this value only when the status of the ticket record is Draft. The status of the regulation must be Active.",
+   "maxLength": 8
+  },
+  "plusoutagecode": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Outage Code",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Identifies the specific outage or outage type.",
+   "maxLength": 12
+  },
+  "plusgbarrierfail": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Barrier Failure",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": " Indicates which barrier has failed.",
+   "maxLength": 40
+  },
+  "hassafetyhazard": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Mark as Safety Hazard",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Select this option for a critical safety incident that requires immediate action."
+  },
+  "plusextentcode": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Extent of Condition",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Extend of condition",
+   "maxLength": 8
+  },
+  "plusgaddressdesc": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Address Description",
+   "persistent": true,
+   "type": "string",
+   "remarks": "A description of the location where the incident occurred.",
+   "maxLength": 500
+  },
+  "plusgreportedtoemail": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "E-mail",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The e-mail address of the person to whom the incident was reported.",
+   "maxLength": 100
+  },
+  "ticketid": {
+   "default": "&AUTOKEY&",
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Incident",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Identifies the incident record. This value must be unique for all incident records.",
+   "maxLength": 10
+  },
+  "plusqual_description": {
+   "type": "string"
+  },
+  "plusgpotenconsq": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Potential Consequence",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The potential consequence of the hazard that is associated with this incident. Valid values are in the PLUSGCONSQ synonym domain.",
+   "maxLength": 12
+  },
+  "plusgfrommobile": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "From Mobile",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Indicates whether the incident was created from a mobile device."
+  },
+  "pluslnuprevnum": {
+   "default": 0,
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "INTEGER",
+   "title": "Revision",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "The revision level of the lineup",
+   "maxLength": 11
+  },
+  "plusgincidentgroup_description": {
+   "type": "string"
+  },
+  "plusgfailmechrem": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Failure Mechanism Remarks",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The description of the failure mechanism.",
+   "maxLength": 200
+  },
+  "pluscalevel_description": {
+   "type": "string"
+  },
+  "statusdate": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Status Date",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Status DATETIME"
+  },
+  "plusgfailsubdiv": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Failure Mechanism Subdivision Code",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The ISO 14224 subdivision code of the failure mechanism.",
+   "maxLength": 10
+  },
+  "plusghfappby": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Approved By",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The person who approved the human factors analysis. The person record for the approver must be active. Additionally, the  person must be authorized to approve a human factors analysis. Use the People application to grant approval authorization.",
+   "maxLength": 100
+  },
+  "plusgprosafttier": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Process Safety Tier",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The level of process safety and its associated consequences, that result from the incident. Valid values are in the PLUSGPROSAFTTIER.",
+   "maxLength": 30
+  },
+  "plusmilestone_description": {
+   "type": "string"
+  },
+  "plusisca": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Corrective Action",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Indicates that the reported condition is designated for corrective action."
+  },
+  "hassolution": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Has Solution",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Indicates whether this ticket has a solution or not. This can be either an adhoc one or a referenced solution."
+  },
+  "plusghfapp": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Approved",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Indicates whether the human factors analysis is approved."
+  },
+  "hasld": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Has Long Description",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Boolean flag to indicate if there is any long description for this record"
+  },
+  "plusgprosafttier_description": {
+   "type": "string"
+  },
+  "plusoperabilityinput": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Operability Input Required",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Identify if operability input is required"
+  },
+  "plusghazardid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Hazard",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The hazard that is associated with this incident. ",
+   "maxLength": 8
+  },
+  "plusgfmecaappbyname": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Name",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The name of the FMECA approver.",
+   "maxLength": 82
+  },
+  "plusoccurreddate": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Occurrence Date",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Occurrence date"
+  },
+  "plusactionreqd": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Additional Action Reqd",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Identify if additional action is required."
+  },
+  "plusgfmecatargdate": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Target Completion Date",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The target completion date for the FMECA."
+  },
+  "plusopsshiftreview": {
+   "default": true,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Ops Shift Review Required",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Identifies if operation shift review is required"
+  },
+  "pluslconum": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "LCO",
+   "persistent": true,
+   "type": "string",
+   "remarks": "LCO identifier",
+   "maxLength": 12
+  },
+  "plusginctype": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Incident Category",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The category of the incident that is being reported, such as Major, Minor, or Near Miss. Valid values are in the PLUSGINCIDENTTYPE domain.",
+   "maxLength": 16
+  },
+  "plusdetection": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Detection Method",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Detection method.",
+   "maxLength": 12
+  },
+  "actlabcost": {
+   "searchType": "EXACT",
+   "scale": 2,
+   "subType": "AMOUNT",
+   "title": "Actual Labor Cost",
+   "persistent": true,
+   "type": "number",
+   "remarks": "Actual Labor Cost",
+   "maxLength": 11
+  },
+  "globalticketid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Related to Global ID",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Identifies the global ticket to which this incident is related. Enter a value or click the Detail Menu button to select an option and retrieve a value.",
+   "maxLength": 10
+  },
+  "internalpriority": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "INTEGER",
+   "title": "Internal Priority",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "hasList": true,
+   "remarks": "Priority of the incident as determined by the service desk agent.",
+   "maxLength": 11
+  },
+  "isknownerrordate": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Is Known Error Date",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Datetime when the error known"
+  },
+  "plussugsolut": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Suggested Solution",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Suggested solution.",
+   "maxLength": 8
+  },
+  "plusghfapprovaldate": {
+   "searchType": "EXACT",
+   "subType": "DATE",
+   "title": "Approval",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The date when the human factors analysis was approved."
+  },
+  "source": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Source",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Source of Ticket Generation like email",
+   "maxLength": 20
+  },
+  "pluscategory_description": {
+   "type": "string"
+  },
+  "_rowstamp": {
+   "type": "string"
+  },
+  "plusginsowngrp": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Inspector  Owner Group",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Inspector Group ",
+   "maxLength": 8
+  },
+  "tagname": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Tag Name",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Tag Name of the Alert",
+   "maxLength": 100
+  },
+  "plusginitdate": {
+   "searchType": "EXACT",
+   "subType": "DATE",
+   "title": "Initiating Date",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Date when the initiating event for the after action review occurred."
+  },
+  "plusgpotenconsqid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Potential Consequence Unique Id",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "The potential consequence of the hazard that is associated with this incident. Valid values are in the PLUSGCONSQ synonym domain. ",
+   "maxLength": 11
+  },
+  "siteid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Site",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Unique identifier of the site. Enter a value or click the Select Value button.",
+   "maxLength": 8
+  },
+  "isknownerror": {
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Is Known Error",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Specifies whether this is a known error. If the check box is selected, this is a known error. If the check box is cleared, this is not a known error."
+  },
+  "plusgrootcauseiden": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Root Cause Identified",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Check if a root cause has been identified."
+  },
+  "affectedperson": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Affected User",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Person Affected",
+   "maxLength": 82
+  },
+  "plusscreening": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Screening Comments",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Screening comments",
+   "maxLength": 8
+  },
+  "status_description": {
+   "type": "string"
+  },
+  "plusopexpcomm": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Operating Experience Comments",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Operating experience comments",
+   "maxLength": 8
+  },
+  "plusgrcfaactldate": {
+   "searchType": "EXACT",
+   "subType": "DATE",
+   "title": "Actual Completion Date",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The actual completion date of the root cause failure analysis (RCFA)."
+  },
+  "plusgrcareqby": {
+   "searchType": "EXACT",
+   "subType": "ALN",
+   "title": "Required By",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The source of the requirement for the human factors analysis. Valid values are in the PLUSGHFREQBY domain.",
+   "maxLength": 18
+  },
+  "plusgreltoregional": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Related to Regional Issue",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Flag used to determine if a ticket is related to a regional issue ticket."
+  },
+  "targetdesc": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Target Description",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Temporary target description for targeting CIs",
+   "maxLength": 50
+  },
+  "templateid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Template",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Template Identifier",
+   "maxLength": 10
+  },
+  "plusghfreqby": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Required By",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The source of the requirement for the human factors analysis. Valid values are in the PLUSGHFREQBY domain.",
+   "maxLength": 18
+  },
+  "orgid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Organization",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Constraint Identifier of the organization",
+   "maxLength": 8
+  },
+  "plusgorigrecevtid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Event",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "The incident event id that is related to this ticket. The ticket has a follow-up record relationship to the originating incident event.",
+   "maxLength": 11
+  },
+  "plusgfmecaappby": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Approved By",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Identifies the person who is responsible for approving the FMECA.",
+   "maxLength": 100
+  },
+  "plusginsprev": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Reviewer",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Reviewer Owner",
+   "maxLength": 100
+  },
+  "plusgsafetycritelm": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Safety Critical Element",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "A reference to any element that is critical to safety and that is associated with a regulation. A performance standard that regulates the emission of hazardous substances can be a type of reference that applies to elements that are critical to safety.",
+   "maxLength": 10
+  },
+  "plusgactiontakencomment": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Action Details",
+   "persistent": true,
+   "type": "string",
+   "remarks": "A description of the action that was taken after the incident occurred. To type or view additional information, click Long Description.",
+   "maxLength": 500
+  },
+  "plusgrcaappdate": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Approval Date",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The date that the RCA was approved."
+  },
+  "plusinitialca": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Initial Actions Taken",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Initial actions taken.",
+   "maxLength": 8
+  },
+  "plusgglobalincident": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Worldwide Incident",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Specifies whether the incident affects users at all sites and organizations. If this check box is selected, the incident is a worldwide issue."
+  },
+  "pluscurrmode": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Current Mode",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Current mode",
+   "maxLength": 5
+  },
+  "plusgfailmech": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "INTEGER",
+   "title": "Failure Mechanism Code",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "hasList": true,
+   "remarks": "The ISO 14224 code of the failure mechanism.",
+   "maxLength": 11
+  },
+  "plusgbarrierfail_description": {
+   "type": "string"
+  },
+  "plusgsuggestclass": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Suggested Classification",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Use this field to propose an alternative existing classification for the incident.",
+   "maxLength": 25
+  },
+  "cinum": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Configuration Item",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "CI Number",
+   "maxLength": 12
+  },
+  "selfservsolaccess": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Self-Service Access",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Specifies whether the solution applied to this ticket is visible to the self-service user who opened the associated self-service Service Request. If the check box is selected, the self-service user can view this record. If the check box is cleared the solution record is not visible to the self-service user."
+  },
+  "plusgmicode": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Maintainable Item/Part Code",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The identifier of the maintainable item or part that has failed.",
+   "maxLength": 50
+  },
+  "origrecsiteid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Originating Record Site",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Site Identifier of the originating Record",
+   "maxLength": 8
+  },
+  "plusgdefectelim": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Defect Eliminated",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Indicates that the defect has been eliminated."
+  },
+  "description": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Summary",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Describes the incident. To enter or view additional information, click the Long Description button. Additonal text that you enter appears in the Details field.",
+   "maxLength": 100
+  },
+  "plusgtotalscore": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Total Score",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "The total score that is assigned to the review actions that are associated with the investigation.",
+   "maxLength": 11
+  },
+  "plusdsshiftid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Shift Id",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The duty station shift identifier",
+   "maxLength": 12
+  },
+  "plustechspec": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Tech Spec",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Identify if a change for technical specification is required."
+  },
+  "urgency": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "INTEGER",
+   "title": "Urgency",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "A reflection of the speed in which a Ticket should be resolved",
+   "maxLength": 11
+  },
+  "plusgincrevby": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Incident Reviewed By",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Identifies the person who reviewed the incident.",
+   "maxLength": 100
+  },
+  "plusgclaimtype": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Claim Type",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The types of claim that is associated with the incident.",
+   "maxLength": 20
+  },
+  "plusgitemnum": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Item",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The item that is associated with the defect.",
+   "maxLength": 30
+  },
+  "plusgdetectionmethod": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Detection Method",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The method or activity by which a failure is discovered. The methods for discovering a failure can include casual observation during a routine check; a failure that is observed during continuous condition monitoring; or a failure that is discovered during an inspection.",
+   "maxLength": 50
+  },
+  "class": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Ticket Class",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Class of the ticket",
+   "maxLength": 25
+  },
+  "plusgfailfix": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Fail-Fix",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Indicates whether the failure was found and fixed."
+  },
+  "plusdsrevnum": {
+   "default": 0,
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "INTEGER",
+   "title": "Station Revision",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "The revision level of this duty station plan",
+   "maxLength": 11
+  },
+  "fr2code": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Resolution",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Resolution",
+   "maxLength": 8
+  },
+  "owner": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Owner",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Owner of the incident record. This person has overall responsibility for the incident. Use the Select Action menu to assign an owner. You can enter a value either in this field or the Owner Group field.",
+   "maxLength": 100
+  },
+  "calcorgid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Organization",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Organization associated with the calculation calendar, and used with the Calendar and Shift fields to calculate the Target Contact, Target Response, and Target Resolution dates on a ticket or work order. Click the Detail Menu button to select an organization or go to the Organizations application to create one.",
+   "maxLength": 8
+  },
+  "inspformrev": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "INTEGER",
+   "title": "Current Form Revision",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "The revision number of inspection form for incident.",
+   "maxLength": 11
+  },
+  "plusreportab": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Notification and Reportability Comments",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Notification and reportability comments",
+   "maxLength": 8
+  },
+  "plusschedcode": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Schedule Code",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Schedule code",
+   "maxLength": 12
+  },
+  "plusgsuggremedy": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Suggested Remedy",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Proposed remedy for the incident, if an acceptable solution is not available in the Solutions application.",
+   "maxLength": 20
+  },
+  "plusgacceptinc": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Accepted Incident",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Specifies whether the person who reviewed the incident agrees that the incident provides valid data for analysis and investigation. If the check box is selected, the incident provides valid data. The default value is False (check box is empty)."
+  },
+  "plusgreportedtophone": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Phone",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The phone number of the person to whom the incident was reported.",
+   "maxLength": 20
+  },
+  "plusgrcfaanystype_description": {
+   "type": "string"
+  },
+  "plusgdefectsource_description": {
+   "type": "string"
+  },
+  "plusgincidentgroup": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Incident Type",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "This field is used to group similar incidents. This field is used for reporting and assignment purposes. Valid values are in the PLUSGINCIDENTGROUP domain.",
+   "maxLength": 30
+  },
+  "plusgsftyobstype_description": {
+   "type": "string"
+  },
+  "plusgsftyobstype": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Safety Observation Type",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The type of safety observation that is done, such as witnessing an unsafe act or recording an unsafe work condition.",
+   "maxLength": 30
+  },
+  "plusgisregional": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Regional Incident",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Specifies whether the incident affects users at a group of sites or organizations in one or more regions, but not in all regions. If this check box is selected, the incident is a regional issue."
+  },
+  "plusgrecordable": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Recordable",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Specifies whether the incident is in a category that must recorded for regulatory purposes but does not need to be reported to a regulatory authority."
+  },
+  "targetfinish": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Target Finish",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Target finish date. Enter a date or click the Select Date button."
+  },
+  "plusgpolicynum": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Operating Policy",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The operating policy that is not meeting the requirements of conformance to standards. The operating policy must be in Active status. When you duplicate a job plan record, the operating policy identifier is not copied to the duplicated record.",
+   "maxLength": 10
+  },
+  "plusgextincref": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "External Incident Reference",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Identifies an external incident reporting system, for example, an operator log or a spreadsheet.",
+   "maxLength": 20
+  },
+  "location": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Location",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Identifies the primary location on the incident record. If the incident record is for a location, enter its identifier in the Location field or click the Detail Menu button to select an option and retrieve a value. The Select Value dialog box, by default, displays all locations where the person ID in the Affected Person field is associated with a location record either as location user or as a location custodian. If the Asset Site field contains a value before you use the Select Value dialog box, the list of locations is always filtered by that value. After you select a location, Maximo copies it to the Location field. If the selected location has only a single asset associated with it, Maximo enters its identifier in the Asset field. You can enter related assets and/or locations in the Related Assets table window.",
+   "maxLength": 25
+  },
+  "plusgdegfact": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Degradation Factor",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The factor by which the equipment has degraded.",
+   "maxLength": 20
+  },
+  "origfromalert": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Originates from Alert",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Flag to indicated Monitor generated SRs "
+  },
+  "plusgfmecaactldate": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Actual Completion Date",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The actual completion date for the FMECA."
+  },
+  "plusgoperationalphasefailure": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Operational Phase during Failure",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The type of operation that the equipment was carrying out at the time of the failure.",
+   "maxLength": 40
+  },
+  "plusgaardate": {
+   "searchType": "EXACT",
+   "subType": "DATE",
+   "title": "AAR Date",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The date on which the after action review is conducted."
+  },
+  "plusgcfwnum": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Condition for Work",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Identifier of the condition for work (CFW) record. The status of the CFW record must be Active. This field is read-only when the status of the ticket record is Closed.",
+   "maxLength": 12
+  },
+  "plusginspdue": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Due Date",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Due Date"
+  },
+  "historyflag": {
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "History",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "History Flag"
+  },
+  "plusanalysis": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Analysis",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Analysis",
+   "maxLength": 12
+  },
+  "plusgknowarea_description": {
+   "type": "string"
+  },
+  "plusginsprevgrp": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Reviewer  Owner Group",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Reviewer Group",
+   "maxLength": 8
+  },
+  "plusgccf": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Common Cause Failure",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "When selected, indicates that the failure has a common cause."
+  },
+  "plusghazarduid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Hazard",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "The hazard that is associated with this incident.",
+   "maxLength": 11
+  },
+  "plusgdefectref": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Defect Reference",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Identifies an external incident reporting system, for example, an operator log or a spreadsheet.",
+   "maxLength": 24
+  },
+  "plusgislesslearned": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Lessons Learned",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "If this check box is selected, the after action review resulted in lessons learned."
+  },
+  "plusopsshiftreviewid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Operations Reviewer",
+   "persistent": true,
+   "type": "string",
+   "remarks": "User ID of the Operations Reviewer",
+   "maxLength": 100
+  },
+  "plusgbarrierfaildetect": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Barrier Failure Detection Method",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The method or activity by which a barrier failure is discovered.",
+   "maxLength": 40
+  },
+  "plusgfailmech_description": {
+   "type": "string"
+  },
+  "langcode": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Language Code",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Language Column",
+   "maxLength": 4
+  },
+  "sitevisit": {
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Site Visit Required",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Falg used to indicate of a Ticket requires an on-site visit for investigation"
+  },
+  "plusoperab": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Operability Comments",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Operability comments",
+   "maxLength": 8
+  },
+  "plusgaarfacil": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "AAR Facilitator",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The person facilitating the after action review.",
+   "maxLength": 100
+  },
+  "plusmrule": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Maintenance Rule",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Identify Maintenance Rule."
+  },
+  "plussupervisorphone": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Phone",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Supervisor phone",
+   "maxLength": 20
+  },
+  "plusgbarrierfaildetect_description": {
+   "type": "string"
+  },
+  "plusgwhatactual": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "What actually happened?",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Enter here what actually happened in the incident being reviewed.",
+   "maxLength": 250
+  },
+  "plustrending": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Trending Comments",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Trending comments",
+   "maxLength": 8
+  },
+  "href": {
+   "type": "string",
+   "title": "INCIDENT object reference"
+  },
+  "plusgactconsqsevr": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Actual Severity",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The actual severity of the hazard that is associated with this incident.",
+   "maxLength": 30
+  },
+  "plusgconsqid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Consequence Identifier",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "Consequence Identifier",
+   "maxLength": 11
+  },
+  "actualcontactdate": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Actual Contact",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Actual contact date. Enter a date or click the Select Date button and select a date."
+  },
+  "pluscategory": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Category",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Category",
+   "maxLength": 12
+  },
+  "plusgcfwid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Condition for Work",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "The unique identifier of the condition for work.",
+   "maxLength": 11
+  },
+  "plussupervisormail": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "E-Mail",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Supervisor e-mail",
+   "maxLength": 100
+  },
+  "plusgapprovaldate": {
+   "searchType": "EXACT",
+   "subType": "DATE",
+   "title": "Approval Date",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The approval date of the root cause failure analysis."
+  },
+  "plusgrcfalead": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "RCFA Lead",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The person leading the root cause failure analysis (RCFA).",
+   "maxLength": 100
+  },
+  "pluscritical_description": {
+   "type": "string"
+  },
+  "plusgknowarea": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Knowledge Area",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Identifies the area of knowledge capture relevant to the investigation.",
+   "maxLength": 20
+  },
+  "record_descriptor": {
+   "type": "string",
+   "title": "Record/Object Descriptor"
+  },
+  "actlabhrs": {
+   "searchType": "EXACT",
+   "scale": 0,
+   "subType": "DURATION",
+   "title": "Actual Labor Hours",
+   "persistent": true,
+   "type": "number",
+   "remarks": "Actual Labor Hours",
+   "maxLength": 8
+  },
+  "plusdsunit": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Unit",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The Unit(s) which this Duty Station applies to",
+   "maxLength": 12
+  },
+  "globalticketclass": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Global Class",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Class of the global ticket.",
+   "maxLength": 16
+  },
+  "plusgincimpact": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Incident Impact",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Impact of the incident, for example, Health or Reputation. Valid values are in the PLUSGINCIMPACT domain.",
+   "maxLength": 16
+  },
+  "plusgpolicyid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Operating Policy ID",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "Operating Procedure Unique Identifier",
+   "maxLength": 11
+  },
+  "plusgreportedto": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "ReportedTo",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Identifies the person reporting the issue on the ticket.",
+   "maxLength": 82
+  },
+  "globalticketclass_description": {
+   "type": "string"
+  },
+  "plussupervisorid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Supervisor Review",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Supervisor review",
+   "maxLength": 100
+  },
+  "plusgauditid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Audit",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "The identifier for the audit.",
+   "maxLength": 11
+  },
+  "plusgislocal": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Local Incident",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Specifies whether the incident affects users at one site or group of sites, but not at all sites and organizations. If this check box is selected, the incident is a local issue."
+  },
+  "plusgrcfareqby_description": {
+   "type": "string"
+  },
+  "plusgincimpact_description": {
+   "type": "string"
+  },
+  "plusgfmecaleadname": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Name",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The name of the FMECA lead.",
+   "maxLength": 82
+  },
+  "plusginvesttype": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Investigation Type",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The type of Investigation. Valid values are in the PLUSGINVESTIGATION domain.",
+   "maxLength": 30
+  },
+  "plusghardfailmode": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Hardware Failure Mode",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The hardware failure mode according to International Electrotechnical Commission (IEC) standard 61508.",
+   "maxLength": 50
+  },
+  "plusgreportable": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Reportable",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Specifies whether the incident is in a category that must be reported to the United States Department of Labor (OSHA) or another regulatory agency."
+  },
+  "pluslnuptype_description": {
+   "type": "string"
+  },
+  "origrecordclass": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Originating Record Class",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Class of the originating record.",
+   "maxLength": 16
+  },
+  "status": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Status",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Status of the incident record. If you are not viewing the Change Status dialog box, click the Change Status button in the toolbar to change the status. Default statuses are NEW, QUEUED, PENDING, INPROG, RESOLVED, and CLOSED. See the Incidents Help for more information on statuses.",
+   "maxLength": 10
+  },
+  "plusclrevnum": {
+   "default": 0,
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "INTEGER",
+   "title": "Revision",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "The revision level of the clearance",
+   "maxLength": 11
+  },
+  "template": {
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Template",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Template"
+  },
+  "plusgsubcode": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Subunit/Component Code",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The identifier of the subunit or the component that failed.",
+   "maxLength": 50
+  },
+  "plusgrcaappby": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Approved By",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Identifies the person who is responsible for approvingthe RCA.",
+   "maxLength": 100
+  },
+  "plusdsstationid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Station",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The duty station identifier",
+   "maxLength": 12
+  },
+  "plusgfailimpactonfunction": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Impact of Failure on Function",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The impact of the failure on the functioning of the equipment.",
+   "maxLength": 35
+  },
+  "plusgrcaactldate": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Actual Completion Date",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The actualcompletion date for the RCA."
+  },
+  "plusgrcaleadname": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Name",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The name of the RCA lead.",
+   "maxLength": 82
+  },
+  "reportedpriority_description": {
+   "type": "string"
+  },
+  "plusoutagecode_description": {
+   "type": "string"
+  },
+  "commoditygroup": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Service Group",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Identifies the group providing the service. Enter a value or click the Detail Menu button to select an option and retrieve a value.",
+   "maxLength": 8
+  },
+  "plusgfunctn": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Function",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The function that is responsible for the reason for work that is associated with the ticket. Valid values are in the PLUSGFUNCTION domain. This field is read-only.",
+   "maxLength": 24
+  },
+  "plusgrfwnum": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Reason for Work",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Identifier of the reason for work (RFW) record. The status of the RFW record must be Active. This field is read-only when the status of the ticket record is Closed.",
+   "maxLength": 12
+  },
+  "problemcode": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Problem Code",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Reason for failure",
+   "maxLength": 8
+  },
+  "class_description": {
+   "type": "string"
+  },
+  "plusgsubremarks": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Subunit/Component Remarks",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The description of the subunit or the component that failed.",
+   "maxLength": 200
+  },
+  "plusgnoncondetail": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Non-conformance Details",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The description of the non-conformance with standards or regulations.",
+   "maxLength": 200
+  },
+  "plusginccontext": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Context of Incident",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Information about the nature of the incident.",
+   "maxLength": 250
+  },
+  "reportedby": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Reported By",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Person reporting the issue for the Ticket",
+   "maxLength": 82
+  },
+  "plusgnonconaccby": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Accepted By",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The person who is accepting that the item or part does not meet the standards of conformance.",
+   "maxLength": 100
+  },
+  "plusgtechauth": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Technical Authority",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The technical authority who is associated with the non-conformance.",
+   "maxLength": 100
+  },
+  "plusginctype_description": {
+   "type": "string"
+  },
+  "plusgaarlead": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "AAR Lead",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The person leading the after action review.",
+   "maxLength": 100
+  },
+  "assetnum": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Asset",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Identifies the primary asset on the incident record. If the incident record is for an asset, enter its identifier in the Asset field or click the Detail Menu button to select an option and retrieve a value. The Select Value dialog box, by default, displays all assets where the person ID in the Affected Person field is associated with an asset as either an asset user or an asset custodian. If the Asset Site field contains a value before you use the Select Value dialog box, the list of assets is always filtered by that value. After you select an asset, Maximo copies the asset location to the Location field. You can enter related assets and/or locations in the Related Assets table window.",
+   "maxLength": 25
+  },
+  "plusgrcaisapp": {
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Approved",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Indicates whether the RCA is approved."
+  },
+  "plusghfactldate": {
+   "searchType": "EXACT",
+   "subType": "DATE",
+   "title": "Actual Completion",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The actual completion date of the human factors analysis."
+  },
+  "assetsiteid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Asset Site",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Site of the asset on the incident record. The default value is the site of the person record in the Affected User field. Enter a value or click the Select Value button. If the Asset Site field contains a value before you access the Select Value dialog box on the Asset or Location field, the list of assets or locations is always filtered by this value. You cannot edit this field after you have associated assets or locations with a record; you must remove the associations before you can edit this field.",
+   "maxLength": 8
+  },
+  "plusmilestone": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Milestone Code",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Milestone code",
+   "maxLength": 12
+  },
+  "plusgactconsq": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Actual Consequence",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The actual consequence of the hazard that is associated with this incident. Valid values are in the PLUSGCONSQ synonym domain.",
+   "maxLength": 12
+  },
+  "plusgbenefitid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Benefit ID",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "Benefit ID.",
+   "maxLength": 11
+  },
+  "plusgitemid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Item ID",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "Item Unique Identifier",
+   "maxLength": 11
+  },
+  "plusgpotenconsqsevr": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Potential Severity",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The potential severity of the hazard that is associated with this incident. ",
+   "maxLength": 30
+  },
+  "plusgriskassessid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Risk Assessment Unique Identifier",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "The unique identifier of the risk assessment.",
+   "maxLength": 11
+  },
+  "changeby": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Changed By",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Person who modified or changed",
+   "maxLength": 100
+  },
+  "plusgfailimpactonfunction_description": {
+   "type": "string"
+  },
+  "plusgdetectionmethod_description": {
+   "type": "string"
+  },
+  "actualfinish": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Actual Finish",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Actual finish date. Enter a date or click the Select Date button and select a date."
+  },
+  "plusgfailsubdiv_description": {
+   "type": "string"
+  },
+  "hasactivity": {
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Has Activity",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Does this ticket has any activity"
+  },
+  "plusgfmecalead": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "FMECA Lead",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Identifies the person who is responsible for performing the FMECA.",
+   "maxLength": 100
+  },
+  "plusgbehavconseq": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Consequences of Observed Behavior",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Consequences of the behavior that you or others observed during the incident.",
+   "maxLength": 250
+  },
+  "pluslnupid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Lineup",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The lineup identifier",
+   "maxLength": 12
+  },
+  "plusghighcontext": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "High Context",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Specifies whether the incident is a high-context incident. If the check box is selected, the incident is high-context. The default is False (check box is empty)."
+  },
+  "fr1code": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Cause",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Cause",
+   "maxLength": 8
+  },
+  "plusgnewclass": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "New Classification",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Proposed new classification for the incident.",
+   "maxLength": 254
+  },
+  "pluscondtag": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Condition Tag",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Tag placed in the field to identify a condition, deficiency, or work",
+   "maxLength": 254
+  },
+  "measurementid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Measurement Id",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "Measurementid reference from measurement table.",
+   "maxLength": 11
+  },
+  "plusnotif": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Notification",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Notification",
+   "maxLength": 50
+  },
+  "plusgrcfaanystype": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Analysis Type",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The type of analysis method that was used for the root cause failure analysis (RCFA). Valid values are in the PLUSGRCFATYPE domain.",
+   "maxLength": 18
+  },
+  "createwomulti_description": {
+   "type": "string"
+  },
+  "plusplsystem": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Plant System",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Plant system",
+   "maxLength": 12
+  },
+  "pluslnuptype": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Type",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Segregates the lineups which are the plans from the lineups which are executed",
+   "maxLength": 20
+  },
+  "origrecordid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Originating Record",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Identifies the ticket or work order that created this incident record. Enter a value or click the Detail Menu button to select an option and retrieve a value.",
+   "maxLength": 10
+  },
+  "plusgmigrationreq": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Mitigation Required",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Indicates whether the failure requires mitigating action to maintain overall system integrity."
+  },
+  "plusgnonconcat_description": {
+   "type": "string"
+  },
+  "plusginspown": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Inspector",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Inspector Owner",
+   "maxLength": 100
+  },
+  "plusgactiontaken_description": {
+   "type": "string"
+  },
+  "solution": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Solution",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Identifies the solution. Enter a value or click the Detail Menu button to select an option and retrieve a value. Maximo copies information to the Symptom, Cause, and/or Resolution fields, but you can edit it.",
+   "maxLength": 8
+  },
+  "plusgshftlogentryid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Shift Log Entry",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "The shift log entry that is related to this ticket. The ticket has a follow-up record relationship to the originating shift log entry.",
+   "maxLength": 11
+  },
+  "actualstart": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Actual Start",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Actual start date. Enter a date or click the Select Date button and select a date."
+  },
+  "plusmer_description": {
+   "type": "string"
+  },
+  "affectedphone": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Phone",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Telephone number of person affected by the incident.",
+   "maxLength": 20
+  },
+  "plusgrfwid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Reason for Work",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "The unique identifier of the reason for work.",
+   "maxLength": 11
+  },
+  "plusginvestlead": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Investigation Lead",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The person leading the investigation.",
+   "maxLength": 100
+  },
+  "plusgfmecaisapp": {
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Approved",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Indicates whether the FMECA is approved."
+  },
+  "plusghassafetycrit": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Safety Critical Element Failure",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Indicates that a safety critical element has failed."
+  },
+  "plusgsafetycritelm_description": {
+   "type": "string"
+  },
+  "plusgmanrca": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Mandatory",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Specifies whether the initiating event requires a structured root cause analysis to determine the root cause of the incident."
+  },
+  "plusgrcfatargdate": {
+   "searchType": "EXACT",
+   "subType": "DATE",
+   "title": "Target Completion Date",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The target completion date of the root cause failure analysis (RCFA)."
+  },
+  "targetstart": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Target Start",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Target start date. Enter a date or click the Select Date button."
+  },
+  "changedate": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Changed Date",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Date on which Ticket changed"
+  },
+  "plusgworktype": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Work Type",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The type of service request, for example, preventive maintenance or capital project. Valid values are in the PLUSGWORKTYPE domain. This field is read-only when the status of the service request record is Closed.",
+   "maxLength": 10
+  },
+  "plusmer": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Mode Entry Requirement",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Mode entry requirement",
+   "maxLength": 6
+  },
+  "plusdetection_description": {
+   "type": "string"
+  },
+  "plusgmanhf": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Mandatory",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Specifies whether the initiating event requires a human factors analysis to determine the root cause of the incident."
+  },
+  "plusgproductref": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Product",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Identifier for the product.",
+   "maxLength": 500
+  },
+  "createwomulti": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Create WO Options",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Identifies what happens to Multi table entries on Tickets when follow-up Work Orders are created",
+   "maxLength": 8
+  },
+  "plusgmanrcfa": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Mandatory",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Specifies whether the initiating event requires a mandatory root cause failure analysis (RCFA). If the check box is selected, an RCFA is required."
+  },
+  "plusgsafetyfailcat_description": {
+   "type": "string"
+  },
+  "plusgprocedureid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Operating Procedure ID",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "Operating Procedure Unique Identifier.",
+   "maxLength": 11
+  },
+  "pluspercentpower": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Percent Power",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Reactor power level at the time of Operations Shift Review",
+   "maxLength": 50
+  },
+  "reportedemail": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "E-mail",
+   "persistent": true,
+   "type": "string",
+   "remarks": "E-mail address of person reporting the incident.",
+   "maxLength": 100
+  },
+  "_id": {
+   "type": "string"
+  },
+  "plusaction_description": {
+   "type": "string"
+  },
+  "plusgrcfaappby": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Approved By",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The person who approved the root cause failure analysis. The status of this person must be Active, and this person must have approval authorization.",
+   "maxLength": 100
+  },
+  "plusgactiontaken": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Action Taken",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The action that is associated with the incident. Valid values are in the PLUSGACTIONTAKEN domain.",
+   "maxLength": 30
+  },
+  "plusopsshiftupdated": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Operation Shift Updated",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "It says if operational shift review has been performed on the condition report"
+  },
+  "supervisor": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Supervisor",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Supervisor",
+   "maxLength": 100
+  },
+  "calccalendar": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Calendar",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Business days and times used to calculate the Target Contact, Target Response, and Target Resolution dates on a ticket or work order. Click the Detail Menu to select a calendar or go to the Calendars application to create one.",
+   "maxLength": 8
+  },
+  "plusghardfailmode_description": {
+   "type": "string"
+  },
+  "resultnum": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Inspection Results",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The results of the incident.",
+   "maxLength": 12
+  },
+  "plusghflead": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Human Factors Lead",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The name of the person who is leading the human factors analysis.",
+   "maxLength": 100
+  },
+  "reportdate": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Reported Date",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Date when the incident was reported. Enter a date or click the Select Date button."
+  },
+  "plusginvesttype_description": {
+   "type": "string"
+  },
+  "plusunit": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Unit",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Unit",
+   "maxLength": 12
+  },
+  "plusgrcfareqby": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Required By",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The source of the requirement for the root cause failure analysis (RCFA). Valid values are in the PLUSGRCFAREQBY domain.",
+   "maxLength": 18
+  },
+  "plusplsystem_description": {
+   "type": "string"
+  },
+  "plusanalysis_description": {
+   "type": "string"
+  },
+  "plusaction": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Action Type",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Action type",
+   "maxLength": 12
+  },
+  "_imagelibref": {
+   "type": "string"
+  },
+  "plusgclaimtype_description": {
+   "type": "string"
+  },
+  "plusgshiftlogid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Shift Log",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "The unique identifier of shift log.",
+   "maxLength": 11
+  },
+  "reportedphone": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Phone",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Telephone number of person reporting the incident.",
+   "maxLength": 20
+  },
+  "plusgworktype_description": {
+   "type": "string"
+  },
+  "plusgrcatargdate": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Target Completion Date",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The target completion date for the RCA."
+  },
+  "plusgnonconaccept": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Non-conformance Accepted",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "When selected, indicates that a part or an item does not meet the requirements of regulations or standards."
+  },
+  "assetorgid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Asset Organization",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Organozation of the ticket asset",
+   "maxLength": 8
+  },
+  "plusgstrategic": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Strategic",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Identifies that the incident is in a strategically important area for knowledge capture."
+  },
+  "plusghftargdate": {
+   "searchType": "EXACT",
+   "subType": "DATE",
+   "title": "Target Completion",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The target completion date of the human factors analysis."
+  },
+  "plusreportabilityreview": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Reportability Review Required",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Identify if reportability review is required."
+  },
+  "plusgclaimref": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Claim Reference",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Reference information for the claim that is associated with the incident.",
+   "maxLength": 20
+  },
+  "pluscritical": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Criticality",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Criticality",
+   "maxLength": 16
+  },
+  "plusgrcalead": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "RCA Lead",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Identifies the person who is responsible for performing the FMECA.",
+   "maxLength": 100
+  },
+  "classstructureid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Class Structure",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Class Structure Identifier",
+   "maxLength": 25
+  },
+  "internalpriority_description": {
+   "type": "string"
+  },
+  "affectedemail": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "E-mail",
+   "persistent": true,
+   "type": "string",
+   "remarks": "E-mail address of person affected by the incident.",
+   "maxLength": 100
+  },
+  "plusgopenomuid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "INTEGER",
+   "title": "Open Unique Idenfitier",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "The open unique identifier provided to Maximo by an external system.",
+   "maxLength": 11
+  },
+  "plusgbehavobserv": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Behavior Observed",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Behavior that you or others observed during the incident.",
+   "maxLength": 250
+  },
+  "relatedtoglobal": {
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Related to Global Issue",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Flag used to determine if a Ticket is related to a global issue Ticket"
+  },
+  "plusgdefecttype": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Defect Type",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The type of defect.",
+   "maxLength": 16
+  },
+  "plusgfailsubdivrem": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Failure Mechanism Subdivision Remarks",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The description of the failure mechanism subdivision.",
+   "maxLength": 200
+  },
+  "plusschedcode_description": {
+   "type": "string"
+  },
+  "glaccount": {
+   "searchType": "WILDCARD",
+   "subType": "GL",
+   "title": "GL Account",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "GL Account",
+   "maxLength": 23
+  },
+  "failurecode": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Failure Class",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Indicates Top level of a Failure Hierarchy",
+   "maxLength": 8
+  },
+  "plusginvestreqd": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Investigation Required",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Specifies whether the incident requires an investigation. If the check box is selected, the incident requires an investigation. The default value is False (check box is empty)."
+  },
+  "plusgopercondatfailure": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Operating Condition during Failure",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The state of the equipment at the time of the failure.",
+   "maxLength": 35
+  },
+  "inspformnum": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Inspection Form",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The identifier of the inspection form for incident.",
+   "maxLength": 12
+  },
+  "isglobal": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Global Issue",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Specifies whether the ticket is global. A global ticket either affects many users or is a root cause of other tickets. If the check box is selected, the ticket is global. You can view or specify its class in the Global Class field. You can use a global ticket to manage groups of related tickets. When you change the status of the global record, the status of all globally- related records changes. If your administrator defines automated notifications of status changes, all initial requesters who reported the same issue are notified of the status changes."
+  }
+ },
+ "required": [
+  "actlabcost",
+  "actlabhrs",
+  "changeby",
+  "changedate",
+  "class",
+  "hasactivity",
+  "historyflag",
+  "isknownerror",
+  "langcode",
+  "relatedtoglobal",
+  "sitevisit",
+  "status",
+  "statusdate",
+  "template"
+ ]
+}

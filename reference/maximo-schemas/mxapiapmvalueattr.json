@@ -1,0 +1,126 @@
+{
+  "resource": "MXAPIAPMVALUEATTR",
+  "description": "APMVALUEMETAATTR",
+  "pk": [
+    "apmapp",
+    "apmextmethod",
+    "apmattrname"
+  ],
+  "title": "APMVALUEMETAATTR",
+  "type": "object",
+  "$ref": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapiapmvalueattr",
+  "uniqueid": "apmvaluemetaattrid",
+  "properties": {
+    "apmapp": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "APM App Name",
+      "persistent": true,
+      "type": "string",
+      "remarks": "APM APP Name the method belongs to",
+      "maxLength": 20
+    },
+    "maxtype": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Type",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Type of apm attribute",
+      "maxLength": 10
+    },
+    "localref": {
+      "type": "string"
+    },
+    "apmattrname": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "APM Attribute Name",
+      "persistent": true,
+      "type": "string",
+      "remarks": "The name of the attribute from APM defined with app and method",
+      "maxLength": 200
+    },
+    "defaultvalue": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Default Value",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Default value of apm attribute",
+      "maxLength": 50
+    },
+    "description": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Description",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Description of this method",
+      "maxLength": 250
+    },
+    "apmextmethod": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "APM External Method",
+      "persistent": true,
+      "type": "string",
+      "remarks": "APM External Method name defined for apm integration",
+      "maxLength": 200
+    },
+    "url": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Url",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Url of this method",
+      "maxLength": 500
+    },
+    "_rowstamp": {
+      "type": "string"
+    },
+    "_imagelibref": {
+      "type": "string"
+    },
+    "displayname": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Display Name",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Display name of this method",
+      "maxLength": 100
+    },
+    "href": {
+      "type": "string"
+    },
+    "_id": {
+      "type": "string"
+    },
+    "relationship": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Relationship",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Relationship to get the APMValue",
+      "maxLength": 50
+    },
+    "apmvaluemetaattrid": {
+      "searchType": "EXACT",
+      "maximum": 2147483647.0,
+      "subType": "BIGINT",
+      "title": "Unique Id",
+      "persistent": true,
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "uniqueid": true,
+      "remarks": "Unique Id",
+      "maxLength": 11
+    }
+  },
+  "required": [
+    "apmapp"
+  ]
+}

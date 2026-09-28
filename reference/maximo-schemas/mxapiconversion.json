@@ -1,0 +1,129 @@
+{
+  "resource": "MXAPICONVERSION",
+  "description": "CONVERSION",
+  "pk": [
+    "frommeasureunit",
+    "tomeasureunit",
+    "itemnum",
+    "itemsetid"
+  ],
+  "title": "CONVERSION",
+  "type": "object",
+  "$ref": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapiconversion",
+  "uniqueid": "conversionid",
+  "properties": {
+    "frommeasureunit": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "From Unit of Measure",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Identifies from which unit of measure you are converting, which is the unit in which the item was either received or transferred.",
+      "maxLength": 16
+    },
+    "localref": {
+      "type": "string"
+    },
+    "changeby": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Changed By",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Name of the user who last modified this record.",
+      "maxLength": 100
+    },
+    "changedate": {
+      "searchType": "EXACT",
+      "subType": "DATETIME",
+      "title": "Changed Date",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Date this record was last modified."
+    },
+    "itemnum": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Item number",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Item with which this conversion is associated. For example, a CASE for one item may be 24 and for another item may be 36. However, the numbers 24 and 36 represent the quantity within the case and not the issue unit. If you receive a case of 24 gaskets, but you issue them in sets of four, then the conversion ratio for CASE in this example would be 6. You can assign the conversion of a CASE of 24 gaskets to be 6, and associate it to the item gaskets.",
+      "maxLength": 30
+    },
+    "_rowstamp": {
+      "type": "string"
+    },
+    "contentuid": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "CONTENTUID",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Content Unique Id",
+      "maxLength": 50
+    },
+    "_imagelibref": {
+      "type": "string"
+    },
+    "itemsetid": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Item Set",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Item set identifier.",
+      "maxLength": 8
+    },
+    "href": {
+      "type": "string"
+    },
+    "_id": {
+      "type": "string"
+    },
+    "tomeasureunit": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "To Unit of Measure",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Identifies to which unit of measure you are converting, which is the unit in which the item is stored in the storeroom (the issue unit).",
+      "maxLength": 16
+    },
+    "conversionid": {
+      "searchType": "EXACT",
+      "maximum": 2147483647.0,
+      "subType": "BIGINT",
+      "title": "Unique Id",
+      "persistent": true,
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "uniqueid": true,
+      "remarks": "Unique Id",
+      "maxLength": 11
+    },
+    "conversion": {
+      "searchType": "EXACT",
+      "scale": 2,
+      "subType": "DECIMAL",
+      "title": "Conversion Factor",
+      "persistent": true,
+      "type": "number",
+      "hasList": true,
+      "remarks": "A ratio that is applied to relate one unit of measure to another, for example, from CASE to EACH. Conversion from one unit of measure to another only takes place when you receive or transfer an item into a storeroom. For this reason, MAXIMO is always converting to the unit at which a storeroom receives and stores the items, which is the same as the storeroom's issue unit.",
+      "maxLength": 16
+    }
+  },
+  "required": [
+    "changeby",
+    "changedate",
+    "contentuid",
+    "conversion",
+    "frommeasureunit",
+    "itemsetid",
+    "tomeasureunit"
+  ]
+}

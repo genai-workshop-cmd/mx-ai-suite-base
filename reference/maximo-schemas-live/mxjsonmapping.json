@@ -1,0 +1,151 @@
+{
+ "resource": "MXJSONMAPPING",
+ "description": "JSON Mapping object structute",
+ "pk": [
+  "mapname"
+ ],
+ "title": "JSONMAPPING",
+ "type": "object",
+ "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/mxjsonmapping",
+ "uniqueid": "jsonmappingid",
+ "properties": {
+  "jsondata": {
+   "searchType": "WILDCARD",
+   "subType": "CLOB",
+   "title": "JSON Data",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Sample JSON",
+   "maxLength": 999999
+  },
+  "localref": {
+   "type": "string"
+  },
+  "objectname": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Object Name",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Object Name",
+   "maxLength": 30
+  },
+  "description": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Description",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Describes resource",
+   "maxLength": 200
+  },
+  "record_descriptor": {
+   "type": "string",
+   "title": "Record/Object Descriptor"
+  },
+  "scriptname": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Script Name",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Script Name",
+   "maxLength": 100
+  },
+  "mapname": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Mapping",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Mapping",
+   "maxLength": 50
+  },
+  "jsonmappingid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Unique Id",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "uniqueid": true,
+   "remarks": "Unique Id",
+   "maxLength": 11
+  },
+  "intobjectname": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Object Structure",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Object Structure",
+   "maxLength": 20
+  },
+  "_rowstamp": {
+   "type": "string"
+  },
+  "_imagelibref": {
+   "type": "string"
+  },
+  "endpointname": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "End Point",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "End Point",
+   "maxLength": 20
+  },
+  "maptype": {
+   "default": "Object Structure",
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Map To",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Map To",
+   "maxLength": 20
+  },
+  "jsonmapdetail": {
+   "objectName": "JSONMAPDETAIL",
+   "type": "array",
+   "items": {
+    "definition": {
+     "subSchema": {
+      "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/mxjsonmapping/jsonmapdetail"
+     }
+    },
+    "type": "object"
+   },
+   "cardinality": "",
+   "relation": "JSONMAPDETAIL"
+  },
+  "href": {
+   "type": "string",
+   "title": "JSONMAPPING object reference"
+  },
+  "_id": {
+   "type": "string"
+  },
+  "direction": {
+   "default": "Inbound",
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Direction",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Determines the direction that mapping applied to.  Select Inbound processing to map inbound to Maximo Asset Management. Select Outbound definition to map outbound from Maximo Asset Management.",
+   "maxLength": 20
+  }
+ },
+ "required": [
+  "jsondata",
+  "mapname"
+ ]
+}

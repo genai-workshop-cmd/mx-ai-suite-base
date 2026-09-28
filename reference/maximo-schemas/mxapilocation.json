@@ -1,0 +1,162 @@
+{
+  "resource": "MXAPILOCATION",
+  "description": "LOCHIERARCHY",
+  "pk": [
+    "siteid",
+    "location",
+    "systemid",
+    "parent"
+  ],
+  "title": "LOCHIERARCHY",
+  "type": "object",
+  "$ref": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapilocation",
+  "uniqueid": "lochierarchyid",
+  "properties": {
+    "parent": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Parent",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "The parent of this location",
+      "maxLength": 25
+    },
+    "systemid": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "System",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "System of this hierarchy",
+      "maxLength": 12
+    },
+    "localref": {
+      "type": "string"
+    },
+    "locsystem": {
+      "objectName": "LOCSYSTEM",
+      "type": "array",
+      "items": {
+        "definition": {
+          "subSchema": {
+            "$ref": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapilocation/locsystem"
+          }
+        },
+        "type": "object"
+      },
+      "cardinality": "UNDEFINED",
+      "relation": "LOCSYSTEM"
+    },
+    "gisparam3": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "GIS Parameter 3",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Graphical Information System interface parameter 3",
+      "maxLength": 1
+    },
+    "gisparam2": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "GIS Parameter 2",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Graphical Information System interface parameter 2",
+      "maxLength": 1
+    },
+    "gisparam1": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "GIS Parameter 1",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Graphical Information System interface parameter 1",
+      "maxLength": 1
+    },
+    "orgid": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Organization",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Organization Identifier",
+      "maxLength": 8
+    },
+    "_rowstamp": {
+      "type": "string"
+    },
+    "children": {
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "Children",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "Has children"
+    },
+    "_imagelibref": {
+      "type": "string"
+    },
+    "siteid": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Site",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Site Identifier",
+      "maxLength": 8
+    },
+    "location": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Location",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Location Identifier",
+      "maxLength": 25
+    },
+    "lochierarchyid": {
+      "searchType": "EXACT",
+      "maximum": 2147483647.0,
+      "subType": "BIGINT",
+      "title": "LOCHIERARCHYID",
+      "persistent": true,
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "uniqueid": true,
+      "remarks": "Unique Identifier",
+      "maxLength": 11
+    },
+    "locations": {
+      "objectName": "LOCATIONS",
+      "type": "array",
+      "items": {
+        "definition": {
+          "subSchema": {
+            "$ref": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapilocation/locations"
+          }
+        },
+        "type": "object"
+      },
+      "cardinality": "UNDEFINED",
+      "relation": "CHILDLOCATIONS"
+    },
+    "href": {
+      "type": "string"
+    },
+    "_id": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "children",
+    "location",
+    "orgid",
+    "siteid",
+    "systemid"
+  ]
+}

@@ -1,0 +1,247 @@
+{
+ "resource": "MXAPIPLUSGPERTYPE",
+ "description": "Maximo API for PLUSGPERTYPE",
+ "pk": [
+  "pertypenum",
+  "orgid",
+  "siteid"
+ ],
+ "title": "PLUSGPERTYPE",
+ "type": "object",
+ "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/mxapiplusgpertype",
+ "uniqueid": "plusgpertypeid",
+ "properties": {
+  "pertypenum": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Permit and Certificate Type",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Identifier of the permit and certificate type. The combination of organization, site, and permit and certificate type must be unique. After you create and save a permit and certificate type record, you cannot change this value.",
+   "maxLength": 10
+  },
+  "historyflag": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "History",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "History Flag"
+  },
+  "localref": {
+   "type": "string"
+  },
+  "certexpdate": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Certificate Expiry Date",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The date and time when the certificate expires. You can change this value only when the status of the permit and certificate type record is Draft."
+  },
+  "description": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Description",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Description of the permit and certificate type. You can change this value only when the status of the permit and certificate type record is Draft.",
+   "maxLength": 100
+  },
+  "ownergroup": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Owner Group",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Group that owns the permit and certificate type record. To change this value, use the Select Owner action.",
+   "maxLength": 8
+  },
+  "category_description": {
+   "type": "string"
+  },
+  "reference": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Reference",
+   "persistent": true,
+   "type": "string",
+   "remarks": "A reference for the permit or certificate. You can change this value only when the status of the permit and certificate type record is Draft.",
+   "maxLength": 16
+  },
+  "_rowstamp": {
+   "type": "string"
+  },
+  "_imagelibref": {
+   "type": "string"
+  },
+  "regulationid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Regulation",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "Regulation Unique Identifier.",
+   "maxLength": 11
+  },
+  "permitwork": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Permit to Work",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Indicates whether the permit or certificate type applies to a permit to work."
+  },
+  "siteid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Site",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The site to which the permit and certificate site record applies. The default value is null. If you enter a value, the system populates the Organization field with the corresponding organization. If the permit and certificate type record applies to all sites, do not enter a value. After you create and save a permit and certificate type record, you cannot change this value.",
+   "maxLength": 8
+  },
+  "href": {
+   "type": "string",
+   "title": "PLUSGPERTYPE object reference"
+  },
+  "isocert": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Isolation Certificate",
+   "persistent": true,
+   "type": "boolean",
+   "hasList": true,
+   "remarks": "Indicates whether the permit or certificate type applies to an isolation certificate."
+  },
+  "owner": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Owner",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Owner of the permit and certificate type. To change this value, use the Select Owner action or the Take Ownership action.",
+   "maxLength": 100
+  },
+  "plusgpertypeid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Unique Id",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "uniqueid": true,
+   "remarks": "Unique Id",
+   "maxLength": 11
+  },
+  "summary": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Summary",
+   "persistent": true,
+   "type": "string",
+   "remarks": "A detailed description of the purpose of the permit or certificate. You can change this value only when the status of the permit and certificate type record is Draft.",
+   "maxLength": 200
+  },
+  "accesspermit": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Access Permit",
+   "persistent": true,
+   "type": "boolean",
+   "hasList": true,
+   "remarks": "Indicates whether the permit or certificate type applies to an access permit."
+  },
+  "status_description": {
+   "type": "string"
+  },
+  "classstructureid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Classification",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "A classification of the permit and certificate type.",
+   "maxLength": 25
+  },
+  "materialcert": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Material Inspection",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Specifies whether the certificate is a material inspection certification. If this check box is selected, corresponding inventory items, purchase requisition line items, and purchase order line items must be inspected and documented on delivery. You can change this value when the status of the permit and certificate type record is Draft."
+  },
+  "record_descriptor": {
+   "type": "string",
+   "title": "Record/Object Descriptor"
+  },
+  "orgid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Organization",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The organization to which the permit and certificate type record applies. The default value is null. If you specify a value in the Site field, the system populates this field with the corresponding organization. If the permit and certificate type record applies to all organizations, do not enter a value. After you create and save a permit and certificate type record, you cannot change this value.",
+   "maxLength": 8
+  },
+  "statusdate": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Status Date",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The server date and time when the record was created or updated through the Change Status action. This field is read-only."
+  },
+  "_id": {
+   "type": "string"
+  },
+  "category": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Category",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The category of the permit or certificate type. Valid values are in the PLUSGPERTYPECAT synonym domain. You can change this value only when the status of the permit and certificate type record is Draft.",
+   "maxLength": 24
+  },
+  "personalcert": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Personal",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Specifies whether a certificate is a personal certification. If the check box is selected, the certificate is a personal certification, and it is associated with a person in the People application. The default value is False (check box is cleared). You can change this value only when the status of the record is Draft. You cannot delete the record if the certificate is related to a person in the People application (that is, if the Personal check box is selected). When searching on this field, use Y to indicate a selected check box, and N to specify a cleared check box."
+  },
+  "status": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Status",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The status of the permit and certificate type record. Valid values are in the PLUSGPERTYPESTATUS synonym domain. The default status, when you create the record, is Draft. You can change the value only through the Change Status action.",
+   "maxLength": 16
+  }
+ },
+ "required": [
+  "pertypenum",
+  "status",
+  "statusdate"
+ ]
+}

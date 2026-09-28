@@ -1,0 +1,109 @@
+{
+ "resource": "MXAPIOBJECTAUTH",
+ "description": "Object Structure for Object Authorization",
+ "pk": [
+  "objectname",
+  "objectid"
+ ],
+ "title": "SECUREOBJECT",
+ "type": "object",
+ "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/mxapiobjectauth",
+ "uniqueid": "secureobjectid",
+ "properties": {
+  "owner": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Owner",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Owner of the secure object record",
+   "maxLength": 100
+  },
+  "localref": {
+   "type": "string"
+  },
+  "objectname": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Object",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Object Name",
+   "maxLength": 40
+  },
+  "prodname": {
+   "searchType": "NONE",
+   "subType": "ALN",
+   "title": "Product Name",
+   "type": "string",
+   "remarks": "Product Name",
+   "maxLength": 1024
+  },
+  "record_descriptor": {
+   "type": "string",
+   "title": "Record/Object Descriptor"
+  },
+  "_rowstamp": {
+   "type": "string"
+  },
+  "instancename": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Instance name",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Instance name",
+   "maxLength": 50
+  },
+  "secureobjectid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Unique Id",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "uniqueid": true,
+   "remarks": "Unique Id",
+   "maxLength": 11
+  },
+  "_imagelibref": {
+   "type": "string"
+  },
+  "href": {
+   "type": "string",
+   "title": "SECUREOBJECT object reference"
+  },
+  "_id": {
+   "type": "string"
+  },
+  "objectauth": {
+   "objectName": "OBJECTAUTH",
+   "type": "array",
+   "items": {
+    "definition": {
+     "subSchema": {
+      "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/mxapiobjectauth/objectauth"
+     }
+    },
+    "type": "object"
+   },
+   "cardinality": "",
+   "relation": "OBJECTAUTH"
+  },
+  "objectid": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Object ID",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Object ID",
+   "maxLength": 200
+  }
+ },
+ "required": [
+  "objectid",
+  "objectname"
+ ]
+}

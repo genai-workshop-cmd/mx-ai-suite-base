@@ -1,0 +1,266 @@
+{
+ "resource": "MXAPIPROP",
+ "description": "Maximo API for Properties",
+ "pk": [
+  "propname"
+ ],
+ "title": "MAXPROP",
+ "type": "object",
+ "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/mxapiprop",
+ "uniqueid": "maxpropid",
+ "properties": {
+  "liverefresh": {
+   "default": true,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Live Refresh",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Indicates whether live refresh of cache is supported for this property."
+  },
+  "maxtype": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Data Type",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Maximo data type for values of this property (ALN, INTEGER, YORN)",
+   "maxLength": 8
+  },
+  "maxtype_description": {
+   "type": "string"
+  },
+  "localref": {
+   "type": "string"
+  },
+  "masked": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Masked",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Identified whether this value is masked in the System Properties application"
+  },
+  "maxpropvalue": {
+   "objectName": "MAXPROPVALUE",
+   "type": "array",
+   "items": {
+    "definition": {
+     "subSchema": {
+      "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/mxapiprop/maxpropvalue"
+     }
+    },
+    "type": "object"
+   },
+   "cardinality": "UNDEFINED",
+   "relation": "MAXPROPVALUE"
+  },
+  "description": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Description",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Description of this property",
+   "maxLength": 100
+  },
+  "valuerules_description": {
+   "type": "string"
+  },
+  "domainid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Domain",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The validation domain for values of this property.",
+   "maxLength": 18
+  },
+  "_rowstamp": {
+   "type": "string"
+  },
+  "cachedvalue": {
+   "searchType": "NONE",
+   "subType": "ALN",
+   "title": "Current Value",
+   "type": "string",
+   "remarks": "The current value of this property used by this server instance.",
+   "maxLength": 4000
+  },
+  "globalonly": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Global Only",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Indicates whether this property must exist only at a system-wide level.  If true, this property cannot have an instance-specific value."
+  },
+  "instanceonly": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Instance Only",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Indicates whether this property must be defined only at the instance level.  If true, an instance-specific value must be defined for each servername and there will be no global value."
+  },
+  "_imagelibref": {
+   "type": "string"
+  },
+  "nullsallowed": {
+   "default": true,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Nulls Allowed",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Indicates whether a null value is permitted on MaxPropValue for this property."
+  },
+  "maxpropid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Unique Id",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "uniqueid": true,
+   "remarks": "Unique Id",
+   "maxLength": 11
+  },
+  "onlinechanges": {
+   "default": true,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Online Changes Allowed",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Indicates whether the user is allowed to override the value via the Property application."
+  },
+  "href": {
+   "type": "string",
+   "title": "MAXPROP object reference"
+  },
+  "accesstype": {
+   "default": 2,
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "INTEGER",
+   "title": "Access Type",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "hasList": true,
+   "remarks": "Access Type",
+   "maxLength": 11
+  },
+  "changeby": {
+   "default": "&USERNAME&",
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Changed By",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The User ID who last changed this row.",
+   "maxLength": 100
+  },
+  "changedate": {
+   "default": "&SYSDATE&",
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Change Date",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The timestamp of the last changed applied to this row."
+  },
+  "record_descriptor": {
+   "type": "string",
+   "title": "Record/Object Descriptor"
+  },
+  "valuerules": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Value Rules",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Value Rules",
+   "maxLength": 50
+  },
+  "disppropvalue": {
+   "searchType": "NONE",
+   "subType": "ALN",
+   "title": "Global Value",
+   "type": "string",
+   "hasList": true,
+   "remarks": "To display propvalue",
+   "maxLength": 4000
+  },
+  "securelevel_description": {
+   "type": "string"
+  },
+  "encrypted": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Encrypted",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Indicates whether the value of the property should be encrypted when stored on the MaxPropValue table."
+  },
+  "accesstype_description": {
+   "type": "string"
+  },
+  "securelevel": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Security Level",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Indicates the level of access permitted for this property",
+   "maxLength": 20
+  },
+  "_id": {
+   "type": "string"
+  },
+  "maximodefault": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Maximo Default",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The default value used in a new Maximo installation.  This supports refreshing all properties with the system defaults.",
+   "maxLength": 4000
+  },
+  "userdefined": {
+   "default": true,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "User Defined",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Indicates whether this property was delivered with Maximo or was defined by a user."
+  },
+  "propname": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Property Name",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Property name",
+   "maxLength": 50
+  }
+ },
+ "required": [
+  "description",
+  "maxtype",
+  "propname",
+  "securelevel"
+ ]
+}

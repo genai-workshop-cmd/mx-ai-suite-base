@@ -1,0 +1,105 @@
+{
+ "resource": "PLUSDMALARMS",
+ "description": "Utilities Meter Alarms Object Structure",
+ "title": "PLUSDMETERALARM",
+ "type": "object",
+ "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/plusdmalarms",
+ "properties": {
+  "serialnum": {
+   "searchType": "NONE",
+   "subType": "UPPER",
+   "title": "Serial Number",
+   "type": "string",
+   "remarks": "Virtual field used by MIF",
+   "maxLength": 64
+  },
+  "localref": {
+   "type": "string"
+  },
+  "assetmeter": {
+   "objectName": "ASSETMETER",
+   "type": "array",
+   "items": {
+    "definition": {
+     "subSchema": {
+      "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/plusdmalarms/assetmeter"
+     }
+    },
+    "type": "object"
+   },
+   "cardinality": "",
+   "relation": "ASSETMETER"
+  },
+  "record_descriptor": {
+   "type": "string",
+   "title": "Record/Object Descriptor"
+  },
+  "measurement": {
+   "objectName": "MEASUREMENT",
+   "type": "array",
+   "items": {
+    "definition": {
+     "subSchema": {
+      "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/plusdmalarms/measurement"
+     }
+    },
+    "type": "object"
+   },
+   "cardinality": "",
+   "relation": "MEASUREMENT"
+  },
+  "manufacturer": {
+   "searchType": "NONE",
+   "subType": "UPPER",
+   "title": "Manufacturer",
+   "type": "string",
+   "remarks": "Virtual field used by MIF",
+   "maxLength": 12
+  },
+  "_rowstamp": {
+   "type": "string"
+  },
+  "metername": {
+   "searchType": "NONE",
+   "subType": "UPPER",
+   "title": "Meter Name",
+   "type": "string",
+   "remarks": "Virtual field used by MIF",
+   "maxLength": 10
+  },
+  "_imagelibref": {
+   "type": "string"
+  },
+  "assetnum": {
+   "searchType": "NONE",
+   "subType": "UPPER",
+   "title": "Asset Number",
+   "type": "string",
+   "remarks": "Virtual field used by MIF",
+   "maxLength": 25
+  },
+  "siteid": {
+   "searchType": "NONE",
+   "subType": "UPPER",
+   "title": "Site ID",
+   "type": "string",
+   "remarks": "Virtual field used by MIF",
+   "maxLength": 8
+  },
+  "templatename": {
+   "searchType": "NONE",
+   "subType": "UPPER",
+   "title": "Template Name",
+   "type": "string",
+   "remarks": "Virtual field used by MIF",
+   "maxLength": 8
+  },
+  "href": {
+   "type": "string",
+   "title": "PLUSDMETERALARM object reference"
+  },
+  "_id": {
+   "type": "string"
+  }
+ }
+}

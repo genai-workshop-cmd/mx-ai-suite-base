@@ -1,0 +1,432 @@
+{
+ "resource": "REP_PLUSGRLOG",
+ "description": "Run Log (Oil) Details",
+ "pk": [
+  "siteid",
+  "shiftnum"
+ ],
+ "title": "PLUSGRUNLOG",
+ "type": "object",
+ "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/rep_plusgrlog",
+ "uniqueid": "plusgshiftlogid",
+ "properties": {
+  "localref": {
+   "type": "string"
+  },
+  "startdate": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Start Date",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The date and time when the run began. You can change this value when the status of the run log is Draft."
+  },
+  "reference": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Log Reference",
+   "persistent": true,
+   "type": "string",
+   "remarks": "A reference for the run log record. You can change this value unless the value of the run log record is Inactive.",
+   "maxLength": 32
+  },
+  "shlogtemplateid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Template",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "Shift log template identifier.",
+   "maxLength": 11
+  },
+  "_rowstamp": {
+   "type": "string"
+  },
+  "locationsid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Location",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "hasList": true,
+   "remarks": "Location ID",
+   "maxLength": 11
+  },
+  "siteid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Site",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The site that is associated with the run log record. The combination of site and run log must be unique. This value is the same as the site ID on the profile of the logged-in user. This field is read-only.",
+   "maxLength": 8
+  },
+  "href": {
+   "type": "string",
+   "title": "PLUSGRUNLOG object reference"
+  },
+  "isshiftlog": {
+   "default": true,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Is Shift Log",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Identifies if the field is a shift log or not. If the flag is marked, the record is a shift log; otherwise it is a run log"
+  },
+  "period": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Period",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The period of this run log record. Valid values are in the PLUSGSHIFTPERIOD domain. You can change this value unless the status of the run log record is Inactive.",
+   "maxLength": 16
+  },
+  "status_description": {
+   "type": "string"
+  },
+  "runstatus": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Run Status",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The status of the run.",
+   "maxLength": 30
+  },
+  "logbooknum": {
+   "searchType": "EXACT",
+   "subType": "UPPER",
+   "title": "Log Book",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The identifier of the log book.",
+   "maxLength": 10
+  },
+  "record_descriptor": {
+   "type": "string",
+   "title": "Record/Object Descriptor"
+  },
+  "kpimainid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "KPI",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "KPI Unique Identifier.",
+   "maxLength": 11
+  },
+  "runstatus_description": {
+   "type": "string"
+  },
+  "orgid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Organization",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Identifies the organization.",
+   "maxLength": 8
+  },
+  "tubularassy_description": {
+   "type": "string"
+  },
+  "route": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Asset List",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The asset list that is associated with the run log. If you perform an advanced search on this field, the application returns all run logs that include this asset list.",
+   "maxLength": 8
+  },
+  "routesid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Asset List",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "hasList": true,
+   "remarks": "Asset List ID",
+   "maxLength": 11
+  },
+  "_id": {
+   "type": "string"
+  },
+  "period_description": {
+   "type": "string"
+  },
+  "orgshiftnum": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Original Shift Log",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The identifier of the shift log whose log entries you want to carry over to the next shift.",
+   "maxLength": 12
+  },
+  "supervisor": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Supervisor",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The supervisor of the run. The status of the corresponding Person record must be Active. You can change this value unless the status of the run log record is Inactive.",
+   "maxLength": 100
+  },
+  "status": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Status",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The status of the run log record. Valid values are in the PLUSGSHFTLOGSTATUS synonym domain. The default status, when you create a record, is Draft. You can change this value only by using the Change Status action.",
+   "maxLength": 16
+  },
+  "productline": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Product Line",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The product line that is associated with the run log.",
+   "maxLength": 50
+  },
+  "validatedrun": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Validated Run",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Specifies whether the run data is validated. If the check box is selected, the run data is validated."
+  },
+  "controlroom_description": {
+   "type": "string"
+  },
+  "tubularassy": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Tubular Assembly",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The tubular assembly that is associated with the run.",
+   "maxLength": 40
+  },
+  "description": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Description",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The description of the run log. You can change this value if the status of the run log record is Draft or Active.",
+   "maxLength": 100
+  },
+  "haslogentries": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Log Entries",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Indicates whether the log contains log entries."
+  },
+  "category_description": {
+   "type": "string"
+  },
+  "_imagelibref": {
+   "type": "string"
+  },
+  "plantmode_description": {
+   "type": "string"
+  },
+  "plusgshiftlogid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Unique Id",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "uniqueid": true,
+   "remarks": "Unique Id",
+   "maxLength": 11
+  },
+  "assetnum": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Asset",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The asset that is associated with the run log. If you perform an advanced search on this field, the application returns all run logs that include this asset. The location that is associated with the asset is copied to the location field.",
+   "maxLength": 25
+  },
+  "comments": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Run Comments",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Comments about the run log. You can change this value unless the status of the run log record is Inactive.",
+   "maxLength": 250
+  },
+  "classstructureid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Classification",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "A classification of the shift log.",
+   "maxLength": 25
+  },
+  "controlroom": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Control Room",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The control room that is associated with the run log. Valid values are in the PLUSGCONTROLROOM domain. You can change this value unless the status of the run log record is Inactive.",
+   "maxLength": 18
+  },
+  "finishdate": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Finish Date",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The date and time when the run finished. You can change this value when the status of the run log is Draft."
+  },
+  "shiftnum": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Run Log",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The identifier of the run log record. The combination of site and run log must be unique. After you create and save the run log record, this field is read-only.",
+   "maxLength": 12
+  },
+  "plusglogbookid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Unique Id",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "Unique Id",
+   "maxLength": 11
+  },
+  "statusdate": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Status Date",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The server date and time when the run log record was created or its status was changed through the Change Status action. This field is read-only."
+  },
+  "wonum": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Work Order",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The work order that is associated with the run log. If you perform an advanced search on this field, the application returns all run logs that include this work order. The work order cannot be waiting for approval, closed, or canceled. ",
+   "maxLength": 25
+  },
+  "workorderid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Work Order",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "hasList": true,
+   "remarks": "Work Order ID",
+   "maxLength": 11
+  },
+  "assetid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Asset",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "hasList": true,
+   "remarks": "Asset ID",
+   "maxLength": 11
+  },
+  "plantmode": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Plant Mode",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The mode of operation of the plant, at the time of the run log. Valid values are in the PLUSGPLANTMODE domain. You can change this value unless the status of the run log record is Inactive.",
+   "maxLength": 24
+  },
+  "location": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Location",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The location that is associated with the run log.",
+   "maxLength": 25
+  },
+  "kpiname": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "KPI",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The key performance indicator that is used to track the implementation of the run log. You can change this value when the status of the run log record is Active or Draft.",
+   "maxLength": 50
+  },
+  "category": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Category",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The category of the run log. Valid values are in the PLUSGSHIFTCATEGORY domain. You can change this value unless the status of the run log record is Inactive.",
+   "maxLength": 24
+  }
+ },
+ "required": [
+  "finishdate",
+  "orgid",
+  "shiftnum",
+  "siteid",
+  "startdate",
+  "status",
+  "statusdate"
+ ]
+}

@@ -1,0 +1,70 @@
+# Work Order business process.
+#
+# Present to prove the suite extends beyond CU without redesign (blueprint
+# section 1). Same schema as cu.yaml.
+
+name: "WO"
+label: "Work Order Management"
+description: >
+  Work order planning, scheduling, execution and closeout for T&D utilities.
+
+keywords:
+  - work order
+  - wo track
+  - workorder
+  - work request
+  - service request
+  - planned maintenance
+  - corrective maintenance
+  - labor reporting
+  - actuals
+
+objects:
+  primary:
+    - WORKORDER
+    - WOACTIVITY
+    - WPLABOR
+    - WPMATERIAL
+  related:
+    - ASSET
+    - LOCATIONS
+    - JOBPLAN
+    - PM
+    - LABTRANS
+    - MATUSETRANS
+    - SR
+
+applications:
+  - WOTRACK
+  - QUICKREPORT
+  - ASSIGNMGR
+  - PLUSGWO
+
+statuses:
+  workorder:
+    - WAPPR
+    - APPR
+    - INPRG
+    - COMP
+    - CLOSE
+    - CAN
+    - HISTEDIT
+
+naming:
+  autoscript_prefix: "WO"
+  publish_channel_suffix: "_PC"
+  external_system_suffix: "_EXTSYS"
+  object_structure_prefix: "MXAPI"
+
+estimation:
+  config: 4
+  customisation: 12
+  integration: 20
+  workflow: 10
+  report: 16
+  security: 3
+  data: 8
+  risk_multiplier:
+    low: 1.0
+    medium: 1.25
+    high: 1.6

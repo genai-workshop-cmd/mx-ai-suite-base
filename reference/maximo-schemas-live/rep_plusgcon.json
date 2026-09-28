@@ -1,0 +1,236 @@
+{
+ "resource": "REP_PLUSGCON",
+ "description": "Risk Matrix (Oil) Details",
+ "pk": [
+  "orgid",
+  "consqnum",
+  "severity",
+  "revisionnum"
+ ],
+ "title": "PLUSGCONSQ",
+ "type": "object",
+ "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/rep_plusgcon",
+ "uniqueid": "plusgconsqid",
+ "properties": {
+  "consqnum": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Consequence",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Identifier of the consequence. The combination of organization, consequence, and severity must be unique. After you create and save a consequence record, you cannot change this value.",
+   "maxLength": 12
+  },
+  "historyflag": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "History",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "History Flag"
+  },
+  "localref": {
+   "type": "string"
+  },
+  "description": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Description",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Description of the consequence. You can change this value when the status of the consequence record is Draft.",
+   "maxLength": 100
+  },
+  "severity_description": {
+   "type": "string"
+  },
+  "exposureunit": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Units",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The unit of time, such as hours or days, during which exposure to a hazard occurred.",
+   "maxLength": 12
+  },
+  "_rowstamp": {
+   "type": "string"
+  },
+  "exposureduration": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Duration of Exposure",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "The period of time during which exposure to a hazard occurred.",
+   "maxLength": 11
+  },
+  "revisionby": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Revised By",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The person who revised the consequence record.",
+   "maxLength": 100
+  },
+  "_imagelibref": {
+   "type": "string"
+  },
+  "siteid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Site",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The site that is associated with the Risk Matrix. WorkLog needs this attribute.",
+   "maxLength": 8
+  },
+  "displaysequence": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "SMALLINT",
+   "title": "Display Sequence",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "hasList": true,
+   "remarks": "The sequence in which the consequence will display on the Risk Matrix report. The consequence with the highest value appears in the first column of the Risk Matrix report. This value must be unique for the combination of organization, severity, and consequence. After you create and save a consequence record, this field is read-only.",
+   "maxLength": 11
+  },
+  "href": {
+   "type": "string",
+   "title": "PLUSGCONSQ object reference"
+  },
+  "plusgconsqid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Unique Id",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "uniqueid": true,
+   "remarks": "Unique Id",
+   "maxLength": 11
+  },
+  "severity": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Severity",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The severity of the risk. Valid values are in the PLUSGSEVERITY synonym domain. After you create and save a consequence record, you cannot change this value.",
+   "maxLength": 30
+  },
+  "summary": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Summary",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Summary of the circumstances in which the consequence should be applied. You can update this field while the status of the consequence record is Draft.",
+   "maxLength": 200
+  },
+  "exposureunit_description": {
+   "type": "string"
+  },
+  "status_description": {
+   "type": "string"
+  },
+  "revisioncom": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Comments",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The comments for the revision.",
+   "maxLength": 200
+  },
+  "revisionnum": {
+   "default": 0,
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "INTEGER",
+   "title": "Revision",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "The revision number of the consequence record. Indicates how many times a consequence record has been revised.",
+   "maxLength": 11
+  },
+  "record_descriptor": {
+   "type": "string",
+   "title": "Record/Object Descriptor"
+  },
+  "standardref": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Reference Standard",
+   "persistent": true,
+   "type": "string",
+   "remarks": "A reference to the standard that defines the risk matrix. You can change this value while the status of the consequence record is Draft.",
+   "maxLength": 16
+  },
+  "orgid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Organization",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The organization that the consequence record is associated with. The default value is the organization of the logged-in user. This field is read-only.",
+   "maxLength": 8
+  },
+  "statusdate": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Status Date",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The server date and time when the status of the consequence record was changed, through creation of the record or the Change Status action. You cannot change this value."
+  },
+  "envimpact": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Environmental Impact",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Indicates whether the consequence of the risk is identified as having the potential to impact the environment, such as polluting water."
+  },
+  "revisiondate": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Revision Date",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The date when the consequence record was revised."
+  },
+  "_id": {
+   "type": "string"
+  },
+  "status": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Status",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The status of the consequence record. The default status, when you create the record, is Draft. Valid values are in the PLUSGCONSQSTATUS synonym domain. You can change the value only through the Change Status Action.",
+   "maxLength": 16
+  }
+ },
+ "required": [
+  "consqnum",
+  "displaysequence",
+  "severity",
+  "status",
+  "statusdate"
+ ]
+}

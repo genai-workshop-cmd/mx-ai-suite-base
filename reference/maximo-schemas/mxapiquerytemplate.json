@@ -1,0 +1,194 @@
+{
+  "resource": "MXAPIQUERYTEMPLATE",
+  "description": "QUERYTEMPLATE",
+  "pk": [
+    "templatename",
+    "owner",
+    "intobjectname",
+    "objectname"
+  ],
+  "title": "QUERYTEMPLATE",
+  "type": "object",
+  "$ref": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapiquerytemplate",
+  "uniqueid": "querytemplateid",
+  "properties": {
+    "owner": {
+      "default": "&PERSONID&",
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Owner",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Owner",
+      "maxLength": 100
+    },
+    "searchattrs": {
+      "searchType": "NONE",
+      "subType": "ALN",
+      "title": "Search Attribute",
+      "type": "string",
+      "remarks": "Search Attribute",
+      "maxLength": 500
+    },
+    "role": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Role Name",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Role Name",
+      "maxLength": 20
+    },
+    "localref": {
+      "type": "string"
+    },
+    "sortbyclause": {
+      "searchType": "NONE",
+      "subType": "ALN",
+      "title": "Sort By Clause",
+      "type": "string",
+      "remarks": "Sort By Clause",
+      "maxLength": 500
+    },
+    "dfltprojection": {
+      "default": false,
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "Default Projection",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "Default projection for the object structure"
+    },
+    "objectname": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Object Name",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Maximo business object to which this query template applies.",
+      "maxLength": 30
+    },
+    "description": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Description",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Description of the template.",
+      "maxLength": 200
+    },
+    "querytemplateid": {
+      "searchType": "EXACT",
+      "maximum": 2147483647.0,
+      "subType": "BIGINT",
+      "title": "Unique Id",
+      "persistent": true,
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "uniqueid": true,
+      "remarks": "Unique Id",
+      "maxLength": 11
+    },
+    "intobjectname": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Object structure",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Object Structure Name",
+      "maxLength": 20
+    },
+    "selectclause": {
+      "searchType": "NONE",
+      "subType": "ALN",
+      "title": "Select Clause",
+      "type": "string",
+      "remarks": "Select Clause",
+      "maxLength": 4000
+    },
+    "querytemplateattr": {
+      "objectName": "QUERYTEMPLATEATTR",
+      "type": "array",
+      "items": {
+        "definition": {
+          "subSchema": {
+            "$ref": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapiquerytemplate/querytemplateattr"
+          }
+        },
+        "type": "object"
+      },
+      "cardinality": "",
+      "relation": "QUERYTEMPLATEATTR"
+    },
+    "_rowstamp": {
+      "type": "string"
+    },
+    "_imagelibref": {
+      "type": "string"
+    },
+    "ispublic": {
+      "default": true,
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "Is Public",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "Is Public"
+    },
+    "pagesize": {
+      "searchType": "EXACT",
+      "maximum": 2147483647.0,
+      "subType": "INTEGER",
+      "title": "Page Size",
+      "persistent": true,
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "remarks": "Page Size",
+      "maxLength": 11
+    },
+    "timelineattribute": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Timeline Attribute",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Timeline Attribute",
+      "maxLength": 50
+    },
+    "templatename": {
+      "default": "&AUTOKEY&",
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Template Name",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Template Name",
+      "maxLength": 50
+    },
+    "href": {
+      "type": "string"
+    },
+    "_id": {
+      "type": "string"
+    },
+    "searchattributes": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Search Attributes",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Search Attributes",
+      "maxLength": 500
+    },
+    "userdefined": {
+      "default": true,
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "User defined",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "User defined"
+    }
+  }
+}

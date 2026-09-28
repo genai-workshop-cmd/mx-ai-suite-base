@@ -1,0 +1,161 @@
+{
+ "resource": "MXAPIOAUTHCLIENT",
+ "description": "OAUTH client configuration",
+ "pk": [
+  "clientname"
+ ],
+ "title": "MAXOAUTHCLIENT",
+ "type": "object",
+ "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/mxapioauthclient",
+ "uniqueid": "maxoauthclientid",
+ "properties": {
+  "creationdate": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Creation Date",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Access Token Creation Date"
+  },
+  "clientid": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Client ID",
+   "persistent": true,
+   "type": "string",
+   "remarks": "OAUTH client id",
+   "maxLength": 100
+  },
+  "tokenurl": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Token URL",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Token URL",
+   "maxLength": 200
+  },
+  "localref": {
+   "type": "string"
+  },
+  "clientsecret": {
+   "searchType": "NONE",
+   "subType": "CRYPTO",
+   "title": "Client Secret",
+   "persistent": true,
+   "type": "object",
+   "remarks": "Client Secret"
+  },
+  "exitclass": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Exit Class",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Exit class for custom oauth client interaction.",
+   "maxLength": 100
+  },
+  "accesstoken": {
+   "searchType": "NONE",
+   "subType": "CRYPTO",
+   "title": "Access Token",
+   "persistent": true,
+   "type": "object",
+   "remarks": "Access Token"
+  },
+  "maxoauthclientid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Unique Id",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "uniqueid": true,
+   "remarks": "Unique Id",
+   "maxLength": 11
+  },
+  "record_descriptor": {
+   "type": "string",
+   "title": "Record/Object Descriptor"
+  },
+  "granttype": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Grant Type",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Grant Type",
+   "maxLength": 50
+  },
+  "granttype_description": {
+   "type": "string"
+  },
+  "_rowstamp": {
+   "type": "string"
+  },
+  "_imagelibref": {
+   "type": "string"
+  },
+  "expiryinsec": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "INTEGER",
+   "title": "Expiry",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "Refresh Token",
+   "maxLength": 11
+  },
+  "clientname": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Client Name",
+   "persistent": true,
+   "type": "string",
+   "remarks": "OAUTH client config name",
+   "maxLength": 20
+  },
+  "scope": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Scope",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Scope",
+   "maxLength": 200
+  },
+  "refreshtoken": {
+   "searchType": "NONE",
+   "subType": "CRYPTO",
+   "title": "Refresh Token",
+   "persistent": true,
+   "type": "object",
+   "remarks": "Refresh Token"
+  },
+  "href": {
+   "type": "string",
+   "title": "MAXOAUTHCLIENT object reference"
+  },
+  "_id": {
+   "type": "string"
+  },
+  "accesstokenpersistent": {
+   "default": true,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Access Token persistent",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "If value is 1, accesstoken will be saved in table for future use. If value is 0, OAuth client will retrieve new accesstoken every time with refresh token"
+  }
+ },
+ "required": [
+  "clientid",
+  "clientname",
+  "clientsecret",
+  "tokenurl"
+ ]
+}

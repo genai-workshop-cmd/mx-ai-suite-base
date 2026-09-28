@@ -1,0 +1,108 @@
+{
+  "resource": "MXAPIWEATHERPRODUCT",
+  "description": "WEATHERPRODUCT",
+  "pk": [
+    "groupname",
+    "productcode"
+  ],
+  "title": "WEATHERPRODUCT",
+  "type": "object",
+  "$ref": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapiweatherproduct",
+  "uniqueid": "weatherproductid",
+  "properties": {
+    "productcode": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Product Code",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Product Code",
+      "maxLength": 100
+    },
+    "localref": {
+      "type": "string"
+    },
+    "org": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Organization",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Organization",
+      "maxLength": 20
+    },
+    "lifespan": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Life Span",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Life Span",
+      "maxLength": 20
+    },
+    "description": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Description",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Description",
+      "maxLength": 1000
+    },
+    "groupname": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Group Name",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Group Name",
+      "maxLength": 20
+    },
+    "_rowstamp": {
+      "type": "string"
+    },
+    "_imagelibref": {
+      "type": "string"
+    },
+    "name": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Name",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Name",
+      "maxLength": 1000
+    },
+    "weatherproductid": {
+      "searchType": "EXACT",
+      "maximum": 2147483647.0,
+      "subType": "BIGINT",
+      "title": "Unique Id",
+      "persistent": true,
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "uniqueid": true,
+      "remarks": "Unique Id",
+      "maxLength": 11
+    },
+    "sourcetype": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Source Type",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Source Type",
+      "maxLength": 20
+    },
+    "href": {
+      "type": "string"
+    },
+    "_id": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "org",
+    "productcode"
+  ]
+}

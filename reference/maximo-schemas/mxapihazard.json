@@ -1,0 +1,364 @@
+{
+  "resource": "MXAPIHAZARD",
+  "description": "HAZARD",
+  "pk": [
+    "orgid",
+    "hazardid"
+  ],
+  "title": "HAZARD",
+  "type": "object",
+  "$ref": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapihazard",
+  "uniqueid": "hazarduid",
+  "properties": {
+    "haz06": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Extra 6",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Extra Field 06",
+      "maxLength": 10
+    },
+    "haz05": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Extra 5",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Extra Field 05",
+      "maxLength": 10
+    },
+    "haz04": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Extra 4",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Extra Field 04",
+      "maxLength": 10
+    },
+    "haz03": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Extra 3",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Extra Field 03",
+      "maxLength": 10
+    },
+    "localref": {
+      "type": "string"
+    },
+    "haz02": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Extra 2",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Extra Field 02",
+      "maxLength": 10
+    },
+    "haz01": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Extra 1",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Extra Field 01",
+      "maxLength": 10
+    },
+    "healthrating": {
+      "searchType": "EXACT",
+      "maximum": 2147483647.0,
+      "subType": "INTEGER",
+      "title": "Health",
+      "persistent": true,
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "remarks": "NFPA Health Rating",
+      "maxLength": 11
+    },
+    "description": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Description",
+      "persistent": true,
+      "type": "string",
+      "remarks": "The description of the hazard",
+      "maxLength": 100
+    },
+    "msdsnum": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "MSDS",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Identifies the MSDS Sheet",
+      "maxLength": 10
+    },
+    "haz09": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Extra 9",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Extra Field 09",
+      "maxLength": 10
+    },
+    "haz08": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Extra 8",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Extra Field 08",
+      "maxLength": 10
+    },
+    "haz07": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Extra 7",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Extra Field 07",
+      "maxLength": 10
+    },
+    "precaution": {
+      "objectName": "PRECAUTION",
+      "type": "array",
+      "items": {
+        "definition": {
+          "subSchema": {
+            "$ref": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapihazard/precaution"
+          }
+        },
+        "type": "object"
+      },
+      "cardinality": "UNDEFINED",
+      "relation": "PRECAUTION"
+    },
+    "hazmatenabled": {
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "Can Have Hazardous Materials",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "Is this hazard Hazardous Material enabled"
+    },
+    "_rowstamp": {
+      "type": "string"
+    },
+    "contactrating": {
+      "searchType": "EXACT",
+      "maximum": 2147483647.0,
+      "subType": "INTEGER",
+      "title": "Contact",
+      "persistent": true,
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "remarks": "NFPA Contact Rating",
+      "maxLength": 11
+    },
+    "_imagelibref": {
+      "type": "string"
+    },
+    "href": {
+      "type": "string"
+    },
+    "hazardtype": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Type",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Identifies the hazard type",
+      "maxLength": 16
+    },
+    "hazardid": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Hazard",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Identifies the hazard",
+      "maxLength": 8
+    },
+    "haz17": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Extra 17",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Extra Field 17",
+      "maxLength": 10
+    },
+    "haz16": {
+      "searchType": "EXACT",
+      "scale": 2,
+      "subType": "DECIMAL",
+      "title": "Extra 16",
+      "persistent": true,
+      "type": "number",
+      "remarks": "Extra Field 16",
+      "maxLength": 16
+    },
+    "haz15": {
+      "searchType": "EXACT",
+      "scale": 2,
+      "subType": "DECIMAL",
+      "title": "Extra 15",
+      "persistent": true,
+      "type": "number",
+      "remarks": "Extra Field 15",
+      "maxLength": 16
+    },
+    "haz14": {
+      "searchType": "EXACT",
+      "subType": "DATETIME",
+      "title": "Extra 14",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Extra Field 14"
+    },
+    "haz13": {
+      "searchType": "EXACT",
+      "subType": "DATETIME",
+      "title": "Extra 13",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Extra Field 13"
+    },
+    "tagoutenabled": {
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "Can Have Tag Outs",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "Is this hazard Tagout enabled"
+    },
+    "haz12": {
+      "searchType": "EXACT",
+      "scale": 2,
+      "subType": "AMOUNT",
+      "title": "Extra 12",
+      "persistent": true,
+      "type": "number",
+      "remarks": "Extra Field 12",
+      "maxLength": 11
+    },
+    "haz11": {
+      "searchType": "EXACT",
+      "scale": 2,
+      "subType": "AMOUNT",
+      "title": "Extra 11",
+      "persistent": true,
+      "type": "number",
+      "remarks": "Extra Field 11",
+      "maxLength": 11
+    },
+    "haz10": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Extra 10",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Extra Field 10",
+      "maxLength": 10
+    },
+    "hazarduid": {
+      "searchType": "EXACT",
+      "maximum": 2147483647.0,
+      "subType": "BIGINT",
+      "title": "HAZARDUID",
+      "persistent": true,
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "uniqueid": true,
+      "remarks": "Unique Identifier",
+      "maxLength": 11
+    },
+    "haz19": {
+      "searchType": "EXACT",
+      "maximum": 2147483647.0,
+      "subType": "INTEGER",
+      "title": "Extra 19",
+      "persistent": true,
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "remarks": "Extra Field 19",
+      "maxLength": 11
+    },
+    "orgid": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Organization",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Organization Identifier",
+      "maxLength": 8
+    },
+    "haz18": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Extra 18",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Extra Field 18",
+      "maxLength": 10
+    },
+    "precautionenabled": {
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "Can Have Precautions",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "Is this hazard precaution enabled"
+    },
+    "flammabilityrating": {
+      "searchType": "EXACT",
+      "maximum": 2147483647.0,
+      "subType": "INTEGER",
+      "title": "Flammability",
+      "persistent": true,
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "remarks": "MFPA Flammability Rating",
+      "maxLength": 11
+    },
+    "haz20": {
+      "default": false,
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "Extra 20",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "Extra Field 20"
+    },
+    "_id": {
+      "type": "string"
+    },
+    "hazardtype_description": {
+      "type": "string"
+    },
+    "reactivityrating": {
+      "searchType": "EXACT",
+      "maximum": 2147483647.0,
+      "subType": "INTEGER",
+      "title": "Reactivity",
+      "persistent": true,
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "remarks": "MFPA Reactivity Rating",
+      "maxLength": 11
+    }
+  },
+  "required": [
+    "hazardid",
+    "hazmatenabled",
+    "orgid",
+    "precautionenabled",
+    "tagoutenabled"
+  ]
+}

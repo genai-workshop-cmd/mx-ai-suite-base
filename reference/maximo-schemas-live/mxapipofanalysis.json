@@ -1,0 +1,259 @@
+{
+ "resource": "MXAPIPOFANALYSIS",
+ "description": "API for POFANALYSIS",
+ "pk": [
+  "pofanalysisid"
+ ],
+ "title": "POFANALYSIS",
+ "type": "object",
+ "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/mxapipofanalysis",
+ "uniqueid": "pofanalysisid",
+ "properties": {
+  "constant": {
+   "searchType": "EXACT",
+   "scale": 2,
+   "subType": "DECIMAL",
+   "title": "Constant",
+   "persistent": true,
+   "type": "number",
+   "remarks": "Constant value for POF calculation",
+   "maxLength": 17
+  },
+  "localref": {
+   "type": "string"
+  },
+  "datainputmethod_description": {
+   "type": "string"
+  },
+  "createddate": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Created Date",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Date when the record was created"
+  },
+  "description": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Description",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Description of the POF Analysis",
+   "maxLength": 255
+  },
+  "chartoption": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Chart Option",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Chart display option for visualization",
+   "maxLength": 50
+  },
+  "langcode": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Language Code",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Language Code",
+   "maxLength": 4
+  },
+  "_rowstamp": {
+   "type": "string"
+  },
+  "assettypes": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Asset Types",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Comma-separated list of asset types to include",
+   "maxLength": 255
+  },
+  "lambda": {
+   "searchType": "EXACT",
+   "scale": 2,
+   "subType": "DECIMAL",
+   "title": "Lambda",
+   "persistent": true,
+   "type": "number",
+   "remarks": "Weibull distribution lambda parameter",
+   "maxLength": 17
+  },
+  "createdby": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Created By",
+   "persistent": true,
+   "type": "string",
+   "remarks": "User who created the record",
+   "maxLength": 100
+  },
+  "_imagelibref": {
+   "type": "string"
+  },
+  "pofanalysisid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Unique Id",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "uniqueid": true,
+   "remarks": "Unique Id",
+   "maxLength": 11
+  },
+  "kappa": {
+   "searchType": "EXACT",
+   "scale": 2,
+   "subType": "DECIMAL",
+   "title": "Kappa",
+   "persistent": true,
+   "type": "number",
+   "remarks": "Weibull distribution kappa parameter",
+   "maxLength": 17
+  },
+  "href": {
+   "type": "string",
+   "title": "POFANALYSIS object reference"
+  },
+  "expgroupname": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Expression Group Name",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Reference to Expression Group",
+   "maxLength": 200
+  },
+  "weibullcurve": {
+   "searchType": "NONE",
+   "subType": "ALN",
+   "title": "Weibull Curve",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Comma-separated list for selected curve data",
+   "maxLength": 2000
+  },
+  "csvfilename": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "CSV File Name",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Name of the uploaded CSV file for failure incident data",
+   "maxLength": 255
+  },
+  "changeby": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Changed By",
+   "persistent": true,
+   "type": "string",
+   "remarks": "User who last changed the record",
+   "maxLength": 100
+  },
+  "workordertypes": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Work Order Types",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Comma-separated list of work order types to include",
+   "maxLength": 255
+  },
+  "changedate": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Change Date",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Date when the record was last changed"
+  },
+  "record_descriptor": {
+   "type": "string",
+   "title": "Record/Object Descriptor"
+  },
+  "chartoption_description": {
+   "type": "string"
+  },
+  "locationtypes": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Location Types",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Comma-separated list of location types to include",
+   "maxLength": 255
+  },
+  "problemcodes": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Problem Codes",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Comma-separated list of problem codes to include",
+   "maxLength": 255
+  },
+  "hasld": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Has Long Description",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Boolean flag to indicate if there is any long description for this record"
+  },
+  "name": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Name",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Name of the POF Analysis",
+   "maxLength": 100
+  },
+  "failureincidentcurve": {
+   "searchType": "NONE",
+   "subType": "CLOB",
+   "title": "Failure Incident Curve",
+   "persistent": true,
+   "type": "string",
+   "remarks": "JSON data for failure incident curve visualization",
+   "maxLength": 999999
+  },
+  "_id": {
+   "type": "string"
+  },
+  "datainputmethod": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Data Input Method",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Method of data input (MANUAL, CSV, GUIDEDQUESTIONS)",
+   "maxLength": 50
+  },
+  "status": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Status",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Status of the POF Analysis",
+   "maxLength": 20
+  }
+ },
+ "required": [
+  "datainputmethod",
+  "description",
+  "langcode",
+  "name"
+ ]
+}

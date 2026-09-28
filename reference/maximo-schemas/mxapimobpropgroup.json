@@ -1,0 +1,105 @@
+{
+  "resource": "MXAPIMOBPROPGROUP",
+  "description": "MOBILEPROPGROUP",
+  "pk": [
+    "mobilepropgroupnum"
+  ],
+  "title": "MOBILEPROPGROUP",
+  "type": "object",
+  "$ref": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapimobpropgroup",
+  "uniqueid": "mobilepropgroupid",
+  "properties": {
+    "mobilepropgroupid": {
+      "searchType": "EXACT",
+      "maximum": 2147483647.0,
+      "subType": "BIGINT",
+      "title": "Unique Id",
+      "persistent": true,
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "uniqueid": true,
+      "remarks": "Unique Id",
+      "maxLength": 11
+    },
+    "mobileproperty": {
+      "objectName": "MOBILEPROPERTY",
+      "type": "array",
+      "items": {
+        "definition": {
+          "subSchema": {
+            "$ref": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapimobpropgroup/mobileproperty"
+          }
+        },
+        "type": "object"
+      },
+      "cardinality": "",
+      "relation": "MOBILEPROPERTY"
+    },
+    "_rowstamp": {
+      "type": "string"
+    },
+    "product": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Mobile Property Group Product Name",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Product Name of Mobile Property Group.",
+      "maxLength": 50
+    },
+    "localref": {
+      "type": "string"
+    },
+    "application": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Mobile Property Group Application Name",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Application Name of Mobile Property Group",
+      "maxLength": 50
+    },
+    "_imagelibref": {
+      "type": "string"
+    },
+    "name": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Mobile Property Group Name",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Name of the Mobile Property Group.",
+      "maxLength": 53
+    },
+    "description": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Mobile Property Group Description",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Description of the Mobile Property Group.",
+      "maxLength": 900
+    },
+    "href": {
+      "type": "string"
+    },
+    "_id": {
+      "type": "string"
+    },
+    "mobilepropgroupnum": {
+      "default": "&AUTOKEY&",
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Mobile Property Group Key",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Key of the Mobile Property Group",
+      "maxLength": 50
+    }
+  },
+  "required": [
+    "application",
+    "name",
+    "product"
+  ]
+}

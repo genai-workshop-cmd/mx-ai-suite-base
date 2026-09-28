@@ -1,0 +1,165 @@
+{
+ "resource": "MXBIMPROJECT",
+ "description": "BIM Import/Export",
+ "pk": [
+  "bimprojectid",
+  "siteid"
+ ],
+ "title": "BIMPROJECT",
+ "type": "object",
+ "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/mxbimproject",
+ "uniqueid": "bimprojectid",
+ "properties": {
+  "projectname": {
+   "searchType": "EXACT",
+   "subType": "ALN",
+   "title": "Project Name",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The name of the project.",
+   "maxLength": 50
+  },
+  "localref": {
+   "type": "string"
+  },
+  "description": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Description",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Describes the BIM Project.  To enter or view additional information, click the Long Description button",
+   "maxLength": 100
+  },
+  "record_descriptor": {
+   "type": "string",
+   "title": "Record/Object Descriptor"
+  },
+  "orgid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Organization",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The organization that the project applies to.",
+   "maxLength": 8
+  },
+  "bimsession": {
+   "objectName": "BIMSESSION",
+   "type": "array",
+   "items": {
+    "definition": {
+     "subSchema": {
+      "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/mxbimproject/bimsession"
+     }
+    },
+    "type": "object"
+   },
+   "cardinality": "",
+   "relation": "BIMSESSION"
+  },
+  "parentloc": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Parent Location",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The parent location that is created for the project. This location must be an operating location in the primary system for the site.",
+   "maxLength": 25
+  },
+  "langcode": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Language Code",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Language Code",
+   "maxLength": 4
+  },
+  "_rowstamp": {
+   "type": "string"
+  },
+  "bimprojectid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Project ID",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "uniqueid": true,
+   "remarks": "ProjectID",
+   "maxLength": 11
+  },
+  "hasld": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Has Long Description",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Boolean flag to indicate if there is any long description for this record"
+  },
+  "_imagelibref": {
+   "type": "string"
+  },
+  "prefixseq": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "INTEGER",
+   "title": "project sequence",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "Project Sequence",
+   "maxLength": 11
+  },
+  "itemsetid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Item Set for Products",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The item set that the imported product records are assigned to.",
+   "maxLength": 8
+  },
+  "siteid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Site",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The site that the project applies to.",
+   "maxLength": 8
+  },
+  "href": {
+   "type": "string",
+   "title": "BIMPROJECT object reference"
+  },
+  "_id": {
+   "type": "string"
+  },
+  "locationprefix": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Location Prefix",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The prefix that is added to the location identifier. The prefix must be unique for each project.",
+   "maxLength": 5
+  }
+ },
+ "required": [
+  "itemsetid",
+  "langcode",
+  "locationprefix",
+  "parentloc",
+  "siteid"
+ ]
+}

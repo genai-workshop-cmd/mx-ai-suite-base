@@ -1,0 +1,174 @@
+{
+ "resource": "REP_PLUSGLKBOX",
+ "description": "Lock Management (Oil) Details",
+ "pk": [
+  "locknum",
+  "siteid",
+  "orgid"
+ ],
+ "title": "PLUSGMASTERLOCKBOX",
+ "type": "object",
+ "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/rep_plusglkbox",
+ "uniqueid": "plusgmasterlockboxid",
+ "properties": {
+  "owner": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Owner",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The owner of the lock, seal, or lock box.",
+   "maxLength": 100
+  },
+  "status_description": {
+   "type": "string"
+  },
+  "localref": {
+   "type": "string"
+  },
+  "description": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Description",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The description of the lock management record.",
+   "maxLength": 100
+  },
+  "record_descriptor": {
+   "type": "string",
+   "title": "Record/Object Descriptor"
+  },
+  "locknum": {
+   "default": "&AUTOKEY&",
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Lock",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The unique identifier of the lock management record.",
+   "maxLength": 15
+  },
+  "ownergroup": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Owner Group",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The owner group of the lock, seal, or lock box.",
+   "maxLength": 8
+  },
+  "type": {
+   "searchType": "EXACT",
+   "subType": "ALN",
+   "title": "Type",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The type of lock management record.",
+   "maxLength": 40
+  },
+  "orgid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Organization",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The organization that is associated with the lock management record.",
+   "maxLength": 8
+  },
+  "statusdate": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Status Date",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The date that the status was last changed."
+  },
+  "_rowstamp": {
+   "type": "string"
+  },
+  "locationsid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Location",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "The identifier of the location.",
+   "maxLength": 11
+  },
+  "_imagelibref": {
+   "type": "string"
+  },
+  "inuse": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "In Use",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Indicates whether the lock, car seal, or lock box is in use."
+  },
+  "siteid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Site",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The site that is associated with the lock management record.",
+   "maxLength": 8
+  },
+  "location": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Location",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The location that is associated with the lock management record.",
+   "maxLength": 25
+  },
+  "href": {
+   "type": "string",
+   "title": "PLUSGMASTERLOCKBOX object reference"
+  },
+  "_id": {
+   "type": "string"
+  },
+  "type_description": {
+   "type": "string"
+  },
+  "plusgmasterlockboxid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Unique Id",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "uniqueid": true,
+   "remarks": "Unique Id",
+   "maxLength": 11
+  },
+  "status": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Status",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The status of the lock management record.",
+   "maxLength": 12
+  }
+ },
+ "required": [
+  "status",
+  "statusdate",
+  "type"
+ ]
+}

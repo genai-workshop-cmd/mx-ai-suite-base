@@ -1,0 +1,148 @@
+{
+ "resource": "MXJSONRESNP",
+ "description": "JSON Resource generation",
+ "title": "JSONPROCESSNP",
+ "type": "object",
+ "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/mxjsonresnp",
+ "properties": {
+  "orderbyparam": {
+   "searchType": "NONE",
+   "subType": "ALN",
+   "title": "Order By Parameter",
+   "type": "string",
+   "remarks": "Order By Parameter",
+   "maxLength": 50
+  },
+  "jsondata": {
+   "searchType": "NONE",
+   "subType": "CLOB",
+   "title": "JSON Data",
+   "type": "string",
+   "remarks": "JSON XML or schema",
+   "maxLength": 999999
+  },
+  "localref": {
+   "type": "string"
+  },
+  "description": {
+   "searchType": "NONE",
+   "subType": "ALN",
+   "title": "Description",
+   "type": "string",
+   "remarks": "Describes resource",
+   "maxLength": 200
+  },
+  "record_descriptor": {
+   "type": "string",
+   "title": "Record/Object Descriptor"
+  },
+  "nullformat": {
+   "searchType": "NONE",
+   "subType": "ALN",
+   "title": "Null Format",
+   "type": "string",
+   "remarks": "Null Format",
+   "maxLength": 10
+  },
+  "stringqualifier": {
+   "searchType": "NONE",
+   "subType": "ALN",
+   "title": "String Qualifier",
+   "type": "string",
+   "remarks": "String Qualifier",
+   "maxLength": 10
+  },
+  "resourcetype": {
+   "searchType": "NONE",
+   "isUserDefined": true,
+   "subType": "UPPER",
+   "title": "Resource Type",
+   "type": "string",
+   "hasList": true,
+   "remarks": "Resource Type",
+   "maxLength": 20
+  },
+  "fetchlimit": {
+   "default": 0,
+   "searchType": "NONE",
+   "maximum": 2147483647.0,
+   "subType": "INTEGER",
+   "title": "Fetch Limit",
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "Fetch Limit for paging",
+   "maxLength": 11
+  },
+  "url": {
+   "searchType": "NONE",
+   "isUserDefined": true,
+   "subType": "ALN",
+   "title": "URL",
+   "type": "string",
+   "remarks": "URL",
+   "maxLength": 1000
+  },
+  "usewith": {
+   "searchType": "NONE",
+   "subType": "ALN",
+   "title": "Resource Usage",
+   "type": "string",
+   "hasList": true,
+   "remarks": "Resource Usage",
+   "maxLength": 20
+  },
+  "_rowstamp": {
+   "type": "string"
+  },
+  "optimize": {
+   "default": true,
+   "searchType": "NONE",
+   "subType": "YORN",
+   "title": "Optimize resource",
+   "type": "boolean",
+   "remarks": "Optimize resource"
+  },
+  "_imagelibref": {
+   "type": "string"
+  },
+  "endpointname": {
+   "searchType": "NONE",
+   "subType": "UPPER",
+   "title": "End Point",
+   "type": "string",
+   "hasList": true,
+   "remarks": "End Point",
+   "maxLength": 20
+  },
+  "href": {
+   "type": "string",
+   "title": "JSONPROCESSNP object reference"
+  },
+  "_id": {
+   "type": "string"
+  },
+  "resourcename": {
+   "searchType": "NONE",
+   "subType": "UPPER",
+   "title": "Resource",
+   "type": "string",
+   "hasList": true,
+   "remarks": "Resource.",
+   "maxLength": 30
+  },
+  "pageparams": {
+   "searchType": "NONE",
+   "subType": "ALN",
+   "title": "Paging Parameters",
+   "type": "string",
+   "remarks": "Paging Parameters",
+   "maxLength": 50
+  }
+ },
+ "required": [
+  "jsondata",
+  "resourcename",
+  "resourcetype",
+  "usewith"
+ ]
+}

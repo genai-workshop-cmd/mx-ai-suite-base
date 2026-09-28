@@ -1,0 +1,200 @@
+{
+ "resource": "MXAPIMSGREPROC",
+ "description": "Message reprocessing definition",
+ "pk": [
+  "messageid"
+ ],
+ "title": "MAXINTERROR",
+ "type": "object",
+ "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/mxapimsgreproc",
+ "uniqueid": "maxinterrorid",
+ "properties": {
+  "queuename": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Queue JNDI name",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "JNDI name of the JMS queue.",
+   "maxLength": 250
+  },
+  "deleteflag": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "INTEGER",
+   "title": "Delete Flag",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "Delete Flag",
+   "maxLength": 11
+  },
+  "localref": {
+   "type": "string"
+  },
+  "changeby": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Change By",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Change By",
+   "maxLength": 100
+  },
+  "ifacename": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Service/Channel",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Interface Name",
+   "maxLength": 25
+  },
+  "memo": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Memo",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Status Memo",
+   "maxLength": 50
+  },
+  "messageid": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Message ID",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Message ID of the message in JMS Queue",
+   "maxLength": 100
+  },
+  "changedate": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Change Date",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Change Date"
+  },
+  "jmsheader": {
+   "searchType": "NONE",
+   "subType": "BLOB",
+   "title": "JMS header",
+   "persistent": true,
+   "type": "string",
+   "remarks": "JMS Header",
+   "maxLength": 999999
+  },
+  "record_descriptor": {
+   "type": "string",
+   "title": "Record/Object Descriptor"
+  },
+  "maxinterrormsg": {
+   "objectName": "MAXINTERRORMSG",
+   "type": "array",
+   "items": {
+    "definition": {
+     "subSchema": {
+      "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/mxapimsgreproc/maxinterrormsg"
+     }
+    },
+    "type": "object"
+   },
+   "cardinality": "UNDEFINED",
+   "relation": "MAXINTERRORMSG"
+  },
+  "consumername": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Consumer Name",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Shows message consumer name",
+   "maxLength": 101
+  },
+  "maxinterrorid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Unique Id",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "uniqueid": true,
+   "remarks": "Unique Id",
+   "maxLength": 11
+  },
+  "userid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "User ID",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Id of a user who is processing error transaction",
+   "maxLength": 100
+  },
+  "statusdate": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Status Date",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Timestamp to indicate when Status of the error has been changed"
+  },
+  "_rowstamp": {
+   "type": "string"
+  },
+  "extsysname": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "External System",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Identifies the external system. This value must be unique. This is the name that must be specified as the SenderID in all inbound messages from that system and as the RecipientID in outbound XML or interface table transactions.",
+   "maxLength": 20
+  },
+  "_imagelibref": {
+   "type": "string"
+  },
+  "href": {
+   "type": "string",
+   "title": "MAXINTERROR object reference"
+  },
+  "_id": {
+   "type": "string"
+  },
+  "errordate": {
+   "default": "&SYSDATE&",
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Error Date",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Error date"
+  },
+  "status": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Status",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Status of the error transaction.",
+   "maxLength": 20
+  }
+ },
+ "required": [
+  "changedate",
+  "deleteflag",
+  "extsysname",
+  "ifacename",
+  "messageid",
+  "queuename",
+  "status",
+  "statusdate"
+ ]
+}

@@ -1,0 +1,55 @@
+{
+  "resource": "REP_SHIPMENT",
+  "description": "SHIPMENT",
+  "pk": [
+    "fromsiteid",
+    "shipmentnum"
+  ],
+  "title": "SHIPMENT",
+  "type": "object",
+  "$ref": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/rep_shipment",
+  "uniqueid": "shipmentid",
+  "properties": {
+    "_rowstamp": {
+      "type": "string"
+    },
+    "localref": {
+      "type": "string"
+    },
+    "_imagelibref": {
+      "type": "string"
+    },
+    "shipmentid": {
+      "searchType": "EXACT",
+      "maximum": 2147483647.0,
+      "subType": "BIGINT",
+      "title": "Shipment",
+      "persistent": true,
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "uniqueid": true,
+      "remarks": "The identifier of the shipment.",
+      "maxLength": 11
+    },
+    "href": {
+      "type": "string"
+    },
+    "_id": {
+      "type": "string"
+    },
+    "shipmentline": {
+      "objectName": "SHIPMENTLINE",
+      "type": "array",
+      "items": {
+        "definition": {
+          "subSchema": {
+            "$ref": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/rep_shipment/shipmentline"
+          }
+        },
+        "type": "object"
+      },
+      "cardinality": "MULTIPLE",
+      "relation": "SHIPMENTLINE"
+    }
+  }
+}

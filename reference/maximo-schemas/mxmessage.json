@@ -1,0 +1,234 @@
+{
+  "resource": "MXMESSAGE",
+  "description": "MAXMESSAGES",
+  "pk": [
+    "msgkey",
+    "msggroup"
+  ],
+  "title": "MAXMESSAGES",
+  "type": "object",
+  "$ref": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxmessage",
+  "uniqueid": "maxmessagesid",
+  "properties": {
+    "otherscrc": {
+      "searchType": "EXACT",
+      "maximum": 2147483647.0,
+      "subType": "BIGINT",
+      "title": "CRC of Original Msgid, Prefix, Options and Display Method",
+      "persistent": true,
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "remarks": "CRC of supplied msgid, prefix, options and display method",
+      "maxLength": 11
+    },
+    "localref": {
+      "type": "string"
+    },
+    "prefix": {
+      "default": true,
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "Display ID",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "Boolean field to indicate whether the end user will see the message id. Default to 1. In almost all cases, the default should be used. The unique message identifier is needed for service to be able to uniquely identify the message."
+    },
+    "explanation": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Explanation",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Explains the message in more detail.",
+      "maxLength": 2000
+    },
+    "maxmessagesid": {
+      "searchType": "EXACT",
+      "maximum": 2147483647.0,
+      "subType": "BIGINT",
+      "title": "MAXMESSAGESID",
+      "persistent": true,
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "uniqueid": true,
+      "remarks": "Unique Identifier",
+      "maxLength": 11
+    },
+    "title": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Title",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Title for the message",
+      "maxLength": 100
+    },
+    "_rowstamp": {
+      "type": "string"
+    },
+    "displaymethod": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Display Method",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Display method of the message (MSGBOX, STATUS etc.)",
+      "maxLength": 10
+    },
+    "_imagelibref": {
+      "type": "string"
+    },
+    "systemaction": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "System Action",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Describes the system's reaction to the condition that caused it to display this message.",
+      "maxLength": 2000
+    },
+    "options": {
+      "searchType": "EXACT",
+      "maximum": 2147483647.0,
+      "subType": "INTEGER",
+      "title": "Options",
+      "persistent": true,
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "remarks": "Logical ORing of options for icons and buttons",
+      "maxLength": 11
+    },
+    "href": {
+      "type": "string"
+    },
+    "value": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Value",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Text to display for the message",
+      "maxLength": 2000
+    },
+    "displaymethod_description": {
+      "type": "string"
+    },
+    "explanationcrc": {
+      "searchType": "EXACT",
+      "maximum": 2147483647.0,
+      "subType": "BIGINT",
+      "title": "CRC of Original Explanation",
+      "persistent": true,
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "remarks": "CRC of supplied explanation",
+      "maxLength": 11
+    },
+    "msgid": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Message ID",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Unique ID to be displayed when the message is displayed. The unique ID conforms to the TMS message ID format.",
+      "maxLength": 20
+    },
+    "responsecrc": {
+      "searchType": "EXACT",
+      "maximum": 2147483647.0,
+      "subType": "BIGINT",
+      "title": "CRC of Original Response",
+      "persistent": true,
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "remarks": "CRC of supplied response",
+      "maxLength": 11
+    },
+    "msggroup": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Message Group",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Group for the message",
+      "maxLength": 25
+    },
+    "valuecrc": {
+      "searchType": "EXACT",
+      "maximum": 2147483647.0,
+      "subType": "BIGINT",
+      "title": "CRC of Original Value",
+      "persistent": true,
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "remarks": "CRC of supplied value",
+      "maxLength": 11
+    },
+    "buttontext": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Button Text",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Overrides standard button text",
+      "maxLength": 100
+    },
+    "operatorresponse": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Operator Response",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Describes what response the operator might be able to take.",
+      "maxLength": 2000
+    },
+    "response": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Response",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Potential Responses to the warning or error.",
+      "maxLength": 2000
+    },
+    "adminresponse": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Admin Response",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Describes what response a System Administrator might be able to take.",
+      "maxLength": 2000
+    },
+    "overlaidmsg": {
+      "default": false,
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "Overlaid",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "Overlaid messages are updated from an overlay product."
+    },
+    "_id": {
+      "type": "string"
+    },
+    "msgkey": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Message Key",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Key for the message",
+      "maxLength": 40
+    }
+  },
+  "required": [
+    "displaymethod",
+    "msggroup",
+    "msgid",
+    "msgkey",
+    "options",
+    "value"
+  ]
+}

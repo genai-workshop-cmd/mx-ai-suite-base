@@ -1,0 +1,145 @@
+{
+ "resource": "MXAPILOCANCESTOR",
+ "description": "Maximo API for Location ANCESTOR Information",
+ "pk": [
+  "siteid",
+  "location",
+  "systemid",
+  "ancestor"
+ ],
+ "title": "LOCANCESTOR",
+ "type": "object",
+ "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/mxapilocancestor",
+ "uniqueid": "locancestorid",
+ "properties": {
+  "lochierarchy": {
+   "objectName": "LOCHIERARCHY",
+   "type": "array",
+   "items": {
+    "definition": {
+     "subSchema": {
+      "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/mxapilocancestor/lochierarchy"
+     }
+    },
+    "type": "object"
+   },
+   "cardinality": "",
+   "relation": "LOCHIERARCHY"
+  },
+  "systemid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "System",
+   "persistent": true,
+   "type": "string",
+   "remarks": "System of this hierarchy",
+   "maxLength": 12
+  },
+  "localref": {
+   "type": "string"
+  },
+  "ancestor": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Search Location Hierarchy",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "An ancestor of this location",
+   "maxLength": 25
+  },
+  "locsystem": {
+   "objectName": "LOCSYSTEM",
+   "type": "array",
+   "items": {
+    "definition": {
+     "subSchema": {
+      "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/mxapilocancestor/locsystem"
+     }
+    },
+    "type": "object"
+   },
+   "cardinality": "",
+   "relation": "LOCSYSTEM"
+  },
+  "record_descriptor": {
+   "type": "string",
+   "title": "Record/Object Descriptor"
+  },
+  "orgid": {
+   "searchType": "EXACT",
+   "subType": "UPPER",
+   "title": "Organization",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Organization Identifier",
+   "maxLength": 8
+  },
+  "_rowstamp": {
+   "type": "string"
+  },
+  "_imagelibref": {
+   "type": "string"
+  },
+  "locancestorid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "LOCANCESTORID",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "uniqueid": true,
+   "remarks": "Unique Identifier",
+   "maxLength": 11
+  },
+  "siteid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Site",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Site Identifier",
+   "maxLength": 8
+  },
+  "location": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Location",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Location Identifier",
+   "maxLength": 25
+  },
+  "locations": {
+   "objectName": "LOCATIONS",
+   "type": "array",
+   "items": {
+    "definition": {
+     "subSchema": {
+      "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/mxapilocancestor/locations"
+     }
+    },
+    "type": "object"
+   },
+   "cardinality": "",
+   "relation": "LOCATIONS"
+  },
+  "href": {
+   "type": "string",
+   "title": "LOCANCESTOR object reference"
+  },
+  "_id": {
+   "type": "string"
+  }
+ },
+ "required": [
+  "ancestor",
+  "location",
+  "orgid",
+  "siteid",
+  "systemid"
+ ]
+}

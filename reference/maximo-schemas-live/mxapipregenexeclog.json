@@ -1,0 +1,155 @@
+{
+ "resource": "MXAPIPREGENEXECLOG",
+ "description": "Maximo API for Mobile Pre Gen Cron Exec Log",
+ "pk": [
+  "execution_id"
+ ],
+ "title": "PREGEN_CRON_EXEC_LOG",
+ "type": "object",
+ "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/mxapipregenexeclog",
+ "uniqueid": "pregen_cron_exec_logid",
+ "properties": {
+  "error_message": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Error Message",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The error message if an error ocurred at a run level",
+   "maxLength": 1000
+  },
+  "run_id": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Run identifier",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Links to the PREGEN_RUN_CONTROL table",
+   "maxLength": 36
+  },
+  "localref": {
+   "type": "string"
+  },
+  "initial_role": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Initial Role",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The role that the instance took initially",
+   "maxLength": 25
+  },
+  "created_at": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Created At",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Record creation timestamp"
+  },
+  "record_descriptor": {
+   "type": "string",
+   "title": "Record/Object Descriptor"
+  },
+  "execution_end": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Execution End",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Time when the execution ended"
+  },
+  "execution_id": {
+   "default": "&AUTOKEY&",
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Execution id",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "Unique identifier for the execution",
+   "maxLength": 11
+  },
+  "_rowstamp": {
+   "type": "string"
+  },
+  "pregen_cron_exec_logid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Unique Id",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "uniqueid": true,
+   "remarks": "Unique Id",
+   "maxLength": 11
+  },
+  "updated_at": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Updated At",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Last updated timestamp"
+  },
+  "pregen_cron_exec_log_job": {
+   "objectName": "PREGEN_CRON_EXEC_LOG_JOB",
+   "type": "array",
+   "items": {
+    "definition": {
+     "subSchema": {
+      "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/mxapipregenexeclog/pregen_cron_exec_log_job"
+     }
+    },
+    "type": "object"
+   },
+   "cardinality": "",
+   "relation": "PREGENCRONEXECLOGJOB"
+  },
+  "_imagelibref": {
+   "type": "string"
+  },
+  "execution_start": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Execution Start",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Time when the execution started"
+  },
+  "href": {
+   "type": "string",
+   "title": "PREGEN_CRON_EXEC_LOG object reference"
+  },
+  "_id": {
+   "type": "string"
+  },
+  "cron_instance_name": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Crontask instance name",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Instance tied to this execution",
+   "maxLength": 50
+  },
+  "status": {
+   "default": "INIT",
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Status",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The current status of the run",
+   "maxLength": 25
+  }
+ },
+ "required": [
+  "created_at",
+  "cron_instance_name",
+  "run_id",
+  "updated_at"
+ ]
+}

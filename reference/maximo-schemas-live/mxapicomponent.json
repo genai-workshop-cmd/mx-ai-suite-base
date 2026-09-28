@@ -1,0 +1,159 @@
+{
+ "resource": "MXAPICOMPONENT",
+ "description": "Maximo API for Configuring MAXCOMPONENT",
+ "pk": [
+  "maxcomponentid"
+ ],
+ "title": "MAXCOMPONENT",
+ "type": "object",
+ "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/mxapicomponent",
+ "uniqueid": "maxcomponentid",
+ "properties": {
+  "deltatype": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Delta Type",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Delta Type",
+   "maxLength": 10
+  },
+  "maxcomponentid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Unique Id",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "uniqueid": true,
+   "remarks": "Unique Id",
+   "maxLength": 11
+  },
+  "localref": {
+   "type": "string"
+  },
+  "workcenter": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Workcenter",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Workcenter",
+   "maxLength": 50
+  },
+  "changeby": {
+   "default": "&USERNAME&",
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Change By",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Change By",
+   "maxLength": 30
+  },
+  "delta": {
+   "searchType": "WILDCARD",
+   "subType": "CLOB",
+   "title": "Delta Content",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Delta Content",
+   "maxLength": 999999
+  },
+  "active": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Active",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Active"
+  },
+  "changedate": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Change Date",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Change Date"
+  },
+  "record_descriptor": {
+   "type": "string",
+   "title": "Record/Object Descriptor"
+  },
+  "layoutid": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Layout ID",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Id of the Layout instance in the containing page",
+   "maxLength": 50
+  },
+  "content": {
+   "searchType": "WILDCARD",
+   "subType": "CLOB",
+   "title": "Component Content",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Component Content",
+   "maxLength": 999999
+  },
+  "revision": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "INTEGER",
+   "title": "Revision",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "Revision Number",
+   "maxLength": 11
+  },
+  "layout": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Layout Name",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Layout Name",
+   "maxLength": 50
+  },
+  "_rowstamp": {
+   "type": "string"
+  },
+  "_imagelibref": {
+   "type": "string"
+  },
+  "revisiondate": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Revision Date",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Revision Date"
+  },
+  "href": {
+   "type": "string",
+   "title": "MAXCOMPONENT object reference"
+  },
+  "_id": {
+   "type": "string"
+  },
+  "id": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "ID",
+   "persistent": true,
+   "type": "string",
+   "remarks": "ID",
+   "maxLength": 50
+  }
+ },
+ "required": [
+  "changedate",
+  "id",
+  "workcenter"
+ ]
+}

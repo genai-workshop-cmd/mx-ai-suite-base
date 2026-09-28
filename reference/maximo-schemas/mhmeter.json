@@ -1,0 +1,129 @@
+{
+  "resource": "MHMETER",
+  "description": "METER",
+  "pk": [
+    "metername"
+  ],
+  "title": "METER",
+  "type": "object",
+  "$ref": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mhmeter",
+  "uniqueid": "meterid",
+  "properties": {
+    "metertype": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Meter Type",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Maximo supports three types of meters: CONTINUOUS, GAUGE and CHARACTERISTIC.",
+      "maxLength": 25
+    },
+    "localref": {
+      "type": "string"
+    },
+    "description": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Description",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Describes the meter group.The description can be up to 255 characters in length. To enter or view additional information, click the Long Description button.",
+      "maxLength": 100
+    },
+    "metertype_description": {
+      "type": "string"
+    },
+    "domainid": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Domain",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Constraint defining what are valid values for this meter. A domain can be ALN, NUMERIC or from a value list.",
+      "maxLength": 18
+    },
+    "langcode": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Language Code",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Language Column",
+      "maxLength": 4
+    },
+    "_rowstamp": {
+      "type": "string"
+    },
+    "measureunitid": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Unit of Measure",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Measurement unit associated with this meter.",
+      "maxLength": 16
+    },
+    "metername": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Meter",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Meter identifier, for example, HOURS or KILOMETERS",
+      "maxLength": 10
+    },
+    "hasld": {
+      "default": false,
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "Has Long Description",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "Boolean flag to indicate if there is any long description for this record"
+    },
+    "_imagelibref": {
+      "type": "string"
+    },
+    "meterid": {
+      "searchType": "EXACT",
+      "maximum": 2147483647.0,
+      "subType": "BIGINT",
+      "title": "METERID",
+      "persistent": true,
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "uniqueid": true,
+      "remarks": "Unique Identifier",
+      "maxLength": 11
+    },
+    "href": {
+      "type": "string"
+    },
+    "_id": {
+      "type": "string"
+    },
+    "readingtype_description": {
+      "type": "string"
+    },
+    "readingtype": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Reading Type",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Do readings for this meter default to an ACTUAL or DELTA reading type.",
+      "maxLength": 10
+    }
+  },
+  "required": [
+    "langcode",
+    "metername",
+    "metertype"
+  ]
+}

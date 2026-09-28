@@ -1,0 +1,323 @@
+{
+ "resource": "MXAPICNTBOOKLINE",
+ "description": "Maximo API for Count Book Line",
+ "pk": [
+  "siteid",
+  "countbooknum",
+  "binnum",
+  "lotnum",
+  "conditioncode",
+  "itemnum",
+  "assetnum"
+ ],
+ "title": "COUNTBOOKLINE",
+ "type": "object",
+ "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/mxapicntbookline",
+ "uniqueid": "countbooklineid",
+ "properties": {
+  "rotating": {
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Rotating",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Specifies if the item is a rotating item."
+  },
+  "serialnum": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Serial",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Serial number of the rotating item.",
+   "maxLength": 64
+  },
+  "localref": {
+   "type": "string"
+  },
+  "lastupdatedate": {
+   "searchType": "EXACT",
+   "subType": "DATE",
+   "title": "Last Update Date",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Date the count book was updated."
+  },
+  "hasphyscnt": {
+   "default": 0,
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "INTEGER",
+   "title": "Has Physical Count",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "The attribute used for the OSLC Query.",
+   "maxLength": 11
+  },
+  "physcnt": {
+   "searchType": "EXACT",
+   "scale": 2,
+   "subType": "DECIMAL",
+   "title": "Physical Count",
+   "persistent": true,
+   "type": "number",
+   "remarks": "Physical count for the item.",
+   "maxLength": 16
+  },
+  "lotnum": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Batch",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Batch number of the item.",
+   "maxLength": 8
+  },
+  "accuracy": {
+   "searchType": "EXACT",
+   "scale": 2,
+   "subType": "DECIMAL",
+   "title": "Accuracy",
+   "persistent": true,
+   "type": "number",
+   "remarks": "Accuracy of the physical count versus the current balance for this item, expressed as a percentage. A value more than 100% indicates an overcount. Count Books can only accept accuracy values of 999.99% or less. If the count variance is greater, you must go to Inventory and manually adjust the value.",
+   "maxLength": 11
+  },
+  "gldebitaccount": {
+   "searchType": "WILDCARD",
+   "subType": "GL",
+   "title": "GL Debit Account",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The GL debit account for the storeroom. This is the account that is debited when a current balance adjustment occurs.",
+   "maxLength": 23
+  },
+  "adjphyscnt": {
+   "searchType": "EXACT",
+   "scale": 2,
+   "subType": "DECIMAL",
+   "title": "Adjusted Balance",
+   "persistent": true,
+   "type": "number",
+   "remarks": "Adjusted physical balance for the item. This is the quantity of the item in the storeroom. Maximo calculates this by adding receipts and transfers in, and subtracting issues and transfers out, that occurred after the physical count.",
+   "maxLength": 16
+  },
+  "countbooklineid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Unique Id",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "uniqueid": true,
+   "remarks": "Unique Id",
+   "maxLength": 11
+  },
+  "physcntby": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Counted By",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "User who performed the physical count.",
+   "maxLength": 100
+  },
+  "_rowstamp": {
+   "type": "string"
+  },
+  "_imagelibref": {
+   "type": "string"
+  },
+  "assetnum": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Asset",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Asset number of the rotating item.",
+   "maxLength": 25
+  },
+  "abctype_description": {
+   "type": "string"
+  },
+  "curbal": {
+   "searchType": "EXACT",
+   "scale": 2,
+   "subType": "DECIMAL",
+   "title": "Current Balance",
+   "persistent": true,
+   "type": "number",
+   "remarks": "Current balance of the item. Maximo refreshes this value when you enter a physical count and the count book status is COMPLETE.",
+   "maxLength": 16
+  },
+  "lastupdateby": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Last Update By",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Last user to update the count book.",
+   "maxLength": 100
+  },
+  "siteid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Site",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Identifies the site.",
+   "maxLength": 8
+  },
+  "recon": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Reconcile",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Check box that specifies if the count for this item is approved for reconciliation. If the check box is selected for a non-rotating item, Maximo sets the current balance equal to the adjusted physical balance when the count book is completed."
+  },
+  "href": {
+   "type": "string",
+   "title": "COUNTBOOKLINE object reference"
+  },
+  "conditioncode": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Condition Code",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Condition code associated with the item. A condition code lets you track the balance and value of each item. You can apply different rates to an item as its condition changes from use, such as from new to used. If you mark an item as condition enabled, you must assign at least one condition code to it. For each condition-enabled item, one condition code must have a ''''full-value'''' rate of 100%. Maximo uses this condition code as the reference point to calculate values for any other condition codes for this item. Each time you issue, transfer, or return the item, you specify the condition of the item based on codes that you set up. To specify a condition code, click the Detail Menu button. To create a condition code, use the Condition Codes application.",
+   "maxLength": 30
+  },
+  "errorvalue": {
+   "searchType": "EXACT",
+   "scale": 2,
+   "subType": "DECIMAL",
+   "title": "Error Value",
+   "persistent": true,
+   "type": "number",
+   "remarks": "Discrepancy between the current balance and the adjusted physical count. A positive value represents an overcount. A negative value represents an undercount.",
+   "maxLength": 11
+  },
+  "match": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Match",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Check box that specifies if the item count matches the current balance value, within the specified tolerances. For example, the current balance value is 100, and the plus and minus tolerances are set at 3%. If  the actual count is 102, that is a ''''match.'''' A count of 104 or 96 would not be a match."
+  },
+  "binnum": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Bin",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Bin number of the item.",
+   "maxLength": 8
+  },
+  "record_descriptor": {
+   "type": "string",
+   "title": "Record/Object Descriptor"
+  },
+  "orgid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Organization",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Identifies the organization.",
+   "maxLength": 8
+  },
+  "tool": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Is Tool",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Check box that specifies whether the item is a tool."
+  },
+  "itemnum": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Item",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Identifies the item.",
+   "maxLength": 30
+  },
+  "countbooknum": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Count Book Number",
+   "persistent": true,
+   "type": "string",
+   "remarks": "User-assigned count book number.",
+   "maxLength": 8
+  },
+  "physcntdate": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Count Date",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Date and time that the physical count occurred."
+  },
+  "glcreditaccount": {
+   "searchType": "WILDCARD",
+   "subType": "GL",
+   "title": "GL Credit Account",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "GL credit account for the storeroom. This is the account that is credited when a current balance adjustment occurs.",
+   "maxLength": 23
+  },
+  "nextphycntdate": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Next Count Date",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Date and time that the physical count is scheduled."
+  },
+  "itemsetid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Item Set",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Item Set Id",
+   "maxLength": 8
+  },
+  "_id": {
+   "type": "string"
+  },
+  "abctype": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "ABC Type",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "ABC analysis in Inventory lets you quickly identify which inventory items represent your company's greatest investment in terms of monetary value and turnover rate. The ABC Type value for a item is determined by running an ABC Analysis report, which multiplies the current YTD issued quantity by the last cost of the item. The items are then sorted in descending order of the dollar value reached by this calculation.",
+   "maxLength": 1
+  }
+ },
+ "required": [
+  "countbooknum",
+  "itemnum",
+  "orgid",
+  "rotating",
+  "siteid"
+ ]
+}

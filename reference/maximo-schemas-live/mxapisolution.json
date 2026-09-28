@@ -1,0 +1,521 @@
+{
+ "resource": "MXAPISOLUTION",
+ "description": "Maximo API for Solution Object for UI",
+ "pk": [
+  "solution"
+ ],
+ "title": "SOLUTION",
+ "type": "object",
+ "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/mxapisolution",
+ "uniqueid": "solutionid",
+ "properties": {
+  "localref": {
+   "type": "string"
+  },
+  "plusgislesslearned": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Is Lesson Learned",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Specifies whether the solution is a lesson learned or a solution. If the check box is selected, the solution is a lesson learned. The default value is False (check box is empty). In most cases, you can select or clear the Is Lesson Learned check box to change a solution to a lesson learned, or vice versa. You cannot take either action if an investigation is associated with the solution record."
+  },
+  "type": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Type",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Type",
+   "maxLength": 10
+  },
+  "plusglocalappdate": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Local Approval Date",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Date and time when someone approved the solution for local use. The application populates this field with the system date when someone selects the corresponding Local Approval? check box."
+  },
+  "_rowstamp": {
+   "type": "string"
+  },
+  "plusgappbyglobal": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Global Approval By",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "If the solution is a global solution, the person who approved it for global use. The status of this person must be Active. This person must be authorized to approve solutions.",
+   "maxLength": 100
+  },
+  "plusgorigsite": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Originator's Site",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Site to which the originator of the solution belongs.",
+   "maxLength": 8
+  },
+  "plusgownerappdate": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Owner Approval Date",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Date and time when the owner approved the solution. The application populates this field with the system date when someone selects the corresponding Owner Approval check box."
+  },
+  "plusgownergroup": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Owner Group",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Identifies the group that is responsible for the solution.",
+   "maxLength": 8
+  },
+  "solution": {
+   "default": "&AUTOKEY&",
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Solution",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Identifies the solution record.",
+   "maxLength": 8
+  },
+  "plusgsoloriginator": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Solution Originator",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Identifies the originator of the solution. The default value is the identifier of the logged-in user.",
+   "maxLength": 100
+  },
+  "href": {
+   "type": "string",
+   "title": "SOLUTION object reference"
+  },
+  "solutionid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Unique Id",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "uniqueid": true,
+   "remarks": "Unique Id",
+   "maxLength": 11
+  },
+  "plusgsolutioncat_description": {
+   "type": "string"
+  },
+  "plusgvalidfrom": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Valid From",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Date and time when the solution becomes valid. Cannot be earlier than the creation date of the solution."
+  },
+  "plusgaddcontactinf": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Additional Contact Information",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Additional contact information for the originator of the solution, for example, a mobile telephone number.",
+   "maxLength": 200
+  },
+  "plusgorigemail": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "E-mail",
+   "persistent": true,
+   "type": "string",
+   "remarks": "E-mail address of the originator of the solution.",
+   "maxLength": 100
+  },
+  "status_description": {
+   "type": "string"
+  },
+  "plusgislocalsoln": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Local Solution",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Specifies whether the solution has local applicability. If the check box is selected, the solution is a local solution. The default value is False (check box is empty)."
+  },
+  "plusgorigphone": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Phone",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Phone number of the originator of the solution.",
+   "maxLength": 20
+  },
+  "selfservaccess": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Self-Service Access",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Specifies whether the solution record is accessible to a self-service user. If the check box is selected, self-service users can search for and view this record. If the check box is cleared (the default), the solution record is unavailable to self-service users. In the More Search Fields dialog box, you must specify a Y or N in this field."
+  },
+  "plusgregionalapp": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Regional Approval",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Specifies whether the solution has approval for regional use. If the check box is selected, the solution has regional approval. The default value is False (check box is empty)."
+  },
+  "changedate": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Changed Date",
+   "persistent": true,
+   "type": "string",
+   "remarks": "This is when the solution was last modified"
+  },
+  "problemcode_longdescription": {
+   "searchType": "WILDCARD",
+   "subType": "LONGALN",
+   "title": "Symptom",
+   "type": "string",
+   "remarks": "Detailed description of the symptom that an internal or external customer is having, typically in the form of a problem or question.",
+   "maxLength": 32000
+  },
+  "record_descriptor": {
+   "type": "string",
+   "title": "Record/Object Descriptor"
+  },
+  "plusgowner": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Owner",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The owner of the solution. The status of this person must be Active. This person must be authorized to approve solutions.",
+   "maxLength": 100
+  },
+  "orgid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Organization",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Org Id",
+   "maxLength": 8
+  },
+  "plusgownergroupapp": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Owner Group Approval",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Specifies whether someone within the owner group of the solution has approved the solution. If the check box is selected, someone in that group approved the solution. The default value is False (check box is empty)."
+  },
+  "plusgoriginsite": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Originating Site",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Identifies the site that originally identified the solution.",
+   "maxLength": 8
+  },
+  "plusgorigorg": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Originator's Organization",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Identifies the organization to which the originator of the solution belongs.",
+   "maxLength": 8
+  },
+  "plusgowngrpappdate": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Owner Group Approval Date",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Date and time when someone in the owner group approved the solution. The application populates this field with the system date when someone selects the corresponding Owner Group Approval check box."
+  },
+  "_id": {
+   "type": "string"
+  },
+  "status": {
+   "default": "!DRAFT!",
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Status",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Status, or state, of the solution record. Predefined statuses include DRAFT, ACTIVE, and INACTIVE. Only solution records that are set to ACTIVE can be viewed or found in a search outside of this administrative Solutions application. Solutions records in DRAFT or INACTIVE statuses are managed within this Solutions application.",
+   "maxLength": 12
+  },
+  "problemcode": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Symptom",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Defines the Symptom someone may encounter",
+   "maxLength": 8
+  },
+  "description": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Description",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Describes the solution. To enter or view additional information, click the Long Description button.",
+   "maxLength": 100
+  },
+  "plusgrepdate": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Reported Date",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Date and time when someone reported the solution."
+  },
+  "plusgisglobalsoln": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Global Solution",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Specifies whether the solution has global applicability. If the check box is selected, the solution is a global solution. The default value is False (check box is empty)."
+  },
+  "plusgregappdate": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Regional Approval Date",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Date and time when someone approved the solution for regional use. The application populates this field with the system date when someone selects the corresponding Regional Approval check box."
+  },
+  "plusgappbylocal": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Local Approval By",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "If the solution is a local solution, the person who approved it for local use. The status of this person must be Active. This person must be authorized to approve solutions.",
+   "maxLength": 100
+  },
+  "plusgsolutioncat": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Solution Category",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Category of the solution, for example, Lesson Learned or Solution. Valid values are in the PLUSGSOLUTIONCAT domain.",
+   "maxLength": 20
+  },
+  "_imagelibref": {
+   "type": "string"
+  },
+  "plusgappbyowngrp": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Owner Group Approval By",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The person in the owner group who approved the solution. The status of this person must be Active. This person must be authorized to approve solutions.",
+   "maxLength": 100
+  },
+  "plusgglobalapp": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Global Approval",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Specifies whether the solution has approval for global use. If the check box is selected, the solution has global approval. The default value is False (check box is empty)."
+  },
+  "plusgisregsoln": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Regional Solution",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Specifies whether the solution has regional applicability. If the check box is selected, the solution is a regional solution. The default value is False (check box is empty)."
+  },
+  "plusgglobalappdate": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Global Approval Date",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Date and time when someone approved the solution for global use. The application populates this field with the system date when someone selects the corresponding Global Approval? check box."
+  },
+  "plusextentcode": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Extent of Condition",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Extent of condition",
+   "maxLength": 8
+  },
+  "plusgexpiresdate": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Expiration Date",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Date and time when the solution expires and must be revalidated."
+  },
+  "plusgsolnref": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Reference Solution",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Reference Solution. This can be a global, local, or regional solution.",
+   "maxLength": 8
+  },
+  "fr2code": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Resolution",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Defines the Resolution of the Symptom/Cause",
+   "maxLength": 8
+  },
+  "description_longdescription": {
+   "searchType": "WILDCARD",
+   "subType": "LONGALN",
+   "title": "Details",
+   "type": "string",
+   "remarks": "Long Description",
+   "maxLength": 32000
+  },
+  "classstructureid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Classification",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Defines the classification of the Solution",
+   "maxLength": 25
+  },
+  "changeby": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Changed By",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "This is the user who last modified the Solution",
+   "maxLength": 100
+  },
+  "plusgownerapp": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Owner Approval",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Specifies whether the owner of the solution has approved the solution. If the check box is selected, the owner approved the solution. The default value is False (check box is empty)."
+  },
+  "fr2code_longdescription": {
+   "searchType": "WILDCARD",
+   "subType": "LONGALN",
+   "title": "Resolution",
+   "type": "string",
+   "remarks": "Detailed description of how to resolve the symptoms that an internal or external customer is experiencing, such as an answer to a question or information on how to solve a problem.",
+   "maxLength": 32000
+  },
+  "statusdate": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Status Date",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Status Date"
+  },
+  "plusgappbyreg": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Regional Approval By",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "If the solution is a regional solution, the person who approved it for regional use. The status of this person must be Active. This person must be authorized to approve solutions.",
+   "maxLength": 100
+  },
+  "failurecode": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Failure Code",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Indicates Top level of a Failure Hierarchy",
+   "maxLength": 8
+  },
+  "fr1code_longdescription": {
+   "searchType": "WILDCARD",
+   "subType": "LONGALN",
+   "title": "Cause",
+   "type": "string",
+   "remarks": "Detailed description of what is causing the symptoms being described by the internal or external customer.",
+   "maxLength": 32000
+  },
+  "fr1code": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Cause",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Cause of the Symptom",
+   "maxLength": 8
+  },
+  "plusglocalapp": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Local Approval",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Specifies whether the solution has approval for local use. If the check box is selected, the solution has local approval. The default value is False (check box is empty)."
+  }
+ },
+ "required": [
+  "changeby",
+  "changedate"
+ ]
+}

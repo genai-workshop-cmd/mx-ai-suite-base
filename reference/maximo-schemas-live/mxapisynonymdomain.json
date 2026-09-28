@@ -1,0 +1,129 @@
+{
+ "resource": "MXAPISYNONYMDOMAIN",
+ "description": "Maximo API for Synonymdomain",
+ "pk": [
+  "domainid",
+  "maxvalue",
+  "value",
+  "siteid",
+  "orgid"
+ ],
+ "title": "SYNONYMDOMAIN",
+ "type": "object",
+ "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/mxapisynonymdomain",
+ "uniqueid": "synonymdomainid",
+ "properties": {
+  "valueid": {
+   "searchType": "EXACT",
+   "subType": "ALN",
+   "title": "Value ID",
+   "persistent": true,
+   "type": "string",
+   "remarks": "System generated unique identifier of the value in a domain, internal and cannot be modified.",
+   "maxLength": 256
+  },
+  "maxvalue": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Internal Value",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Internal maximo value",
+   "maxLength": 50
+  },
+  "localref": {
+   "type": "string"
+  },
+  "description": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Description",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Description of the value",
+   "maxLength": 256
+  },
+  "record_descriptor": {
+   "type": "string",
+   "title": "Record/Object Descriptor"
+  },
+  "domainid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Domain",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Identifier of the domain",
+   "maxLength": 18
+  },
+  "orgid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Organization",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Identifier of the org for which the domain value is specified",
+   "maxLength": 8
+  },
+  "_rowstamp": {
+   "type": "string"
+  },
+  "synonymdomainid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "SYNONYMDOMAINID",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "uniqueid": true,
+   "remarks": "Unique Identifier",
+   "maxLength": 11
+  },
+  "defaults": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Default",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Is This The Default Value? (Y or N)"
+  },
+  "_imagelibref": {
+   "type": "string"
+  },
+  "siteid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Site",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Identifier of the site for which the domain value is specified",
+   "maxLength": 8
+  },
+  "href": {
+   "type": "string",
+   "title": "SYNONYMDOMAIN object reference"
+  },
+  "_id": {
+   "type": "string"
+  },
+  "value": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Value",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Synonym value",
+   "maxLength": 50
+  }
+ },
+ "required": [
+  "domainid",
+  "maxvalue",
+  "value",
+  "valueid"
+ ]
+}

@@ -1,0 +1,350 @@
+{
+  "resource": "MXAPICNTBOOK",
+  "description": "COUNTBOOK",
+  "pk": [
+    "siteid",
+    "countbooknum"
+  ],
+  "title": "COUNTBOOK",
+  "type": "object",
+  "$ref": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapicntbook",
+  "uniqueid": "countbookid",
+  "properties": {
+    "reason": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Reason",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Reason for the count.",
+      "maxLength": 15
+    },
+    "historyflag": {
+      "default": false,
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "History",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "Yes/No field or check box that specifies whether a record is a history record or is currently active. History records are complete, closed, canceled, etc. If a Y is in the History? field or the check box is selected, the record is a history record. On the List tab or the More Search Fields dialog box, you can enter a Y in the History? field to include only history records in the search results. If an N is in the field, Maximo includes only currently active records in the search results. If the field is empty (null), Maximo includes history and active records in the search results."
+    },
+    "localref": {
+      "type": "string"
+    },
+    "selectiontype": {
+      "searchType": "NONE",
+      "subType": "UPPER",
+      "title": "Selection Type",
+      "type": "string",
+      "hasList": true,
+      "remarks": "This field provides a value list of selection criteria for the count book, such as ALL, ROTATING or ITEM.",
+      "maxLength": 30
+    },
+    "selectiontype_description": {
+      "type": "string"
+    },
+    "description": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Description",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Description of the count book.",
+      "maxLength": 50
+    },
+    "memo": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Memo",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Description of the reason for the count.",
+      "maxLength": 60
+    },
+    "gldebitaccount": {
+      "searchType": "WILDCARD",
+      "subType": "GL",
+      "title": "GL Debit Account",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "The GL debit account for the storeroom. This is the account that is debited when a current balance adjustment occurs.",
+      "maxLength": 23
+    },
+    "ownergroup": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Owner Group",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Owner group of the count book. This group has overall responsibility for the count book. You can enter a value either in this field or the Owner field. Use the Select Action menu to assign an owner group. Note: this action may not be available to all users.",
+      "maxLength": 8
+    },
+    "assignedownergroup": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Assigned Owner Group",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Assigned Owner Group of the count book record. This group has overall responsibility for the solution. Use the Select Action menu to assign an owner group. You can enter a value either in this field or the Owner field.",
+      "maxLength": 8
+    },
+    "lastcount": {
+      "searchType": "NONE",
+      "subType": "DATETIME",
+      "title": "Last Count",
+      "type": "string",
+      "remarks": "The latest count date from all the count lines."
+    },
+    "_rowstamp": {
+      "type": "string"
+    },
+    "_imagelibref": {
+      "type": "string"
+    },
+    "totalnonserial": {
+      "searchType": "EXACT",
+      "scale": 2,
+      "subType": "AMOUNT",
+      "title": "Total Non-Rotating",
+      "persistent": true,
+      "type": "number",
+      "remarks": "Total inventory value of the counted non-rotating items. Maximo updates this field when the count book status is changed to COMPLETE.",
+      "maxLength": 11
+    },
+    "earliestdue": {
+      "searchType": "NONE",
+      "subType": "DATETIME",
+      "title": "Earliest due",
+      "type": "string",
+      "hasList": true,
+      "remarks": "The earliest due date from all the count lines."
+    },
+    "siteid": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Site",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Identifies the site.",
+      "maxLength": 8
+    },
+    "countbooksel": {
+      "objectName": "COUNTBOOKSEL",
+      "type": "array",
+      "items": {
+        "definition": {
+          "subSchema": {
+            "$ref": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapicntbook/countbooksel"
+          }
+        },
+        "type": "object"
+      },
+      "cardinality": "",
+      "relation": "COUNTBOOKSELTYPE"
+    },
+    "href": {
+      "type": "string"
+    },
+    "storeroom": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Storeroom",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Storeroom where the inventory count occurs.",
+      "maxLength": 25
+    },
+    "totalvalue": {
+      "searchType": "EXACT",
+      "scale": 2,
+      "subType": "AMOUNT",
+      "title": "Total Value",
+      "persistent": true,
+      "type": "number",
+      "remarks": "Total inventory value of the count book line items. This value does not include rotating items (serialized items).",
+      "maxLength": 11
+    },
+    "owner": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Owner",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Owner of the count book. This person has overall responsibility for the count book. You can enter a value either in this field or the Owner Group field. Use the Select Action menu to assign an owner. Note: this action may not be available to all users.",
+      "maxLength": 100
+    },
+    "status_description": {
+      "type": "string"
+    },
+    "adjpercent": {
+      "searchType": "EXACT",
+      "scale": 2,
+      "subType": "DECIMAL",
+      "title": "Adjustment %",
+      "persistent": true,
+      "type": "number",
+      "remarks": "Value of the adjustments to the counted items expressed as a percentage of the total value of the counted, non-rotating items. Maximo only updates this field when the count book status is COMPLETE.",
+      "maxLength": 13
+    },
+    "latestdue": {
+      "searchType": "EXACT",
+      "subType": "DATETIME",
+      "title": "Due",
+      "persistent": true,
+      "type": "string",
+      "remarks": "The latest due date from all the count lines."
+    },
+    "reason_description": {
+      "type": "string"
+    },
+    "orgid": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Organization",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Identifies the organization.",
+      "maxLength": 8
+    },
+    "statusdate": {
+      "searchType": "EXACT",
+      "subType": "DATETIME",
+      "title": "Status Date",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Date and time when the count book was created or its status was updated."
+    },
+    "numoverdue": {
+      "searchType": "NONE",
+      "maximum": 2147483647.0,
+      "subType": "INTEGER",
+      "title": "Number of Overdue",
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "remarks": "The total count of all items in the count book, which have a due date past the current date.",
+      "maxLength": 11
+    },
+    "totaladjust": {
+      "searchType": "EXACT",
+      "scale": 2,
+      "subType": "AMOUNT",
+      "title": "Total Adjustments",
+      "persistent": true,
+      "type": "number",
+      "remarks": "Total value of adjustments from reconciling non-rotating items. These adjustments represent the inventory cost from adjusting the current balance to equal the adjusted physical count. This is the sum of the value of adjustments for all non-rotating items, when the count book was in COMPLETE status.  It appears in the error value field for all non-rotating items when the value in the Trial Reconciled field is Y (Yes).",
+      "maxLength": 11
+    },
+    "countbooknum": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Count Book",
+      "persistent": true,
+      "type": "string",
+      "remarks": "User-assigned count book number.",
+      "maxLength": 8
+    },
+    "glcreditaccount": {
+      "searchType": "WILDCARD",
+      "subType": "GL",
+      "title": "GL Credit Account",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "GL credit account for the storeroom. This is the account that is credited when a current balance adjustment occurs.",
+      "maxLength": 23
+    },
+    "counted": {
+      "searchType": "NONE",
+      "maximum": 2147483647.0,
+      "subType": "INTEGER",
+      "title": "Counted",
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "remarks": "The number of lines that have a physical count entered. Items are on separate lines if they are rotating, or if they are in separate batches or bins.",
+      "maxLength": 11
+    },
+    "matched": {
+      "searchType": "EXACT",
+      "maximum": 2147483647.0,
+      "subType": "INTEGER",
+      "title": "Matched",
+      "persistent": true,
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "remarks": "Number of count book lines that match the current balance, within the tolerances specified for that count book. For example, if the current balance value is 100, the plus and minus tolerances are set at 3%, and the actual count is 102, that is a match. Maximo includes that count book line in the number in the Matched field. A count of 104 or 96 would not be a match.",
+      "maxLength": 11
+    },
+    "_id": {
+      "type": "string"
+    },
+    "countbookid": {
+      "searchType": "EXACT",
+      "maximum": 2147483647.0,
+      "subType": "BIGINT",
+      "title": "Unique Id",
+      "persistent": true,
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "uniqueid": true,
+      "remarks": "Unique Id",
+      "maxLength": 11
+    },
+    "lastcountby": {
+      "searchType": "NONE",
+      "subType": "UPPER",
+      "title": "Counted By",
+      "type": "string",
+      "remarks": "The user who recorded the last count from all the count lines.",
+      "maxLength": 30
+    },
+    "countbookline": {
+      "objectName": "COUNTBOOKLINE",
+      "type": "array",
+      "items": {
+        "definition": {
+          "subSchema": {
+            "$ref": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapicntbook/countbookline"
+          }
+        },
+        "type": "object"
+      },
+      "cardinality": "",
+      "relation": "COUNTBOOKALLITM"
+    },
+    "supervisor": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Supervisor",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "The person who is the direct supervisor of a count book.",
+      "maxLength": 100
+    },
+    "status": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Status",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Current status of the count book. A count book can have a status of WAPPR, APPR, INPRG, COMP, or CAN. After the count book status reaches APPR (approved), you cannot add items to the count book.",
+      "maxLength": 15
+    }
+  },
+  "required": [
+    "countbooknum",
+    "orgid",
+    "selectiontype",
+    "siteid",
+    "status",
+    "storeroom"
+  ]
+}

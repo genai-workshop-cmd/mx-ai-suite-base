@@ -1,0 +1,952 @@
+{
+ "resource": "MXAPIINVISSUE",
+ "description": "Maximo API for Inventory Issues",
+ "pk": [
+  "siteid",
+  "matusetransid"
+ ],
+ "title": "MATUSETRANS",
+ "type": "object",
+ "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/mxapiinvissue",
+ "uniqueid": "matusetransid",
+ "properties": {
+  "invuselineid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Usage Line",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "The usage line identifier, which is used to relate an inventory usage line to a completed transaction.",
+   "maxLength": 11
+  },
+  "invpicklistid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Unique Id for INVPICKLIST",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "Inventory Owner",
+   "maxLength": 11
+  },
+  "localref": {
+   "type": "string"
+  },
+  "issuetype_description": {
+   "type": "string"
+  },
+  "physcnt": {
+   "searchType": "EXACT",
+   "scale": 2,
+   "subType": "DECIMAL",
+   "title": "Physical Count",
+   "persistent": true,
+   "type": "number",
+   "remarks": "Physical Count At This Location",
+   "maxLength": 16
+  },
+  "lotnum": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Lot",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Lot number for lotted items. The work order must be approved before you can insert or edit a value. This field is read-only if you have entered a rotating item in the Item field; otherwise, you can modify this field for a lotted item until the record is saved. Click the Detail button to display the Select Lot page.",
+   "maxLength": 8
+  },
+  "memo": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Memo",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Brief remark about the issue transaction.",
+   "maxLength": 254
+  },
+  "actualdate": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Actual Date",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Date and time of the issue transaction, which may be different than the time the transaction is recorded in Maximo. Maximo populates the current date and time by default. You can modify the value in this field. Click the Select Date and Time button to use the calendar control."
+  },
+  "rollup": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Rolled Up",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Indicates whether this transaction has been rolled up."
+  },
+  "currencylinecost": {
+   "searchType": "EXACT",
+   "scale": 2,
+   "subType": "DECIMAL",
+   "title": "Currency Line Cost",
+   "persistent": true,
+   "type": "number",
+   "remarks": "Line Cost in vendor currency.",
+   "maxLength": 11
+  },
+  "href": {
+   "type": "string",
+   "title": "MATUSETRANS object reference"
+  },
+  "currencyunitcost": {
+   "searchType": "EXACT",
+   "scale": 2,
+   "subType": "DECIMAL",
+   "title": "Currency Unit Cost",
+   "persistent": true,
+   "type": "number",
+   "remarks": "Unit Cost in vendor currency.",
+   "maxLength": 11
+  },
+  "rotassetnum": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Rotating Asset",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Identifies the rotating asset number associated with the item being issued.",
+   "maxLength": 25
+  },
+  "taskid": {
+   "searchType": "NONE",
+   "maximum": 2147483647.0,
+   "subType": "INTEGER",
+   "title": "Task",
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "hasList": true,
+   "remarks": "Task associated with the item being issued. Click the Select Value button to choose a task.",
+   "maxLength": 11
+  },
+  "enteredastask": {
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Entered as Task",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Was this transaction created against a work order task?"
+  },
+  "linecost": {
+   "default": 0.0,
+   "searchType": "EXACT",
+   "scale": 2,
+   "subType": "AMOUNT",
+   "title": "Line Cost",
+   "persistent": true,
+   "type": "number",
+   "remarks": "Line cost of the transaction, calculated as Unit Cost multiplied by the Quantity of the item.",
+   "maxLength": 11
+  },
+  "issueto": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Issued To",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Person to whom the item, tool, or material is issued. Click the Detail Menu button to choose a person or go to the People application.",
+   "maxLength": 100
+  },
+  "actualstaskid": {
+   "searchType": "NONE",
+   "maximum": 2147483647.0,
+   "subType": "INTEGER",
+   "title": "Task",
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "hasList": true,
+   "remarks": "Identifies the task for which the item or material was used.",
+   "maxLength": 11
+  },
+  "binnum": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Bin",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Item's bin number from a storeroom location. The work order must be approved before you can insert or edit a value. This field is read-only if there is a rotating item in the Item field. Otherwise, you can modify this field until the record is saved.",
+   "maxLength": 8
+  },
+  "record_descriptor": {
+   "type": "string",
+   "title": "Record/Object Descriptor"
+  },
+  "enterby": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Entered By",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Maximo user name of the person initiating this transaction.",
+   "maxLength": 100
+  },
+  "packingslipnum": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Packing Slip",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Packing Slip Number",
+   "maxLength": 50
+  },
+  "fincntrlid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "FCID",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Financial Control Identifier",
+   "maxLength": 8
+  },
+  "mrlinenum": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "INTEGER",
+   "title": "Requisition Line",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "hasList": true,
+   "remarks": "Line number on the requestion for the item being issued.",
+   "maxLength": 11
+  },
+  "commodity": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Commodity Code",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Commodity",
+   "maxLength": 8
+  },
+  "commoditygroup": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Commodity Group",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Commodity Group",
+   "maxLength": 8
+  },
+  "condrate": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "INTEGER",
+   "title": "Rate Percentage",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "Condition Rate Percentage",
+   "maxLength": 11
+  },
+  "exchangerate2": {
+   "searchType": "EXACT",
+   "scale": 7,
+   "subType": "DECIMAL",
+   "title": "Secondary Exchange Rate",
+   "persistent": true,
+   "type": "number",
+   "remarks": "Base Exchange Rate 2",
+   "maxLength": 15
+  },
+  "assetnum": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Asset",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Asset number associated with this transaction.",
+   "maxLength": 25
+  },
+  "consignment": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Consignment",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Indicates whether the transaction was created for a consignment item. This field also indicates that the consignment transaction is included in the consignment invoice, which is sent to the vendor that supplies the inventory item."
+  },
+  "curbal": {
+   "default": 0.0,
+   "searchType": "EXACT",
+   "scale": 2,
+   "subType": "DECIMAL",
+   "title": "Current Balance",
+   "persistent": true,
+   "type": "number",
+   "remarks": "Current Balance At This Location",
+   "maxLength": 16
+  },
+  "itin5": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "ITIN5",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Extra Field",
+   "maxLength": 10
+  },
+  "itin4": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "ITIN4",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Extra Field",
+   "maxLength": 10
+  },
+  "itin7": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "ITIN7",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Extra Field",
+   "maxLength": 10
+  },
+  "itin6": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "ITIN6",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Extra Field",
+   "maxLength": 10
+  },
+  "itin1": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Itin1",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Extra Field #6",
+   "maxLength": 10
+  },
+  "conditioncode": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Condition Code",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Condition code that reflects the current physical condition of the item being issued. Click the Select Value button to choose a condition code.",
+   "maxLength": 30
+  },
+  "itin3": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Itin3",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Extra Field #8",
+   "maxLength": 10
+  },
+  "itin2": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Itin2",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Extra Field #7",
+   "maxLength": 10
+  },
+  "fctaskid": {
+   "searchType": "NONE",
+   "subType": "ALN",
+   "title": "FC Task ID",
+   "type": "string",
+   "remarks": "Financial control task identifier.",
+   "maxLength": 25
+  },
+  "anywhererefid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Anywhere Ref ID",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "Anywhere Reference ID",
+   "maxLength": 11
+  },
+  "description_longdescription": {
+   "searchType": "WILDCARD",
+   "subType": "LONGALN",
+   "title": "Details",
+   "type": "string",
+   "remarks": "Long Description for Item Description.",
+   "maxLength": 32000
+  },
+  "it2": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Extra Field 2",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Extra Field 02",
+   "maxLength": 10
+  },
+  "qtyrequested": {
+   "default": 0.0,
+   "searchType": "EXACT",
+   "scale": 2,
+   "subType": "DECIMAL",
+   "title": "Requested Quantity",
+   "persistent": true,
+   "type": "number",
+   "remarks": "The quantity requested for the issue.",
+   "maxLength": 16
+  },
+  "it1": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Extra Field 1",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Extra Field 01",
+   "maxLength": 10
+  },
+  "it4": {
+   "searchType": "EXACT",
+   "scale": 2,
+   "subType": "DECIMAL",
+   "title": "Extra Field 4",
+   "persistent": true,
+   "type": "number",
+   "remarks": "Extra Field 04",
+   "maxLength": 16
+  },
+  "actualcost": {
+   "default": 0.0,
+   "searchType": "EXACT",
+   "scale": 2,
+   "subType": "AMOUNT",
+   "title": "Actual Cost",
+   "persistent": true,
+   "type": "number",
+   "remarks": "Price of the item per unit. If you are entering a new special order or direct issue item you can edit this field until the work order is in the status specified in the Work Plan Edit Options window in Multisite Setup.",
+   "maxLength": 11
+  },
+  "glcreditacct": {
+   "searchType": "WILDCARD",
+   "subType": "GL",
+   "title": "GL Credit Account",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "GL account to credit the cost of the item. The default value comes from the inventory control account. See the Maximo Finance Manager's Guide for more information. If the work order is approved, click the Detail button to view the GL Account Navigator page. You can modify this field until you save the record.",
+   "maxLength": 23
+  },
+  "it3": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Extra Field 3",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Extra Field 03",
+   "maxLength": 10
+  },
+  "it6": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "IT6",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Extra Field",
+   "maxLength": 10
+  },
+  "it5": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Extra Field 5",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Extra Field 05",
+   "maxLength": 10
+  },
+  "it8": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "IT8",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Extra Field",
+   "maxLength": 10
+  },
+  "it7": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "IT7",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Extra Field",
+   "maxLength": 10
+  },
+  "sendersysid": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Sender System ID",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Column used by ERP-Integration (APIs)",
+   "maxLength": 50
+  },
+  "it9": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "IT9",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Extra Field",
+   "maxLength": 10
+  },
+  "wonum": {
+   "searchType": "NONE",
+   "subType": "UPPER",
+   "title": "Work Order",
+   "type": "string",
+   "hasList": true,
+   "remarks": "Work order to which you want the item issued. Click the Detail Menu button to choose a work order, view work order by classification, or go to the Work Order Tracking application.",
+   "maxLength": 25
+  },
+  "matrectransid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Receipt ID",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "Foreign Key to MATRECTRANS",
+   "maxLength": 11
+  },
+  "sourcesysid": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Source System ID",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Source System ID",
+   "maxLength": 10
+  },
+  "issuetype": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Transaction Type",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Type of transaction, either ISSUE or RETURN. Click the Select Value button to choose a transaction type.",
+   "maxLength": 20
+  },
+  "ownersysid": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Owner System ID",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Owner System ID",
+   "maxLength": 10
+  },
+  "issueid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Issue Id",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "The ID of the Material Issue record this return is referring to.",
+   "maxLength": 11
+  },
+  "currencycode": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Currency",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Currency the PR is in.",
+   "maxLength": 8
+  },
+  "_rowstamp": {
+   "type": "string"
+  },
+  "porevisionnum": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "INTEGER",
+   "title": "PO Revision",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "Revision number of the purchase order. Indicates how many times a purchase order has been revised.",
+   "maxLength": 11
+  },
+  "siteid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Site",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Site Identifier",
+   "maxLength": 8
+  },
+  "financialperiod": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Financial Period",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Financial Period of transaction",
+   "maxLength": 6
+  },
+  "sparepartadded": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Spare Part Added",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Indicates that the item was added to the spare parts list for the asset."
+  },
+  "requestnum": {
+   "searchType": "NONE",
+   "subType": "UPPER",
+   "title": "Request",
+   "type": "string",
+   "remarks": "REQUESTNUM",
+   "maxLength": 20
+  },
+  "wpitemid": {
+   "default": -1,
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "WPITEMID",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "The ID for the WPMaterial that is associated with this InvUseLine",
+   "maxLength": 11
+  },
+  "orgid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Organization",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Organization Identifier",
+   "maxLength": 8
+  },
+  "consinvoicenum": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Consignment Invoice",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The number that identifies the invoice that was created to pay for the inventory usage.",
+   "maxLength": 8
+  },
+  "itemnum": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Item",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Identifier of the item. The work order must be approved before you can insert a value. There are several ways to enter an item in this field: see the topic Work Actuals - Materials for more information. If you insert a rotating item in the Item field, you must enter rotating equipment in the Rotating Equipment field. You can modify this field until the record is saved.",
+   "maxLength": 30
+  },
+  "outside": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Outside",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Specifies whether the item being issued is a consignment good. If the check box is selected, the item belongs to a contractor (or vendor), but it is stored on-site, and it is an item for which you expect to be charged for its use. If the check box is cleared (the default), the item is not owned by an outside party."
+  },
+  "itemsetid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Item Set",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Item set identifier for this item.",
+   "maxLength": 8
+  },
+  "linecost2": {
+   "searchType": "EXACT",
+   "scale": 2,
+   "subType": "DECIMAL",
+   "title": "Secondary Line Cost",
+   "persistent": true,
+   "type": "number",
+   "remarks": "Base Currency Line Cost 2.",
+   "maxLength": 11
+  },
+  "_id": {
+   "type": "string"
+  },
+  "it10": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "IT10",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Extra Field",
+   "maxLength": 10
+  },
+  "qtyreturned": {
+   "searchType": "EXACT",
+   "scale": 2,
+   "subType": "DECIMAL",
+   "title": "Quantity Returned",
+   "persistent": true,
+   "type": "number",
+   "remarks": "Qty returned for this issue-type ISSUE",
+   "maxLength": 16
+  },
+  "unitcost": {
+   "default": 0.0,
+   "searchType": "EXACT",
+   "scale": 2,
+   "subType": "AMOUNT",
+   "title": "Unit Cost",
+   "persistent": true,
+   "type": "number",
+   "remarks": "Price of the item which Maximo copies from the Inventory table. The work order must be approved before you can insert or edit a value. This field is read-only if you have entered a rotating item in the Item field. Otherwise, you can modify the field until the record is saved; Maximo then updates the Actual Material Cost field on the Costs tab and the Actual Cost column of the Inventory Transactions table. The original unit cost from the item's inventory record is copied to the Unit Cost column of the Inventory Transactions table.",
+   "maxLength": 11
+  },
+  "exchangerate": {
+   "default": 1.0,
+   "searchType": "EXACT",
+   "scale": 7,
+   "subType": "DECIMAL",
+   "title": "Exchange Rate",
+   "persistent": true,
+   "type": "number",
+   "remarks": "Exchange Rate.",
+   "maxLength": 15
+  },
+  "linetype": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Line Type",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Identifies the line type, for example, ITEM, TOOL, or MATERIAL.",
+   "maxLength": 15
+  },
+  "description": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Description",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Describes the item. To enter or view more information, click the Long Description button.",
+   "maxLength": 100
+  },
+  "externalrefid": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "External Reference ID",
+   "persistent": true,
+   "type": "string",
+   "remarks": "External Reference ID",
+   "maxLength": 10
+  },
+  "tositeid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Site",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Site to which the item is being issued. Click the Select Value button to choose a site.",
+   "maxLength": 8
+  },
+  "gldebitacct": {
+   "searchType": "WILDCARD",
+   "subType": "GL",
+   "title": "GL Debit Account",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "GL account being debited when the item is issued. Click the Select Value button to choose a GL account.",
+   "maxLength": 23
+  },
+  "issueunit": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Issue Unit",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Standard quantity by which the item is issued from the storeroom, such as each or roll.",
+   "maxLength": 16
+  },
+  "_imagelibref": {
+   "type": "string"
+  },
+  "invuselinesplitid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Unique Id for INVUSELINESPLIT",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "Inventory Owner",
+   "maxLength": 11
+  },
+  "invuseid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Usage",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "The inventory usage identifier, which is used to relate an inventory usage line to a completed transaction.",
+   "maxLength": 11
+  },
+  "refwo": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Work Order",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "This field indicates the referenced work order number.",
+   "maxLength": 25
+  },
+  "conversion": {
+   "default": 1.0,
+   "searchType": "EXACT",
+   "scale": 2,
+   "subType": "DECIMAL",
+   "title": "Conversion Factor",
+   "persistent": true,
+   "type": "number",
+   "hasList": true,
+   "remarks": "Numeric value that is applied to relate an order unit to an issue unit. For example, if you order light bulbs in bulk, your unit of measure might be a case, with a quantity received of 36. But when you issue the item, you issue it one at a time. In this case, you can define a measure unit of CASE and another measure unit of EACH. You define a conversion ratio from CASE to EACH with a factor of 36. When you receive an order of this item into a storeroom, MAXIMO converts the received order unit of one CASE into the storeroom's issue unit of 36 EACH.",
+   "maxLength": 16
+  },
+  "quantity": {
+   "searchType": "EXACT",
+   "scale": 2,
+   "subType": "DECIMAL",
+   "title": "Quantity",
+   "persistent": true,
+   "type": "number",
+   "remarks": "This field indicates the quantity in/out. It is a calculation of items addedand or subtracted.",
+   "maxLength": 16
+  },
+  "consvendor": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Consignment Vendor",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The vendor that is responsible for replenishing the consignment items. Purchase orders and invoices are generated for the vendor that is specified in this field.",
+   "maxLength": 12
+  },
+  "storeloc": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Storeroom",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The storeroom location of the item. Click Detail menu to choose an option to select a Storeroom. You can edit this field until the work order saved.",
+   "maxLength": 25
+  },
+  "transdate": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Transaction Date",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Date and time the transaction was entered in Maximo. This field is read only."
+  },
+  "itemtype": {
+   "searchType": "NONE",
+   "subType": "UPPER",
+   "title": "Item Type",
+   "type": "string",
+   "remarks": "Item Type",
+   "maxLength": 15
+  },
+  "mrnum": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Requisition",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Requisition number associated with this transaction. Click the Select Value button to choose a requisition.",
+   "maxLength": 8
+  },
+  "fcprojectid": {
+   "searchType": "NONE",
+   "subType": "ALN",
+   "title": "FC Project ID",
+   "type": "string",
+   "remarks": "Financial control project identifier.",
+   "maxLength": 25
+  },
+  "matusetransid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Usage ID",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "uniqueid": true,
+   "remarks": "Primary key for the table",
+   "maxLength": 11
+  },
+  "location": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Location",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Location of the asset or the location where work was done. The work order must have an approved status before you can insert a value; the field can be edited until you save the record. Click Detail menu to choose an option to select a value.",
+   "maxLength": 25
+  }
+ },
+ "required": [
+  "actualdate",
+  "currencycode",
+  "enterby",
+  "enteredastask",
+  "issuetype",
+  "linetype",
+  "orgid",
+  "physcnt",
+  "quantity",
+  "siteid",
+  "tositeid",
+  "transdate"
+ ]
+}

@@ -1,0 +1,192 @@
+{
+ "resource": "MXAPILBSLOCATION",
+ "description": "Maximo API for LBS Locations",
+ "pk": [
+  "lbslocationid"
+ ],
+ "title": "LBSLOCATION",
+ "type": "object",
+ "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/mxapilbslocation",
+ "uniqueid": "lbslocationid",
+ "properties": {
+  "key1": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "KEY1",
+   "persistent": true,
+   "type": "string",
+   "remarks": "first key",
+   "maxLength": 255
+  },
+  "altitude": {
+   "searchType": "EXACT",
+   "scale": 10,
+   "subType": "DECIMAL",
+   "title": "Altitude",
+   "persistent": true,
+   "type": "number",
+   "remarks": "Altitude",
+   "maxLength": 19
+  },
+  "key2": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "KEY2",
+   "persistent": true,
+   "type": "string",
+   "remarks": "second key",
+   "maxLength": 255
+  },
+  "altitudeaccuracy": {
+   "searchType": "EXACT",
+   "scale": 10,
+   "subType": "DECIMAL",
+   "title": "Altitude accuracy",
+   "persistent": true,
+   "type": "number",
+   "remarks": "Altitude accuracy",
+   "maxLength": 19
+  },
+  "localref": {
+   "type": "string"
+  },
+  "heading": {
+   "searchType": "EXACT",
+   "scale": 10,
+   "subType": "DECIMAL",
+   "title": "Heading",
+   "persistent": true,
+   "type": "number",
+   "remarks": "Heading",
+   "maxLength": 19
+  },
+  "key3": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "KEY3",
+   "persistent": true,
+   "type": "string",
+   "remarks": "third key",
+   "maxLength": 255
+  },
+  "latitude": {
+   "searchType": "EXACT",
+   "scale": 10,
+   "subType": "DECIMAL",
+   "title": "Latitude",
+   "persistent": true,
+   "type": "number",
+   "remarks": "Latitude",
+   "maxLength": 19
+  },
+  "lbslocationid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "LBS Location ID",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "uniqueid": true,
+   "remarks": "Unique id",
+   "maxLength": 11
+  },
+  "record_descriptor": {
+   "type": "string",
+   "title": "Record/Object Descriptor"
+  },
+  "orgid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Oranization",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The organization identifier for this site",
+   "maxLength": 8
+  },
+  "speed": {
+   "searchType": "EXACT",
+   "scale": 10,
+   "subType": "DECIMAL",
+   "title": "Speed",
+   "persistent": true,
+   "type": "number",
+   "remarks": "Speed",
+   "maxLength": 19
+  },
+  "wonum": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Workorder",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The workorder that the user is working on when they click start timer.",
+   "maxLength": 25
+  },
+  "_rowstamp": {
+   "type": "string"
+  },
+  "_imagelibref": {
+   "type": "string"
+  },
+  "siteid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Site",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Site of the workorder that the customer is working on when they click the start/stop timer",
+   "maxLength": 8
+  },
+  "href": {
+   "type": "string",
+   "title": "LBSLOCATION object reference"
+  },
+  "_id": {
+   "type": "string"
+  },
+  "lastupdate": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Location Timestamp",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Location Timestamp"
+  },
+  "locationaccuracy": {
+   "searchType": "EXACT",
+   "scale": 10,
+   "subType": "DECIMAL",
+   "title": "Accuracy",
+   "persistent": true,
+   "type": "number",
+   "remarks": "Accuracy",
+   "maxLength": 19
+  },
+  "refobject": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Reference Object",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Reference Object",
+   "maxLength": 30
+  },
+  "longitude": {
+   "searchType": "EXACT",
+   "scale": 10,
+   "subType": "DECIMAL",
+   "title": "Longitude",
+   "persistent": true,
+   "type": "number",
+   "remarks": "Longitude",
+   "maxLength": 19
+  }
+ },
+ "required": [
+  "key1",
+  "refobject"
+ ]
+}

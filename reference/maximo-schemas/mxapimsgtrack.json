@@ -1,0 +1,187 @@
+{
+  "resource": "MXAPIMSGTRACK",
+  "description": "MAXINTMSGTRK",
+  "pk": [
+    "meamsgid"
+  ],
+  "title": "MAXINTMSGTRK",
+  "type": "object",
+  "$ref": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapimsgtrack",
+  "uniqueid": "maxintmsgtrkid",
+  "properties": {
+    "queuename": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Queue Name",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Queue name where msg was accepted (applicable when JMS Queuing/Asynchronous integration is in effect).",
+      "maxLength": 250
+    },
+    "meamsgid": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Message ID",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Internal Message ID",
+      "maxLength": 50
+    },
+    "localref": {
+      "type": "string"
+    },
+    "messagetype": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Operation",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Operation associated with Enterprise Service/Publish Channel",
+      "maxLength": 20
+    },
+    "maxintmsgtrkdtl": {
+      "objectName": "MAXINTMSGTRKDTL",
+      "type": "array",
+      "items": {
+        "definition": {
+          "subSchema": {
+            "$ref": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapimsgtrack/maxintmsgtrkdtl"
+          }
+        },
+        "type": "object"
+      },
+      "cardinality": "UNDEFINED",
+      "relation": "MAXINTMSGTRKDTL"
+    },
+    "ifacename": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Integration Component",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Enterprise Service/Publish Channel name",
+      "maxLength": 25
+    },
+    "extmsgidfielddata": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "External Message ID",
+      "persistent": true,
+      "type": "string",
+      "remarks": "External Message Id Field Data",
+      "maxLength": 50
+    },
+    "initialdatetime": {
+      "searchType": "EXACT",
+      "subType": "DATETIME",
+      "title": "Received Date & Time",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Datetime when Message was first received by MEA"
+    },
+    "_rowstamp": {
+      "type": "string"
+    },
+    "extsysname": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "System",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Message Sender",
+      "maxLength": 20
+    },
+    "maxintmsgtrkid": {
+      "searchType": "EXACT",
+      "maximum": 2147483647.0,
+      "subType": "BIGINT",
+      "title": "Unique Id",
+      "persistent": true,
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "uniqueid": true,
+      "remarks": "Unique Id",
+      "maxLength": 11
+    },
+    "msgdata": {
+      "searchType": "NONE",
+      "subType": "BLOB",
+      "title": "Stored Massage",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Stored Massage",
+      "maxLength": 999999
+    },
+    "searchfielddata": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Search ID",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Data in search fields of the message (configured by user on interface basis)",
+      "maxLength": 500
+    },
+    "_imagelibref": {
+      "type": "string"
+    },
+    "mimetype": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Mime Type",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Mime Type of the message",
+      "maxLength": 50
+    },
+    "href": {
+      "type": "string"
+    },
+    "_id": {
+      "type": "string"
+    },
+    "ifacetype": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Adapter",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Identifies the type of this message.",
+      "maxLength": 10
+    },
+    "msglength": {
+      "searchType": "EXACT",
+      "maximum": 2147483647.0,
+      "subType": "INTEGER",
+      "title": "Stored Message Length",
+      "persistent": true,
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "remarks": "Stored Message Length",
+      "maxLength": 11
+    },
+    "integrationmode": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Integration Mode",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Method of integration (HTTP, EJB, WebService etc.)",
+      "maxLength": 20
+    },
+    "status": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Current Status",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Shows last Message Status",
+      "maxLength": 20
+    }
+  },
+  "required": [
+    "ifacename",
+    "meamsgid"
+  ]
+}

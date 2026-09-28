@@ -1,0 +1,85 @@
+{
+ "resource": "MXAPIFAILURECODE",
+ "description": "Maximo API Object Structure for Failure Codes",
+ "pk": [
+  "orgid",
+  "failurecode"
+ ],
+ "title": "FAILURECODE",
+ "type": "object",
+ "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/mxapifailurecode",
+ "uniqueid": "failurecodeid",
+ "properties": {
+  "_rowstamp": {
+   "type": "string"
+  },
+  "description_longdescription": {
+   "searchType": "WILDCARD",
+   "subType": "LONGALN",
+   "title": "Details",
+   "type": "string",
+   "remarks": "Long Description for Failure Code Description",
+   "maxLength": 32000
+  },
+  "localref": {
+   "type": "string"
+  },
+  "failurecode": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Failure Code",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Code for the failure at this level of the hierarchy. This code could describe a problem, cause, remedy, or other code created for your site.",
+   "maxLength": 8
+  },
+  "_imagelibref": {
+   "type": "string"
+  },
+  "failurecodeid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "FAILURECODEID",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "uniqueid": true,
+   "remarks": "Unique Identifier",
+   "maxLength": 11
+  },
+  "description": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Description",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Description of the failure class.",
+   "maxLength": 100
+  },
+  "href": {
+   "type": "string",
+   "title": "FAILURECODE object reference"
+  },
+  "record_descriptor": {
+   "type": "string",
+   "title": "Record/Object Descriptor"
+  },
+  "_id": {
+   "type": "string"
+  },
+  "orgid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Organization",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Organization Identifier",
+   "maxLength": 8
+  }
+ },
+ "required": [
+  "failurecode",
+  "orgid"
+ ]
+}

@@ -1,0 +1,122 @@
+{
+  "resource": "MXAPIOBJFORMULA",
+  "description": "OBJECTFORMULA",
+  "pk": [
+    "objectname",
+    "formulaname"
+  ],
+  "title": "OBJECTFORMULA",
+  "type": "object",
+  "$ref": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapiobjformula",
+  "uniqueid": "objectformulaid",
+  "properties": {
+    "validateformula": {
+      "default": true,
+      "searchType": "NONE",
+      "subType": "YORN",
+      "title": "Validate Formula",
+      "type": "boolean",
+      "remarks": "Validate Formula"
+    },
+    "localref": {
+      "type": "string"
+    },
+    "objectformulaid": {
+      "searchType": "EXACT",
+      "maximum": 2147483647.0,
+      "subType": "BIGINT",
+      "title": "Unique Id",
+      "persistent": true,
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "uniqueid": true,
+      "remarks": "Unique Id",
+      "maxLength": 11
+    },
+    "objectname": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Object Name",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Associates a Maximo business object with the formula.",
+      "maxLength": 30
+    },
+    "description": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Description",
+      "persistent": true,
+      "type": "string",
+      "remarks": "A description helps you differentiate this formula from other formulas.",
+      "maxLength": 200
+    },
+    "changedate": {
+      "searchType": "EXACT",
+      "subType": "DATETIME",
+      "title": "Change Date",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Change Date"
+    },
+    "formulaname": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Formula Name",
+      "persistent": true,
+      "type": "string",
+      "remarks": "A name for the formula helps to identify it.",
+      "maxLength": 50
+    },
+    "_rowstamp": {
+      "type": "string"
+    },
+    "classname": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Expression Implementation Class",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Expression Implementation Class",
+      "maxLength": 100
+    },
+    "_imagelibref": {
+      "type": "string"
+    },
+    "objectformulacond": {
+      "objectName": "OBJECTFORMULACOND",
+      "type": "array",
+      "items": {
+        "definition": {
+          "subSchema": {
+            "$ref": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapiobjformula/objectformulacond"
+          }
+        },
+        "type": "object"
+      },
+      "cardinality": "",
+      "relation": "OBJECTFORMULACOND"
+    },
+    "formula": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Formula Expression",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Use a formula expression with operators and functions. For example, IF(pressuremeter$lastreading>60, 1, 0)",
+      "maxLength": 2000
+    },
+    "href": {
+      "type": "string"
+    },
+    "_id": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "formulaname",
+    "objectname",
+    "validateformula"
+  ]
+}

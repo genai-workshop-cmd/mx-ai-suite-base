@@ -1,0 +1,75 @@
+{
+ "resource": "MXAPIDOCTYPES",
+ "description": "API for Document Types",
+ "pk": [
+  "doctype"
+ ],
+ "title": "DOCTYPES",
+ "type": "object",
+ "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/mxapidoctypes",
+ "uniqueid": "doctypesid",
+ "properties": {
+  "doctype": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Document Folder",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The document folder name assigned by a user.",
+   "maxLength": 16
+  },
+  "defaultfilepath": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Default File Path",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Default file path of the document type.",
+   "maxLength": 255
+  },
+  "_rowstamp": {
+   "type": "string"
+  },
+  "localref": {
+   "type": "string"
+  },
+  "_imagelibref": {
+   "type": "string"
+  },
+  "description": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Description",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Value assigned by a user that describes the document folder.",
+   "maxLength": 100
+  },
+  "href": {
+   "type": "string",
+   "title": "DOCTYPES object reference"
+  },
+  "record_descriptor": {
+   "type": "string",
+   "title": "Record/Object Descriptor"
+  },
+  "_id": {
+   "type": "string"
+  },
+  "doctypesid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "DOCTYPESID",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "uniqueid": true,
+   "remarks": "Unique Identifier",
+   "maxLength": 11
+  }
+ },
+ "required": [
+  "doctype"
+ ]
+}

@@ -1,0 +1,169 @@
+{
+ "resource": "MXIM",
+ "description": "Integration Module Definition",
+ "pk": [
+  "imname",
+  "imversion"
+ ],
+ "title": "MAXIM",
+ "type": "object",
+ "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/mxim",
+ "uniqueid": "maximid",
+ "properties": {
+  "localref": {
+   "type": "string"
+  },
+  "changeby": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Changeby",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Changeby",
+   "maxLength": 100
+  },
+  "ompproductname": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Operational Management Product Name",
+   "persistent": true,
+   "type": "string",
+   "remarks": "OMP productname",
+   "maxLength": 50
+  },
+  "lmoimrln": {
+   "objectName": "LMOIMRLN",
+   "type": "array",
+   "items": {
+    "definition": {
+     "subSchema": {
+      "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/mxim/lmoimrln"
+     }
+    },
+    "type": "object"
+   },
+   "cardinality": "UNDEFINED",
+   "relation": "LMOIMRLN"
+  },
+  "description": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Description",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Description",
+   "maxLength": 200
+  },
+  "maximprop": {
+   "objectName": "MAXIMPROP",
+   "type": "array",
+   "items": {
+    "definition": {
+     "subSchema": {
+      "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/mxim/maximprop"
+     }
+    },
+    "type": "object"
+   },
+   "cardinality": "UNDEFINED",
+   "relation": "MAXIMPROP"
+  },
+  "changedate": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Change date",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Change date"
+  },
+  "record_descriptor": {
+   "type": "string",
+   "title": "Record/Object Descriptor"
+  },
+  "imname": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Name",
+   "persistent": true,
+   "type": "string",
+   "remarks": "IM Name",
+   "maxLength": 29
+  },
+  "_rowstamp": {
+   "type": "string"
+  },
+  "imversion": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Version",
+   "persistent": true,
+   "type": "string",
+   "remarks": "IM Version",
+   "maxLength": 20
+  },
+  "ompversion": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Operational Management Product Version",
+   "persistent": true,
+   "type": "string",
+   "remarks": "OMP version",
+   "maxLength": 20
+  },
+  "classname": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Class Name",
+   "persistent": true,
+   "type": "string",
+   "remarks": "IM classname",
+   "maxLength": 100
+  },
+  "_imagelibref": {
+   "type": "string"
+  },
+  "maxchannelname": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Invocation Channel Name",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "IM Invocation Channel name",
+   "maxLength": 25
+  },
+  "maximid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Unique Id",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "uniqueid": true,
+   "remarks": "Unique Id",
+   "maxLength": 11
+  },
+  "href": {
+   "type": "string",
+   "title": "MAXIM object reference"
+  },
+  "_id": {
+   "type": "string"
+  },
+  "handlername": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Handler Name",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "IM handler name",
+   "maxLength": 20
+  }
+ },
+ "required": [
+  "imname",
+  "imversion"
+ ]
+}

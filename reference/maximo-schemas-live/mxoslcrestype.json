@@ -1,0 +1,102 @@
+{
+ "resource": "MXOSLCRESTYPE",
+ "description": "OSLC Resource Types Definition",
+ "pk": [
+  "resourcetype"
+ ],
+ "title": "OSLCRESOURCETYPES",
+ "type": "object",
+ "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/mxoslcrestype",
+ "uniqueid": "oslcresourcetypesid",
+ "properties": {
+  "resourcetypeuri": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Resource Type URI",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The URI of the resource type that is shared between applications.",
+   "maxLength": 500
+  },
+  "localref": {
+   "type": "string"
+  },
+  "changeby": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Change By",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Change By",
+   "maxLength": 100
+  },
+  "description": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Description",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The description of the resource type.",
+   "maxLength": 200
+  },
+  "oslcresourcetypesid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Unique Id",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "uniqueid": true,
+   "remarks": "Unique Id",
+   "maxLength": 11
+  },
+  "changedate": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Change Date",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Change Date"
+  },
+  "record_descriptor": {
+   "type": "string",
+   "title": "Record/Object Descriptor"
+  },
+  "resourcetype": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Resource Type",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The resource type or record type, such as  defect or ticket.",
+   "maxLength": 30
+  },
+  "_rowstamp": {
+   "type": "string"
+  },
+  "_imagelibref": {
+   "type": "string"
+  },
+  "shapedoc": {
+   "searchType": "WILDCARD",
+   "subType": "CLOB",
+   "title": "Shape Document",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The RDF or XML document that describes the resource data types that can be used when enabling a creation interaction.",
+   "maxLength": 999999
+  },
+  "href": {
+   "type": "string",
+   "title": "OSLCRESOURCETYPES object reference"
+  },
+  "_id": {
+   "type": "string"
+  }
+ },
+ "required": [
+  "resourcetype",
+  "resourcetypeuri"
+ ]
+}

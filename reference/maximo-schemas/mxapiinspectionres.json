@@ -1,0 +1,312 @@
+{
+  "resource": "MXAPIINSPECTIONRES",
+  "description": "INSPECTIONRESULT",
+  "pk": [
+    "resultnum",
+    "orgid",
+    "siteid"
+  ],
+  "title": "INSPECTIONRESULT",
+  "type": "object",
+  "$ref": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapiinspectionres",
+  "uniqueid": "inspectionresultid",
+  "properties": {
+    "parent": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Parent",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Parent work order number.",
+      "maxLength": 25
+    },
+    "historyflag": {
+      "default": false,
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "History flag",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "Flag attribute to denote the inspection result is archived"
+    },
+    "localref": {
+      "type": "string"
+    },
+    "resultnum": {
+      "default": "&AUTOKEY&",
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Inspection Result",
+      "persistent": true,
+      "type": "string",
+      "remarks": "The number of the inspection result.",
+      "maxLength": 12
+    },
+    "assigngroup": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Assigned Group",
+      "persistent": true,
+      "type": "string",
+      "remarks": "group assigned to inspection",
+      "maxLength": 100
+    },
+    "batchnum": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Batch number of the current result",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Batch number of the current result",
+      "maxLength": 12
+    },
+    "createdate": {
+      "default": "&SYSDATE&",
+      "searchType": "EXACT",
+      "subType": "DATETIME",
+      "title": "Created Date",
+      "persistent": true,
+      "type": "string",
+      "remarks": "The date and time that the form was created."
+    },
+    "description": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Description of the inspection result",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Description of the inspection result",
+      "maxLength": 254
+    },
+    "inspfieldresult": {
+      "objectName": "INSPFIELDRESULT",
+      "type": "array",
+      "items": {
+        "definition": {
+          "subSchema": {
+            "$ref": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapiinspectionres/inspfieldresult"
+          }
+        },
+        "type": "object"
+      },
+      "cardinality": "",
+      "relation": "INSPFIELDRESULT"
+    },
+    "_rowstamp": {
+      "type": "string"
+    },
+    "createdby": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Created By",
+      "persistent": true,
+      "type": "string",
+      "remarks": "The user who created the form.",
+      "maxLength": 100
+    },
+    "_imagelibref": {
+      "type": "string"
+    },
+    "reviewgroup": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Reviewer Group",
+      "persistent": true,
+      "type": "string",
+      "remarks": "group assigned to review inspection",
+      "maxLength": 100
+    },
+    "siteid": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Site",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Site Identification",
+      "maxLength": 8
+    },
+    "href": {
+      "type": "string"
+    },
+    "fupobjectid": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Follow Up Object Identification",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Record Identification for the Follow up action",
+      "maxLength": 30
+    },
+    "inspectionresultid": {
+      "searchType": "EXACT",
+      "maximum": 2147483647.0,
+      "subType": "BIGINT",
+      "title": "Inspection result  identification",
+      "persistent": true,
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "uniqueid": true,
+      "remarks": "Record identification",
+      "maxLength": 11
+    },
+    "status_description": {
+      "type": "string"
+    },
+    "fupobject": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Follow Up Object Name",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Object that contains the record for Follow up action",
+      "maxLength": 30
+    },
+    "referenceobject": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Reference Object",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Object that the Inspection result is attached to",
+      "maxLength": 20
+    },
+    "reviewer": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Reviewer",
+      "persistent": true,
+      "type": "string",
+      "remarks": "reviewer of inspection result",
+      "maxLength": 100
+    },
+    "isbatch": {
+      "default": false,
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "Is Batch Inspection",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "Identify when the result is a batch inspection"
+    },
+    "orgid": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Organization",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Organization Identification",
+      "maxLength": 8
+    },
+    "revision": {
+      "searchType": "EXACT",
+      "maximum": 2147483647.0,
+      "subType": "INTEGER",
+      "title": "Current Form Revision",
+      "persistent": true,
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "remarks": "Current Form Revision",
+      "maxLength": 11
+    },
+    "statusdate": {
+      "searchType": "EXACT",
+      "subType": "DATETIME",
+      "title": "Status Date",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Date the InspectionResult status was last changed."
+    },
+    "sequence": {
+      "searchType": "EXACT",
+      "maximum": 2147483647.0,
+      "subType": "INTEGER",
+      "title": "Sequence",
+      "persistent": true,
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "remarks": "Work order sequence.",
+      "maxLength": 11
+    },
+    "duedate": {
+      "searchType": "EXACT",
+      "subType": "DATETIME",
+      "title": "Due Date",
+      "persistent": true,
+      "type": "string",
+      "remarks": "The date that the inspection must be completed by."
+    },
+    "referenceobjectid": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Reference Object ID",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Identifies the reference object.",
+      "maxLength": 25
+    },
+    "location": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Location",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Identification of the location that this inspection result is attached",
+      "maxLength": 25
+    },
+    "_id": {
+      "type": "string"
+    },
+    "assignee": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Assignee",
+      "persistent": true,
+      "type": "string",
+      "remarks": "assignee to inspection",
+      "maxLength": 100
+    },
+    "displaymessage": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Display Message for Actions taken",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Display Message for Actions taken",
+      "maxLength": 250
+    },
+    "asset": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Asset",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Identification of the equipment that this inspection result is attached",
+      "maxLength": 25
+    },
+    "inspformnum": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Inspection Form",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "The number of the inspection form.",
+      "maxLength": 12
+    },
+    "status": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Status",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Will contain the current inspection result status, controlled by the system",
+      "maxLength": 20
+    }
+  },
+  "required": [
+    "createdby",
+    "referenceobject",
+    "status"
+  ]
+}

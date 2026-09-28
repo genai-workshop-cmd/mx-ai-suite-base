@@ -1,0 +1,131 @@
+{
+ "resource": "MXAPIASSETATTRIBUTE",
+ "description": "Maximo API Object Structure for Asset Attributes",
+ "pk": [
+  "assetattrid",
+  "orgid",
+  "siteid"
+ ],
+ "title": "ASSETATTRIBUTE",
+ "type": "object",
+ "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/mxapiassetattribute",
+ "uniqueid": "assetattributeid",
+ "properties": {
+  "localref": {
+   "type": "string"
+  },
+  "datatype_description": {
+   "type": "string"
+  },
+  "attrdescprefix": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Prefix",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Default Prefix Used with Attribute in Generated Asset Descriptions",
+   "maxLength": 8
+  },
+  "assetattributeid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "ASSETATTRIBUTEID",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "uniqueid": true,
+   "remarks": "Unique Identifier",
+   "maxLength": 11
+  },
+  "description": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Description",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Description of the classification attribute",
+   "maxLength": 100
+  },
+  "record_descriptor": {
+   "type": "string",
+   "title": "Record/Object Descriptor"
+  },
+  "domainid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Domain",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Default Domain for the attribute",
+   "maxLength": 18
+  },
+  "orgid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Organization",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Organization Identifier",
+   "maxLength": 8
+  },
+  "assetattrid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Attribute",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Asset Attribute Identifier",
+   "maxLength": 25
+  },
+  "_rowstamp": {
+   "type": "string"
+  },
+  "measureunitid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Unit of Measure",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Default Units for the attribute",
+   "maxLength": 16
+  },
+  "datatype": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Data Type",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Read-only field that displays the value type of the attribute, either NUMERIC or ALN (alphanumeric).",
+   "maxLength": 8
+  },
+  "_imagelibref": {
+   "type": "string"
+  },
+  "siteid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Site",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Site Identifier",
+   "maxLength": 8
+  },
+  "href": {
+   "type": "string",
+   "title": "ASSETATTRIBUTE object reference"
+  },
+  "_id": {
+   "type": "string"
+  }
+ },
+ "required": [
+  "assetattrid",
+  "datatype"
+ ]
+}

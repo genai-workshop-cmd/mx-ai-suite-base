@@ -1,0 +1,169 @@
+{
+ "resource": "MXAPICAASSETWO",
+ "description": "Object structure for CAASSETWO",
+ "pk": [
+  "siteid",
+  "assetnum",
+  "wonum"
+ ],
+ "title": "CAASSETWO",
+ "type": "object",
+ "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/mxapicaassetwo",
+ "uniqueid": "assetuid",
+ "properties": {
+  "installdate": {
+   "searchType": "EXACT",
+   "subType": "DATE",
+   "title": "Installation Date",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Installation Date"
+  },
+  "localref": {
+   "type": "string"
+  },
+  "assettype_description": {
+   "type": "string"
+  },
+  "description": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Description",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Describes the asset. To enter or view additional information, click the Long Description button.",
+   "maxLength": 100
+  },
+  "worktype": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Work Type",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Identifies the work order's type. Some example types are: preventive maintenance, corrective maintenance, emergency maintenace, capital project, and event report.",
+   "maxLength": 5
+  },
+  "record_descriptor": {
+   "type": "string",
+   "title": "Record/Object Descriptor"
+  },
+  "priority": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "INTEGER",
+   "title": "Priority",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "Asset Priority - copied to Work Order when entered.",
+   "maxLength": 11
+  },
+  "assethealth": {
+   "searchType": "EXACT",
+   "scale": 2,
+   "subType": "DECIMAL",
+   "title": "Asset Health",
+   "persistent": true,
+   "type": "number",
+   "remarks": "Asset Health",
+   "maxLength": 13
+  },
+  "orgid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Organization",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Organization Identifier",
+   "maxLength": 8
+  },
+  "statusdate": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Last Completion Date",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Date the work order status was last changed."
+  },
+  "wonum": {
+   "default": "&AUTOKEY&",
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Work Order",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Identifies the work order.",
+   "maxLength": 25
+  },
+  "_rowstamp": {
+   "type": "string"
+  },
+  "_imagelibref": {
+   "type": "string"
+  },
+  "assetnum": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Asset",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Asset Number",
+   "maxLength": 25
+  },
+  "pmnextduedate": {
+   "searchType": "EXACT",
+   "subType": "DATE",
+   "title": "Next Due Date",
+   "persistent": true,
+   "type": "string",
+   "remarks": "From the next Next Due Date of the PM"
+  },
+  "siteid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Site",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Site Identifier",
+   "maxLength": 8
+  },
+  "location": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Location",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Asset Location",
+   "maxLength": 25
+  },
+  "href": {
+   "type": "string",
+   "title": "CAASSETWO object reference"
+  },
+  "_id": {
+   "type": "string"
+  },
+  "assettype": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Type",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The predefined type of this asset.",
+   "maxLength": 50
+  }
+ },
+ "required": [
+  "assetnum",
+  "orgid",
+  "siteid",
+  "statusdate"
+ ]
+}

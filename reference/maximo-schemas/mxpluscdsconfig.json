@@ -1,0 +1,189 @@
+{
+  "resource": "MXPLUSCDSCONFIG",
+  "description": "PLUSCDSCONFIG",
+  "pk": [
+    "pluscdsconfigid"
+  ],
+  "title": "PLUSCDSCONFIG",
+  "type": "object",
+  "$ref": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxpluscdsconfig",
+  "uniqueid": "pluscdsconfigid",
+  "properties": {
+    "localref": {
+      "type": "string"
+    },
+    "repeatvalue": {
+      "default": 5,
+      "searchType": "EXACT",
+      "maximum": 2147483647.0,
+      "subType": "INTEGER",
+      "title": "Default Value of Repeating Calibration Points",
+      "persistent": true,
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "remarks": "When the Repeatable? field is selected, this number is how many times the calibration point is repeated. The default value is 5.",
+      "maxLength": 11
+    },
+    "rangetruncate": {
+      "default": true,
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "Range Limits Truncate",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "Determines whether the Range Limits value are truncated or rounded."
+    },
+    "revisionnum": {
+      "searchType": "EXACT",
+      "maximum": 2147483647.0,
+      "subType": "INTEGER",
+      "title": "Revision Number",
+      "persistent": true,
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "remarks": "Identifies the revision level of this data sheet template.",
+      "maxLength": 11
+    },
+    "assettruncate": {
+      "default": false,
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "Truncate or Round Formula Calculations",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "When this field is not selected, the final formula value is rounded off. When this is selected, the final value is truncated."
+    },
+    "orgid": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Organization",
+      "persistent": true,
+      "type": "string",
+      "remarks": "The organization identifier.",
+      "maxLength": 8
+    },
+    "_rowstamp": {
+      "type": "string"
+    },
+    "_imagelibref": {
+      "type": "string"
+    },
+    "assetnplaces": {
+      "default": 0,
+      "searchType": "EXACT",
+      "maximum": 2147483647.0,
+      "subType": "INTEGER",
+      "title": "Amount of Places",
+      "persistent": true,
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "remarks": "The amount of places expressed after the Output Resolution. The default value is 0. This is used when the Asset and Process Error field is selected.",
+      "maxLength": 11
+    },
+    "tolnplaces": {
+      "default": 0,
+      "searchType": "EXACT",
+      "maximum": 2147483647.0,
+      "subType": "INTEGER",
+      "title": "Amount of Places",
+      "persistent": true,
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "remarks": "The amount of places expressed after the Output Resolution. This value is used when the Tolerance Limit and Error field has a value of 1.",
+      "maxLength": 11
+    },
+    "outputtruncate": {
+      "default": true,
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "Desired Output Truncate",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "Determines whether the final desired output value is truncated or rounded."
+    },
+    "siteid": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Site Id",
+      "persistent": true,
+      "type": "string",
+      "remarks": "The site identifier.",
+      "maxLength": 8
+    },
+    "href": {
+      "type": "string"
+    },
+    "_id": {
+      "type": "string"
+    },
+    "tolerror": {
+      "default": 1,
+      "searchType": "EXACT",
+      "maximum": 2147483647.0,
+      "subType": "INTEGER",
+      "title": "Tolerance Limit and Error configuration",
+      "persistent": true,
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "remarks": "The tolerance limit and error that is used on the data sheet template and work order data sheet. When it is set to the default value of 1, the MFR of Output plus 'n' places is used. When set to 2, the maximum of Input or Output is used plus 1 more resolution. This allows the output values to be more conservative.",
+      "maxLength": 11
+    },
+    "dsplannum": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Data Sheet Number",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Data Sheet Number",
+      "maxLength": 20
+    },
+    "pluscdsconfigid": {
+      "searchType": "EXACT",
+      "maximum": 2147483647.0,
+      "subType": "BIGINT",
+      "title": "Unique Id",
+      "persistent": true,
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "uniqueid": true,
+      "remarks": "Unique Id",
+      "maxLength": 11
+    },
+    "stddev": {
+      "default": 1,
+      "searchType": "EXACT",
+      "maximum": 2147483647.0,
+      "subType": "INTEGER",
+      "title": "Standard Deviation",
+      "persistent": true,
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "remarks": "This field determines if standard deviation is used. When you select N, the total number of vaules is used. When you select N-1, then the system uses the number of values minus one.",
+      "maxLength": 11
+    },
+    "asseterror": {
+      "default": 1,
+      "searchType": "EXACT",
+      "maximum": 2147483647.0,
+      "subType": "INTEGER",
+      "title": "Asset Error configuration",
+      "persistent": true,
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "remarks": "The Asset Error configuration that is used on the workorder data sheet. When it is set to the default value of 1, the MFR of Output plus 'n' places is used. When set to 2, the maximum of Input or Output is used.",
+      "maxLength": 11
+    },
+    "toltruncate": {
+      "default": false,
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "Truncate or Round Formula Calculations",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "When this check box is not selected, the final formula value is rounded off. When this is selected, the final value is truncated."
+    }
+  },
+  "required": [
+    "revisionnum"
+  ]
+}

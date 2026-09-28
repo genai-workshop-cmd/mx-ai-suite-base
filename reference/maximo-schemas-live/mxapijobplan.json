@@ -1,0 +1,999 @@
+{
+ "resource": "MXAPIJOBPLAN",
+ "description": "Job Plan Object Structure",
+ "pk": [
+  "jpnum",
+  "orgid",
+  "siteid",
+  "pluscrevnum"
+ ],
+ "title": "JOBPLAN",
+ "type": "object",
+ "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/mxapijobplan",
+ "uniqueid": "jobplanid",
+ "properties": {
+  "apptrequired": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Appointment Required",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Indicates if an appointment is required for the job plan. Tasks that are created for this job plan inherit this value, but can be modified."
+  },
+  "plusgcfwnum": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Condition for Work",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The identifier of the condition for work.",
+   "maxLength": 12
+  },
+  "localref": {
+   "type": "string"
+  },
+  "aos": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Requires Asset Downtime",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Indicates that the work cannot be performed while the asset is operating."
+  },
+  "plusgassactivityimp": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Assurance Activity Imported",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Specifies whether the assurance activity was set by the user (value equals 0) or imported from an operating policy (value equals 1)."
+  },
+  "jobitem": {
+   "objectName": "JOBITEM",
+   "type": "array",
+   "items": {
+    "definition": {
+     "subSchema": {
+      "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/mxapijobplan/jobitem"
+     }
+    },
+    "type": "object"
+   },
+   "cardinality": "MULTIPLE",
+   "relation": "JOBITEM"
+  },
+  "jobplanspec": {
+   "objectName": "JOBPLANSPEC",
+   "type": "array",
+   "items": {
+    "definition": {
+     "subSchema": {
+      "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/mxapijobplan/jobplanspec"
+     }
+    },
+    "type": "object"
+   },
+   "cardinality": "MULTIPLE",
+   "relation": "JOBPLANSPEC"
+  },
+  "ownergroup": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Owner Group",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The person group who will be responsible for the work order created with this job plan",
+   "maxLength": 8
+  },
+  "lms": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Requires Location Maintenance Window",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Indicates that the work must be performed during a dedicated maintenance window."
+  },
+  "stconoffset": {
+   "searchType": "EXACT",
+   "scale": 0,
+   "subType": "DURATION",
+   "title": "Start Constraint Offset",
+   "persistent": true,
+   "type": "number",
+   "remarks": "The amount of time (in hours) to be subtracted from the Target Start date in order to calculate the Start No Earlier Than date of the work record.",
+   "maxLength": 8
+  },
+  "pluscstatusdate": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Last status change date",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Displays the date the status was changed. This field is editable only on the Change Status dialog box."
+  },
+  "href": {
+   "type": "string",
+   "title": "JOBPLAN object reference"
+  },
+  "jptaskrelation": {
+   "objectName": "JPTASKRELATION",
+   "type": "array",
+   "items": {
+    "definition": {
+     "subSchema": {
+      "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/mxapijobplan/jptaskrelation"
+     }
+    },
+    "type": "object"
+   },
+   "cardinality": "MULTIPLE",
+   "relation": "JPTASKRELATION"
+  },
+  "flowaction": {
+   "searchType": "EXACT",
+   "subType": "UPPER",
+   "title": "Flow Action",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The action to be performed (if any) when the workorder is started via process flow control",
+   "maxLength": 30
+  },
+  "fnconoffset": {
+   "searchType": "EXACT",
+   "scale": 0,
+   "subType": "DURATION",
+   "title": "Finish Constraint Offset",
+   "persistent": true,
+   "type": "number",
+   "remarks": "The amount of time (in hours) to be added to the Target Finish date in order to calculate the Finish No Later Than date of the work record.",
+   "maxLength": 8
+  },
+  "plusgimproveplan": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Improvement Plan",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Specifies whether this job plan is an improvement plan that can be associated with an improvement record. If the check box is selected, this plan is an improvement plan."
+  },
+  "modelid": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Import ID",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Import ID Typically from a BIM model or COBie data set.",
+   "maxLength": 45
+  },
+  "plusglossunits": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Loss Units",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The unit of measure, such as gallons, that is associated with this loss of production. ",
+   "maxLength": 16
+  },
+  "record_descriptor": {
+   "type": "string",
+   "title": "Record/Object Descriptor"
+  },
+  "priority": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "INTEGER",
+   "title": "WO Priority",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "Priority of job.",
+   "maxLength": 11
+  },
+  "laborcode": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Lead",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Defines the Lead person who will be copied to the work order created with this job plan",
+   "maxLength": 100
+  },
+  "templatetype_description": {
+   "type": "string"
+  },
+  "intshift": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Interruptible shift",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Work will be interrupted for only this shift in Graphical Scheduling application if value supplied. (Organization required)",
+   "maxLength": 8
+  },
+  "plusgpolicyid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Operating Policy",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "The unique identifier of an operating policy.",
+   "maxLength": 11
+  },
+  "flowactionassist": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Flow Action Assist",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Suppresses the automatic firing of the action in flow control"
+  },
+  "plusgauditid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Audit",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "The audit that is associated with the job plan.",
+   "maxLength": 11
+  },
+  "reqasstdwntime": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Require Asset Downtime",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Indicates if the asset requires downtime while work is performed."
+  },
+  "amcrew": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Crew",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Defines the Crew who will be copied to the work order created with this job plan.",
+   "maxLength": 8
+  },
+  "launchentryname": {
+   "searchType": "EXACT",
+   "subType": "UPPER",
+   "title": "Launch Entry Name",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Launch Entry",
+   "maxLength": 32
+  },
+  "plusgriskassesscom": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Comments",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Comments about the risk assessment. You can change this value when the job plan record is in any status.",
+   "maxLength": 200
+  },
+  "status": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Status",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Job Plan Status",
+   "maxLength": 16
+  },
+  "plusgscenario_description": {
+   "type": "string"
+  },
+  "jpduration": {
+   "default": 0.0,
+   "searchType": "EXACT",
+   "scale": 0,
+   "subType": "DURATION",
+   "title": "Duration",
+   "persistent": true,
+   "type": "number",
+   "remarks": "Duration Of Job Plan In Hours",
+   "maxLength": 8
+  },
+  "plusgprofnum": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Location Profile",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The location profile that is associated with this job plan. The location profile contains information about production data. You can use location profiles to reduce the production losses that can result from planned or unplanned maintenance shutdowns. You can apply a system-level location profile to any job plan. You can apply an organization-level location profile to a job plan whose site belongs to the same organization as the location profile. You can apply a site-level location profile only to a job plan with the same site.",
+   "maxLength": 10
+  },
+  "assignedownergroup": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Assigned Owner Group",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Identifies the owner group who will be responsible for the work order created with this job plan.  Use the Select Action menu to assign an owner group. You can enter a value either in this field or in the Owner field.",
+   "maxLength": 8
+  },
+  "unitsofwork": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Work Unit",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Work Unit",
+   "maxLength": 16
+  },
+  "plusgprepphase": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Phase",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The phase of work, such as start-up, with which the preparation activities are associated.",
+   "maxLength": 20
+  },
+  "los": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Requires Location Downtime",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Indicates that the work must be performed when the location is not in use, and available for maintenance."
+  },
+  "calcmethod": {
+   "default": "!STATIC!",
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Calculation",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Calculation method; It could be STATIC, PROPORTIONAL, LEVEL or ATTRIBUTE",
+   "maxLength": 15
+  },
+  "templatetype": {
+   "default": "!MAINTENANCE!",
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Template Type",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Template Type of the Job Plan",
+   "maxLength": 16
+  },
+  "crewworkgroup": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Crew Work Group",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Resource pool that will perform the work order.",
+   "maxLength": 8
+  },
+  "jobplanid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "JOBPLANID",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "uniqueid": true,
+   "remarks": "Unique Identifier",
+   "maxLength": 11
+  },
+  "persongroup": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Work Group",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Persongroup identifier",
+   "maxLength": 8
+  },
+  "crewid": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Crew",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "ID for a given crew within a craft.",
+   "maxLength": 12
+  },
+  "plusgoutageconseq_description": {
+   "type": "string"
+  },
+  "plusgriskasscat_description": {
+   "type": "string"
+  },
+  "calendar": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Calendar",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Calendar to determine shift work is to be done on.",
+   "maxLength": 8
+  },
+  "description_longdescription": {
+   "searchType": "WILDCARD",
+   "subType": "LONGALN",
+   "title": "Details",
+   "type": "string",
+   "remarks": "Long Description for One Line Short Description Of Job Plan",
+   "maxLength": 32000
+  },
+  "calcexpression": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Expression",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Expression",
+   "maxLength": 100
+  },
+  "plusgriskassessid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Risk Assessment Unique Identifier",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "The unique identifier of the risk assessment.",
+   "maxLength": 11
+  },
+  "plusgriskasscat": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Risk Assessment Requirement",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The category of the primary risk assessment that is associated with the job plan. Valid values are in the PLUSGRISKASSESSCAT domain.",
+   "maxLength": 30
+  },
+  "jobmaterial": {
+   "objectName": "JOBMATERIAL",
+   "type": "array",
+   "items": {
+    "definition": {
+     "subSchema": {
+      "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/mxapijobplan/jobmaterial"
+     }
+    },
+    "type": "object"
+   },
+   "cardinality": "MULTIPLE",
+   "relation": "JOBMATERIAL"
+  },
+  "interruptible": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Interruptible",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Is this WO allowed to be stopped and restarted during resource scheduling"
+  },
+  "downtime": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Downtime",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Does the Asset have to be down for this WO?"
+  },
+  "plusgpreptype_description": {
+   "type": "string"
+  },
+  "plusgbennum": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Loss Reference",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The loss (impact) record that defines the production loss or near miss that is associated with this job plan. The status of the impact record must be Active. The type of the impact record must be Loss, or the Benefit and Loss Apply flag on the impact record must be selected. You can apply a system-level loss to any job plan. You can apply an organization-level loss to a job plan whose site belongs to the same organization as the loss. You can apply a site-level loss only to a job plan with the same site. ",
+   "maxLength": 12
+  },
+  "plusglossquantity": {
+   "searchType": "EXACT",
+   "scale": 2,
+   "subType": "AMOUNT",
+   "title": "Loss Quantity",
+   "persistent": true,
+   "type": "number",
+   "remarks": "The quantity of the loss. This field is used in conjunction with the Loss Units value.",
+   "maxLength": 11
+  },
+  "pluscchangedate": {
+   "default": "&SYSDATE&",
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Changed Date",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Displays the date the status was changed. This field is editable only on the Change Status dialog box."
+  },
+  "pluscrevnum": {
+   "default": 0,
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "INTEGER",
+   "title": "Revision",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "Displays the revision level of the current job plan.",
+   "maxLength": 11
+  },
+  "calcapplyto": {
+   "default": "!HOURS!",
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Type",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Calculation type : used to specify if the calculation update the duration or quantity value",
+   "maxLength": 10
+  },
+  "pluscrevcom": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Description",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Enter the reason for the change. This field is editable only when the revision is first created.",
+   "maxLength": 100
+  },
+  "jobplanclass": {
+   "objectName": "JOBPLANCLASS",
+   "type": "array",
+   "items": {
+    "definition": {
+     "subSchema": {
+      "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/mxapijobplan/jobplanclass"
+     }
+    },
+    "type": "object"
+   },
+   "cardinality": "SINGLE",
+   "relation": "JOBPLANCLASS"
+  },
+  "jpnum": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Job Plan",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Unique Identifier For Job Plan",
+   "maxLength": 12
+  },
+  "plusgscenario": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Scenario",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The scenario that is associated with the preparation activities.",
+   "maxLength": 20
+  },
+  "jobtool": {
+   "objectName": "JOBTOOL",
+   "type": "array",
+   "items": {
+    "definition": {
+     "subSchema": {
+      "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/mxapijobplan/jobtool"
+     }
+    },
+    "type": "object"
+   },
+   "cardinality": "MULTIPLE",
+   "relation": "JOBTOOL"
+  },
+  "plusdregstandard": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Regulatory Standard",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The regulatory standard that is applicable to this record. For example, North American Electric Reliability Corporation (NERC), Federal Energy Regulatory Commission (FERC).",
+   "maxLength": 12
+  },
+  "_rowstamp": {
+   "type": "string"
+  },
+  "siteid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Site",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Site Identifier",
+   "maxLength": 8
+  },
+  "dynamic": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Is dynamic",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Flag used to hide or display dynamic fields"
+  },
+  "crewid_description": {
+   "type": "string"
+  },
+  "jobtask": {
+   "objectName": "JOBTASK",
+   "type": "array",
+   "items": {
+    "definition": {
+     "subSchema": {
+      "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/mxapijobplan/jobtask"
+     }
+    },
+    "type": "object"
+   },
+   "cardinality": "MULTIPLE",
+   "relation": "JOBTASK"
+  },
+  "plusgassactivity": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Assurance Activity",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Specifies whether the job plan implements an assurance activity. If this check box is selected, an assurance activity is implemented."
+  },
+  "suspendflow": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Suspend Flow Control",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Flag used to suspend and resume flow control on a parent record."
+  },
+  "plusgrfwid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Unique ID",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "Unique ID",
+   "maxLength": 11
+  },
+  "status_description": {
+   "type": "string"
+  },
+  "plusgauditnum": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Audit",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The audit that is associated with the job plan.",
+   "maxLength": 10
+  },
+  "repairlocflag": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Repair Facility Required",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Indicates whether the repair location is required."
+  },
+  "orgid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Organization",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Organization Identifier",
+   "maxLength": 8
+  },
+  "pluscchangeby": {
+   "default": "&USERNAME&",
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Changed By",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Displays the user name of the person logged in when the job plan was created or changed.",
+   "maxLength": 100
+  },
+  "plusgoutageconseq": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Outage Consequence",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The potential impact on production if there is an outage that might be associated with this job plan. ",
+   "maxLength": 20
+  },
+  "calclevel": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Level",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Calculation level",
+   "maxLength": 8
+  },
+  "plusgprepref": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Reference",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The reference to the work package that is associated with the preparation activities. If you use a project management system, you can reference the task identifier.",
+   "maxLength": 10
+  },
+  "_id": {
+   "type": "string"
+  },
+  "plusgprepactiv": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Preparation Activity",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Indicates whether the job plan is associated with preparation activities"
+  },
+  "supervisor": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Supervisor",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Supervisor of job.",
+   "maxLength": 100
+  },
+  "inctasksinsched": {
+   "default": true,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Include Tasks in Schedule",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Indicates that tasks of records created from this job plan will be included in the schedule view."
+  },
+  "flowcontrolled": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Flow Controlled",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Flag used to indicate a records participation in flow control."
+  },
+  "ams": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Requires Asset Maintenance Window",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Indicates that the work must be performed during a dedicated maintenance window."
+  },
+  "description": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Description",
+   "persistent": true,
+   "type": "string",
+   "remarks": "One Line Short Description Of Job Plan",
+   "maxLength": 100
+  },
+  "plusgprepphase_description": {
+   "type": "string"
+  },
+  "plusdregstandard_description": {
+   "type": "string"
+  },
+  "plusgbennumid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Unique Id",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "Unique Id",
+   "maxLength": 11
+  },
+  "plusgworkbreak": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Work Breakdown Structure",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The reference to the work breakdown structure or to the work package number that is associated with the preparation activities. If you use a project management system, you can specify the work breakdown structure from that system.",
+   "maxLength": 10
+  },
+  "jobservice": {
+   "objectName": "JOBSERVICE",
+   "type": "array",
+   "items": {
+    "definition": {
+     "subSchema": {
+      "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/mxapijobplan/jobservice"
+     }
+    },
+    "type": "object"
+   },
+   "cardinality": "MULTIPLE",
+   "relation": "JOBSERVICE"
+  },
+  "_imagelibref": {
+   "type": "string"
+  },
+  "owner": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Owner",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The person who will be responsible for the work order created with this job plan",
+   "maxLength": 100
+  },
+  "plusgpreptype": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Type of Preparation",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The type of activity that is associated with the preparation activities.",
+   "maxLength": 20
+  },
+  "jpassetsplink": {
+   "objectName": "JPASSETSPLINK",
+   "type": "array",
+   "items": {
+    "definition": {
+     "subSchema": {
+      "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/mxapijobplan/jpassetsplink"
+     }
+    },
+    "type": "object"
+   },
+   "cardinality": "MULTIPLE",
+   "relation": "JPASSETSPLINK"
+  },
+  "classstructureid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Class Structure",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Class Structure Identifier",
+   "maxLength": 25
+  },
+  "applynondynamiccalc": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Ignore linear measures",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "If the work order asset is a linear one, and that check box is checked, the TWU will not be calculated but entered by user"
+  },
+  "plusglocprofid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Location Profile",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "The location profile that is associated with this job plan record. The location profile contains information about production data. You can use location profiles to reduce the production losses that can result from planned or unplanned maintenance shutdowns. ",
+   "maxLength": 11
+  },
+  "unitsofworkmultiplier": {
+   "default": 1.0,
+   "searchType": "EXACT",
+   "scale": 2,
+   "subType": "DECIMAL",
+   "title": "Work Unit",
+   "persistent": true,
+   "type": "number",
+   "remarks": "Work Unit",
+   "maxLength": 11
+  },
+  "milestone": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Is Milestone",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Indicates if this job plan is a milestone."
+  },
+  "hasnestedjp": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Nested Job Plans",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Indicates if this Job Plan has nested Job Plans."
+  },
+  "joblabor": {
+   "objectName": "JOBLABOR",
+   "type": "array",
+   "items": {
+    "definition": {
+     "subSchema": {
+      "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/mxapijobplan/joblabor"
+     }
+    },
+    "type": "object"
+   },
+   "cardinality": "MULTIPLE",
+   "relation": "JOBLABOR"
+  },
+  "inspformnum": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Inspection Form",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The number of the inspection form.",
+   "maxLength": 12
+  }
+ },
+ "required": [
+  "jpnum",
+  "status"
+ ]
+}

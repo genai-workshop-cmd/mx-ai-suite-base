@@ -1,0 +1,140 @@
+{
+ "resource": "MXOSLCPROVIDER",
+ "description": "OSLC Provider Definition",
+ "pk": [
+  "providername"
+ ],
+ "title": "OSLCPROVIDER",
+ "type": "object",
+ "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/mxoslcprovider",
+ "uniqueid": "oslcproviderid",
+ "properties": {
+  "cataloguri": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Service Provider List URI",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The URI that points to an individual service provider, a service provider catalog, or a service provider listing.",
+   "maxLength": 500
+  },
+  "localref": {
+   "type": "string"
+  },
+  "oslcproviderid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Unique Id",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "uniqueid": true,
+   "remarks": "Unique Id",
+   "maxLength": 11
+  },
+  "changeby": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Change By",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Change By",
+   "maxLength": 100
+  },
+  "description": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Description",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The description of the OSLC provider.",
+   "maxLength": 200
+  },
+  "changedate": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Change Date",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Change Date"
+  },
+  "record_descriptor": {
+   "type": "string",
+   "title": "Record/Object Descriptor"
+  },
+  "providername": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Provider",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Identifies the OSLC provider application.",
+   "maxLength": 20
+  },
+  "_rowstamp": {
+   "type": "string"
+  },
+  "oslcversion": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "OSLC Version",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The OSLC version for OSLC provider.",
+   "maxLength": 20
+  },
+  "baseurl": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Public URI",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The root URI that is used to access the OSLC provider application. The public URI typically contains the hostname, port, and application name.",
+   "maxLength": 500
+  },
+  "_imagelibref": {
+   "type": "string"
+  },
+  "nativepreview": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Generate Preview Dialog",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Indicates whether a read-only dialog for the provider resource data is rendered when the provider application does not support a preview dialog box."
+  },
+  "endpointname": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "End Point",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The integration end point that enables an application to interact with the OSLC provider.",
+   "maxLength": 20
+  },
+  "href": {
+   "type": "string",
+   "title": "OSLCPROVIDER object reference"
+  },
+  "_id": {
+   "type": "string"
+  },
+  "useregistry": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Use Provider Registry",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Specifies whether to discover supported service providers through the Provider Registry. If the check box is selected, a validation ensures that an end point name is set in the mxe.oslc.prqueryrep system property, and that a corresponding end point is specified in the End Points application. The end point enables discovery of supported service providers through the Provider Registry. If the check box is cleared, service provider discovery is done by using the URI that is specified in the Service Provider List URI field."
+  }
+ },
+ "required": [
+  "baseurl",
+  "endpointname",
+  "providername"
+ ]
+}

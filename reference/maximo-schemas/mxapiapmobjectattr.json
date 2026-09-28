@@ -1,0 +1,143 @@
+{
+  "resource": "MXAPIAPMOBJECTATTR",
+  "description": "APMSCOREOBJECTATTR",
+  "pk": [
+    "attrname",
+    "objectname"
+  ],
+  "title": "APMSCOREOBJECTATTR",
+  "type": "object",
+  "$ref": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapiapmobjectattr",
+  "uniqueid": "apmscoreobjectattrid",
+  "properties": {
+    "maxtype": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Type",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Type of this attribute",
+      "maxLength": 10
+    },
+    "ahblthreshold": {
+      "objectName": "AHBLTHRESHOLD",
+      "type": "array",
+      "items": {
+        "definition": {
+          "subSchema": {
+            "$ref": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapiapmobjectattr/ahblthreshold"
+          }
+        },
+        "type": "object"
+      },
+      "cardinality": "",
+      "relation": "AHBLTHRESHOLD"
+    },
+    "localref": {
+      "type": "string"
+    },
+    "iskpi": {
+      "default": false,
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "is KPI",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "is KPI"
+    },
+    "objectname": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Object Name",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Table name for top level score mapping.",
+      "maxLength": 30
+    },
+    "dbattrname": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Attribute Name",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Attribute Name in database table",
+      "maxLength": 50
+    },
+    "description": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Description",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Description of the score type",
+      "maxLength": 200
+    },
+    "attrname": {
+      "default": "&AUTOKEY&",
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Attribute Name",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Attribute Name",
+      "maxLength": 50
+    },
+    "title": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Title",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Title",
+      "maxLength": 127
+    },
+    "sequence": {
+      "default": "&AUTOKEY&",
+      "searchType": "EXACT",
+      "maximum": 2147483647.0,
+      "subType": "INTEGER",
+      "title": "Score display sequence",
+      "persistent": true,
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "remarks": "The sequence used to display the score, not the calculation order",
+      "maxLength": 11
+    },
+    "_rowstamp": {
+      "type": "string"
+    },
+    "apmscoreobjectattrid": {
+      "searchType": "EXACT",
+      "maximum": 2147483647.0,
+      "subType": "BIGINT",
+      "title": "Unique Id",
+      "persistent": true,
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "uniqueid": true,
+      "remarks": "Unique Id",
+      "maxLength": 11
+    },
+    "_imagelibref": {
+      "type": "string"
+    },
+    "href": {
+      "type": "string"
+    },
+    "_id": {
+      "type": "string"
+    },
+    "relationship": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Relationship",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Relationship to get the APMValue",
+      "maxLength": 50
+    }
+  },
+  "required": [
+    "objectname"
+  ]
+}

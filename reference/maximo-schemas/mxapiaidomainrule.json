@@ -1,0 +1,108 @@
+{
+  "resource": "MXAPIAIDOMAINRULE",
+  "description": "MAXAIDOMAINRULE",
+  "pk": [
+    "rulename"
+  ],
+  "title": "MAXAIDOMAINRULE",
+  "type": "object",
+  "$ref": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapiaidomainrule",
+  "uniqueid": "maxaidomainruleid",
+  "properties": {
+    "localref": {
+      "type": "string"
+    },
+    "ruletext": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Prompt",
+      "persistent": true,
+      "type": "string",
+      "remarks": "A statement that provides context and can narrow the focus for the assistant\u2019s answers.",
+      "maxLength": 500
+    },
+    "maxaidomainruleid": {
+      "searchType": "EXACT",
+      "maximum": 2147483647.0,
+      "subType": "BIGINT",
+      "title": "Unique Id",
+      "persistent": true,
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "uniqueid": true,
+      "remarks": "Unique Id",
+      "maxLength": 11
+    },
+    "objectname": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Object",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Name of Prompt",
+      "maxLength": 30
+    },
+    "active": {
+      "default": false,
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "Active",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "Active Prompt"
+    },
+    "description": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Description",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Description of Prompt",
+      "maxLength": 78
+    },
+    "rulename": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Name",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Name of Prompt",
+      "maxLength": 20
+    },
+    "_rowstamp": {
+      "type": "string"
+    },
+    "_imagelibref": {
+      "type": "string"
+    },
+    "href": {
+      "type": "string"
+    },
+    "_id": {
+      "type": "string"
+    },
+    "istemplate": {
+      "default": false,
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "Template",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "Indicates that the prompt generates other prompts."
+    },
+    "userdefined": {
+      "default": true,
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "User Defined",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "Userdefined Prompt"
+    }
+  },
+  "required": [
+    "rulename",
+    "ruletext"
+  ]
+}

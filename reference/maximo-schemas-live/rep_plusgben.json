@@ -1,0 +1,493 @@
+{
+ "resource": "REP_PLUSGBEN",
+ "description": "Benefits and Losses (Oil) Details",
+ "pk": [
+  "orgid",
+  "siteid",
+  "bennum"
+ ],
+ "title": "PLUSGBENEFIT",
+ "type": "object",
+ "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/rep_plusgben",
+ "uniqueid": "plusgbenefitid",
+ "properties": {
+  "historyflag": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "History",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "History Flag"
+  },
+  "localref": {
+   "type": "string"
+  },
+  "lastupdatedate": {
+   "searchType": "EXACT",
+   "subType": "DATE",
+   "title": "Last Update of Unit Price",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The date on which the unit price for this benefit was last updated."
+  },
+  "relmeter": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Related Meter",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The meter that someone can use to measure the benefit. If someone enters a value in the Related Measurement Point field, the system displays the related meter in this field.",
+   "maxLength": 10
+  },
+  "observeddate": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Observed Date",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The date someone observed the loss."
+  },
+  "lossind_description": {
+   "type": "string"
+  },
+  "impacttype": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Impact Type",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Identifies whether the record is a benefit or a loss. Valid values are in the PLUSGIMPACTTYPE synonym domain.",
+   "maxLength": 16
+  },
+  "type": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Impact Area",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The area that is affected by the impact, for example, the environment or the reputation of the enterprise. Valid values are in the PLUSGIMPACTAREA domain.",
+   "maxLength": 20
+  },
+  "unitprice": {
+   "searchType": "EXACT",
+   "scale": 2,
+   "subType": "AMOUNT",
+   "title": "Unit Price",
+   "persistent": true,
+   "type": "number",
+   "remarks": "Unit commodity price on which you based the benefit. Requires a value in the corresponding units field.",
+   "maxLength": 11
+  },
+  "ismeasbenefit": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Measurable",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Specifies whether you can quantify and measure this impact. If this check box is selected, the impact is quantifiable. If this check box is cleared, the impact is not quantifiable."
+  },
+  "lossquantity": {
+   "searchType": "EXACT",
+   "scale": 2,
+   "subType": "AMOUNT",
+   "title": "Loss Quantity",
+   "persistent": true,
+   "type": "number",
+   "remarks": "The quantity of the loss. Used in conjunction with the Loss Units value.",
+   "maxLength": 11
+  },
+  "_rowstamp": {
+   "type": "string"
+  },
+  "locationsid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Location",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "Location identifier",
+   "maxLength": 11
+  },
+  "losssource_description": {
+   "type": "string"
+  },
+  "siteid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Site",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Identifies the site associated with this impact record and its benefit or loss.",
+   "maxLength": 8
+  },
+  "href": {
+   "type": "string",
+   "title": "PLUSGBENEFIT object reference"
+  },
+  "impreqd": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Improvement Required",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Specifies whether an improvement is required as a result of the loss event. If this check box is selected, an improvement is required as a result of the loss event. If this check box is cleared, an improvement is not required as a result of the loss event."
+  },
+  "assetuid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Asset",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "Asset unique identifier",
+   "maxLength": 11
+  },
+  "period": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "INTEGER",
+   "title": "Period of Benefit",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "The period over which the benefit is measured.",
+   "maxLength": 11
+  },
+  "status_description": {
+   "type": "string"
+  },
+  "benunits": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Benefit Units",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Unit of measure of the benefit quantity.",
+   "maxLength": 16
+  },
+  "isbenandloss": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Benefit and Loss Apply",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Identifies that both benefits and losses apply to this record"
+  },
+  "estbenefit": {
+   "searchType": "EXACT",
+   "scale": 2,
+   "subType": "AMOUNT",
+   "title": "Estimated Benefit",
+   "persistent": true,
+   "type": "number",
+   "remarks": "The estimated benefit associated with this benefit.",
+   "maxLength": 11
+  },
+  "isrepeatloss": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Is a Repeatable Loss",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Specifies whether repetition of the loss is likely to happen. If this check box is selected, repetition of the loss is likely to happen. If this check box is cleared, repetition of the loss is not likely to happen."
+  },
+  "record_descriptor": {
+   "type": "string",
+   "title": "Record/Object Descriptor"
+  },
+  "orgid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Organization",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Identifies the organization associated with this impact record and its benefit or loss.",
+   "maxLength": 8
+  },
+  "relmeaspoint": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Related Measurement Point",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The measurement point that someone can use to measure the benefit. If someone enters a value in this field, the system displays the related meter in the Related Meter field.",
+   "maxLength": 8
+  },
+  "losssource": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Loss Source",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The source of the loss. Valid values are in the PLUSGLOSSSOURCE domain.",
+   "maxLength": 16
+  },
+  "regreportable": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Regulatory Reportable",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Specifies if the loss is in a category that must be reported to the appropriate regulatory agency."
+  },
+  "periodunits": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Period Units",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The unit of measure for the benefit period.",
+   "maxLength": 16
+  },
+  "relatedkpi": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Related KPI",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The key performance indicator (KPI) that can be used to measure this benefit.",
+   "maxLength": 50
+  },
+  "_id": {
+   "type": "string"
+  },
+  "priceunits": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Price Units",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Unit of measure associated with the unit price.",
+   "maxLength": 16
+  },
+  "potentialloss": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Potential Loss",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Specifies whether a potential loss or an actual loss occurred. If this check box is selected, the loss is a potential loss and no actual loss occurred. If this check box is cleared, an actual loss occurred."
+  },
+  "losstype_description": {
+   "type": "string"
+  },
+  "status": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Status",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The status of this impact record and its benefit or loss.",
+   "maxLength": 16
+  },
+  "benquantity": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "INTEGER",
+   "title": "Benefit Quantity",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "Quantity of benefit. Requires a value in the corresponding units field.",
+   "maxLength": 11
+  },
+  "costestclass_description": {
+   "type": "string"
+  },
+  "losstype": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Loss Type",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The type of loss, for example, near miss or unplanned loss. Valid values are in the PLUSGLOSSTYPE domain.",
+   "maxLength": 16
+  },
+  "reporteddate": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Reported Date",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The date someone reported the loss in the system."
+  },
+  "costestclass": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "SMALLINT",
+   "title": "Cost Estimate Class",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "hasList": true,
+   "remarks": "The class of cost estimate that reflects the accuracy of the estimate.",
+   "maxLength": 11
+  },
+  "description": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Description",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Describes the benefit or loss. To enter or view additional information, click the Long Description button.",
+   "maxLength": 100
+  },
+  "lossind": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Loss Indicator",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Identifies how the loss was indicated, for example, by an alarm or an emergency shutdown. Valid values are in the PLUSGLOSSIND domain.",
+   "maxLength": 16
+  },
+  "prodimpact": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Production Impact",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Specifies whether there is an impact on production. If this check box is selected, there is an impact on production. If this check box is cleared, there is not an impact on production."
+  },
+  "benref": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Impact Reference",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The reference number to identify the source of this benefit or loss.",
+   "maxLength": 12
+  },
+  "_imagelibref": {
+   "type": "string"
+  },
+  "estbenunits": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Estimated Benefit Units",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The unit of measure for the estimated benefit associated with this benefit.",
+   "maxLength": 16
+  },
+  "impacttype_description": {
+   "type": "string"
+  },
+  "type_description": {
+   "type": "string"
+  },
+  "isestloss": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Is an Estimated Loss",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Specifies whether the loss quantity is estimated. If this check box is selected, the loss quantity is estimated. If this check box is cleared, the loss quantity is not estimated."
+  },
+  "plusgbenefitid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Unique Id",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "uniqueid": true,
+   "remarks": "Unique Id",
+   "maxLength": 11
+  },
+  "lossunits": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Loss Units",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The units of the loss. Used in conjunction with the Loss Quantity value.",
+   "maxLength": 16
+  },
+  "bennum": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Impact",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The unique identifier of the impact record.",
+   "maxLength": 12
+  },
+  "bencalcmethod": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Calculation Method",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The method used to calculate the benefit or loss. Valid values are in the PLUSGBENCALCMETHOD domain.",
+   "maxLength": 8
+  },
+  "bencalcmethod_description": {
+   "type": "string"
+  },
+  "plusglocprofid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Location Profile",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "Location Profile unique identifier.",
+   "maxLength": 11
+  },
+  "statusdate": {
+   "default": "&SYSDATE&",
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Status Date",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The date and time when someone created the impact record or the date and time when the status of the record is changed through the Change Status action."
+  },
+  "estcost": {
+   "searchType": "EXACT",
+   "scale": 2,
+   "subType": "AMOUNT",
+   "title": "Estimated Cost",
+   "persistent": true,
+   "type": "number",
+   "remarks": "The estimated cost associated with this benefit.",
+   "maxLength": 11
+  }
+ },
+ "required": [
+  "bennum",
+  "status"
+ ]
+}

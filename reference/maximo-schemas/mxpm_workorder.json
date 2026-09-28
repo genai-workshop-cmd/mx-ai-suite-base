@@ -1,0 +1,257 @@
+{
+  "resource": "MXPM_WORKORDER",
+  "description": "WORKORDER",
+  "pk": [
+    "siteid",
+    "wonum"
+  ],
+  "title": "WORKORDER",
+  "type": "object",
+  "$ref": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxpm_workorder",
+  "uniqueid": "workorderid",
+  "properties": {
+    "excpttype": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Exception Type",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Exception Type.",
+      "maxLength": 15
+    },
+    "localref": {
+      "type": "string"
+    },
+    "excpttype_description": {
+      "type": "string"
+    },
+    "pmex_is_maintenance": {
+      "searchType": "NONE",
+      "subType": "ALN",
+      "title": "Prescriptive Maintenance on Cloud event is for maintenance?",
+      "type": "string",
+      "remarks": "Prescriptive Maintenance on Cloud is the event for maintenance?",
+      "maxLength": 5
+    },
+    "faildate": {
+      "searchType": "EXACT",
+      "subType": "DATETIME",
+      "title": "Failed Date",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Actual Failure Date"
+    },
+    "unitsofwork": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Work Units",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Work Unit",
+      "maxLength": 16
+    },
+    "pmex_is_fail": {
+      "searchType": "NONE",
+      "subType": "ALN",
+      "title": "Prescriptive Maintenance on Cloud event is for a failure?",
+      "type": "string",
+      "remarks": "Prescriptive Maintenance on Cloud is the event because of an asset failure?",
+      "maxLength": 5
+    },
+    "_rowstamp": {
+      "type": "string"
+    },
+    "djpapplied": {
+      "default": "NO",
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Dynamic Job Plan applied",
+      "persistent": true,
+      "type": "string",
+      "remarks": "This flag can be set to YES, NO, ERROR",
+      "maxLength": 5
+    },
+    "splanreviewdate": {
+      "searchType": "EXACT",
+      "subType": "DATETIME",
+      "title": "Has safetyplan review date?",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Does this Work Order safetplan is reviwed?"
+    },
+    "_imagelibref": {
+      "type": "string"
+    },
+    "isquickreported": {
+      "default": 0,
+      "searchType": "EXACT",
+      "maximum": 2147483647.0,
+      "subType": "INTEGER",
+      "title": "Quick Reported Work Order",
+      "persistent": true,
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "remarks": "Indicates if this work order was created through quick reporting.",
+      "maxLength": 11
+    },
+    "assetnum": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Asset",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Identifies the asset.",
+      "maxLength": 25
+    },
+    "siteid": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Site",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Identifies the site.",
+      "maxLength": 8
+    },
+    "href": {
+      "type": "string"
+    },
+    "ai_usefortraining": {
+      "default": false,
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "Use for AI training",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "A flag to mark a WO for use in a AI training model"
+    },
+    "totalworkunits": {
+      "searchType": "EXACT",
+      "scale": 2,
+      "subType": "DECIMAL",
+      "title": "Total Work Units",
+      "persistent": true,
+      "type": "number",
+      "remarks": "Total Work Units for WO, including header asset and assets in MultiAssetLocCI table",
+      "maxLength": 11
+    },
+    "status_description": {
+      "type": "string"
+    },
+    "anywhererefid": {
+      "searchType": "EXACT",
+      "maximum": 2147483647.0,
+      "subType": "BIGINT",
+      "title": "Anywhere Ref ID",
+      "persistent": true,
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "remarks": "Anywhere Reference ID",
+      "maxLength": 11
+    },
+    "worktype": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Work Type",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Identifies the work order's type. Some example types are: preventive maintenance, corrective maintenance, emergency maintenace, capital project, and event report.",
+      "maxLength": 5
+    },
+    "pmex_is_rep_replace": {
+      "searchType": "NONE",
+      "subType": "ALN",
+      "title": "Prescriptive Maintenance on Cloud event is for repaire or replace",
+      "type": "string",
+      "remarks": "Prescriptive Maintenance on Cloud event is for repair or replace",
+      "maxLength": 5
+    },
+    "statusdate": {
+      "searchType": "EXACT",
+      "subType": "DATETIME",
+      "title": "Status Date",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Date the work order status was last changed."
+    },
+    "wonum": {
+      "default": "&AUTOKEY&",
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Work Order",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Identifies the work order.",
+      "maxLength": 25
+    },
+    "djperror": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Calculation error",
+      "persistent": true,
+      "type": "string",
+      "remarks": "The error message when trying to apply the dynamic job plan",
+      "maxLength": 400
+    },
+    "failurecode": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Failure Class",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Failure class of the defined work asset. The failure class is the top level of the failure hierarchy.",
+      "maxLength": 8
+    },
+    "milestone": {
+      "default": false,
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "Is Milestone",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "Indicates if this Work Order is a milestone."
+    },
+    "_id": {
+      "type": "string"
+    },
+    "inspformnum": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Inspection Form",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "The number of the inspection form.",
+      "maxLength": 12
+    },
+    "pmex_asset_id": {
+      "searchType": "NONE",
+      "subType": "UPPER",
+      "title": "Prescriptive Maintenance on Cloud Asset Id",
+      "type": "string",
+      "remarks": "Prescriptive Maintenance on Cloud Asset Id",
+      "maxLength": 34
+    },
+    "status": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Status",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Status of the work order, for example, in progress, waiting on material, waiting for approval, completed, or closed.",
+      "maxLength": 16
+    }
+  },
+  "required": [
+    "siteid",
+    "status",
+    "statusdate"
+  ]
+}

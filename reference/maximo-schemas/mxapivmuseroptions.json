@@ -1,0 +1,84 @@
+{
+  "resource": "MXAPIVMUSEROPTIONS",
+  "description": "VMUSEROPTIONS",
+  "pk": [
+    "userid",
+    "app",
+    "componentid"
+  ],
+  "title": "VMUSEROPTIONS",
+  "type": "object",
+  "$ref": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapivmuseroptions",
+  "uniqueid": "vmuseroptionsid",
+  "properties": {
+    "app": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Application name",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Application Name",
+      "maxLength": 40
+    },
+    "_rowstamp": {
+      "type": "string"
+    },
+    "componentid": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Component Id",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Component ID",
+      "maxLength": 50
+    },
+    "viewinfo": {
+      "searchType": "WILDCARD",
+      "subType": "CLOB",
+      "title": "Content",
+      "persistent": true,
+      "type": "string",
+      "remarks": "View configuration info",
+      "maxLength": 999999
+    },
+    "localref": {
+      "type": "string"
+    },
+    "_imagelibref": {
+      "type": "string"
+    },
+    "vmuseroptionsid": {
+      "searchType": "EXACT",
+      "maximum": 2147483647.0,
+      "subType": "BIGINT",
+      "title": "Unique Id",
+      "persistent": true,
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "uniqueid": true,
+      "remarks": "Unique Id",
+      "maxLength": 11
+    },
+    "href": {
+      "type": "string"
+    },
+    "_id": {
+      "type": "string"
+    },
+    "userid": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "User",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Identifies the logged in user.",
+      "maxLength": 100
+    }
+  },
+  "required": [
+    "app",
+    "componentid",
+    "userid",
+    "viewinfo"
+  ]
+}

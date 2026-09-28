@@ -1,0 +1,152 @@
+{
+  "resource": "MXAPIFILEIMPORTQUEUE",
+  "description": "FILEIMPORTREQQUEUE",
+  "pk": [
+    "name"
+  ],
+  "title": "FILEIMPORTREQQUEUE",
+  "type": "object",
+  "$ref": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapifileimportqueue",
+  "uniqueid": "fileimportreqqueueid",
+  "properties": {
+    "iscomplete": {
+      "default": false,
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "Active",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "Is Cacncelled"
+    },
+    "totalcount": {
+      "default": 0,
+      "searchType": "EXACT",
+      "maximum": 2147483647.0,
+      "subType": "INTEGER",
+      "title": "Total Count",
+      "persistent": true,
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "remarks": "Total Count.",
+      "maxLength": 11
+    },
+    "localref": {
+      "type": "string"
+    },
+    "errcount": {
+      "default": 0,
+      "searchType": "EXACT",
+      "maximum": 2147483647.0,
+      "subType": "INTEGER",
+      "title": "Error Count",
+      "persistent": true,
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "remarks": "Error Count.",
+      "maxLength": 11
+    },
+    "requser": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Requesting User",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Requesting User",
+      "maxLength": 100
+    },
+    "fileimportreqqueueid": {
+      "searchType": "EXACT",
+      "maximum": 2147483647.0,
+      "subType": "BIGINT",
+      "title": "Unique Id",
+      "persistent": true,
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "uniqueid": true,
+      "remarks": "Unique Id",
+      "maxLength": 11
+    },
+    "format": {
+      "default": "CSV",
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Format",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Format",
+      "maxLength": 5
+    },
+    "_rowstamp": {
+      "type": "string"
+    },
+    "iscancelled": {
+      "default": false,
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "Active",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "Is Cacncelled"
+    },
+    "_imagelibref": {
+      "type": "string"
+    },
+    "reqdatetime": {
+      "searchType": "EXACT",
+      "subType": "DATETIME",
+      "title": "Request Time",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Request Time"
+    },
+    "name": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Request Name",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Request Name",
+      "maxLength": 50
+    },
+    "uploaddatetime": {
+      "searchType": "EXACT",
+      "subType": "DATETIME",
+      "title": "Upload Complete Date Time",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Upload Complete Date Time"
+    },
+    "href": {
+      "type": "string"
+    },
+    "_id": {
+      "type": "string"
+    },
+    "pindex": {
+      "default": 0,
+      "searchType": "EXACT",
+      "maximum": 2147483647.0,
+      "subType": "INTEGER",
+      "title": "Process Index",
+      "persistent": true,
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "remarks": "Process Index.",
+      "maxLength": 11
+    },
+    "osname": {
+      "default": "0",
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Request Name",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Request Name",
+      "maxLength": 20
+    }
+  },
+  "required": [
+    "name",
+    "requser"
+  ]
+}

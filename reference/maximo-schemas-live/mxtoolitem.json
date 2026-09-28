@@ -1,0 +1,604 @@
+{
+ "resource": "MXTOOLITEM",
+ "description": "Tool Items Definition",
+ "pk": [
+  "itemnum",
+  "itemsetid"
+ ],
+ "title": "TOOLITEM",
+ "type": "object",
+ "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/mxtoolitem",
+ "uniqueid": "itemid",
+ "properties": {
+  "ownersysid": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Owner System ID",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Owner System ID",
+   "maxLength": 10
+  },
+  "localref": {
+   "type": "string"
+  },
+  "plusproc_description": {
+   "type": "string"
+  },
+  "pluscismte": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Is M&TE",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Defines whether a Tool is a standard used for measuring and testing equipment."
+  },
+  "pluscisinhousecal": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Internal Calibration",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "When selected, indicates that this tool is calibrated in house. This field can be used to sort tools that are calibrated internally or externally."
+  },
+  "_rowstamp": {
+   "type": "string"
+  },
+  "in20": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Extra Field 20",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Extra Field 20",
+   "maxLength": 10
+  },
+  "in22": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Extra Field 22",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Extra Field 22"
+  },
+  "receipttolerance": {
+   "searchType": "EXACT",
+   "scale": 2,
+   "subType": "DECIMAL",
+   "title": "Receipt Tolerance %",
+   "persistent": true,
+   "type": "number",
+   "remarks": "The percentage value of items that can be received over the amount set in the initial agreement.",
+   "maxLength": 16
+  },
+  "in21": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Extra Field 21",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Extra Field 21",
+   "maxLength": 10
+  },
+  "plusgchemitem": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Chemical Item",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Indicates whether this item is a chemical."
+  },
+  "in24": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "IN24",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Extra Field 24",
+   "maxLength": 10
+  },
+  "in23": {
+   "searchType": "EXACT",
+   "scale": 2,
+   "subType": "DECIMAL",
+   "title": "Extra Field 23",
+   "persistent": true,
+   "type": "number",
+   "remarks": "Extra Field 23",
+   "maxLength": 16
+  },
+  "in26": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "IN26",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Extra Field 26",
+   "maxLength": 10
+  },
+  "pluscismteclass_description": {
+   "type": "string"
+  },
+  "in25": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "IN25",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Extra Field 25",
+   "maxLength": 10
+  },
+  "href": {
+   "type": "string",
+   "title": "TOOLITEM object reference"
+  },
+  "in27": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "IN27",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Extra Field 27",
+   "maxLength": 10
+  },
+  "prorate": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Prorate Service",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Prorate Service?"
+  },
+  "plusproc": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Procurement Class",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "This field displays the quality level required by engineering for procurement and replacement.",
+   "maxLength": 8
+  },
+  "plusgrestrcttype": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Restriction Type",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The category of restricted chemicals to which this chemical belongs.",
+   "maxLength": 10
+  },
+  "maxissue": {
+   "searchType": "EXACT",
+   "scale": 2,
+   "subType": "DECIMAL",
+   "title": "Maximum Quantity Issued",
+   "persistent": true,
+   "type": "number",
+   "remarks": "Total maximum quantity that can be issued to an asset.",
+   "maxLength": 16
+  },
+  "record_descriptor": {
+   "type": "string",
+   "title": "Record/Object Descriptor"
+  },
+  "plusgrestricteduse": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Restricted Use",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Indicates whether the use of this item is restricted."
+  },
+  "plusdcueunitcost": {
+   "searchType": "EXACT",
+   "scale": 2,
+   "subType": "AMOUNT",
+   "title": "Unit Cost (CUE)",
+   "persistent": true,
+   "type": "number",
+   "remarks": "Unit cost to be used when estimating the CU.  This value is manually set during implementation by calculating the weighted average cost across the storerooms that carry the item.",
+   "maxLength": 11
+  },
+  "groupname": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Meter Group",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Meter group for the item. This attribute pertains to rotating tools only. Click the Detail Menu button to select a meter group or go to the Meter Groups application to create one.",
+   "maxLength": 10
+  },
+  "np_statusrolldown": {
+   "default": false,
+   "searchType": "NONE",
+   "subType": "YORN",
+   "title": "Roll New Status to Organizations and Inventory",
+   "type": "boolean",
+   "remarks": "Roll New Status to Organizations and Inventory, temporary non-persistent field used by MEA"
+  },
+  "pluscsolution": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Buffer Solution",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Buffer Solution Flag"
+  },
+  "taxexempt": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Tax Exempt",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Select this check box if the item, the tool, or the service is not taxable. The buyer for your organization determines the tax-exempt status of items, of tools, and of services."
+  },
+  "itemnum": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Tool",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Identifies the tool record. This value must be unique for all tool records. Click the Detail Menu button to view tools by classification or availability.",
+   "maxLength": 30
+  },
+  "inspectionrequired": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Inspect on Receipt",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Specifies whether the tool should be held out of inventory when being received, until the purchase order receipt has been approved. If the check box is selected, the tool cannot be received until it has been inspected. If the check box is cleared (the default), the tool can be received without an inspection."
+  },
+  "pluscismteclass": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "M&TE Classification",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "When the Is M&TE? field is checked then you have the option to choose a classification for M&TE.",
+   "maxLength": 80
+  },
+  "itemorginfo": {
+   "objectName": "ITEMORGINFO",
+   "type": "array",
+   "items": {
+    "definition": {
+     "subSchema": {
+      "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/mxmxtoolitem/itemorginfo"
+     }
+    },
+    "type": "object"
+   },
+   "cardinality": "MULTIPLE",
+   "relation": "ITEMORGINFO"
+  },
+  "metername": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Meter",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Meter associated with the tool. This is the meter for which a reading is to be recorded when this tool is issued to an asset. Only non-rotating tools can be associated with a meter. Click the Detail Menu button to select a meter or go to the Meters application to create one.",
+   "maxLength": 10
+  },
+  "outside": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Outside",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Specifies whether the tool is a consignment good. If the check box is selected, the tool belongs to a contractor (or vendor), but it is stored on-site, and it is a tool for which you expect to be charged for its use. If the check box is cleared (the default), the tool is not owned by an outside party."
+  },
+  "itemsetid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Item Set",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Identifies the item set, or group of items, to which this tool belongs. An organization is assigned to only one item set, but multiple organizations can use the same item set. Click the Select Value button to choose an item set.",
+   "maxLength": 8
+  },
+  "_id": {
+   "type": "string"
+  },
+  "iscrew": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Crew",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Specifies whether the tool can be used in Crew applications and Work Order Tracking applications. If the check box is selected, the tool can be used. If the check box is cleared, the tool cannot be used."
+  },
+  "hardresissue": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Requires hard reservation on use",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Indicates whether a hard reservation must be referenced when the item is issued from a storeroom."
+  },
+  "in19": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Extra Field 19",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Extra Field 19",
+   "maxLength": 10
+  },
+  "plusdtool": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Use with T&D",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Specifies whether the tool can be used in T&D applications. If the check box is  selected, the tool can be used with T&D applications. If the check box is cleared, the tool cannot be used."
+  },
+  "status": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Status",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The current status of the item such as ACTIVE, PENDING, PLANNING, PENDOBS and OBSELETE.",
+   "maxLength": 16
+  },
+  "commodity": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Commodity Code",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Commodity code identifying the category of tool. Click the Select Value button to choose a commodity code.",
+   "maxLength": 8
+  },
+  "rotating": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Rotating",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Specifies whether the tool is a rotating asset. If the check box is selected, the tool becomes an asset tracked by tool number and individual asset number. If the check box is cleared (the default), the tool is not tracked as an individual asset."
+  },
+  "hierarchypath": {
+   "searchType": "NONE",
+   "subType": "ALN",
+   "title": "Hierarchy Path",
+   "type": "string",
+   "remarks": "Sets value to HIERARCHYPATH, if the item has an associated CLASSSTRUCTURE record",
+   "maxLength": 254
+  },
+  "plusgrestrcttype_description": {
+   "type": "string"
+  },
+  "commoditygroup": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Commodity Group",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Group of commodities to which this tool belongs. Click the Select Value button to choose a commodity group.",
+   "maxLength": 8
+  },
+  "description": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Description",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Describes or names the tool. To enter or view additional information, click the Long Description button.",
+   "maxLength": 100
+  },
+  "externalrefid": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "External Reference ID",
+   "persistent": true,
+   "type": "string",
+   "remarks": "External Reference ID",
+   "maxLength": 10
+  },
+  "msdsnum": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "MSDS",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Material Safety Data Sheet number issued by the Occupational Safety and Health Association (OSHA). The Material Safety Data Sheet (MSDS), which describes product dangers, must be available to purchasers and users of commercial quantities of all hazardous materials.",
+   "maxLength": 10
+  },
+  "issueunit": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Issue Unit",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Unit of measure used to issue the tool from the storeroom, such as EACH or ROLL. Click the Select Value button to choose an issue unit.",
+   "maxLength": 16
+  },
+  "itemid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "ITEMID",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "uniqueid": true,
+   "remarks": "Unique Identifier",
+   "maxLength": 11
+  },
+  "_imagelibref": {
+   "type": "string"
+  },
+  "plusdcuesalvagepct": {
+   "searchType": "EXACT",
+   "scale": 2,
+   "subType": "DECIMAL",
+   "title": "Salvage Percentage (CUE)",
+   "persistent": true,
+   "type": "number",
+   "remarks": "Salvage percent of this item. The value is used in calculating the salvage amount on the Costs subtab of the Estimate Request tab in the CU Estimating application. To determine this value, analyze historical jobs to compare the quantity removed during a certain period to the quantity removed that were returned to a storeroom for salvage.",
+   "maxLength": 8
+  },
+  "plusdmajormatl": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Major",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Boolean indicator to identify  major material items.  These items are commonly referred to as property units."
+  },
+  "description_longdescription": {
+   "searchType": "WILDCARD",
+   "subType": "LONGALN",
+   "title": "Details",
+   "type": "string",
+   "remarks": "Long Description for Item Description",
+   "maxLength": 32000
+  },
+  "plusqvend": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Qualified Vendor",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Qualified vendor"
+  },
+  "orderunit": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Order Unit",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Order unit used to create inventory records.",
+   "maxLength": 16
+  },
+  "plusautobuy": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Auto-Buy",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "When selected, this item may be purchased without the consent of the procurement-engineering group"
+  },
+  "sendersysid": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Sender System ID",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Column used by ERP-Integration (APIs)",
+   "maxLength": 50
+  },
+  "statusdate": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Status Date",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Date the work order status was last changed."
+  },
+  "itemtype": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Type",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Item Type",
+   "maxLength": 15
+  },
+  "statusiface": {
+   "default": false,
+   "searchType": "NONE",
+   "subType": "YORN",
+   "title": "Has Status Changed",
+   "type": "boolean",
+   "remarks": "Non persistent boolean field to indicate whether the status has been changed after the stateful object is fetched from the database."
+  },
+  "itemspec": {
+   "objectName": "ITEMSPEC",
+   "type": "array",
+   "items": {
+    "definition": {
+     "subSchema": {
+      "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/mxtoolitem/itemspec"
+     }
+    },
+    "type": "object"
+   },
+   "cardinality": "UNDEFINED",
+   "relation": "ITEMSPECCLASS"
+  },
+  "plusgsafetycritical": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Safety-Critical",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Indicates whether this item is associated with safety-critical equipment."
+  },
+  "plusdcueuom": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Unit of Measure",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Unit of measure for the item when it is used on CU records.",
+   "maxLength": 16
+  },
+  "sourcesysid": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Source System ID",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Source System ID",
+   "maxLength": 10
+  },
+  "np_statusmemo": {
+   "searchType": "NONE",
+   "subType": "ALN",
+   "title": "Change Status Memo",
+   "type": "string",
+   "remarks": "Status change memo, temporary non-persistent field used by MEA",
+   "maxLength": 50
+  }
+ },
+ "required": [
+  "itemnum",
+  "itemsetid",
+  "itemtype",
+  "np_statusrolldown",
+  "statusiface"
+ ]
+}

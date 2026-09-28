@@ -1,0 +1,323 @@
+{
+  "resource": "MXAPIDOCINFO",
+  "description": "DOCINFO",
+  "pk": [
+    "contentuid"
+  ],
+  "title": "DOCINFO",
+  "type": "object",
+  "$ref": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapidocinfo",
+  "uniqueid": "docinfoid",
+  "properties": {
+    "usedefaultfilepath": {
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "Default Document File Path",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "Flag to use the document type's default file path."
+    },
+    "textcontent": {
+      "searchType": "WILDCARD",
+      "subType": "CLOB",
+      "title": "Text Content",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Text Content",
+      "maxLength": 999999
+    },
+    "urltype": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "URL Type",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "External file, Web page, or DMS reference for a document.",
+      "maxLength": 8
+    },
+    "localref": {
+      "type": "string"
+    },
+    "upload": {
+      "default": false,
+      "searchType": "NONE",
+      "subType": "YORN",
+      "title": "Upload",
+      "type": "boolean",
+      "remarks": "Check box indicating if the document should be uploaded to the network."
+    },
+    "document": {
+      "searchType": "EXACT",
+      "subType": "UPPER",
+      "title": "Document",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Value assigned by a user that identifies the document.",
+      "maxLength": 20
+    },
+    "show": {
+      "default": true,
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "Show",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "Show on Register Docs and Add/Modify Doclinks screens"
+    },
+    "createdate": {
+      "searchType": "EXACT",
+      "subType": "DATETIME",
+      "title": "Created Date",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Date someone created this document."
+    },
+    "description": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Description",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Value assigned by a user that describes the document.",
+      "maxLength": 254
+    },
+    "docinfoid": {
+      "searchType": "EXACT",
+      "maximum": 2147483647.0,
+      "subType": "BIGINT",
+      "title": "DOCINFOID",
+      "persistent": true,
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "uniqueid": true,
+      "remarks": "Unique Identifier",
+      "maxLength": 11
+    },
+    "_rowstamp": {
+      "type": "string"
+    },
+    "createby": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Created By",
+      "persistent": true,
+      "type": "string",
+      "remarks": "MAXIMO user who initially registered this document.",
+      "maxLength": 100
+    },
+    "_imagelibref": {
+      "type": "string"
+    },
+    "doclocation": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Document Location",
+      "persistent": true,
+      "type": "string",
+      "remarks": "The physical location of the hard copy document",
+      "maxLength": 10
+    },
+    "href": {
+      "type": "string"
+    },
+    "urlname": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "URL / File Name",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Name of the file, Web address, or DMS document. The value for the name must be unique.",
+      "maxLength": 250
+    },
+    "app": {
+      "searchType": "NONE",
+      "subType": "UPPER",
+      "title": "Application",
+      "type": "string",
+      "remarks": "APP",
+      "maxLength": 40
+    },
+    "dmsname": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "DMS",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "DMS being used to manage this document.",
+      "maxLength": 30
+    },
+    "description_longdescription": {
+      "searchType": "WILDCARD",
+      "subType": "LONGALN",
+      "title": "Details",
+      "type": "string",
+      "remarks": "Long Description for Document description",
+      "maxLength": 32000
+    },
+    "changeby": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Changed By",
+      "persistent": true,
+      "type": "string",
+      "remarks": "MAXIMO user who modified this document.",
+      "maxLength": 100
+    },
+    "changedate": {
+      "searchType": "EXACT",
+      "subType": "DATETIME",
+      "title": "Changed Date",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Date someone modified this document."
+    },
+    "urlparam1": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "URL Parameter 1",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Parameter value used to define the DMS key.",
+      "maxLength": 32
+    },
+    "urlparam2": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "URL Parameter 2",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Parameter value used to define the DMS key.",
+      "maxLength": 32
+    },
+    "urlparam3": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "URL Parameter 3",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Parameter value used to define the DMS key.",
+      "maxLength": 8
+    },
+    "newdoctype": {
+      "searchType": "NONE",
+      "subType": "ALN",
+      "title": "Doctype",
+      "type": "string",
+      "remarks": "non-persistent field to store new doctype for creating links from library",
+      "maxLength": 16
+    },
+    "urlparam4": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "URL Parameter 4",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Parameter value used to define the DMS key.",
+      "maxLength": 8
+    },
+    "printthrulinkdflt": {
+      "default": true,
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "Default Batch Printing",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "Check box indicating if the document is printed in the batch printing operation."
+    },
+    "revision": {
+      "searchType": "EXACT",
+      "maximum": 2147483647.0,
+      "subType": "INTEGER",
+      "title": "Revision",
+      "persistent": true,
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "remarks": "Document revision number",
+      "maxLength": 11
+    },
+    "statusdate": {
+      "searchType": "EXACT",
+      "subType": "DATETIME",
+      "title": "Status Date",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Date of document status"
+    },
+    "urlparam5": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "URL Parameter 5",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Parameter value used to define the DMS key.",
+      "maxLength": 8
+    },
+    "doctype": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Document Folder",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Value assigned by MAXIMO identifying the type of document.",
+      "maxLength": 16
+    },
+    "contentuid": {
+      "searchType": "EXACT",
+      "subType": "ALN",
+      "title": "Content unique id",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Content unique id",
+      "maxLength": 50
+    },
+    "documentdata": {
+      "searchType": "NONE",
+      "subType": "BLOB",
+      "title": "Is Client Cert",
+      "type": "string",
+      "remarks": "Document Data",
+      "maxLength": 999999
+    },
+    "application": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Application",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Native application",
+      "maxLength": 8
+    },
+    "_id": {
+      "type": "string"
+    },
+    "newurlname": {
+      "searchType": "NONE",
+      "subType": "ALN",
+      "title": "URL / File Name",
+      "type": "string",
+      "remarks": "NEWURLNAME",
+      "maxLength": 250
+    },
+    "status": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Status",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Document status",
+      "maxLength": 8
+    }
+  },
+  "required": [
+    "contentuid",
+    "doctype",
+    "document",
+    "upload",
+    "urlname",
+    "urltype",
+    "usedefaultfilepath"
+  ]
+}

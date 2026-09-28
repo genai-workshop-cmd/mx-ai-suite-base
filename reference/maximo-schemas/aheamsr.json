@@ -1,0 +1,139 @@
+{
+  "resource": "AHEAMSR",
+  "description": "EXTERNALEAMSR",
+  "title": "EXTERNALEAMSR",
+  "type": "object",
+  "$ref": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/aheamsr",
+  "properties": {
+    "reportedpriority": {
+      "searchType": "NONE",
+      "maximum": 2147483647.0,
+      "subType": "INTEGER",
+      "title": "REPORTEDPRIORITY",
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "remarks": "Reportyed Service Request priority",
+      "maxLength": 11
+    },
+    "description_longdescription": {
+      "searchType": "NONE",
+      "subType": "ALN",
+      "title": "DESCRIPTION_LONGDESCRIPTION",
+      "type": "string",
+      "remarks": "DESCRIPTION_LONGDESCRIPTION",
+      "maxLength": 500
+    },
+    "localref": {
+      "type": "string"
+    },
+    "impact": {
+      "searchType": "NONE",
+      "maximum": 2147483647.0,
+      "subType": "INTEGER",
+      "title": "IMPACT",
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "remarks": "IMPACT",
+      "maxLength": 11
+    },
+    "reportdate": {
+      "searchType": "NONE",
+      "subType": "DATETIME",
+      "title": "REPORTDATE",
+      "type": "string",
+      "remarks": "REPORTDATE"
+    },
+    "description": {
+      "searchType": "NONE",
+      "subType": "ALN",
+      "title": "DESCRIPTION",
+      "type": "string",
+      "remarks": "DESCRIPTION",
+      "maxLength": 50
+    },
+    "p__jsonobjectid": {
+      "searchType": "NONE",
+      "subType": "ALN",
+      "title": "P__JSONOBJECTID",
+      "type": "string",
+      "remarks": "P__JSONOBJECTID",
+      "maxLength": 50
+    },
+    "reportedby": {
+      "searchType": "NONE",
+      "subType": "ALN",
+      "title": "REPORTEDBY",
+      "type": "string",
+      "remarks": "REPORTEDBY",
+      "maxLength": 50
+    },
+    "orgid": {
+      "searchType": "NONE",
+      "subType": "ALN",
+      "title": "ORGID",
+      "type": "string",
+      "remarks": "ORGID",
+      "maxLength": 50
+    },
+    "origrecordid": {
+      "searchType": "NONE",
+      "subType": "ALN",
+      "title": "ORIGRECORDID",
+      "type": "string",
+      "remarks": "ORIGRECORDID",
+      "maxLength": 50
+    },
+    "_rowstamp": {
+      "type": "string"
+    },
+    "_imagelibref": {
+      "type": "string"
+    },
+    "assetnum": {
+      "searchType": "NONE",
+      "subType": "ALN",
+      "title": "ASSETNUM",
+      "type": "string",
+      "remarks": "ASSETNUM",
+      "maxLength": 50
+    },
+    "siteid": {
+      "searchType": "NONE",
+      "subType": "ALN",
+      "title": "SITEID",
+      "type": "string",
+      "remarks": "SITEID",
+      "maxLength": 50
+    },
+    "location": {
+      "searchType": "NONE",
+      "subType": "ALN",
+      "title": "LOCATION",
+      "type": "string",
+      "remarks": "LOCATION",
+      "maxLength": 50
+    },
+    "href": {
+      "type": "string"
+    },
+    "_id": {
+      "type": "string"
+    },
+    "affectedperson": {
+      "searchType": "NONE",
+      "subType": "ALN",
+      "title": "AFFECTEDPERSON",
+      "type": "string",
+      "remarks": "AFFECTEDPERSON",
+      "maxLength": 50
+    },
+    "ticketid": {
+      "searchType": "NONE",
+      "subType": "ALN",
+      "title": "Service Request",
+      "type": "string",
+      "remarks": "Identifies the service request.",
+      "maxLength": 10
+    }
+  }
+}

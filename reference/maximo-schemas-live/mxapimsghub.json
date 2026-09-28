@@ -1,0 +1,100 @@
+{
+ "resource": "MXAPIMSGHUB",
+ "description": "Maximo API for Message Hub",
+ "pk": [
+  "provider"
+ ],
+ "title": "MSGHUBPROVIDER",
+ "type": "object",
+ "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/mxapimsghub",
+ "uniqueid": "msghubproviderid",
+ "properties": {
+  "_rowstamp": {
+   "type": "string"
+  },
+  "localref": {
+   "type": "string"
+  },
+  "provider": {
+   "default": "&AUTOKEY&",
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Name",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Provider Name",
+   "maxLength": 20
+  },
+  "_imagelibref": {
+   "type": "string"
+  },
+  "description": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Provider Type Description",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Provider Type Description",
+   "maxLength": 200
+  },
+  "msghubproviderid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Unique Id",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "uniqueid": true,
+   "remarks": "Unique Id",
+   "maxLength": 11
+  },
+  "href": {
+   "type": "string",
+   "title": "MSGHUBPROVIDER object reference"
+  },
+  "record_descriptor": {
+   "type": "string",
+   "title": "Record/Object Descriptor"
+  },
+  "_id": {
+   "type": "string"
+  },
+  "isdefault": {
+   "default": true,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Active",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Active"
+  },
+  "providertype": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Provider Type",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Provider Type",
+   "maxLength": 20
+  },
+  "msghubprovidercfg": {
+   "objectName": "MSGHUBPROVIDERCFG",
+   "type": "array",
+   "items": {
+    "definition": {
+     "subSchema": {
+      "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/mxapimsghub/msghubprovidercfg"
+     }
+    },
+    "type": "object"
+   },
+   "cardinality": "",
+   "relation": "MSGHUBPROVIDERCFG"
+  }
+ },
+ "required": [
+  "providertype"
+ ]
+}

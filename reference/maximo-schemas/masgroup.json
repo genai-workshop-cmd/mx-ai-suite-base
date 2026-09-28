@@ -1,0 +1,316 @@
+{
+  "resource": "MASGROUP",
+  "description": "MAXGROUP",
+  "pk": [
+    "groupname"
+  ],
+  "title": "MAXGROUP",
+  "type": "object",
+  "$ref": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/masgroup",
+  "uniqueid": "maxgroupid",
+  "properties": {
+    "authallgls": {
+      "default": false,
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "Authorize Group to Change All GL Component Types",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "Indicates whether this group can edit all GL segments"
+    },
+    "masissuer": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "MAS Issuer",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Issuer can be local MAS grou or IDP or SAML",
+      "maxLength": 20
+    },
+    "localref": {
+      "type": "string"
+    },
+    "independent": {
+      "default": false,
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "Independent of Other Groups",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "Indicates whether the setting on this Group will apply to sites on other non-independent groups and vice-versa."
+    },
+    "description": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Description",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Group description",
+      "maxLength": 100
+    },
+    "maxgroupid": {
+      "searchType": "EXACT",
+      "maximum": 2147483647.0,
+      "subType": "BIGINT",
+      "title": "MAXGROUPID",
+      "persistent": true,
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "uniqueid": true,
+      "remarks": "Unique Identifier",
+      "maxLength": 11
+    },
+    "passwordduration": {
+      "searchType": "EXACT",
+      "maximum": 2147483647.0,
+      "subType": "INTEGER",
+      "title": "Password Lasts this Number of Days",
+      "persistent": true,
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "remarks": "Number of days that a password is active. Defaults from the maxvar PASSWORDDURATION.",
+      "maxLength": 11
+    },
+    "reportstoplimit": {
+      "searchType": "EXACT",
+      "maximum": 2147483647.0,
+      "subType": "INTEGER",
+      "title": "Report Server Records Limit",
+      "persistent": true,
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "remarks": "The maximum number of records in the report hierarchy that are processed before the report is canceled on the report server. This limit prevents extremely large reports from running.",
+      "maxLength": 11
+    },
+    "authallrepfacs": {
+      "default": false,
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "Authorize Group for All Repair Facilities",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "Specifies whether to allow the group access to all records that specify any repair facility."
+    },
+    "langcode": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Language Code",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Language Column",
+      "maxLength": 4
+    },
+    "_rowstamp": {
+      "type": "string"
+    },
+    "authlaborself": {
+      "default": false,
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "Authorize Group for Their Own Labor",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "Indicates whether this group is authorized for its own labor code"
+    },
+    "nullrepfac": {
+      "default": true,
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "Allow Access to Records That Do Not Have a Repair Facility",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "Specifies whether to allow the group access to records that do not specify a repair facility."
+    },
+    "_imagelibref": {
+      "type": "string"
+    },
+    "authlaborcrew": {
+      "default": false,
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "Authorize Group for Labor in Their Same Crew",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "Indicates whether this group is authorized for all labor in the same crew"
+    },
+    "href": {
+      "type": "string"
+    },
+    "maxschedreport": {
+      "searchType": "EXACT",
+      "maximum": 2147483647.0,
+      "subType": "INTEGER",
+      "title": "Scheduled Reports Limit",
+      "persistent": true,
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "remarks": "The maximum number of reports that users in this security group can schedule.",
+      "maxLength": 11
+    },
+    "authallsites": {
+      "default": false,
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "Authorize Group for All Sites",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "Indicates whether this group has access to all sites in all organizations"
+    },
+    "sctemplateid": {
+      "searchType": "EXACT",
+      "maximum": 2147483647.0,
+      "subType": "BIGINT",
+      "title": "Start Center Template",
+      "persistent": true,
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "hasList": true,
+      "remarks": "Unique identifier for Start Center Template",
+      "maxLength": 11
+    },
+    "groupuser": {
+      "objectName": "GROUPUSER",
+      "type": "array",
+      "items": {
+        "definition": {
+          "subSchema": {
+            "$ref": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/masgroup/groupuser"
+          }
+        },
+        "type": "object"
+      },
+      "cardinality": "MULTIPLE",
+      "relation": "GROUPUSER"
+    },
+    "authlaborsuper": {
+      "default": false,
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "Authorize Group for Labor They Supervise",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "Indicates whether this group is authorized for all labor that this group supervises"
+    },
+    "workcenter": {
+      "searchType": "EXACT",
+      "subType": "LOWER",
+      "title": "Work Center",
+      "persistent": true,
+      "type": "string",
+      "remarks": "The default Work Center for a Group",
+      "maxLength": 30
+    },
+    "sidenav": {
+      "default": false,
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "Display Side Navigation Menu",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "Indicates whether the side navigation menu is displayed instead of the horizontal navigation toolbar."
+    },
+    "authlaborall": {
+      "default": false,
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "Authorize Group for All Labor",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "Indicates whether this group is authorized for all labor"
+    },
+    "groupexternalid": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Group external id",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Group external identity",
+      "maxLength": 100
+    },
+    "authallstorerooms": {
+      "default": false,
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "Authorize Group for All Storerooms",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "Indicates whether this group is authorized for all storerooms"
+    },
+    "groupname": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Name",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Group identifier",
+      "maxLength": 30
+    },
+    "passwordwarning": {
+      "searchType": "EXACT",
+      "maximum": 2147483647.0,
+      "subType": "INTEGER",
+      "title": "Days Before Password Expires to Warn User",
+      "persistent": true,
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "remarks": "Number of days before expiration to warn the user that the password is about to expire. Defaults from the maxvar PASSWORDWARNING.",
+      "maxLength": 11
+    },
+    "groupprofileid": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Group profile id",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Group profile id for external identity provider.",
+      "maxLength": 100
+    },
+    "dfltapp": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Default Application",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Specify the default application for users of the security group that will display when users log in and a user default application is not specified.",
+      "maxLength": 40
+    },
+    "hasld": {
+      "default": false,
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "Has Long Description",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "Boolean flag to indicate if there is any long description for this record"
+    },
+    "adhoccreatelimit": {
+      "searchType": "EXACT",
+      "maximum": 2147483647.0,
+      "subType": "INTEGER",
+      "title": "Ad Hoc Preview Records Limit",
+      "persistent": true,
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "remarks": "The maximum number of queried records that users can preview when they create an ad hoc report. This limit only applies to security groups that can create reports.",
+      "maxLength": 11
+    },
+    "_id": {
+      "type": "string"
+    },
+    "authpersongroup": {
+      "default": false,
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "Authorize Group for Labor in Their Same Person Group",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "Indicates whether this security group is authorized for all labor in the same person group"
+    }
+  },
+  "required": [
+    "groupname",
+    "langcode"
+  ]
+}

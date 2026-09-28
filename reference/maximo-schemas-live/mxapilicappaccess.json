@@ -1,0 +1,145 @@
+{
+ "resource": "MXAPILICAPPACCESS",
+ "description": "License Access for applications",
+ "pk": [
+  "appname"
+ ],
+ "title": "MAXLICAPPACCESS",
+ "type": "object",
+ "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/mxapilicappaccess",
+ "uniqueid": "maxlicappaccessid",
+ "properties": {
+  "limiteduse": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Limited Use User",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Limited Use User",
+   "maxLength": 30
+  },
+  "limiteduse_description": {
+   "type": "string"
+  },
+  "threemodule": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Part of Three Module",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Part of Three Module"
+  },
+  "maxlicappaccessid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Unique Id",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "uniqueid": true,
+   "remarks": "Unique Id",
+   "maxLength": 11
+  },
+  "localref": {
+   "type": "string"
+  },
+  "maxlicprodapps": {
+   "objectName": "MAXLICPRODAPPS",
+   "type": "array",
+   "items": {
+    "definition": {
+     "subSchema": {
+      "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/mxapilicappaccess/maxlicprodapps"
+     }
+    },
+    "type": "object"
+   },
+   "cardinality": "MULTIPLE",
+   "relation": "MAXLICPRODAPPS"
+  },
+  "module": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Module Name",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Module Name",
+   "maxLength": 10
+  },
+  "record_descriptor": {
+   "type": "string",
+   "title": "Record/Object Descriptor"
+  },
+  "expressuse": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Express User",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Express User",
+   "maxLength": 30
+  },
+  "authorizeduse_description": {
+   "type": "string"
+  },
+  "_rowstamp": {
+   "type": "string"
+  },
+  "appname": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Application Name",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Application Name",
+   "maxLength": 40
+  },
+  "_imagelibref": {
+   "type": "string"
+  },
+  "authorizeduse": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Authorized User",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Authorized User",
+   "maxLength": 30
+  },
+  "expressuse_description": {
+   "type": "string"
+  },
+  "selfservice": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Self Service User",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Self Service User",
+   "maxLength": 30
+  },
+  "href": {
+   "type": "string",
+   "title": "MAXLICAPPACCESS object reference"
+  },
+  "_id": {
+   "type": "string"
+  },
+  "selfservice_description": {
+   "type": "string"
+  }
+ },
+ "required": [
+  "appname",
+  "authorizeduse",
+  "expressuse",
+  "limiteduse",
+  "selfservice"
+ ]
+}

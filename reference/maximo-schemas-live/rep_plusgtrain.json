@@ -1,0 +1,266 @@
+{
+ "resource": "REP_PLUSGTRAIN",
+ "description": "Training Courses (Oil) Details",
+ "pk": [
+  "revisionnum",
+  "trainingnum"
+ ],
+ "title": "PLUSGTRAINING",
+ "type": "object",
+ "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/rep_plusgtrain",
+ "uniqueid": "plusgtrainingid",
+ "properties": {
+  "trainingobjetives": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Training Objectives",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Indicates the in tended outcome of the training and describes what the trainee will be able to do upon successful completion of the course.",
+   "maxLength": 500
+  },
+  "localref": {
+   "type": "string"
+  },
+  "trainprovider_description": {
+   "type": "string"
+  },
+  "subject": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Subject",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The subject matter of the course.",
+   "maxLength": 40
+  },
+  "lastcompdate": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Last Completion Date",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The most recent date that this course was completed"
+  },
+  "description": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Description",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The description of the training course.",
+   "maxLength": 100
+  },
+  "ownergroup": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Owner Group",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The group of people who are responsible for managing the course content",
+   "maxLength": 8
+  },
+  "trainmethod_description": {
+   "type": "string"
+  },
+  "validityunits_description": {
+   "type": "string"
+  },
+  "subject_description": {
+   "type": "string"
+  },
+  "_rowstamp": {
+   "type": "string"
+  },
+  "revisionby": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Revised By",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The person who revised the regulation record.",
+   "maxLength": 100
+  },
+  "_imagelibref": {
+   "type": "string"
+  },
+  "siteid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Site",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The site that is associated with the training course.",
+   "maxLength": 8
+  },
+  "href": {
+   "type": "string",
+   "title": "PLUSGTRAINING object reference"
+  },
+  "trainingnum": {
+   "default": "&AUTOKEY&",
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Course",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The unique identifier of the training course",
+   "maxLength": 15
+  },
+  "owner": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Course Owner",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The group of people who are responsible for managing the course content",
+   "maxLength": 100
+  },
+  "status_description": {
+   "type": "string"
+  },
+  "revisioncom": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Comments",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The comments for the revision.",
+   "maxLength": 200
+  },
+  "revisionnum": {
+   "default": 0,
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "INTEGER",
+   "title": "Revision",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "The revision number of the training course.Indicates how many times a training record has been revise",
+   "maxLength": 11
+  },
+  "validityunits": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Units",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Indicates the unit of measure for the Valid For field",
+   "maxLength": 12
+  },
+  "record_descriptor": {
+   "type": "string",
+   "title": "Record/Object Descriptor"
+  },
+  "certaward": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Certificate Awarded On Completion",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Indicates that a certificate is awarded on completion of the course."
+  },
+  "orgid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Organization",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Organization Identifier.",
+   "maxLength": 8
+  },
+  "statusdate": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Status Date",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Status Date"
+  },
+  "courseduration": {
+   "searchType": "EXACT",
+   "scale": 0,
+   "subType": "DURATION",
+   "title": "Course Duration",
+   "persistent": true,
+   "type": "number",
+   "remarks": "The length of time that it takes to complete the course, measured in hours and minutes",
+   "maxLength": 8
+  },
+  "trainprovider": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Training Provider",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The name of the company or third party who provides the training.",
+   "maxLength": 100
+  },
+  "plusgtrainingid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Unique Id",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "uniqueid": true,
+   "remarks": "Unique Id",
+   "maxLength": 11
+  },
+  "revisiondate": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Revision Date",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The date when the regulation record was revised."
+  },
+  "_id": {
+   "type": "string"
+  },
+  "trainmethod": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Training Method",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Indicates the method of delivering the course.Courses can be delivered in person or from a distance.",
+   "maxLength": 40
+  },
+  "validity": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "INTEGER",
+   "title": "Valid For",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "Indicates the validity of the certificate that is awarded for successfully completing this course.",
+   "maxLength": 11
+  },
+  "status": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Status",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The status of the training course",
+   "maxLength": 12
+  }
+ },
+ "required": [
+  "status",
+  "statusdate"
+ ]
+}

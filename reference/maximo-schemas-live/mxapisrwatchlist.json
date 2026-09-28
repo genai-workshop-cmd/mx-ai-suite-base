@@ -1,0 +1,92 @@
+{
+ "resource": "MXAPISRWATCHLIST",
+ "description": "Maximo API for Service Request Watchlist",
+ "pk": [
+  "ticketid",
+  "class",
+  "personid"
+ ],
+ "title": "SRWATCHLIST",
+ "type": "object",
+ "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/mxapisrwatchlist",
+ "uniqueid": "srwatchlistid",
+ "properties": {
+  "_rowstamp": {
+   "type": "string"
+  },
+  "localref": {
+   "type": "string"
+  },
+  "_imagelibref": {
+   "type": "string"
+  },
+  "class_description": {
+   "type": "string"
+  },
+  "createdate": {
+   "default": "&SYSDATE&",
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Date",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The date and time of the record."
+  },
+  "personid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Watcher",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Watcher of ticket specified.",
+   "maxLength": 100
+  },
+  "href": {
+   "type": "string",
+   "title": "SRWATCHLIST object reference"
+  },
+  "record_descriptor": {
+   "type": "string",
+   "title": "Record/Object Descriptor"
+  },
+  "_id": {
+   "type": "string"
+  },
+  "srwatchlistid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Unique Id",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "uniqueid": true,
+   "remarks": "Unique Id",
+   "maxLength": 11
+  },
+  "class": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Ticket Class",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Type of the ticket.",
+   "maxLength": 25
+  },
+  "ticketid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Ticket",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Identifier of the ticket.",
+   "maxLength": 10
+  }
+ },
+ "required": [
+  "class",
+  "personid",
+  "ticketid"
+ ]
+}

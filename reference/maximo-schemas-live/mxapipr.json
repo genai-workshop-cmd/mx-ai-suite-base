@@ -1,0 +1,813 @@
+{
+ "resource": "MXAPIPR",
+ "description": "Maximo API for Purchase Requisitions",
+ "pk": [
+  "siteid",
+  "prnum"
+ ],
+ "title": "PR",
+ "type": "object",
+ "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/mxapipr",
+ "uniqueid": "prid",
+ "properties": {
+  "ownersysid": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Owner System ID",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Owner System ID",
+   "maxLength": 10
+  },
+  "historyflag": {
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "History",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Specifies whether to include PR records that are stored in history, rather than just current records, in the query. Records stored in history are closed, cancelled, etc. If the check box is selected, records stored in history will be included in the query results. If the check box is cleared, only current records will be included in the query results."
+  },
+  "localref": {
+   "type": "string"
+  },
+  "customernum": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Customer #",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Number used by the vendor to identify your company.",
+   "maxLength": 16
+  },
+  "totaltax4": {
+   "searchType": "EXACT",
+   "scale": 2,
+   "subType": "DECIMAL",
+   "title": "Total Tax 4",
+   "persistent": true,
+   "type": "number",
+   "remarks": "Amount of Tax4 payable.",
+   "maxLength": 11
+  },
+  "totaltax3": {
+   "searchType": "EXACT",
+   "scale": 2,
+   "subType": "DECIMAL",
+   "title": "Total Tax 3",
+   "persistent": true,
+   "type": "number",
+   "remarks": "Amount of Tax 3 Payable",
+   "maxLength": 11
+  },
+  "totaltax5": {
+   "searchType": "EXACT",
+   "scale": 2,
+   "subType": "DECIMAL",
+   "title": "Total Tax 5",
+   "persistent": true,
+   "type": "number",
+   "remarks": "Amount of Tax5 payable.",
+   "maxLength": 11
+  },
+  "currencycode": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Currency",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Identifies the currency the PR is in.",
+   "maxLength": 8
+  },
+  "issuedate": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Requested Date",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Date the PR was issued."
+  },
+  "pcardnum": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Procurement Card #",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Procurement Card Number Crosses over from MR.PCARDNUM or LABOR.PCARDNUM",
+   "maxLength": 30
+  },
+  "totaltax2": {
+   "searchType": "EXACT",
+   "scale": 2,
+   "subType": "DECIMAL",
+   "title": "Total Tax 2",
+   "persistent": true,
+   "type": "number",
+   "remarks": "Amount of Tax 2 Payable",
+   "maxLength": 11
+  },
+  "totalcost": {
+   "searchType": "EXACT",
+   "scale": 2,
+   "subType": "DECIMAL",
+   "title": "Total Cost",
+   "persistent": true,
+   "type": "number",
+   "remarks": "Total cost for the PR, including taxes. Maximo calculates this amount using the value in the Currency field. If the Currency field is blank, Maximo calculates this amount in your company's base currency.",
+   "maxLength": 11
+  },
+  "totaltax1": {
+   "searchType": "EXACT",
+   "scale": 2,
+   "subType": "DECIMAL",
+   "title": "Total Tax",
+   "persistent": true,
+   "type": "number",
+   "remarks": "Total Tax applied to the PR. Maximo calculates this amount based on the line items entered on the PR Lines tab.",
+   "maxLength": 11
+  },
+  "_rowstamp": {
+   "type": "string"
+  },
+  "buyahead": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Buy Ahead Rate",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Is this a buy ahead rate, ie entered directly by the user and not calculated from the list of active exchange rate."
+  },
+  "pr10": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Pr10",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Extra Field 10"
+  },
+  "contact": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Contact",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Primary person to contact at the vendor.",
+   "maxLength": 50
+  },
+  "siteid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Site",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Identifies the site for the PR.",
+   "maxLength": 8
+  },
+  "href": {
+   "type": "string",
+   "title": "PR object reference"
+  },
+  "prnum": {
+   "default": "&AUTOKEY&",
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "PR",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Identifies the purchase requisition record. This value must be unique for all PR records.",
+   "maxLength": 8
+  },
+  "contractrefrev": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "INTEGER",
+   "title": "Contract Revision",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "Revision number of the referenced contract.",
+   "maxLength": 11
+  },
+  "shipto": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Ship To",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Address code where the order will be shipped.",
+   "maxLength": 30
+  },
+  "inclusive5": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Include Tax 5",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Is the PR total inclusive of Tax 5."
+  },
+  "inclusive4": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Include Tax 4",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Is the PR total inclusive of Tax 4."
+  },
+  "status_description": {
+   "type": "string"
+  },
+  "shipvia_description": {
+   "type": "string"
+  },
+  "billtoattn": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Attention",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Person to whom the bill will be sent.",
+   "maxLength": 100
+  },
+  "prid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "PRID",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "uniqueid": true,
+   "remarks": "Unique Identifier",
+   "maxLength": 11
+  },
+  "changedate": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Changed Date",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Date Of Modification"
+  },
+  "record_descriptor": {
+   "type": "string",
+   "title": "Record/Object Descriptor"
+  },
+  "pcardexpdate": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Procurement Card Expiration",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Procurement Card Expiration Crosses over from MR.PCARDEXPDATE or LABOR.PCARDEXPDATE",
+   "maxLength": 7
+  },
+  "inclusive1": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Pay Tax to Vendor",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Specifies if the vendor is authorized to collect taxes and you will pay the tax amount to the vendor. Select the checkbox if you want to pay taxes to the vendor. Clear the checkbox if there is no tax, or if you want to pay taxes directly to the taxing authority."
+  },
+  "priority": {
+   "default": 0,
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "INTEGER",
+   "title": "Priority",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "Priority level used to determine the order in which requisitions should be turned into purchase orders. We recommend that limit your range of values from 0 to 9, where 0 is the lowest priority. The default value is 0.",
+   "maxLength": 11
+  },
+  "inclusive3": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Include Tax 3",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Is the PR total inclusive of Tax 3"
+  },
+  "orgid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Organization",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Organization Identifier",
+   "maxLength": 8
+  },
+  "inclusive2": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Include Tax 2",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Is the PR total inclusive of Tax 2"
+  },
+  "inspectionrequired": {
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Inspection Required",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Specifies whether this item requires an approval of the receipt. When you receive items that require inspection, Maximo records a receipt transaction. However, the item does not appear in the storeroom until the receipt is approved. If the check box is selected, the item requires inspection. If the check box is cleared (the default), no approval of the receipt is necessary."
+  },
+  "shipvia": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Ship Via",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Specifies how the goods should be shipped. For example, First Class Mail.",
+   "maxLength": 20
+  },
+  "fob": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "FOB Point",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Free On Board Point. The point where responsibility and liability are transferred. The FOB point is usually either the destination or the shipping point.",
+   "maxLength": 20
+  },
+  "shiptoattn": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Attention",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Person to whom the order is being shipped.",
+   "maxLength": 100
+  },
+  "_id": {
+   "type": "string"
+  },
+  "pcardtype": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Procurement Card Type",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Procurement Card Type Crosses over from MR.PCARDTYPE or LABOR.PCARDTYPE",
+   "maxLength": 20
+  },
+  "storelocsiteid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Storeroom Site",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Identifies the site where the storeroom is located.",
+   "maxLength": 8
+  },
+  "requireddate": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Required Date",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Date the PR items are needed."
+  },
+  "supervisor": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Supervisor",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Person responsible for approving the work to be done. For example, the person who oversees the services provided by a contractor.",
+   "maxLength": 100
+  },
+  "status": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Status",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Current status of the PR.",
+   "maxLength": 12
+  },
+  "prla5": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "PRLA5",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Extra Crossover Field Crosses over from MR.MRLA5 or LABOR.LA25",
+   "maxLength": 10
+  },
+  "internal": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Internal",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Specifies if the requisition is an internal requisition or an external requisition. If the check box is selected, the requisition is an internal requisition, which means that the item supplier is within your company. You must enter a storeroom location for the item on the PR Lines tab. Internal requisitions can only be for inventory material from a storeroom, not for a service. If the check box is cleared, the item vendor is external to your company, and may be either inventory material or a service."
+  },
+  "prla4": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "PRLA4",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Extra Crossover Field Crosses over from MR.MRLA4 or LABOR.LA24",
+   "maxLength": 10
+  },
+  "paymentterms": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Payment Terms",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Specified terms of payment for this vendor. For example, net 30.",
+   "maxLength": 20
+  },
+  "prla3": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "PRLA3",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Extra Crossover Field Crosses over from MR.MRLA3 or LABOR.LA23",
+   "maxLength": 10
+  },
+  "prla2": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "PRLA2",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Extra Crossover Field Crosses over from MR.MRLA2 or LABOR.LA22",
+   "maxLength": 10
+  },
+  "prla1": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "PRLA1",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Extra Crossover Field Crosses over from MR.MRLA1 or LABOR.LA21",
+   "maxLength": 10
+  },
+  "exchangerate": {
+   "searchType": "EXACT",
+   "scale": 7,
+   "subType": "DECIMAL",
+   "title": "Exchange Rate",
+   "persistent": true,
+   "type": "number",
+   "remarks": "Exchange rate at time of PR approval.",
+   "maxLength": 15
+  },
+  "description": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Description",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Describes the purchase requisition. To enter or view additional information, click the Long Description button.",
+   "maxLength": 100
+  },
+  "externalrefid": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "External Reference ID",
+   "persistent": true,
+   "type": "string",
+   "remarks": "External Reference ID",
+   "maxLength": 10
+  },
+  "pcardverification": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Procurement Card Verification Value",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Procurement Card Verification Value",
+   "maxLength": 4
+  },
+  "requestedby": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Requested By",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Person who asked for the PR. The default value is the current login ID.",
+   "maxLength": 100
+  },
+  "exchangerate2": {
+   "searchType": "EXACT",
+   "scale": 7,
+   "subType": "DECIMAL",
+   "title": "Secondary Exchange Rate",
+   "persistent": true,
+   "type": "number",
+   "remarks": "Exchange Rate 2",
+   "maxLength": 15
+  },
+  "_imagelibref": {
+   "type": "string"
+  },
+  "vendor": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Company",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Identifies the vendor for the item.",
+   "maxLength": 12
+  },
+  "payonreceipt": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Pay on Receipt",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Specifies whether you have a pay on receipt agreement with the vendor. If the check box is selected, Maximo will generate an invoice upon receipt of the item or service. If the check box is cleared (the default), no invoice is generated."
+  },
+  "prline": {
+   "objectName": "PRLINE",
+   "type": "array",
+   "items": {
+    "definition": {
+     "subSchema": {
+      "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/mxapipr/prline"
+     }
+    },
+    "type": "object"
+   },
+   "cardinality": "UNDEFINED",
+   "relation": "PRLINE"
+  },
+  "description_longdescription": {
+   "searchType": "WILDCARD",
+   "subType": "LONGALN",
+   "title": "Details",
+   "type": "string",
+   "remarks": "Long Description for Purchase Requisition Description",
+   "maxLength": 32000
+  },
+  "contractrefid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Contract Reference ID",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "Contract reference identifier",
+   "maxLength": 11
+  },
+  "storeloc": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Storeroom",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Storeroom location of the item. This field is required if the Issue on Receipt? check box on the PR Lines tab is cleared.",
+   "maxLength": 25
+  },
+  "changeby": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Changed By",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Signature Of Modifier",
+   "maxLength": 100
+  },
+  "sendersysid": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Sender System ID",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Column used by ERP-Integration (APIs)",
+   "maxLength": 50
+  },
+  "pr1": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Pr1",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Extra Field 01",
+   "maxLength": 10
+  },
+  "exchangedate": {
+   "searchType": "EXACT",
+   "subType": "DATE",
+   "title": "Exchange Date",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Date of the exchange rate."
+  },
+  "statusdate": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Status Date",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Date and time that the PR status was last changed. The default is the system date and time at the time of the status change."
+  },
+  "pr3": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Pr3",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Extra Field 03",
+   "maxLength": 10
+  },
+  "pr2": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Pr2",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Extra Field 02",
+   "maxLength": 10
+  },
+  "pr5": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Pr5",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Extra Field 05",
+   "maxLength": 10
+  },
+  "pr4": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Pr4",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Extra Field 04",
+   "maxLength": 10
+  },
+  "statusiface": {
+   "default": false,
+   "searchType": "NONE",
+   "subType": "YORN",
+   "title": "Has Status Changed",
+   "type": "boolean",
+   "remarks": "Non persistent boolean field to indicate whether the status has been changed after the stateful object is fetched from the database."
+  },
+  "freightterms": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Freight Terms",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Describes what is being shipped. Any riders to the shipping agreement should be included here. To enter or view additional information, click the Long Description button. For example, Fresh Fruit. Perishable. Must meet delivery dates.",
+   "maxLength": 50
+  },
+  "pr7": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Pr7",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Extra Field 07"
+  },
+  "pr6": {
+   "searchType": "EXACT",
+   "scale": 2,
+   "subType": "AMOUNT",
+   "title": "Pr6",
+   "persistent": true,
+   "type": "number",
+   "remarks": "Extra Field 06",
+   "maxLength": 11
+  },
+  "prterm": {
+   "objectName": "PRTERM",
+   "type": "array",
+   "items": {
+    "definition": {
+     "subSchema": {
+      "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/mxapipr/prterm"
+     }
+    },
+    "type": "object"
+   },
+   "cardinality": "UNDEFINED",
+   "relation": "PRTERM"
+  },
+  "pr9": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "INTEGER",
+   "title": "Pr9",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "Extra Field 09",
+   "maxLength": 11
+  },
+  "billto": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Bill To",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Address code where the order will be billed.",
+   "maxLength": 30
+  },
+  "pr8": {
+   "searchType": "EXACT",
+   "scale": 2,
+   "subType": "DECIMAL",
+   "title": "Pr8",
+   "persistent": true,
+   "type": "number",
+   "remarks": "Extra Field 08",
+   "maxLength": 16
+  },
+  "contractrefnum": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Contract Reference",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Contract that was used to find the price.",
+   "maxLength": 8
+  },
+  "novendor": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "No Vendor",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Specifies whether this PR is for a particular vendor. If the checkbox is selected, no vendor will be specified on this PR. If the checkbox is cleared, you may specify particular vendors for line items on the PR Lines tab."
+  },
+  "pcardtype_description": {
+   "type": "string"
+  },
+  "sourcesysid": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Source System ID",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Source System ID",
+   "maxLength": 10
+  },
+  "freightterms_longdescription": {
+   "searchType": "WILDCARD",
+   "subType": "LONGALN",
+   "title": "Freight Terms Long Description",
+   "type": "string",
+   "remarks": "Long Description for Freight Terms",
+   "maxLength": 32000
+  },
+  "np_statusmemo": {
+   "searchType": "NONE",
+   "subType": "ALN",
+   "title": "Change Status Memo",
+   "type": "string",
+   "remarks": "Status change memo, temporary non-persistent field used by MEA",
+   "maxLength": 50
+  }
+ },
+ "required": [
+  "changeby",
+  "changedate",
+  "currencycode",
+  "historyflag",
+  "inspectionrequired",
+  "orgid",
+  "siteid",
+  "status",
+  "statusdate",
+  "statusiface",
+  "totalcost"
+ ]
+}

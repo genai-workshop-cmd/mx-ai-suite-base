@@ -1,0 +1,513 @@
+{
+ "resource": "MXAPIINVRES",
+ "description": "Maximo API for Inventory Reservations",
+ "pk": [
+  "siteid",
+  "requestnum"
+ ],
+ "title": "INVRESERVE",
+ "type": "object",
+ "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/mxapiinvres",
+ "uniqueid": "invreserveid",
+ "properties": {
+  "ownersysid": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Owner System ID",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Owner System ID",
+   "maxLength": 10
+  },
+  "pendingqty": {
+   "default": 0.0,
+   "searchType": "EXACT",
+   "scale": 2,
+   "subType": "DECIMAL",
+   "title": "Pending Quantity",
+   "persistent": true,
+   "type": "number",
+   "remarks": "The pending quantity of items to be issued or transferred.",
+   "maxLength": 16
+  },
+  "localref": {
+   "type": "string"
+  },
+  "reservedqty": {
+   "default": 0.0,
+   "searchType": "EXACT",
+   "scale": 2,
+   "subType": "DECIMAL",
+   "title": "Reserved Quantity",
+   "persistent": true,
+   "type": "number",
+   "remarks": "The number of items that are reserved and not issued.",
+   "maxLength": 16
+  },
+  "invreserveid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "INVRESERVEID",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "uniqueid": true,
+   "remarks": "Unique Identifier",
+   "maxLength": 11
+  },
+  "oplocation": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Location",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The operating location of the reserved item.",
+   "maxLength": 25
+  },
+  "_rowstamp": {
+   "type": "string"
+  },
+  "porevisionnum": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "INTEGER",
+   "title": "PO Revision",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "Revision number of the purchase order. Indicates how many times a purchase order has been revised.",
+   "maxLength": 11
+  },
+  "siteid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Site",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Site Identifier",
+   "maxLength": 8
+  },
+  "href": {
+   "type": "string",
+   "title": "INVRESERVE object reference"
+  },
+  "pickedqty": {
+   "searchType": "EXACT",
+   "scale": 2,
+   "subType": "DECIMAL",
+   "title": "Picked Quantity",
+   "persistent": true,
+   "type": "number",
+   "remarks": "The quantity of items that are picked.",
+   "maxLength": 16
+  },
+  "requestnum": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Request",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Unique identification number that is generated for each reservation.",
+   "maxLength": 20
+  },
+  "issueto": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Issue To",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Issue to a Laborcode or Craft",
+   "maxLength": 8
+  },
+  "binnum": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Default Bin",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The identifier of default bin of inventory",
+   "maxLength": 8
+  },
+  "record_descriptor": {
+   "type": "string",
+   "title": "Record/Object Descriptor"
+  },
+  "polinenum": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "INTEGER",
+   "title": "PO Line",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "hasList": true,
+   "remarks": "Line number of the item on the associated purchase order.",
+   "maxLength": 11
+  },
+  "orgid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Organization",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Organization Identifier",
+   "maxLength": 8
+  },
+  "restype": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Reservation Type",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Specify the type of reservation, depending on whether it is a firm request for material or not (hard or soft). The reservation type may also be set by automatic processing (APHARD or APSOFT), where a calculation of the required date of the reservation determines the reservation type.",
+   "maxLength": 16
+  },
+  "itemnum": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Item",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Identifies the item for which you want to add or change a reservation. Click the Detail Menu button to choose an item.",
+   "maxLength": 30
+  },
+  "directreq": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Direct Request",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "If item is ordered outside of standard inventory replenishment."
+  },
+  "fincntrlid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "FCID",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Financial Control Identifier",
+   "maxLength": 8
+  },
+  "itemsetid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Item Set",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Item set identifier for this item.",
+   "maxLength": 8
+  },
+  "mrlinenum": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "INTEGER",
+   "title": "Requisition Line",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "hasList": true,
+   "remarks": "Line number on the requestion for the item being reserved.",
+   "maxLength": 11
+  },
+  "_id": {
+   "type": "string"
+  },
+  "storelocsiteid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Storeroom Site",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "StoreLoc Siteid",
+   "maxLength": 8
+  },
+  "dellocation": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Delivery Location",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Delivery location.",
+   "maxLength": 25
+  },
+  "requireddate": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Required Date",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Date by which the item is needed on the work order. Click the Select Date and Time button to use the calendar control."
+  },
+  "shippedqty": {
+   "default": 0.0,
+   "searchType": "EXACT",
+   "scale": 2,
+   "subType": "DECIMAL",
+   "title": "Shipped Quantity",
+   "persistent": true,
+   "type": "number",
+   "remarks": "The quantity of items that have been shipped.",
+   "maxLength": 16
+  },
+  "displaytaskid": {
+   "searchType": "NONE",
+   "maximum": 2147483647.0,
+   "subType": "INTEGER",
+   "title": "Task",
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "DISPLAYTASKID",
+   "maxLength": 11
+  },
+  "description": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Description",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Special instructions for this item.",
+   "maxLength": 100
+  },
+  "externalrefid": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "External Reference ID",
+   "persistent": true,
+   "type": "string",
+   "remarks": "External Reference ID",
+   "maxLength": 10
+  },
+  "inventory": {
+   "objectName": "INVENTORY",
+   "type": "array",
+   "items": {
+    "definition": {
+     "subSchema": {
+      "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/mxapiinvres/inventory"
+     }
+    },
+    "type": "object"
+   },
+   "cardinality": "UNDEFINED",
+   "relation": "INVENTORY"
+  },
+  "requestedby": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Requested By",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Name of person requesting the item.",
+   "maxLength": 100
+  },
+  "polineid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "ID",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "Internal POLine Identifier reference",
+   "maxLength": 11
+  },
+  "stagedqty": {
+   "default": 0.0,
+   "searchType": "EXACT",
+   "scale": 2,
+   "subType": "DECIMAL",
+   "title": "Staged Quantity",
+   "persistent": true,
+   "type": "number",
+   "remarks": "The quantity of items that have been staged.",
+   "maxLength": 16
+  },
+  "_imagelibref": {
+   "type": "string"
+  },
+  "assetnum": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Asset",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Asset Number",
+   "maxLength": 25
+  },
+  "conditioncode": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Condition Code",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Condition code associated with the reserved item. A condition code allows you to track the balance and value of each item. You can apply different rates to an item as its condition changes from use, such as from new to used. Click the Select Value button to choose a condition code.",
+   "maxLength": 30
+  },
+  "fctaskid": {
+   "searchType": "NONE",
+   "subType": "ALN",
+   "title": "FC Task ID",
+   "type": "string",
+   "remarks": "Financial control task identifier.",
+   "maxLength": 25
+  },
+  "description_longdescription": {
+   "searchType": "WILDCARD",
+   "subType": "LONGALN",
+   "title": "Details",
+   "type": "string",
+   "remarks": "Long Description for Special instructions.",
+   "maxLength": 32000
+  },
+  "requesteddate": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Requested Date",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Date the request for this item was made. Click the Select Date and Time button to use the calendar control."
+  },
+  "actualqty": {
+   "default": 0.0,
+   "searchType": "EXACT",
+   "scale": 2,
+   "subType": "DECIMAL",
+   "title": "Actual Quantity",
+   "persistent": true,
+   "type": "number",
+   "remarks": "Number of this item already issued against the reservation.",
+   "maxLength": 16
+  },
+  "sendersysid": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Sender System ID",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Column used by ERP-Integration (APIs)",
+   "maxLength": 50
+  },
+  "newsite": {
+   "searchType": "NONE",
+   "subType": "UPPER",
+   "title": "To Site",
+   "type": "string",
+   "hasList": true,
+   "remarks": "Site Identifier.",
+   "maxLength": 8
+  },
+  "wonum": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Work Order",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Work order number for which this item is reserved.",
+   "maxLength": 25
+  },
+  "glaccount": {
+   "searchType": "WILDCARD",
+   "subType": "GL",
+   "title": "GL Account",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The GL Account to be debited on issue.",
+   "maxLength": 23
+  },
+  "initflag": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Initialized Flag",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Initiated flag."
+  },
+  "mrnum": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Requisition",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Requisition number associated with this transaction. Click the Select Value button to choose a requisition.",
+   "maxLength": 8
+  },
+  "tostoreloc": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "To Storeroom",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The storeroom location the inventory items are charged to.",
+   "maxLength": 25
+  },
+  "wogroup": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Work Order",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The identifier of the work order that is related to this record.",
+   "maxLength": 25
+  },
+  "fcprojectid": {
+   "searchType": "NONE",
+   "subType": "ALN",
+   "title": "FC Project ID",
+   "type": "string",
+   "remarks": "Financial control project identifier.",
+   "maxLength": 25
+  },
+  "ponum": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Purchase Order",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The purchase order to which the item reservation is associated.",
+   "maxLength": 8
+  },
+  "location": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Storeroom",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Storeroom location of the reserved item.",
+   "maxLength": 25
+  },
+  "sourcesysid": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Source System ID",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Source System ID",
+   "maxLength": 10
+  }
+ },
+ "required": [
+  "orgid",
+  "requestnum",
+  "restype",
+  "siteid",
+  "storelocsiteid"
+ ]
+}

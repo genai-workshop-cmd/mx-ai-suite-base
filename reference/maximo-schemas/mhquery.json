@@ -1,0 +1,156 @@
+{
+  "resource": "MHQUERY",
+  "description": "QUERY",
+  "pk": [
+    "app",
+    "owner",
+    "clausename"
+  ],
+  "title": "QUERY",
+  "type": "object",
+  "$ref": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mhquery",
+  "uniqueid": "queryid",
+  "properties": {
+    "app": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Application",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "App Name",
+      "maxLength": 40
+    },
+    "clause": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Clause",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Where Clause",
+      "maxLength": 4000
+    },
+    "owner": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Owner",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Created By",
+      "maxLength": 100
+    },
+    "notes": {
+      "searchType": "WILDCARD",
+      "subType": "CLOB",
+      "title": "Notes",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Notes",
+      "maxLength": 999999
+    },
+    "localref": {
+      "type": "string"
+    },
+    "description": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Description",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Describes the Where clause that is used to generate the query.",
+      "maxLength": 209
+    },
+    "clausename": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Query Name",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "The unique name of the Where clause that generates the query.",
+      "maxLength": 50
+    },
+    "priority": {
+      "searchType": "EXACT",
+      "maximum": 2147483647.0,
+      "subType": "INTEGER",
+      "title": "Priority",
+      "persistent": true,
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "remarks": "Priority.",
+      "maxLength": 11
+    },
+    "intobjectname": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Object Structure",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Object Structure.",
+      "maxLength": 20
+    },
+    "queryid": {
+      "searchType": "EXACT",
+      "maximum": 2147483647.0,
+      "subType": "BIGINT",
+      "title": "QUERYID",
+      "persistent": true,
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "uniqueid": true,
+      "remarks": "Unique Identifier",
+      "maxLength": 11
+    },
+    "langcode": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Language Code",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Language Code",
+      "maxLength": 4
+    },
+    "_rowstamp": {
+      "type": "string"
+    },
+    "isuserlist": {
+      "default": false,
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "Show in user list",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "Show in user list."
+    },
+    "_imagelibref": {
+      "type": "string"
+    },
+    "ispublic": {
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "Public",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "Indicates whether the query is available to be used by all users or only by the creator."
+    },
+    "href": {
+      "type": "string"
+    },
+    "_id": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "app",
+    "clause",
+    "clausename",
+    "description",
+    "ispublic",
+    "langcode",
+    "owner"
+  ]
+}

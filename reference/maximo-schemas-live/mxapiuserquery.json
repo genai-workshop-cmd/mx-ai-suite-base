@@ -1,0 +1,139 @@
+{
+ "resource": "MXAPIUSERQUERY",
+ "description": "Maximo API for User Queries",
+ "pk": [
+  "clausename",
+  "app",
+  "owner",
+  "userid"
+ ],
+ "title": "USERQUERY",
+ "type": "object",
+ "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/mxapiuserquery",
+ "uniqueid": "userqueryid",
+ "properties": {
+  "app": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Application",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Application.",
+   "maxLength": 40
+  },
+  "owner": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Owner",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Created By.",
+   "maxLength": 100
+  },
+  "localref": {
+   "type": "string"
+  },
+  "lastcalculateddate": {
+   "default": "&SYSDATE&",
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Last Calculated Date",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Last Calculated Date"
+  },
+  "objectname": {
+   "searchType": "NONE",
+   "subType": "UPPER",
+   "title": "Object Name",
+   "type": "string",
+   "remarks": "Object Name.",
+   "maxLength": 30
+  },
+  "clausename": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Query Name",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The unique name of the Where clause that generates the query.",
+   "maxLength": 50
+  },
+  "record_descriptor": {
+   "type": "string",
+   "title": "Record/Object Descriptor"
+  },
+  "priority": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "INTEGER",
+   "title": "Priority",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "Priority.",
+   "maxLength": 11
+  },
+  "userid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "User",
+   "persistent": true,
+   "type": "string",
+   "remarks": "User for which quesry is shown.",
+   "maxLength": 100
+  },
+  "userqueryid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Unique Id",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "uniqueid": true,
+   "remarks": "Unique Id",
+   "maxLength": 11
+  },
+  "intobjectname": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Object Structure",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Object Structure.",
+   "maxLength": 20
+  },
+  "_rowstamp": {
+   "type": "string"
+  },
+  "_imagelibref": {
+   "type": "string"
+  },
+  "querycount": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "INTEGER",
+   "title": "Query Count",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "Query Count.",
+   "maxLength": 11
+  },
+  "href": {
+   "type": "string",
+   "title": "USERQUERY object reference"
+  },
+  "_id": {
+   "type": "string"
+  }
+ },
+ "required": [
+  "app",
+  "clausename",
+  "owner",
+  "userid"
+ ]
+}

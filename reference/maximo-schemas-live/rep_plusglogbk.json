@@ -1,0 +1,169 @@
+{
+ "resource": "REP_PLUSGLOGBK",
+ "description": "Log Book (Oil) Details",
+ "pk": [
+  "orgid",
+  "siteid",
+  "logbooknum"
+ ],
+ "title": "PLUSGLOGBOOK",
+ "type": "object",
+ "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/rep_plusglogbk",
+ "uniqueid": "plusglogbookid",
+ "properties": {
+  "owner": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Owner",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The person who is responsible for the log book. You change this value by using the Select Owner action or by using the Take Ownership action. You can change this value only when the status of the log book is Draft. The status of the person record in the People application must be Active.",
+   "maxLength": 100
+  },
+  "calnum": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Calendar",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The reference to the calendar and shift combination that applies to the log book. Use the calendar field to associate a calendar and shift with a log book. For example, you might have calendar Day defined for one week, with Shift 1 lasting from 07:00 until 15:00, or calendar Day with Shift 2 lasting from 15:00 until 23:00.",
+   "maxLength": 8
+  },
+  "calshiftnum": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Shift",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "A reference for the shift log. You can change this value except when the shift log is in Inactive status.",
+   "maxLength": 8
+  },
+  "status_description": {
+   "type": "string"
+  },
+  "localref": {
+   "type": "string"
+  },
+  "logbooknum": {
+   "default": "&AUTOKEY&",
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Log Book",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The identifier of the log book. This number is populated automatically when the Use Log Books option is enabled in the Organizations application. You can specify your own identifier.",
+   "maxLength": 10
+  },
+  "finishdate": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Finish Date",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The date and time when the shift that is associated with this log book finished or is set to finish. You can change this value when the status of the shift log is Draft. "
+  },
+  "description": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Description",
+   "persistent": true,
+   "type": "string",
+   "remarks": "A description of the log book.",
+   "maxLength": 100
+  },
+  "record_descriptor": {
+   "type": "string",
+   "title": "Record/Object Descriptor"
+  },
+  "ownergroup": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Owner Group",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The group that is responsible for the log book. You change this value by using the Select Owner action. You can change this value only when the status of the log book record is Draft.",
+   "maxLength": 8
+  },
+  "startdate": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Start Date",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The date and time when the shift that is associated with this log book began or is set to begin. You can change this value when the status of the shift log is Draft."
+  },
+  "plusglogbookid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Unique Id",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "uniqueid": true,
+   "remarks": "Unique Id",
+   "maxLength": 11
+  },
+  "orgid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Organization",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The organization that is associated with the log book.",
+   "maxLength": 8
+  },
+  "statusdate": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Status Date",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The server date and time when the status of the log book changed."
+  },
+  "_rowstamp": {
+   "type": "string"
+  },
+  "_imagelibref": {
+   "type": "string"
+  },
+  "siteid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Site",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The site that is associated with the log book. The site must match the site that is specified for the log entries that comprise the log book. The combination of log book, shift log entries, and site must be unique.",
+   "maxLength": 8
+  },
+  "href": {
+   "type": "string",
+   "title": "PLUSGLOGBOOK object reference"
+  },
+  "_id": {
+   "type": "string"
+  },
+  "status": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Status",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The status of the log book. The default status is Draft. Valid values are in the PLUSGLOGBOOKTATUS domain. You can change this value by using the Change Status action. To add shift logs, the log book must be in Active status. You can only delete a log book record when its status is Draft or Inactive.",
+   "maxLength": 16
+  }
+ },
+ "required": [
+  "finishdate",
+  "startdate",
+  "status",
+  "statusdate"
+ ]
+}

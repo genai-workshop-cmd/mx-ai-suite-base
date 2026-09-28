@@ -1,0 +1,134 @@
+{
+  "resource": "MXAPIINSPFORMSTATUS",
+  "description": "INSPECTIONFORMSTATUS",
+  "pk": [
+    "inspectionformstatusid"
+  ],
+  "title": "INSPECTIONFORMSTATUS",
+  "type": "object",
+  "$ref": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapiinspformstatus",
+  "uniqueid": "inspectionformstatusid",
+  "properties": {
+    "status_description": {
+      "type": "string"
+    },
+    "localref": {
+      "type": "string"
+    },
+    "inspectionformstatusid": {
+      "searchType": "EXACT",
+      "maximum": 2147483647.0,
+      "subType": "BIGINT",
+      "title": "Record history identification",
+      "persistent": true,
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "uniqueid": true,
+      "remarks": "Record history identification",
+      "maxLength": 11
+    },
+    "changeby": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "User who is changing the form",
+      "persistent": true,
+      "type": "string",
+      "remarks": "User who is changing the form",
+      "maxLength": 100
+    },
+    "memo": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Reason of the status change",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Reason of the status change",
+      "maxLength": 100
+    },
+    "changedate": {
+      "searchType": "EXACT",
+      "subType": "DATETIME",
+      "title": "Date when the form was changed",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Date when the form was changed"
+    },
+    "orgid": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Organization",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Organization",
+      "maxLength": 8
+    },
+    "revision": {
+      "searchType": "EXACT",
+      "maximum": 2147483647.0,
+      "subType": "INTEGER",
+      "title": "Form Revision",
+      "persistent": true,
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "remarks": "Form Revision",
+      "maxLength": 11
+    },
+    "_rowstamp": {
+      "type": "string"
+    },
+    "_imagelibref": {
+      "type": "string"
+    },
+    "name": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Form Name",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Form Name",
+      "maxLength": 200
+    },
+    "siteid": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Site",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Site",
+      "maxLength": 8
+    },
+    "href": {
+      "type": "string"
+    },
+    "_id": {
+      "type": "string"
+    },
+    "inspformnum": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Inspection Form",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Foreign key from Inspection Form",
+      "maxLength": 12
+    },
+    "status": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Status",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Inspection form status",
+      "maxLength": 20
+    }
+  },
+  "required": [
+    "changeby",
+    "changedate",
+    "inspformnum",
+    "name",
+    "revision",
+    "status"
+  ]
+}

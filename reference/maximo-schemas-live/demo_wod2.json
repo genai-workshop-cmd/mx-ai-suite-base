@@ -1,0 +1,652 @@
+{
+ "resource": "DEMO_WOD2",
+ "description": "WORKORDER",
+ "pk": [
+  "siteid",
+  "wonum"
+ ],
+ "title": "WORKORDER",
+ "type": "object",
+ "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/demo_wod2",
+ "uniqueid": "workorderid",
+ "properties": {
+  "wptool": {
+   "objectName": "WPTOOL",
+   "type": "array",
+   "items": {
+    "definition": {
+     "subSchema": {
+      "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/demo_wod2/wptool"
+     }
+    },
+    "type": "object"
+   },
+   "cardinality": "MULTIPLE",
+   "relation": "REP_PLANTOOL"
+  },
+  "localref": {
+   "type": "string"
+  },
+  "langcode": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Language Code",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Language Column",
+   "maxLength": 4
+  },
+  "_rowstamp": {
+   "type": "string"
+  },
+  "wojp1": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Wojp1",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Extra Field",
+   "maxLength": 10
+  },
+  "wojp2": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Wojp2",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Extra Field",
+   "maxLength": 10
+  },
+  "wojp3": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Wojp3",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Extra Field",
+   "maxLength": 10
+  },
+  "wojp4": {
+   "searchType": "EXACT",
+   "scale": 2,
+   "subType": "AMOUNT",
+   "title": "Wojp4",
+   "persistent": true,
+   "type": "number",
+   "remarks": "Extra Field",
+   "maxLength": 11
+  },
+  "wojp5": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Wojp5",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Extra Field"
+  },
+  "wol4": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Wol4",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Extra Field"
+  },
+  "siteid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Site",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Identifies the site.",
+   "maxLength": 8
+  },
+  "href": {
+   "type": "string",
+   "title": "WORKORDER object reference"
+  },
+  "matusetrans": {
+   "objectName": "MATUSETRANS",
+   "type": "array",
+   "items": {
+    "definition": {
+     "subSchema": {
+      "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/demo_wod2/matusetrans"
+     }
+    },
+    "type": "object"
+   },
+   "cardinality": "MULTIPLE",
+   "relation": "REP_ACTMAT"
+  },
+  "wol3": {
+   "searchType": "EXACT",
+   "scale": 2,
+   "subType": "AMOUNT",
+   "title": "Wol3",
+   "persistent": true,
+   "type": "number",
+   "remarks": "Extra Field",
+   "maxLength": 11
+  },
+  "wol2": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Wol2",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Extra Field",
+   "maxLength": 10
+  },
+  "wol1": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Wol1",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Extra Field",
+   "maxLength": 10
+  },
+  "record_descriptor": {
+   "type": "string",
+   "title": "Record/Object Descriptor"
+  },
+  "wpservice": {
+   "objectName": "WPSERVICE",
+   "type": "array",
+   "items": {
+    "definition": {
+     "subSchema": {
+      "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/demo_wod2/wpservice"
+     }
+    },
+    "type": "object"
+   },
+   "cardinality": "MULTIPLE",
+   "relation": "REP_PLANSERV"
+  },
+  "wplabor": {
+   "objectName": "WPLABOR",
+   "type": "array",
+   "items": {
+    "definition": {
+     "subSchema": {
+      "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/demo_wod2/wplabor"
+     }
+    },
+    "type": "object"
+   },
+   "cardinality": "MULTIPLE",
+   "relation": "REP_PLANLAB"
+  },
+  "labtrans": {
+   "objectName": "LABTRANS",
+   "type": "array",
+   "items": {
+    "definition": {
+     "subSchema": {
+      "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/demo_wod2/labtrans"
+     }
+    },
+    "type": "object"
+   },
+   "cardinality": "MULTIPLE",
+   "relation": "REP_ACTLAB"
+  },
+  "_id": {
+   "type": "string"
+  },
+  "servrectrans": {
+   "objectName": "SERVRECTRANS",
+   "type": "array",
+   "items": {
+    "definition": {
+     "subSchema": {
+      "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/demo_wod2/servrectrans"
+     }
+    },
+    "type": "object"
+   },
+   "cardinality": "MULTIPLE",
+   "relation": "REP_ACTSERV"
+  },
+  "externalrefid": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "External Reference ID",
+   "persistent": true,
+   "type": "string",
+   "remarks": "External Reference ID",
+   "maxLength": 10
+  },
+  "tooltrans": {
+   "objectName": "TOOLTRANS",
+   "type": "array",
+   "items": {
+    "definition": {
+     "subSchema": {
+      "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/demo_wod2/tooltrans"
+     }
+    },
+    "type": "object"
+   },
+   "cardinality": "MULTIPLE",
+   "relation": "REP_ACTTOOL"
+  },
+  "_imagelibref": {
+   "type": "string"
+  },
+  "worts3": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Worts3",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Crossover field from Route_Stop.RTS3",
+   "maxLength": 10
+  },
+  "worts4": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Worts4",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Crossover field from Route_Stop.RTS4"
+  },
+  "worts1": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Worts1",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Crossover field from Route_Stop.RTS1",
+   "maxLength": 10
+  },
+  "worts2": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Worts2",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Crossover field from Route_Stop.RTS2",
+   "maxLength": 10
+  },
+  "worts5": {
+   "searchType": "EXACT",
+   "scale": 2,
+   "subType": "DECIMAL",
+   "title": "Worts5",
+   "persistent": true,
+   "type": "number",
+   "remarks": "Crossover field from Route_Stop.RTS5",
+   "maxLength": 16
+  },
+  "wolo10": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "INTEGER",
+   "title": "Wolo10",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "Extra Field",
+   "maxLength": 11
+  },
+  "wpmaterial": {
+   "objectName": "WPMATERIAL",
+   "type": "array",
+   "items": {
+    "definition": {
+     "subSchema": {
+      "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/demo_wod2/wpmaterial"
+     }
+    },
+    "type": "object"
+   },
+   "cardinality": "MULTIPLE",
+   "relation": "REP_PLANMAT"
+  },
+  "sendersysid": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Sender System ID",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Column used by ERP-Integration (APIs)",
+   "maxLength": 50
+  },
+  "woeq1": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Woeq1",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Extra Field Copied From Asset",
+   "maxLength": 10
+  },
+  "woeq2": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Woeq2",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Extra Field Copied From Asset",
+   "maxLength": 10
+  },
+  "woeq3": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Woeq3",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Extra Field Copied From Asset",
+   "maxLength": 10
+  },
+  "wonum": {
+   "default": "&AUTOKEY&",
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Work Order",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The number you use to track actions taken to satisfy agreement requirements. The agreement is identified in the Reference field.",
+   "maxLength": 25
+  },
+  "woeq4": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Woeq4",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Extra Field Copied From Asset",
+   "maxLength": 10
+  },
+  "woeq5": {
+   "searchType": "EXACT",
+   "scale": 2,
+   "subType": "AMOUNT",
+   "title": "Woeq5",
+   "persistent": true,
+   "type": "number",
+   "remarks": "Extra Field Copied From Asset",
+   "maxLength": 11
+  },
+  "woeq6": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Woeq6",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Extra Field Copied From Asset"
+  },
+  "woeq7": {
+   "searchType": "EXACT",
+   "scale": 2,
+   "subType": "DECIMAL",
+   "title": "Woeq7",
+   "persistent": true,
+   "type": "number",
+   "remarks": "Extra Field Copied From Asset",
+   "maxLength": 16
+  },
+  "woeq8": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Woeq8",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Extra Field Copied From Asset",
+   "maxLength": 10
+  },
+  "wojo1": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "WOJO1",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Extra Field",
+   "maxLength": 10
+  },
+  "hasld": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Has Long Description",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Boolean flag to indicate if there is any long description for this record"
+  },
+  "woeq9": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Woeq9",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Extra Field Copied From Asset",
+   "maxLength": 10
+  },
+  "wojo2": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "WOJO2",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Extra Field",
+   "maxLength": 10
+  },
+  "wojo3": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "WOJO3",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Extra Field",
+   "maxLength": 10
+  },
+  "wolo2": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Wolo2",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Extra Field",
+   "maxLength": 10
+  },
+  "wojo4": {
+   "searchType": "EXACT",
+   "scale": 2,
+   "subType": "DECIMAL",
+   "title": "WOJO4",
+   "persistent": true,
+   "type": "number",
+   "remarks": "Extra Field",
+   "maxLength": 16
+  },
+  "wolo1": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Wolo1",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Extra Field",
+   "maxLength": 10
+  },
+  "woeq11": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Woeq11",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Extra Field Copied From Asset",
+   "maxLength": 10
+  },
+  "wojo5": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "WOJO5",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Extra Field",
+   "maxLength": 10
+  },
+  "wolo4": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Wolo4",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Extra Field",
+   "maxLength": 10
+  },
+  "woeq12": {
+   "searchType": "EXACT",
+   "scale": 2,
+   "subType": "AMOUNT",
+   "title": "Woeq12",
+   "persistent": true,
+   "type": "number",
+   "remarks": "Extra Field Copied From Asset",
+   "maxLength": 11
+  },
+  "wojo6": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "WOJO6",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Extra Field",
+   "maxLength": 10
+  },
+  "wolo3": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Wolo3",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Extra Field",
+   "maxLength": 10
+  },
+  "woeq13": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Woeq13",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Extra Field"
+  },
+  "wojo7": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "WOJO7",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Extra Field",
+   "maxLength": 10
+  },
+  "wolo6": {
+   "searchType": "EXACT",
+   "scale": 2,
+   "subType": "AMOUNT",
+   "title": "Wolo6",
+   "persistent": true,
+   "type": "number",
+   "remarks": "Extra Field",
+   "maxLength": 11
+  },
+  "woeq14": {
+   "searchType": "EXACT",
+   "scale": 2,
+   "subType": "DECIMAL",
+   "title": "Woeq14",
+   "persistent": true,
+   "type": "number",
+   "remarks": "Extra Field",
+   "maxLength": 16
+  },
+  "wojo8": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "WOJO8",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Extra Field",
+   "maxLength": 10
+  },
+  "wolo5": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Wolo5",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Extra Field",
+   "maxLength": 10
+  },
+  "wolo8": {
+   "searchType": "EXACT",
+   "scale": 2,
+   "subType": "DECIMAL",
+   "title": "Wolo8",
+   "persistent": true,
+   "type": "number",
+   "remarks": "Extra Field",
+   "maxLength": 16
+  },
+  "woactivity": {
+   "objectName": "WOACTIVITY",
+   "type": "array",
+   "items": {
+    "definition": {
+     "subSchema": {
+      "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/demo_wod2/woactivity"
+     }
+    },
+    "type": "object"
+   },
+   "cardinality": "MULTIPLE",
+   "relation": "WOACTIVITY"
+  },
+  "sourcesysid": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Source System ID",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Source System ID",
+   "maxLength": 10
+  },
+  "wolo7": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Wolo7",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Extra Field"
+  },
+  "woeq10": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Woeq10",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Extra Field Copied From Asset",
+   "maxLength": 10
+  },
+  "wolo9": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Wolo9",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Extra Field",
+   "maxLength": 10
+  }
+ },
+ "required": [
+  "hasld",
+  "langcode",
+  "siteid"
+ ]
+}

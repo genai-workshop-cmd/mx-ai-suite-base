@@ -1,0 +1,158 @@
+{
+  "resource": "OSLCMAFAPPDATA",
+  "description": "MAFAPPDATA",
+  "pk": [
+    "appid",
+    "buildtimestamp"
+  ],
+  "title": "MAFAPPDATA",
+  "type": "object",
+  "$ref": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/oslcmafappdata",
+  "uniqueid": "mafappdataid",
+  "properties": {
+    "app": {
+      "searchType": "NONE",
+      "subType": "BLOB",
+      "title": "Aplication binary",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Aplication binary data",
+      "maxLength": 999999
+    },
+    "deploydatetime": {
+      "searchType": "EXACT",
+      "subType": "DATETIME",
+      "title": "Deployed Date",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Date of binary deployment"
+    },
+    "localref": {
+      "type": "string"
+    },
+    "version": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Version",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Application Version",
+      "maxLength": 15
+    },
+    "revision": {
+      "searchType": "EXACT",
+      "maximum": 2147483647.0,
+      "subType": "INTEGER",
+      "title": "Revision Number",
+      "persistent": true,
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "remarks": "Application Revision Number.  Each app binary with the same version is a new revision.",
+      "maxLength": 11
+    },
+    "deployby": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Deployed by User",
+      "persistent": true,
+      "type": "string",
+      "remarks": "User that deployed application",
+      "maxLength": 50
+    },
+    "privatekey": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Private key",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Application private key",
+      "maxLength": 50
+    },
+    "_rowstamp": {
+      "type": "string"
+    },
+    "buildtimestamp": {
+      "searchType": "EXACT",
+      "subType": "DATETIME",
+      "title": "Build Date",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Date of binary build"
+    },
+    "_imagelibref": {
+      "type": "string"
+    },
+    "appid": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Application ID",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Application ID",
+      "maxLength": 40
+    },
+    "checksum": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Checksum",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Checksum of application binary",
+      "maxLength": 64
+    },
+    "href": {
+      "type": "string"
+    },
+    "_id": {
+      "type": "string"
+    },
+    "appmode": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Application mode",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Application mode",
+      "maxLength": 50
+    },
+    "ismobile": {
+      "default": false,
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "Is Mobile Application?",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "True (1) if the application is a mobile app"
+    },
+    "mafappdataid": {
+      "searchType": "EXACT",
+      "maximum": 2147483647.0,
+      "subType": "BIGINT",
+      "title": "Mafappdata ID",
+      "persistent": true,
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "uniqueid": true,
+      "remarks": "Mafappdata ID",
+      "maxLength": 11
+    },
+    "status": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Status",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Status of the application",
+      "maxLength": 25
+    }
+  },
+  "required": [
+    "app",
+    "appid",
+    "appmode",
+    "buildtimestamp",
+    "deployby",
+    "deploydatetime",
+    "version"
+  ]
+}

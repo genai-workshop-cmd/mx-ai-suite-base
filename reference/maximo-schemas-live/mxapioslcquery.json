@@ -1,0 +1,183 @@
+{
+ "resource": "MXAPIOSLCQUERY",
+ "description": "OSLCQUERY",
+ "pk": [
+  "intobjectname",
+  "app",
+  "querytype",
+  "clausename"
+ ],
+ "title": "OSLCQUERY",
+ "type": "object",
+ "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/mxapioslcquery",
+ "uniqueid": "oslcqueryid",
+ "properties": {
+  "app": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "App Name",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Application Name",
+   "maxLength": 40
+  },
+  "clause": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Query Clause",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Query Clause",
+   "maxLength": 4000
+  },
+  "owner": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Query Owner",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Query Owner",
+   "maxLength": 100
+  },
+  "role": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Role Name",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Role Name",
+   "maxLength": 20
+  },
+  "localref": {
+   "type": "string"
+  },
+  "method": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Java Method For Query",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Java Method For Query in the OS definition class",
+   "maxLength": 200
+  },
+  "usage": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Usage URI",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Usage URI",
+   "maxLength": 200
+  },
+  "description": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Description",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Description",
+   "maxLength": 200
+  },
+  "clausename": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Query Clause Name",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Query Clause Name",
+   "maxLength": 50
+  },
+  "record_descriptor": {
+   "type": "string",
+   "title": "Record/Object Descriptor"
+  },
+  "scriptname": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Query Script Name",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Query Script Name",
+   "maxLength": 100
+  },
+  "oslcqueryid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Unique Id",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "uniqueid": true,
+   "remarks": "Unique Id",
+   "maxLength": 11
+  },
+  "qbeclause": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "QBE",
+   "persistent": true,
+   "type": "string",
+   "remarks": "QBE",
+   "maxLength": 500
+  },
+  "intobjectname": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Object Structure Name",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Object Structure Name",
+   "maxLength": 20
+  },
+  "filter": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Filter",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Filter"
+  },
+  "_rowstamp": {
+   "type": "string"
+  },
+  "_imagelibref": {
+   "type": "string"
+  },
+  "ispublic": {
+   "default": true,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Is Public",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Is Public"
+  },
+  "href": {
+   "type": "string",
+   "title": "OSLCQUERY object reference"
+  },
+  "_id": {
+   "type": "string"
+  },
+  "querytype": {
+   "default": "appclause",
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Query Type",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Query Type.",
+   "maxLength": 20
+  }
+ },
+ "required": [
+  "intobjectname"
+ ]
+}

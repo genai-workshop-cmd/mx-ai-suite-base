@@ -1,0 +1,171 @@
+{
+  "resource": "MXAPIWPEDITSETTING",
+  "description": "WPEDITSETTING",
+  "pk": [
+    "orgid",
+    "status"
+  ],
+  "title": "WPEDITSETTING",
+  "type": "object",
+  "$ref": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapiwpeditsetting",
+  "uniqueid": "wpeditsettingid",
+  "properties": {
+    "plusceditafal": {
+      "default": false,
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "As Found / As Left",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "When selected, you can edit the As Found and As Left values on a work order data sheet that is in the selected status. For example, you can opt to allow for the editing of As Found and As Left values only when the work order is in the In Progress or Waiting for Materials statuses."
+    },
+    "localref": {
+      "type": "string"
+    },
+    "editasset": {
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "Asset",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "Specifies whether the asset can be edited when the work order is in the selected status. If the check box is selected, you can edit the work order's asset. If the check box is cleared, you cannot edit the work order's asset."
+    },
+    "applydjp": {
+      "default": false,
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "Dynamic Job Plan",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "Indicates if the dynamic job plan can be recalculated when the work order is in the selected status. If the check box is selected, you can perform the dynamic job plan calculation."
+    },
+    "editwpmat": {
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "WP Materials",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "Specifies whether the work plan materials can be edited when the work order is in the selected status. If the check box is selected, you can edit the work plan materials. If the check box is cleared, you cannot edit the work plan materials."
+    },
+    "editwpser": {
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "WP Service",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "Specifies whether the work plan services can be edited when the work order is in the selected status. If the check box is selected, you can edit the work plan services. If the check box is cleared, you cannot edit the work plan services."
+    },
+    "plusceditpoint": {
+      "default": false,
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "Edit Cal Point",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "When selected, you can add a calibration point to a work order data sheet that is in the selected status. For example, you can opt to add a calibration point to a work order data sheet only when the work order is in the In Progress or Waiting for Materials statuses."
+    },
+    "editloc": {
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "Location",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "Specifies whether the location can be edited when the work order is in the selected status. If the check box is selected, you can edit the work order's location. If the check box is cleared, you cannot edit the work order's location."
+    },
+    "orgid": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Organization",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Organization Identifier",
+      "maxLength": 8
+    },
+    "plusceditds": {
+      "default": false,
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "New Data Sheet",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "When selected, you can add a data sheet to a work order when the work order is in the selected status. For example, you can opt to add a data sheet to a work order when the work order is in the In Progress status."
+    },
+    "wpeditsettingid": {
+      "searchType": "EXACT",
+      "maximum": 2147483647.0,
+      "subType": "BIGINT",
+      "title": "WPEDITSETTINGID",
+      "persistent": true,
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "uniqueid": true,
+      "remarks": "Unique Identifier",
+      "maxLength": 11
+    },
+    "editwptool": {
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "WP Tools",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "Specifies whether the work plan tools can be edited when the work order is in the selected status. If the check box is selected, you can edit the work plan tools. If the check box is cleared, you cannot edit the work plan tools."
+    },
+    "_rowstamp": {
+      "type": "string"
+    },
+    "_imagelibref": {
+      "type": "string"
+    },
+    "href": {
+      "type": "string"
+    },
+    "_id": {
+      "type": "string"
+    },
+    "editglaccount": {
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "GL Account",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "Specifies whether the general ledger account can be edited when the work order is in the selected status. If the check box is selected, you can edit the work order's general ledger account. If the check box is cleared, you cannot edit the work order's general ledger account."
+    },
+    "editsafety": {
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "Safety Tab",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "Specifies whether safety information can be edited when the work order is in the selected status. If the check box is selected, you can edit the safety information. If the check box is cleared, you cannot edit the safety information."
+    },
+    "editwplab": {
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "WP Labor",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "Specifies whether the work plan labor can be edited when the work order is in the selected status. If the check box is selected, you can edit the work plan labor. If the check box is cleared, you cannot edit the work plan labor."
+    },
+    "status": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Status",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Status at which fields are editable. For each field in the row, select the check box to make the field editable when the work order is at the indicated status level. Clear the check box for each field to disable editing at that status level.",
+      "maxLength": 8
+    }
+  },
+  "required": [
+    "editasset",
+    "editglaccount",
+    "editloc",
+    "editsafety",
+    "editwplab",
+    "editwpmat",
+    "editwpser",
+    "editwptool",
+    "orgid",
+    "status"
+  ]
+}

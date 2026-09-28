@@ -1,0 +1,209 @@
+{
+ "resource": "MXWFPROCESS",
+ "description": "WFProcess definition",
+ "pk": [
+  "processname",
+  "processrev"
+ ],
+ "title": "WFPROCESS",
+ "type": "object",
+ "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/mxwfprocess",
+ "uniqueid": "wfprocessid",
+ "properties": {
+  "ownersysid": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Owner System ID",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Owner System ID",
+   "maxLength": 10
+  },
+  "localref": {
+   "type": "string"
+  },
+  "changeby": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Changed By",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The user that last changed the wfprocess row.",
+   "maxLength": 100
+  },
+  "processname": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Process",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Name of the process.",
+   "maxLength": 10
+  },
+  "deletable": {
+   "default": 0,
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "INTEGER",
+   "title": "Allow Deletion",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "Can records be deleted after having this workflow run on them?",
+   "maxLength": 11
+  },
+  "objectname": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Object",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Type of Mbo this process is meant for.",
+   "maxLength": 30
+  },
+  "active": {
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Active",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Is process available to initiate on Mbos?"
+  },
+  "description": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Description",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Description of the process",
+   "maxLength": 100
+  },
+  "externalrefid": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "External Ref ID",
+   "persistent": true,
+   "type": "string",
+   "remarks": "External Ref ID",
+   "maxLength": 10
+  },
+  "changedate": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Changed Date",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The Date the wfprocess row was changed"
+  },
+  "wfprocessid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "WFPROCESSID",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "uniqueid": true,
+   "remarks": "Unique Identifier",
+   "maxLength": 11
+  },
+  "record_descriptor": {
+   "type": "string",
+   "title": "Record/Object Descriptor"
+  },
+  "sendersysid": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Sender Systyem ID",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Column used by ERP-Integration (APIs)",
+   "maxLength": 50
+  },
+  "enabled": {
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Enabled",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Is the process is available to be used?"
+  },
+  "intobjectname": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Object Structure Name",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Object Structure Name",
+   "maxLength": 20
+  },
+  "_rowstamp": {
+   "type": "string"
+  },
+  "_imagelibref": {
+   "type": "string"
+  },
+  "autoinitiate": {
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Interactive Initiate",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Start this process when a MBO is entered interactively?"
+  },
+  "templatename": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Template Name",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Template Name for the response",
+   "maxLength": 50
+  },
+  "href": {
+   "type": "string",
+   "title": "WFPROCESS object reference"
+  },
+  "_id": {
+   "type": "string"
+  },
+  "migrated": {
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Migrated",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Was this template created during the 4.1.1 upgrade?"
+  },
+  "sourcesysid": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Source System ID",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Source System ID",
+   "maxLength": 10
+  },
+  "processrev": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "INTEGER",
+   "title": "Process Revision",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "Revision for the process",
+   "maxLength": 11
+  }
+ },
+ "required": [
+  "active",
+  "autoinitiate",
+  "enabled",
+  "migrated",
+  "objectname",
+  "processname",
+  "processrev"
+ ]
+}

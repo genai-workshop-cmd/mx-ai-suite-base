@@ -1,0 +1,57 @@
+{
+ "resource": "MXAPISRGUESTEMAIL",
+ "description": "Maximo API for Service Request Guest Email",
+ "pk": [
+  "emailid"
+ ],
+ "title": "GUESTTRUSTEMAIL",
+ "type": "object",
+ "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/mxapisrguestemail",
+ "uniqueid": "guesttrustemailid",
+ "properties": {
+  "_rowstamp": {
+   "type": "string"
+  },
+  "localref": {
+   "type": "string"
+  },
+  "_imagelibref": {
+   "type": "string"
+  },
+  "guesttrustemailid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Unique Id",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "uniqueid": true,
+   "remarks": "Unique Id",
+   "maxLength": 11
+  },
+  "emailid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Email Id",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Email Id",
+   "maxLength": 100
+  },
+  "href": {
+   "type": "string",
+   "title": "GUESTTRUSTEMAIL object reference"
+  },
+  "record_descriptor": {
+   "type": "string",
+   "title": "Record/Object Descriptor"
+  },
+  "_id": {
+   "type": "string"
+  }
+ },
+ "required": [
+  "emailid"
+ ]
+}

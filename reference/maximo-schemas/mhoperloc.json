@@ -1,0 +1,941 @@
+{
+  "resource": "MHOPERLOC",
+  "description": "LOCATIONS",
+  "pk": [
+    "siteid",
+    "location"
+  ],
+  "title": "LOCATIONS",
+  "type": "object",
+  "$ref": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mhoperloc",
+  "uniqueid": "locationsid",
+  "properties": {
+    "expectedlifedate": {
+      "searchType": "EXACT",
+      "subType": "DATE",
+      "title": "Expected EOL",
+      "persistent": true,
+      "type": "string",
+      "remarks": "The date that the location reaches the expected useful life date. This date is calculated by using the location's original installation date and its expected useful life, which is defined by manufacturer or industry standard."
+    },
+    "parent": {
+      "searchType": "NONE",
+      "subType": "UPPER",
+      "title": "Location",
+      "type": "string",
+      "hasList": true,
+      "remarks": "PARENT",
+      "maxLength": 25
+    },
+    "installdate": {
+      "searchType": "EXACT",
+      "subType": "DATE",
+      "title": "Installation Date",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Installation Date"
+    },
+    "localref": {
+      "type": "string"
+    },
+    "type": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Type",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Type of location",
+      "maxLength": 16
+    },
+    "storeroomparent": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Parent Storeroom",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "The parent storeroom of the current storeroom.",
+      "maxLength": 25
+    },
+    "devicetype": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Device Type",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Device Type",
+      "maxLength": 50
+    },
+    "bimusage": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "BIM Location type",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Describes how a location is used and controls COBie export behavior",
+      "maxLength": 27
+    },
+    "children": {
+      "searchType": "NONE",
+      "subType": "YORN",
+      "title": "Children",
+      "type": "boolean",
+      "remarks": "CHILDREN"
+    },
+    "locationsid": {
+      "searchType": "EXACT",
+      "maximum": 2147483647.0,
+      "subType": "BIGINT",
+      "title": "LOCATIONSID",
+      "persistent": true,
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "uniqueid": true,
+      "remarks": "Unique Identifier",
+      "maxLength": 11
+    },
+    "adjustedlifedate": {
+      "searchType": "EXACT",
+      "subType": "DATE",
+      "title": "Adjusted life",
+      "persistent": true,
+      "type": "string",
+      "remarks": "The date that the asset reaches the adjusted useful life date. This date is calculated by plans or asset expected life."
+    },
+    "href": {
+      "type": "string"
+    },
+    "methodname": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Scoring Method",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "The scoring method applied to the location.",
+      "maxLength": 50
+    },
+    "modelid": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Import ID",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Import ID Typically from a BIM model or COBie data set",
+      "maxLength": 45
+    },
+    "pluscloop": {
+      "default": false,
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "Loop Calibration",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "Select this check box to identify the location as a loop calibration."
+    },
+    "shiptoaddresscode": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Ship to Address",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Default address code to ship items to when reorders are processed for this storeroom. Click the Select Value button to choose a shipping code.",
+      "maxLength": 30
+    },
+    "estendoflife": {
+      "searchType": "EXACT",
+      "subType": "DATE",
+      "title": "Estimated EOL",
+      "persistent": true,
+      "type": "string",
+      "remarks": "The date when the location reaches its end of life. This date is based on the condition of the location."
+    },
+    "replacecost": {
+      "default": 0.0,
+      "searchType": "EXACT",
+      "scale": 2,
+      "subType": "AMOUNT",
+      "title": "Replacement Cost",
+      "persistent": true,
+      "type": "number",
+      "remarks": "Replacement Cost",
+      "maxLength": 11
+    },
+    "groupname": {
+      "searchType": "NONE",
+      "subType": "UPPER",
+      "title": "Meter Group",
+      "type": "string",
+      "hasList": true,
+      "remarks": "All meters belonging to this location's metergroup are automatically associated with this Location in the LocationMeter object.  Additions to the meter group can also be added to this Location in the LocationMeter object.",
+      "maxLength": 10
+    },
+    "purchvaracc": {
+      "searchType": "WILDCARD",
+      "subType": "GL",
+      "title": "Purchase Variance Account",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Account used to track fluctuations in purchase costs for items (or the variance between PO and original Last and Standard price). Not used with any MAXIMO transactions. Click the Select Value button to choose a GL account.",
+      "maxLength": 23
+    },
+    "saddresscode": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Service Address",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "The address code identifies a service address. It must be unique by site for each service address.",
+      "maxLength": 25
+    },
+    "ahcaworktype": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Work Type",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Workorder work type",
+      "maxLength": 5
+    },
+    "status": {
+      "default": "!OPERATING!",
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Status",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "STATUS",
+      "maxLength": 20
+    },
+    "billtolaborcode": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Bill to Labor",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Default Bill To Labor Code",
+      "maxLength": 100
+    },
+    "serviceaddresscode": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Service Address",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Service Address Code",
+      "maxLength": 30
+    },
+    "hierarchypath": {
+      "searchType": "NONE",
+      "subType": "ALN",
+      "title": "CLASSSTRUCTURE.HIERARCHYPATH",
+      "type": "string",
+      "remarks": "Store CLASSSTRUCTURE.HIERARCHYPATH",
+      "maxLength": 254
+    },
+    "systemid": {
+      "searchType": "NONE",
+      "subType": "UPPER",
+      "title": "System",
+      "type": "string",
+      "hasList": true,
+      "remarks": "SYSTEMID",
+      "maxLength": 12
+    },
+    "toolcontrolacc": {
+      "searchType": "WILDCARD",
+      "subType": "GL",
+      "title": "Tool Control Account",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Default debit account for capitalized tools. Click the Select Value button to choose a GL account.",
+      "maxLength": 23
+    },
+    "ahcawostatus": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "WO Status",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Condition assessment work order status",
+      "maxLength": 16
+    },
+    "pluscpmextdate": {
+      "default": false,
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "Due Date Extended",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "When this check box is selected, the Extended Date on the PM for the location was set. This check box is cleared when the work order is generated."
+    },
+    "bimusage_description": {
+      "type": "string"
+    },
+    "disabled": {
+      "default": false,
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "Disabled",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "Is this record active?"
+    },
+    "locationmeter": {
+      "objectName": "LOCATIONMETER",
+      "type": "array",
+      "items": {
+        "definition": {
+          "subSchema": {
+            "$ref": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mhoperloc/locationmeter"
+          }
+        },
+        "type": "object"
+      },
+      "cardinality": "UNDEFINED",
+      "relation": "INT_LOCATIONMETER"
+    },
+    "invoicevaracc": {
+      "searchType": "WILDCARD",
+      "subType": "GL",
+      "title": "Invoice Variance Account",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Debit account used to track variances in the price, expressed in the vendor's currency, between receipt and invoice for this storeroom. The transaction amount is positive when the invoice line cost is greater than the receipt cost. Click the Select Value button to choose a GL account.",
+      "maxLength": 23
+    },
+    "lochierarchy": {
+      "objectName": "LOCHIERARCHY",
+      "type": "array",
+      "items": {
+        "definition": {
+          "subSchema": {
+            "$ref": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mhoperloc/lochierarchy"
+          }
+        },
+        "type": "object"
+      },
+      "cardinality": "UNDEFINED",
+      "relation": "LOCHIERLOCONLY"
+    },
+    "description_longdescription": {
+      "searchType": "WILDCARD",
+      "subType": "LONGALN",
+      "title": "Details",
+      "type": "string",
+      "remarks": "Long Description for Asset Short Description (One Line)",
+      "maxLength": 32000
+    },
+    "intlabrec": {
+      "searchType": "WILDCARD",
+      "subType": "GL",
+      "title": "Internal Labor Account",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Internal Labor Control GL Account",
+      "maxLength": 23
+    },
+    "locationspec": {
+      "objectName": "LOCATIONSPEC",
+      "type": "array",
+      "items": {
+        "definition": {
+          "subSchema": {
+            "$ref": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mhoperloc/locationspec"
+          }
+        },
+        "type": "object"
+      },
+      "cardinality": "UNDEFINED",
+      "relation": "LOCATIONSSPECCLASS"
+    },
+    "changeby": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Changed By",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Last Changed by user",
+      "maxLength": 100
+    },
+    "health": {
+      "searchType": "EXACT",
+      "scale": 2,
+      "subType": "DECIMAL",
+      "title": "Health",
+      "persistent": true,
+      "type": "number",
+      "remarks": "The health score for the location. This score is calculated and applied to the location from the Reliability Engineer work center.",
+      "maxLength": 13
+    },
+    "bimroomname": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Room Name/Number",
+      "persistent": true,
+      "type": "string",
+      "remarks": "The name or number of the room or space",
+      "maxLength": 40
+    },
+    "expectedlife": {
+      "default": 0,
+      "searchType": "EXACT",
+      "maximum": 2147483647.0,
+      "subType": "INTEGER",
+      "title": "Expected Life",
+      "persistent": true,
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "remarks": "Expected life of the location, expressed in years.  This value is based on the typical useful life that a manufacturer or industry standard recommends for a location or location type.",
+      "maxLength": 11
+    },
+    "isrepairfacility": {
+      "default": false,
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "Is a Repair Facility",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "Specifies whether the location is a repair facility location. Repair facilities can take ownership of work orders from multiple sites in the same organization. User security can then be configured to give permissions to view work orders in multiple sites if the work orders are owned by the repair facility."
+    },
+    "shiftnum": {
+      "searchType": "NONE",
+      "subType": "UPPER",
+      "title": "Shift",
+      "type": "string",
+      "hasList": true,
+      "remarks": "SHIFTNUM field",
+      "maxLength": 8
+    },
+    "sendersysid": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Sender System ID",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Column used by ERP-Integration (APIs)",
+      "maxLength": 50
+    },
+    "statusdate": {
+      "searchType": "EXACT",
+      "subType": "DATETIME",
+      "title": "Status Date",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Date the Locations status was last changed."
+    },
+    "geometry": {
+      "searchType": "NONE",
+      "subType": "CLOB",
+      "title": "Geometry",
+      "type": "string",
+      "remarks": "Non persistent fields to access the MBO geometry",
+      "maxLength": 999999
+    },
+    "invcostadjacc": {
+      "searchType": "WILDCARD",
+      "subType": "GL",
+      "title": "Cost Adjustment Account",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Account that tracks changes in either the average price or the standard price from manual inventory price adjustments. These changes result from using the Adjust Average Cost and Adjust Standard Cost actions, respectively. Click the Select Value button to choose a GL account.",
+      "maxLength": 23
+    },
+    "autowogen": {
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "Automatically Generate Work Orders",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "Flag that indicates whether to start the wogen process when meter frequency is reached for a location"
+    },
+    "sourcesysid": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Source System ID",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Source System ID",
+      "maxLength": 10
+    },
+    "oldcontrolacc": {
+      "searchType": "WILDCARD",
+      "subType": "GL",
+      "title": "Old GL Control Account",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Last inventory/transit control account.",
+      "maxLength": 23
+    },
+    "bimimportsrc": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Import source",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "The external source for the data in this record such as a COBie sheet or an IFC class name",
+      "maxLength": 25
+    },
+    "ownersysid": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Owner System ID",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Owner System ID",
+      "maxLength": 10
+    },
+    "ahcaresultnum": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Inspection Result",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Condition assessment inspection result",
+      "maxLength": 12
+    },
+    "reordfromstore": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Reorder Storeroom",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "The storeroom that all the items in the current storeroom are reordered from.",
+      "maxLength": 25
+    },
+    "shiptolaborcode": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Ship to Labor",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Default labor code to ship items to when reorders are processed for this storeroom. Click the Select Value button to choose a labor code.",
+      "maxLength": 100
+    },
+    "billtoaddresscode": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Bill to Address",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Default Bill To Address Code",
+      "maxLength": 30
+    },
+    "ahcapmnum": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "PM",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Condition assessment PM",
+      "maxLength": 8
+    },
+    "_rowstamp": {
+      "type": "string"
+    },
+    "pluscduedate": {
+      "searchType": "EXACT",
+      "subType": "DATE",
+      "title": "Next Calibration Due Date",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Displays the date that the next calibration must be completed by."
+    },
+    "siteid": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Site",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Specifies the site where this location or storeroom resides.",
+      "maxLength": 8
+    },
+    "invowner": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Inventory Owner",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Inventory Owner.",
+      "maxLength": 100
+    },
+    "isdefault": {
+      "default": false,
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "Default Storeroom",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "Specifies whether this storeroom is the default storeroom for the site. If the check box is selected, Maximo reserves items for this storeroom if a job plan or work order does not specify a storeroom. If the check box is cleared (the default), this storeroom is not used as the default storeroom when work orders are generated with no storeroom information."
+    },
+    "receiptvaracc": {
+      "searchType": "WILDCARD",
+      "subType": "GL",
+      "title": "Receipt Variance Account",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Debit account to track the variance between PO and Invoice exchange rates. This account contains the differences between the inventory standard cost and the receipt cost (specific to the storeroom) for any items in the associated storeroom location. It is used for standard costing only. Click the Select Value button to choose a GL account.",
+      "maxLength": 23
+    },
+    "reordfromstoresiteid": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Reorder Site",
+      "persistent": true,
+      "type": "string",
+      "remarks": "The site of the storeroom that all the items in the current storeroom are reordered from.",
+      "maxLength": 8
+    },
+    "useinpopr": {
+      "default": false,
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "Use in PO/PR",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "Specifies whether this storeroom can be used to supply and reserve inventory items and tools for use with internal purchase requisitions and internal purchase orders. If the check box is selected, you can order and reserve items or tools from this storeroom on internal POs and PRs. If the check box is cleared (the default), this storeroom cannot be used to supply items or tools internally."
+    },
+    "ahcarevision": {
+      "searchType": "EXACT",
+      "maximum": 2147483647.0,
+      "subType": "INTEGER",
+      "title": "Revision",
+      "persistent": true,
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "remarks": "Condition assessment inspectin form revision",
+      "maxLength": 11
+    },
+    "status_description": {
+      "type": "string"
+    },
+    "ahcapmnextduedate": {
+      "searchType": "EXACT",
+      "subType": "DATE",
+      "title": "Next Due Date",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Condition assessment next due date"
+    },
+    "bimimportsrc_description": {
+      "type": "string"
+    },
+    "oldshrinkageacc": {
+      "searchType": "WILDCARD",
+      "subType": "GL",
+      "title": "Old Shrinkage Account",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Last shrinkage cost account for manual adjustment for inventory quantity.",
+      "maxLength": 23
+    },
+    "changedate": {
+      "searchType": "EXACT",
+      "subType": "DATETIME",
+      "title": "Changed Date",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Last Change date"
+    },
+    "gisparam3": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "GIS Parameter 3",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Graphical Information System interface parameter 3",
+      "maxLength": 1
+    },
+    "gisparam2": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "GIS Parameter 2",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Graphical Information System interface parameter 2",
+      "maxLength": 1
+    },
+    "gisparam1": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "GIS Parameter 1",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Graphical Information System interface parameter 1",
+      "maxLength": 1
+    },
+    "orgid": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Organization",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Organization Identifier",
+      "maxLength": 8
+    },
+    "ahcainspformnum": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Inspection Form",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Condition assessment inspection form",
+      "maxLength": 12
+    },
+    "ahcawonum": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Work Order",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Condition assessment work order",
+      "maxLength": 25
+    },
+    "itemnum": {
+      "searchType": "NONE",
+      "subType": "UPPER",
+      "title": "Item",
+      "type": "string",
+      "hasList": true,
+      "remarks": "ITEMNUM",
+      "maxLength": 30
+    },
+    "shrinkageacc": {
+      "searchType": "WILDCARD",
+      "subType": "GL",
+      "title": "Shrinkage Account",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Credit account used when manually adjusting the inventory quantity. The transaction is positive when the actual inventory quantity is greater than the MAXIMO-calculated current balance. Click the Select Value button to choose a GL account.",
+      "maxLength": 23
+    },
+    "ahcalastcompdate": {
+      "searchType": "EXACT",
+      "subType": "DATETIME",
+      "title": "Completion Date",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Condition assessment last completion date"
+    },
+    "locpriority": {
+      "searchType": "NONE",
+      "maximum": 2147483647.0,
+      "subType": "INTEGER",
+      "title": "Priority",
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "remarks": "LOCPRIORITY",
+      "maxLength": 11
+    },
+    "itemsetid": {
+      "searchType": "NONE",
+      "subType": "UPPER",
+      "title": "Item Set",
+      "type": "string",
+      "hasList": true,
+      "remarks": "Set identifier for the item.",
+      "maxLength": 8
+    },
+    "_id": {
+      "type": "string"
+    },
+    "imglib": {
+      "objectName": "IMGLIB",
+      "type": "array",
+      "items": {
+        "definition": {
+          "subSchema": {
+            "$ref": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mhoperloc/imglib"
+          }
+        },
+        "type": "object"
+      },
+      "cardinality": "",
+      "relation": "IMGLIB"
+    },
+    "oldinvcostadjacc": {
+      "searchType": "WILDCARD",
+      "subType": "GL",
+      "title": "Old Invoice Cost Adjustment Account",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Last inventory cost adjustment account for manual inventory price adjustments.",
+      "maxLength": 23
+    },
+    "description": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Description",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Describes the storeroom location. To enter or view additional information, click the Long Description button.",
+      "maxLength": 100
+    },
+    "externalrefid": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "External Reference ID",
+      "persistent": true,
+      "type": "string",
+      "remarks": "External Reference ID",
+      "maxLength": 10
+    },
+    "_imagelibref": {
+      "type": "string"
+    },
+    "warrantyexpdate": {
+      "searchType": "NONE",
+      "subType": "DATE",
+      "title": "Warranty Date",
+      "type": "string",
+      "remarks": "WARRANTYEXPDATE"
+    },
+    "ahcajpnum": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Job Plan",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Condition assessment job plan",
+      "maxLength": 12
+    },
+    "type_description": {
+      "type": "string"
+    },
+    "classstructureid": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Class Structure",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Class Structure Identifier",
+      "maxLength": 25
+    },
+    "ahcainspstatus": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Inspection Status",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Condition assessment inspection status",
+      "maxLength": 20
+    },
+    "deviceid": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Device Id",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Device Id",
+      "maxLength": 50
+    },
+    "hasparent": {
+      "searchType": "NONE",
+      "subType": "YORN",
+      "title": "Has Parent",
+      "type": "boolean",
+      "remarks": "Does this location belong to a parent location?"
+    },
+    "glaccount": {
+      "searchType": "WILDCARD",
+      "subType": "GL",
+      "title": "GL Account",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Default GL Account",
+      "maxLength": 23
+    },
+    "statusiface": {
+      "default": false,
+      "searchType": "NONE",
+      "subType": "YORN",
+      "title": "Has Status Changed",
+      "type": "boolean",
+      "remarks": "Non persistent boolean field to indicate whether the status has been changed after the stateful object is fetched from the database."
+    },
+    "curvaracc": {
+      "searchType": "WILDCARD",
+      "subType": "GL",
+      "title": "Currency Variance Account",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Account containing the differences between the PO price and the invoice price that result from changes in the exchange rate. If, as a result of an exchange rate change, the invoice cost in base currency exceeds the receipt cost in base currency, then the transaction amount is positive. If the invoice cost in base currency is less than the receipt cost in base currency, then the transaction amount is negative. This account is paired with the GL control account; when the currency variance account's value decreases, the inventory control account's value decreases. Variance accounts track price variances by storeroom location, not by item. Click the Select Value button to choose a GL account.",
+      "maxLength": 23
+    },
+    "controlacc": {
+      "searchType": "WILDCARD",
+      "subType": "GL",
+      "title": "GL Control Account",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Default GL account that Maximo applies to items in this storeroom during GL transactions such as issues, returns, receipts, transfers, and adjustments. Click the Select Value button to choose a GL account.",
+      "maxLength": 23
+    },
+    "location": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Location",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Storeroom where the item is stored.",
+      "maxLength": 25
+    },
+    "lastahscoredate": {
+      "searchType": "EXACT",
+      "subType": "DATETIME",
+      "title": "Last Scoring Date",
+      "persistent": true,
+      "type": "string",
+      "remarks": "The last date that health score getting updated"
+    },
+    "haschildren": {
+      "searchType": "NONE",
+      "subType": "YORN",
+      "title": "Has Children",
+      "type": "boolean",
+      "remarks": "Does this location have child locations?"
+    }
+  },
+  "required": [
+    "autowogen",
+    "changeby",
+    "changedate",
+    "children",
+    "haschildren",
+    "hasparent",
+    "location",
+    "orgid",
+    "statusdate",
+    "statusiface",
+    "type"
+  ]
+}

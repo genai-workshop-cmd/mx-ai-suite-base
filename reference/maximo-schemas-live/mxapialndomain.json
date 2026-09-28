@@ -1,0 +1,109 @@
+{
+ "resource": "MXAPIALNDOMAIN",
+ "description": "Maximo API for Alndomain",
+ "pk": [
+  "domainid",
+  "value",
+  "siteid",
+  "orgid"
+ ],
+ "title": "ALNDOMAIN",
+ "type": "object",
+ "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/mxapialndomain",
+ "uniqueid": "alndomainid",
+ "properties": {
+  "valueid": {
+   "searchType": "EXACT",
+   "subType": "ALN",
+   "title": "Value ID",
+   "persistent": true,
+   "type": "string",
+   "remarks": "System generated unique identifier of the value in a domain, internal and cannot be modified.",
+   "maxLength": 300
+  },
+  "localref": {
+   "type": "string"
+  },
+  "description": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Description",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Value description",
+   "maxLength": 100
+  },
+  "record_descriptor": {
+   "type": "string",
+   "title": "Record/Object Descriptor"
+  },
+  "domainid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Domain",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Identifier of the domain",
+   "maxLength": 18
+  },
+  "orgid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Organization",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Identifier of the organization for which the value is specified",
+   "maxLength": 8
+  },
+  "_rowstamp": {
+   "type": "string"
+  },
+  "_imagelibref": {
+   "type": "string"
+  },
+  "siteid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Site",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Identifier of the site for which the value is specified",
+   "maxLength": 8
+  },
+  "href": {
+   "type": "string",
+   "title": "ALNDOMAIN object reference"
+  },
+  "_id": {
+   "type": "string"
+  },
+  "value": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Value",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Value of the domain",
+   "maxLength": 254
+  },
+  "alndomainid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "ALNDOMAINID",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "uniqueid": true,
+   "remarks": "Unique Identifier",
+   "maxLength": 11
+  }
+ },
+ "required": [
+  "domainid",
+  "value",
+  "valueid"
+ ]
+}

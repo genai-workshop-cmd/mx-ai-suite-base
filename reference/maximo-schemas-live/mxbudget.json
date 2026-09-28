@@ -1,0 +1,206 @@
+{
+ "resource": "MXBUDGET",
+ "description": "Budget definition for excel export/import",
+ "pk": [
+  "budgetnum",
+  "orgid"
+ ],
+ "title": "BUDGET",
+ "type": "object",
+ "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/mxbudget",
+ "uniqueid": "budgetid",
+ "properties": {
+  "status_description": {
+   "type": "string"
+  },
+  "localref": {
+   "type": "string"
+  },
+  "year": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Year",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Year",
+   "maxLength": 20
+  },
+  "calcend": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Calculation End",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The starting date used when selecting transactions for doing budget calculations."
+  },
+  "calcstart": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Calculation Start",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The starting date used when selecting transactions for doing budget calculations."
+  },
+  "createdate": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Creation Date",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Creation date"
+  },
+  "description": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Description",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Description",
+   "maxLength": 100
+  },
+  "changedate": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Change Date",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Change date"
+  },
+  "record_descriptor": {
+   "type": "string",
+   "title": "Record/Object Descriptor"
+  },
+  "budgetid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Unique Id",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "uniqueid": true,
+   "remarks": "Unique Id",
+   "maxLength": 11
+  },
+  "orgid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Organization",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Organization Identifier",
+   "maxLength": 8
+  },
+  "_rowstamp": {
+   "type": "string"
+  },
+  "budgetnum": {
+   "default": "&AUTOKEY&",
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Budget",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Budget ID",
+   "maxLength": 20
+  },
+  "budgetline": {
+   "objectName": "BUDGETLINE",
+   "type": "array",
+   "items": {
+    "definition": {
+     "subSchema": {
+      "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/mxbudget/budgetline"
+     }
+    },
+    "type": "object"
+   },
+   "cardinality": "",
+   "relation": "BUDGETLINES"
+  },
+  "createdby": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Created By",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Creator",
+   "maxLength": 100
+  },
+  "_imagelibref": {
+   "type": "string"
+  },
+  "changedby": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Changed By",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Changed by",
+   "maxLength": 100
+  },
+  "siteid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Site",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Site Identifier",
+   "maxLength": 8
+  },
+  "href": {
+   "type": "string",
+   "title": "BUDGET object reference"
+  },
+  "_id": {
+   "type": "string"
+  },
+  "financialperiod": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Financial Period",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Financial period",
+   "maxLength": 6
+  },
+  "supervisor": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Supervisor",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Supervisor",
+   "maxLength": 100
+  },
+  "status": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Status",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Status",
+   "maxLength": 35
+  }
+ },
+ "required": [
+  "calcend",
+  "calcstart",
+  "changedate",
+  "changedby",
+  "createdate",
+  "createdby",
+  "orgid",
+  "status",
+  "supervisor"
+ ]
+}

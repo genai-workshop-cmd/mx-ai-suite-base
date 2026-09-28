@@ -1,0 +1,248 @@
+{
+  "resource": "MXAPIAIOSTRATEGY",
+  "description": "AIOSTRATEGY",
+  "pk": [
+    "aioprojectnum",
+    "aiostrategynum"
+  ],
+  "title": "AIOSTRATEGY",
+  "type": "object",
+  "$ref": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapiaiostrategy",
+  "uniqueid": "aiostrategyid",
+  "properties": {
+    "strategy_description": {
+      "type": "string"
+    },
+    "useavaiassetdata": {
+      "default": true,
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "Use available asset data",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "Use available asset-specific replacement data or not"
+    },
+    "localref": {
+      "type": "string"
+    },
+    "modelname": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "External model name",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Store the external model name used by the strategy",
+      "maxLength": 200
+    },
+    "createdate": {
+      "searchType": "EXACT",
+      "subType": "DATETIME",
+      "title": "Create time",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Create time"
+    },
+    "error": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Error ID",
+      "persistent": true,
+      "type": "string",
+      "remarks": "AIO Error Message ID",
+      "maxLength": 2000
+    },
+    "rerun": {
+      "default": false,
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "Rerun",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "Need to rerun the strategy or not"
+    },
+    "totalreplacement": {
+      "searchType": "EXACT",
+      "maximum": 2147483647.0,
+      "subType": "INTEGER",
+      "title": "Total replacement",
+      "persistent": true,
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "remarks": "Total replacement",
+      "maxLength": 11
+    },
+    "jobid": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "AIO Strategy JobID",
+      "persistent": true,
+      "type": "string",
+      "remarks": "AIO Strategy JobID",
+      "maxLength": 50
+    },
+    "_rowstamp": {
+      "type": "string"
+    },
+    "aioprojectnum": {
+      "searchType": "EXACT",
+      "subType": "UPPER",
+      "title": "Project ID",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Asset investment optimizer project",
+      "maxLength": 25
+    },
+    "updatedate": {
+      "searchType": "EXACT",
+      "subType": "DATETIME",
+      "title": "Last updated",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Last updated time"
+    },
+    "_imagelibref": {
+      "type": "string"
+    },
+    "href": {
+      "type": "string"
+    },
+    "aiostrategynum": {
+      "default": "&AUTOKEY&",
+      "searchType": "EXACT",
+      "subType": "UPPER",
+      "title": "Strategy ID",
+      "persistent": true,
+      "type": "string",
+      "remarks": "AIO strategy ID",
+      "maxLength": 25
+    },
+    "status_description": {
+      "type": "string"
+    },
+    "aiostatistics": {
+      "objectName": "AIOSTATISTICS",
+      "type": "array",
+      "items": {
+        "definition": {
+          "subSchema": {
+            "$ref": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapiaiostrategy/aiostatistics"
+          }
+        },
+        "type": "object"
+      },
+      "cardinality": "",
+      "relation": "AIOSTATISTICS"
+    },
+    "totalcapex": {
+      "searchType": "EXACT",
+      "scale": 2,
+      "subType": "AMOUNT",
+      "title": "Total CAPEX",
+      "persistent": true,
+      "type": "number",
+      "remarks": "Total CAPEX",
+      "maxLength": 11
+    },
+    "errorvalue": {
+      "searchType": "NONE",
+      "subType": "ALN",
+      "title": "Error Value",
+      "type": "string",
+      "remarks": "AIO Error Message Value",
+      "maxLength": 2000
+    },
+    "excludedassetcount": {
+      "searchType": "EXACT",
+      "maximum": 2147483647.0,
+      "subType": "INTEGER",
+      "title": "Exclude asset count",
+      "persistent": true,
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "remarks": "The count number of the excluded assets for missing data or in decommissioned status",
+      "maxLength": 11
+    },
+    "aiostrategyconstraint": {
+      "objectName": "AIOSTRATEGYCONSTRAINT",
+      "type": "array",
+      "items": {
+        "definition": {
+          "subSchema": {
+            "$ref": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapiaiostrategy/aiostrategyconstraint"
+          }
+        },
+        "type": "object"
+      },
+      "cardinality": "",
+      "relation": "AIOSTRATEGYCONSTRAINT"
+    },
+    "usewith": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Applies To",
+      "persistent": true,
+      "type": "string",
+      "remarks": "The object used with the strategy",
+      "maxLength": 50
+    },
+    "aiostrategyid": {
+      "searchType": "EXACT",
+      "maximum": 2147483647.0,
+      "subType": "BIGINT",
+      "title": "Unique Id",
+      "persistent": true,
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "uniqueid": true,
+      "remarks": "Unique Id",
+      "maxLength": 11
+    },
+    "_id": {
+      "type": "string"
+    },
+    "totalopex": {
+      "searchType": "EXACT",
+      "scale": 2,
+      "subType": "AMOUNT",
+      "title": "Total OPEX",
+      "persistent": true,
+      "type": "number",
+      "remarks": "Total OPEX",
+      "maxLength": 11
+    },
+    "strategy": {
+      "searchType": "EXACT",
+      "subType": "UPPER",
+      "title": "Strategy",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Identifies the strategy's type, MAINTAINRISK, REDUCERISK or STAYWITHINBUDGET",
+      "maxLength": 30
+    },
+    "modelversion": {
+      "searchType": "EXACT",
+      "maximum": 2147483647.0,
+      "subType": "INTEGER",
+      "title": "Model version",
+      "persistent": true,
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "remarks": "Version of the optimization model.",
+      "maxLength": 11
+    },
+    "status": {
+      "searchType": "NONE",
+      "subType": "UPPER",
+      "title": "Status",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Status",
+      "maxLength": 30
+    }
+  },
+  "required": [
+    "aioprojectnum"
+  ]
+}

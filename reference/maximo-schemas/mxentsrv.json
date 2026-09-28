@@ -1,0 +1,369 @@
+{
+  "resource": "MXENTSRV",
+  "description": "MAXIFACEIN",
+  "pk": [
+    "ifacename"
+  ],
+  "title": "MAXIFACEIN",
+  "type": "object",
+  "$ref": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxentsrv",
+  "uniqueid": "maxifaceinid",
+  "properties": {
+    "maxifaceincntl": {
+      "objectName": "MAXIFACEINCNTL",
+      "type": "array",
+      "items": {
+        "definition": {
+          "subSchema": {
+            "$ref": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxentsrv/maxifaceincntl"
+          }
+        },
+        "type": "object"
+      },
+      "cardinality": "UNDEFINED",
+      "relation": "MAXIFACEINCNTLDETAIL"
+    },
+    "replyexitclass": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Processing Class",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Reply exit class name",
+      "maxLength": 256
+    },
+    "ifacecontrol": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Multiplication Control",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Identifies a Cross Reference type control that translates a single external value to multiple Maximo organization or site values..",
+      "maxLength": 20
+    },
+    "localref": {
+      "type": "string"
+    },
+    "messagetype": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Operation",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "mesagetype",
+      "maxLength": 20
+    },
+    "usetxntracking": {
+      "default": false,
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "Enable Message Tracking",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "Enable Transaction Tracking"
+    },
+    "interpreterclass": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Interpreter Class",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Interpreter clas name",
+      "maxLength": 256
+    },
+    "description": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Description",
+      "persistent": true,
+      "type": "string",
+      "remarks": "description",
+      "maxLength": 100
+    },
+    "maxifaceproc": {
+      "objectName": "MAXIFACEPROC",
+      "type": "array",
+      "items": {
+        "definition": {
+          "subSchema": {
+            "$ref": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxentsrv/maxifaceproc"
+          }
+        },
+        "type": "object"
+      },
+      "cardinality": "UNDEFINED",
+      "relation": "MAXIFACEPROC"
+    },
+    "maxifaceinid": {
+      "searchType": "EXACT",
+      "maximum": 2147483647.0,
+      "subType": "BIGINT",
+      "title": "MAXIFACEINID",
+      "persistent": true,
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "uniqueid": true,
+      "remarks": "Unique Identifier",
+      "maxLength": 11
+    },
+    "ifacetbname": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Interface table",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Interface table Name",
+      "maxLength": 30
+    },
+    "_rowstamp": {
+      "type": "string"
+    },
+    "replymapname": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "XSL Map",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Reply Map Name",
+      "maxLength": 256
+    },
+    "replyschemaloc": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "External Schema File",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Reply Schema Location",
+      "maxLength": 50
+    },
+    "_imagelibref": {
+      "type": "string"
+    },
+    "storemsg": {
+      "default": false,
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "Store Message",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "Whether to store(save) the message or not. Option given due to performance implication"
+    },
+    "href": {
+      "type": "string"
+    },
+    "replyelementname": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "External Schema Element",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Response Schema Element",
+      "maxLength": 50
+    },
+    "ifacetype_description": {
+      "type": "string"
+    },
+    "description_longdescription": {
+      "searchType": "WILDCARD",
+      "subType": "LONGALN",
+      "title": "DESCRIPTION Long description",
+      "type": "string",
+      "remarks": "Long description for DESCRIPTION",
+      "maxLength": 32000
+    },
+    "schemalocation": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "External Schema File",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Schema Location",
+      "maxLength": 50
+    },
+    "maxifaceindetail": {
+      "objectName": "MAXIFACEINDETAIL",
+      "type": "array",
+      "items": {
+        "definition": {
+          "subSchema": {
+            "$ref": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxentsrv/maxifaceindetail"
+          }
+        },
+        "type": "object"
+      },
+      "cardinality": "UNDEFINED",
+      "relation": "MAXIFACEINDETAIL"
+    },
+    "changeby": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Changed By",
+      "persistent": true,
+      "type": "string",
+      "remarks": "CHANGEBY",
+      "maxLength": 100
+    },
+    "replyuserexitclass": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "User Exit Class",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Reply User Exit class",
+      "maxLength": 256
+    },
+    "ifacemapname": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "XSL Map",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Path to a class file that contains XSL mapping to be applied to the interface.",
+      "maxLength": 80
+    },
+    "ifacename": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Enterprise Service",
+      "persistent": true,
+      "type": "string",
+      "remarks": "IFACENAME",
+      "maxLength": 25
+    },
+    "changedate": {
+      "searchType": "EXACT",
+      "subType": "DATETIME",
+      "title": "Changed Date",
+      "persistent": true,
+      "type": "string",
+      "remarks": "CHANGEDATE"
+    },
+    "extmsgidfield": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "External Message ID",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Transaction ID field name as supplied by External System",
+      "maxLength": 2000
+    },
+    "splittag": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Split Tag",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Split Tag",
+      "maxLength": 250
+    },
+    "replyrequired": {
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "Enable Service Response",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "Reply required"
+    },
+    "searchfield": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Search ID",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Search Field name as set by Administrator for easy search",
+      "maxLength": 2000
+    },
+    "ifaceexitclass": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Processing Class",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Path to a Java class file that contains inbound processing logic. If this field does not contain the name of a predefined (MEA-supplied) class file, users can add the name of a custom class file here. However, for the sake of consistency, reserve interface processing class fields for predefined class files and user exit class fields for custom Java class files.",
+      "maxLength": 256
+    },
+    "intobjectname": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Object Structure",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "INTOBJECTNAME",
+      "maxLength": 20
+    },
+    "elementname": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "External Schema Element",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Element Name",
+      "maxLength": 50
+    },
+    "maxifacetypeprop": {
+      "objectName": "MAXIFACETYPEPROP",
+      "type": "array",
+      "items": {
+        "definition": {
+          "subSchema": {
+            "$ref": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxentsrv/maxifacetypeprop"
+          }
+        },
+        "type": "object"
+      },
+      "cardinality": "UNDEFINED",
+      "relation": "MAXIFACETYPEPROP"
+    },
+    "_id": {
+      "type": "string"
+    },
+    "ifacetype": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Adapter",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "IFACETYPE",
+      "maxLength": 10
+    },
+    "ifaceuserexitclass": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "User Exit Class",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Path to a Java class file that contains custom processing logic.",
+      "maxLength": 256
+    },
+    "useexternalschema": {
+      "default": false,
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "Use External Schema",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "Use External Schema"
+    },
+    "userdefined": {
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "User Defined",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "User Defined"
+    }
+  },
+  "required": [
+    "changeby",
+    "changedate",
+    "ifacename",
+    "ifacetype",
+    "intobjectname",
+    "replyrequired",
+    "userdefined"
+  ]
+}

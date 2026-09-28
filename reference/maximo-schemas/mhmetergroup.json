@@ -1,0 +1,75 @@
+{
+  "resource": "MHMETERGROUP",
+  "description": "METERGROUP",
+  "pk": [
+    "groupname"
+  ],
+  "title": "METERGROUP",
+  "type": "object",
+  "$ref": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mhmetergroup",
+  "uniqueid": "metergroupid",
+  "properties": {
+    "_rowstamp": {
+      "type": "string"
+    },
+    "localref": {
+      "type": "string"
+    },
+    "_imagelibref": {
+      "type": "string"
+    },
+    "description": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Description",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Describes the meter group.The description can be up to 255 characters in length. To enter or view additional information, click the Long Description button.",
+      "maxLength": 100
+    },
+    "metergroupid": {
+      "searchType": "EXACT",
+      "maximum": 2147483647.0,
+      "subType": "BIGINT",
+      "title": "METERGROUPID",
+      "persistent": true,
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "uniqueid": true,
+      "remarks": "Unique Identifier",
+      "maxLength": 11
+    },
+    "href": {
+      "type": "string"
+    },
+    "_id": {
+      "type": "string"
+    },
+    "groupname": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Meter Group",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Name of group under which meters can be grouped.",
+      "maxLength": 10
+    },
+    "meteringroup": {
+      "objectName": "METERINGROUP",
+      "type": "array",
+      "items": {
+        "definition": {
+          "subSchema": {
+            "$ref": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mhmetergroup/meteringroup"
+          }
+        },
+        "type": "object"
+      },
+      "cardinality": "UNDEFINED",
+      "relation": "METERINGROUP"
+    }
+  },
+  "required": [
+    "groupname"
+  ]
+}

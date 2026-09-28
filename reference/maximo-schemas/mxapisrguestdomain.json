@@ -1,0 +1,52 @@
+{
+  "resource": "MXAPISRGUESTDOMAIN",
+  "description": "GUESTTRUSTDOMAIN",
+  "pk": [
+    "emaildomain"
+  ],
+  "title": "GUESTTRUSTDOMAIN",
+  "type": "object",
+  "$ref": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapisrguestdomain",
+  "uniqueid": "guesttrustdomainid",
+  "properties": {
+    "_rowstamp": {
+      "type": "string"
+    },
+    "localref": {
+      "type": "string"
+    },
+    "_imagelibref": {
+      "type": "string"
+    },
+    "href": {
+      "type": "string"
+    },
+    "_id": {
+      "type": "string"
+    },
+    "guesttrustdomainid": {
+      "searchType": "EXACT",
+      "maximum": 2147483647.0,
+      "subType": "BIGINT",
+      "title": "Unique Id",
+      "persistent": true,
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "uniqueid": true,
+      "remarks": "Unique Id",
+      "maxLength": 11
+    },
+    "emaildomain": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Domain",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Domain",
+      "maxLength": 50
+    }
+  },
+  "required": [
+    "emaildomain"
+  ]
+}

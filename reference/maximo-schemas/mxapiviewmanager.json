@@ -1,0 +1,160 @@
+{
+  "resource": "MXAPIVIEWMANAGER",
+  "description": "VIEWMANAGER",
+  "pk": [
+    "userid",
+    "app",
+    "componentid",
+    "viewid"
+  ],
+  "title": "VIEWMANAGER",
+  "type": "object",
+  "$ref": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapiviewmanager",
+  "uniqueid": "viewmanagerid",
+  "properties": {
+    "app": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Application name",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Application Name",
+      "maxLength": 40
+    },
+    "viewmanagerid": {
+      "default": "&AUTOKEY&",
+      "searchType": "EXACT",
+      "maximum": 2147483647.0,
+      "subType": "BIGINT",
+      "title": "View Manager ID",
+      "persistent": true,
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "uniqueid": true,
+      "remarks": "View Manager ID",
+      "maxLength": 11
+    },
+    "parent": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Parent",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Original viewid from which this view was created from.",
+      "maxLength": 25
+    },
+    "viewname": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "View Name",
+      "persistent": true,
+      "type": "string",
+      "remarks": "View Name",
+      "maxLength": 57
+    },
+    "componentid": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Component Id",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Component ID",
+      "maxLength": 50
+    },
+    "localref": {
+      "type": "string"
+    },
+    "createdate": {
+      "searchType": "EXACT",
+      "subType": "DATETIME",
+      "title": "Created Date",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Created Date"
+    },
+    "description": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Description",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Description for the view",
+      "maxLength": 200
+    },
+    "viewtype": {
+      "default": "TABLE",
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "View Type",
+      "persistent": true,
+      "type": "string",
+      "remarks": "View Type",
+      "maxLength": 10
+    },
+    "userid": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "User",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Identifies the logged in user.",
+      "maxLength": 100
+    },
+    "content": {
+      "searchType": "WILDCARD",
+      "subType": "CLOB",
+      "title": "Content",
+      "persistent": true,
+      "type": "string",
+      "remarks": "View configuration content",
+      "maxLength": 999999
+    },
+    "_rowstamp": {
+      "type": "string"
+    },
+    "viewid": {
+      "default": "&AUTOKEY&",
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "View ID",
+      "persistent": true,
+      "type": "string",
+      "remarks": "View ID",
+      "maxLength": 25
+    },
+    "_imagelibref": {
+      "type": "string"
+    },
+    "ispublic": {
+      "default": false,
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "Is Public",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "Is Public"
+    },
+    "href": {
+      "type": "string"
+    },
+    "_id": {
+      "type": "string"
+    },
+    "isdefault": {
+      "default": false,
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "Is Default",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "Is Default"
+    }
+  },
+  "required": [
+    "app",
+    "componentid",
+    "content",
+    "userid",
+    "viewname"
+  ]
+}

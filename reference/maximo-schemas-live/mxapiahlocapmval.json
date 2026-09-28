@@ -1,0 +1,120 @@
+{
+ "resource": "MXAPIAHLOCAPMVAL",
+ "description": "AHLOCATIONSLOCANAPMVAL",
+ "pk": [
+  "siteid"
+ ],
+ "title": "AHLOCATIONSLOCANAPMVAL",
+ "type": "object",
+ "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/mxapiahlocapmval",
+ "properties": {
+  "effectiveage": {
+   "searchType": "EXACT",
+   "scale": 2,
+   "subType": "DECIMAL",
+   "title": "Value",
+   "persistent": true,
+   "type": "number",
+   "remarks": "Captured score value or manually overridden value.",
+   "maxLength": 13
+  },
+  "status_description": {
+   "type": "string"
+  },
+  "eol": {
+   "searchType": "EXACT",
+   "scale": 2,
+   "subType": "DECIMAL",
+   "title": "Value",
+   "persistent": true,
+   "type": "number",
+   "remarks": "Captured score value or manually overridden value.",
+   "maxLength": 13
+  },
+  "localref": {
+   "type": "string"
+  },
+  "criticality": {
+   "searchType": "EXACT",
+   "scale": 2,
+   "subType": "DECIMAL",
+   "title": "Value",
+   "persistent": true,
+   "type": "number",
+   "remarks": "Captured score value or manually overridden value.",
+   "maxLength": 13
+  },
+  "health": {
+   "searchType": "EXACT",
+   "scale": 2,
+   "subType": "DECIMAL",
+   "title": "Value",
+   "persistent": true,
+   "type": "number",
+   "remarks": "Captured score value or manually overridden value.",
+   "maxLength": 13
+  },
+  "record_descriptor": {
+   "type": "string",
+   "title": "Record/Object Descriptor"
+  },
+  "_rowstamp": {
+   "type": "string"
+  },
+  "locationsid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "LOCATIONSID",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "Unique Identifier",
+   "maxLength": 11
+  },
+  "_imagelibref": {
+   "type": "string"
+  },
+  "siteid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Site",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Specifies the site where this location or storeroom resides.",
+   "maxLength": 8
+  },
+  "risk": {
+   "searchType": "EXACT",
+   "scale": 2,
+   "subType": "DECIMAL",
+   "title": "Value",
+   "persistent": true,
+   "type": "number",
+   "remarks": "Captured score value or manually overridden value.",
+   "maxLength": 13
+  },
+  "href": {
+   "type": "string",
+   "title": "AHLOCATIONSLOCANAPMVAL object reference"
+  },
+  "_id": {
+   "type": "string"
+  },
+  "status": {
+   "default": "!OPERATING!",
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Status",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "STATUS",
+   "maxLength": 20
+  }
+ },
+ "required": [
+  "locationsid"
+ ]
+}

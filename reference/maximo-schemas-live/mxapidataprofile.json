@@ -1,0 +1,118 @@
+{
+ "resource": "MXAPIDATAPROFILE",
+ "description": "Object Structure to retrieve Data Profile",
+ "pk": [
+  "dataprofilenum"
+ ],
+ "title": "DATAPROFILE",
+ "type": "object",
+ "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/mxapidataprofile",
+ "uniqueid": "dataprofileid",
+ "properties": {
+  "ownerrecordname": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Owner Record Name",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Name of the owner object for which data profile is captured.",
+   "maxLength": 30
+  },
+  "dataprofileattribute": {
+   "objectName": "DATAPROFILEATTRIBUTE",
+   "type": "array",
+   "items": {
+    "definition": {
+     "subSchema": {
+      "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/mxapidataprofile/dataprofileattribute"
+     }
+    },
+    "type": "object"
+   },
+   "cardinality": "",
+   "relation": "DATAPROFILEATTRIBUTE"
+  },
+  "localref": {
+   "type": "string"
+  },
+  "ownerrecordid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Owner Record ID",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "ID of the owner object for which data profile is captured.",
+   "maxLength": 11
+  },
+  "objectname": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Object",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Name of the main object for which data profile is captured.",
+   "maxLength": 30
+  },
+  "changedate": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Change Date",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Date this data profile is generated."
+  },
+  "record_descriptor": {
+   "type": "string",
+   "title": "Record/Object Descriptor"
+  },
+  "dataprofilenum": {
+   "default": "&AUTOKEY&",
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Data Profile Number",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Unique identifier of data profile",
+   "maxLength": 50
+  },
+  "_rowstamp": {
+   "type": "string"
+  },
+  "_imagelibref": {
+   "type": "string"
+  },
+  "href": {
+   "type": "string",
+   "title": "DATAPROFILE object reference"
+  },
+  "_id": {
+   "type": "string"
+  },
+  "dataprofileid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Unique Id",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "uniqueid": true,
+   "remarks": "Unique Id",
+   "maxLength": 11
+  },
+  "hasdataissues": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Data Issues",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Is there any data issue in the data profile?"
+  }
+ },
+ "required": [
+  "changedate"
+ ]
+}

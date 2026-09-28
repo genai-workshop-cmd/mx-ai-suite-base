@@ -1,0 +1,214 @@
+{
+  "resource": "MXAPIWORKLOG",
+  "description": "WORKLOG",
+  "pk": [
+    "worklogid"
+  ],
+  "title": "WORKLOG",
+  "type": "object",
+  "$ref": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapiworklog",
+  "uniqueid": "worklogid",
+  "properties": {
+    "modifyby": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Changed By",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Person who modified or changed",
+      "maxLength": 100
+    },
+    "anywhererefid": {
+      "searchType": "EXACT",
+      "maximum": 2147483647.0,
+      "subType": "BIGINT",
+      "title": "Anywhere Ref ID",
+      "persistent": true,
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "remarks": "Anywhere Reference ID",
+      "maxLength": 11
+    },
+    "description_longdescription": {
+      "searchType": "WILDCARD",
+      "subType": "LONGALN",
+      "title": "Details",
+      "type": "string",
+      "remarks": "Long description of the work log. To check spelling of text you enter, click the Long Description button next to the Summary field.",
+      "maxLength": 32000
+    },
+    "localref": {
+      "type": "string"
+    },
+    "createdate": {
+      "searchType": "EXACT",
+      "subType": "DATETIME",
+      "title": "Date",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Date on which the work log entry was created."
+    },
+    "description": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Summary",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Short description of the work log entry. To enter or view additional information, click the Long Description button.",
+      "maxLength": 100
+    },
+    "clientviewable": {
+      "default": false,
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "Viewable",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "Specifies whether a self-service user can view this work log entry. If the Viewable? check box is selected, or there is a Y in the Viewable? field, the user can view this entry. If the Viewable? check box is cleared, or there is an N in the Viewable? field, the user cannot view this work log entry."
+    },
+    "assignmentid": {
+      "searchType": "EXACT",
+      "maximum": 2147483647.0,
+      "subType": "BIGINT",
+      "title": "Assignment",
+      "persistent": true,
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "remarks": "Assignment Idenifier",
+      "maxLength": 11
+    },
+    "orgid": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Organization",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Constraint Identifier of the organization",
+      "maxLength": 8
+    },
+    "langcode": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Language Code",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Language Column",
+      "maxLength": 4
+    },
+    "_rowstamp": {
+      "type": "string"
+    },
+    "createby": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Created By",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Person that created the work log entry.",
+      "maxLength": 100
+    },
+    "logtype": {
+      "default": "!CLIENTNOTE!",
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Type",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Type of work log entry. Enter a value or click the Select Value button.",
+      "maxLength": 16
+    },
+    "modifydate": {
+      "searchType": "EXACT",
+      "subType": "DATETIME",
+      "title": "Changed Date",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Date on which Work Log changed"
+    },
+    "hasld": {
+      "default": false,
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "Has Long Description",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "Boolean flag to indicate if there is any long description for this record"
+    },
+    "_imagelibref": {
+      "type": "string"
+    },
+    "recordkey": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Record",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Identifies the record for the work log entry.",
+      "maxLength": 10
+    },
+    "assignreplocid": {
+      "searchType": "EXACT",
+      "maximum": 2147483647.0,
+      "subType": "BIGINT",
+      "title": "Assignment",
+      "persistent": true,
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "remarks": "Assignment Idenifier",
+      "maxLength": 11
+    },
+    "siteid": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Site",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Unique Identifier of the Site",
+      "maxLength": 8
+    },
+    "worklogid": {
+      "searchType": "EXACT",
+      "maximum": 2147483647.0,
+      "subType": "BIGINT",
+      "title": "WorkLog ID",
+      "persistent": true,
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "uniqueid": true,
+      "remarks": "Work Log Identifier",
+      "maxLength": 11
+    },
+    "href": {
+      "type": "string"
+    },
+    "_id": {
+      "type": "string"
+    },
+    "class": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Class",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Class of the record for the work log entry.",
+      "maxLength": 16
+    },
+    "logtype_description": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "class",
+    "createby",
+    "createdate",
+    "langcode",
+    "modifyby",
+    "modifydate",
+    "recordkey"
+  ]
+}

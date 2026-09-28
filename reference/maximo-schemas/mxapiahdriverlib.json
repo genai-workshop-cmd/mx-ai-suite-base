@@ -1,0 +1,315 @@
+{
+  "resource": "MXAPIAHDRIVERLIB",
+  "description": "AHDRIVERLIB",
+  "pk": [
+    "driverid"
+  ],
+  "title": "AHDRIVERLIB",
+  "type": "object",
+  "$ref": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapiahdriverlib",
+  "uniqueid": "ahdriverlibid",
+  "properties": {
+    "worstscore": {
+      "searchType": "EXACT",
+      "scale": 2,
+      "subType": "DECIMAL",
+      "title": "Worst Score",
+      "persistent": true,
+      "type": "number",
+      "remarks": "Worst Industry Score",
+      "maxLength": 11
+    },
+    "usefactor": {
+      "default": true,
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "Use Factors",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "Use Factors to get Driver value"
+    },
+    "localref": {
+      "type": "string"
+    },
+    "bestscore": {
+      "searchType": "EXACT",
+      "scale": 2,
+      "subType": "DECIMAL",
+      "title": "Best Score",
+      "persistent": true,
+      "type": "number",
+      "remarks": "Best Industry Score",
+      "maxLength": 11
+    },
+    "ahdriverfactor": {
+      "objectName": "AHDRIVERFACTOR",
+      "type": "array",
+      "items": {
+        "definition": {
+          "subSchema": {
+            "$ref": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapiahdriverlib/ahdriverfactor"
+          }
+        },
+        "type": "object"
+      },
+      "cardinality": "",
+      "relation": "AHDRIVERFACTOR"
+    },
+    "calctype_description": {
+      "type": "string"
+    },
+    "ahdriverlibid": {
+      "searchType": "EXACT",
+      "maximum": 2147483647.0,
+      "subType": "BIGINT",
+      "title": "Unique Id",
+      "persistent": true,
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "uniqueid": true,
+      "remarks": "Unique Id",
+      "maxLength": 11
+    },
+    "description": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Description",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Description of the driver.",
+      "maxLength": 200
+    },
+    "calctype": {
+      "default": "WEIGHT",
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Calculate contributor group scores by using",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Type of Calculation",
+      "maxLength": 100
+    },
+    "scoremethodname": {
+      "searchType": "NONE",
+      "subType": "ALN",
+      "title": "Score method",
+      "type": "string",
+      "remarks": "Method name of score",
+      "maxLength": 200
+    },
+    "_rowstamp": {
+      "type": "string"
+    },
+    "driverid": {
+      "default": "&AUTOKEY&",
+      "searchType": "WILDCARD",
+      "isUserDefined": true,
+      "subType": "UPPER",
+      "title": "ID",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Identifies the driver.",
+      "maxLength": 20
+    },
+    "ahmethoddriver": {
+      "objectName": "AHMETHODDRIVER",
+      "type": "array",
+      "items": {
+        "definition": {
+          "subSchema": {
+            "$ref": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapiahdriverlib/ahmethoddriver"
+          }
+        },
+        "type": "object"
+      },
+      "cardinality": "",
+      "relation": "AHMETHODDRIVER"
+    },
+    "_imagelibref": {
+      "type": "string"
+    },
+    "autoconversion": {
+      "default": true,
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "Auto Conversion",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "Generate industry score conversion automatically"
+    },
+    "drivertype": {
+      "default": "FACTORS",
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Driver type",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Driver type based on if the current factor is using factor or not",
+      "maxLength": 100
+    },
+    "alias": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Alias",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Alias of Driver",
+      "maxLength": 50
+    },
+    "href": {
+      "type": "string"
+    },
+    "extfunctionname": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "External function name",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Store the the external function name used by external health engine",
+      "maxLength": 200
+    },
+    "methodname": {
+      "searchType": "NONE",
+      "subType": "UPPER",
+      "title": "Method Name",
+      "type": "string",
+      "remarks": "The methodology name. When this nonpersistent field has a value, an AHMETHODDRIVER object is auto-inserted.",
+      "maxLength": 50
+    },
+    "usewith": {
+      "default": "ASSET",
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Applies To",
+      "persistent": true,
+      "type": "string",
+      "remarks": "The object used with the driver.",
+      "maxLength": 30
+    },
+    "curvalformulaname": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Current Value Formula Name",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Name of the formula that calculates the current value.",
+      "maxLength": 50
+    },
+    "ahmethodology": {
+      "objectName": "AHMETHODOLOGY",
+      "type": "array",
+      "items": {
+        "definition": {
+          "subSchema": {
+            "$ref": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapiahdriverlib/ahmethodology"
+          }
+        },
+        "type": "object"
+      },
+      "cardinality": "",
+      "relation": "AHMETHODOLOGY"
+    },
+    "factortotalweight": {
+      "searchType": "NONE",
+      "maximum": 2147483647.0,
+      "subType": "INTEGER",
+      "title": "Total weight",
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "remarks": "Total weight of all factors if use factor",
+      "maxLength": 11
+    },
+    "extmodelname": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "External model name",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Store the the external model name used by external health engine",
+      "maxLength": 200
+    },
+    "name": {
+      "searchType": "WILDCARD",
+      "isUserDefined": true,
+      "subType": "ALN",
+      "title": "Name",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Name of the driver.",
+      "maxLength": 200
+    },
+    "scoretype": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Score type",
+      "persistent": true,
+      "type": "string",
+      "remarks": "The type of score this threshold will use with, it can be health, criticality or others",
+      "maxLength": 50
+    },
+    "_id": {
+      "type": "string"
+    },
+    "normformulaname": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Baseline Formula Name",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Name of the formula that calculates the baseline value.",
+      "maxLength": 50
+    },
+    "unitofmeasure": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Unit of Measure",
+      "persistent": true,
+      "type": "string",
+      "remarks": "A textual description of the unit of measure of the driver value.",
+      "maxLength": 20
+    },
+    "curvalformula": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Current Value Formula",
+      "persistent": true,
+      "type": "string",
+      "remarks": "The formula used to generate the current value.",
+      "maxLength": 2000
+    },
+    "drivertype_description": {
+      "type": "string"
+    },
+    "normformula": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Baseline Formula",
+      "persistent": true,
+      "type": "string",
+      "remarks": "The formula used to generate the baseline value.",
+      "maxLength": 2000
+    },
+    "ahextfunctiondetail": {
+      "objectName": "AHEXTFUNCTIONDETAIL",
+      "type": "array",
+      "items": {
+        "definition": {
+          "subSchema": {
+            "$ref": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapiahdriverlib/ahextfunctiondetail"
+          }
+        },
+        "type": "object"
+      },
+      "cardinality": "",
+      "relation": "AHEXTFUNCTIONDETAIL"
+    }
+  },
+  "required": [
+    "curvalformula",
+    "drivertype",
+    "name",
+    "normformula"
+  ]
+}

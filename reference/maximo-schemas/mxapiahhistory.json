@@ -1,0 +1,250 @@
+{
+  "resource": "MXAPIAHHISTORY",
+  "description": "AHHISTORY",
+  "pk": [
+    "ahhistoryid"
+  ],
+  "title": "AHHISTORY",
+  "type": "object",
+  "$ref": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapiahhistory",
+  "uniqueid": "ahhistoryid",
+  "properties": {
+    "localref": {
+      "type": "string"
+    },
+    "memo": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Memo",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Free text  required to be populated by the user when manually editing health history.",
+      "maxLength": 1000
+    },
+    "attributename": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Attribute",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Name of the attribute for which history record is captured.",
+      "maxLength": 50
+    },
+    "expvalinputtype": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Expvalinputtype",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Entry type which is based on a domain with values (MANUAL/ AUTOMATED).",
+      "maxLength": 10
+    },
+    "originalvalue": {
+      "searchType": "EXACT",
+      "scale": 2,
+      "subType": "DECIMAL",
+      "title": "Original Value",
+      "persistent": true,
+      "type": "number",
+      "remarks": "Original calculated value prior to user modification",
+      "maxLength": 13
+    },
+    "ahdriverhistory": {
+      "objectName": "AHDRIVERHISTORY",
+      "type": "array",
+      "items": {
+        "definition": {
+          "subSchema": {
+            "$ref": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapiahhistory/ahdriverhistory"
+          }
+        },
+        "type": "object"
+      },
+      "cardinality": "",
+      "relation": "AHDRIVERHIST"
+    },
+    "_rowstamp": {
+      "type": "string"
+    },
+    "todate": {
+      "searchType": "EXACT",
+      "subType": "DATETIME",
+      "title": "To Date",
+      "persistent": true,
+      "type": "string",
+      "remarks": "To Date"
+    },
+    "_imagelibref": {
+      "type": "string"
+    },
+    "assetnum": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Asset",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Asset Number",
+      "maxLength": 25
+    },
+    "siteid": {
+      "searchType": "NONE",
+      "subType": "UPPER",
+      "title": "Site",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Site ID of record for which history is captured",
+      "maxLength": 8
+    },
+    "href": {
+      "type": "string"
+    },
+    "value": {
+      "searchType": "EXACT",
+      "scale": 2,
+      "subType": "DECIMAL",
+      "title": "Value",
+      "persistent": true,
+      "type": "number",
+      "remarks": "Captured historical value or manually overridden value.",
+      "maxLength": 13
+    },
+    "methodname": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Method Name",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Method name",
+      "maxLength": 50
+    },
+    "enterdate": {
+      "searchType": "EXACT",
+      "subType": "DATETIME",
+      "title": "Enter Date",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Date this history record was entered."
+    },
+    "changeby": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Change By",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Person ID of person who modified the record.",
+      "maxLength": 100
+    },
+    "ownerrecordid": {
+      "searchType": "EXACT",
+      "maximum": 2147483647.0,
+      "subType": "BIGINT",
+      "title": "Owner ID",
+      "persistent": true,
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "remarks": "The ID of the record (e.g. asset.assetid) for which history is captured.",
+      "maxLength": 11
+    },
+    "ahfuturescore": {
+      "objectName": "AHFUTURESCORE",
+      "type": "array",
+      "items": {
+        "definition": {
+          "subSchema": {
+            "$ref": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapiahhistory/ahfuturescore"
+          }
+        },
+        "type": "object"
+      },
+      "cardinality": "",
+      "relation": "AHFUTURESCORE"
+    },
+    "objectname": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Object",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Name of the object for which history record is captured.",
+      "maxLength": 30
+    },
+    "msgid": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Message ID",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Asset Health Message ID",
+      "maxLength": 100
+    },
+    "changedate": {
+      "searchType": "EXACT",
+      "subType": "DATETIME",
+      "title": "Change Date",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Date at which the value was manually modified"
+    },
+    "msgvalue": {
+      "searchType": "NONE",
+      "subType": "ALN",
+      "title": "Message Value",
+      "type": "string",
+      "remarks": "Asset Health Message Value",
+      "maxLength": 2000
+    },
+    "orgid": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Organization",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Organization ID of record for which history is captured.",
+      "maxLength": 8
+    },
+    "success": {
+      "default": true,
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "Success",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "Calculate health score successfully"
+    },
+    "formula": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Formula",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Formula at the time value was captured.",
+      "maxLength": 1000
+    },
+    "location": {
+      "searchType": "NONE",
+      "subType": "UPPER",
+      "title": "Location",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Location Identifier",
+      "maxLength": 25
+    },
+    "_id": {
+      "type": "string"
+    },
+    "ahhistoryid": {
+      "searchType": "EXACT",
+      "maximum": 2147483647.0,
+      "subType": "BIGINT",
+      "title": "Ahhistoryid",
+      "persistent": true,
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "uniqueid": true,
+      "remarks": "AHHISTORY record ID",
+      "maxLength": 11
+    }
+  }
+}

@@ -1,0 +1,569 @@
+{
+ "resource": "REP_PLUSGCERT",
+ "description": "Certifications (Oil) Details",
+ "pk": [
+  "orgid",
+  "siteid",
+  "certnum"
+ ],
+ "title": "PLUSGCERT",
+ "type": "object",
+ "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/rep_plusgcert",
+ "uniqueid": "plusgcertid",
+ "properties": {
+  "historyflag": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "History",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "History Flag"
+  },
+  "localref": {
+   "type": "string"
+  },
+  "submissiondate": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Submitted",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The date when the certification was submitted to the regulatory agency or authority."
+  },
+  "plusgregpertype_description": {
+   "type": "string"
+  },
+  "wellpad": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Well Pad",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The surface area within which oil wells or gas wells are situated.",
+   "maxLength": 30
+  },
+  "county": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "County",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The county in which the oil field or the gas reservoir is located.",
+   "maxLength": 30
+  },
+  "expiredate": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Expiry",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The date when the certification expires."
+  },
+  "ownergroup": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Owner Group",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The group that owns the certification record. To change this value, use the Select Action > Select Owner option.",
+   "maxLength": 8
+  },
+  "_rowstamp": {
+   "type": "string"
+  },
+  "externalstatus_description": {
+   "type": "string"
+  },
+  "locationsid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Location",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "The identifier of the location.",
+   "maxLength": 11
+  },
+  "leasename": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Lease Name",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The name of the lease under which the oil field or the gas reservoir is registered.",
+   "maxLength": 30
+  },
+  "regulationnum": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Regulation",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The regulation that is associated with the certification record.",
+   "maxLength": 8
+  },
+  "awardedbyid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Awarded To",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "Person unique identifier.",
+   "maxLength": 11
+  },
+  "siteid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Site",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The site that is associated with the certification record.",
+   "maxLength": 8
+  },
+  "details": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Details",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The details of the certification record.",
+   "maxLength": 200
+  },
+  "href": {
+   "type": "string",
+   "title": "PLUSGCERT object reference"
+  },
+  "issuedbyid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Issued By",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "Person unique identifier.",
+   "maxLength": 11
+  },
+  "state": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "State",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The state in which the oil field or the gas reservoir is located.",
+   "maxLength": 30
+  },
+  "awardedby": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Awarded To",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The person who received the certification.",
+   "maxLength": 100
+  },
+  "plusgregulationid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Regulation",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "Regulation Unique Identifier.",
+   "maxLength": 11
+  },
+  "issueddate": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Issued",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The date of issue of the certification."
+  },
+  "externalapprdate": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "External Approval",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The date when the certification was approved by the external organization that issued the certificate."
+  },
+  "plusgpertypeid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Permit and Certificate Type",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "Permit and Certificate Type.",
+   "maxLength": 11
+  },
+  "status_description": {
+   "type": "string"
+  },
+  "record_descriptor": {
+   "type": "string",
+   "title": "Record/Object Descriptor"
+  },
+  "wellname": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Well Name",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The name of the well within a geographic area or field.",
+   "maxLength": 30
+  },
+  "externalref": {
+   "searchType": "EXACT",
+   "subType": "ALN",
+   "title": "External Reference",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The identifier that was assigned to the certification by the external organization that issued the certification.",
+   "maxLength": 12
+  },
+  "hazarduid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Hazard Unique ID",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "Hazard Unique ID",
+   "maxLength": 11
+  },
+  "orgid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Organization",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The organization that is associated with the certification record.",
+   "maxLength": 8
+  },
+  "plusgregpertype": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Regulatory Permit Type",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The type of regulatory permit. Valid values are in the PLUSGREGPERTYPE domain.",
+   "maxLength": 30
+  },
+  "issueagency": {
+   "searchType": "EXACT",
+   "subType": "ALN",
+   "title": "Issuing Agency",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The external organization, such as a regulatory agency, that issued the certification.",
+   "maxLength": 12
+  },
+  "plusgprocedureid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Operating Procedure",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "The operating procedure that is associated with the certification record.",
+   "maxLength": 11
+  },
+  "plusgactionsumm": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Review Action Summary",
+   "persistent": true,
+   "type": "string",
+   "remarks": "A summary of the review actions that are associated with the certification.",
+   "maxLength": 200
+  },
+  "fincntrlid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Project Unique Identifier",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The project identifier that is associated with the certification.",
+   "maxLength": 8
+  },
+  "plusgauditid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Audit",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "The Audit and Survey application record that is associated with the certification.",
+   "maxLength": 11
+  },
+  "_id": {
+   "type": "string"
+  },
+  "certnum": {
+   "default": "&AUTOKEY&",
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Certification",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The identifier of the certification record.",
+   "maxLength": 10
+  },
+  "status": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Status",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The status of the certification record. Valid statuses are in the PLUSGCERTSTATUS synonym domain. The default value when you create the certification record is Draft. Use the Change Status icon on the toolbar to modify the status of the certification record.",
+   "maxLength": 20
+  },
+  "template": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Template",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Indicates that the record can be used as a template to create other certification records. Only certain fields and their values are duplicated. Duplicate fields and their values are copied from the originating record to the new record."
+  },
+  "pertypenum": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Permit and Certificate Type",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The type of permit or certificate that is associated with the certification record. The status of the type of permit or certificate must be active. You can either select a value or create a type of permit or certificate record using the Permit and Certificate Types application.",
+   "maxLength": 10
+  },
+  "plusgcertid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Unique Id",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "uniqueid": true,
+   "remarks": "Unique Id",
+   "maxLength": 11
+  },
+  "description": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Description",
+   "persistent": true,
+   "type": "string",
+   "remarks": "A description of the certification record.",
+   "maxLength": 100
+  },
+  "effectivedate": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Effective",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The date when the certification became effective."
+  },
+  "category_description": {
+   "type": "string"
+  },
+  "itemid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Item",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "The item that is associated with the certification.",
+   "maxLength": 11
+  },
+  "plusgtotalscore": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Total Score",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "The total score that is assigned to the review actions that are associated with the certification.",
+   "maxLength": 11
+  },
+  "_imagelibref": {
+   "type": "string"
+  },
+  "assetnum": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Asset",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The asset that is associated with the certification  record.",
+   "maxLength": 25
+  },
+  "apinumber": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "API Number",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The identifier that is assigned to each oil well or to each gas reservoir.",
+   "maxLength": 30
+  },
+  "owner": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Owner",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The owner of the certification record. You use the Select Action > Select Owner option to assign either a person or a person group to own the certification record. To take ownership of the certification process, use the Select Action > Take Ownership option.",
+   "maxLength": 100
+  },
+  "classstructureid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Class Structure",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The identifier of the classification structure.",
+   "maxLength": 25
+  },
+  "plusgriskassessid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Risk Assessment",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "Risk Assessment.",
+   "maxLength": 11
+  },
+  "issuedby": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Issued By",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The person who issued the certification.",
+   "maxLength": 100
+  },
+  "extnum": {
+   "default": 0,
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "INTEGER",
+   "title": "Extension",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "The number of the extension for the certification. A certification can be in any status, except Inactive status, for its duration to be extended. When you extend a certification, the certification expiry date is extended until the date that you specify in the Extend Expiry Until field. An extension number is generated. The extension number starts with 0 and increments by 1 for each subsequent extension.",
+   "maxLength": 11
+  },
+  "statusdate": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Status Date",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The server date and time when the certification record was created, or when the status changed of the certification record. This value is read-only."
+  },
+  "fieldname": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Field Name",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The name of the geographic area that contains an oil well or a gas well.",
+   "maxLength": 30
+  },
+  "assetid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Asset",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "The asset unique identifier.",
+   "maxLength": 11
+  },
+  "location": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Location",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The location that is associated with the certification record.",
+   "maxLength": 25
+  },
+  "regpermit": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Regulatory Permit",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Indicates whether the certification is a regulatory permit."
+  },
+  "category": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Category",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The category of the certification record.",
+   "maxLength": 16
+  },
+  "externalstatus": {
+   "searchType": "EXACT",
+   "subType": "ALN",
+   "title": "External Status",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The status that was assigned to the certification by the issuing organization. Valid values are in the PLUSGCERTEXTSTAT domain.",
+   "maxLength": 15
+  },
+  "procnum": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Operating Procedure",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The operating procedure that is associated with the certification record.",
+   "maxLength": 10
+  }
+ },
+ "required": [
+  "status",
+  "statusdate"
+ ]
+}

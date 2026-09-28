@@ -1,0 +1,294 @@
+{
+  "resource": "MXAPIAHFACTORLIB",
+  "description": "AHFACTORLIB",
+  "pk": [
+    "factorid"
+  ],
+  "title": "AHFACTORLIB",
+  "type": "object",
+  "$ref": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapiahfactorlib",
+  "uniqueid": "ahfactorlibid",
+  "properties": {
+    "localref": {
+      "type": "string"
+    },
+    "description": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Description",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Description of the driver.",
+      "maxLength": 200
+    },
+    "factorid": {
+      "default": "&AUTOKEY&",
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "ID",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Identifies the factor.",
+      "maxLength": 20
+    },
+    "factortype_description": {
+      "type": "string"
+    },
+    "_rowstamp": {
+      "type": "string"
+    },
+    "_imagelibref": {
+      "type": "string"
+    },
+    "factorbestscore": {
+      "searchType": "EXACT",
+      "scale": 2,
+      "subType": "DECIMAL",
+      "title": "Best score",
+      "persistent": true,
+      "type": "number",
+      "remarks": "Factor Best Score",
+      "maxLength": 11
+    },
+    "usecm": {
+      "default": false,
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "Use Condition Monitoring",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "Use Factor with Condition Monitoring"
+    },
+    "alias": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Alias",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Alias of Factor",
+      "maxLength": 50
+    },
+    "highthreshold": {
+      "searchType": "EXACT",
+      "scale": 2,
+      "subType": "DECIMAL",
+      "title": "Upper limit",
+      "persistent": true,
+      "type": "number",
+      "remarks": "If the factors value is greater than high threshold, factor value will be 0",
+      "maxLength": 11
+    },
+    "href": {
+      "type": "string"
+    },
+    "issample": {
+      "default": false,
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "Is Sample",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "Specifies whether the corresponding factor is a sample."
+    },
+    "iscontmeter": {
+      "default": false,
+      "searchType": "NONE",
+      "subType": "YORN",
+      "title": "Is cont meter",
+      "type": "boolean",
+      "remarks": "If the current factor is associated with continuous meter "
+    },
+    "usewith_description": {
+      "type": "string"
+    },
+    "extfunctionname": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "External function name",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Store the the external function name used by external health engine",
+      "maxLength": 200
+    },
+    "isformula": {
+      "default": false,
+      "searchType": "NONE",
+      "subType": "YORN",
+      "title": "Is cont or char meter",
+      "type": "boolean",
+      "remarks": "If the current factor is using formula"
+    },
+    "ahfactorlibid": {
+      "searchType": "EXACT",
+      "maximum": 2147483647.0,
+      "subType": "BIGINT",
+      "title": "Unique Id",
+      "persistent": true,
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "uniqueid": true,
+      "remarks": "Unique Id",
+      "maxLength": 11
+    },
+    "usewith": {
+      "default": "ASSET",
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Object",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "The object used with the driver.",
+      "maxLength": 100
+    },
+    "curvalformulaname": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Current Value Formula Name",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Name of the formula that calculates the current value.",
+      "maxLength": 50
+    },
+    "isgaugemeter": {
+      "default": false,
+      "searchType": "NONE",
+      "subType": "YORN",
+      "title": "Is guage meter",
+      "type": "boolean",
+      "remarks": "If the current factor is associated with gauge meter "
+    },
+    "metername": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Meter Name",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Use Factor with Meter",
+      "maxLength": 10
+    },
+    "extmodelname": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "External model name",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Store the the external model name used by external health engine",
+      "maxLength": 200
+    },
+    "factortype": {
+      "default": "!FORMULA!",
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Type",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Factor Type",
+      "maxLength": 20
+    },
+    "lowthreshold": {
+      "searchType": "EXACT",
+      "scale": 2,
+      "subType": "DECIMAL",
+      "title": "Lower limit",
+      "persistent": true,
+      "type": "number",
+      "remarks": "If the factor value is lower than low threshold, factor value will be 0",
+      "maxLength": 11
+    },
+    "name": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Name",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Name of the driver.",
+      "maxLength": 200
+    },
+    "ischarmeter": {
+      "default": false,
+      "searchType": "NONE",
+      "subType": "YORN",
+      "title": "Is char meter",
+      "type": "boolean",
+      "remarks": "If the current factor is associated with characteristic meter "
+    },
+    "_id": {
+      "type": "string"
+    },
+    "normformulaname": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Baseline Formula Name",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Name of the formula that calculates the baseline value.",
+      "maxLength": 50
+    },
+    "factorworstscore": {
+      "searchType": "EXACT",
+      "scale": 2,
+      "subType": "DECIMAL",
+      "title": "Worst score",
+      "persistent": true,
+      "type": "number",
+      "remarks": "Factor Worst Score",
+      "maxLength": 11
+    },
+    "unitofmeasure": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Unit of Measure",
+      "persistent": true,
+      "type": "string",
+      "remarks": "A textual description of the unit of measure of the driver value.",
+      "maxLength": 20
+    },
+    "userdefined": {
+      "default": true,
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "User Defined",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "Specifies whether the corresponding object was predefined or added by a user. If the check box is selected, a user created the object."
+    },
+    "curvalformula": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Formula",
+      "persistent": true,
+      "type": "string",
+      "remarks": "The formula used to generate the current value.",
+      "maxLength": 2000
+    },
+    "normformula": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Baseline Formula",
+      "persistent": true,
+      "type": "string",
+      "remarks": "The formula used to generate the baseline value.",
+      "maxLength": 2000
+    },
+    "ahextfunctiondetail": {
+      "objectName": "AHEXTFUNCTIONDETAIL",
+      "type": "array",
+      "items": {
+        "definition": {
+          "subSchema": {
+            "$ref": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapiahfactorlib/ahextfunctiondetail"
+          }
+        },
+        "type": "object"
+      },
+      "cardinality": "",
+      "relation": "AHEXTFUNCTIONDETAIL"
+    }
+  },
+  "required": [
+    "curvalformula",
+    "name"
+  ]
+}

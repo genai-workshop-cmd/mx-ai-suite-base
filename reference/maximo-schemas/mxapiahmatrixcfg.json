@@ -1,0 +1,146 @@
+{
+  "resource": "MXAPIAHMATRIXCFG",
+  "description": "AHMATRIXCFG",
+  "pk": [
+    "ahmatrixcfgnum"
+  ],
+  "title": "AHMATRIXCFG",
+  "type": "object",
+  "$ref": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapiahmatrixcfg",
+  "uniqueid": "ahmatrixcfgid",
+  "properties": {
+    "ahmatrixrange": {
+      "objectName": "AHMATRIXRANGE",
+      "type": "array",
+      "items": {
+        "definition": {
+          "subSchema": {
+            "$ref": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapiahmatrixcfg/ahmatrixrange"
+          }
+        },
+        "type": "object"
+      },
+      "cardinality": "",
+      "relation": "AHMATRIXRANGE"
+    },
+    "localref": {
+      "type": "string"
+    },
+    "xaxisdirection": {
+      "default": true,
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "X Axis Direction",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "The direction of x-axis"
+    },
+    "yaxis": {
+      "searchType": "EXACT",
+      "subType": "UPPER",
+      "title": "Y Axis Name",
+      "persistent": true,
+      "type": "string",
+      "remarks": "The name of y-axis",
+      "maxLength": 50
+    },
+    "yaxisdirection": {
+      "default": true,
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "Y Axis Direction",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "The direction of y-axis"
+    },
+    "isshow": {
+      "default": true,
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "Show Flag",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "The flag marks whether the version is visible"
+    },
+    "xaxis": {
+      "searchType": "EXACT",
+      "subType": "UPPER",
+      "title": "X Axis Name",
+      "persistent": true,
+      "type": "string",
+      "remarks": "The name of x-axis",
+      "maxLength": 50
+    },
+    "_rowstamp": {
+      "type": "string"
+    },
+    "ahmatrixcfgid": {
+      "searchType": "EXACT",
+      "maximum": 2147483647.0,
+      "subType": "BIGINT",
+      "title": "Unique Id",
+      "persistent": true,
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "uniqueid": true,
+      "remarks": "Unique Id",
+      "maxLength": 11
+    },
+    "_imagelibref": {
+      "type": "string"
+    },
+    "name": {
+      "searchType": "EXACT",
+      "subType": "ALN",
+      "title": "Matrix Name",
+      "persistent": true,
+      "type": "string",
+      "remarks": "The name of matrix",
+      "maxLength": 100
+    },
+    "ahmatrixcell": {
+      "objectName": "AHMATRIXCELL",
+      "type": "array",
+      "items": {
+        "definition": {
+          "subSchema": {
+            "$ref": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapiahmatrixcfg/ahmatrixcell"
+          }
+        },
+        "type": "object"
+      },
+      "cardinality": "",
+      "relation": "AHMATRIXCELL"
+    },
+    "href": {
+      "type": "string"
+    },
+    "_id": {
+      "type": "string"
+    },
+    "isdefault": {
+      "default": true,
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "Default Matrix Flag",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "The flag marks whether it is the default matrix"
+    },
+    "ahmatrixcfgnum": {
+      "default": "&AUTOKEY&",
+      "searchType": "EXACT",
+      "subType": "UPPER",
+      "title": "AHMatrixCfg ID",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Matrix Configuration ID",
+      "maxLength": 200
+    }
+  },
+  "required": [
+    "name",
+    "xaxis",
+    "yaxis"
+  ]
+}

@@ -1,0 +1,775 @@
+{
+ "resource": "MXAPIPC",
+ "description": "Maximo API for Purchase Contract",
+ "pk": [
+  "contractnum",
+  "revisionnum",
+  "orgid"
+ ],
+ "title": "PURCHVIEW",
+ "type": "object",
+ "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/mxapipc",
+ "uniqueid": "contractid",
+ "properties": {
+  "vendtermallowed": {
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Vendor Termination Allowed",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Checking this box indicates that early termination is allowed by vendor."
+  },
+  "ownersysid": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Owner System ID",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Owner system ID.",
+   "maxLength": 10
+  },
+  "paymentsched": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Payment Schedule",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Checking this box indicates a there is a defined payment schedule."
+  },
+  "historyflag": {
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "History",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "History flag."
+  },
+  "insuranceexpdate": {
+   "searchType": "EXACT",
+   "subType": "DATE",
+   "title": "Insurance Expiration Date",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Expiration date of the vendors insurance policy."
+  },
+  "localref": {
+   "type": "string"
+  },
+  "contractterm": {
+   "objectName": "CONTRACTTERM",
+   "type": "array",
+   "items": {
+    "definition": {
+     "subSchema": {
+      "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/mxapipc/contractterm"
+     }
+    },
+    "type": "object"
+   },
+   "cardinality": "UNDEFINED",
+   "relation": "CONTRACTTERM"
+  },
+  "customernum": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Customer #",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The unique number issued by the vendor to identify our company.",
+   "maxLength": 16
+  },
+  "autoextendperiod": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "INTEGER",
+   "title": "Extension Period",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "If the contract is extendable, this field indicates the auto extend period in days.",
+   "maxLength": 11
+  },
+  "purchaseagent": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Buyer",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The current buyer, or purchasing agent listed on this contract.",
+   "maxLength": 100
+  },
+  "currencycode": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Currency",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Indicates the currency used to satisfy monetary transactions associated with this contract.",
+   "maxLength": 8
+  },
+  "startdate": {
+   "searchType": "EXACT",
+   "subType": "DATE",
+   "title": "Start Date",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The date on which the contract becomes active."
+  },
+  "vendorrefnum": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Vendor Reference #",
+   "persistent": true,
+   "type": "string",
+   "remarks": "A unique identification code issued to a vendor.",
+   "maxLength": 12
+  },
+  "totalcost": {
+   "searchType": "EXACT",
+   "scale": 2,
+   "subType": "DECIMAL",
+   "title": "Total Cost",
+   "persistent": true,
+   "type": "number",
+   "remarks": "The sum of all the costs on the contract lines on the current contract.",
+   "maxLength": 11
+  },
+  "_rowstamp": {
+   "type": "string"
+  },
+  "masterrevnum": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "INTEGER",
+   "title": "Master Revision",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "Master Contract Revision Number",
+   "maxLength": 11
+  },
+  "buyahead": {
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Buy Ahead",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Is this a buy ahead rate, ie entered directly by the user and not calculated from the list of active exchange rate."
+  },
+  "contact": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Contact",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The name of the person employed by the vendor to contact with queries about this contract.",
+   "maxLength": 50
+  },
+  "contractid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "CONTRACTID",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "uniqueid": true,
+   "remarks": "Unique Identifier",
+   "maxLength": 11
+  },
+  "renewaldate": {
+   "searchType": "EXACT",
+   "subType": "DATE",
+   "title": "Renewal Date",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Date that the contract can or must be be renewed to remain active."
+  },
+  "shippingloss": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Shipping Loss",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Checking this box indicates you are liable for shipping loss."
+  },
+  "href": {
+   "type": "string",
+   "title": "PURCHVIEW object reference"
+  },
+  "addlinesonuse": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Add Lines on Use",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Checking this box indicates you can add lines to the purchase document with contract reference."
+  },
+  "swlictype_description": {
+   "type": "string"
+  },
+  "mainthierchy": {
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Maintain Hierarchy",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Maintain Hierarchy"
+  },
+  "inclusive5": {
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Include Tax 5",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Is the PO total inclusive of Tax 5."
+  },
+  "inclusive4": {
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Include Tax 4",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Is the PO total inclusive of Tax 4."
+  },
+  "status_description": {
+   "type": "string"
+  },
+  "shipvia_description": {
+   "type": "string"
+  },
+  "enforcebundle": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Maintain Hierarchy",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Checking this box indicates that bundling is enforced."
+  },
+  "chgqtyonuse": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Change Quantity on Use",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Can quantity be changed on line with contract reference."
+  },
+  "deliveryloss": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Delivery Loss",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Liable for delivery loss?"
+  },
+  "acceptperiod": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "INTEGER",
+   "title": "Acceptance Period",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "Amount of time in days that can pass before the buyer must either accept the received items or return them.",
+   "maxLength": 11
+  },
+  "processclaim": {
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "PROCESS CLAIM",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Can a claim be processed against this contract"
+  },
+  "changedate": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Changed Date",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The date on which the contract was last altered."
+  },
+  "record_descriptor": {
+   "type": "string",
+   "title": "Record/Object Descriptor"
+  },
+  "contractpurchid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "CONTRACTPURCHID",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "Unique Identifier",
+   "maxLength": 11
+  },
+  "hasinsurance": {
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Has Insurance",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Does this vendor have a current insurance policy ?"
+  },
+  "inclusive1": {
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Pay Tax to Vendor",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Is the PO total inclusive of Tax 1"
+  },
+  "inclusive3": {
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Include Tax 3",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Is the PO total inclusive of Tax 3."
+  },
+  "orgid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Organization",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Organization identifier.",
+   "maxLength": 8
+  },
+  "inclusive2": {
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Include Tax 2",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Is the PO total inclusive of Tax 2."
+  },
+  "inspectionrequired": {
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Inspection Required",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Checking this box indicates that items ordered from this company must be inspected on receipt."
+  },
+  "shipvia": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Ship Via",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The name of the shipping company to use for transporting items associated withthis contract.",
+   "maxLength": 20
+  },
+  "enddate": {
+   "searchType": "EXACT",
+   "subType": "DATE",
+   "title": "End Date",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Date after which the contract is no longer valid."
+  },
+  "contracttype": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Type",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Indicator of the current contract type.",
+   "maxLength": 25
+  },
+  "createrel": {
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Create Release",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Checking this box indicates you can createa release from the contract."
+  },
+  "fob": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "FOB Point",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The point at which merchandise is on board a vehicle and in transit.",
+   "maxLength": 20
+  },
+  "_id": {
+   "type": "string"
+  },
+  "extendable": {
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Extendable",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Checking this box indicates the contract is extendable."
+  },
+  "custtermallowed": {
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Customer Termination Allowed",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Checking this box indicates that early termination by the customer is allowed."
+  },
+  "swlictype": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "License Type",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Software License Type",
+   "maxLength": 25
+  },
+  "status": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Status",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Current status of this contract.",
+   "maxLength": 12
+  },
+  "porequired": {
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Requires PO",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Checking this box indicates a PO is required for this contract."
+  },
+  "chgpriceonuse": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Change Price on Use",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Can price be changed on the line with contract reference."
+  },
+  "paymentterms": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Payment Terms",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The agreed upon terms related to monetary payments associated with this contract.",
+   "maxLength": 20
+  },
+  "exchangerate": {
+   "searchType": "EXACT",
+   "scale": 7,
+   "subType": "DECIMAL",
+   "title": "Exchange Rate",
+   "persistent": true,
+   "type": "number",
+   "remarks": "Exchange rate the time of contract approval.",
+   "maxLength": 15
+  },
+  "totalbasecost": {
+   "searchType": "EXACT",
+   "scale": 2,
+   "subType": "DECIMAL",
+   "title": "Total Base Cost",
+   "persistent": true,
+   "type": "number",
+   "remarks": "Cost of the entire contract in base currency 1.",
+   "maxLength": 11
+  },
+  "description": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Description",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Description of the current purchase contract.",
+   "maxLength": 100
+  },
+  "externalrefid": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "External Reference ID",
+   "persistent": true,
+   "type": "string",
+   "remarks": "External Reference ID.",
+   "maxLength": 10
+  },
+  "contractauth": {
+   "objectName": "CONTRACTAUTH",
+   "type": "array",
+   "items": {
+    "definition": {
+     "subSchema": {
+      "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/mxapipc/contractauth"
+     }
+    },
+    "type": "object"
+   },
+   "cardinality": "UNDEFINED",
+   "relation": "CONTRACTAUTH"
+  },
+  "acceptanceloss": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Acceptance Loss",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Checking this box indicates you are liable for acceptance loss."
+  },
+  "canexceedvolume": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Can Exceed Amount",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Checking this box indicates you can exceed the specified maximum amount on this contract."
+  },
+  "exchangerate2": {
+   "searchType": "EXACT",
+   "scale": 7,
+   "subType": "DECIMAL",
+   "title": "Exchange Rate2",
+   "persistent": true,
+   "type": "number",
+   "remarks": "Exchange rate2 at the time of contract approval.",
+   "maxLength": 15
+  },
+  "maxrelvol": {
+   "searchType": "EXACT",
+   "scale": 2,
+   "subType": "DECIMAL",
+   "title": "Maximum Release Amount",
+   "persistent": true,
+   "type": "number",
+   "remarks": "The total cost that a single REL type PO can have against this contract.",
+   "maxLength": 11
+  },
+  "_imagelibref": {
+   "type": "string"
+  },
+  "vendor": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Company",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "A unique code indicating the vendor of the current purchase contract.",
+   "maxLength": 12
+  },
+  "contractnum": {
+   "default": "&AUTOKEY&",
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Contract",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Unique ID Number for the current purchase contract.",
+   "maxLength": 8
+  },
+  "maxvol": {
+   "searchType": "EXACT",
+   "scale": 2,
+   "subType": "DECIMAL",
+   "title": "Maximum Amount",
+   "persistent": true,
+   "type": "number",
+   "remarks": "Either the maximum monetary amount for a contract, or an estimate depending on how the'CANEXCEEDVOLUME' property is set.",
+   "maxLength": 11
+  },
+  "amtremaining": {
+   "searchType": "EXACT",
+   "scale": 2,
+   "subType": "DECIMAL",
+   "title": "Amount Remaining",
+   "persistent": true,
+   "type": "number",
+   "remarks": "Difference between the maximum volume and the commited cost for a volume specified contract.",
+   "maxLength": 11
+  },
+  "vendnotifyperiod": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "INTEGER",
+   "title": "Vendor Notification Period",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "If early termination is allowed by vendor, this indicates the notice of termination in days.",
+   "maxLength": 11
+  },
+  "description_longdescription": {
+   "searchType": "WILDCARD",
+   "subType": "LONGALN",
+   "title": "Details",
+   "type": "string",
+   "remarks": "A detailed description of the current purchase contract.",
+   "maxLength": 32000
+  },
+  "revcomments": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Revision Comments",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Comments associated with the current revision of this contract.",
+   "maxLength": 100
+  },
+  "changeby": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Changed By",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The login name of the person who last changed the contract.",
+   "maxLength": 100
+  },
+  "custnotifyperiod": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "INTEGER",
+   "title": "Customer Notification Period",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "If early termination by the customer is allowed this is the customer notification period in days.",
+   "maxLength": 11
+  },
+  "revisionnum": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "INTEGER",
+   "title": "Revision",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "Revision number of the contract. This number indicates the number of times the contract has been revised. A contract that has been created and not revised will show a number of 0.",
+   "maxLength": 11
+  },
+  "sendersysid": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Sender System ID",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Column used by ERP-Integration (MEA).",
+   "maxLength": 50
+  },
+  "exchangedate": {
+   "searchType": "EXACT",
+   "subType": "DATE",
+   "title": "ExDate Changed",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Date of the exchange rate."
+  },
+  "statusdate": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Status Date",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Status date."
+  },
+  "contractline": {
+   "objectName": "CONTRACTLINE",
+   "type": "array",
+   "items": {
+    "definition": {
+     "subSchema": {
+      "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/mxapipc/contractline"
+     }
+    },
+    "type": "object"
+   },
+   "cardinality": "UNDEFINED",
+   "relation": "CONTRACTLINE"
+  },
+  "statusiface": {
+   "default": false,
+   "searchType": "NONE",
+   "subType": "YORN",
+   "title": "Has Status Changed",
+   "type": "boolean",
+   "remarks": "Non persistent boolean field to indicate whether the status has been changed after the stateful object is fetched from the database."
+  },
+  "freightterms": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Freight Terms",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The agreed upon terms related to shipping and receiving associated with this contract.",
+   "maxLength": 50
+  },
+  "condforext": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Conditions for Extension",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Details any conditions that may exist for an extension.",
+   "maxLength": 20
+  },
+  "masternum": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Master Contract",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The unique identification number of a Master Contract from which this contract was created.",
+   "maxLength": 8
+  },
+  "np_statusmemo": {
+   "searchType": "NONE",
+   "subType": "ALN",
+   "title": "Change Status Memo",
+   "type": "string",
+   "remarks": "Status change memo, temporary non-persistent field used by MEA",
+   "maxLength": 50
+  }
+ },
+ "required": [
+  "buyahead",
+  "changedate",
+  "contracttype",
+  "createrel",
+  "currencycode",
+  "custtermallowed",
+  "extendable",
+  "hasinsurance",
+  "historyflag",
+  "inclusive1",
+  "inclusive2",
+  "inclusive3",
+  "inclusive4",
+  "inclusive5",
+  "inspectionrequired",
+  "mainthierchy",
+  "porequired",
+  "processclaim",
+  "status",
+  "statusiface",
+  "totalbasecost",
+  "vendtermallowed"
+ ]
+}

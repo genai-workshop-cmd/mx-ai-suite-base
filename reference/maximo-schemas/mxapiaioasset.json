@@ -1,0 +1,86 @@
+{
+  "resource": "MXAPIAIOASSET",
+  "description": "AIOASSET",
+  "pk": [
+    "aioprojectnum",
+    "siteid",
+    "assetnum"
+  ],
+  "title": "AIOASSET",
+  "type": "object",
+  "$ref": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapiaioasset",
+  "uniqueid": "aioassetid",
+  "properties": {
+    "aioassetid": {
+      "searchType": "EXACT",
+      "maximum": 2147483647.0,
+      "subType": "BIGINT",
+      "title": "Unique Id",
+      "persistent": true,
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "uniqueid": true,
+      "remarks": "Unique Id",
+      "maxLength": 11
+    },
+    "_rowstamp": {
+      "type": "string"
+    },
+    "localref": {
+      "type": "string"
+    },
+    "aioprojectnum": {
+      "searchType": "EXACT",
+      "subType": "UPPER",
+      "title": "Project ID",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Asset investment optimizer project",
+      "maxLength": 25
+    },
+    "_imagelibref": {
+      "type": "string"
+    },
+    "assetnum": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Asset",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Asset",
+      "maxLength": 25
+    },
+    "siteid": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Site",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Identifies the asset's site",
+      "maxLength": 8
+    },
+    "href": {
+      "type": "string"
+    },
+    "_id": {
+      "type": "string"
+    },
+    "orgid": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Organization",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Organization",
+      "maxLength": 8
+    }
+  },
+  "required": [
+    "aioprojectnum",
+    "assetnum",
+    "orgid",
+    "siteid"
+  ]
+}

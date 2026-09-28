@@ -1,0 +1,255 @@
+{
+ "resource": "REP_PLUSGPROC",
+ "description": "Operating Procedures (Oil) Details",
+ "pk": [
+  "orgid",
+  "siteid",
+  "procnum"
+ ],
+ "title": "PLUSGPROCEDURE",
+ "type": "object",
+ "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/rep_plusgproc",
+ "uniqueid": "plusgprocedureid",
+ "properties": {
+  "historyflag": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "History",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "History Flag"
+  },
+  "localref": {
+   "type": "string"
+  },
+  "createddate": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Created Date",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The system date and time when the operating procedure record was created."
+  },
+  "description": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Description",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Description of the operating procedure. You can change this value only when the status of the operating procedure record is Draft.",
+   "maxLength": 100
+  },
+  "ownergroup": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Owner Group",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The group that is responsible for the procedure record. You change this value by using the Select Owner action. You can change this value only when the status of the procedure record is Draft. The status of the group must be Active.",
+   "maxLength": 8
+  },
+  "startdate": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Start Date",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The date and time when the operating procedure can be used."
+  },
+  "type": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Type",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The type of the operating procedure. Valid values are in the PLUSGPROCTYPE domain. You can change this value only when the status of the prcoedure record is Draft.",
+   "maxLength": 30
+  },
+  "approvaldate": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Approval Date",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The system date and time when the operating procedure record was approved."
+  },
+  "category_description": {
+   "type": "string"
+  },
+  "reference": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Reference",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The reference for the source of the operating procedure. You can change this value only when the status of the procedure record is Draft.",
+   "maxLength": 16
+  },
+  "_rowstamp": {
+   "type": "string"
+  },
+  "createdby": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Created By",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The identifier of the person who prepared the operating procedure. The default value is the identifier of the logged-in user. You can change this value only when the status of the operating procedure record is Draft.",
+   "maxLength": 100
+  },
+  "_imagelibref": {
+   "type": "string"
+  },
+  "siteid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Site",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The site that is associated with the operating procedure. By default, this value is null. To define a site-level procedure, specify an organization and a site, or specify only a site and the organization field will be populated with the organization that corresponds to the site.",
+   "maxLength": 8
+  },
+  "renewaldate": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Renewal Date",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The date and time by which the operating procedure must be reviewed and, if necessary, renewed."
+  },
+  "href": {
+   "type": "string",
+   "title": "PLUSGPROCEDURE object reference"
+  },
+  "plusgregulationid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "RegulationUID.",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "The identifier of Regulation.",
+   "maxLength": 11
+  },
+  "type_description": {
+   "type": "string"
+  },
+  "owner": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Owner",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The person who is responsible for the procedure record. You change this value by using the Select Owner action or the Take Ownership action. You can change this value only when the status of the procedure record is Draft. The status of the person must be Active.",
+   "maxLength": 100
+  },
+  "summary": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Details",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The circumstances under which the operating procedure is applied. You can update this field while the status of the operating procedure record is Draft.",
+   "maxLength": 200
+  },
+  "status_description": {
+   "type": "string"
+  },
+  "approvedby": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Approved By",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The person who approved the operating procedure. You can change this value only when the status of the procedure record is Draft. The status of the person must be Active.",
+   "maxLength": 100
+  },
+  "record_descriptor": {
+   "type": "string",
+   "title": "Record/Object Descriptor"
+  },
+  "orgid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Organization",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The organization that is associated with the operating procedure. By default, this value is null and the operating procedure is at the system level. To define an organization-level procedure, specify an organization and no site. To define a site-level procedure, specify an organization and a site, or specify only a site and this field will be populated with the corresponding organization.",
+   "maxLength": 8
+  },
+  "statusdate": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Status Date",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The server date and time when the operating procedure record was created or its status was changed."
+  },
+  "enddate": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "End Date",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The date and time after which the operating procedure cannot be used."
+  },
+  "plusgprocedureid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Unique Id",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "uniqueid": true,
+   "remarks": "Unique Id",
+   "maxLength": 11
+  },
+  "_id": {
+   "type": "string"
+  },
+  "category": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Category",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The category of the operating procedure. Valid values are in the PLUSGPROCCAT domain. You can change this value only when the status of the operating procedure record is Draft.",
+   "maxLength": 30
+  },
+  "procnum": {
+   "default": "&AUTOKEY&",
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Operating Procedure",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The unique identifier of the operating procedure. You can use the same identifier for multiple operating procedures, but the combination of  organization, site, and procedure number must be unique. You cannot use the same identifier for a system-level (null organization and site) procedure and an organization-level or site-level procedure. You cannot use the same identifier for an organization-level procedure and for a site-level procedure in the same organization. After you save the procedure record, you cannot change this value.",
+   "maxLength": 10
+  },
+  "status": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Status",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The status of the operating procedure record. The default status is Draft. Valid values are in the PLUSGPROCSTATUS domain. You can change the value by using the Change Status action. You cannot edit or delete a procedure record when its status is Active. You can delete a procedure record when its status is Draft or Inactive.",
+   "maxLength": 16
+  }
+ },
+ "required": [
+  "status",
+  "statusdate"
+ ]
+}

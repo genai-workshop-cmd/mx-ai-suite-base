@@ -1,0 +1,160 @@
+{
+  "resource": "MXAPILINEARREFMETHOD",
+  "description": "LINEARREFMETHOD",
+  "pk": [
+    "lrm"
+  ],
+  "title": "LINEARREFMETHOD",
+  "type": "object",
+  "$ref": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapilinearrefmethod",
+  "uniqueid": "linearrefmethodid",
+  "properties": {
+    "yoffsetmeasureunitid": {
+      "searchType": "EXACT",
+      "subType": "UPPER",
+      "title": "Y-Offset Unit of Measure",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Unit of measure for the Y Offset, which is the measure to the right or left of the linear asset.  The measurement is taken from the Y Offset Reference Point.",
+      "maxLength": 16
+    },
+    "localref": {
+      "type": "string"
+    },
+    "zoffsetmeasureunitid": {
+      "searchType": "EXACT",
+      "subType": "UPPER",
+      "title": "Z-Offset Unit of Measure",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Unit of measure for the Z Offset, which is the measure above or below the linear asset.  The measurement is taken from the Z Offset Reference Point.",
+      "maxLength": 16
+    },
+    "zoffsetref": {
+      "searchType": "EXACT",
+      "subType": "ALN",
+      "title": "Z-Offset Reference Point",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Reference point from which the start Z-Offset (distance above or below the linear asset) is measured.  ",
+      "maxLength": 30
+    },
+    "lrm": {
+      "searchType": "EXACT",
+      "subType": "UPPER",
+      "title": "LRM",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Name of this linear referencing method.  A linear referencing method specifies the units of measure (for measures and offsets) and the reference points (for offsets) to locate points on or near a linear asset.",
+      "maxLength": 25
+    },
+    "basemeasureunitid": {
+      "searchType": "EXACT",
+      "subType": "UPPER",
+      "title": "Base Unit of Measure",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Usually, this is the same as the unit of measure  for the asset. If they differ, Maximo will display measures in the unit of measure but will store measures in both the unit of measure and base unit of measure.  A conversion between the unit of measure and base unit of measure, entered via the Units of Measure and Conversion Action in Assets, must exist if the base unit of measure differs from the unit of measure.",
+      "maxLength": 16
+    },
+    "description": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Description",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Description",
+      "maxLength": 100
+    },
+    "langcode": {
+      "default": "EN",
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Language Code",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Language Column",
+      "maxLength": 4
+    },
+    "_rowstamp": {
+      "type": "string"
+    },
+    "measureunitid": {
+      "searchType": "EXACT",
+      "subType": "UPPER",
+      "title": "Unit of Measure",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Unit of measure used to locate assets along the linear asset's x-axis.",
+      "maxLength": 16
+    },
+    "hasld": {
+      "default": false,
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "Has Long Description",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "Boolean flag to indicate if there is any long description for this record"
+    },
+    "_imagelibref": {
+      "type": "string"
+    },
+    "href": {
+      "type": "string"
+    },
+    "_id": {
+      "type": "string"
+    },
+    "linearrefmethodid": {
+      "searchType": "EXACT",
+      "maximum": 2147483647.0,
+      "subType": "BIGINT",
+      "title": "Unique Id",
+      "persistent": true,
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "uniqueid": true,
+      "remarks": "Unique ID for the LINEARREFMETHOD table ",
+      "maxLength": 11
+    },
+    "yoffsetref_description": {
+      "type": "string"
+    },
+    "offsetmeasureunitid": {
+      "searchType": "EXACT",
+      "subType": "UPPER",
+      "title": "Offset Unit of Measure",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": " Unit of measure for the start and end reference point offsets, which are used in conjunction with the start and end reference points to determine the start and end measures.",
+      "maxLength": 16
+    },
+    "yoffsetref": {
+      "searchType": "EXACT",
+      "subType": "ALN",
+      "title": "Y-Offset Reference Point",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Reference point from which the start Y-Offset (distance to the right or left of the linear asset) is measured.  ",
+      "maxLength": 30
+    },
+    "zoffsetref_description": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "basemeasureunitid",
+    "lrm",
+    "measureunitid",
+    "offsetmeasureunitid"
+  ]
+}

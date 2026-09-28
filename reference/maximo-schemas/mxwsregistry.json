@@ -1,0 +1,191 @@
+{
+  "resource": "MXWSREGISTRY",
+  "description": "MAXWSREGISTRY",
+  "pk": [
+    "wsname"
+  ],
+  "title": "MAXWSREGISTRY",
+  "type": "object",
+  "$ref": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxwsregistry",
+  "uniqueid": "maxwsregistryid",
+  "properties": {
+    "description_longdescription": {
+      "searchType": "WILDCARD",
+      "subType": "LONGALN",
+      "title": "DESCRIPTION Long description",
+      "type": "string",
+      "remarks": "Long description for DESCRIPTION",
+      "maxLength": 32000
+    },
+    "localref": {
+      "type": "string"
+    },
+    "depltype": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Deployment",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Deployment",
+      "maxLength": 10
+    },
+    "issynchronous": {
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "Bypass Queue",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "Indicates whether an enterprise service Web service uses the inbound Java Message Service (JMS) queue or bypasses it for synchronous communcation, for example if a response is required."
+    },
+    "changeby": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Change By",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Change By",
+      "maxLength": 100
+    },
+    "description": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Description",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Description of the Web service.",
+      "maxLength": 100
+    },
+    "changedate": {
+      "searchType": "EXACT",
+      "subType": "DATETIME",
+      "title": "Change date",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Change Date"
+    },
+    "sourcename": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Source Name",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Name of the Web service source.",
+      "maxLength": 50
+    },
+    "source": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Source",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Source of the Web service, which is one of the three source options: Object Structure Service, Enterprise Service, or Standard service.",
+      "maxLength": 50
+    },
+    "_rowstamp": {
+      "type": "string"
+    },
+    "extsysname": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "External System",
+      "persistent": true,
+      "type": "string",
+      "remarks": "External System Name",
+      "maxLength": 20
+    },
+    "isrunning": {
+      "default": false,
+      "searchType": "NONE",
+      "subType": "YORN",
+      "title": "Is Deployed",
+      "type": "boolean",
+      "remarks": "Indicates whether the Web service is deployed or not."
+    },
+    "classname": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Implementation Class",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Service Implementation Class",
+      "maxLength": 256
+    },
+    "_imagelibref": {
+      "type": "string"
+    },
+    "soapversion": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "SOAP Version",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Version of the SOAP protocol that the Web service uses.",
+      "maxLength": 30
+    },
+    "maxwsregistryid": {
+      "searchType": "EXACT",
+      "maximum": 2147483647.0,
+      "subType": "BIGINT",
+      "title": "Unique Id",
+      "persistent": true,
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "uniqueid": true,
+      "remarks": "Unique Id",
+      "maxLength": 11
+    },
+    "servicename": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Service Name",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Underlying Service Name",
+      "maxLength": 25
+    },
+    "href": {
+      "type": "string"
+    },
+    "_id": {
+      "type": "string"
+    },
+    "isdeployed": {
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "Is Deployed",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "Is Web Service Deployed"
+    },
+    "userdefined": {
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "User Defined",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "Indicates whether the Web service is a user-defined or a predefined service."
+    },
+    "source_description": {
+      "type": "string"
+    },
+    "wsname": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Web Service Name",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Name of the Web service.",
+      "maxLength": 50
+    }
+  },
+  "required": [
+    "isdeployed",
+    "isrunning",
+    "issynchronous",
+    "sourcename",
+    "userdefined",
+    "wsname"
+  ]
+}

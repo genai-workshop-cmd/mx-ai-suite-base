@@ -1,0 +1,773 @@
+{
+  "resource": "MXTKSRVAD",
+  "description": "TICKET",
+  "pk": [
+    "class",
+    "ticketid"
+  ],
+  "title": "TICKET",
+  "type": "object",
+  "$ref": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxtksrvad",
+  "uniqueid": "ticketuid",
+  "properties": {
+    "affecteddate": {
+      "searchType": "EXACT",
+      "subType": "DATETIME",
+      "title": "Problem Date",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Time when user experiences issue"
+    },
+    "historyflag": {
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "History",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "Indicates whether this is a history record."
+    },
+    "localref": {
+      "type": "string"
+    },
+    "actlabcost": {
+      "searchType": "EXACT",
+      "scale": 2,
+      "subType": "AMOUNT",
+      "title": "Actual Labor Cost",
+      "persistent": true,
+      "type": "number",
+      "remarks": "Actual Labor Cost",
+      "maxLength": 11
+    },
+    "createwomulti_description": {
+      "type": "string"
+    },
+    "ticketuid": {
+      "searchType": "EXACT",
+      "maximum": 2147483647.0,
+      "subType": "BIGINT",
+      "title": "TICKETUID",
+      "persistent": true,
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "uniqueid": true,
+      "remarks": "Unique Identifier",
+      "maxLength": 11
+    },
+    "globalticketid": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Global Ticket",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Global Ticket ID",
+      "maxLength": 10
+    },
+    "internalpriority": {
+      "searchType": "EXACT",
+      "maximum": 2147483647.0,
+      "subType": "INTEGER",
+      "title": "Internal Priority",
+      "persistent": true,
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "hasList": true,
+      "remarks": "Priority as determined by the Servoce Desk Agent",
+      "maxLength": 11
+    },
+    "isknownerrordate": {
+      "searchType": "EXACT",
+      "subType": "DATETIME",
+      "title": "Is Known Error Date",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Datetime when the error known"
+    },
+    "externalrecid": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "External Rec ID",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Ticket ID for any Ticket external to MAXIMO",
+      "maxLength": 20
+    },
+    "ownergroup": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Owner Group",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Identifies the owner group for this ticket. The owner or owner group manages the ticket.",
+      "maxLength": 8
+    },
+    "source": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Source",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Source of Ticket Generation like email",
+      "maxLength": 20
+    },
+    "origrecordid": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Originating Record",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Ticket/WO ID that spawned or created one or more other tickets or work orders",
+      "maxLength": 10
+    },
+    "sitevisit": {
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "Site Visit Required",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "Falg used to indicate of a Ticket requires an on-site visit for investigation"
+    },
+    "_rowstamp": {
+      "type": "string"
+    },
+    "calcshift": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Shift",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Along with the calculation calendar, sets the business hours that calculate the Target Contact, Target Response, and Target Resolution dates on a ticket or work order. Click the Select Value button to choose a shift.",
+      "maxLength": 8
+    },
+    "solution": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Solution",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Solution ID",
+      "maxLength": 8
+    },
+    "actualstart": {
+      "searchType": "EXACT",
+      "subType": "DATETIME",
+      "title": "Actual Start",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Actual Start Date"
+    },
+    "siteid": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Site",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Identifier of the site.",
+      "maxLength": 8
+    },
+    "isknownerror": {
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "Is Known Error",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "Specifies whether this ticket has been marked by a service desk agent as a known error."
+    },
+    "href": {
+      "type": "string"
+    },
+    "affectedperson": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Person Affected",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Person Affected",
+      "maxLength": 82
+    },
+    "actualcontactdate": {
+      "searchType": "EXACT",
+      "subType": "DATETIME",
+      "title": "Actual Contact Date",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Actual contact date"
+    },
+    "affectedphone": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Affected Phone",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Affted User's Phone",
+      "maxLength": 20
+    },
+    "reportedpriority": {
+      "searchType": "EXACT",
+      "maximum": 2147483647.0,
+      "subType": "INTEGER",
+      "title": "Reported Priority",
+      "persistent": true,
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "hasList": true,
+      "remarks": "Priority of the Reported Ticket",
+      "maxLength": 11
+    },
+    "impact": {
+      "searchType": "EXACT",
+      "maximum": 2147483647.0,
+      "subType": "INTEGER",
+      "title": "Impact",
+      "persistent": true,
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "remarks": "The Business Impact/severity of the Ticket",
+      "maxLength": 11
+    },
+    "targetstart": {
+      "searchType": "EXACT",
+      "subType": "DATETIME",
+      "title": "Target Start",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Target Start Date"
+    },
+    "changedate": {
+      "searchType": "EXACT",
+      "subType": "DATETIME",
+      "title": "Changed Date",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Date on which Ticket changed"
+    },
+    "targetdesc": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Target Description",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Temporary target description for targeting CIs",
+      "maxLength": 50
+    },
+    "actlabhrs": {
+      "searchType": "EXACT",
+      "scale": 0,
+      "subType": "DURATION",
+      "title": "Actual Labor Hours",
+      "persistent": true,
+      "type": "number",
+      "remarks": "Actual Labor Hours",
+      "maxLength": 8
+    },
+    "globalticketclass": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Global Ticket Class",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Class of the global ticket",
+      "maxLength": 16
+    },
+    "templateid": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Template",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Template Identifier",
+      "maxLength": 10
+    },
+    "orgid": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Organization",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Identifier of the organization.",
+      "maxLength": 8
+    },
+    "createwomulti": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Create WO Options",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Identifies what happens to Multi table entries on Tickets when follow-up Work Orders are created",
+      "maxLength": 8
+    },
+    "globalticketclass_description": {
+      "type": "string"
+    },
+    "reportedemail": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Reported E-mail",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Reported User's Email",
+      "maxLength": 100
+    },
+    "_id": {
+      "type": "string"
+    },
+    "supervisor": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Supervisor",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Supervisor",
+      "maxLength": 100
+    },
+    "calccalendar": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Calendar",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Business days and times used to calculate the Target Contact, Target Response, and Target Resolution dates on a ticket or work order. Click the Detail Menu to select a calendar or go to the Calendars application to create one.",
+      "maxLength": 8
+    },
+    "origrecordclass": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Orginal Record Class",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Class of the original record",
+      "maxLength": 16
+    },
+    "status": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Status",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Status of the ticket. Default statuses are NEW, QUEUED, PENDING, INPROG, RESOLVED, and CLOSED. See the Help for a Service Desk application for more information on statuses.",
+      "maxLength": 10
+    },
+    "template": {
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "Template",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "Template"
+    },
+    "commodity": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Commodity Code",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Service for which you are viewing records.",
+      "maxLength": 8
+    },
+    "cinum": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Configuration Item",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "CI Number",
+      "maxLength": 12
+    },
+    "reportedpriority_description": {
+      "type": "string"
+    },
+    "selfservsolaccess": {
+      "default": false,
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "Self-Service Access",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "Specifies whether the solution applied to this ticket is visible to the self-service user who opened the associated self-service Service Request. If the check box is selected, the self-service user can view this record. If the check box is cleared the solution record is not visible to the self-service user."
+    },
+    "commoditygroup": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Commodity Group",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Service group for which you are viewing records.",
+      "maxLength": 8
+    },
+    "inheritstatus": {
+      "default": true,
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "Inherit Status Changes",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "Inherit status from follow up record"
+    },
+    "problemcode": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Problem Code",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Reason for failure",
+      "maxLength": 8
+    },
+    "reportdate": {
+      "searchType": "EXACT",
+      "subType": "DATETIME",
+      "title": "Reported Date",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Date when the ticket was reported"
+    },
+    "class_description": {
+      "type": "string"
+    },
+    "origrecsiteid": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Originating Record Site",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Site Identifier of the originating Record",
+      "maxLength": 8
+    },
+    "description": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Description",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Description of the ticket. If you are editing a ticket, you can enter or view additional information by clicking the Long Description button.",
+      "maxLength": 100
+    },
+    "targetcontactdate": {
+      "searchType": "EXACT",
+      "subType": "DATETIME",
+      "title": "Target Contact",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Target contact date"
+    },
+    "reportedby": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Reported By",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Identifies the person reporting the issue on the ticket.",
+      "maxLength": 82
+    },
+    "assignedownergroup": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Assigned Owner Group",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Assigned Owner Group of the ticket record. This group has overall responsibility for the solution. Use the Select Action menu to assign an owner group. You can enter a value either in this field or the Owner field.",
+      "maxLength": 8
+    },
+    "origrecorgid": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Originating Record Oganization",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Organization Identifier of the originating Record",
+      "maxLength": 8
+    },
+    "urgency": {
+      "searchType": "EXACT",
+      "maximum": 2147483647.0,
+      "subType": "INTEGER",
+      "title": "Urgency",
+      "persistent": true,
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "remarks": "A reflection of the speed in which a Ticket should be resolved",
+      "maxLength": 11
+    },
+    "_imagelibref": {
+      "type": "string"
+    },
+    "vendor": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Vendor",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Vendor code in companies table.",
+      "maxLength": 12
+    },
+    "assetnum": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Asset",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Default assetnum",
+      "maxLength": 25
+    },
+    "reportedphone": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Reported Phone",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Reported User's Phone",
+      "maxLength": 20
+    },
+    "assetsiteid": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Asset Site",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Asset's Site",
+      "maxLength": 8
+    },
+    "class": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Class",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Class of the ticket. Default values are SR (service request), INCIDENT, and PROBLEM.",
+      "maxLength": 16
+    },
+    "assetorgid": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Asset Organization",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Organozation of the ticket asset",
+      "maxLength": 8
+    },
+    "ticketid": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Ticket",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Identifies the ticket.",
+      "maxLength": 10
+    },
+    "fr2code": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Resolution",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Resolution",
+      "maxLength": 8
+    },
+    "owner": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Owner",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Identifies the owner for this ticket. The owner or owner group manages the ticket.",
+      "maxLength": 100
+    },
+    "calcorgid": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Organization",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Organization associated with the calculation calendar, and used with the Calendar and Shift fields to calculate the Target Contact, Target Response, and Target Resolution dates on a ticket or work order. Click the Detail Menu button to select an organization or go to the Organizations application to create one.",
+      "maxLength": 8
+    },
+    "classstructureid": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Class Structure",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Class Structure Identifier",
+      "maxLength": 25
+    },
+    "internalpriority_description": {
+      "type": "string"
+    },
+    "changeby": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Changed By",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Person who modified or changed",
+      "maxLength": 100
+    },
+    "affectedemail": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Affected E-mail",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Affected User's Email",
+      "maxLength": 100
+    },
+    "actualfinish": {
+      "searchType": "EXACT",
+      "subType": "DATETIME",
+      "title": "Actual Finish",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Actual Finish Date"
+    },
+    "relatedtoglobal": {
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "Related to Global Issue",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "Flag used to determine if a Ticket is related to a global issue Ticket"
+    },
+    "hasactivity": {
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "Has Activity",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "Does this ticket has any activity"
+    },
+    "statusdate": {
+      "searchType": "EXACT",
+      "subType": "DATETIME",
+      "title": "Status Date",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Status DATETIME"
+    },
+    "targetfinish": {
+      "searchType": "EXACT",
+      "subType": "DATETIME",
+      "title": "Target Finish",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Target Finish Date"
+    },
+    "glaccount": {
+      "searchType": "WILDCARD",
+      "subType": "GL",
+      "title": "GL Account",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "GL Account",
+      "maxLength": 23
+    },
+    "failurecode": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Failure Code",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Indicates Top level of a Failure Hierarchy",
+      "maxLength": 8
+    },
+    "hassolution": {
+      "default": false,
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "Has Solution",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "Indicates whether this ticket has a solution or not. This can be either an adhoc one or a referenced solution."
+    },
+    "fr1code": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Cause",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Cause",
+      "maxLength": 8
+    },
+    "location": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Location",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Default Location",
+      "maxLength": 25
+    },
+    "isglobal": {
+      "default": false,
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "Is Global Issue",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "Flag used to determine if a Ticket is a Global Issue"
+    },
+    "origfromalert": {
+      "default": false,
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "Originates from Alert",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "Flag to indicated Monitor generated SRs "
+    },
+    "tkserviceaddress": {
+      "objectName": "TKSERVICEADDRESS",
+      "type": "array",
+      "items": {
+        "definition": {
+          "subSchema": {
+            "$ref": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxtksrvad/tkserviceaddress"
+          }
+        },
+        "type": "object"
+      },
+      "cardinality": "",
+      "relation": "SERVICEADDRESS"
+    }
+  },
+  "required": [
+    "actlabcost",
+    "actlabhrs",
+    "changeby",
+    "changedate",
+    "class",
+    "hasactivity",
+    "historyflag",
+    "isknownerror",
+    "relatedtoglobal",
+    "sitevisit",
+    "status",
+    "statusdate",
+    "template",
+    "ticketid"
+  ]
+}

@@ -1,0 +1,287 @@
+{
+ "resource": "REP_PLUSGTKTMP",
+ "description": "Ticket Templates (Oil) Details",
+ "pk": [
+  "templateid"
+ ],
+ "title": "TKTEMPLATE",
+ "type": "object",
+ "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/rep_plusgtktmp",
+ "uniqueid": "tktemplateid",
+ "properties": {
+  "plusginccategory_description": {
+   "type": "string"
+  },
+  "commodity": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Service",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Service or type of work associated with the ticket. Can serve as a way to categorize tickets. Click the Detail Menu button to select a value or to view related records for this service.",
+   "maxLength": 8
+  },
+  "plusginctype": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Incident Type",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The type of incident that occurred, such as an injury or an explosion. This field is used to group similar incidents. This field is used for reporting and assignment purposes. If you select the Observation Type value, you must specify the type of safety observation. Valid values are in the PLUSGINCIDENTGROUP domain.",
+   "maxLength": 30
+  },
+  "tktemplateid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "TKTEMPLATEID",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "uniqueid": true,
+   "remarks": "Unique Identifier",
+   "maxLength": 11
+  },
+  "localref": {
+   "type": "string"
+  },
+  "plusginccategory": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Incident Category",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The category of incident that occurred, such as a major incident or a near-miss incident. Valid values are in the PLUSGINCIDENTTYPE domain.",
+   "maxLength": 16
+  },
+  "commoditygroup": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Service Group",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Service group or organization responsible for performing the work associated with the ticket. Can serve as a way to categorize tickets. Click the Detail Menu button to select a value or go to the Service Catalog application to create one. You can also view related records for this service group.",
+   "maxLength": 8
+  },
+  "class_description": {
+   "type": "string"
+  },
+  "description": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Description",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Describes the ticket template. To enter or view additional information, click the Long Description button.",
+   "maxLength": 100
+  },
+  "externalrefid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "External Ref ID",
+   "persistent": true,
+   "type": "string",
+   "remarks": "'Identifies the ticket template. Hold Internal ID for source MAXIMO",
+   "maxLength": 10
+  },
+  "internalpriority": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "INTEGER",
+   "title": "Internal Priority",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "hasList": true,
+   "remarks": "Importance of the ticket relative to other tickets as categorized by Service Desk personnel. Predefined values include: 1 (Urgent), 2 (High), 3 (Medium), and 4 (Low). Click the Select Value button to choose an internal priority.",
+   "maxLength": 11
+  },
+  "ownergroup": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Owner Group",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Functional group or organization that owns this type of ticket. Click the Detail Menu button to select a person group or go to the Person Groups application to create one.",
+   "maxLength": 8
+  },
+  "assignedownergroup": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Assigned Owner Group",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Assigned Owner Group of the ticket template record. Use the Select Action menu to assign an owner group. ",
+   "maxLength": 8
+  },
+  "plusginctype_description": {
+   "type": "string"
+  },
+  "_rowstamp": {
+   "type": "string"
+  },
+  "urgency": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "INTEGER",
+   "title": "Urgency",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "Ticket Template Urgency",
+   "maxLength": 11
+  },
+  "_imagelibref": {
+   "type": "string"
+  },
+  "vendor": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Vendor",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "If ticket requires work to be performed by an outside company, name of vendor responsible for the work. Click the Detail Menu button to select a value or go to the Companies application to create one.",
+   "maxLength": 12
+  },
+  "sortorder": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "INTEGER",
+   "title": "Order",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "Sort Order for Ticket Templates.",
+   "maxLength": 11
+  },
+  "href": {
+   "type": "string",
+   "title": "TKTEMPLATE object reference"
+  },
+  "class": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Class",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Type of ticket to which a Maximo user can apply the template. You can choose from three classes: Service Request, Incident, or Problem. Click the Select Value button to choose a class.",
+   "maxLength": 25
+  },
+  "owner": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Owner",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Individual person responsible for the ticket. Click the Detail Menu button to select a person or go to the People application to create one.",
+   "maxLength": 100
+  },
+  "status_description": {
+   "type": "string"
+  },
+  "classstructureid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Class Structure",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Class Structure Identifier",
+   "maxLength": 25
+  },
+  "internalpriority_description": {
+   "type": "string"
+  },
+  "impact": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "INTEGER",
+   "title": "Impact",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "Ticket Template Impact",
+   "maxLength": 11
+  },
+  "plusgsftyobstype_description": {
+   "type": "string"
+  },
+  "record_descriptor": {
+   "type": "string",
+   "title": "Record/Object Descriptor"
+  },
+  "plusgsftyobstype": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Safety Observation Type",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The type of safety observation that is done, such as witnessing an unsafe act or recording an unsafe work condition.",
+   "maxLength": 30
+  },
+  "templateid": {
+   "default": "&AUTOKEY&",
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Template",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Identifies the ticket template. This value must be unique for all ticket template records.",
+   "maxLength": 10
+  },
+  "orgid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Organization",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Organization associated with the ticket. Click the Select Value button choose an organization.",
+   "maxLength": 8
+  },
+  "statusdate": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Status Date",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Status Date"
+  },
+  "instractions": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Instructions",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Instructions for the ticket template.",
+   "maxLength": 256
+  },
+  "_id": {
+   "type": "string"
+  },
+  "status": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Status",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Status of the ticket template. When you create a template, Maximo automatically sets the status to DRAFT. When you are ready for Maximo users to apply the template, set the status to ACTIVE. Set the status of a template to INACTIVE if you do not want it to be used.",
+   "maxLength": 12
+  }
+ },
+ "required": [
+  "class",
+  "status"
+ ]
+}

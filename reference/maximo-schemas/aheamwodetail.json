@@ -1,0 +1,146 @@
+{
+  "resource": "AHEAMWODETAIL",
+  "description": "EXTERNALEAMWO",
+  "title": "EXTERNALEAMWO",
+  "type": "object",
+  "$ref": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/aheamwodetail",
+  "properties": {
+    "description_longdescription": {
+      "searchType": "WILDCARD",
+      "subType": "LONGALN",
+      "title": "Details",
+      "type": "string",
+      "remarks": "Long Description for Work Order Description",
+      "maxLength": 32000
+    },
+    "localref": {
+      "type": "string"
+    },
+    "wopriority": {
+      "searchType": "NONE",
+      "maximum": 2147483647.0,
+      "subType": "INTEGER",
+      "title": "WOPRIORITY",
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "remarks": "WOPRIORITY",
+      "maxLength": 11
+    },
+    "description": {
+      "searchType": "NONE",
+      "subType": "ALN",
+      "title": "DESCRIPTION",
+      "type": "string",
+      "remarks": "DESCRIPTION",
+      "maxLength": 50
+    },
+    "p__jsonobjectid": {
+      "searchType": "NONE",
+      "subType": "ALN",
+      "title": "P__JSONOBJECTID",
+      "type": "string",
+      "remarks": "P__JSONOBJECTID",
+      "maxLength": 50
+    },
+    "worktype": {
+      "searchType": "NONE",
+      "subType": "ALN",
+      "title": "WORKTYPE",
+      "type": "string",
+      "remarks": "WORKTYPE",
+      "maxLength": 50
+    },
+    "reportedby": {
+      "searchType": "NONE",
+      "subType": "ALN",
+      "title": "REPORTEDBY",
+      "type": "string",
+      "remarks": "REPORTEDBY",
+      "maxLength": 50
+    },
+    "fnlconstraint": {
+      "searchType": "NONE",
+      "subType": "ALN",
+      "title": "FNLCONSTRAINT",
+      "type": "string",
+      "remarks": "FNLCONSTRAINT",
+      "maxLength": 50
+    },
+    "orgid": {
+      "searchType": "NONE",
+      "subType": "ALN",
+      "title": "ORGID",
+      "type": "string",
+      "remarks": "ORGID",
+      "maxLength": 50
+    },
+    "wonum": {
+      "searchType": "NONE",
+      "subType": "ALN",
+      "title": "WONUM",
+      "type": "string",
+      "remarks": "WONUM",
+      "maxLength": 50
+    },
+    "_rowstamp": {
+      "type": "string"
+    },
+    "sneconstraint": {
+      "searchType": "NONE",
+      "subType": "ALN",
+      "title": "SNECONSTRAINT",
+      "type": "string",
+      "remarks": "SNECONSTRAINT",
+      "maxLength": 50
+    },
+    "_imagelibref": {
+      "type": "string"
+    },
+    "assetnum": {
+      "searchType": "NONE",
+      "subType": "ALN",
+      "title": "ASSETNUM",
+      "type": "string",
+      "remarks": "ASSETNUM",
+      "maxLength": 50
+    },
+    "siteid": {
+      "searchType": "NONE",
+      "subType": "ALN",
+      "title": "SITEID",
+      "type": "string",
+      "remarks": "SITEID",
+      "maxLength": 50
+    },
+    "location": {
+      "searchType": "NONE",
+      "subType": "ALN",
+      "title": "Location",
+      "type": "string",
+      "remarks": "LOCATION",
+      "maxLength": 50
+    },
+    "href": {
+      "type": "string"
+    },
+    "_id": {
+      "type": "string"
+    },
+    "inspformnum": {
+      "searchType": "NONE",
+      "subType": "ALN",
+      "title": "Inspection Form",
+      "type": "string",
+      "remarks": "The number of the inspection form.",
+      "maxLength": 12
+    },
+    "status": {
+      "searchType": "NONE",
+      "subType": "ALN",
+      "title": "STATUS",
+      "type": "string",
+      "remarks": "STATUS",
+      "maxLength": 50
+    }
+  }
+}

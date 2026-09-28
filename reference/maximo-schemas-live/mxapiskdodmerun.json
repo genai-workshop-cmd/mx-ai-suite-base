@@ -1,0 +1,193 @@
+{
+ "resource": "MXAPISKDODMERUN",
+ "description": "Maximo API Object Structure for Optimization Run KPI for Scheduler Dashboard",
+ "pk": [
+  "skdodmerunid"
+ ],
+ "title": "SKDODMERUN",
+ "type": "object",
+ "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/mxapiskdodmerun",
+ "uniqueid": "skdodmerunid",
+ "properties": {
+  "odmeuser": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "User",
+   "persistent": true,
+   "type": "string",
+   "remarks": "User submitted this task.",
+   "maxLength": 100
+  },
+  "autorefresh": {
+   "default": true,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Auto Refresh",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Auto Refresh"
+  },
+  "localref": {
+   "type": "string"
+  },
+  "iser": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Emergency Recommendations",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Emergency Recommendations."
+  },
+  "endtime": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "End Time",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Time when optimization ends."
+  },
+  "skdscenrunkpi": {
+   "objectName": "SKDSCENRUNKPI",
+   "type": "array",
+   "items": {
+    "definition": {
+     "subSchema": {
+      "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/mxapiskdodmerun/skdscenrunkpi"
+     }
+    },
+    "type": "object"
+   },
+   "cardinality": "",
+   "relation": "SKDSCENARIORUNKPI_RUN_GLOBAL"
+  },
+  "record_descriptor": {
+   "type": "string",
+   "title": "Record/Object Descriptor"
+  },
+  "refreshinterval": {
+   "default": 5,
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "INTEGER",
+   "title": "Refresh Interval (s)",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "Refresh Interval",
+   "maxLength": 11
+  },
+  "starttime": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Start Time",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Time when optimization starts."
+  },
+  "running": {
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Running",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "remarks"
+  },
+  "_rowstamp": {
+   "type": "string"
+  },
+  "modeltype": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Model Tpye",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Type of the optimization model.",
+   "maxLength": 20
+  },
+  "_imagelibref": {
+   "type": "string"
+  },
+  "skdprojectid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "SKDProjectId",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "Project id ODME is running against.",
+   "maxLength": 11
+  },
+  "model": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Model Name",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Name of the optimization model.",
+   "maxLength": 256
+  },
+  "href": {
+   "type": "string",
+   "title": "SKDODMERUN object reference"
+  },
+  "_id": {
+   "type": "string"
+  },
+  "isdest": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Travel Matrix Calculation",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Travel matrix calculation."
+  },
+  "optjobid": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Optimization Service JobID",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Optimization Service JobID",
+   "maxLength": 50
+  },
+  "skdodmerunid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Unique Id",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "uniqueid": true,
+   "remarks": "Unique Id",
+   "maxLength": 11
+  },
+  "modelversion": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "INTEGER",
+   "title": "Model Version",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "Version of the optimization model.",
+   "maxLength": 11
+  },
+  "status": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Status",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Processing status.",
+   "maxLength": 30
+  }
+ },
+ "required": [
+  "running",
+  "skdprojectid"
+ ]
+}

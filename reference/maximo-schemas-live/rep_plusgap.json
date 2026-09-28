@@ -1,0 +1,1104 @@
+{
+ "resource": "REP_PLUSGAP",
+ "description": "Access Permits (Oil) Details",
+ "pk": [
+  "orgid",
+  "siteid",
+  "permitworknum"
+ ],
+ "title": "PLUSGACCESSPERMIT",
+ "type": "object",
+ "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/rep_plusgap",
+ "uniqueid": "plusgpermitworkid",
+ "properties": {
+  "plusgpermitworkid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Unique Id",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "uniqueid": true,
+   "remarks": "Unique Id",
+   "maxLength": 11
+  },
+  "historyflag": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "History",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "History Flag"
+  },
+  "localref": {
+   "type": "string"
+  },
+  "productiondate": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Returned to Production",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The date and time when the person confirms that the area was returned to production."
+  },
+  "crossareacountsig": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Cross Area Counter Signature Required",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Indicates whether a counter signature is required. This signature is from an authorized person who is responsible for another area that is affected by the access permit."
+  },
+  "shift": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Work Shift",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The work shift for which the access permit is required. Valid values are in the PERMITWORKSHIFTS domain.",
+   "maxLength": 30
+  },
+  "isolationsremoved": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Isolation Removal Verified",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Indicates whether the required isolations that are associated with this permit were removed."
+  },
+  "createdate": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Created",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The date and time when the access permit was created."
+  },
+  "closureenterpmtrgt": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Entered in Permit Registry",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Indicates whether the access permit is added to the permit registry."
+  },
+  "closurerevdate": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Review Date",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The date and time when the access permit record was reviewed."
+  },
+  "ownergroup": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Owner Group",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The group that owns the access permit. You can change ownership of the access permit using the Select Owner or the Take Ownership actions.",
+   "maxLength": 8
+  },
+  "masterlockinuse": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Lock Box In Use",
+   "persistent": true,
+   "type": "boolean",
+   "hasList": true,
+   "remarks": "Indicates that the lock box is locked and in use."
+  },
+  "gastestrepeatfreq_description": {
+   "type": "string"
+  },
+  "locationsid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Location",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "hasList": true,
+   "remarks": "The location unique identifier.",
+   "maxLength": 11
+  },
+  "plusggroupcode": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Grouping Code",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The code that is used to group related access permits, such as those for projects or for turnarounds. Valid values are in the PLUSGGROUPINGCODE domain. You can change this value in any status except when the status of the access permit is Canceled or Closed.",
+   "maxLength": 16
+  },
+  "href": {
+   "type": "string",
+   "title": "PLUSGACCESSPERMIT object reference"
+  },
+  "closuresitecleared": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Work Site Cleared",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Indicates whether the work site was cleared when the access permit was cancelled."
+  },
+  "plusgcontrolssumm": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Controls Summary",
+   "persistent": true,
+   "type": "string",
+   "remarks": "A summary of the controls. The summary is based on the controls identified to address hazards identified by the hazard review.",
+   "maxLength": 200
+  },
+  "inspectorbyid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Inspector",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Inspector",
+   "maxLength": 100
+  },
+  "plusgpertypeid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Permit and Certificate Type",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "Permit and Certificate Type.",
+   "maxLength": 11
+  },
+  "lockreturned": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Lock Returned",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Indicates that all locks and keys that are associated with the access permit have been returned."
+  },
+  "productionauthid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Area Authority",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "Area Authority.",
+   "maxLength": 11
+  },
+  "record_descriptor": {
+   "type": "string",
+   "title": "Record/Object Descriptor"
+  },
+  "permitunit": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Unit",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The unit that is associated with the access permit record.",
+   "maxLength": 16
+  },
+  "thirdparty": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Third Party",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Specifies whether a third party is involved in the completion of the access permit request."
+  },
+  "masterlockboxkey": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Lock Box Key",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Identifier of the key to the lock box.",
+   "maxLength": 15
+  },
+  "permitunits_description": {
+   "type": "string"
+  },
+  "plusgauditid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Audit",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "Audit unique identifier.",
+   "maxLength": 11
+  },
+  "requireddate": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Required Date",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The date and time when the permit is required."
+  },
+  "status": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Status",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The status of the access permit record. Valid statuses are in the PLUSGPERWORKSTATUS synonym domain. The default value when you create the access permit record is Requested. Use the Change Status icon on the toolbar to modify the status of the permit.",
+   "maxLength": 20
+  },
+  "template": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Template",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Indicates that the record can be used as a template to create other access permit records. Only certain fields and their values are duplicated. Those fields and their values are copied from the originating record to the new record."
+  },
+  "gastestrepeatfreq": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Gas Test Repeat Frequency",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The frequency, in hours or on a daily basis, of gas testing.",
+   "maxLength": 20
+  },
+  "permitunits": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Units",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The unit of time for which the access permit is valid.",
+   "maxLength": 16
+  },
+  "assetnum": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Asset",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The asset that is associated with the access permit record.",
+   "maxLength": 25
+  },
+  "isoreason": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Reason for Isolation",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Describes the reason for the isolation.",
+   "maxLength": 200
+  },
+  "refdrawing": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Reference Drawing",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The reference drawing that is associated with the lock out and tag out operation.",
+   "maxLength": 20
+  },
+  "riskcomments": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Comments",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Additional comments for the current risk assessment.",
+   "maxLength": 200
+  },
+  "confspaceauthid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Confined Space Controller",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "The unique identifier of the person who is assigned to enter the confined space.",
+   "maxLength": 11
+  },
+  "closurereviewerid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Permit Reviewed By",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "Identifier of the reviewer.",
+   "maxLength": 11
+  },
+  "plusgmethodstatement": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Method Statement",
+   "persistent": true,
+   "type": "string",
+   "remarks": "A method statement of procedures.",
+   "maxLength": 200
+  },
+  "plusgriskassessid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Risk Assessment",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "Risk Assessment.",
+   "maxLength": 11
+  },
+  "contgastestreqd": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Continuous Gas Testing Required",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Indicates whether gas testing is required on a continual basis to ensure the safety of the plant."
+  },
+  "specisolation": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Isolation Specialist",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": " Indicates whether the isolation requires a specialist who is familiar with handling this type of isolation, such as high voltage electrical isolation.",
+   "maxLength": 30
+  },
+  "permitunit_description": {
+   "type": "string"
+  },
+  "confspaceauth": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Confined Space Controller",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The person who is assigned to enter the confined space.",
+   "maxLength": 100
+  },
+  "statusdate": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Status Date",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The server date and time when the access permit record was created, or when the status changed of the access permit record. This value is read-only."
+  },
+  "sitechecked": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Initial Site Check",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Specifies whether there must be an initial verification of the site that is associated with the access permit."
+  },
+  "workorderid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Originating Work Order",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "Originating Work Order Identifier.",
+   "maxLength": 11
+  },
+  "closurecomments": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Comments",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Comments arising from the review of the access permit record.",
+   "maxLength": 200
+  },
+  "masterpermit": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Master Permit",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Specifies whether this access permit record is a master permit."
+  },
+  "isolationsremovedauthid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Isolating Authority",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "Isolating Authority.",
+   "maxLength": 11
+  },
+  "reviewerbygroup": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Reviewer Group",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Reviewer Group",
+   "maxLength": 8
+  },
+  "closurelessonslearned": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Lessons Learned",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Indicates whether a lessons learned meeting was held or there are lessons learned that are associated with this access permit record."
+  },
+  "workinghours": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Working Hours",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Advisory information, such as Daylight Only, on the working hours that are associated with an access permit.",
+   "maxLength": 20
+  },
+  "activitycategory_description": {
+   "type": "string"
+  },
+  "tbtcompletedby": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Toolbox Talk Completed By",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The person who is responsible for holding the toolbox talk.",
+   "maxLength": 100
+  },
+  "plusggroupcode_description": {
+   "type": "string"
+  },
+  "workcompleted": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Work Completed",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Indicates whether the work that is associated with the access permit is complete."
+  },
+  "safeconditiondate": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Returned to Safe Condition",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The date and time when the person confirms that the plant was returned to a safe condition."
+  },
+  "masterlockbox": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Lock",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The identifier for a lock box that can hold multiple keys that are associated with a group of related isolations. The person who does the work holds the key to the master lock box.",
+   "maxLength": 20
+  },
+  "_rowstamp": {
+   "type": "string"
+  },
+  "attacheddoc": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Documentation Attached",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "The attachments for the lock out and tag out plan that is associated with the access permit."
+  },
+  "selfisolation": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Self Isolation",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Specifies whether the person doing the work is cleared to carry out his or her own isolation."
+  },
+  "siteid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Site",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The site that is associated with the access permit record.",
+   "maxLength": 8
+  },
+  "details": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Details",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Detailed information about the access permit.",
+   "maxLength": 200
+  },
+  "reserved1": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Reserved Attribute",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Reserved Attibute.",
+   "maxLength": 16
+  },
+  "extdescription": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Reason for Extension",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The reason why the access permit is extended. Operational rules might dictate that an access permit requires an extension.",
+   "maxLength": 100
+  },
+  "workcompletedauthid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Performing Authority",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "Perfoming Authority.",
+   "maxLength": 11
+  },
+  "specisolation_description": {
+   "type": "string"
+  },
+  "status_description": {
+   "type": "string"
+  },
+  "activitycategory": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Activity Category",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The category of the activity that is associated with the access permit, such as chemical operations or production operations.",
+   "maxLength": 30
+  },
+  "riskcopiedfromwo": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Risk Assessment Copied from Work Order or Task",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Indicates whether the risk assessment was copied from the work order or the task that generated the access permit."
+  },
+  "changedate": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Change Date",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The date and time when the access permit record was extended."
+  },
+  "permitlevel": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Permit Risk Level",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The level of risk that is associated with the access permit record, depending on the nature of the task.",
+   "maxLength": 16
+  },
+  "orgid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Organization",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The organization that is associated with the site of the access permit record.",
+   "maxLength": 8
+  },
+  "sitecheckedbyid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Site Checked By",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "The person who verified the work site.",
+   "maxLength": 11
+  },
+  "tbtcompleteddate": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Toolbox Talk Completed",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The date and time when the person confirms that the toolbox talk was completed."
+  },
+  "plusghazardsumm": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Hazard Summary",
+   "persistent": true,
+   "type": "string",
+   "remarks": "A summary of the hazards. The summary is based on the risk assessment analysis that was done for the access permit.",
+   "maxLength": 200
+  },
+  "sitecheckeddate": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Site Checked",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The date and time when the person confirms that the work site was  verified."
+  },
+  "changedby": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Changed By",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The person who was logged in when the duration for the access permit was extended.",
+   "maxLength": 100
+  },
+  "plusgprocedureid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Operating Procedure",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "The  procedures that are to be used for the lock out and tag out operation.",
+   "maxLength": 11
+  },
+  "routesid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Asset List",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "The list of assets or locations that are associated with the lock out and tag out operations. Use the Asset List application to create lists of assets and associated locations.",
+   "maxLength": 11
+  },
+  "inhibitsremoved": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Inhibits Removed",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Indicates whether any inhibits that are associated with this permit are removed. For example, an alarm circuit was shut down so that maintenance work could proceed. The alarm circuit must be reactivated."
+  },
+  "_id": {
+   "type": "string"
+  },
+  "permitlevel_description": {
+   "type": "string"
+  },
+  "pertypenum": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Permit and Certificate Type",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The type of permit or certificate that is associated with the access permit record. The status of the type of permit or certificate must be active. You can either select a value or create a type of permit or certificate  record using the Permit and Certificate Types application. After you create and save a permit and certificate type record, you cannot change this value.",
+   "maxLength": 10
+  },
+  "riskassessreq": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Risk Assessment Required",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Specifies whether a risk assessment must be performed for this access permit record."
+  },
+  "safecondition": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Returned to Safe Condition",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Indicates whether the plant was returned to a safe condition, and is ready to be returned to production."
+  },
+  "production": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Returned to Production",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Indicates whether the asset or the location that is associated with this permit was returned to production."
+  },
+  "resultnum": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Inspection Result",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The number of the inspection result.",
+   "maxLength": 12
+  },
+  "wotaskid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Originating Task",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "Originating Task Idnetifier.",
+   "maxLength": 11
+  },
+  "description": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Description",
+   "persistent": true,
+   "type": "string",
+   "remarks": "A description of the access permit record.",
+   "maxLength": 100
+  },
+  "toolboxcomments": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Comments",
+   "persistent": true,
+   "type": "string",
+   "remarks": "A description of the toolbox talk that was held and the information that was shared between the team and the person who held the toolbox talk. A toolbox talk is a safety presentation that is given to inform personnel about safety procedures.",
+   "maxLength": 200
+  },
+  "inspduedate": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Due Date",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Due Date"
+  },
+  "shift_description": {
+   "type": "string"
+  },
+  "plusgtotalscore": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Total Score",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "The total score that is assigned to the hazards that are associated with the access permit.",
+   "maxLength": 11
+  },
+  "inhibitsremovedauthid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Issuing Authority",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "Issuing Authority.",
+   "maxLength": 11
+  },
+  "safeconditionauthid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Issuing Authority",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "Issuing Authority.",
+   "maxLength": 11
+  },
+  "_imagelibref": {
+   "type": "string"
+  },
+  "closureauditrequired": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Audit Required",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Indicates whether an audit is required to ensure the quality of the access permit activities and processes."
+  },
+  "reviewerbyid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Reviewer",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Reviewer",
+   "maxLength": 100
+  },
+  "isolationsremoveddate": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Isolation Removed",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The date and time when the person confirms that the isolations were removed."
+  },
+  "permitworknum": {
+   "default": "&AUTOKEY&",
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Permit",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The identifier of the access permit record.",
+   "maxLength": 10
+  },
+  "isocert": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Isolation Certificate",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Indicates whether the permit and certificate type applies to an isolation certificate."
+  },
+  "riskrevised": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Copied Risk Assessment Revised",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Indicates whether the risk assessment was modified after it was copied from the work order or the task."
+  },
+  "owner": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Owner",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The owner of the access permit. You can change ownership of the access permit using the Select Owner or the Take Ownership actions.",
+   "maxLength": 100
+  },
+  "inspformrev": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "INTEGER",
+   "title": "Current Form Revision",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "Current Form Revision",
+   "maxLength": 11
+  },
+  "longtermiso": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Long Term Isolation",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Indicates whether the isolation is long term so that users of the isolation certificate or associated permits are aware that the isolation is planned to be in place over an extended period of time."
+  },
+  "ptwclass": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Permit Class",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The class of permit. Valid values are in the PLUSGPTWCLASS domain.",
+   "maxLength": 16
+  },
+  "inhibitsremoveddate": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Inhibits Removed",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The date and time when the person confirms that the inhibits were removed. An inhibit is associated with alarm panels, emergency shutdown systems, and fire and gas systems. For example, you inhibit an alarm circuit to carry out maintenance work. The inhibit is removed when it is safe to do so."
+  },
+  "workcompleteddate": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Work Completed",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The date and time when the person confirms that the work was completed."
+  },
+  "permitvalidity": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "INTEGER",
+   "title": "Validity",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "The amount of hours or days during which the access permit is valid.",
+   "maxLength": 11
+  },
+  "ptwclass_description": {
+   "type": "string"
+  },
+  "companiesid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Company",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "Company.",
+   "maxLength": 11
+  },
+  "requestor": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Requestor",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The person who is requesting the access permit. The requestor is the logged on user who creates the access permit.",
+   "maxLength": 100
+  },
+  "extnum": {
+   "default": 0,
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "INTEGER",
+   "title": "Extension",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "The number of the extension for the access permit record. An access permit must be in Issued, Active, or Suspended status for its duration to be extended. When you extend an access permit, the permit validity is increased by the value in the Extension Period in Hours field. An extension number is generated. The extension number starts with 0 and increments by 1 for each subsequent extension.",
+   "maxLength": 11
+  },
+  "workinghours_description": {
+   "type": "string"
+  },
+  "assetid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Asset",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "The asset unique identifier.",
+   "maxLength": 11
+  },
+  "tbtcompleted": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Toolbox Talk",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Specifies whether a toolbox talk must be held for employees prior to starting the work. The purpose of the toolbox talk is to communicate safe working procedures."
+  },
+  "origresultnum": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Originating Inspection",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The number of the originating conduct an inspection record.",
+   "maxLength": 12
+  },
+  "location": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Location",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The location that is associated with the access permit record.",
+   "maxLength": 25
+  },
+  "inspformnum": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Inspection Form",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The number of the inspection form.",
+   "maxLength": 12
+  },
+  "plusgsafetycrit": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Safety-critical",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Indicates that the access permit is associated with a safety-critical location."
+  },
+  "inspectorbygroup": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Inspector Group",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Inspector Group ",
+   "maxLength": 8
+  }
+ },
+ "required": [
+  "orgid",
+  "siteid",
+  "status",
+  "statusdate"
+ ]
+}

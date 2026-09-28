@@ -1,0 +1,169 @@
+{
+  "resource": "MXAMCREWT",
+  "description": "AMCREWT",
+  "pk": [
+    "amcrewtype",
+    "orgid"
+  ],
+  "title": "AMCREWT",
+  "type": "object",
+  "$ref": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxamcrewt",
+  "uniqueid": "amcrewtid",
+  "properties": {
+    "workzonetype_description": {
+      "type": "string"
+    },
+    "status_description": {
+      "type": "string"
+    },
+    "localref": {
+      "type": "string"
+    },
+    "amcrewtid": {
+      "searchType": "EXACT",
+      "maximum": 2147483647.0,
+      "subType": "BIGINT",
+      "title": "Unique Id",
+      "persistent": true,
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "uniqueid": true,
+      "remarks": "Unique Id",
+      "maxLength": 11
+    },
+    "ostandardrate": {
+      "searchType": "EXACT",
+      "scale": 2,
+      "subType": "AMOUNT",
+      "title": "Override Hourly Rate",
+      "persistent": true,
+      "type": "number",
+      "remarks": "Specifies the rate for the crew type and overrides the hourly rate. The override hourly rate takes priority over the hourly rate.",
+      "maxLength": 11
+    },
+    "standardrate": {
+      "searchType": "EXACT",
+      "scale": 2,
+      "subType": "AMOUNT",
+      "title": "Hourly Rate",
+      "persistent": true,
+      "type": "number",
+      "remarks": "The sum of the individual craft rates plus the tool rates that are assigned to the crew type.",
+      "maxLength": 11
+    },
+    "amcrewtype": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Crew Type",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Identifies the type of work the crew is designed to perform.This value must be unique for all crew type records within an organization.",
+      "maxLength": 8
+    },
+    "description": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Description",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Describes the crew type. To enter or view additional information, click the Long Description button.",
+      "maxLength": 100
+    },
+    "amctqual": {
+      "objectName": "AMCTQUAL",
+      "type": "array",
+      "items": {
+        "definition": {
+          "subSchema": {
+            "$ref": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxamcrewt/amctqual"
+          }
+        },
+        "type": "object"
+      },
+      "cardinality": "MULTIPLE",
+      "relation": "AMCTQUAL"
+    },
+    "orgid": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Organization",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Identifies the organization to which the crew type belongs.",
+      "maxLength": 8
+    },
+    "statusdate": {
+      "searchType": "EXACT",
+      "subType": "DATETIME",
+      "title": "Status Date",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Date the status was last changed."
+    },
+    "_rowstamp": {
+      "type": "string"
+    },
+    "amctcraft": {
+      "objectName": "AMCTCRAFT",
+      "type": "array",
+      "items": {
+        "definition": {
+          "subSchema": {
+            "$ref": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxamcrewt/amctcraft"
+          }
+        },
+        "type": "object"
+      },
+      "cardinality": "MULTIPLE",
+      "relation": "AMCTCRAFT"
+    },
+    "_imagelibref": {
+      "type": "string"
+    },
+    "amcttool": {
+      "objectName": "AMCTTOOL",
+      "type": "array",
+      "items": {
+        "definition": {
+          "subSchema": {
+            "$ref": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxamcrewt/amcttool"
+          }
+        },
+        "type": "object"
+      },
+      "cardinality": "MULTIPLE",
+      "relation": "AMCTTOOL"
+    },
+    "href": {
+      "type": "string"
+    },
+    "_id": {
+      "type": "string"
+    },
+    "workzonetype": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Work Zone Type",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "The type of the work zone",
+      "maxLength": 20
+    },
+    "status": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Status",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Identifies the crew's status. Valid status types are Active and Inactive. When you create a crew type, the default status is Active.",
+      "maxLength": 12
+    }
+  },
+  "required": [
+    "amcrewtype",
+    "orgid"
+  ]
+}

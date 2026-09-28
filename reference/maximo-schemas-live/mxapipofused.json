@@ -1,0 +1,89 @@
+{
+ "resource": "MXAPIPOFUSED",
+ "description": "API for POFUSED",
+ "pk": [
+  "pofusedid"
+ ],
+ "title": "POFUSED",
+ "type": "object",
+ "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/mxapipofused",
+ "uniqueid": "pofusedid",
+ "properties": {
+  "app": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Application",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Application where POF Analysis is used",
+   "maxLength": 40
+  },
+  "_rowstamp": {
+   "type": "string"
+  },
+  "localref": {
+   "type": "string"
+  },
+  "_imagelibref": {
+   "type": "string"
+  },
+  "pofusedid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Unique Id",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "uniqueid": true,
+   "remarks": "Unique Id",
+   "maxLength": 11
+  },
+  "pofanalysisid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "POF Analysis ID",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "Reference to POF Analysis",
+   "maxLength": 11
+  },
+  "href": {
+   "type": "string",
+   "title": "POFUSED object reference"
+  },
+  "record_descriptor": {
+   "type": "string",
+   "title": "Record/Object Descriptor"
+  },
+  "_id": {
+   "type": "string"
+  },
+  "objectid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Object ID",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "Object ID/Record ID where POF Analysis is used",
+   "maxLength": 11
+  },
+  "object": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Object",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Object/Table name where POF Analysis is used",
+   "maxLength": 30
+  }
+ },
+ "required": [
+  "app",
+  "pofanalysisid"
+ ]
+}

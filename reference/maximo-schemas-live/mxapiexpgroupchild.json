@@ -1,0 +1,68 @@
+{
+ "resource": "MXAPIEXPGROUPCHILD",
+ "description": "API for EXPGROUPCHILDREN",
+ "pk": [
+  "parent",
+  "child"
+ ],
+ "title": "EXPGROUPCHILDREN",
+ "type": "object",
+ "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/mxapiexpgroupchild",
+ "uniqueid": "expgroupchildrenid",
+ "properties": {
+  "parent": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Parent Group Name",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Parent Asset/Location scoring group name",
+   "maxLength": 200
+  },
+  "_rowstamp": {
+   "type": "string"
+  },
+  "localref": {
+   "type": "string"
+  },
+  "_imagelibref": {
+   "type": "string"
+  },
+  "expgroupchildrenid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Unique Id",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "uniqueid": true,
+   "remarks": "Unique Id",
+   "maxLength": 11
+  },
+  "href": {
+   "type": "string",
+   "title": "EXPGROUPCHILDREN object reference"
+  },
+  "record_descriptor": {
+   "type": "string",
+   "title": "Record/Object Descriptor"
+  },
+  "_id": {
+   "type": "string"
+  },
+  "child": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Child Group Name",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Child Asset/Location scoring group name",
+   "maxLength": 200
+  }
+ },
+ "required": [
+  "child",
+  "parent"
+ ]
+}

@@ -1,0 +1,67 @@
+{
+ "resource": "TAMITINTMF",
+ "description": "SwKBT - Manufacturers",
+ "pk": [
+  "manufacturername"
+ ],
+ "title": "DPAMMANUFACTURER",
+ "type": "object",
+ "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/tamitintmf",
+ "uniqueid": "manufacturerid",
+ "properties": {
+  "_rowstamp": {
+   "type": "string"
+  },
+  "localref": {
+   "type": "string"
+  },
+  "validated": {
+   "default": true,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Reviewed",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Indicates whether an administrator reviewed the manufacturer conversion record. The purpose of this field is to identify new records imported into Maximo, so an administrator can review them. By default, Maximo selects the check box when administrators create or change records using the Manufacturer Conversion application. By default, IBM Tivoli Integration Composer clears the check box when it creates records. To ensure that Maximo uses your naming conventions, after each IBM Tivoli Integration Composer import, filter newly imported records, which display an N in the Reviewed? column on the List tab. Review the new records and select this check box; if you edit the new records, Maximo automatically selects the check box. Note that when Maximo displays deployed asset manufacturer data, translating a variant to a target name does not depend on the setting in this check box; if a manufacturer name matches a variant, Maximo translates it to the target name without regard to the setting in the check box."
+  },
+  "manufacturername": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Target Manufacturer",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Target name for the manufacturer. Maximo translates manufacturer names that match the variants specified in the manufacturer conversion record to this target name when it displays manufacturer data in Deployed Assets module applications and in Maximo reports.",
+   "maxLength": 128
+  },
+  "_imagelibref": {
+   "type": "string"
+  },
+  "manufacturerid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Manufacturer",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "uniqueid": true,
+   "remarks": "Manufacturer ID",
+   "maxLength": 11
+  },
+  "href": {
+   "type": "string",
+   "title": "DPAMMANUFACTURER object reference"
+  },
+  "record_descriptor": {
+   "type": "string",
+   "title": "Record/Object Descriptor"
+  },
+  "_id": {
+   "type": "string"
+  }
+ },
+ "required": [
+  "manufacturername"
+ ]
+}

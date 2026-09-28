@@ -1,0 +1,88 @@
+{
+  "resource": "MXAPIALLPRODUCTS",
+  "description": "ALLWEATHERPRODUCTS",
+  "pk": [
+    "productcode"
+  ],
+  "title": "ALLWEATHERPRODUCTS",
+  "type": "object",
+  "$ref": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapiallproducts",
+  "uniqueid": "allweatherproductsid",
+  "properties": {
+    "_rowstamp": {
+      "type": "string"
+    },
+    "productcode": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Product Code",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Product Code",
+      "maxLength": 100
+    },
+    "localref": {
+      "type": "string"
+    },
+    "_imagelibref": {
+      "type": "string"
+    },
+    "lifespan": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Life Span",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Life Span",
+      "maxLength": 20
+    },
+    "name": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Name",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Name",
+      "maxLength": 1000
+    },
+    "description": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Description",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Description",
+      "maxLength": 1000
+    },
+    "sourcetype": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Source Type",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Source Type",
+      "maxLength": 20
+    },
+    "href": {
+      "type": "string"
+    },
+    "_id": {
+      "type": "string"
+    },
+    "allweatherproductsid": {
+      "searchType": "EXACT",
+      "maximum": 2147483647.0,
+      "subType": "BIGINT",
+      "title": "Unique Id",
+      "persistent": true,
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "uniqueid": true,
+      "remarks": "Unique Id",
+      "maxLength": 11
+    }
+  },
+  "required": [
+    "productcode"
+  ]
+}

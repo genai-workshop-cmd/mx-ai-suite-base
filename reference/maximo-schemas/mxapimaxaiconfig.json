@@ -1,0 +1,372 @@
+{
+  "resource": "MXAPIMAXAICONFIG",
+  "description": "MAXAICONFIG",
+  "pk": [
+    "aicfgname"
+  ],
+  "title": "MAXAICONFIG",
+  "type": "object",
+  "$ref": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapimaxaiconfig",
+  "uniqueid": "maxaiconfigid",
+  "properties": {
+    "autoapply": {
+      "default": false,
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "Auto apply",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "Auto Apply"
+    },
+    "initiatetrain": {
+      "default": false,
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "Initiate training",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "Initiate Create and Training for AI Model"
+    },
+    "hierarchypath": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Target Object Path",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Target Object Path.",
+      "maxLength": 250
+    },
+    "inferencequery": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Inference filter",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "The query that retrieves the data that is used for inferencing.",
+      "maxLength": 50
+    },
+    "trainfrequency": {
+      "default": 90,
+      "searchType": "EXACT",
+      "maximum": 2147483647.0,
+      "subType": "INTEGER",
+      "title": "Train frequency",
+      "persistent": true,
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "remarks": "Train frequency",
+      "maxLength": 11
+    },
+    "localref": {
+      "type": "string"
+    },
+    "initiateretrain": {
+      "default": false,
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "Initiate Retraining",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "Initiate retraining"
+    },
+    "maxaiquickstartut": {
+      "objectName": "MAXAIQUICKSTARTUT",
+      "type": "array",
+      "items": {
+        "definition": {
+          "subSchema": {
+            "$ref": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapimaxaiconfig/maxaiquickstartut"
+          }
+        },
+        "type": "object"
+      },
+      "cardinality": "",
+      "relation": "MAXAIQUICKSTARTUT"
+    },
+    "description": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Description",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Description",
+      "maxLength": 200
+    },
+    "trainingquery": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Training filter",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "The query that retrieves the data that is used to train the model.",
+      "maxLength": 50
+    },
+    "attributename": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Attribute",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "The specific attribute that AI will generate data or recommendations for.",
+      "maxLength": 50
+    },
+    "trainingifacename": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Training invoke channel",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "The invocation channel that communicates with AI Service during training.",
+      "maxLength": 25
+    },
+    "infcpu": {
+      "default": 0.0,
+      "searchType": "EXACT",
+      "scale": 2,
+      "subType": "DECIMAL",
+      "title": "Inference CPU",
+      "persistent": true,
+      "type": "number",
+      "remarks": "Inference CPU",
+      "maxLength": 6
+    },
+    "inferencetype": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Inference type",
+      "persistent": true,
+      "type": "string",
+      "remarks": "The type of action that the AI is used for, such as classifying data. This value is determined by the template.",
+      "maxLength": 50
+    },
+    "childcondition": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Target Object Condition",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Target Object Condition",
+      "maxLength": 12
+    },
+    "langcode": {
+      "default": "EN",
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Language Code",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Language Code",
+      "maxLength": 4
+    },
+    "_rowstamp": {
+      "type": "string"
+    },
+    "templateversion": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Template version",
+      "persistent": true,
+      "type": "string",
+      "remarks": "The version of the template to be used.",
+      "maxLength": 50
+    },
+    "autotrain": {
+      "default": false,
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "Enable auto training",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "If the auto training is enabled for current AI config"
+    },
+    "_imagelibref": {
+      "type": "string"
+    },
+    "templatename": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Template",
+      "persistent": true,
+      "type": "string",
+      "remarks": "The framework that defines what the model is used for and how it calculates output.",
+      "maxLength": 100
+    },
+    "href": {
+      "type": "string"
+    },
+    "applyaction": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Action",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Action",
+      "maxLength": 30
+    },
+    "modelid": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Model ID",
+      "persistent": true,
+      "type": "string",
+      "remarks": "The ID of the model. An ID is generated after training. A new ID is generated each time that model is trained.",
+      "maxLength": 200
+    },
+    "howto": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "How model works",
+      "persistent": true,
+      "type": "string",
+      "remarks": "How the model works",
+      "maxLength": 2000
+    },
+    "maxaiconfigarg": {
+      "objectName": "MAXAICONFIGARG",
+      "type": "array",
+      "items": {
+        "definition": {
+          "subSchema": {
+            "$ref": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapimaxaiconfig/maxaiconfigarg"
+          }
+        },
+        "type": "object"
+      },
+      "cardinality": "",
+      "relation": "MAXAICONFIGARG"
+    },
+    "changeby": {
+      "default": "MAXIMO",
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Changed by",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Changed by",
+      "maxLength": 100
+    },
+    "inferenceifacename": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Inference invoke channel",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "The invocation channel that communicates with AI Service during inferencing.",
+      "maxLength": 25
+    },
+    "objectname": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Object name",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "The Maximo business object that will be automated by AI.",
+      "maxLength": 30
+    },
+    "active": {
+      "default": false,
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "Active",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "Active"
+    },
+    "changedate": {
+      "default": "&SYSDATE&",
+      "searchType": "EXACT",
+      "subType": "DATETIME",
+      "title": "Change date",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Change date"
+    },
+    "intobjectname": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Object structure",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "The object structure that represents the data that AI will use.",
+      "maxLength": 20
+    },
+    "traincpu": {
+      "default": 0.0,
+      "searchType": "EXACT",
+      "scale": 2,
+      "subType": "DECIMAL",
+      "title": "Train CPU",
+      "persistent": true,
+      "type": "number",
+      "remarks": "Train CPU",
+      "maxLength": 6
+    },
+    "relatedrecord": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Related Records",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Relation from Object to Itself",
+      "maxLength": 50
+    },
+    "maxaiconfigid": {
+      "searchType": "EXACT",
+      "maximum": 2147483647.0,
+      "subType": "BIGINT",
+      "title": "Unique Id",
+      "persistent": true,
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "uniqueid": true,
+      "remarks": "Unique Id",
+      "maxLength": 11
+    },
+    "aicfgname": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Name",
+      "persistent": true,
+      "type": "string",
+      "remarks": "AI Config Name",
+      "maxLength": 20
+    },
+    "attrdescription": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Target Description",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Target Description",
+      "maxLength": 50
+    },
+    "_id": {
+      "type": "string"
+    },
+    "userdefined": {
+      "default": true,
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "User defined",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "User defined"
+    }
+  },
+  "required": [
+    "aicfgname",
+    "inferencetype",
+    "templatename",
+    "templateversion"
+  ]
+}

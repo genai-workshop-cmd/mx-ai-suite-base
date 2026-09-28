@@ -1,0 +1,128 @@
+{
+ "resource": "REP_PLUSGRFW",
+ "description": "Prioritization Matrix (Oil) Details",
+ "pk": [
+  "orgid",
+  "rfwnum",
+  "functn"
+ ],
+ "title": "PLUSGRFW",
+ "type": "object",
+ "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/rep_plusgrfw",
+ "uniqueid": "plusgrfwid",
+ "properties": {
+  "plusgrfwid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Unique Id",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "uniqueid": true,
+   "remarks": "Unique Id",
+   "maxLength": 11
+  },
+  "status_description": {
+   "type": "string"
+  },
+  "functn_description": {
+   "type": "string"
+  },
+  "localref": {
+   "type": "string"
+  },
+  "description": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Description",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The description of the reason for work.",
+   "maxLength": 100
+  },
+  "record_descriptor": {
+   "type": "string",
+   "title": "Record/Object Descriptor"
+  },
+  "functn": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Function",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Describes the function responsible for this reason for work. When you create a new reason for work, the application assigns a default value of MAINTENANCE.",
+   "maxLength": 24
+  },
+  "orgid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Organization",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Identifies the organization.",
+   "maxLength": 8
+  },
+  "statusdate": {
+   "default": "&SYSDATE&",
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Status Date",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The date and time when the reason for work was created or was changed through the Change Status action."
+  },
+  "_rowstamp": {
+   "type": "string"
+  },
+  "_imagelibref": {
+   "type": "string"
+  },
+  "displaysequence": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "SMALLINT",
+   "title": "Display Sequence",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "hasList": true,
+   "remarks": "A numeric value that indicates the sequence in which you want this reason for work column to display on the Priority Matrix report. For example, if you type 1, the report displays this reason for work as the first column in the Reason for Work section of the matrix.",
+   "maxLength": 11
+  },
+  "href": {
+   "type": "string",
+   "title": "PLUSGRFW object reference"
+  },
+  "_id": {
+   "type": "string"
+  },
+  "rfwnum": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Reason for Work",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The identifier of the reason for work. The value of the identifier must be unique for an organization and function.",
+   "maxLength": 12
+  },
+  "status": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Status",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The status of the reason for work. When you create a new reason for work, the application assigns it a status of DRAFT. You can change this value only through the Change Status action.",
+   "maxLength": 16
+  }
+ },
+ "required": [
+  "functn",
+  "orgid",
+  "rfwnum",
+  "status"
+ ]
+}

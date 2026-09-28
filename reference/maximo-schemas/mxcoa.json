@@ -1,0 +1,332 @@
+{
+  "resource": "MXCOA",
+  "description": "CHARTOFACCOUNTS",
+  "pk": [
+    "orgid",
+    "glaccount"
+  ],
+  "title": "CHARTOFACCOUNTS",
+  "type": "object",
+  "$ref": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxcoa",
+  "uniqueid": "chartofaccountsid",
+  "properties": {
+    "glcomp05": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Glcomp05",
+      "persistent": true,
+      "type": "string",
+      "remarks": "GL Account component 05.",
+      "maxLength": 20
+    },
+    "glcomp04": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Glcomp04",
+      "persistent": true,
+      "type": "string",
+      "remarks": "GL Account component 04.",
+      "maxLength": 20
+    },
+    "ownersysid": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Owner System ID",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Owner System ID",
+      "maxLength": 10
+    },
+    "glcomp07": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Glcomp07",
+      "persistent": true,
+      "type": "string",
+      "remarks": "GL Account component 07.",
+      "maxLength": 20
+    },
+    "glcomp06": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Glcomp06",
+      "persistent": true,
+      "type": "string",
+      "remarks": "GL Account component 06.",
+      "maxLength": 20
+    },
+    "localref": {
+      "type": "string"
+    },
+    "glcomp09": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Glcomp09",
+      "persistent": true,
+      "type": "string",
+      "remarks": "GL Account component 09.",
+      "maxLength": 20
+    },
+    "glcomp08": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Glcomp08",
+      "persistent": true,
+      "type": "string",
+      "remarks": "GL Account component 08.",
+      "maxLength": 20
+    },
+    "externalrefid": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "External Reference ID",
+      "persistent": true,
+      "type": "string",
+      "remarks": "External Reference ID",
+      "maxLength": 10
+    },
+    "chartofaccountsid": {
+      "searchType": "EXACT",
+      "maximum": 2147483647.0,
+      "subType": "BIGINT",
+      "title": "CHARTOFACCOUNTSID",
+      "persistent": true,
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "uniqueid": true,
+      "remarks": "Unique Identifier",
+      "maxLength": 11
+    },
+    "expiredate": {
+      "searchType": "EXACT",
+      "subType": "DATETIME",
+      "title": "Expiration Date",
+      "persistent": true,
+      "type": "string",
+      "remarks": "The date the general ledger account expired or the date the general ledger account is set to expire."
+    },
+    "glcomp20": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Glcomp20",
+      "persistent": true,
+      "type": "string",
+      "remarks": "GL Account component 20.",
+      "maxLength": 20
+    },
+    "glcomp01": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Glcomp01",
+      "persistent": true,
+      "type": "string",
+      "remarks": "GL Account component 01.",
+      "maxLength": 20
+    },
+    "glcomp03": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Glcomp03",
+      "persistent": true,
+      "type": "string",
+      "remarks": "GL Account component 03.",
+      "maxLength": 20
+    },
+    "glcomp02": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Glcomp02",
+      "persistent": true,
+      "type": "string",
+      "remarks": "GL Account component 02.",
+      "maxLength": 20
+    },
+    "_rowstamp": {
+      "type": "string"
+    },
+    "accountname": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Description",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Describes the GL Account, for example, what it is used for and what sites it applies to. To enter or view additional information, click the Long Description button.",
+      "maxLength": 100
+    },
+    "_imagelibref": {
+      "type": "string"
+    },
+    "href": {
+      "type": "string"
+    },
+    "glcomp16": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Glcomp16",
+      "persistent": true,
+      "type": "string",
+      "remarks": "GL Account component 16.",
+      "maxLength": 20
+    },
+    "glcomp15": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Glcomp15",
+      "persistent": true,
+      "type": "string",
+      "remarks": "GL Account component 15.",
+      "maxLength": 20
+    },
+    "glcomp18": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Glcomp18",
+      "persistent": true,
+      "type": "string",
+      "remarks": "GL Account component 18.",
+      "maxLength": 20
+    },
+    "glcomp17": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Glcomp17",
+      "persistent": true,
+      "type": "string",
+      "remarks": "GL Account component 17.",
+      "maxLength": 20
+    },
+    "glcomp19": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Glcomp19",
+      "persistent": true,
+      "type": "string",
+      "remarks": "GL Account component 19.",
+      "maxLength": 20
+    },
+    "active": {
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "Active",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "Specifies whether the account is active. If the check box is selected (the default), the account can be used on MAXIMO records. If the check box is cleared, the account cannot be used on new MAXIMO records, but no change is made to existing records."
+    },
+    "oldexpiredate": {
+      "searchType": "EXACT",
+      "subType": "DATETIME",
+      "title": "Old Expiration Date",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Old expiration date of the account."
+    },
+    "glcomp10": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Glcomp10",
+      "persistent": true,
+      "type": "string",
+      "remarks": "GL Account component 10.",
+      "maxLength": 20
+    },
+    "glacctype": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Type",
+      "persistent": true,
+      "type": "string",
+      "remarks": "User-defined code to signify the kind of account. For example, your firm may use account type codes to represent expense accounts, capital accounts, shrinkage accounts, and so forth. By default, the field length is 3.",
+      "maxLength": 3
+    },
+    "glcomp12": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Glcomp12",
+      "persistent": true,
+      "type": "string",
+      "remarks": "GL Account component 12.",
+      "maxLength": 20
+    },
+    "glcomp11": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Glcomp11",
+      "persistent": true,
+      "type": "string",
+      "remarks": "GL Account component 11.",
+      "maxLength": 20
+    },
+    "sendersysid": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Sender System ID",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Column used by ERP-Integration (APIs)",
+      "maxLength": 50
+    },
+    "glcomp14": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Glcomp14",
+      "persistent": true,
+      "type": "string",
+      "remarks": "GL Account component 14.",
+      "maxLength": 20
+    },
+    "orgid": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Organization",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Organization Identifier",
+      "maxLength": 8
+    },
+    "activedate": {
+      "searchType": "EXACT",
+      "subType": "DATETIME",
+      "title": "Active Date",
+      "persistent": true,
+      "type": "string",
+      "remarks": "The date the general ledger account was activated."
+    },
+    "glcomp13": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Glcomp13",
+      "persistent": true,
+      "type": "string",
+      "remarks": "GL Account component 13.",
+      "maxLength": 20
+    },
+    "glaccount": {
+      "searchType": "WILDCARD",
+      "subType": "GL",
+      "title": "GL Account",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "General ledger account code. This field is read-only after the account is created (the account code may have been downloaded from your accounting system). To create a new account code in an empty field, click the Select Value button and choose the component values from the Select GL Account dialog box.",
+      "maxLength": 23
+    },
+    "_id": {
+      "type": "string"
+    },
+    "sourcesysid": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Source System ID",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Source System ID",
+      "maxLength": 10
+    }
+  },
+  "required": [
+    "active",
+    "activedate",
+    "glaccount",
+    "orgid"
+  ]
+}

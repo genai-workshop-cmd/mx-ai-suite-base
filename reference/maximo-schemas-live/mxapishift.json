@@ -1,0 +1,92 @@
+{
+ "resource": "MXAPISHIFT",
+ "description": "Maximo API for Shift UI definition",
+ "pk": [
+  "orgid",
+  "shiftnum"
+ ],
+ "title": "SHIFT",
+ "type": "object",
+ "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/mxapishift",
+ "uniqueid": "shiftid",
+ "properties": {
+  "shiftid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "SHIFTID",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "uniqueid": true,
+   "remarks": "Unique Identifier",
+   "maxLength": 11
+  },
+  "_rowstamp": {
+   "type": "string"
+  },
+  "localref": {
+   "type": "string"
+  },
+  "_imagelibref": {
+   "type": "string"
+  },
+  "startday": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Start Day",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Day of the week on which the shift begins.",
+   "maxLength": 10
+  },
+  "description": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Description",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Describes the shift in a short phrase, for example, Evening Shift 1500 to 2300. Limited to one line.",
+   "maxLength": 100
+  },
+  "href": {
+   "type": "string",
+   "title": "SHIFT object reference"
+  },
+  "record_descriptor": {
+   "type": "string",
+   "title": "Record/Object Descriptor"
+  },
+  "_id": {
+   "type": "string"
+  },
+  "shiftnum": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Shift",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Identifies the shift, for example, NIGHT, for the standard night shift",
+   "maxLength": 8
+  },
+  "startday_description": {
+   "type": "string"
+  },
+  "orgid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Organization",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Identifies the organization the shift belongs to.",
+   "maxLength": 8
+  }
+ },
+ "required": [
+  "orgid",
+  "shiftnum",
+  "startday"
+ ]
+}

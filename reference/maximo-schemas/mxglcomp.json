@@ -1,0 +1,140 @@
+{
+  "resource": "MXGLCOMP",
+  "description": "GLCOMPONENTS",
+  "pk": [
+    "orgid",
+    "glorder",
+    "compvalue"
+  ],
+  "title": "GLCOMPONENTS",
+  "type": "object",
+  "$ref": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxglcomp",
+  "uniqueid": "glcomponentsid",
+  "properties": {
+    "ownersysid": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Owner System ID",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Owner System ID",
+      "maxLength": 10
+    },
+    "localref": {
+      "type": "string"
+    },
+    "active": {
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "Active",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "Specifies whether the component value can currently be used in the Select GL Account dialog box. If the check box is selected (the default), the Select GL Account dialog box will display the value. If the check box is cleared, the value will not be displayed."
+    },
+    "compvalue": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "GL Component Value",
+      "persistent": true,
+      "type": "string",
+      "remarks": "GL component value. The value must conform to format specified in GL Account Configuration dialog box in Database Configuration.",
+      "maxLength": 20
+    },
+    "externalrefid": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "External Reference ID",
+      "persistent": true,
+      "type": "string",
+      "remarks": "External Reference ID",
+      "maxLength": 10
+    },
+    "sendersysid": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Sender System ID",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Column used by ERP-Integration (APIs)",
+      "maxLength": 50
+    },
+    "userid": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "User",
+      "persistent": true,
+      "type": "string",
+      "remarks": "User identifier",
+      "maxLength": 100
+    },
+    "orgid": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Organization",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Organization Identifier",
+      "maxLength": 8
+    },
+    "_rowstamp": {
+      "type": "string"
+    },
+    "comptext": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Description",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Describes the GL component--what the value represents in terms of financial tracking. For example, Administration Services.",
+      "maxLength": 100
+    },
+    "glcomponentsid": {
+      "searchType": "EXACT",
+      "maximum": 2147483647.0,
+      "subType": "BIGINT",
+      "title": "GLCOMPONENTSID",
+      "persistent": true,
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "uniqueid": true,
+      "remarks": "Unique Identifier",
+      "maxLength": 11
+    },
+    "_imagelibref": {
+      "type": "string"
+    },
+    "glorder": {
+      "searchType": "EXACT",
+      "maximum": 2147483647.0,
+      "subType": "SMALLINT",
+      "title": "GL Order",
+      "persistent": true,
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "remarks": "Order of this component in GL Account.",
+      "maxLength": 11
+    },
+    "href": {
+      "type": "string"
+    },
+    "_id": {
+      "type": "string"
+    },
+    "sourcesysid": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Source System ID",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Source System ID",
+      "maxLength": 10
+    }
+  },
+  "required": [
+    "active",
+    "comptext",
+    "compvalue",
+    "glorder",
+    "orgid"
+  ]
+}

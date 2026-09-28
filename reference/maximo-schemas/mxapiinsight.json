@@ -1,0 +1,213 @@
+{
+  "resource": "MXAPIINSIGHT",
+  "description": "INSIGHT",
+  "pk": [
+    "name"
+  ],
+  "title": "INSIGHT",
+  "type": "object",
+  "$ref": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapiinsight",
+  "uniqueid": "insightid",
+  "properties": {
+    "localref": {
+      "type": "string"
+    },
+    "objectname": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Applies To",
+      "persistent": true,
+      "type": "string",
+      "remarks": "The name of the object this insight applies to",
+      "maxLength": 30
+    },
+    "description": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Title",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Title",
+      "maxLength": 50
+    },
+    "lowerthreshold": {
+      "default": 0.0,
+      "searchType": "EXACT",
+      "scale": 2,
+      "subType": "DECIMAL",
+      "title": "Low Threshold",
+      "persistent": true,
+      "type": "number",
+      "remarks": "The lower warning threshold",
+      "maxLength": 17
+    },
+    "upperthreshold": {
+      "searchType": "EXACT",
+      "scale": 2,
+      "subType": "DECIMAL",
+      "title": "Upper Threshold",
+      "persistent": true,
+      "type": "number",
+      "remarks": "The upper warning threshold",
+      "maxLength": 17
+    },
+    "langcode": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Language Code",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Language Code",
+      "maxLength": 4
+    },
+    "sequence": {
+      "searchType": "EXACT",
+      "maximum": 2147483647.0,
+      "subType": "INTEGER",
+      "title": "Sequence",
+      "persistent": true,
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "remarks": "Sequence of order of this insight",
+      "maxLength": 11
+    },
+    "_rowstamp": {
+      "type": "string"
+    },
+    "childgrpbyattr": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Child Graph Group By Attribute",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Child graph''s group by attribute",
+      "maxLength": 200
+    },
+    "childtitle": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Title",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Child Graph Title",
+      "maxLength": 50
+    },
+    "childaggrmethod": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Child Graph Aggregate Method",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Child graph''s aggregate method such as Sum, Count",
+      "maxLength": 20
+    },
+    "hasld": {
+      "default": false,
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "Has Long Description",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "Boolean flag to indicate if there is any long description for this record"
+    },
+    "helptext": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Description",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Help text",
+      "maxLength": 2000
+    },
+    "_imagelibref": {
+      "type": "string"
+    },
+    "childaggrattr": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Child Graph Aggregate Attribute",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Child graph''s aggregate attribute",
+      "maxLength": 200
+    },
+    "name": {
+      "default": "&AUTOKEY&",
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Name",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Name of the insight",
+      "maxLength": 50
+    },
+    "formula": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Formula",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Formula to calculate this insight",
+      "maxLength": 2000
+    },
+    "href": {
+      "type": "string"
+    },
+    "_id": {
+      "type": "string"
+    },
+    "childfilter": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Child Graph Filter for Aggregate Values",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Child graph''s filter for aggregate values",
+      "maxLength": 200
+    },
+    "insightid": {
+      "searchType": "EXACT",
+      "maximum": 2147483647.0,
+      "subType": "BIGINT",
+      "title": "Unique Id",
+      "persistent": true,
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "uniqueid": true,
+      "remarks": "Unique Id",
+      "maxLength": 11
+    },
+    "childhelptext": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Description",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Child Graph Help text",
+      "maxLength": 2000
+    },
+    "insightfactor": {
+      "objectName": "INSIGHTFACTOR",
+      "type": "array",
+      "items": {
+        "definition": {
+          "subSchema": {
+            "$ref": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapiinsight/insightfactor"
+          }
+        },
+        "type": "object"
+      },
+      "cardinality": "",
+      "relation": "INSIGHTFACTOR"
+    }
+  },
+  "required": [
+    "childaggrattr",
+    "childaggrmethod",
+    "childgrpbyattr",
+    "formula",
+    "langcode",
+    "objectname"
+  ]
+}

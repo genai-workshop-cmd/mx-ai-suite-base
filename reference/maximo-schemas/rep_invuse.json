@@ -1,0 +1,161 @@
+{
+  "resource": "REP_INVUSE",
+  "description": "INVUSE",
+  "pk": [
+    "invusenum",
+    "siteid"
+  ],
+  "title": "INVUSE",
+  "type": "object",
+  "$ref": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/rep_invuse",
+  "uniqueid": "invuseid",
+  "properties": {
+    "invuseline": {
+      "objectName": "INVUSELINE",
+      "type": "array",
+      "items": {
+        "definition": {
+          "subSchema": {
+            "$ref": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/rep_invuse/invuseline"
+          }
+        },
+        "type": "object"
+      },
+      "cardinality": "MULTIPLE",
+      "relation": "INVUSELINE"
+    },
+    "localref": {
+      "type": "string"
+    },
+    "exchangerate": {
+      "searchType": "EXACT",
+      "scale": 7,
+      "subType": "DECIMAL",
+      "title": "Exchange Rate",
+      "persistent": true,
+      "type": "number",
+      "remarks": "Exchange rate at time of inventory usage shipped.",
+      "maxLength": 15
+    },
+    "shipmentdate": {
+      "searchType": "EXACT",
+      "subType": "DATETIME",
+      "title": "Shipment Date",
+      "persistent": true,
+      "type": "string",
+      "remarks": "The date the items were shipped. The shipment date is set when you commence the shipping process by changing the status of the inventory record to SHIPPED."
+    },
+    "sendersysid": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Sender System ID",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Column used by ERP-Integration (APIs).",
+      "maxLength": 50
+    },
+    "exchangedate": {
+      "searchType": "EXACT",
+      "subType": "DATE",
+      "title": "Exchange Date",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Date of the exchange rate."
+    },
+    "langcode": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Language Code",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Language Code",
+      "maxLength": 4
+    },
+    "_rowstamp": {
+      "type": "string"
+    },
+    "autocreated": {
+      "default": false,
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "Auto Created",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "Indicates whether the Inventory Usage document is automatically created as a result of WorkOrder/PO/MR approval."
+    },
+    "exchangerate2": {
+      "searchType": "EXACT",
+      "scale": 7,
+      "subType": "DECIMAL",
+      "title": "Secondary Exchange Rate",
+      "persistent": true,
+      "type": "number",
+      "remarks": "Exchange Rate 2.",
+      "maxLength": 15
+    },
+    "statusiface": {
+      "default": false,
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "Status Changed",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "Indicates whether the status has changed. This is used by the application to drive other business rules."
+    },
+    "workorderid": {
+      "searchType": "EXACT",
+      "maximum": 2147483647.0,
+      "subType": "BIGINT",
+      "title": "Work Order Id",
+      "persistent": true,
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "remarks": "work order identifier",
+      "maxLength": 11
+    },
+    "hasld": {
+      "default": false,
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "Has Long Description",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "Boolean flag to indicate if there is any long description for this record"
+    },
+    "_imagelibref": {
+      "type": "string"
+    },
+    "shiptoattn": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Attention of",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "The person to whom the inventory items are being shipped.",
+      "maxLength": 100
+    },
+    "invuseid": {
+      "searchType": "EXACT",
+      "maximum": 2147483647.0,
+      "subType": "BIGINT",
+      "title": "Unique Id",
+      "persistent": true,
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "uniqueid": true,
+      "remarks": "Unique Id",
+      "maxLength": 11
+    },
+    "href": {
+      "type": "string"
+    },
+    "_id": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "langcode"
+  ]
+}

@@ -1,0 +1,159 @@
+{
+  "resource": "MXAPIWEATHERZONE",
+  "description": "WEATHERZONE",
+  "pk": [
+    "zone",
+    "orgid"
+  ],
+  "title": "WEATHERZONE",
+  "type": "object",
+  "$ref": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapiweatherzone",
+  "uniqueid": "weatherzoneid",
+  "properties": {
+    "localref": {
+      "type": "string"
+    },
+    "latitudey": {
+      "searchType": "EXACT",
+      "scale": 10,
+      "subType": "DECIMAL",
+      "title": "Latitude",
+      "persistent": true,
+      "type": "number",
+      "remarks": "The latitude of this object.",
+      "maxLength": 19
+    },
+    "radiusuom_description": {
+      "type": "string"
+    },
+    "isregistered": {
+      "default": false,
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "Registered for Alerts",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "Registered for Alerts"
+    },
+    "description": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Description",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Description",
+      "maxLength": 100
+    },
+    "groupname": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Group Name",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Group Name",
+      "maxLength": 20
+    },
+    "weatherzoneid": {
+      "searchType": "EXACT",
+      "maximum": 2147483647.0,
+      "subType": "BIGINT",
+      "title": "Unique Id",
+      "persistent": true,
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "uniqueid": true,
+      "remarks": "Unique Id",
+      "maxLength": 11
+    },
+    "addresscode": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Service address",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Service address.",
+      "maxLength": 12
+    },
+    "orgid": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Organization",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "specific organization for the PM Forecast Crontask instance",
+      "maxLength": 8
+    },
+    "radiusuom": {
+      "default": "!MILES!",
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Radius Unit Of Measure",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Radius Unit Of Measure",
+      "maxLength": 25
+    },
+    "reglabel_description": {
+      "type": "string"
+    },
+    "_rowstamp": {
+      "type": "string"
+    },
+    "zone": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Weather alert zone",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Weather alert zone.",
+      "maxLength": 20
+    },
+    "_imagelibref": {
+      "type": "string"
+    },
+    "longitudex": {
+      "searchType": "EXACT",
+      "scale": 10,
+      "subType": "DECIMAL",
+      "title": "Longitude",
+      "persistent": true,
+      "type": "number",
+      "remarks": "The longitude of this object",
+      "maxLength": 19
+    },
+    "href": {
+      "type": "string"
+    },
+    "_id": {
+      "type": "string"
+    },
+    "radius": {
+      "searchType": "EXACT",
+      "scale": 2,
+      "subType": "DECIMAL",
+      "title": "Radius",
+      "persistent": true,
+      "type": "number",
+      "remarks": "Radius.",
+      "maxLength": 6
+    },
+    "reglabel": {
+      "default": "REGISTER",
+      "searchType": "NONE",
+      "subType": "ALN",
+      "title": "Registration label",
+      "type": "string",
+      "hasList": true,
+      "remarks": "Registration label.",
+      "maxLength": 20
+    }
+  },
+  "required": [
+    "orgid",
+    "zone"
+  ]
+}

@@ -1,0 +1,277 @@
+{
+ "resource": "REP_PLUSIMPACT",
+ "description": "Nuclear Impact Plans Details",
+ "pk": [
+  "siteid",
+  "impactnum"
+ ],
+ "title": "PLUSIMPACT",
+ "type": "object",
+ "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/rep_plusimpact",
+ "uniqueid": "plusimpactid",
+ "properties": {
+  "schcode": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Sched Code",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Indicates the schedule code to be used with the the impact plan.",
+   "maxLength": 12
+  },
+  "modes": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Modes",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Plant modes to which the impact plan applies. The mode is typically referred to by the Operations group when approving an impact plan.",
+   "maxLength": 25
+  },
+  "localref": {
+   "type": "string"
+  },
+  "precautions": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Precautions",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Identifies activities that must occur or must be considered before maintenance proceeds. For example, you could indicate that a prejob briefing with the control room and maintenance personnel must take place before a work order starts.",
+   "maxLength": 256
+  },
+  "description": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Impact Description",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Describes the impact plan. To enter more information, click the Long Description button.",
+   "maxLength": 100
+  },
+  "retest": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Retest Applicable",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Indicates whether any retests are required due to the maintenance."
+  },
+  "type": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Impact Type",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Identifies the type of impact plan: template or working. A template impact plan defines what the impacts will be based on the associated job plan, location or asset, and plant conditions, but is not associated to a work order. You can copy template impact plans into a working impact plan. A working impact plan is an impact plan that is associated with an actual work order.",
+   "maxLength": 12
+  },
+  "retestcomment": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Retest Applicability Comments",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Describes the required retests at a high level or provides other related information. To enter more information, click the Long Description button.",
+   "maxLength": 256
+  },
+  "tscomment": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "LCO Applicability Comments",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Describes the tech specs that apply at a high level or provides other related information. To enter more information, click the Long Description button.",
+   "maxLength": 256
+  },
+  "plusmtimpact": {
+   "objectName": "PLUSMTIMPACT",
+   "type": "array",
+   "items": {
+    "definition": {
+     "subSchema": {
+      "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/rep_plusimpact/plusmtimpact"
+     }
+    },
+    "type": "object"
+   },
+   "cardinality": "",
+   "relation": "PLUSMTIMPACT"
+  },
+  "_rowstamp": {
+   "type": "string"
+  },
+  "parallel": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Parallel Work",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Identifies locations and equipment where work must not occur for the duration of the maintenance activity. For example, if maintenance is occurring in Division 1, enter a description of Division 2 with relevant details. To enter more information, click the Long Description button.",
+   "maxLength": 256
+  },
+  "_imagelibref": {
+   "type": "string"
+  },
+  "siteid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Site",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Identifies the site to which the impact plan applies.",
+   "maxLength": 8
+  },
+  "href": {
+   "type": "string",
+   "title": "PLUSIMPACT object reference"
+  },
+  "impactnum": {
+   "default": "&AUTOKEY&",
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Impact Number",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Number that uniquely identifies the impact plan for the site and unit.",
+   "maxLength": 12
+  },
+  "type_description": {
+   "type": "string"
+  },
+  "plusipopstatus": {
+   "objectName": "PLUSIPOPSTATUS",
+   "type": "array",
+   "items": {
+    "definition": {
+     "subSchema": {
+      "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/rep_plusimpact/plusipopstatus"
+     }
+    },
+    "type": "object"
+   },
+   "cardinality": "",
+   "relation": "PLUSIPOPSTATUS"
+  },
+  "status_description": {
+   "type": "string"
+  },
+  "plusipretest": {
+   "objectName": "PLUSIPRETEST",
+   "type": "array",
+   "items": {
+    "definition": {
+     "subSchema": {
+      "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/rep_plusimpact/plusipretest"
+     }
+    },
+    "type": "object"
+   },
+   "cardinality": "",
+   "relation": "PLUSIPRETEST"
+  },
+  "plusipassoc": {
+   "objectName": "PLUSIPASSOC",
+   "type": "array",
+   "items": {
+    "definition": {
+     "subSchema": {
+      "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/rep_plusimpact/plusipassoc"
+     }
+    },
+    "type": "object"
+   },
+   "cardinality": "",
+   "relation": "PLUSIPASSOC"
+  },
+  "record_descriptor": {
+   "type": "string",
+   "title": "Record/Object Descriptor"
+  },
+  "unit_description": {
+   "type": "string"
+  },
+  "techspec": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Tech Specs Apply",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Indicates whether any tech specs apply to the impact plan."
+  },
+  "orgid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Organization",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Organization Identifier",
+   "maxLength": 8
+  },
+  "statusdate": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Operational Status Date",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Date the status of the operational impacts was last changed and saved."
+  },
+  "plusimpactid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Unique Id",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "uniqueid": true,
+   "remarks": "Unique Id",
+   "maxLength": 11
+  },
+  "unit": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Unit",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Identifies the unit to which the impact plan applies.",
+   "maxLength": 12
+  },
+  "schcode_description": {
+   "type": "string"
+  },
+  "_id": {
+   "type": "string"
+  },
+  "actions": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Actions",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Identifies actions that must be prevented from occurring during the maintenance. For example, you could specify that no movement of flammable material into the work zone is allowed.",
+   "maxLength": 256
+  },
+  "status": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Operational Status",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Identifies the status of the operational impacts. The status can be draft or approved and is independent of the status of the maintenance impacts. With sufficient permissions, you can change the status by selecting the Change Operations Status item from the Action menu.",
+   "maxLength": 16
+  }
+ },
+ "required": [
+  "status",
+  "type"
+ ]
+}

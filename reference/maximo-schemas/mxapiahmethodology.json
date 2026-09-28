@@ -1,0 +1,338 @@
+{
+  "resource": "MXAPIAHMETHODOLOGY",
+  "description": "AHMETHODOLOGY",
+  "pk": [
+    "methodname"
+  ],
+  "title": "AHMETHODOLOGY",
+  "type": "object",
+  "$ref": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapiahmethodology",
+  "uniqueid": "ahmethodologyid",
+  "properties": {
+    "worstscore": {
+      "searchType": "EXACT",
+      "scale": 2,
+      "subType": "DECIMAL",
+      "title": "Worst score",
+      "persistent": true,
+      "type": "number",
+      "remarks": "Worst Driver Score",
+      "maxLength": 11
+    },
+    "expgroup": {
+      "objectName": "EXPGROUP",
+      "type": "array",
+      "items": {
+        "definition": {
+          "subSchema": {
+            "$ref": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapiahmethodology/expgroup"
+          }
+        },
+        "type": "object"
+      },
+      "cardinality": "",
+      "relation": "EXPGROUP"
+    },
+    "drivertotalweight": {
+      "searchType": "NONE",
+      "maximum": 2147483647.0,
+      "subType": "INTEGER",
+      "title": "Total weight",
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "remarks": "Total weight of all drivers if driver exists",
+      "maxLength": 11
+    },
+    "ahscoremap": {
+      "objectName": "AHSCOREMAP",
+      "type": "array",
+      "items": {
+        "definition": {
+          "subSchema": {
+            "$ref": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapiahmethodology/ahscoremap"
+          }
+        },
+        "type": "object"
+      },
+      "cardinality": "",
+      "relation": "AHSCOREMAP"
+    },
+    "localref": {
+      "type": "string"
+    },
+    "bestscore": {
+      "searchType": "EXACT",
+      "scale": 2,
+      "subType": "DECIMAL",
+      "title": "Best score",
+      "persistent": true,
+      "type": "number",
+      "remarks": "Best Driver Score",
+      "maxLength": 11
+    },
+    "calctype_description": {
+      "type": "string"
+    },
+    "factorcardinality": {
+      "default": "!SINGLE!",
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Factor Cardinality",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Is the method including single or multiple factors",
+      "maxLength": 20
+    },
+    "description": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Description",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Description of the asset health methodology",
+      "maxLength": 200
+    },
+    "calctype": {
+      "default": "WEIGHT",
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Calculate object scores by using",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "The calculation type of object scores, it can be weighted, minimum or fomrula",
+      "maxLength": 100
+    },
+    "_rowstamp": {
+      "type": "string"
+    },
+    "ahmethoddriver": {
+      "objectName": "AHMETHODDRIVER",
+      "type": "array",
+      "items": {
+        "definition": {
+          "subSchema": {
+            "$ref": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapiahmethodology/ahmethoddriver"
+          }
+        },
+        "type": "object"
+      },
+      "cardinality": "",
+      "relation": "AHMETHODDRIVER"
+    },
+    "_imagelibref": {
+      "type": "string"
+    },
+    "ahmethodologyid": {
+      "searchType": "EXACT",
+      "maximum": 2147483647.0,
+      "subType": "BIGINT",
+      "title": "Unique Id",
+      "persistent": true,
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "uniqueid": true,
+      "remarks": "Unique Id",
+      "maxLength": 11
+    },
+    "conversionformulaname": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Normalization Formula",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Name of the formula that converts the health score to the industry standard score.",
+      "maxLength": 50
+    },
+    "autoconversion": {
+      "default": true,
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "Auto Conversion",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "Generate baseline conversion automatically"
+    },
+    "methoddisplayname": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Method display name",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Display name of this method",
+      "maxLength": 200
+    },
+    "href": {
+      "type": "string"
+    },
+    "usewith_description": {
+      "type": "string"
+    },
+    "assettype": {
+      "objectName": "ASSETTYPE",
+      "type": "array",
+      "items": {
+        "definition": {
+          "subSchema": {
+            "$ref": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapiahmethodology/assettype"
+          }
+        },
+        "type": "object"
+      },
+      "cardinality": "",
+      "relation": "ASSETTYPE"
+    },
+    "extfunctionname": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "External function name",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Store the the external function name used by external health engine",
+      "maxLength": 200
+    },
+    "methodname": {
+      "default": "&AUTOKEY&",
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Name",
+      "persistent": true,
+      "type": "string",
+      "remarks": "This ID is used to reference this method. It cannot be changed after you initially create this method.",
+      "maxLength": 50
+    },
+    "isattribute": {
+      "default": false,
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "Is Attribute",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "The flag to indicate if this is a single attribute."
+    },
+    "methodexpgroupname": {
+      "searchType": "NONE",
+      "subType": "UPPER",
+      "title": "Group name",
+      "type": "string",
+      "remarks": "The groupname of method",
+      "maxLength": 20
+    },
+    "addmethodinstance": {
+      "default": false,
+      "searchType": "NONE",
+      "subType": "YORN",
+      "title": "Add New Instance for method",
+      "type": "boolean",
+      "remarks": "If generate new cron task instance for method."
+    },
+    "active": {
+      "default": false,
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "Active",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "Active"
+    },
+    "scoredependencies": {
+      "searchType": "NONE",
+      "subType": "ALN",
+      "title": "Score dependencies",
+      "type": "string",
+      "remarks": "The scores dependencies of current score.",
+      "maxLength": 500
+    },
+    "factorcardinality_description": {
+      "type": "string"
+    },
+    "usewith": {
+      "default": "ASSET",
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Object",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "The object used with the methodolgy.",
+      "maxLength": 100
+    },
+    "scoretypetitle": {
+      "searchType": "NONE",
+      "subType": "ALN",
+      "title": "Type",
+      "type": "string",
+      "remarks": "The title of the type of score this scoring method will calculate with, it can be health, criticality or others",
+      "maxLength": 127
+    },
+    "methodformula": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Method Formula",
+      "persistent": true,
+      "type": "string",
+      "remarks": "The formula used to calculate value for this method",
+      "maxLength": 2000
+    },
+    "methodattrmap": {
+      "objectName": "METHODATTRMAP",
+      "type": "array",
+      "items": {
+        "definition": {
+          "subSchema": {
+            "$ref": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapiahmethodology/methodattrmap"
+          }
+        },
+        "type": "object"
+      },
+      "cardinality": "",
+      "relation": "METHODATTRMAP"
+    },
+    "extmodelname": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "External model name",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Store the the external model name used by external health engine",
+      "maxLength": 200
+    },
+    "conversionformula": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Normalization Formula",
+      "persistent": true,
+      "type": "string",
+      "remarks": "The normalization formula",
+      "maxLength": 2000
+    },
+    "scoretype": {
+      "default": "HEALTH",
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Score Type",
+      "persistent": true,
+      "type": "string",
+      "remarks": "The type of score this threshold will use with, it can be health, criticality or others",
+      "maxLength": 50
+    },
+    "_id": {
+      "type": "string"
+    },
+    "ahextfunctiondetail": {
+      "objectName": "AHEXTFUNCTIONDETAIL",
+      "type": "array",
+      "items": {
+        "definition": {
+          "subSchema": {
+            "$ref": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapiahmethodology/ahextfunctiondetail"
+          }
+        },
+        "type": "object"
+      },
+      "cardinality": "",
+      "relation": "AHEXTFUNCTIONDETAIL"
+    }
+  }
+}

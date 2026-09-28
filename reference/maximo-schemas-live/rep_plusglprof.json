@@ -1,0 +1,311 @@
+{
+ "resource": "REP_PLUSGLPROF",
+ "description": "Location Profile (Oil) Details",
+ "pk": [
+  "orgid",
+  "siteid",
+  "profnum"
+ ],
+ "title": "PLUSGLOCPROF",
+ "type": "object",
+ "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/rep_plusglprof",
+ "uniqueid": "plusglocprofid",
+ "properties": {
+  "historyflag": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "History",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "History Flag"
+  },
+  "profnum": {
+   "default": "&AUTOKEY&",
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Profile",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The identifier of the location profile.",
+   "maxLength": 10
+  },
+  "localref": {
+   "type": "string"
+  },
+  "changedbyid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Changed By",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "Person unique identifier.",
+   "maxLength": 11
+  },
+  "createdbyid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Created By",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "Person unique identifier.",
+   "maxLength": 11
+  },
+  "description": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Description",
+   "persistent": true,
+   "type": "string",
+   "remarks": "A description of the location profile record.",
+   "maxLength": 100
+  },
+  "ownergroup": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Owner Group",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The group that owns the location profile record. To change this value, use the Select Action > Select Owner option.",
+   "maxLength": 8
+  },
+  "prodperiod_description": {
+   "type": "string"
+  },
+  "type": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Type",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The type of profile that is associated with the location profile.",
+   "maxLength": 16
+  },
+  "category_description": {
+   "type": "string"
+  },
+  "_rowstamp": {
+   "type": "string"
+  },
+  "createdby": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Created By",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The person who created the location profile.",
+   "maxLength": 100
+  },
+  "locationsid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Location",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "The identifier of the location.",
+   "maxLength": 11
+  },
+  "_imagelibref": {
+   "type": "string"
+  },
+  "assetnum": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Asset",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The asset that is associated with the location profile.",
+   "maxLength": 25
+  },
+  "changedbydate": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Changed Date",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The date and time when the location profile changed."
+  },
+  "prodperiod": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Production  Period",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The period of time that is associated with the production data.",
+   "maxLength": 16
+  },
+  "siteid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Site",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The site that is associated with the location profile.",
+   "maxLength": 8
+  },
+  "details": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Details",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The details of the location profile.",
+   "maxLength": 200
+  },
+  "href": {
+   "type": "string",
+   "title": "PLUSGLOCPROF object reference"
+  },
+  "constpoint": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Constraint Point",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The point in the production process that constrains production capacity.  Constraints can occur for different reasons, such as scheduling time for corrective maintenance.",
+   "maxLength": 16
+  },
+  "createdbydate": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Created Date",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The date and time when the location profile was created."
+  },
+  "constpoint_description": {
+   "type": "string"
+  },
+  "type_description": {
+   "type": "string"
+  },
+  "owner": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Owner",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The owner of the location profile record. Use the Select Action > Select Owner option to assign either a person or a person group to own the location profile record. To take ownership of the location profile process, use the Select Action > Take Ownership option.",
+   "maxLength": 100
+  },
+  "status_description": {
+   "type": "string"
+  },
+  "classstructureid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Class Structure",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The identifier of the classification structure.",
+   "maxLength": 25
+  },
+  "record_descriptor": {
+   "type": "string",
+   "title": "Record/Object Descriptor"
+  },
+  "plusglocprofid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Unique Id",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "uniqueid": true,
+   "remarks": "Unique Id",
+   "maxLength": 11
+  },
+  "orgid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Organization",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The organization that is associated with the location profile.",
+   "maxLength": 8
+  },
+  "statusdate": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Status Date",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The server date and time when the location profile record was created, or when the status of the location profile record changed. This value is read-only."
+  },
+  "assetid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Asset",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "The asset unique identifier.",
+   "maxLength": 11
+  },
+  "changedby": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Changed By",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The person who changed the location profile.",
+   "maxLength": 100
+  },
+  "location": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Location",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The location that is associated with the location profile.",
+   "maxLength": 25
+  },
+  "_id": {
+   "type": "string"
+  },
+  "category": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Category",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The category of the location profile.",
+   "maxLength": 16
+  },
+  "status": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Status",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The status of the location profile record. Valid statuses are in the PLUSGLOCPROFSTATUS synonym domain. The default value when you create the location profile record is Draft. Use the Change Status icon on the toolbar to modify the status of the location profile.",
+   "maxLength": 20
+  }
+ },
+ "required": [
+  "status",
+  "statusdate"
+ ]
+}

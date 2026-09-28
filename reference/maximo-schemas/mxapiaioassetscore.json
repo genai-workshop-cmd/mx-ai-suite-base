@@ -1,0 +1,161 @@
+{
+  "resource": "MXAPIAIOASSETSCORE",
+  "description": "AIOASSETSCORE",
+  "pk": [
+    "aioprojectnum",
+    "siteid",
+    "assetnum"
+  ],
+  "title": "AIOASSETSCORE",
+  "type": "object",
+  "$ref": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapiaioassetscore",
+  "properties": {
+    "status_description": {
+      "type": "string"
+    },
+    "eol": {
+      "searchType": "EXACT",
+      "scale": 2,
+      "subType": "DECIMAL",
+      "title": "Value",
+      "persistent": true,
+      "type": "number",
+      "remarks": "Attribute's number value",
+      "maxLength": 17
+    },
+    "installdate": {
+      "searchType": "EXACT",
+      "subType": "DATE",
+      "title": "Installation Date",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Installation Date"
+    },
+    "localref": {
+      "type": "string"
+    },
+    "assettype_description": {
+      "type": "string"
+    },
+    "aioriskpredictcurve": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Value",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Attribute's ALN value",
+      "maxLength": 2000
+    },
+    "aioeolpredictcurve": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Value",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Attribute's ALN value",
+      "maxLength": 2000
+    },
+    "criticality": {
+      "searchType": "EXACT",
+      "scale": 2,
+      "subType": "DECIMAL",
+      "title": "Value",
+      "persistent": true,
+      "type": "number",
+      "remarks": "Attribute's number value",
+      "maxLength": 17
+    },
+    "aioassessmentdate": {
+      "searchType": "EXACT",
+      "subType": "DATETIME",
+      "title": "Assessment date",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Assessment date"
+    },
+    "_rowstamp": {
+      "type": "string"
+    },
+    "aioprojectnum": {
+      "searchType": "EXACT",
+      "subType": "UPPER",
+      "title": "Project ID",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Asset investment optimizer project",
+      "maxLength": 25
+    },
+    "_imagelibref": {
+      "type": "string"
+    },
+    "assetnum": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Asset",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Asset",
+      "maxLength": 25
+    },
+    "siteid": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Site",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Identifies the asset's site",
+      "maxLength": 8
+    },
+    "aioeffectiveage": {
+      "searchType": "EXACT",
+      "scale": 2,
+      "subType": "DECIMAL",
+      "title": "Value",
+      "persistent": true,
+      "type": "number",
+      "remarks": "Attribute's number value",
+      "maxLength": 17
+    },
+    "risk": {
+      "searchType": "EXACT",
+      "scale": 2,
+      "subType": "DECIMAL",
+      "title": "Value",
+      "persistent": true,
+      "type": "number",
+      "remarks": "Attribute's number value",
+      "maxLength": 17
+    },
+    "href": {
+      "type": "string"
+    },
+    "_id": {
+      "type": "string"
+    },
+    "assettype": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Type",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "The predefined type of this asset.",
+      "maxLength": 50
+    },
+    "status": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Status",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Status of the asset, for example, not ready, operating, or decommissioned.",
+      "maxLength": 20
+    }
+  },
+  "required": [
+    "aioprojectnum",
+    "assetnum",
+    "siteid"
+  ]
+}

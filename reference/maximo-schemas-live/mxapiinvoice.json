@@ -1,0 +1,843 @@
+{
+ "resource": "MXAPIINVOICE",
+ "description": "Maximo API for Invoice",
+ "pk": [
+  "siteid",
+  "invoicenum"
+ ],
+ "title": "INVOICE",
+ "type": "object",
+ "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/mxapiinvoice",
+ "uniqueid": "invoiceid",
+ "properties": {
+  "ownersysid": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Owner System ID",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Owner System ID",
+   "maxLength": 10
+  },
+  "np_status_description": {
+   "type": "string"
+  },
+  "historyflag": {
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "History",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Has this invoice been closed or cancelled."
+  },
+  "localref": {
+   "type": "string"
+  },
+  "einvoice": {
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "E-invoice",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Electronic Invoice Received?"
+  },
+  "totaltax4": {
+   "searchType": "EXACT",
+   "scale": 2,
+   "subType": "DECIMAL",
+   "title": "Total Tax 4",
+   "persistent": true,
+   "type": "number",
+   "remarks": "Tax Amount",
+   "maxLength": 11
+  },
+  "invoiceline": {
+   "objectName": "INVOICELINE",
+   "type": "array",
+   "items": {
+    "definition": {
+     "subSchema": {
+      "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/mxapiinvoice/invoiceline"
+     }
+    },
+    "type": "object"
+   },
+   "cardinality": "MULTIPLE",
+   "relation": "INVOICELINE"
+  },
+  "discount": {
+   "searchType": "EXACT",
+   "scale": 2,
+   "subType": "DECIMAL",
+   "title": "Discount",
+   "persistent": true,
+   "type": "number",
+   "remarks": "Savings, if invoice paid by discount date.",
+   "maxLength": 11
+  },
+  "totaltax3": {
+   "searchType": "EXACT",
+   "scale": 2,
+   "subType": "DECIMAL",
+   "title": "Total Tax 3",
+   "persistent": true,
+   "type": "number",
+   "remarks": "Tax Amount",
+   "maxLength": 11
+  },
+  "totaltax5": {
+   "searchType": "EXACT",
+   "scale": 2,
+   "subType": "DECIMAL",
+   "title": "Total Tax 5",
+   "persistent": true,
+   "type": "number",
+   "remarks": "Tax Amount",
+   "maxLength": 11
+  },
+  "currencycode": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Currency",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Currency used to pay invoice.",
+   "maxLength": 8
+  },
+  "tax2gl": {
+   "searchType": "WILDCARD",
+   "subType": "GL",
+   "title": "GL Tax 2",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "General Ledger Account for State Tax.",
+   "maxLength": 23
+  },
+  "np_invoicenum": {
+   "searchType": "NONE",
+   "subType": "UPPER",
+   "title": "Invoice",
+   "type": "string",
+   "remarks": "Reverse Invoice Number",
+   "maxLength": 8
+  },
+  "tax4gl": {
+   "searchType": "WILDCARD",
+   "subType": "GL",
+   "title": "GL Tax 4",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "General Ledger Account for Local Tax.",
+   "maxLength": 23
+  },
+  "totaltax2": {
+   "searchType": "EXACT",
+   "scale": 2,
+   "subType": "DECIMAL",
+   "title": "Total Tax 2",
+   "persistent": true,
+   "type": "number",
+   "remarks": "Tax Amount",
+   "maxLength": 11
+  },
+  "totalcost": {
+   "searchType": "EXACT",
+   "scale": 2,
+   "subType": "DECIMAL",
+   "title": "Invoice Total",
+   "persistent": true,
+   "type": "number",
+   "remarks": "Total that is payable to vendor.",
+   "maxLength": 11
+  },
+  "totaltax1": {
+   "searchType": "EXACT",
+   "scale": 2,
+   "subType": "DECIMAL",
+   "title": "Total Tax",
+   "persistent": true,
+   "type": "number",
+   "remarks": "Tax amount.",
+   "maxLength": 11
+  },
+  "_rowstamp": {
+   "type": "string"
+  },
+  "revreason": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Reversal Reason",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Reason to create reverse invoice",
+   "maxLength": 100
+  },
+  "contact": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Contact",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Contact name used when paying invoice.",
+   "maxLength": 50
+  },
+  "siteid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Site",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Site Identifier",
+   "maxLength": 8
+  },
+  "vendorinvoicenum": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Vendor Invoice",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Vendor's Invoice number",
+   "maxLength": 12
+  },
+  "href": {
+   "type": "string",
+   "title": "INVOICE object reference"
+  },
+  "contractrefrev": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "INTEGER",
+   "title": "Contract Reference Revision",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "Contract Reference Revision Number",
+   "maxLength": 11
+  },
+  "financialperiod": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Financial Period",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Financial Period on Invoice Approval",
+   "maxLength": 6
+  },
+  "inclusive5": {
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Include Tax 5",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Is Invoice inclusive of tax ?"
+  },
+  "inclusive4": {
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Include Tax 4",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Is Invoice inclusive of tax ?"
+  },
+  "glpostdate": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "G/L Posting Date",
+   "persistent": true,
+   "type": "string",
+   "remarks": "G/L Posting Date used to determine Financial Period"
+  },
+  "status_description": {
+   "type": "string"
+  },
+  "banknum": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Bank Reference #",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Bank and branch identification reference number. Used to transfer funds electronically and allow transfer of dollars between buyer and seller.",
+   "maxLength": 16
+  },
+  "np_glpostdate": {
+   "searchType": "NONE",
+   "subType": "DATETIME",
+   "title": "G/L Posting Date",
+   "type": "string",
+   "remarks": "G/L Posting Date used to determine Financial Period"
+  },
+  "np_status": {
+   "searchType": "NONE",
+   "subType": "UPPER",
+   "title": "Status",
+   "type": "string",
+   "hasList": true,
+   "remarks": "The status of the reverse invoice.",
+   "maxLength": 10
+  },
+  "discountdate": {
+   "searchType": "EXACT",
+   "subType": "DATE",
+   "title": "Discount Date",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Date by which payment must be made to utilize discount."
+  },
+  "changedate": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Changed Date",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Datetime invoice last modified."
+  },
+  "record_descriptor": {
+   "type": "string",
+   "title": "Record/Object Descriptor"
+  },
+  "basetotalcost": {
+   "searchType": "EXACT",
+   "scale": 2,
+   "subType": "AMOUNT",
+   "title": "Total Base Cost",
+   "persistent": true,
+   "type": "number",
+   "remarks": "Total cost of the invoice in base currency",
+   "maxLength": 11
+  },
+  "inclusive1": {
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Pay Tax to Vendor",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Is Invoice inclusive of TAX1"
+  },
+  "inclusive3": {
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Include Tax 3",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Is Invoice inclusive of tax ?"
+  },
+  "orgid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Organization",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Organization Identifier",
+   "maxLength": 8
+  },
+  "inclusive2": {
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Include Tax 2",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Is Invoice inclusive of TAX2"
+  },
+  "enterby": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Entered By",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Name of person who entered the invoice.",
+   "maxLength": 100
+  },
+  "np_revreason": {
+   "searchType": "NONE",
+   "subType": "ALN",
+   "title": "Reversal Reason",
+   "type": "string",
+   "remarks": "Reason to create reverse invoice.",
+   "maxLength": 100
+  },
+  "invoiceterm": {
+   "objectName": "INVOICETERM",
+   "type": "array",
+   "items": {
+    "definition": {
+     "subSchema": {
+      "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/mxapiinvoice/invoiceterm"
+     }
+    },
+    "type": "object"
+   },
+   "cardinality": "MULTIPLE",
+   "relation": "INVOICETERM"
+  },
+  "checkcode_description": {
+   "type": "string"
+  },
+  "_id": {
+   "type": "string"
+  },
+  "documenttype_description": {
+   "type": "string"
+  },
+  "checkcode": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Check Code",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Flag to indicate how check should be printed.",
+   "maxLength": 12
+  },
+  "np_description": {
+   "searchType": "NONE",
+   "subType": "ALN",
+   "title": "Description",
+   "type": "string",
+   "remarks": "Short Description about the invoice.",
+   "maxLength": 100
+  },
+  "status": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Status",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The current status of this invoice.",
+   "maxLength": 10
+  },
+  "paymentterms": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Payment Terms",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Terms of Payment. Can be used to determine a discount date.",
+   "maxLength": 20
+  },
+  "exchangerate": {
+   "searchType": "EXACT",
+   "scale": 7,
+   "subType": "DECIMAL",
+   "title": "Exchange Rate",
+   "persistent": true,
+   "type": "number",
+   "remarks": "Exchange Rate at time of invoice approval.",
+   "maxLength": 15
+  },
+  "apcontrolacct": {
+   "searchType": "WILDCARD",
+   "subType": "GL",
+   "title": "AP Control Account",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The control account of the vendor on the invoice",
+   "maxLength": 23
+  },
+  "bankaccount": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Bank",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Vendor bank account for direct credits.",
+   "maxLength": 20
+  },
+  "description": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Description",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Short Description about the invoice.",
+   "maxLength": 100
+  },
+  "externalrefid": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "External Reference ID",
+   "persistent": true,
+   "type": "string",
+   "remarks": "External Reference ID",
+   "maxLength": 10
+  },
+  "tax1gl": {
+   "searchType": "WILDCARD",
+   "subType": "GL",
+   "title": "GL Tax 1",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "General Ledger Account for Federal Tax.",
+   "maxLength": 23
+  },
+  "invoicenum": {
+   "default": "&AUTOKEY&",
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Invoice",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Invoice number",
+   "maxLength": 8
+  },
+  "tax3gl": {
+   "searchType": "WILDCARD",
+   "subType": "GL",
+   "title": "GL Tax 3",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "General Ledger Account for Local Tax.",
+   "maxLength": 23
+  },
+  "tax5gl": {
+   "searchType": "WILDCARD",
+   "subType": "GL",
+   "title": "GL Tax 5",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "General Ledger Account for Local Tax.",
+   "maxLength": 23
+  },
+  "np_isreverse": {
+   "searchType": "NONE",
+   "subType": "YORN",
+   "title": "Is Reverse",
+   "type": "boolean",
+   "remarks": "Indicating this is a reverse invoice."
+  },
+  "syscode": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "INTEGER",
+   "title": "System Flag",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "System flag required for user data entry.",
+   "maxLength": 11
+  },
+  "exchangerate2": {
+   "searchType": "EXACT",
+   "scale": 7,
+   "subType": "DECIMAL",
+   "title": "EXCHANGERATE",
+   "persistent": true,
+   "type": "number",
+   "remarks": "Exchange Rate 2",
+   "maxLength": 15
+  },
+  "revinvoicenum": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Reverse Invoice",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The identifier that associates the invoice with a reversal.",
+   "maxLength": 8
+  },
+  "schedulerev": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "INTEGER",
+   "title": "Schedule Revision",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "Revision number of the referenced schedule.",
+   "maxLength": 11
+  },
+  "targinvstatus": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Target Invoice Status",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Stores target invoice status for invoice generated from schedule.",
+   "maxLength": 10
+  },
+  "_imagelibref": {
+   "type": "string"
+  },
+  "vendor": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Company",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The supplier who issued the invoice.",
+   "maxLength": 12
+  },
+  "invoiceid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "INVOICEID",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "uniqueid": true,
+   "remarks": "Unique Identifier",
+   "maxLength": 11
+  },
+  "approvalnum": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Approval #",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Auto generated number on approval of Invoice.",
+   "maxLength": 20
+  },
+  "description_longdescription": {
+   "searchType": "WILDCARD",
+   "subType": "LONGALN",
+   "title": "Details",
+   "type": "string",
+   "remarks": "Long Description for Short Description about the invoice.",
+   "maxLength": 32000
+  },
+  "originvoicenum": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Original Invoice",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Reference to invoice if it is a credit or debit note.",
+   "maxLength": 8
+  },
+  "enterdate": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Entered Date",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Date when invoice entered into the system."
+  },
+  "checknum": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Check #",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Check number used to pay vendor.",
+   "maxLength": 8
+  },
+  "contractrefid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "CONTRACTREFID.",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "Contract reference identifier.",
+   "maxLength": 11
+  },
+  "apsuspenseacct": {
+   "searchType": "WILDCARD",
+   "subType": "GL",
+   "title": "AP Suspense Account",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The suspense account of the vendor on the invoice",
+   "maxLength": 23
+  },
+  "changeby": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Changed By",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Name of person who changed invoice.",
+   "maxLength": 100
+  },
+  "paiddate": {
+   "searchType": "EXACT",
+   "subType": "DATE",
+   "title": "Paid Date",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Date when payment made."
+  },
+  "documenttype": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Type",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The type of document, such as invoice, credit, debit, or consignment payment.",
+   "maxLength": 12
+  },
+  "sendersysid": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Sender System ID",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Column used by ERP-Integration (APIs)",
+   "maxLength": 50
+  },
+  "exchangedate": {
+   "searchType": "EXACT",
+   "subType": "DATE",
+   "title": "Exchange Date",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Date of the exchange rate."
+  },
+  "statusdate": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Status Date",
+   "persistent": true,
+   "type": "string",
+   "remarks": "DateTime of current status."
+  },
+  "schedulenum": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "INTEGER",
+   "title": "Payment Schedule",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "hasList": true,
+   "remarks": "Payment Schedule",
+   "maxLength": 11
+  },
+  "positeid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "PO Site",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The site where the purchase order was created. To create an invoice, you must have security privileges to the same organization to which the purchase order site belongs.",
+   "maxLength": 8
+  },
+  "statusiface": {
+   "default": false,
+   "searchType": "NONE",
+   "subType": "YORN",
+   "title": "Has Status Changed",
+   "type": "boolean",
+   "remarks": "Non persistent boolean field to indicate whether the status has been changed after the stateful object is fetched from the database."
+  },
+  "duedate": {
+   "searchType": "EXACT",
+   "subType": "DATE",
+   "title": "Due Date",
+   "persistent": true,
+   "type": "string",
+   "remarks": "When payment is due."
+  },
+  "paid": {
+   "searchType": "EXACT",
+   "scale": 2,
+   "subType": "DECIMAL",
+   "title": "Paid",
+   "persistent": true,
+   "type": "number",
+   "remarks": "This is the amount that was actually paid.",
+   "maxLength": 11
+  },
+  "contractrefnum": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Contract Reference",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Contract Reference Number.",
+   "maxLength": 8
+  },
+  "ponum": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "PO",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The PO number associated with the invoice",
+   "maxLength": 8
+  },
+  "sourcesysid": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Source System ID",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Source System ID",
+   "maxLength": 10
+  },
+  "invoicedate": {
+   "searchType": "EXACT",
+   "subType": "DATE",
+   "title": "Invoice Date",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The date the invoice was created."
+  },
+  "np_statusmemo": {
+   "searchType": "NONE",
+   "subType": "ALN",
+   "title": "Change Status Memo",
+   "type": "string",
+   "remarks": "Status change memo, temporary non-persistent field used by MEA",
+   "maxLength": 50
+  },
+  "scheduleid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Payment Schedule",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "Payment schedule unique identifier.",
+   "maxLength": 11
+  }
+ },
+ "required": [
+  "changeby",
+  "changedate",
+  "currencycode",
+  "documenttype",
+  "einvoice",
+  "enterby",
+  "enterdate",
+  "glpostdate",
+  "historyflag",
+  "inclusive1",
+  "inclusive2",
+  "inclusive3",
+  "inclusive4",
+  "inclusive5",
+  "orgid",
+  "siteid",
+  "status",
+  "statusdate",
+  "statusiface",
+  "totalcost",
+  "totaltax1",
+  "totaltax2",
+  "totaltax3",
+  "totaltax4",
+  "totaltax5",
+  "vendor"
+ ]
+}

@@ -1,0 +1,716 @@
+{
+ "resource": "MXEMPACT",
+ "description": "Labor Pay Definition",
+ "pk": [
+  "siteid",
+  "laborcode",
+  "labtransid"
+ ],
+ "title": "LABTRANS",
+ "type": "object",
+ "$ref": "https://acnsbx-all.manage.sbx.apps.ocp.acn-ix.iam.accenture.com/maximo/api/jsonschemas/mxempact",
+ "uniqueid": "labtransid",
+ "properties": {
+  "ownersysid": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Owner System ID",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Owner System ID",
+   "maxLength": 10
+  },
+  "localref": {
+   "type": "string"
+  },
+  "craft": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Craft",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Identifies the craft. This field is read-only, if the Labor/Craft field contains a craft. If you edit this field, the Rate and Premium Pay Code fields are updated automatically.",
+   "maxLength": 8
+  },
+  "transtype_description": {
+   "type": "string"
+  },
+  "memo": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Memo",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Memo associated with the actual labor transaction. The work order must be approved before you can enter data; you can modify this field until the record is saved.",
+   "maxLength": 100
+  },
+  "starttime": {
+   "searchType": "NONE",
+   "subType": "TIME",
+   "title": "Start Time",
+   "type": "string",
+   "remarks": "Time at which work began. If you enter a Start Time and a Finish Time, Maximo calculates values for the Hours field, but will not write over a value you have already entered in the field. You can only enter a value if the work order has a status of Approve. You can modify the field until you save the record."
+  },
+  "startdate": {
+   "searchType": "NONE",
+   "subType": "DATE",
+   "title": "Start Date",
+   "type": "string",
+   "remarks": "Date on which work began; the default value is today's date. If you also enter a Start Time and Finish Time, Maximo calculates the values in the Hours and the Finish Date fields. The work order must be approved before you can insert a value; you can modify the field until you save the record. Maximo then updates the Actual Labor Hours and Actual Labor Cost fields."
+  },
+  "invoicelinenum": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "INTEGER",
+   "title": "Invoice Line",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "Invoice line number of the invoice line created from this Labor Transaction.",
+   "maxLength": 11
+  },
+  "timerstatus_description": {
+   "type": "string"
+  },
+  "rollup": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Rolled Up",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Indicates whether this transaction has been rolled up."
+  },
+  "_rowstamp": {
+   "type": "string"
+  },
+  "labtransid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "ID",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "uniqueid": true,
+   "remarks": "Primary key for the table",
+   "maxLength": 11
+  },
+  "startdateentered": {
+   "searchType": "EXACT",
+   "subType": "DATE",
+   "title": "Start Date",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Date on which the reported work began. "
+  },
+  "payrate": {
+   "searchType": "EXACT",
+   "scale": 2,
+   "subType": "AMOUNT",
+   "title": "Rate",
+   "persistent": true,
+   "type": "number",
+   "remarks": "Pay rate Maximo uses to calculate labor cost. The work order must be approved before you can insert a value. You can modify the field until you save the record. Maximo then updates the Actual Labor Cost field.",
+   "maxLength": 11
+  },
+  "porevisionnum": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "INTEGER",
+   "title": "PO Revision",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "Revision number of the purchase order. Indicates how many times a purchase order has been revised.",
+   "maxLength": 11
+  },
+  "siteid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Site",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Site Identifier",
+   "maxLength": 8
+  },
+  "href": {
+   "type": "string",
+   "title": "LABTRANS object reference"
+  },
+  "financialperiod": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Financial Period",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Financial period in a format corresponding to that required by the accounting system.",
+   "maxLength": 6
+  },
+  "taskid": {
+   "searchType": "NONE",
+   "maximum": 2147483647.0,
+   "subType": "INTEGER",
+   "title": "Task",
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "hasList": true,
+   "remarks": "TASKID",
+   "maxLength": 11
+  },
+  "enteredastask": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Entered as Task",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Was this transaction created against a work order task?"
+  },
+  "linecost": {
+   "default": 0.0,
+   "searchType": "EXACT",
+   "scale": 2,
+   "subType": "AMOUNT",
+   "title": "Line Cost",
+   "persistent": true,
+   "type": "number",
+   "remarks": "Extended or lump sum cost of labor transaction.",
+   "maxLength": 11
+  },
+  "transtype": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Type",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "The type of time being entered (work, travel, vacation, etc.). If you use WORK, TRAV, or WMATL as the type, you must enter a work order, GL account, asset, or location. ",
+   "maxLength": 16
+  },
+  "actualstaskid": {
+   "searchType": "NONE",
+   "maximum": 2147483647.0,
+   "subType": "INTEGER",
+   "title": "Task",
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "hasList": true,
+   "remarks": "Identifies the task for which you are reporting labor.",
+   "maxLength": 11
+  },
+  "record_descriptor": {
+   "type": "string",
+   "title": "Record/Object Descriptor"
+  },
+  "polinenum": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "INTEGER",
+   "title": "PO Line",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "hasList": true,
+   "remarks": "Identifies the line number on the PO for the labor.",
+   "maxLength": 11
+  },
+  "orgid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Organization",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Organization Identifier",
+   "maxLength": 8
+  },
+  "plusgqualificationuid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Qualification ID",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "Qualification unique identifier.",
+   "maxLength": 11
+  },
+  "ticketclass": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Ticket Class",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "class of the ticket",
+   "maxLength": 25
+  },
+  "laborcode": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Labor",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Code for the labor or craft that performs the operation. The work order must be approved before you can insert a value. To enter a labor code on an approved record, click the Planned Labor button to choose labor plan information from the Select Planned Labor page. You can also click Detail menu   to choose an option to select a value. The work order must be approved before you can insert a value. You can modify the field until you save the record.",
+   "maxLength": 8
+  },
+  "enterby": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Entered By",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Name of the person recording actual material usage. You can modify this field until the record is saved.",
+   "maxLength": 100
+  },
+  "outside": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Outside",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Specifies whether the work was performed by an outside contractor or by an employee. If the check box is selected, the work was performed by a contractor. If the check box is cleared, the work was performed by an employee. Maximo selects or clears the check box based on the value in the Labor field."
+  },
+  "finishtimeentered": {
+   "searchType": "EXACT",
+   "subType": "TIME",
+   "title": "End Time",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Time at which the work was finished."
+  },
+  "fincntrlid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "FCID",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Financial Control Identifier",
+   "maxLength": 8
+  },
+  "amcrew": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Crew",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Identifies the crew that performed the work.",
+   "maxLength": 8
+  },
+  "linecost2": {
+   "searchType": "EXACT",
+   "scale": 2,
+   "subType": "DECIMAL",
+   "title": "Premium Code",
+   "persistent": true,
+   "type": "number",
+   "remarks": "Base Currency Line Cost 2.",
+   "maxLength": 11
+  },
+  "_id": {
+   "type": "string"
+  },
+  "position": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Position",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Identifies the labor's position on the crew.",
+   "maxLength": 20
+  },
+  "starttimeentered": {
+   "searchType": "EXACT",
+   "subType": "TIME",
+   "title": "Start Time",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Time at which work began. If you enter a Start Time and a Finish Time, Maximo calculates values for the Hours field, but will not write over a value you have already entered in the field. You can only enter a value if the work order has a status of Approve. You can modify the field until you save the record. "
+  },
+  "premiumpayratetype_description": {
+   "type": "string"
+  },
+  "ticketclass_description": {
+   "type": "string"
+  },
+  "externalrefid": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "External Reference ID",
+   "persistent": true,
+   "type": "string",
+   "remarks": "External Reference ID",
+   "maxLength": 10
+  },
+  "gldebitacct": {
+   "searchType": "WILDCARD",
+   "subType": "GL",
+   "title": "GL Debit Account",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "GL account to debit the cost of the item. The default value can come from the work order's GL account (which may have defaulted from an associated PM), the inventory GL account, or both. See the MAXIMO Finance Manager's Guide for more information. The work order must be approved before you can insert a value in this field. Click the Detail button to view the GL Account Navigator page. You can modify this field until the record is saved.",
+   "maxLength": 23
+  },
+  "invoicenum": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Invoice",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Invoice number of the invoice created from this Labor Transaction.",
+   "maxLength": 8
+  },
+  "servrectransid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Service Receipt ID",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "Created when Create service Receipt is used",
+   "maxLength": 11
+  },
+  "regularhrs": {
+   "searchType": "EXACT",
+   "scale": 0,
+   "subType": "DURATION",
+   "title": "Regular Hours",
+   "persistent": true,
+   "type": "number",
+   "remarks": "Number of regular hours (not overtime, holiday, weekend, etc.) worked.",
+   "maxLength": 8
+  },
+  "finishtime": {
+   "searchType": "NONE",
+   "subType": "TIME",
+   "title": "End Time",
+   "type": "string",
+   "remarks": "Time at which work is finished. If you enter a Start Time and a Finish Time, Maximo calculates values for the Hours field but does not write over a value you have already entered in the field. The work order must be approved before you can insert a value; you can modify the field until you save the record. Maximo then updates the Actual Labor Hours and Actual Labor Cost fields."
+  },
+  "exchangerate2": {
+   "searchType": "EXACT",
+   "scale": 7,
+   "subType": "DECIMAL",
+   "title": "Secondary Exchange Rate",
+   "persistent": true,
+   "type": "number",
+   "remarks": "Base Exchange Rate 2",
+   "maxLength": 15
+  },
+  "skilllevel": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Skill Level",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Identifies the skill level of the labor.",
+   "maxLength": 15
+  },
+  "_imagelibref": {
+   "type": "string"
+  },
+  "vendor": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Vendor",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Vendor who provided the labor.",
+   "maxLength": 12
+  },
+  "assetnum": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Asset",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Identifies the asset to which labor costs are charged.",
+   "maxLength": 25
+  },
+  "crewworkgroup": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Crew Work Group",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Identifies the resource pool to which the labor belongs.",
+   "maxLength": 8
+  },
+  "contractnum": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Contract",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Identifies the contract for the outside labor for the transaction. You can select a contract based on the value in the Craft field or in the Labor field.",
+   "maxLength": 8
+  },
+  "refwo": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Activity",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Referenced Work Order",
+   "maxLength": 25
+  },
+  "ticketid": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Ticket",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Ticket Identifier",
+   "maxLength": 10
+  },
+  "qualmet_description": {
+   "type": "string"
+  },
+  "paymenttransdate": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Recorded as Received",
+   "persistent": true,
+   "type": "string",
+   "remarks": "The date and time the transaction was recorded in Purchasing. "
+  },
+  "anywhererefid": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "BIGINT",
+   "title": "Anywhere Ref ID",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "Anywhere Reference ID",
+   "maxLength": 11
+  },
+  "enterdate": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Entered Date",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Date the actual labor usage was recorded. You can modify this field until the record is saved."
+  },
+  "finishdate": {
+   "searchType": "NONE",
+   "subType": "DATE",
+   "title": "End Date",
+   "type": "string",
+   "remarks": "Date on which the labor finished the work. If you have entered a Start Date, Start Time, and Finish Time, Maximo calculates a value for the Finish Date field using this formula: (start date) + (finish time - start time). The work order must be approved before you can insert a value. You can modify the field until you save the record. Maximo then updates the Line Cost field."
+  },
+  "amcrewtype": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Crew Type",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Type of Crew.",
+   "maxLength": 8
+  },
+  "glcreditacct": {
+   "searchType": "WILDCARD",
+   "subType": "GL",
+   "title": "GL Credit Account",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "GL account to credit the cost of the item. The default value comes from the inventory control account. See the Maximo Finance Manager's Guide for more information. If the work order is approved, click the Detail button to view the GL Account Navigator page. You can modify this field until you save the record.",
+   "maxLength": 23
+  },
+  "premiumpayratetype": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Premium Rate Type",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Describes the type of premium rate, for example, hourly, incremental, or multiplier.",
+   "maxLength": 10
+  },
+  "revisionnum": {
+   "searchType": "EXACT",
+   "maximum": 2147483647.0,
+   "subType": "INTEGER",
+   "title": "Revision",
+   "persistent": true,
+   "type": "integer",
+   "minimum": -2147483648.0,
+   "remarks": "Identifies the Active Revision Number of the contract for this labor transaction.",
+   "maxLength": 11
+  },
+  "premiumpaycode": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Premium Pay Code",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Identifies the premium pay code for this labor transaction, for example, holiday hours, Sunday hours, greater than 40 hours per week, greater than eight hours per shift.",
+   "maxLength": 8
+  },
+  "transdate": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Transaction Date",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Timestamp - Key To Table"
+  },
+  "premiumpayrate": {
+   "searchType": "EXACT",
+   "scale": 2,
+   "subType": "DECIMAL",
+   "title": "Premium Pay Rate",
+   "persistent": true,
+   "type": "number",
+   "remarks": "Identifies the labor's rate for work done beyond the usual work shift, for example, the overtime rate. Maximo displays the premium pay rate in this read-only field and uses it to calculate the Line Cost.",
+   "maxLength": 11
+  },
+  "sendersysid": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Sender System ID",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Column used by ERP-Integration (APIs)",
+   "maxLength": 50
+  },
+  "wonum": {
+   "searchType": "NONE",
+   "subType": "UPPER",
+   "title": "Work Order",
+   "type": "string",
+   "hasList": true,
+   "remarks": "WONUM",
+   "maxLength": 25
+  },
+  "position_description": {
+   "type": "string"
+  },
+  "ponum": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "PO",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Identifies the purchase order that is purchasing the labor.The PO you select must have a service line, and the vendor on the PO must match the vendor on the selected labor/craft record. ",
+   "maxLength": 8
+  },
+  "timerstatus": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Timer Status",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Indicates whether a user created the labor transaction using the timer on the Maximo toolbar. If the field is blank, the timer was not used. If the field has a value, the timer was used to create this labor transaction. ",
+   "maxLength": 16
+  },
+  "location": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Location",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Location of the asset or the location where work was done. The work order must have an approved status before you can insert a value; the field can be edited until you save the record. Click Detail menu to choose an option to select a value.",
+   "maxLength": 25
+  },
+  "genapprservreceipt": {
+   "default": false,
+   "searchType": "EXACT",
+   "subType": "YORN",
+   "title": "Approved",
+   "persistent": true,
+   "type": "boolean",
+   "remarks": "Specifies whether the labor transaction has been approved and a service receipt can be written. If the check box is selected, the transaction has been approved. If the check box is cleared, the transaction has not been approved. You can edit labor transactions until the work order is closed or cancelled."
+  },
+  "finishdatetime": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Start Date Time",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Time at which work began. If you enter a Start Time and a Finish Time, Maximo calculates values for the Hours field, but will not write over a value you have already entered in the field. You can only enter a value if the work order has a status of Approve. You can modify the field until you save the record."
+  },
+  "qualmet": {
+   "searchType": "WILDCARD",
+   "subType": "UPPER",
+   "title": "Qualification Met?",
+   "persistent": true,
+   "type": "string",
+   "hasList": true,
+   "remarks": "Does this labor meet the qualification requirements?",
+   "maxLength": 12
+  },
+  "sourcesysid": {
+   "searchType": "WILDCARD",
+   "subType": "ALN",
+   "title": "Source System ID",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Source System ID",
+   "maxLength": 10
+  },
+  "finishdateentered": {
+   "searchType": "EXACT",
+   "subType": "DATE",
+   "title": "End Date",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Date on which the labor finished the work. If you have entered a Start Date, Start Time, and Finish Time, Maximo calculates a value for the Finish Date field using this formula: (start date) + (finish time - start time). The work order must be approved before you can insert a value. You can modify the field until you save the record. Maximo then updates the Line Cost field. "
+  },
+  "premiumpayhours": {
+   "searchType": "EXACT",
+   "scale": 0,
+   "subType": "DURATION",
+   "title": "Premium Pay Hours",
+   "persistent": true,
+   "type": "number",
+   "remarks": "Number of hours for which the labor will be paid the premium rate.",
+   "maxLength": 8
+  },
+  "startdatetime": {
+   "searchType": "EXACT",
+   "subType": "DATETIME",
+   "title": "Start Date Time",
+   "persistent": true,
+   "type": "string",
+   "remarks": "Time at which work began. If you enter a Start Time and a Finish Time, Maximo calculates values for the Hours field, but will not write over a value you have already entered in the field. You can only enter a value if the work order has a status of Approve. You can modify the field until you save the record."
+  }
+ },
+ "required": [
+  "craft",
+  "enterby",
+  "enterdate",
+  "laborcode",
+  "orgid",
+  "payrate",
+  "regularhrs",
+  "siteid",
+  "startdate",
+  "startdateentered",
+  "transdate",
+  "transtype"
+ ]
+}

@@ -1,0 +1,85 @@
+{
+  "resource": "MXAPITABLEDOMAIN",
+  "description": "MAXTABLEDOMAINVAL",
+  "title": "MAXTABLEDOMAINVAL",
+  "type": "object",
+  "$ref": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapitabledomain",
+  "properties": {
+    "_rowstamp": {
+      "type": "string"
+    },
+    "localref": {
+      "type": "string"
+    },
+    "_imagelibref": {
+      "type": "string"
+    },
+    "objectname": {
+      "searchType": "NONE",
+      "subType": "UPPER",
+      "title": "Object",
+      "type": "string",
+      "remarks": "Object Name.",
+      "maxLength": 30
+    },
+    "description": {
+      "searchType": "NONE",
+      "subType": "ALN",
+      "title": "Description",
+      "type": "string",
+      "remarks": "The table domain value description.",
+      "maxLength": 32000
+    },
+    "itemsetid": {
+      "searchType": "NONE",
+      "subType": "UPPER",
+      "title": "Item Set",
+      "type": "string",
+      "remarks": "Identifies the item set.",
+      "maxLength": 8
+    },
+    "siteid": {
+      "searchType": "NONE",
+      "subType": "UPPER",
+      "title": "Site",
+      "type": "string",
+      "remarks": "Site ID.",
+      "maxLength": 8
+    },
+    "href": {
+      "type": "string"
+    },
+    "_id": {
+      "type": "string"
+    },
+    "value": {
+      "searchType": "NONE",
+      "subType": "ALN",
+      "title": "Value",
+      "type": "string",
+      "remarks": "The table domain value.",
+      "maxLength": 3000
+    },
+    "domainid": {
+      "searchType": "NONE",
+      "subType": "UPPER",
+      "title": "Domain",
+      "type": "string",
+      "remarks": "Identifier of the domain",
+      "maxLength": 18
+    },
+    "orgid": {
+      "searchType": "NONE",
+      "subType": "UPPER",
+      "title": "Organization",
+      "type": "string",
+      "remarks": "Organization ID.",
+      "maxLength": 8
+    }
+  },
+  "required": [
+    "domainid",
+    "objectname",
+    "value"
+  ]
+}

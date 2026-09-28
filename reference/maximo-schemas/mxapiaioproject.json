@@ -1,0 +1,269 @@
+{
+  "resource": "MXAPIAIOPROJECT",
+  "description": "AIOPROJECT",
+  "pk": [
+    "aioprojectnum"
+  ],
+  "title": "AIOPROJECT",
+  "type": "object",
+  "$ref": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapiaioproject",
+  "uniqueid": "aioprojectid",
+  "properties": {
+    "localref": {
+      "type": "string"
+    },
+    "showrerunflag": {
+      "default": false,
+      "searchType": "NONE",
+      "subType": "YORN",
+      "title": "Show rerun flag",
+      "type": "boolean",
+      "remarks": "If the project need to show the rerun flag, it will check not only the project itself, also will check if there is any stratgy need to be rerun."
+    },
+    "createdate": {
+      "searchType": "EXACT",
+      "subType": "DATETIME",
+      "title": "Create time",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Create time of the project"
+    },
+    "description": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Description",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Project's description",
+      "maxLength": 200
+    },
+    "startdate": {
+      "searchType": "EXACT",
+      "subType": "DATETIME",
+      "title": "Start date",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Project start date, input timestamp like 2021-01-01"
+    },
+    "rerun": {
+      "default": false,
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "Rerun",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "Need to rerun the project or not"
+    },
+    "duration": {
+      "searchType": "EXACT",
+      "maximum": 2147483647.0,
+      "subType": "INTEGER",
+      "title": "Duration",
+      "persistent": true,
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "remarks": "Asset investment optimizer project's duration, unit is month, input integer",
+      "maxLength": 11
+    },
+    "langcode": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Language Code",
+      "persistent": true,
+      "type": "string",
+      "hasList": true,
+      "remarks": "Language Code",
+      "maxLength": 4
+    },
+    "_rowstamp": {
+      "type": "string"
+    },
+    "aioprojectid": {
+      "searchType": "EXACT",
+      "maximum": 2147483647.0,
+      "subType": "BIGINT",
+      "title": "Unique Id",
+      "persistent": true,
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "uniqueid": true,
+      "remarks": "Unique Id",
+      "maxLength": 11
+    },
+    "aioprojectnum": {
+      "default": "&AUTOKEY&",
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Project ID",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Project ID",
+      "maxLength": 25
+    },
+    "updatedate": {
+      "searchType": "EXACT",
+      "subType": "DATETIME",
+      "title": "Last updated",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Last updated time of the project"
+    },
+    "_imagelibref": {
+      "type": "string"
+    },
+    "targetendquarter": {
+      "searchType": "EXACT",
+      "maximum": 2147483647.0,
+      "subType": "SMALLINT",
+      "title": "Target end quarter",
+      "persistent": true,
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "hasList": true,
+      "remarks": "Identifies the project's target end quarter, 1, 2, 3, 4.",
+      "maxLength": 11
+    },
+    "href": {
+      "type": "string"
+    },
+    "assetnumber": {
+      "searchType": "NONE",
+      "maximum": 2147483647.0,
+      "subType": "INTEGER",
+      "title": "Asset number",
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "remarks": "Asset number of the project",
+      "maxLength": 11
+    },
+    "targetstartyear": {
+      "searchType": "EXACT",
+      "maximum": 2147483647.0,
+      "subType": "INTEGER",
+      "title": "Target start year",
+      "persistent": true,
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "remarks": "Identifies the project's target start year, such as 2022",
+      "maxLength": 11
+    },
+    "owner": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Owner",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Person who creates the project",
+      "maxLength": 100
+    },
+    "targetstartquarter_description": {
+      "type": "string"
+    },
+    "currentstrategy": {
+      "searchType": "EXACT",
+      "subType": "UPPER",
+      "title": "Current strategy",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Identifies the project's current strategy's aiostrategynum",
+      "maxLength": 25
+    },
+    "targetstartquarter": {
+      "searchType": "EXACT",
+      "maximum": 2147483647.0,
+      "subType": "SMALLINT",
+      "title": "Target start quarter",
+      "persistent": true,
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "hasList": true,
+      "remarks": "Identifies the project's target start quarter, 1, 2, 3, 4.",
+      "maxLength": 11
+    },
+    "usewith": {
+      "searchType": "WILDCARD",
+      "subType": "UPPER",
+      "title": "Applies To",
+      "persistent": true,
+      "type": "string",
+      "remarks": "The object used with the project",
+      "maxLength": 50
+    },
+    "enddate": {
+      "searchType": "EXACT",
+      "subType": "DATETIME",
+      "title": "End date",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Project end date, such as 2021-01-01"
+    },
+    "hasld": {
+      "default": false,
+      "searchType": "EXACT",
+      "subType": "YORN",
+      "title": "Has Long Description",
+      "persistent": true,
+      "type": "boolean",
+      "remarks": "Boolean flag to indicate if there is any long description for this record"
+    },
+    "targetendquarter_description": {
+      "type": "string"
+    },
+    "name": {
+      "searchType": "WILDCARD",
+      "subType": "ALN",
+      "title": "Name",
+      "persistent": true,
+      "type": "string",
+      "remarks": "Identifies the project's name.",
+      "maxLength": 200
+    },
+    "targetendyear": {
+      "searchType": "EXACT",
+      "maximum": 2147483647.0,
+      "subType": "INTEGER",
+      "title": "Target end year",
+      "persistent": true,
+      "type": "integer",
+      "minimum": -2147483648.0,
+      "remarks": "Identifies the project's target end year, such as 2022",
+      "maxLength": 11
+    },
+    "aiostrategy": {
+      "objectName": "AIOSTRATEGY",
+      "type": "array",
+      "items": {
+        "definition": {
+          "subSchema": {
+            "$ref": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapiaioproject/aiostrategy"
+          }
+        },
+        "type": "object"
+      },
+      "cardinality": "",
+      "relation": "AIOSTRATEGY"
+    },
+    "_id": {
+      "type": "string"
+    },
+    "aioasset": {
+      "objectName": "AIOASSET",
+      "type": "array",
+      "items": {
+        "definition": {
+          "subSchema": {
+            "$ref": "https://main-ui.manage.sandbox-trial.suite.maximo.com/maximo/api/jsonschemas/mxapiaioproject/aioasset"
+          }
+        },
+        "type": "object"
+      },
+      "cardinality": "",
+      "relation": "AIOASSET"
+    }
+  },
+  "required": [
+    "duration",
+    "langcode",
+    "name"
+  ]
+}
