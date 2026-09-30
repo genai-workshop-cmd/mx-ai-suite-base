@@ -181,6 +181,20 @@ function go(view) {
   if (loaders[view]) loaders[view]();
 }
 
+// ------------------------------------------------------------ LLM test
+async function testLLM() {
+  toast('Testing Claude connection…', 'info');
+  try {
+    const r = await api('/api/system/llm/ping');
+    if (r.ok) {
+      toast(`Connected! ${r.model} replied: "${r.response}"`, 'ok', 'Claude AI');
+      loadHealth();
+    } else {
+      toast(r.reason || 'Connection failed', 'error', 'Claude AI test failed');
+    }
+  } catch (e) { fail(e); }
+}
+
 // ---------------------------------------------------------------- health
 async function loadHealth() {
   try {
@@ -189,11 +203,24 @@ async function loadHealth() {
     $('#brandSub').textContent = `v${h.version} · ${h.maximo_version}`;
 
     $('#valModel').textContent = h.model.label;
-    $('#dotModel').className = 'dot ' + (h.model.available ? 'ok' : 'warn');
+    $('#dotModel').className = 'dot ' + (h.model.key_ok ? 'ok' : 'err');
     $('#valMaximo').textContent = h.maximo.label;
     $('#dotMaximo').className = 'dot ' + (h.maximo.configured ? 'ok' : 'warn');
     $('#valBrain').textContent = `${h.brain.documents} docs`;
     $('#dotBrain').className = 'dot ' + (h.brain.documents ? 'ok' : 'warn');
+
+    // Prominent warning when AI is not actually working
+    const aiWarnEl = $('#ai-offline-banner');
+    if (h.model.warning) {
+      if (aiWarnEl) {
+        aiWarnEl.hidden = false;
+        aiWarnEl.querySelector('.ai-warn-msg').textContent = h.model.warning;
+      } else {
+        toast(h.model.warning, 'error', 'Claude AI not connected', '');
+      }
+    } else if (aiWarnEl) {
+      aiWarnEl.hidden = true;
+    }
   } catch (e) { fail(e); }
 }
 
