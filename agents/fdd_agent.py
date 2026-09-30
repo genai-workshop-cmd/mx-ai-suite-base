@@ -6,6 +6,7 @@ every low-confidence item for the designer/architect gate.
 """
 from __future__ import annotations
 
+from pathlib import Path
 from typing import Any
 
 from core.models import Artifact, DuplicateDecision, Phase
@@ -30,20 +31,19 @@ class FDDAgent(BaseAgent):
         "- The list of Maximo names already validated against the environment"
     )
     output_format = (
-        "Markdown following exactly these sections:\n"
+        "Markdown document. ALWAYS include:\n"
         "# Functional Design Document\n"
         "## 1. Document Control\n"
         "## 2. Executive Summary\n"
         "## 3. Business Context\n"
-        "## 4. Scope\n"
-        "### 4.1 In Scope\n"
-        "### 4.2 Out of Scope\n"
-        "## 5. Functional Requirements   (a table: Req ID | Requirement | Change Type | Maximo Object | Priority)\n"
-        "## 6. Business Rules\n"
-        "## 7. Process Flow\n"
+        "## 4. Scope  (### 4.1 In Scope / ### 4.2 Out of Scope)\n"
+        "## 5. Functional Requirements  (table: Req ID | Requirement | Change Type | Maximo Object | Priority)\n"
         "## 8. Assumptions and Dependencies\n"
-        "## 9. Open Questions\n"
-        "Use GitHub-flavoured markdown tables. No other sections."
+        "## 9. Open Questions\n\n"
+        "INCLUDE ONLY IF RELEVANT to the change items:\n"
+        "## 6. Business Rules — only if conditional logic, validation rules, or obligation rules exist\n"
+        "## 7. Process Flow — only if a multi-step workflow or process sequence changes\n\n"
+        "Use GitHub-flavoured markdown tables. Never generate a section just to leave it empty or generic."
     )
     skill_files = ("mx_core_SKILL.md", "mx_functional_docs_SKILL.md", "mx_pm_wo_SKILL.md")
 
@@ -64,7 +64,25 @@ class FDDAgent(BaseAgent):
             "change_items": self.change_items(),
             "prior_art": self.prior_art(),
             "validation": self.report.summary(),
+            "analysis_context": self._get_analysis_context(),
         }
+
+    def _get_analysis_context(self) -> str:
+        """Read the approved Requirements Analysis document + gate answers."""
+        result = self.ctx.state.result(Phase.ANALYSIS)
+        if not result:
+            return ""
+        parts: list[str] = []
+        for artifact in result.artifacts:
+            if artifact.name.endswith(".md") and "flag" not in artifact.name.lower():
+                p = Path(artifact.path)
+                if p.exists():
+                    parts.append(p.read_text(encoding="utf-8")[:4000])
+                    break
+        gate = self.ctx.state.gate(Phase.ANALYSIS)
+        if gate.comment:
+            parts.append(f"BUSINESS ANSWERS TO OPEN QUESTIONS:\n{gate.comment}")
+        return "\n\n".join(parts)
 
     # -- compose -----------------------------------------------------------
     def compose(self, facts: dict[str, Any], duplicate: DuplicateDecision) -> Composition:
@@ -98,14 +116,23 @@ class FDDAgent(BaseAgent):
                 "The user will decide Update vs New. Keep your section numbering and "
                 "terminology consistent with it.\n"
             )
+        analysis_block = ""
+        if facts.get("analysis_context"):
+            analysis_block = (
+                f"REQUIREMENTS ANALYSIS (pre-approved — includes business answers to open questions):\n"
+                f"{facts['analysis_context']}\n\n"
+            )
         return (
             f"RUN: {self.ctx.state.title}\n"
             f"BUSINESS PROCESS: {self.ctx.process_name}\n{dup_note}\n"
+            f"{analysis_block}"
             f"PRIOR ART FROM AI BRAIN:\n{facts['prior_art']}\n\n"
             f"VALIDATED MAXIMO FACTS:\n{self.validated_facts_block()}\n\n"
             f"CHANGE ITEMS IDENTIFIED:\n{items}\n\n"
             f"RAW SOURCE MATERIAL:\n{self.ctx.source_material[:60000]}\n\n"
-            f"Write the Functional Design Document now.{self.revision_block()}"
+            f"Write the Functional Design Document now. "
+            f"Only include sections listed as relevant in the Requirements Analysis above. "
+            f"Use the business answers to open questions to populate fields accurately.{self.revision_block()}"
         )
 
     def _deterministic(self, facts: dict[str, Any], duplicate: DuplicateDecision) -> str:

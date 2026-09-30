@@ -185,6 +185,7 @@ class Artifact(BaseModel):
 
 class Phase(str, Enum):
     INTAKE = "intake"
+    ANALYSIS = "analysis"
     FDD = "fdd"
     TDD = "tdd"
     BUILD_CONFIG = "build_config"
@@ -196,6 +197,7 @@ class Phase(str, Enum):
 
 PHASE_ORDER: list[Phase] = [
     Phase.INTAKE,
+    Phase.ANALYSIS,
     Phase.FDD,
     Phase.TDD,
     Phase.BUILD_CONFIG,
@@ -207,6 +209,7 @@ PHASE_ORDER: list[Phase] = [
 
 PHASE_LABEL: dict[Phase, str] = {
     Phase.INTAKE: "Intake & Routing",
+    Phase.ANALYSIS: "Agent 0 - Requirements Analysis",
     Phase.FDD: "Agent 1 - FDD",
     Phase.TDD: "Agent 2 - TDD",
     Phase.BUILD_CONFIG: "Agent 3A - Config Build",
@@ -217,6 +220,7 @@ PHASE_LABEL: dict[Phase, str] = {
 }
 
 PHASE_GATE_ROLE: dict[Phase, str] = {
+    Phase.ANALYSIS: "Business Analyst / Scrum Master",
     Phase.FDD: "Designer / Architect",
     Phase.TDD: "Technical Lead / Architect",
     Phase.BUILD_CONFIG: "Maximo Developer",

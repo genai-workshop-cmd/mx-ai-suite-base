@@ -367,7 +367,7 @@ async function loadPipeline() {
   }
 }
 
-const PHASE_ICON = { fdd: '1', tdd: '2', build_config: '3A', build_integration: '3B', test: '4', deploy: '5' };
+const PHASE_ICON = { analysis: '0', fdd: '1', tdd: '2', build_config: '3A', build_integration: '3B', test: '4', deploy: '5' };
 
 function renderPipeline() {
   const has = !!(S.runId && S.status);
@@ -447,15 +447,28 @@ function renderRail(s) {
     }
 
     if (p.status === 'awaiting_review') {
+      const isAnalysis = p.phase === 'analysis';
       const dupChoice = (p.duplicate && p.duplicate.found)
         ? `<select data-dup="${esc(p.phase)}" style="max-width:150px">
              <option value="new">Create new</option><option value="update">Update existing</option></select>` : '';
-      panel += `<div class="gate-box">
+      const analysisNote = isAnalysis
+        ? `<div class="analysis-gate-note">
+            <strong>Action required before approving:</strong>
+            Read the Requirements Analysis document above. Find the <em>Open Questions</em> section
+            and type your answers in the box below (numbered to match). The FDD and TDD agents will
+            use your answers to generate accurate, relevant documents.
+           </div>` : '';
+      const cmPlaceholder = isAnalysis
+        ? 'Answer the Open Questions here (numbered). e.g. "1. WORKORDER.MEMO  2. Values: GENERAL, SAFETY, PLANNING  3. All sites"'
+        : 'Comment (required to request a revision)';
+      panel += `<div class="gate-box${isAnalysis ? ' analysis-gate' : ''}">
         <div class="gate-title">User gate — ${esc(p.role)}</div>
+        ${analysisNote}
         <div class="small" style="margin-top:4px">Nothing downstream runs until this is approved.</div>
         <div class="gate-actions">
           <input type="text" placeholder="Your name" data-by="${esc(p.phase)}">
-          <input type="text" placeholder="Comment (required to request a revision)" data-cm="${esc(p.phase)}" style="flex:1;min-width:180px;max-width:none">
+          <textarea placeholder="${esc(cmPlaceholder)}" data-cm="${esc(p.phase)}" rows="${isAnalysis ? 4 : 1}"
+            style="flex:1;min-width:200px;max-width:none;resize:vertical;font-family:inherit;font-size:inherit;padding:6px 8px;border:1px solid var(--border);border-radius:4px"></textarea>
           ${dupChoice}
           <button class="btn btn-ok btn-sm" data-gate="approve" data-phase="${esc(p.phase)}">Approve</button>
           <button class="btn btn-warn btn-sm" data-gate="revise" data-phase="${esc(p.phase)}">Request revision</button>

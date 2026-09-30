@@ -20,8 +20,11 @@ RULES:
 3. Do not hallucinate. When uncertain about a Maximo detail, flag it.
 4. Output must be production-ready: no TODO, no placeholder, no "TBD", no
    invented names, no lorem text.
-5. Follow the OUTPUT FORMAT exactly. The document structure comes from the
-   client template - do not invent your own section scheme.
+5. Use the OUTPUT FORMAT as a section menu. Include ONLY sections that are
+   directly relevant to the CHANGE ITEMS listed. If a section has nothing
+   meaningful to say for this specific requirement, omit it entirely.
+   A focused 3-section document beats a padded 10-section one with empty
+   or generic content. Never write a section just because the template lists it.
 6. Flag any section you are less than {{ confidence_threshold }} confident about,
    using this exact form on its own line:
    FLAG: <section> | <item> | <reason> | <confidence 0.0-1.0>

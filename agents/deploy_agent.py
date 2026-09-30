@@ -31,7 +31,7 @@ class DeployAgent(BaseAgent):
     )
     inputs_description = "- All approved artifacts from the previous phases\n- The change item register"
     output_format = (
-        "Markdown with exactly these sections:\n"
+        "Markdown document — a complete deployment runbook:\n"
         "# Deployment Runbook\n"
         "## 1. Package Contents\n"
         "## 2. Pre-deployment Checklist\n"

@@ -3,6 +3,7 @@ from __future__ import annotations
 
 from core.models import Phase
 
+from .analysis_agent import AnalysisAgent
 from .base import AgentContext, BaseAgent, Composition
 from .config_build_agent import ConfigBuildAgent
 from .deploy_agent import DeployAgent
@@ -14,6 +15,7 @@ from .testing_agent import TestingAgent
 
 #: Phase -> agent class. The pipeline never imports an agent directly.
 AGENTS: dict[Phase, type[BaseAgent]] = {
+    Phase.ANALYSIS: AnalysisAgent,
     Phase.FDD: FDDAgent,
     Phase.TDD: TDDAgent,
     Phase.BUILD_CONFIG: ConfigBuildAgent,
@@ -25,6 +27,7 @@ AGENTS: dict[Phase, type[BaseAgent]] = {
 __all__ = [
     "AGENTS",
     "AgentContext",
+    "AnalysisAgent",
     "BaseAgent",
     "Composition",
     "ConfigBuildAgent",

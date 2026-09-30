@@ -42,6 +42,7 @@ log = get("suite.pipeline")
 
 #: Phases that produce a document and therefore have a gate.
 GATED_PHASES = [
+    Phase.ANALYSIS,
     Phase.FDD,
     Phase.TDD,
     Phase.BUILD_CONFIG,
@@ -149,7 +150,7 @@ class Pipeline:
             },
         )
         state.results[Phase.INTAKE.value] = intake
-        state.current_phase = Phase.FDD
+        state.current_phase = Phase.ANALYSIS
         self.store.save(state)
         log.info("run %s ready: %s", state.run_id, decision.rationale)
         return state
@@ -396,13 +397,16 @@ class Pipeline:
             return
 
         doc_type = {
+            Phase.ANALYSIS: "analysis",
             Phase.FDD: "fdd",
             Phase.TDD: "tdd",
             Phase.BUILD_CONFIG: "build_config",
             Phase.BUILD_INTEGRATION: "build_integration",
             Phase.TEST: "testcases",
             Phase.DEPLOY: "deployment",
-        }[phase]
+        }.get(phase)
+        if doc_type is None:
+            return
 
         action = result.duplicate.action if result.duplicate else "new"
         doc_id = None
@@ -438,6 +442,7 @@ class Pipeline:
         if not gate.comment:
             return
         doc_type = {
+            Phase.ANALYSIS: "analysis",
             Phase.FDD: "fdd",
             Phase.TDD: "tdd",
             Phase.BUILD_CONFIG: "build_config",

@@ -40,19 +40,21 @@ class TDDAgent(BaseAgent):
         "- Validated Maximo object and attribute facts"
     )
     output_format = (
-        "Markdown following exactly these sections:\n"
+        "Markdown document. ALWAYS include:\n"
         "# Technical Design Document\n"
         "## 1. Document Control\n"
         "## 2. Solution Overview\n"
-        "## 3. Change Register   (table: CI ID | Change | Type | Object | Build Agent)\n"
-        "## 4. Database Configuration\n"
-        "## 5. Application Configuration\n"
-        "## 6. Automation Scripts   (one subsection per script, with a Jython outline in a fenced block)\n"
-        "## 7. Integration Design\n"
-        "## 8. Security\n"
-        "## 9. Estimation   (table: CI ID | Change | Effort (hrs) | Skill | Risk)\n"
-        "## 10. Implementation Sequence\n"
-        "Jython must use the MBO API (mbo.getString, mbo.setValue, MboConstants), never raw SQL."
+        "## 3. Change Register  (table: CI ID | Change | Type | Object | Build Agent)\n"
+        "## 9. Estimation  (table: CI ID | Change | Effort (hrs) | Skill | Risk)\n"
+        "## 10. Implementation Sequence\n\n"
+        "INCLUDE ONLY IF RELEVANT to the change items present:\n"
+        "## 4. Database Configuration — only if new attributes, objects or domains are created/modified\n"
+        "## 5. Application Configuration — only if UI/screen changes (new tabs, sections, field visibility)\n"
+        "## 6. Automation Scripts — ONLY for change type 'customisation' or 'workflow'\n"
+        "   (one ### subsection per script; Jython outline in a fenced block; MBO API only, never raw SQL)\n"
+        "## 7. Integration Design — ONLY for change type 'integration'\n"
+        "## 8. Security — only if security groups, signature options, or data restrictions change\n\n"
+        "Never write a section that is not directly required by the change items."
     )
     skill_files = ("mx_core_SKILL.md", "mx_tech_config_SKILL.md", "ma_autoscript_SKILL.md", "mx_pm_wo_SKILL.md")
 
@@ -477,6 +479,19 @@ class TDDAgent(BaseAgent):
         }
         seq_pattern_note = pattern_seq_note.get(pattern, "")
 
+        optional_sections = ""
+        if db_any or db_config_note:
+            optional_sections += f"\n## 4. Database Configuration\n\n{db_full}\n"
+        if config_items or app_config_note:
+            optional_sections += f"\n## 5. Application Configuration\n\n{app_full}\n"
+        if scripts:
+            optional_sections += f"\n## 6. Automation Scripts\n\n{scripts_section}\n"
+        if integration_items:
+            optional_sections += f"\n## 7. Integration Design\n\n{integration_section}\n"
+        sec_items = [i for i in items if i.change_type.value == "security"]
+        if sec_items or security_section.strip():
+            optional_sections += f"\n## 8. Security\n\n{sec_full}\n"
+
         return f"""# Technical Design Document
 
 ## 1. Document Control
@@ -502,35 +517,15 @@ class TDDAgent(BaseAgent):
 
 | Component | Required | Detail |
 |---|---|---|
-| Database Configuration | {"Yes" if db_any else "**Not required**"} | {str(sum(1 for i in items if i.maximo_attribute)) + " attribute(s)" if db_any else "No new attributes needed — all required fields exist in the OOTB schema"} |
-| Application Designer | {"Yes" if config_items else "**Not required**"} | {str(len(config_items)) + " control(s)" if config_items else "OOTB UI covers this change — no additional controls needed"} |
-| Automation Scripts | {"Yes" if scripts else "Not required"} | {str(len(scripts)) + " script(s): " + ", ".join(s["name"] for s in scripts) if scripts else "Not required"} |
-| Integration (MIF) | {"Yes → Agent 3B" if integration_items else "Not required"} | {str(len(integration_items)) + " interface(s)" if integration_items else "Not required"} |
+| Database Configuration | {"Yes" if db_any else "Not required"} | {str(sum(1 for i in items if i.maximo_attribute)) + " attribute(s)" if db_any else "No new attributes needed"} |
+| Application Designer | {"Yes" if config_items else "Not required"} | {str(len(config_items)) + " control(s)" if config_items else "Not required"} |
+| Automation Scripts | {"Yes" if scripts else "Not required"} | {", ".join(s["name"] for s in scripts) if scripts else "Not required"} |
+| Integration (MIF) | {"Yes — Agent 3B" if integration_items else "Not required"} | {str(len(integration_items)) + " interface(s)" if integration_items else "Not required"} |
 
 ## 3. Change Register
 
 {chr(10).join(register)}
-
-## 4. Database Configuration
-
-{db_full}
-
-## 5. Application Configuration
-
-{app_full}
-
-## 6. Automation Scripts
-
-{scripts_section}
-
-## 7. Integration Design
-
-{integration_section}
-
-## 8. Security
-
-{sec_full}
-
+{optional_sections}
 ## 9. Estimation
 
 {chr(10).join(estimation)}

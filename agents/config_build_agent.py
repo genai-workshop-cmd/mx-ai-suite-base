@@ -31,17 +31,18 @@ class ConfigBuildAgent(BaseAgent):
         "- Validated Maximo object and attribute facts"
     )
     output_format = (
-        "Markdown with exactly these sections:\n"
+        "Markdown document. ALWAYS include:\n"
         "# Configuration Build Document\n"
         "## 1. Build Summary\n"
-        "## 2. Database Configuration Steps\n"
-        "## 3. Application Designer Steps\n"
-        "## 4. Domains and Lookups\n"
-        "## 5. Security Configuration\n"
-        "## 6. Automation Script Import\n"
-        "## 7. Post-build Verification\n"
-        "Each step must be numbered, name the exact Maximo application to open, "
-        "and state the exact field values to enter."
+        "## 7. Post-build Verification\n\n"
+        "INCLUDE ONLY IF RELEVANT to the change items:\n"
+        "## 2. Database Configuration Steps — only if new attributes or objects are added/modified\n"
+        "## 3. Application Designer Steps — only if screen/tab/section/field layout or visibility changes\n"
+        "## 4. Domains and Lookups — only if domains are created or modified\n"
+        "## 5. Security Configuration — only if security groups or signature options change\n"
+        "## 6. Automation Script Import — ONLY if automation scripts are deployed\n\n"
+        "Each included step must be numbered, name the exact Maximo application to open, "
+        "and state the exact field values to enter. Never write a section that is empty or generic."
     )
     skill_files = ("mx_core_SKILL.md", "mx_tech_config_SKILL.md", "ma_autoscript_SKILL.md", "mx_pm_wo_SKILL.md")
 
@@ -205,6 +206,28 @@ class ConfigBuildAgent(BaseAgent):
         )
         verification = "\n".join(verif_steps) or "1. Confirm the application opens without error after changes."
 
+        has_db = any(i.maximo_attribute for i in items)
+        has_app = bool(config_items)
+        has_domains = bool(domain_items)
+        has_security = bool(sec_steps)
+        has_scripts = bool(scripts)
+
+        optional_sections = ""
+        if has_db:
+            optional_sections += (
+                f"\n## 2. Database Configuration Steps\n\n{db_section}\n\n"
+                "> After **all** attribute changes: switch to **Admin Mode**, run "
+                "**Apply Configuration Changes**, then switch Admin Mode off.\n"
+            )
+        if has_app:
+            optional_sections += f"\n## 3. Application Designer Steps\n\n{app_section}\n"
+        if has_domains:
+            optional_sections += f"\n## 4. Domains and Lookups\n\n{domain_section}\n"
+        if has_security:
+            optional_sections += f"\n## 5. Security Configuration\n\n{security_section}\n"
+        if has_scripts:
+            optional_sections += f"\n## 6. Automation Script Import\n\n{script_section}\n"
+
         return f"""# Configuration Build Document
 
 ## 1. Build Summary
@@ -221,32 +244,8 @@ class ConfigBuildAgent(BaseAgent):
 
 {self.report.summary()}
 
-**Apply order:** Database Configuration → Apply Config Changes → Application Designer
-→ Automation Scripts → Security → Verification.
-
-## 2. Database Configuration Steps
-
-{db_section}
-
-> After **all** attribute changes: switch to **Admin Mode**, run **Apply Configuration Changes**,
-> then switch Admin Mode off before proceeding to Application Designer.
-
-## 3. Application Designer Steps
-
-{app_section}
-
-## 4. Domains and Lookups
-
-{domain_section}
-
-## 5. Security Configuration
-
-{security_section}
-
-## 6. Automation Script Import
-
-{script_section}
-
+**Sections included:** {"DB Config" if has_db else ""}{"  App Designer" if has_app else ""}{"  Domains" if has_domains else ""}{"  Security" if has_security else ""}{"  Scripts" if has_scripts else ""}
+{optional_sections}
 ## 7. Post-build Verification
 
 {verification}

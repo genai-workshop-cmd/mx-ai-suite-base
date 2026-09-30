@@ -55,11 +55,11 @@ class IntegrationAgent(BaseAgent):
         "- Validated Maximo object structure and attribute facts"
     )
     output_format = (
-        "Markdown with exactly these sections:\n"
+        "Markdown document covering the integration design:\n"
         "# Integration Build Document\n"
-        "## 1. Interface Summary   (table: Interface | Direction | Trigger | Object Structure | External System)\n"
-        "## 2. Interface Detail    (one subsection per interface)\n"
-        "## 3. Field Mapping\n"
+        "## 1. Interface Summary  (table: Interface | Direction | Trigger | Object Structure | External System)\n"
+        "## 2. Interface Detail  (one ### subsection per interface)\n"
+        "## 3. Field Mapping  (only include mappings that are confirmed in VALIDATED MAXIMO FACTS)\n"
         "## 4. Transformation Rules\n"
         "## 5. Error Handling\n"
         "## 6. Security and Endpoint Configuration\n"
