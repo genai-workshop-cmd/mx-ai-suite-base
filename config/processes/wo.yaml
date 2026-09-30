@@ -30,9 +30,14 @@ objects:
     - LOCATIONS
     - JOBPLAN
     - PM
+    - MULTIASSETLOCCI
     - LABTRANS
     - MATUSETRANS
+    - WOSERVICEADDRESS
     - SR
+    - FAILURECODE
+    - CLASSSTRUCTURE
+    - SAFETYPRECAUTION
 
 applications:
   - WOTRACK

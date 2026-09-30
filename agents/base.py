@@ -64,6 +64,8 @@ class AgentContext:
     source_material: str = ""
     #: set True by `demo` / `pipeline --auto` to skip interactive gates
     auto_approve: bool = False
+    #: populated when this phase is a re-run after revision_requested
+    revision_comment: str = ""
 
     @property
     def process_name(self) -> str:
@@ -125,15 +127,29 @@ class BaseAgent(ABC):
             self.facts = self.gather()
             composition = self.compose(self.facts, duplicate)
 
-            result.flags = list(composition.flags) + self.report.to_flags(self.name)
-            result.validations = list(self.report.results)
+            # Compute confidence BEFORE emit so the banner flows into both .md AND .docx.
+            all_flags = list(composition.flags) + self.report.to_flags(self.name)
+            all_validations = list(self.report.results)
+            score = self.compute_confidence_score(
+                all_flags, all_validations, self.change_items(), composition.generated_by
+            )
+            composition.body = self._prepend_confidence_banner(
+                composition.body, score, composition.generated_by
+            )
+
+            result.flags = all_flags
+            result.validations = all_validations
             result.handover = composition.handover
+            result.generated_by = composition.generated_by
+            result.confidence_score = score
             result.artifacts = self.emit(composition)
             result.summary = composition.summary or self.report.summary()
+
             result.ok = True
             self.log.info(
-                "done: %d artifact(s), %d flag(s), %s",
-                len(result.artifacts), len(result.flags), self.report.summary(),
+                "done: %d artifact(s), %d flag(s), confidence=%.0f%%, %s",
+                len(result.artifacts), len(result.flags),
+                result.confidence_score * 100, self.report.summary(),
             )
         except SuiteError as exc:
             result.ok = False
@@ -190,25 +206,64 @@ class BaseAgent(ABC):
         return "\n".join(blocks)
 
     def load_skills(self) -> str:
-        """Concatenate the skill files this agent declares, plus auto-learned corrections."""
+        """Concatenate the skill files this agent declares, plus auto-learned corrections.
+
+        Load order:
+          1. Core skill files declared by each agent (skills/ directory)
+          2. Client-specific knowledge files (knowledge/client/*.md) — drop files here to teach
+             the AI about your environment: custom objects, sites, security groups, etc.
+          3. Auto-learned corrections from reviewer gate feedback (corrections_*.md)
+          4. IBM Knowledge Centre cache (ibm_docs_cache.md)
+        """
         parts = []
+
+        # 1. Core skill files declared by each agent
         for filename in (self.skill_files or []):
             path = self.ctx.cfg.skills_dir / filename
             if not path.exists():
                 self.log.debug("skill file missing: %s", filename)
                 continue
             text = path.read_text(encoding="utf-8", errors="ignore")
-            # Keep prompts affordable; the head of each skill carries the rules.
-            parts.append(f"--- {filename} ---\n{text[:6000]}")
+            # 20 000-char ceiling per file — covers the full mx_pm_wo_SKILL.md (17 690 chars)
+            # and all other current skill files without truncation.
+            parts.append(f"--- {filename} ---\n{text[:20000]}")
 
-        # Auto-learned corrections: past reviewer feedback for this doc_type
+        # 2. Client-specific knowledge files — auto-loaded from knowledge/client/
+        # Drop any .md file here and all agents will pick it up automatically.
+        knowledge_dir = self.ctx.cfg.skills_dir.parent / "knowledge" / "client"
+        if knowledge_dir.exists():
+            for kfile in sorted(knowledge_dir.glob("*.md")):
+                try:
+                    text = kfile.read_text(encoding="utf-8", errors="ignore")
+                    if text.strip():
+                        parts.append(f"--- {kfile.name} (client knowledge) ---\n{text[:20000]}")
+                        self.log.debug("loaded client knowledge: %s", kfile.name)
+                except Exception:
+                    pass
+
+        # 3. Auto-learned corrections: past reviewer feedback for this doc_type
         corrections = self.ctx.brain.feedback.corrections_skill(self.doc_type)
         if corrections:
-            # Include the 10 most recent corrections (tail of file, ~3000 chars)
+            # Include recent corrections (tail of file, ~6000 chars = ~10-15 entries)
             parts.append(
                 f"--- corrections_{self.doc_type}.md (auto-learned from reviewer feedback) ---\n"
-                f"{corrections[-3000:]}"
+                f"{corrections[-6000:]}"
             )
+
+        # 4. IBM Knowledge Centre cache — authoritative vendor documentation.
+        # Populated by `python run.py ibmdocs sync`. Skipped silently when absent.
+        if getattr(self.ctx.cfg, "ibm_docs_enabled", True):
+            try:
+                from core.ibm_docs import load_cache
+                ibm_text = load_cache(self.ctx.cfg.skills_dir)
+                if ibm_text:
+                    parts.append(
+                        "--- ibm_docs_cache.md (IBM Knowledge Centre — authoritative source) ---\n"
+                        + ibm_text
+                    )
+            except Exception:
+                pass  # never fail a generation because of missing IBM docs cache
+
         return "\n\n".join(parts)
 
     def system_prompt(self) -> str:
@@ -260,6 +315,82 @@ class BaseAgent(ABC):
                 hint = f" Suggestions: {', '.join(r.suggestions[:3])}." if r.suggestions else ""
                 lines.append(f"  - {r.kind}: {r.name} - {r.detail}{hint}")
         return "\n".join(lines) or "(no Maximo names required validation)"
+
+    def revision_block(self) -> str:
+        """Returns a revision instruction block if this is a re-run after reviewer feedback."""
+        if not self.ctx.revision_comment:
+            return ""
+        return (
+            "\n\nREVISION REQUESTED BY REVIEWER — INCORPORATE ALL CHANGES BELOW:\n"
+            "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+            f"{self.ctx.revision_comment.strip()}\n"
+            "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+            "Address every point above. Do not produce the same document again.\n"
+        )
+
+    @staticmethod
+    def compute_confidence_score(
+        flags: list,
+        validations: list,
+        change_items: list,
+        generated_by: str,
+    ) -> float:
+        """Return a 0.0–1.0 document-level confidence score.
+
+        Scoring logic:
+          - deterministic fallback (no AI)  → cap at 0.45
+          - each BLOCK flag                 → -0.12
+          - each WARN flag                  → -0.04
+          - each unconfirmed Maximo name    → -0.03
+          - each UNKNOWN change type        → -0.05
+        Floor: 0.05  Ceiling: 1.0
+        """
+        score = 1.0
+
+        if generated_by == "deterministic":
+            score = 0.45
+
+        for flag in flags:
+            if getattr(flag, "severity", "") == "block":
+                score -= 0.12
+            elif getattr(flag, "severity", "") == "warn":
+                score -= 0.04
+
+        unconfirmed = sum(1 for v in validations if not getattr(v, "exists", True))
+        score -= unconfirmed * 0.03
+
+        unknown = sum(
+            1 for ci in change_items
+            if getattr(ci, "change_type", None) and ci.change_type.value == "unknown"
+        )
+        score -= unknown * 0.05
+
+        return max(0.05, min(1.0, round(score, 2)))
+
+    @staticmethod
+    def _prepend_confidence_banner(body: str, score: float, generated_by: str) -> str:
+        """Prepend a confidence banner to the document body before emit().
+
+        Because this runs before emit(), the banner is included in BOTH
+        the .md file AND the .docx Word document rendered from the same body.
+        """
+        pct = int(score * 100)
+        if pct >= 80:
+            tier, icon = "HIGH", "🟢"
+        elif pct >= 50:
+            tier, icon = "MEDIUM", "🟡"
+        else:
+            tier, icon = "LOW", "🔴"
+
+        model_label = (
+            generated_by if generated_by != "deterministic"
+            else "Deterministic template (no AI model)"
+        )
+        banner = (
+            f"> **Confidence Score: {pct}% — {tier}** {icon}  \n"
+            f"> Generated by: `{model_label}`\n\n"
+        )
+        return banner + body
 
     def ask_model(self, user_prompt: str, *, max_tokens: int | None = None) -> tuple[str, str]:
         """Call the model. Returns (text, generated_by). Empty text => fall back.

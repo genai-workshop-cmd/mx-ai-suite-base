@@ -256,6 +256,9 @@ class PhaseResult(BaseModel):
     duplicate: DuplicateDecision | None = None
     handover: dict[str, Any] = Field(default_factory=dict)
     error: dict[str, str] | None = None
+    # Document-level confidence score (0.0–1.0) computed from flags, validations, and generation method.
+    confidence_score: float = Field(default=0.0, ge=0.0, le=1.0)
+    generated_by: str = ""
 
 
 class RunState(BaseModel):

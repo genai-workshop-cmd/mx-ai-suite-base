@@ -45,7 +45,7 @@ class FDDAgent(BaseAgent):
         "## 9. Open Questions\n"
         "Use GitHub-flavoured markdown tables. No other sections."
     )
-    skill_files = ("mx_core_SKILL.md", "mx_functional_docs_SKILL.md")
+    skill_files = ("mx_core_SKILL.md", "mx_functional_docs_SKILL.md", "mx_pm_wo_SKILL.md")
 
     # -- gather ------------------------------------------------------------
     def gather(self) -> dict[str, Any]:
@@ -104,36 +104,64 @@ class FDDAgent(BaseAgent):
             f"PRIOR ART FROM AI BRAIN:\n{facts['prior_art']}\n\n"
             f"VALIDATED MAXIMO FACTS:\n{self.validated_facts_block()}\n\n"
             f"CHANGE ITEMS IDENTIFIED:\n{items}\n\n"
-            f"RAW SOURCE MATERIAL:\n{self.ctx.source_material[:30000]}\n\n"
-            "Write the Functional Design Document now."
+            f"RAW SOURCE MATERIAL:\n{self.ctx.source_material[:60000]}\n\n"
+            f"Write the Functional Design Document now.{self.revision_block()}"
         )
 
     def _deterministic(self, facts: dict[str, Any], duplicate: DuplicateDecision) -> str:
         """Template-driven FDD used when no model is configured.
 
-        Produces the same section structure so downstream agents and the DOCX
-        renderer behave identically with or without a model.
+        Parses the requirement descriptions to extract Maximo-specific detail and
+        uses the narrate() function to inject IBM Maximo-accurate prose into each
+        section based on the detected implementation pattern.
         """
+        from ._extract import field_spec, business_rules, process_flow_steps, narrate
+
         state = self.ctx.state
         process = self.ctx.process
         items = facts["change_items"]
+        applications = process.get("applications") or [self.ctx.process_name]
+        app = applications[0]
 
+        # Get Maximo-specific narrative based on what the requirement describes
+        nb = narrate(items, [], process)
+        pattern = nb.get("pattern", "config")
+
+        # --- Section 5: requirements table -----------------------------------
         rows = [
-            "| Req ID | Requirement | Change Type | Maximo Object | Priority |",
-            "|---|---|---|---|---|",
+            "| Req ID | Requirement | Change Type | Maximo Object | Attribute | Type | Length | Mandatory | Priority |",
+            "|---|---|---|---|---|---|---|---|---|",
         ]
         for n, item in enumerate(items, 1):
+            spec = field_spec(item.description or "")
+            ftype = spec.get("type", "—")
+            flen = str(spec.get("length", "—"))
+            mand = "Yes" if spec.get("mandatory") else ("No" if "mandatory" in spec else "—")
+            priority = "High" if item.confidence >= 0.8 else ("Medium" if item.confidence >= 0.6 else "Low")
             rows.append(
-                f"| FR-{n:03d} | {_cell(item.description)} | {item.change_type.value} | "
-                f"{item.maximo_object or 'To be confirmed'} | {'High' if item.confidence >= 0.7 else 'Medium'} |"
+                f"| FR-{n:03d} | {_cell(item.title, 120)} | {item.change_type.value} | "
+                f"{item.maximo_object or '—'} | {item.maximo_attribute or '—'} | "
+                f"{ftype} | {flen} | {mand} | {priority} |"
+            )
+            rows.append(
+                f"| | *{_cell(item.description, 300)}* | | | | | | | |"
             )
 
-        business_rules = [
-            f"- **BR-{n:03d}** - {_cell(item.description)}"
-            for n, item in enumerate(items, 1)
-            if item.change_type.value in {"customisation", "workflow"}
-        ] or ["- No conditional business rules identified in the source material."]
+        # --- Section 6: business rules ---------------------------------------
+        # Use pattern-specific rules if available, else extract from text
+        narrated_rules = nb.get("business_rules") or []
+        extracted_rules = narrated_rules if narrated_rules else business_rules(items)
+        if not extracted_rules:
+            extracted_rules = [
+                f"- **BR-{n:03d}** ({item.change_type.value}) — {_cell(item.description, 200)}"
+                for n, item in enumerate(items, 1)
+            ]
 
+        # --- Section 7: process flow -----------------------------------------
+        narrated_flow = nb.get("process_flow") or []
+        flow_steps = narrated_flow if narrated_flow else process_flow_steps(items, self.ctx.process_name, applications)
+
+        # --- Open questions --------------------------------------------------
         open_questions = [
             f"- {f.item}: {f.reason}" for f in self.report.to_flags("FDD")
         ] or ["- None outstanding at the time of writing."]
@@ -148,6 +176,31 @@ class FDDAgent(BaseAgent):
 
         in_scope = "\n".join(f"- {_cell(i.title)}" for i in items) or "- See source material."
 
+        # Specific objects detected
+        objects_in_scope = sorted({i.maximo_object for i in items if i.maximo_object})
+        objects_line = (
+            f"Objects in scope: `{'`, `'.join(objects_in_scope)}`" if objects_in_scope
+            else "Maximo objects to be confirmed against the environment."
+        )
+
+        # Pattern-specific dependencies
+        pattern_deps: dict[str, list[str]] = {
+            "pm_wo_multiasset": [
+                "- `PMWOEGENCRON` cron task must be active and correctly configured in the target site.",
+                "- PM records with MULTIASSETLOCCI rows must exist in the test environment to validate the copy.",
+                "- MAS Inspections application must be configured if INSPECTIONFORM field propagation is required (MAS 8/9).",
+            ],
+            "pm_wo_field_copy": [
+                "- PM records must exist in the test environment with the source field populated.",
+                "- `PMWOEGENCRON` cron task must be active and correctly configured.",
+            ],
+            "integration": [
+                "- External system end point (URL, credentials) must be confirmed before Agent 3B begins.",
+                "- Object Structure field mapping must be approved by both the Maximo team and the receiving system team.",
+            ],
+        }
+        extra_deps = "\n".join(pattern_deps.get(pattern, []))
+
         return f"""# Functional Design Document
 
 ## 1. Document Control
@@ -159,19 +212,26 @@ class FDDAgent(BaseAgent):
 | Platform | IBM Maximo {self.ctx.cfg.maximo_version} |
 | Domain | {self.ctx.cfg.domain} |
 | Run ID | {state.run_id} |
-| Status | Draft - awaiting {process.get('gate_role', 'designer / architect')} review |
+| Title | {state.title} |
+| Status | Draft — awaiting Designer / Architect review |
 | Validation source | {self.ctx.validator.source_label()} |
 {dup_line}
 ## 2. Executive Summary
 
-This document specifies the functional design for {len(items)} change item(s) in the
-{process.get('label', self.ctx.process_name)} process. {self.report.summary()}
+{nb['executive_summary']}
+
+{self.report.summary()}
+
+All {len(items)} change item(s) listed in section 5 must be approved at the FDD gate
+before the Technical Design Document (TDD) is commissioned.
 
 ## 3. Business Context
 
-{process.get('description', 'Business context to be confirmed with the process owner.').strip()}
+{nb['business_context']}
 
-The changes described here originate from: {', '.join(sorted({r.source for r in state.requirements})) or 'uploaded requirement material'}.
+{process.get('description', '').strip()}
+
+Source material: {', '.join(sorted({r.source for r in state.requirements})) or 'uploaded requirement material'}.
 
 ## 4. Scope
 
@@ -179,32 +239,38 @@ The changes described here originate from: {', '.join(sorted({r.source for r in 
 
 {in_scope}
 
+{objects_line}
+
 ### 4.2 Out of Scope
 
-- Any change to a business process other than {self.ctx.process_name}.
-- Infrastructure, licensing and environment provisioning.
-- Changes not traceable to a requirement listed in section 5.
+- Any change to a business process other than **{self.ctx.process_name}**.
+- Infrastructure, licensing and Maximo environment provisioning.
+- Changes not traceable to a requirement in section 5 of this document.
+- Data migration or retrospective population of new fields unless explicitly listed in section 4.1.
 
 ## 5. Functional Requirements
 
 {chr(10).join(rows)}
 
+> **Note**: Rows in *italics* contain the full requirement text for traceability.
+> `—` in Type / Length / Mandatory means the value must be confirmed with the business owner before the TDD gate.
+
 ## 6. Business Rules
 
-{chr(10).join(business_rules)}
+{chr(10).join(extracted_rules)}
 
 ## 7. Process Flow
 
-1. User initiates the {self.ctx.process_name} transaction in Maximo.
-2. The configured fields and validations described in section 5 apply.
-3. Downstream objects are updated according to the business rules in section 6.
-4. Any integration defined for this change publishes on the trigger stated in its requirement.
+{chr(10).join(flow_steps)}
 
 ## 8. Assumptions and Dependencies
 
-- Maximo {self.ctx.cfg.maximo_version} is available in the target environment.
-- Names marked "To be confirmed" in section 5 are resolved before the technical design is approved.
-- Validation for this document was performed against the {self.ctx.validator.source_label()}.
+- IBM Maximo {self.ctx.cfg.maximo_version} is deployed and accessible in the delivery and test environments.
+- The {self.ctx.validator.source_label()} has been used for all Maximo object and attribute name validation.
+- All Maximo object and attribute names shown as `—` in section 5 must be confirmed against the live environment before the TDD gate.
+- Security groups that currently hold access to `{app}` will be updated to cover any new fields; no net-new security groups are anticipated.
+- The delivery team holds change-management approval to modify the target Maximo instance.
+{extra_deps}
 
 ## 9. Open Questions
 

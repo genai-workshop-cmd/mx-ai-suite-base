@@ -212,6 +212,10 @@ def _detect_llm(raw: dict[str, Any]) -> LLMConfig:
         cfg.base_url = compat_url
         cfg.model = _env("MODEL_NAME1") or str(raw.get("openai_model", "gpt-4o"))
 
+    # Explicit offline override — skips every LLM call, uses deterministic templates.
+    if _env("OFFLINE_MODE", "").lower() in ("1", "true", "yes"):
+        return cfg  # provider stays "offline"
+
     if forced == "anthropic" and anthropic_key:
         use_anthropic()
     elif forced == "openai" and compat_key and compat_url:

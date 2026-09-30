@@ -94,7 +94,7 @@ class DeployAgent(BaseAgent):
             f"RUN: {self.ctx.state.title}\nBUSINESS PROCESS: {self.ctx.process_name}\n"
             f"TARGET PLATFORM: IBM Maximo {self.ctx.cfg.maximo_version}\n\n"
             f"APPROVED ARTIFACTS:\n{arts}\n\nCHANGE ITEMS:\n{items}\n\n"
-            "Write the Deployment Runbook now."
+            f"Write the Deployment Runbook now.{self.revision_block()}"
         )
 
     def _deterministic(self, facts: dict[str, Any]) -> str:

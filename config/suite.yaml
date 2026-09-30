@@ -23,12 +23,12 @@ llm:
   # auto -> ANTHROPIC_API_KEY wins, else MODEL_URL1 + MODEL_API_KEY1,
   # else offline (deterministic templates, no model calls).
   provider: "auto"
-  anthropic_model: "claude-sonnet-5"
+  anthropic_model: "claude-sonnet-5-5"
   openai_model: "gpt-4o"
-  max_tokens: 8000
+  max_tokens: 12000
   temperature: 0.0
   timeout_seconds: 180
-  max_retries: 3
+  max_retries: 2
 
 maximo:
   # "api"  -> /maximo/api/... with an `apikey` header.  <-- works on MAS trial + ACN IAX
@@ -61,3 +61,14 @@ brain:
 ui:
   host: "127.0.0.1"
   port: 8800
+
+# IBM Knowledge Centre integration — fetches authoritative IBM Maximo docs
+# and injects excerpts into every agent's system prompt.
+# Run `python run.py ibmdocs sync` to populate / refresh the cache.
+ibm_docs:
+  enabled: true
+  # Max chars of IBM docs content injected per agent call.
+  # 25 pages cached; 15 000 chars covers ~5-6 full pages in context.
+  max_chars: 15000
+  # Seconds to wait between IBM page fetches (be polite to ibm.com).
+  fetch_delay_seconds: 0.5

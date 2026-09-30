@@ -3,6 +3,7 @@ from __future__ import annotations
 
 import shutil
 import tempfile
+import threading
 from pathlib import Path
 from typing import Any
 
@@ -13,7 +14,7 @@ from core.errors import SuiteError
 from core.models import Phase
 from ingest.extract import SUPPORTED
 
-from .deps import get_config, get_pipeline, get_store
+from .deps import get_config, get_pipeline, get_store, job_create, job_done, job_fail, job_get
 
 router = APIRouter(prefix="/api/runs", tags=["runs"])
 
@@ -93,16 +94,42 @@ def run_status(run_id: str) -> dict:
 
 @router.post("/{run_id}/advance")
 def advance(run_id: str, payload: dict[str, Any] = Body(default={})) -> dict:
-    """Run the next phase. `all=true` keeps going until a gate blocks."""
-    pipe = get_pipeline()
-    try:
-        if payload.get("all"):
-            steps = pipe.run_all(run_id, auto_approve=bool(payload.get("auto")))
-            return {"steps": [s.as_dict() for s in steps], "status": pipe.status(run_id)}
-        step = pipe.advance(run_id, auto_approve=bool(payload.get("auto")))
-        return {"steps": [step.as_dict()], "status": pipe.status(run_id)}
-    except SuiteError as exc:
-        raise _fail(exc)
+    """Start the next phase in a background thread and return a job ID to poll.
+
+    The caller polls GET /{run_id}/job/{job_id} until status is 'done' or 'error'.
+    This prevents long-running LLM calls from blocking the HTTP connection.
+    """
+    job_id = job_create()
+
+    def _worker() -> None:
+        pipe = get_pipeline()
+        try:
+            if payload.get("all"):
+                steps = pipe.run_all(run_id, auto_approve=bool(payload.get("auto")))
+                result = {"steps": [s.as_dict() for s in steps], "status": pipe.status(run_id)}
+            else:
+                step = pipe.advance(run_id, auto_approve=bool(payload.get("auto")))
+                result = {"steps": [step.as_dict()], "status": pipe.status(run_id)}
+            job_done(job_id, result)
+        except SuiteError as exc:
+            job_fail(job_id, exc.as_dict())
+        except Exception as exc:
+            job_fail(job_id, {"code": "UNEXPECTED", "message": str(exc), "remedy": "See the run log."})
+
+    threading.Thread(target=_worker, daemon=True, name=f"advance-{run_id[:8]}").start()
+    return {"job_id": job_id, "status": "running"}
+
+
+@router.get("/{run_id}/job/{job_id}")
+def poll_job(run_id: str, job_id: str) -> dict:
+    """Poll the status of a background advance job."""
+    job = job_get(job_id)
+    if job is None:
+        raise HTTPException(
+            status_code=404,
+            detail={"code": "JOB", "message": f"Job '{job_id}' not found or already expired."},
+        )
+    return job
 
 
 @router.post("/{run_id}/gate/{phase}")

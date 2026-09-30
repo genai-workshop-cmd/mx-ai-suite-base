@@ -45,7 +45,14 @@ _RULES: list[tuple[ChangeType, list[str]]] = [
     ),
     (
         ChangeType.SECURITY,
-        [r"\b(security group|authorisation|authorization|signature option|conditional access|data restriction)\b"],
+        [
+            r"\b(security group|authorisation|authorization|signature option|conditional access|data restriction)\b",
+            # "Common Actions" toolbar in Maximo == Signature Options.
+            r"\b(common actions?|toolbar option|action button)\b.{0,60}\b(add|create|new|custom)\b",
+            r"\b(add|create|new|custom)\b.{0,60}\b(common actions?|toolbar option|action button)\b",
+            # "Select X" dialogs launched from an action button are a signature option + conditional expression.
+            r"\b(select\s+\w+)\b.{0,60}\b(dialog|option|action|button)\b",
+        ],
     ),
     (
         ChangeType.CUSTOMISATION,
@@ -73,6 +80,7 @@ _RULES: list[tuple[ChangeType, list[str]]] = [
             r"\b(screen|tab|section|dialog|lookup)\b",
             r"\bfield\b.{0,30}\b(visible|hidden|read.?only|mandatory|required|displayed|shown)\b",
             r"\b(cron task|escalation|start ?center)\b",
+            r"\b(conditional expression|sigopt|app designer|toolbar|action bar)\b",
         ],
     ),
 ]
@@ -96,9 +104,12 @@ _NARRATIVE_HEADING_RE = re.compile(
     re.I,
 )
 
-#: MAXIMO objects/attributes mentioned inline, e.g. WORKORDER.DESCRIPTION
-_QUALIFIED_RE = re.compile(r"\b([A-Z][A-Z0-9_]{2,})\.([A-Z][A-Z0-9_]{2,})\b")
+#: MAXIMO objects/attributes mentioned inline, e.g. WORKORDER.DESCRIPTION or workorder.description
+_QUALIFIED_RE = re.compile(r"\b([A-Za-z][A-Za-z0-9_]{2,})\.([A-Za-z][A-Za-z0-9_]{2,})\b")
+#: ALL-CAPS token (legacy) — still checked first
 _UPPER_TOKEN_RE = re.compile(r"\b([A-Z][A-Z0-9_]{3,})\b")
+#: Any mixed/lowercase token that could be a Maximo name
+_ANY_TOKEN_RE = re.compile(r"\b([A-Za-z][A-Za-z0-9_]{3,})\b")
 
 #: Upper-case tokens that are never Maximo attribute names.
 _NOT_ATTRIBUTES = {
@@ -106,7 +117,33 @@ _NOT_ATTRIBUTES = {
     "MIF", "OSLC", "UUID", "GUID", "ETL", "SFTP", "FTP", "TLS", "SSL", "UTC", "PDF",
     "DOCX", "XLSX", "BIRT", "SLA", "UAT", "SIT", "ADO", "TODO", "NOTE", "WARN",
     "MAXIMO", "MAS", "ERP", "GIS", "CRM", "EAM", "AND", "OR", "NOT", "THE", "FOR",
+    "WHEN", "FROM", "WITH", "INTO", "THAT", "THIS", "HAVE", "BEEN", "WILL", "COPY",
+    "FORM", "WORK", "ORDER", "GETTING", "CREATED",
 }
+
+#: Common informal names → canonical Maximo object names.
+#: Checked against the lowercase requirement text before the regex passes.
+_MAXIMO_ALIASES: list[tuple[str, str]] = [
+    # Multi-word aliases must come before single-word ones.
+    ("preventive maintenance", "PM"),
+    ("preventative maintenance", "PM"),
+    ("planned maintenance", "PM"),
+    ("multi asset locci", "MULTIASSETLOCCI"),
+    ("multi-asset locci", "MULTIASSETLOCCI"),
+    ("inspection form", "MULTIASSETLOCCI"),  # best-effort; often on WO/PM
+    ("work order", "WORKORDER"),
+    ("workorder", "WORKORDER"),
+    ("job plan", "JOBPLAN"),
+    ("service request", "SR"),
+    ("purchase order", "PO"),
+    ("purchase requisition", "PR"),
+    ("multiassetlocci", "MULTIASSETLOCCI"),
+    ("woactivity", "WOACTIVITY"),
+    ("wplabor", "WPLABOR"),
+    ("matusetrans", "MATUSETRANS"),
+    ("labtrans", "LABTRANS"),
+    ("craftskill", "CRAFTSKILL"),
+]
 
 
 @dataclass
@@ -243,10 +280,11 @@ def _title_of(text: str, width: int = 80) -> str:
 def _maximo_hints(text: str, process: dict) -> tuple[str, str, str]:
     """Best-effort object / attribute / application extraction.
 
-    Deliberately conservative: a token is only offered as an attribute when it
-    is not a status, an integration component name, or a stray acronym. A wrong
-    guess here would send the validator chasing a name that was never meant to
-    be an attribute, producing a misleading flag.
+    Works in three passes:
+    1. Alias lookup — catches informal names like "work order", "pm", "multiassetlocci".
+    2. OBJECT.ATTRIBUTE qualified token (any case).
+    3. Uppercase token scan against the process's known object / app lists,
+       then against any token that looks like a Maximo name.
     """
     objects = process.get("objects", {}) or {}
     known_objects = {o.upper() for o in [*(objects.get("primary") or []), *(objects.get("related") or [])]}
@@ -259,11 +297,29 @@ def _maximo_hints(text: str, process: dict) -> tuple[str, str, str]:
         s for s in (naming.get("publish_channel_suffix"), naming.get("external_system_suffix")) if s
     )
 
+    obj = attr = app = ""
+    lower_text = text.lower()
+
+    # Pass 1 — alias lookup (multi-word names, common informal references).
+    for alias, canonical in _MAXIMO_ALIASES:
+        if alias in lower_text:
+            if canonical in known_objects and not obj:
+                obj = canonical
+            elif canonical in known_apps and not app:
+                app = canonical
+            elif not obj:
+                # Not in this process's known list but is a valid Maximo object name.
+                obj = obj or canonical
+
+    # Pass 2 — qualified OBJECT.ATTRIBUTE token (case-insensitive).
     qualified = _QUALIFIED_RE.search(text)
     if qualified:
-        return qualified.group(1).upper(), qualified.group(2).upper(), ""
+        q_obj = qualified.group(1).upper()
+        q_attr = qualified.group(2).upper()
+        if q_attr not in _NOT_ATTRIBUTES:
+            return q_obj, q_attr, app
 
-    obj = attr = app = ""
+    # Pass 3 — uppercase token scan then any-case scan.
     for token in _UPPER_TOKEN_RE.findall(text):
         upper = token.upper()
         if upper in known_objects:
@@ -275,11 +331,18 @@ def _maximo_hints(text: str, process: dict) -> tuple[str, str, str]:
             or upper in _NOT_ATTRIBUTES
             or upper.endswith(component_suffixes or ("\0",))
         ):
-            # A status value, protocol acronym or publish-channel/external-system
-            # name is not an attribute; leave it for the specialist agent.
             continue
         elif not attr:
             attr = upper
+
+    # Pass 3b — case-insensitive scan for any-case Maximo tokens not caught above.
+    if not obj:
+        for token in _ANY_TOKEN_RE.findall(text):
+            upper = token.upper()
+            if upper in known_objects:
+                obj = upper
+                break
+
     return obj, attr, app
 
 

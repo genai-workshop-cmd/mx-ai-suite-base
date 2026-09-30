@@ -75,11 +75,21 @@ class FeedbackStore:
                 flag_lines.append(f"  - FLAG: {section} | {item} | {reason}")
             flag_summary = "\n**Flags raised by agent:**\n" + "\n".join(flag_lines)
 
+        # Derive an actionable instruction from the raw comment so the model
+        # can act on it, not just read it.
+        action_verb = "DO NOT repeat the pattern that caused this rejection" if gate_action == "revision_requested" else "MAINTAIN this approach"
+        actionable = (
+            f"**APPLY THIS CORRECTION — {action_verb}:**\n"
+            f"  > {comment.strip()}\n"
+            f"  If this correction mentions a specific Maximo object, attribute, script pattern, or\n"
+            f"  section structure, apply it exactly. Do not revert."
+        )
+
         entry = (
             f"## Correction [{timestamp}]\n"
             f"- **Process:** {business_process}  **DocType:** {doc_type}  **Run:** {run_id}\n"
             f"- **Reviewer:** {reviewer}  **Action:** {gate_action}\n"
-            f"- **Reviewer Comment / Correction:**\n  > {comment.strip()}\n"
+            f"{actionable}\n"
             f"{flag_summary}\n\n---\n\n"
         )
 

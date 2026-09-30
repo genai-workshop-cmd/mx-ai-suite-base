@@ -302,7 +302,7 @@ class IntegrationAgent(BaseAgent):
             f"INTERFACES DERIVED FROM THE HANDOVER TOKEN:\n{ifaces}\n\n"
             f"FIELD MAPPING (already validated against Maximo - reproduce exactly):\n{mapping}\n\n"
             f"VALIDATED MAXIMO FACTS:\n{self.validated_facts_block()}\n\n"
-            "Write the Integration Build Document now."
+            f"Write the Integration Build Document now.{self.revision_block()}"
         )
 
     def _deterministic(self, facts: dict[str, Any]) -> str:

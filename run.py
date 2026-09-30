@@ -13,6 +13,10 @@
     python run.py index  [--rebuild]           (re)build the vector index
     python run.py maximo check OBJECT[.ATTR]   validate a Maximo name
     python run.py demo                         run both blueprint use cases end to end
+
+  Claude Code bridge (no API key needed):
+    python run.py prompt-export RUN_ID PHASE   export the prompt to a .txt file
+    python run.py prompt-inject RUN_ID PHASE --response-file R.txt   inject response
 """
 from __future__ import annotations
 
@@ -444,6 +448,39 @@ def cmd_index(args) -> int:
     return 0
 
 
+# -------------------------------------------------------------- ibmdocs ----
+def cmd_ibmdocs(args) -> int:
+    from core import ibm_docs, config as cfg_mod
+
+    cfg = cfg_mod.load()
+
+    if args.ibmdocs_action == "sync":
+        head("IBM Knowledge Centre — syncing documentation cache")
+        delay = float(getattr(cfg, "ibm_docs_fetch_delay_seconds", 1.5))
+        stats = ibm_docs.sync(cfg.skills_dir, delay_seconds=delay)
+        kv("fetched (web)", str(stats["fetched_web"]))
+        kv("fetched (fallback)", str(stats["fetched_fallback"]))
+        kv("failed", str(stats["failed"]))
+        kv("cache", str(cfg.skills_dir / ibm_docs._CACHE_FILENAME))
+        print()
+        return 0 if stats["failed"] == 0 else 1
+
+    if args.ibmdocs_action == "list":
+        head("IBM Knowledge Centre — configured pages")
+        for label, url in ibm_docs.IBM_DOC_PAGES:
+            kv(label, url)
+        cache = cfg.skills_dir / ibm_docs._CACHE_FILENAME
+        print()
+        kv("cache file", str(cache))
+        kv("cache exists", "yes" if cache.exists() else "no — run: python run.py ibmdocs sync")
+        if cache.exists():
+            kv("cache size", f"{cache.stat().st_size:,} bytes")
+        print()
+        return 0
+
+    return 1
+
+
 # --------------------------------------------------------------- maximo ----
 def cmd_maximo(args) -> int:
     cfg = config.load()
@@ -513,6 +550,38 @@ def cmd_maximo(args) -> int:
             kv(k, str(val))
         print()
         return 0 if probe.reachable else 1
+
+    if args.maximo_action == "discover":
+        head("Discovering Maximo environment → knowledge/client/")
+        if not cfg.maximo.configured:
+            raise SuiteError(
+                "Maximo is not configured.",
+                remedy="Set MAXIMO_MANAGE_URL and MAXIMO_MANAGE_APIKEY in .env, then retry.",
+            )
+        probe = v.client.ping(force=True)
+        if not probe.reachable:
+            raise SuiteError(
+                f"Cannot reach Maximo: {probe.detail}",
+                remedy="Fix the connection first with `python run.py maximo ping`.",
+            )
+        kv("source", cfg.maximo.base_url)
+        from maximo.discover import run_discover
+        knowledge_dir = cfg.skills_dir.parent / "knowledge" / "client"
+        kv("writing to", str(knowledge_dir))
+        print()
+        stats = run_discover(v.client, v.catalog, knowledge_dir)
+        kv("organisations",   c(str(stats["orgs"]), "green"))
+        kv("sites",           c(str(stats["sites"]), "green"))
+        kv("security groups", c(str(stats["security_groups"]), "green"))
+        kv("domains",         c(str(stats["domains"]), "green"))
+        kv("custom objects",  c(str(stats["custom_objects"]), "green"))
+        kv("custom attributes found", c(str(stats["total_custom_attrs"]), "green"))
+        print()
+        for fname in stats["files"]:
+            print(f"  {c('✓', 'green')} knowledge/client/{fname}")
+        print(f"\n  {c('Done.', 'green')} All agents will now use this data automatically.\n")
+        return 0
+
     return 1
 
 
@@ -533,6 +602,56 @@ def cmd_ui(args) -> int:
 
 
 # ----------------------------------------------------------------- demo ----
+def cmd_prompt_export(args) -> int:
+    """Export the full agent prompt for a phase to a .txt file."""
+    pipe = _pipeline()
+    phase = phase_from(args.phase)
+    out_path = pipe.export_prompt(args.run_id, phase)
+    head(f"Prompt exported — {PHASE_LABEL[phase]}")
+    kv("file", str(out_path))
+    print(f"""
+  HOW TO USE (Claude Code bridge):
+  1. Open the exported file above in any text editor.
+  2. In Claude Code, start a NEW conversation.
+  3. Paste everything under "SYSTEM PROMPT" first (as a user message asking
+     Claude to act as that agent), then paste the "USER PROMPT" block.
+  4. Copy Claude's entire response.
+  5. Save the response to a .txt file, e.g. response_fdd.txt
+  6. Run:
+       {c(f'python run.py prompt-inject {args.run_id} {args.phase} --response-file response_{args.phase}.txt', 'blue')}
+""")
+    return 0
+
+
+def cmd_prompt_inject(args) -> int:
+    """Inject a Claude Code response back into the pipeline as a phase result."""
+    pipe = _pipeline()
+    phase = phase_from(args.phase)
+    response_path = Path(args.response_file)
+    if not response_path.exists():
+        print(f"\n  {c('error', 'red')}  Response file not found: {response_path}\n")
+        return 1
+    response_text = response_path.read_text(encoding="utf-8")
+    if not response_text.strip():
+        print(f"\n  {c('error', 'red')}  Response file is empty.\n")
+        return 1
+
+    step = pipe.inject_response(args.run_id, phase, response_text)
+    head(f"{PHASE_LABEL[phase]} — response injected")
+    result = step.result
+    print(f"  {c('ok', 'green')}  {result.summary}")
+    for a in result.artifacts:
+        print(f"    {c(_ARROW, 'dim')} {a.path}")
+    if result.flags:
+        print(f"\n  {c(f'{len(result.flags)} flag(s) for review:', 'amber')}")
+        for f in sorted(result.flags, key=lambda x: x.confidence)[:10]:
+            print(f"    [{f.confidence:.2f}] {f.item}: {f.reason[:100]}")
+    print(f"\n  {step.message}")
+    print(f"\n  Approve: {c(f'python run.py approve {args.run_id} {args.phase} --by \"Your Name\"', 'blue')}")
+    print(f"  Revise:  {c(f'python run.py revise {args.run_id} {args.phase} -c \"what to change\"', 'blue')}\n")
+    return 0
+
+
 def cmd_demo(args) -> int:
     """Both blueprint reference use cases, end to end, unattended."""
     from demo_data import USE_CASES
@@ -638,9 +757,31 @@ def build_parser() -> argparse.ArgumentParser:
     ms.add_argument("--top", type=int, default=15)
     msub.add_parser("ping")
     msub.add_parser("sync", help="mirror live schemas locally for exact validation")
+    msub.add_parser(
+        "discover",
+        help="query live Maximo and auto-generate knowledge/client/ skill files (sites, orgs, security groups, custom objects)",
+    )
     m.set_defaults(func=cmd_maximo)
 
     sub.add_parser("demo", help="run both blueprint use cases end to end").set_defaults(func=cmd_demo)
+
+    id_ = sub.add_parser("ibmdocs", help="sync IBM Maximo Knowledge Centre documentation into the skills cache")
+    idsub = id_.add_subparsers(dest="ibmdocs_action", required=True)
+    idsub.add_parser("sync", help="fetch / refresh IBM docs cache (run periodically or after install)")
+    idsub.add_parser("list", help="list configured IBM documentation pages")
+    id_.set_defaults(func=cmd_ibmdocs)
+
+    pe = sub.add_parser("prompt-export", help="export the agent prompt for a phase (Claude Code bridge)")
+    pe.add_argument("run_id")
+    pe.add_argument("phase", help="fdd, tdd, build_config, build_integration, test, deploy")
+    pe.set_defaults(func=cmd_prompt_export)
+
+    pi = sub.add_parser("prompt-inject", help="inject a Claude Code response back as a phase result")
+    pi.add_argument("run_id")
+    pi.add_argument("phase", help="fdd, tdd, build_config, build_integration, test, deploy")
+    pi.add_argument("--response-file", required=True, help="path to .txt file containing the Claude response")
+    pi.set_defaults(func=cmd_prompt_inject)
+
     return p
 
 

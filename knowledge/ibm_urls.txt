@@ -1,0 +1,24 @@
+# Extra IBM documentation URLs for MX AI Suite
+# Format: Label | https://full-url
+# One entry per line. Lines starting with # are comments.
+#
+# After adding URLs, run:  python run.py ibmdocs sync
+# This fetches and caches all pages into skills/ibm_docs_cache.md
+#
+# ─────────────────────────────────────────────────────────────────────────────
+# HOW TO FIND IBM DOCS URLS
+# Go to: https://www.ibm.com/docs/en/mas-cd/continuous-delivery
+# Navigate to the topic you need, copy the URL from your browser.
+# ─────────────────────────────────────────────────────────────────────────────
+#
+# EXAMPLES (uncomment and edit as needed):
+#
+# Work Order Planning | https://www.ibm.com/docs/en/mas-cd/continuous-delivery?topic=orders-planning-work
+# Failure Codes | https://www.ibm.com/docs/en/mas-cd/continuous-delivery?topic=codes-failure
+# Safety Plans | https://www.ibm.com/docs/en/mas-cd/continuous-delivery?topic=plans-safety
+# Crew Management | https://www.ibm.com/docs/en/mas-cd/continuous-delivery?topic=management-crew
+# Condition Monitoring | https://www.ibm.com/docs/en/mas-cd/continuous-delivery?topic=monitoring-condition
+# Routes | https://www.ibm.com/docs/en/mas-cd/continuous-delivery?topic=routes-managing
+# GIS Integration | https://www.ibm.com/docs/en/mas-cd/continuous-delivery?topic=integration-gis
+# Linear Assets | https://www.ibm.com/docs/en/mas-cd/continuous-delivery?topic=assets-linear
+# Automation script | https://bportaluri.com/wp-content/downloads/MaximoAutomationScriptsQuickReference.pdf

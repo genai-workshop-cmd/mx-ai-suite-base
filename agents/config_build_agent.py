@@ -6,6 +6,7 @@ final Jython files ready for Script Manager import.
 """
 from __future__ import annotations
 
+import re
 from typing import Any
 from xml.etree import ElementTree as ET
 
@@ -42,7 +43,7 @@ class ConfigBuildAgent(BaseAgent):
         "Each step must be numbered, name the exact Maximo application to open, "
         "and state the exact field values to enter."
     )
-    skill_files = ("mx_core_SKILL.md", "mx_tech_config_SKILL.md", "ma_autoscript_SKILL.md")
+    skill_files = ("mx_core_SKILL.md", "mx_tech_config_SKILL.md", "ma_autoscript_SKILL.md", "mx_pm_wo_SKILL.md")
 
     # -- gather ------------------------------------------------------------
     def gather(self) -> dict[str, Any]:
@@ -102,50 +103,107 @@ class ConfigBuildAgent(BaseAgent):
             f"AUTOMATION SCRIPTS TO IMPORT:\n{scripts}\n\n"
             f"EXISTING ATTRIBUTE SPECS:\n{facts['attribute_specs']}\n\n"
             f"VALIDATED MAXIMO FACTS:\n{self.validated_facts_block()}\n\n"
-            "Write the Configuration Build Document now."
+            f"Write the Configuration Build Document now.{self.revision_block()}"
         )
 
     def _deterministic(self, facts: dict[str, Any]) -> str:
+        from ._extract import field_spec, db_config_steps, app_designer_steps, security_steps, jython_body
+
         items: list[ChangeItem] = facts["items"]
         scripts = facts["scripts"]
         apps = self.ctx.process.get("applications") or ["TBC"]
+        app = apps[0]
 
-        db_steps, app_steps = [], []
+        # --- Section 2: DB Configuration Steps -------------------------------
+        all_db_steps: list[str] = []
         for item in items:
+            if not item.maximo_attribute:
+                continue
             spec = facts["attribute_specs"].get(f"{item.maximo_object}.{item.maximo_attribute}") or {}
-            if item.maximo_attribute and not spec:
-                db_steps.append(
-                    f"1. Open **Database Configuration** and filter for object `{item.maximo_object or 'TBC'}`.\n"
-                    f"2. On the Attributes tab, select **New Row** and enter:\n"
-                    f"   - Attribute: `{item.maximo_attribute}`\n"
-                    f"   - Description: {_cell(item.title, 100)}\n"
-                    f"   - Type: `ALN`   Length: `100`   Persistent: yes\n"
-                    f"3. Save the record."
+            steps = db_config_steps(item, spec, existing=bool(spec))
+            all_db_steps.append(f"**{item.id} — `{item.maximo_object}.{item.maximo_attribute}`**\n\n"
+                                 + "\n".join(steps) + "\n")
+        db_section = "\n".join(all_db_steps) or "No database configuration changes are required."
+
+        # --- Section 3: Application Designer Steps ---------------------------
+        config_items = [i for i in items if i.change_type.value == "config"]
+        all_app_steps: list[str] = []
+        for item in config_items:
+            target_app = item.maximo_app or app
+            steps = app_designer_steps(item, target_app)
+            all_app_steps.append(f"**{item.id} — `{target_app}`: {_cell(item.title, 60)}**\n\n"
+                                  + "\n".join(steps) + "\n")
+        app_section = "\n".join(all_app_steps) or "No Application Designer changes are required."
+
+        # --- Section 4: Domains and Lookups -----------------------------------
+        domain_items = [i for i in items if re.search(r'\bdomain\b|\blookup\b|\bvalue\s+list\b', i.description or "", re.I)]
+        if domain_items:
+            domain_steps = []
+            for item in domain_items:
+                domain_steps += [
+                    f"**{item.id}** — "
+                    f"1. Go To → System Configuration → Platform Configuration → **Domains**.",
+                    f"   2. Create a new ALN domain for `{item.maximo_attribute or 'the attribute'}`.",
+                    f"   3. Add the required synonym values.",
+                    f"   4. Bind the domain to `{item.maximo_object}.{item.maximo_attribute or 'ATTR'}` in Database Configuration.",
+                ]
+            domain_section = "\n".join(domain_steps)
+        else:
+            domain_section = (
+                "No new domains or value lists are required. If a lookup is added later, "
+                "define it in **Domains** as an `ALN` domain and bind it to the attribute "
+                "in Database Configuration before applying configuration changes."
+            )
+
+        # --- Section 5: Security Configuration --------------------------------
+        sec_steps = security_steps(items, app)
+        security_section = "\n".join(sec_steps)
+
+        # --- Section 6: Automation Script Import ------------------------------
+        script_import_steps = []
+        for n, s in enumerate(scripts, 1):
+            script_import_steps += [
+                f"**Script {n}: `{s['name']}`**",
+                f"1. Go To → Automation → **Automation Scripts**.",
+                f"2. From the **More Actions** menu, choose **Create Script with Launch Point**.",
+                f"3. Select launch point type: **{s['launch_point'].title()}**.",
+                f"4. In the Launch Point details:",
+                f"   - Launch Point: `{s['name']}_LP`",
+                f"   - Object: `{s['object']}`",
+                f"   - Active: Yes",
+                f"   - Events: `{s['event']}`",
+                f"5. In the Script details:",
+                f"   - Script: `{s['name']}`",
+                f"   - Language: **Jython**",
+                f"   - Status: **Active**",
+                f"6. Paste the contents of `scripts/{s['name']}.py` into the Script Source field.",
+                f"7. Click **Save**.",
+                f"8. Test by triggering the event on a `{s['object']}` record and confirming the expected outcome.",
+                "",
+            ]
+        script_section = "\n".join(script_import_steps) or "No automation scripts to import."
+
+        # --- Section 7: Post-build Verification -------------------------------
+        verif_steps: list[str] = []
+        n = 1
+        for item in items:
+            if item.maximo_attribute:
+                verif_steps.append(
+                    f"{n}. Open the `{item.maximo_app or app}` application and confirm field "
+                    f"`{item.maximo_attribute}` on `{item.maximo_object or 'the object'}` is "
+                    f"visible, correct type, and behaves as per {item.id}."
                 )
-            if item.change_type.value == "config":
-                app_steps.append(
-                    f"1. Open **Application Designer** and select `{item.maximo_app or apps[0]}`.\n"
-                    f"2. Export the current definition as a backup before any change.\n"
-                    f"3. Add a textbox bound to `{item.maximo_attribute or 'the new attribute'}` "
-                    f"on the main tab, label \"{_cell(item.title, 60)}\".\n"
-                    f"4. Save and export the updated application XML."
-                )
-
-        db_section = "\n\n".join(db_steps) or "No database configuration changes are required."
-        app_section = "\n\n".join(app_steps) or "No Application Designer changes are required."
-
-        script_steps = "\n".join(
-            f"{n}. Open **Automation Scripts**, choose *Create Script with Launch Point*. "
-            f"Launch point `{s['name']}_LP`, type `{s['launch_point']}`, object `{s['object']}`, "
-            f"events `{s['event']}`. Paste the contents of `scripts/{s['name']}.py`. Set status to **Active**."
-            for n, s in enumerate(scripts, 1)
-        ) or "No automation scripts to import."
-
-        verification = "\n".join(
-            f"{n}. Confirm `{i.maximo_attribute or i.maximo_object or 'the change'}` behaves as described in "
-            f"change item {i.id}."
-            for n, i in enumerate(items, 1)
-        ) or "1. Confirm the application opens without error."
+                n += 1
+        for s in scripts:
+            verif_steps.append(
+                f"{n}. Create a test `{s['object']}` record and trigger the `{s['event']}` event. "
+                f"Confirm script `{s['name']}` executes without error and produces the expected result."
+            )
+            n += 1
+        verif_steps.append(
+            f"{n}. Run the full test suite from Agent 4 and confirm all cases pass."
+        )
+        verification = "\n".join(verif_steps) or "1. Confirm the application opens without error after changes."
 
         return f"""# Configuration Build Document
 
@@ -157,16 +215,21 @@ class ConfigBuildAgent(BaseAgent):
 | Run ID | {self.ctx.state.run_id} |
 | Config change items | {len(items)} |
 | Automation scripts | {len(scripts)} |
+| Target application(s) | {', '.join(f'`{a}`' for a in set(i.maximo_app or app for i in items))} |
 | Validation source | {self.ctx.validator.source_label()} |
+| Generated | Deterministic template (offline mode) |
 
 {self.report.summary()}
+
+**Apply order:** Database Configuration → Apply Config Changes → Application Designer
+→ Automation Scripts → Security → Verification.
 
 ## 2. Database Configuration Steps
 
 {db_section}
 
-After all attribute changes: turn on **Admin Mode**, run **Apply Configuration
-Changes**, then turn Admin Mode off.
+> After **all** attribute changes: switch to **Admin Mode**, run **Apply Configuration Changes**,
+> then switch Admin Mode off before proceeding to Application Designer.
 
 ## 3. Application Designer Steps
 
@@ -174,17 +237,15 @@ Changes**, then turn Admin Mode off.
 
 ## 4. Domains and Lookups
 
-No new domains are required by this change set. If a value list is added later,
-define it in **Domains** as an `ALN` domain and bind it to the attribute before import.
+{domain_section}
 
 ## 5. Security Configuration
 
-Grant the new fields to the security groups that already hold access to
-{', '.join(f'`{a}`' for a in apps)}. No new signature options are introduced.
+{security_section}
 
 ## 6. Automation Script Import
 
-{script_steps}
+{script_section}
 
 ## 7. Post-build Verification
 
@@ -303,37 +364,16 @@ Grant the new fields to the security groups that already hold access to
 
     def _jython(self, script: dict[str, Any]) -> str:
         """Script Manager-ready Jython using the MBO API, never raw SQL."""
-        attribute = script.get("attribute") or "STATUS"
-        return f'''# {script['name']}
-# Generated by {self.ctx.cfg.project_name} - run {self.ctx.state.run_id}
-# Launch point : {script['name']}_LP  ({script['launch_point']})
-# Object       : {script['object']}
-# Events       : {script['event']}
-# Language     : Jython 2.7
-#
-# Purpose: {script['purpose']}
-#
-# Uses the MBO API only. No direct SQL - Maximo caching and field validation
-# would be bypassed and the change would not be auditable.
+        from ._extract import jython_body
 
-from psdi.mbo import MboConstants
-
-SOURCE_ATTRIBUTE = "{attribute}"
-TARGET_ATTRIBUTE = "DESCRIPTION"
-
-
-def _blank(value):
-    return value is None or str(value).strip() == ""
-
-
-source_value = mbo.getString(SOURCE_ATTRIBUTE)
-
-if not _blank(source_value):
-    current_target = mbo.getString(TARGET_ATTRIBUTE)
-    # Never overwrite a value a user has already entered.
-    if _blank(current_target):
-        mbo.setValue(TARGET_ATTRIBUTE, source_value, MboConstants.NOACCESSCHECK)
-'''
+        body = jython_body(script, rules=script.get("rules", []))
+        return (
+            f"# {script['name']}\n"
+            f"# Generated by {self.ctx.cfg.project_name} — run {self.ctx.state.run_id}\n"
+            f"# Uses the MBO API only — no direct SQL; Maximo caching and field\n"
+            f"# validation would be bypassed and the change would not be auditable.\n\n"
+            + body
+        )
 
 
 def _indent(elem: ET.Element, level: int = 0) -> None:

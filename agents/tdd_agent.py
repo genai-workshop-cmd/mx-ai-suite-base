@@ -54,7 +54,7 @@ class TDDAgent(BaseAgent):
         "## 10. Implementation Sequence\n"
         "Jython must use the MBO API (mbo.getString, mbo.setValue, MboConstants), never raw SQL."
     )
-    skill_files = ("mx_core_SKILL.md", "mx_tech_config_SKILL.md", "ma_autoscript_SKILL.md")
+    skill_files = ("mx_core_SKILL.md", "mx_tech_config_SKILL.md", "ma_autoscript_SKILL.md", "mx_pm_wo_SKILL.md")
 
     # -- gather ------------------------------------------------------------
     def gather(self) -> dict[str, Any]:
@@ -241,92 +241,127 @@ class TDDAgent(BaseAgent):
             f"AUTOMATION SCRIPTS TO SPECIFY (use these exact names):\n{scripts}\n\n"
             f"EXISTING ATTRIBUTE SPECIFICATIONS FROM MAXIMO:\n{specs}\n\n"
             f"VALIDATED MAXIMO FACTS:\n{self.validated_facts_block()}\n\n"
-            "Write the Technical Design Document now."
+            f"Write the Technical Design Document now.{self.revision_block()}"
         )
 
     def _deterministic(self, facts: dict[str, Any]) -> str:
+        from ._extract import field_spec, jython_body, security_steps, narrate
+
         items: list[ChangeItem] = facts["change_items"]
         scripts = facts["scripts"]
         state = self.ctx.state
+        process = self.ctx.process
+        applications = process.get("applications") or [self.ctx.process_name]
+        naming = process.get("naming", {}) or {}
 
-        register = ["| CI ID | Change | Type | Maximo Object | Build Agent |", "|---|---|---|---|---|"]
+        # Maximo-specific narrative for this requirement pattern
+        nb = narrate(items, scripts, process)
+        pattern = nb.get("pattern", "config")
+
+        # --- Section 3: Change Register --------------------------------------
+        register = ["| CI ID | Change | Type | Object | Attribute | Build Agent |", "|---|---|---|---|---|---|"]
         for item in items:
             register.append(
                 f"| {item.id} | {_cell(item.title)} | {item.change_type.value} | "
-                f"{item.maximo_object or 'TBC'} | Agent {item.build_owner} |"
+                f"{item.maximo_object or 'TBC'} | {item.maximo_attribute or '—'} | Agent {item.build_owner} |"
             )
 
-        estimation = ["| CI ID | Change | Effort (hrs) | Skill | Risk |", "|---|---|---|---|---|"]
-        for item in items:
-            estimation.append(
-                f"| {item.id} | {_cell(item.title, 120)} | {item.effort_hours} | {item.skill_level} | {item.risk} |"
-            )
-        total = sum(i.effort_hours for i in items)
-        estimation.append(f"| **Total** | | **{total:.1f}** | | |")
-
-        db_rows = ["| Object | Attribute | Type | Length | Action |", "|---|---|---|---|---|"]
+        # --- Section 4: DB Configuration -------------------------------------
+        db_rows = [
+            "| Object | Attribute | Type | Length | Mandatory | Persistent | Action |",
+            "|---|---|---|---|---|---|---|",
+        ]
         db_any = False
         for item in items:
-            if item.change_type.value != "config" or not item.maximo_attribute:
+            if not item.maximo_attribute:
                 continue
             spec = facts["attribute_specs"].get(f"{item.maximo_object}.{item.maximo_attribute}") or {}
+            parsed = field_spec(item.description or "")
+            ftype = spec.get("type") or parsed.get("type") or "ALN"
+            length = spec.get("length") or parsed.get("length") or 100
+            mand = "Yes" if (spec.get("required") or parsed.get("mandatory")) else "No"
+            action = "MODIFY — update existing" if spec else "ADD — new attribute"
             db_any = True
             db_rows.append(
-                f"| {item.maximo_object or 'TBC'} | {item.maximo_attribute} | "
-                f"{spec.get('type', 'ALN')} | {spec.get('length', 100)} | "
-                f"{'Modify existing' if spec else 'Add new attribute'} |"
+                f"| `{item.maximo_object or 'TBC'}` | `{item.maximo_attribute}` | "
+                f"`{ftype}` | `{length}` | {mand} | Yes | {action} |"
             )
-        db_section = "\n".join(db_rows) if db_any else "No database configuration changes are required."
+        db_section = "\n".join(db_rows) if db_any else "No database configuration changes are required for this change set."
 
-        app_items = [i for i in items if i.change_type.value == "config"]
-        app_section = (
-            "\n".join(
-                f"{n}. **{i.maximo_app or self.ctx.process.get('applications', ['TBC'])[0]}** - {_cell(i.description)}"
-                for n, i in enumerate(app_items, 1)
-            )
-            if app_items
-            else "No application configuration changes are required."
-        )
+        # DB implementation steps
+        db_steps = []
+        for item in items:
+            if not item.maximo_attribute:
+                continue
+            spec = facts["attribute_specs"].get(f"{item.maximo_object}.{item.maximo_attribute}") or {}
+            parsed = field_spec(item.description or "")
+            ftype = spec.get("type") or parsed.get("type") or "ALN"
+            length = spec.get("length") or parsed.get("length") or 100
+            mand = spec.get("required") or parsed.get("mandatory") or False
+            existing = bool(spec)
+            db_steps += [
+                f"**{item.id} — {item.maximo_object}.{item.maximo_attribute}**",
+                f"1. Go To → System Configuration → Platform Configuration → **Database Configuration**.",
+                f"2. Filter Object = `{item.maximo_object or 'TBC'}`. Click the object row.",
+                f"3. Click the **Attributes** tab.",
+                f"4. {'Locate the existing row for' if existing else 'Click **New Row** and enter'}  attribute `{item.maximo_attribute}`.",
+                f"   - Type: `{ftype}`",
+                f"   - Length/Precision: `{length}`",
+                f"   - Required: {'Yes' if mand else 'No'}   Persistent: Yes",
+                f"   - Description: {_cell(item.title, 80)}",
+                f"5. Save the record.",
+                f"6. Go To → System Configuration → Platform Configuration → **Apply Configuration Changes**.",
+                f"7. Select object `{item.maximo_object or 'TBC'}` and click **Apply Changes Now**.",
+                "",
+            ]
 
+        # --- Section 5: Application Configuration ----------------------------
+        config_items = [i for i in items if i.change_type.value == "config"]
+        app_steps = []
+        for item in config_items:
+            app_name = item.maximo_app or applications[0]
+            app_steps += [
+                f"**{item.id} — {app_name}: {item.maximo_attribute or 'new field'}**",
+                f"1. Go To → System Configuration → Platform Configuration → **Application Designer**.",
+                f"2. Filter Application = `{app_name}`. Open the definition.",
+                f"3. Click **Export Application Definition** and save as a backup.",
+                f"4. Select the **Main** tab in the canvas.",
+                f"5. From the Controls palette, drag a **Textbox** control into the target section.",
+                f"   - Label: `{item.title[:60]}`",
+                f"   - Attribute: `{item.maximo_attribute or 'TBC'}`",
+                f"   - Input Mode: default",
+                f"6. Click **Save**.",
+                f"7. Click **Export Application Definition** — save this XML for Migration Manager.",
+                "",
+            ]
+
+        app_section = "\n".join(app_steps) if app_steps else "No Application Designer changes are required."
+
+        # --- Section 6: Automation Scripts -----------------------------------
         script_sections = []
-        for s in scripts:
+        for idx, s in enumerate(scripts, 1):
+            logic_body = jython_body(s, rules=s.get("rules", []))
             script_sections.append(
-                f"""### 6.{len(script_sections) + 1} {s['name']}
-
-| Property | Value |
-|---|---|
-| Script name | {s['name']} |
-| Launch point type | {s['launch_point']} |
-| Object | {s['object']} |
-| Event | {s['event']} |
-| Language | Jython 2.7 |
-| Change item | {s['change_item']} |
-
-Purpose: {_cell(s['purpose'])}
-
-```python
-# {s['name']} - {s['launch_point']} launch point on {s['object']}
-# Event: {s['event']}
-from psdi.mbo import MboConstants
-
-source = mbo.getString("{s['attribute'] or 'STATUS'}")
-
-if source is not None and source.strip() != "":
-    target = mbo.getString("DESCRIPTION")
-    # Do not overwrite a value the user has already entered.
-    if target is None or target.strip() == "":
-        mbo.setValue("DESCRIPTION", source, MboConstants.NOACCESSCHECK)
-```
-"""
+                f"### 6.{idx} {s['name']}\n\n"
+                f"| Property | Value |\n|---|---|\n"
+                f"| Script name | `{s['name']}` |\n"
+                f"| Launch point name | `{s['name']}_LP` |\n"
+                f"| Launch point type | `{s['launch_point']}` |\n"
+                f"| Object | `{s['object']}` |\n"
+                f"| Events | `{s['event']}` |\n"
+                f"| Language | Jython 2.7 |\n"
+                f"| Change item(s) | {s['change_item']} |\n\n"
+                f"**Purpose:** {_cell(s['purpose'])}\n\n"
+                f"**Import path:** Go To → Automation → Automation Scripts → "
+                f"Create Script with Launch Point\n\n"
+                f"```python\n{logic_body}\n```\n"
             )
-        scripts_section = "\n".join(script_sections) or "No automation scripts are required."
+        scripts_section = "\n".join(script_sections) if script_sections else "No automation scripts are required."
 
+        # --- Section 7: Integration ------------------------------------------
         integration_items = [i for i in items if i.change_type.value == "integration"]
-        naming = self.ctx.process.get("naming", {}) or {}
         if integration_items:
-            # Group the way Agent 3B will: requirements sharing an object
-            # describe one interface, not one interface each.
-            primary = (self.ctx.process.get("objects", {}) or {}).get("primary") or ["WORKORDER"]
+            primary = (process.get("objects", {}) or {}).get("primary") or ["WORKORDER"]
             grouped: dict[str, list[ChangeItem]] = {}
             for item in integration_items:
                 grouped.setdefault(item.maximo_object or primary[0], []).append(item)
@@ -334,17 +369,113 @@ if source is not None and source.strip() != "":
             blocks = []
             for seq, (obj, group) in enumerate(grouped.items(), 1):
                 channel = f"{self.ctx.process_name}{seq:02d}{naming.get('publish_channel_suffix', '_PC')}"
-                lines = "\n".join(f"  - {i.id}: {_cell(i.title, 150)}" for i in group)
+                es_name = f"{self.ctx.process_name}{seq:02d}{naming.get('enterprise_service_suffix', '_ES')}"
+                req_lines = "\n".join(f"  - {i.id}: {_cell(i.title, 150)}" for i in group)
                 blocks.append(
-                    f"**Interface {seq} — object `{obj}`** (proposed Publish Channel `{channel}`), "
-                    f"covering {len(group)} requirement(s):\n{lines}"
+                    f"**Interface {seq} — Object `{obj}`**\n\n"
+                    f"| MIF Component | Name | Direction |\n|---|---|---|\n"
+                    f"| Object Structure | `{obj}OS` | Inbound and Outbound |\n"
+                    f"| Publish Channel | `{channel}` | Outbound |\n"
+                    f"| Enterprise Service | `{es_name}` | Inbound |\n\n"
+                    f"Covers {len(group)} requirement(s):\n{req_lines}\n\n"
+                    f"> Detailed field mapping and transformation rules are specified by "
+                    f"Agent 3B in the Integration Build Document."
                 )
             integration_section = (
-                f"{len(grouped)} interface(s) are handed to Agent 3B for detailed design.\n\n"
-                + "\n\n".join(blocks)
+                f"{len(grouped)} interface(s) are handed to Agent 3B (Integration Build Agent) "
+                f"for detailed MIF design.\n\n" + "\n\n".join(blocks)
             )
         else:
-            integration_section = "No integration changes are in scope for this run."
+            integration_section = "No integration changes are in scope for this change set."
+
+        # --- Section 8: Security ---------------------------------------------
+        sec_steps = security_steps(items, applications[0])
+        security_section = "\n".join(sec_steps)
+
+        # --- Section 9: Estimation -------------------------------------------
+        estimation = ["| CI ID | Change | Effort (hrs) | Skill | Risk | Justification |", "|---|---|---|---|---|---|"]
+        for item in items:
+            justification = (
+                "High confidence, validated" if item.confidence >= 0.8
+                else "Unconfirmed name(s) — discovery overhead" if item.risk == "high"
+                else "Standard effort for this change type"
+            )
+            estimation.append(
+                f"| {item.id} | {_cell(item.title, 100)} | {item.effort_hours} | "
+                f"{item.skill_level} | {item.risk} | {justification} |"
+            )
+        total = sum(i.effort_hours for i in items)
+        estimation.append(f"| **Total** | | **{total:.1f} hrs** | | | |")
+
+        # --- Section 10: Implementation Sequence -----------------------------
+        seq_steps = []
+        if db_any:
+            seq_steps.append("1. **Database Configuration** — add/modify attributes (section 4). "
+                             "Run Apply Configuration Changes in Admin Mode. Verify in a test environment first.")
+        if config_items:
+            seq_steps.append(f"{len(seq_steps)+1}. **Application Designer** — import field controls for "
+                             f"`{', '.join(set(i.maximo_app or applications[0] for i in config_items))}` (section 5).")
+        if scripts:
+            seq_steps.append(f"{len(seq_steps)+1}. **Automation Scripts** — import and activate "
+                             f"{', '.join(s['name'] for s in scripts)} (section 6). "
+                             f"Test with a single record in isolation before enabling in production.")
+        if integration_items:
+            seq_steps.append(f"{len(seq_steps)+1}. **Integration (Agent 3B)** — configure Object Structures, "
+                             f"Publish Channels, External Systems and End Points (section 7). "
+                             f"Test with a single outbound message.")
+        seq_steps.append(f"{len(seq_steps)+1}. **Security** — grant new fields to authorised security groups (section 8).")
+        seq_steps.append(f"{len(seq_steps)+1}. **Test execution** — run the test cases produced by Agent 4, "
+                         f"covering happy-path, negative and regression scenarios.")
+        seq_steps.append(f"{len(seq_steps)+1}. **Go / No-go review** — submit all artifacts for final gate approval "
+                         f"before Agent 5 (Deployment) assembles the migration package.")
+
+        # Build the pattern-specific notes for sections 4 and 5
+        db_config_note = nb.get("db_config_note", "")
+        app_config_note = nb.get("app_config_note", "")
+        security_note = nb.get("security_note", "")
+
+        # Section 4 content: note first, then table and steps (or just note for no-change patterns)
+        if not db_any and db_config_note:
+            db_full = db_config_note
+        elif db_any:
+            db_full = (
+                f"### 4.1 Summary Table\n\n{db_section}\n\n"
+                f"### 4.2 Step-by-step Instructions\n\n"
+                f"{chr(10).join(db_steps)}\n\n"
+                f"After all attribute changes: switch Maximo to **Admin Mode**, run "
+                f"**Apply Configuration Changes**, then switch Admin Mode off."
+            )
+        else:
+            db_full = "No database configuration changes are required for this change set."
+
+        # Section 5: app config note or steps
+        if not config_items and app_config_note:
+            app_full = app_config_note
+        elif config_items:
+            app_full = app_section
+        else:
+            app_full = "No Application Designer changes are required for this change set."
+
+        # Section 8: security note enriched with steps
+        sec_full = f"{security_note}\n\n{security_section}" if security_note else security_section
+
+        # Pattern-specific implementation sequence additions
+        pattern_seq_note: dict[str, str] = {
+            "pm_wo_multiasset": (
+                "> **Testing note**: Generate a WO from a PM that has at least 3 MULTIASSETLOCCI rows. "
+                "Verify all rows appear on the WO's Multi-Asset/Location tab in WOTRACK. "
+                "Also test a manually created WO — the script must not fire."
+            ),
+            "pm_wo_field_copy": (
+                "> **Testing note**: Generate a WO from a PM with the source field populated. "
+                "Verify the target field on the WO matches. Also test an existing WO save — must not re-copy."
+            ),
+            "integration": (
+                "> **Testing note**: Send a test outbound message from a non-production environment "
+                "before activating the Publish Channel in production."
+            ),
+        }
+        seq_pattern_note = pattern_seq_note.get(pattern, "")
 
         return f"""# Technical Design Document
 
@@ -353,16 +484,28 @@ if source is not None and source.strip() != "":
 | Field | Value |
 |---|---|
 | Document | Technical Design Document |
-| Business process | {self.ctx.process.get('label', self.ctx.process_name)} ({self.ctx.process_name}) |
+| Business process | {process.get('label', self.ctx.process_name)} ({self.ctx.process_name}) |
 | Platform | IBM Maximo {self.ctx.cfg.maximo_version} |
 | Run ID | {state.run_id} |
-| Status | Draft - awaiting technical lead review |
+| Title | {state.title} |
+| Status | Draft — awaiting Technical Lead review |
 | Validation source | {self.ctx.validator.source_label()} |
+| Total estimated effort | {total:.1f} hrs |
 
 ## 2. Solution Overview
 
-{len(items)} change item(s) are implemented across database configuration, application
-configuration, automation scripting and integration. {self.report.summary()}
+{nb['solution_overview']}
+
+{self.report.summary()}
+
+**Change set components:**
+
+| Component | Required | Detail |
+|---|---|---|
+| Database Configuration | {"Yes" if db_any else "**Not required**"} | {str(sum(1 for i in items if i.maximo_attribute)) + " attribute(s)" if db_any else "No new attributes needed — all required fields exist in the OOTB schema"} |
+| Application Designer | {"Yes" if config_items else "**Not required**"} | {str(len(config_items)) + " control(s)" if config_items else "OOTB UI covers this change — no additional controls needed"} |
+| Automation Scripts | {"Yes" if scripts else "Not required"} | {str(len(scripts)) + " script(s): " + ", ".join(s["name"] for s in scripts) if scripts else "Not required"} |
+| Integration (MIF) | {"Yes → Agent 3B" if integration_items else "Not required"} | {str(len(integration_items)) + " interface(s)" if integration_items else "Not required"} |
 
 ## 3. Change Register
 
@@ -370,14 +513,11 @@ configuration, automation scripting and integration. {self.report.summary()}
 
 ## 4. Database Configuration
 
-{db_section}
-
-Apply through **Database Configuration**, then run Admin Mode + Apply Configuration
-Changes in the target environment.
+{db_full}
 
 ## 5. Application Configuration
 
-{app_section}
+{app_full}
 
 ## 6. Automation Scripts
 
@@ -389,22 +529,20 @@ Changes in the target environment.
 
 ## 8. Security
 
-Grant the new fields and any new application to the security groups that already
-hold access to the {self.ctx.process_name} applications. No new signature options
-are introduced by this change unless listed in section 3.
+{sec_full}
 
 ## 9. Estimation
 
 {chr(10).join(estimation)}
 
+> Baseline effort figures are taken from `config/processes/{self.ctx.process_name.lower()}.yaml`.
+> Risk multiplier applied per item. All estimates assume senior Maximo developer familiarity.
+
 ## 10. Implementation Sequence
 
-1. Apply database configuration changes (section 4) in admin mode.
-2. Import the application definitions (section 5).
-3. Import and activate the automation scripts (section 6).
-4. Configure the integration components (section 7) and test with a single record.
-5. Apply the security grants (section 8).
-6. Execute the test cases produced by Agent 4.
+{chr(10).join(seq_steps)}
+
+{seq_pattern_note}
 """
 
     def _handover(self, facts: dict[str, Any]) -> dict[str, Any]:

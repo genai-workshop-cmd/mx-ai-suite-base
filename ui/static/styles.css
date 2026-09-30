@@ -214,6 +214,10 @@ code, pre, .mono { font-family: var(--mono); font-size: 12.5px; }
 .badge-warn   { background: var(--warn-soft);   color: var(--warn);   border-color: color-mix(in srgb, var(--warn) 28%, transparent); }
 .badge-danger { background: var(--danger-soft); color: var(--danger); border-color: color-mix(in srgb, var(--danger) 28%, transparent); }
 .badge-info   { background: var(--info-soft);   color: var(--info);   border-color: color-mix(in srgb, var(--info) 28%, transparent); }
+.conf-badge   { font-family: var(--mono); cursor: default; }
+.conf-high    { background: var(--ok-soft);     color: var(--ok);     border-color: color-mix(in srgb, var(--ok) 28%, transparent); }
+.conf-mid     { background: var(--warn-soft);   color: var(--warn);   border-color: color-mix(in srgb, var(--warn) 28%, transparent); }
+.conf-low     { background: var(--danger-soft); color: var(--danger); border-color: color-mix(in srgb, var(--danger) 28%, transparent); }
 
 /* --------------------------------------------------------------- tables */
 table.tbl { width: 100%; border-collapse: collapse; font-size: 13px; }

@@ -321,6 +321,8 @@ class Pipeline:
                     "artifacts": [a.model_dump() for a in (result.artifacts if result else [])],
                     "flags": [f.model_dump() for f in (result.flags if result else [])],
                     "duplicate": result.duplicate.model_dump() if result and result.duplicate else None,
+                    "confidence_score": result.confidence_score if result else None,
+                    "generated_by": result.generated_by if result else "",
                     "decided_by": gate.decided_by,
                     "decided_at": gate.decided_at,
                     "comment": gate.comment,
@@ -360,6 +362,13 @@ class Pipeline:
 
     def _context(self, state: RunState, docs: list[Document], *, auto_approve: bool = False) -> AgentContext:
         process_name = (state.business_process or self.cfg.default_process).upper()
+        # If this phase was previously sent back for revision, pass the reviewer's comment
+        # to the agent so it can incorporate the requested changes.
+        revision_comment = ""
+        if state.current_phase:
+            gate = state.gate(state.current_phase)
+            if gate.status.value == "revision_requested" and gate.comment:
+                revision_comment = gate.comment
         return AgentContext(
             cfg=self.cfg,
             brain=self.brain,
@@ -370,6 +379,7 @@ class Pipeline:
             workdir=self.store.run_dir(state.run_id),
             source_material=bundle(docs),
             auto_approve=auto_approve,
+            revision_comment=revision_comment,
         )
 
     def _write_to_brain(self, state: RunState, phase: Phase, result: PhaseResult) -> None:
@@ -445,3 +455,87 @@ class Pipeline:
             flags=flags,
             gate_action=gate_action,
         )
+
+    # -- Claude Code bridge (Option 3 / no-API-key workflow) ----------------
+    def export_prompt(self, run_id: str, phase: Phase) -> Path:
+        """Build the full agent prompt for *phase* and write it to a .txt file.
+
+        The user pastes the SYSTEM PROMPT block into Claude Code, then the USER
+        PROMPT block, copies the response, and feeds it back via inject_response().
+        """
+        state = self.store.load(run_id)
+        agent_cls = AGENTS.get(phase)
+        if agent_cls is None:
+            raise SuiteError(f"No agent registered for phase '{phase.value}'.")
+
+        docs = self._ingest(state)
+        state.current_phase = phase
+        ctx = self._context(state, docs)
+        agent = agent_cls(ctx)
+        agent.facts = agent.gather()
+
+        system = agent.system_prompt()
+        user = agent._user_prompt(agent.facts)  # type: ignore[attr-defined]
+
+        out_dir = self.store.run_dir(run_id)
+        out_path = out_dir / f"PROMPT_{phase.value.upper()}.txt"
+        separator = "=" * 80
+        out_path.write_text(
+            f"SYSTEM PROMPT\n{separator}\n{system}\n\n"
+            f"USER PROMPT\n{separator}\n{user}\n",
+            encoding="utf-8",
+        )
+        log.info("prompt exported: %s", out_path)
+        return out_path
+
+    def inject_response(self, run_id: str, phase: Phase, response_text: str) -> AdvanceResult:
+        """Feed a Claude Code response back as if the model returned it.
+
+        Runs the agent's emit() step (writes all artifacts), sets the gate to
+        AWAITING_REVIEW and saves state — exactly what advance() does after a
+        successful model call.
+        """
+        state = self.store.load(run_id)
+        agent_cls = AGENTS.get(phase)
+        if agent_cls is None:
+            raise SuiteError(f"No agent registered for phase '{phase.value}'.")
+
+        docs = self._ingest(state)
+        state.current_phase = phase
+        ctx = self._context(state, docs)
+        agent = agent_cls(ctx)
+        agent.facts = agent.gather()
+
+        duplicate = agent.check_duplicate()
+        body, flags = agent.parse_flags(response_text, PHASE_LABEL.get(phase, phase.value))
+        from agents.base import Composition
+        composition = Composition(
+            body=body,
+            flags=flags,
+            summary=f"Document produced via Claude Code prompt bridge.",
+            generated_by="claude-code-bridge",
+        )
+
+        result = PhaseResult(phase=phase, agent=f"Agent (Claude Code bridge) - {agent.name}")
+        result.duplicate = duplicate
+        result.flags = list(flags) + agent.report.to_flags(agent.name)
+        result.validations = list(agent.report.results)
+        result.artifacts = agent.emit(composition)
+        result.summary = composition.summary
+        result.ok = True
+
+        from agents.base import _now as _agent_now
+        result.finished = _agent_now()
+
+        state.results[phase.value] = result
+        gate = state.gate(phase)
+        gate.status = GateStatus.AWAITING_REVIEW
+        self.store.save(state)
+
+        message = (
+            f"{PHASE_LABEL[phase]} complete (Claude Code bridge). "
+            f"{len(result.artifacts)} artifact(s), {len(result.flags)} flag(s). "
+            f"Awaiting {gate.role} approval."
+        )
+        log.info("inject_response: %s", message)
+        return AdvanceResult(ran=True, phase=phase, result=result, message=message)

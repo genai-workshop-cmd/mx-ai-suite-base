@@ -72,6 +72,12 @@ class LLMClient:
         temperature: float | None = None,
     ) -> LLMReply:
         """Single-turn completion. Returns ok=False when no provider is set."""
+        bridge_reply = self._bridge(system, user)
+        if bridge_reply is not None:
+            self._calls += 1
+            self._tokens += bridge_reply.tokens
+            return bridge_reply
+
         if not self.available:
             return LLMReply(
                 ok=False,
@@ -129,6 +135,50 @@ class LLMClient:
             log.warning("model returned unparseable JSON (%d chars)", len(reply.text))
         return parsed, reply
 
+    # -- bridge ------------------------------------------------------------
+    def _bridge(self, system: str, user: str) -> LLMReply | None:
+        """File-rendezvous bridge: if dev_bridge/.mx_bridge_active is fresh,
+        write the prompt and block until Claude Code writes the response."""
+        import json
+        import time as _time
+        import uuid
+        from pathlib import Path
+
+        sentinel = Path("dev_bridge/.mx_bridge_active")
+        try:
+            if not sentinel.exists() or (_time.time() - sentinel.stat().st_mtime) > 15:
+                return None
+        except OSError:
+            return None
+
+        req_id = uuid.uuid4().hex[:12]
+        req_dir = Path(f"dev_bridge/req_{req_id}")
+        req_dir.mkdir(parents=True, exist_ok=True)
+        (req_dir / "prompt.json").write_text(
+            json.dumps({"system": system, "prompt": user, "req_id": req_id}),
+            encoding="utf-8",
+        )
+        log.info("bridge: wrote prompt to %s", req_dir)
+
+        resp_path = req_dir / "response.json"
+        deadline = _time.time() + 120
+        while _time.time() < deadline:
+            if resp_path.exists():
+                try:
+                    data = json.loads(resp_path.read_text(encoding="utf-8"))
+                    return LLMReply(
+                        text=data.get("text", ""),
+                        ok=True,
+                        provider="bridge",
+                        model=data.get("model", "claude-code-bridge"),
+                    )
+                except Exception:
+                    pass
+            _time.sleep(0.5)
+
+        log.warning("bridge: timed out waiting for response to %s", req_id)
+        return None
+
     # -- providers ---------------------------------------------------------
     def _anthropic(self, system: str, user: str, max_tokens: int, temperature: float) -> LLMReply:
         import anthropic
@@ -147,6 +197,23 @@ class LLMClient:
                 system=system,
                 messages=[{"role": "user", "content": user}],
             )
+        except TypeError as exc:
+            # Claude 5 / extended-thinking models don't accept the temperature
+            # parameter. Retry without it — the model uses its own default.
+            if "temperature" not in str(exc):
+                raise
+            log.debug("model does not accept temperature param — retrying without it")
+            try:
+                msg = self._client.messages.create(
+                    model=self.cfg.model,
+                    max_tokens=max_tokens,
+                    system=system,
+                    messages=[{"role": "user", "content": user}],
+                )
+            except Exception as exc2:
+                if _is_retryable(exc2):
+                    raise _Retryable(str(exc2)) from exc2
+                raise
         except Exception as exc:
             if _is_retryable(exc):
                 raise _Retryable(str(exc)) from exc
