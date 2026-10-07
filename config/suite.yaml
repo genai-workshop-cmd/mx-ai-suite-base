@@ -43,10 +43,10 @@ maximo:
   apimeta_path: "reference/apimeta.json"
 
 brain:
-  store_dir: "C:/Users/aniket.dhokare/OneDrive - Accenture/Project Octopus/ProjectDocs/MX-AI-Brain"   # ← SharePoint sync path
-  vector_dir: "brain/vectors"   # ← stays local
-  #store_dir: "brain/store"
-  #vector_dir: "brain/vectors"
+  # To sync with OneDrive/SharePoint, set store_dir to your local sync folder path.
+  # Otherwise the default relative path keeps everything local.
+  store_dir: "brain/store"
+  vector_dir: "brain/vectors"
   audit_log: "brain/audit.jsonl"
   collection: "mx_ai_suite"
   embed_model: "BAAI/bge-small-en-v1.5"
